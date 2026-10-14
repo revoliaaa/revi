@@ -133,6 +133,7 @@ section("Pembuka");
         { text: "Kawasan budidaya · HTI akasia", options: { fontSize: 13, color: "C8D6CD" } }], { x: MX, y: y + h + 0.18, w: wp, h: 0.8 });
   T(s, [{ text: "71.350 ha", options: { fontFace: DISPLAY, fontSize: 24, bold: true, color: COL.white, breakLine: true } },
         { text: "Kawasan lindung · kandidat karbon", options: { fontSize: 13, color: "C8D6CD" } }], { x: MX + wp + 0.1, y: y + h + 0.18, w: CW - wp - 0.1, h: 0.8 });
+  T(s, "OKTOBER 2026", { x: W - MX - 3, y: 0.9, w: 3, h: 0.35, fontSize: 14, bold: true, color: COL.leaf, charSpacing: 3, align: "right" });
   T(s, "Analisis awal — perlu dikonfirmasi dengan dokumen PBPH/RKUPH dan data spasial aktual", { x: MX, y: 6.9, w: 8, h: 0.25, fontSize: 10, color: COL.leaf, italic: true });
 }
 
@@ -322,7 +323,7 @@ divider(2, "GATE 2  ·  KARBON", "Apakah additionality dan metodologi dapat dipe
   T(s, "emisi setelah MUK", { x: bx + 0.15, y: y2, w: 3, h: bh, fontSize: 13, color: COL.white, valign: "middle" });
   const rx = bx + full + 0.35, rw = W - MX - rx;
   T(s, [{ text: "Syarat agar selisih menjadi kredit", options: { bold: true, breakLine: true } },
-        { text: "terukur · additional · tervalidasi · terverifikasi", options: { color: COL.copper, bold: true } }],
+        { text: "terukur · additional ·", options: { color: COL.copper, bold: true, breakLine: true } }, { text: "tervalidasi · terverifikasi", options: { color: COL.copper, bold: true } }],
     { x: rx, y: y1 + 0.1, w: rw, h: 1.3, fontSize: 15 });
   T(s, "Ilustrasi, tidak berskala.", { x: bx, y: y2 + bh + 0.08, w: 3, h: 0.25, fontSize: 10, italic: true, color: COL.muted });
   const ly = 4.35, colw = (CW - 0.5) / 2;
@@ -340,6 +341,8 @@ divider(2, "GATE 2  ·  KARBON", "Apakah additionality dan metodologi dapat dipe
   locator(s, "both");
 }
 
+// Chart values are stored x10 and labelled with a literal comma so decimals read "70,3" in any Office locale.
+const COMMA1 = '0\\,0';
 const CHART_BASE = () => ({
   catAxisLabelColor: HEX.muted, valAxisLabelColor: HEX.muted, catAxisLabelFontFace: "+mn-lt", valAxisLabelFontFace: "+mn-lt",
   dataLabelFontFace: "+mn-lt", dataLabelColor: HEX.ink, dataLabelFontSize: 13, catAxisLabelFontSize: 13,
@@ -361,10 +364,10 @@ const CHART_BASE = () => ({
     T(s, r[1], { x: MX + 2.0, y: ty + i * 0.55, w: 2.4, h: 0.4, fontSize: 14, bold: true, align: "right" });
   });
   T(s, "lindung vs budidaya", { x: MX, y: ty + 1.1, w: 4.4, h: 0.3, fontSize: 11, italic: true, color: COL.muted, align: "right" });
-  s.addChart(pres.charts.BAR, [{ name: "Setara CO₂ (juta tCO₂e)", labels: ["Kawasan budidaya", "Kawasan lindung"], values: [14.6, 70.3] }],
+  s.addChart(pres.charts.BAR, [{ name: "Setara CO₂ (×100 ribu tCO₂e)", labels: ["Kawasan budidaya", "Kawasan lindung"], values: [146, 703] }],
     Object.assign(CHART_BASE(), {
       x: 5.6, y: 2.1, w: 7.1, h: 3.9, barDir: "bar", barGapWidthPct: 45, chartColors: [HEX.akasia, HEX.lindung],
-      dataLabelPosition: "outEnd", dataLabelFormatCode: "0.0", valAxisHidden: true, valAxisMaxVal: 80,
+      dataLabelPosition: "outEnd", dataLabelFormatCode: COMMA1, valAxisHidden: true, valAxisMaxVal: 800,
       title: "Stok karbon setara CO₂, juta tCO₂e (2026)", showLegend: false, catAxisLineShow: false,
     }));
   source(s, "Data: stok karbon PBPH PT Mayawana Persada 2026 (lihat Lampiran B).");
@@ -376,12 +379,12 @@ const CHART_BASE = () => ({
   const s = slide("CONTENT", "EMISI KAWASAN BUDIDAYA",
     "Pembukaan 46.648 ha sejak 2021 melepas ±12,2 juta tCO₂ — hampir separuhnya dari kohort 2023",
     "Faktor emisi 20 tC/ha/th diterapkan pada luas yang dibuka per tahun, diakumulasi hingga 2026:\n2021: 4.884 ha → 2.148.960 tCO2\n2022: 8.162 ha → 2.992.733 tCO2\n2023: 19.221 ha → 5.638.160 tCO2\n2024: 1.571 ha → 345.620 tCO2\n2025: 1.890 ha → 277.200 tCO2\n2026: 10.920 ha → 800.800 tCO2\nTotal 46.648 ha; 3.420.853 tCO2/th; kumulatif 12.203.473 tCO2. Data ini adalah bukti BAU di kawasan budidaya, dan menjadi pembanding untuk baseline kawasan lindung.");
-  const vals = [2.149, 2.993, 5.638, 0.346, 0.277, 0.801];
-  s.addChart(pres.charts.BAR, [{ name: "Emisi CO₂ kumulatif (juta tCO₂)", labels: ["2021", "2022", "2023", "2024", "2025", "2026"], values: vals }],
+  const vals = [21, 30, 56, 3, 3, 8];
+  s.addChart(pres.charts.BAR, [{ name: "Emisi CO₂ kumulatif (×100 ribu tCO₂)", labels: ["2021", "2022", "2023", "2024", "2025", "2026"], values: vals }],
     Object.assign(CHART_BASE(), {
       x: MX, y: 2.1, w: 8.0, h: 4.2, barDir: "col", barGapWidthPct: 55,
       chartColors: [HEX.akasia, HEX.akasia, HEX.copper, HEX.akasia, HEX.akasia, HEX.akasia],
-      dataLabelPosition: "outEnd", dataLabelFormatCode: "0.0", valAxisHidden: true, valAxisMaxVal: 6.5,
+      dataLabelPosition: "outEnd", dataLabelFormatCode: COMMA1, valAxisHidden: true, valAxisMaxVal: 65,
       title: "Emisi CO₂ kumulatif s.d. 2026 per tahun pembukaan, juta tCO₂", showLegend: false,
     }));
   const sx = 9.2, sw = W - MX - sx;
@@ -480,11 +483,11 @@ divider(3, "GATE 3  ·  BISNIS", "Apakah risk-adjusted NPV karbon mengalahkan al
     "Pada skenario konservatif, pendapatan karbon hanya ±US$6,5 juta di atas opportunity cost",
     "Pendapatan bersih = net tCO2e × net carbon price (6 tahun): konservatif 7,4 juta × US$4 ≈ US$29,5 juta; base 12,0 juta × US$8 = US$96 juta; upside 16,6 juta × US$16 ≈ US$265 juta.\nOpportunity cost: US$23 / 37 / 51 juta.\nSelisih: ±US$6,5 juta (konservatif), ±US$59 juta (base), ±US$214 juta (upside) — sebelum biaya MRV, validasi, registrasi, restorasi dan buffer. Pada skenario konservatif, biaya-biaya ini berpotensi menghabiskan seluruh selisih.");
   s.addChart(pres.charts.BAR, [
-    { name: "Pendapatan karbon bersih", labels: ["Konservatif", "Base", "Upside"], values: [29.5, 96, 265] },
-    { name: "Opportunity cost HTI", labels: ["Konservatif", "Base", "Upside"], values: [23, 37, 51] },
+    { name: "Pendapatan karbon bersih", labels: ["Konservatif", "Base", "Upside"], values: [295, 960, 2650] },
+    { name: "Opportunity cost HTI", labels: ["Konservatif", "Base", "Upside"], values: [230, 370, 510] },
   ], Object.assign(CHART_BASE(), {
     x: MX, y: 2.1, w: 8.2, h: 4.25, barDir: "col", barGrouping: "clustered", barGapWidthPct: 60, chartColors: [HEX.lindung, HEX.akasia],
-    dataLabelPosition: "outEnd", dataLabelFormatCode: "0.0", valAxisHidden: true, valAxisMaxVal: 300,
+    dataLabelPosition: "outEnd", dataLabelFormatCode: COMMA1, valAxisHidden: true, valAxisMaxVal: 3000,
     title: "US$ juta, 6 tahun, sebelum biaya MRV, restorasi & buffer", showLegend: true, legendPos: "t", legendFontSize: 12, legendColor: HEX.muted, legendFontFace: "+mn-lt",
   }));
   const sx = 9.3, sw = W - MX - sx;
@@ -576,7 +579,7 @@ section("Jalan ke depan");
     });
   });
   const flow = ["Legal eligible area", "Carbon eligible area", "tCO₂e", "Economics", "GO / NO-GO"];
-  const fy = 5.55, aw = 0.35, fw = (CW - aw * 4) / 5;
+  const fy = 5.85, aw = 0.35, fw = (CW - aw * 4) / 5;
   flow.forEach((t, i) => {
     const x = MX + i * (fw + aw);
     const last = i === flow.length - 1;
@@ -618,7 +621,7 @@ section("Lampiran");
 
 // 22 · Appendix A — scheme image
 {
-  const s = slide("CONTENT", "LAMPIRAN A", "Skema kerja sama: pemegang PBPH, perusahaan karbon, dan carbon developer",
+  const s = slide("CONTENT", "LAMPIRAN A", "Skema kerja sama tiga pihak dalam satu PBPH",
     "Skema kerja sama Multiusaha Kehutanan pada PBPH: integrasi usaha awal HTI (akasia) dan pengembangan usaha karbon melalui perusahaan karbon sebagai proponen lain, dengan dukungan Carbon Developer. Mencakup dasar hukum, lingkup tiap pihak, Joint Project Committee, alur pelaksanaan proyek karbon (8 tahap), skema pembagian pendapatan (ilustrasi), serta hasil dan manfaat.");
   const h = 4.75, w = h * 1.5;
   s.addImage({ path: path.join(ROOT, "assets/skema_kerja_sama_pbph.png"), x: MX, y: 1.95, w, h, altText: "Skema kerja sama multiusaha kehutanan pada PBPH" });

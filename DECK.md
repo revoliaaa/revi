@@ -68,5 +68,6 @@ paragraf di slide (pindah ke notes) · angka bulat palsu · kata klise AI.
 npm install pptxgenjs            # di folder mana pun, lalu set NODE_PATH ke node_modules-nya
 node build/build_deck.js out.pptx <path>/pptx/scripts/apply_theme.js
 ```
-Output: `Analisis_Multiusaha_Kehutanan_Mayawana_Persada_redesign.pptx` (+ PDF pratinjau).
+Output: `FINAL_Analisis_Multiusaha_Kehutanan_PT_Mayawana_Persada.pptx` (+ PDF pratinjau).
 Original disimpan di `assets/original_Analisis_Multi_Usaha_Kehutanan.pptx`.
+Catatan chart: nilai di data chart disimpan ×10 dan diberi format `0\,0` agar label selalu tampil dengan koma desimal (70,3) di Office berbahasa apa pun.
