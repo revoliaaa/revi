@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<title>Desain Final Kaos PPH</title>
+<style>
+  @font-face { font-family: Montserrat; font-weight: 500; src: url(fonts/Montserrat-500.ttf); }
+  @font-face { font-family: Montserrat; font-weight: 600; src: url(fonts/Montserrat-600.ttf); }
+  @font-face { font-family: Montserrat; font-weight: 700; src: url(fonts/Montserrat-700.ttf); }
+  @font-face { font-family: Merriweather; font-weight: 700; src: url(fonts/Merriweather-700.ttf); }
+  :root {
+    --maroon: #6B2236; --patch: #3A1E26; --terra: #C97859; --forest: #285943;
+    --sage: #A8BFA3; --cream: #F5F0E6; --ink: #2B2326; --muted: #7A6F68; --line: #DCD2C3;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1500px; height: 1000px; }
+  body { background: #EFE9DF; font-family: Montserrat, sans-serif; color: var(--ink); }
+  .sheet { position: relative; width: 1500px; height: 1000px; padding: 26px 34px; display: grid;
+           grid-template-rows: 44px 600px 1fr; row-gap: 14px; }
+  header { display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 1px solid var(--line); padding-bottom: 10px; }
+  header h1 { font-family: Merriweather, serif; font-size: 22px; color: var(--maroon); }
+  header p { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+  .main { display: grid; grid-template-columns: 520px 520px minmax(0,1fr); column-gap: 14px; }
+  .view { position: relative; background: radial-gradient(ellipse at 50% 40%, #F7F3EC 0%, #E9E2D6 100%); border-radius: 6px; }
+  .view svg { width: 100%; height: 100%; display: block; }
+  .tag { position: absolute; left: 16px; top: 14px; font-size: 11px; font-weight: 700; letter-spacing: .16em; color: var(--muted); }
+  .side { display: grid; grid-template-rows: auto 1fr; row-gap: 14px; }
+  .panel { background: #F7F3EC; border-radius: 6px; padding: 16px 18px; }
+  h2 { font-size: 11px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
+  .logos { display: flex; align-items: center; justify-content: center; gap: 10px; background: var(--cream); border: 1px solid var(--line); border-radius: 4px; padding: 18px 10px; }
+  .logos img { display: block; }
+  .logos .div { width: 1px; height: 46px; background: #BFB3A3; }
+  .order { display: flex; justify-content: space-between; font-size: 10.5px; color: var(--muted); margin-top: 8px; padding: 0 6px; }
+  .order b { color: var(--ink); font-weight: 600; }
+  dl { display: grid; grid-template-columns: 112px 1fr; row-gap: 8px; column-gap: 10px; font-size: 12px; line-height: 1.4; }
+  dt { color: var(--muted); font-weight: 500; }
+  dd { font-weight: 600; }
+  .details { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 14px; }
+  .details figure svg { width: 100%; height: 78px; display: block; border-radius: 4px; }
+  figcaption { font-size: 10px; letter-spacing: .14em; font-weight: 700; color: var(--muted); margin-top: 6px; }
+  .bottom { display: grid; grid-template-columns: 560px minmax(0,1fr); column-gap: 14px; }
+  .swatches { display: flex; gap: 18px; }
+  .sw { width: 78px; font-size: 10.5px; line-height: 1.35; }
+  .sw i { display: block; width: 62px; height: 62px; border-radius: 50%; margin-bottom: 8px; border: 1px solid rgba(0,0,0,.08); }
+  .sw b { display: block; font-weight: 700; font-size: 11px; }
+  .sw span { color: var(--muted); }
+  .motif svg { width: 100%; height: 190px; display: block; border-radius: 4px; }
+</style>
+</head>
+<body>
+<div class="sheet">
+  <header>
+    <h1>Perempuan Penjaga Hutan · Desa Pasir</h1>
+    <p>Desain final · Kaos lengan panjang raglan</p>
+  </header>
+
+  <section class="main">
+    <div class="view"><span class="tag">TAMPAK DEPAN</span><svg id="front" viewBox="0 0 640 720"></svg></div>
+    <div class="view"><span class="tag">TAMPAK BELAKANG</span><svg id="back" viewBox="0 0 640 720"></svg></div>
+    <div class="side">
+      <div class="panel">
+        <h2>Logo belakang · sejajar</h2>
+        <div class="logos">
+          <img src="logo/lphd.png" style="height:62px" alt="LPHD Pasir">
+          <span class="div"></span>
+          <img src="logo/sampan.png" style="height:40px" alt="Sampan Kalimantan">
+          <span class="div"></span>
+          <img src="logo/taf.png" style="height:26px" alt="The Asia Foundation">
+        </div>
+        <div class="order"><span><b>1</b> LPHD Pasir</span><span><b>2</b> SAMPAN Kalimantan</span><span><b>3</b> The Asia Foundation</span></div>
+      </div>
+      <div class="panel">
+        <h2>Spesifikasi</h2>
+        <dl>
+          <dt>Model</dt><dd>Lengan panjang raglan, kerah bulat rib, manset rib</dd>
+          <dt>Logo depan</dt><dd>Perempuan Penjaga Hutan + “DESA PASIR”, dada tengah, lebar ±24 cm</dd>
+          <dt>Logo belakang</dt><dd>3 logo sejajar, ±7 cm di bawah kerah, lebar baris ±28 cm</dd>
+          <dt>Motif bawah</dt><dd>Gelombang maroon–hijau + daun, depan &amp; belakang dicerminkan</dd>
+          <dt>Siku</dt><dd>Patch oval warna gelap</dd>
+          <dt>Teknik</dt><dd>Full print sublimasi</dd>
+        </dl>
+        <div class="details">
+          <figure><svg id="d-collar" viewBox="0 0 200 92"></svg><figcaption>DETAIL KERAH</figcaption></figure>
+          <figure><svg id="d-elbow" viewBox="0 0 200 92"></svg><figcaption>DETAIL SIKU</figcaption></figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bottom">
+    <div class="panel">
+      <h2>Palet warna</h2>
+      <div class="swatches">
+        <div class="sw"><i style="background:#6B2236"></i><b>#6B2236</b><span>Maroon · lengan, kerah</span></div>
+        <div class="sw"><i style="background:#C97859"></i><b>#C97859</b><span>Terracotta · keberanian</span></div>
+        <div class="sw"><i style="background:#285943"></i><b>#285943</b><span>Forest Green · hutan</span></div>
+        <div class="sw"><i style="background:#A8BFA3"></i><b>#A8BFA3</b><span>Sage Green · harmoni</span></div>
+        <div class="sw"><i style="background:#F5F0E6"></i><b>#F5F0E6</b><span>Warm Cream · badan</span></div>
+        <div class="sw"><i style="background:#3A1E26"></i><b>#3A1E26</b><span>Dark Plum · patch siku</span></div>
+      </div>
+    </div>
+    <div class="panel motif">
+      <h2>Detail motif bawah</h2>
+      <svg id="motif" viewBox="120 560 400 150" preserveAspectRatio="xMidYMid slice"></svg>
+    </div>
+  </section>
+</div>
+
+<script>
+const C = { maroon:'#6B2236', patch:'#3A1E26', terra:'#C97859', forest:'#285943', sage:'#A8BFA3', cream:'#F5F0E6' };
+
+const BODY = 'M232,66 L150,240 Q142,460 140,695 Q320,712 500,695 Q498,460 490,240 L408,66 Q320,130 232,66 Z';
+const SLEEVE = 'M232,66 C180,72 110,96 88,160 Q60,380 46,612 L124,616 Q138,430 150,240 Z';
+const CUFF = 'M45,608 L126,612 L122,668 Q84,675 46,667 Z';
+
+// leaf: base at (x,y), length l, width w, rotation r (deg, 0 = up)
+function leaf(x, y, l, w, r, col) {
+  const h = w / 2;
+  return `<g transform="translate(${x},${y}) rotate(${r})">
+    <path d="M0,0 C${h*1.15},${-l*.25} ${h*1.05},${-l*.72} 0,${-l} C${-h*1.05},${-l*.72} ${-h*1.15},${-l*.25} 0,0Z" fill="${C[col]}"/>
+    <path d="M0,0 Q${h*.12},${-l*.5} 0,${-l*.92}" stroke="${C.cream}" stroke-opacity=".55" stroke-width="1.1" fill="none"/></g>`;
+}
+const LEAVES = [
+  [146,652,120,28,-8,'sage'], [164,650,150,32,14,'terra'], [192,645,125,30,34,'forest'],
+  [222,642,95,24,54,'sage'], [250,640,70,19,70,'terra'],
+  [318,636,58,17,28,'sage'], [346,636,52,15,-30,'forest'],
+  [404,628,82,22,-58,'terra'], [430,622,118,28,-38,'sage'], [456,614,150,32,-18,'forest'],
+  [482,604,128,29,-2,'terra'], [504,592,96,24,14,'sage'],
+];
+function motif() {
+  return LEAVES.map(a => leaf(...a)).join('') + `
+    <path d="M120,650 C250,612 380,644 522,578 L522,730 L120,730 Z" fill="${C.maroon}"/>
+    <path d="M120,650 C250,612 380,644 522,578" fill="none" stroke="${C.cream}" stroke-width="3"/>
+    <path d="M120,666 C260,650 380,694 522,640 L522,730 L120,730 Z" fill="${C.forest}"/>
+    <path d="M120,666 C260,650 380,694 522,640" fill="none" stroke="${C.cream}" stroke-width="3"/>`;
+}
+
+function defs(id) {
+  return `<defs>
+    <clipPath id="${id}-body"><path d="${BODY}"/></clipPath>
+    <linearGradient id="${id}-shade" x1="0" x2="1">
+      <stop offset="0" stop-color="#000" stop-opacity=".16"/><stop offset=".22" stop-color="#000" stop-opacity="0"/>
+      <stop offset=".78" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".16"/></linearGradient>
+    <linearGradient id="${id}-sl" x1="0" x2="1">
+      <stop offset="0" stop-color="#000" stop-opacity=".22"/><stop offset=".5" stop-color="#fff" stop-opacity=".05"/>
+      <stop offset="1" stop-color="#000" stop-opacity=".18"/></linearGradient>
+    <pattern id="${id}-rib" width="4" height="10" patternUnits="userSpaceOnUse">
+      <rect width="4" height="10" fill="${C.maroon}"/><rect width="1.4" height="10" fill="#000" fill-opacity=".18"/></pattern>
+    <filter id="${id}-drop" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#3a2a20" flood-opacity=".22"/></filter>
+  </defs>`;
+}
+
+function sleeve(id, mirror) {
+  const t = mirror ? 'transform="translate(640,0) scale(-1,1)"' : '';
+  return `<g ${t}>
+    <path d="${SLEEVE}" fill="${C.maroon}"/><path d="${SLEEVE}" fill="url(#${id}-sl)"/>
+    <ellipse cx="103" cy="412" rx="29" ry="56" transform="rotate(6 103 412)" fill="${C.patch}"/>
+    <ellipse cx="103" cy="412" rx="24" ry="51" transform="rotate(6 103 412)" fill="none" stroke="#6a4550" stroke-width="1" stroke-dasharray="3 2.5"/>
+    <path d="${CUFF}" fill="url(#${id}-rib)"/>
+    <path d="M150,240 L232,66" stroke="#000" stroke-opacity=".18" stroke-width="1.2"/></g>`;
+}
+
+function shirt(id, back) {
+  const motifG = back ? `<g transform="translate(640,0) scale(-1,1)">${motif()}</g>` : motif();
+  const collar = back
+    ? `<path d="M232,66 Q320,82 408,66 L400,50 Q320,64 240,50 Z" fill="url(#${id}-rib)"/>
+       <path d="M240,50 Q320,64 400,50" stroke="#000" stroke-opacity=".2" fill="none"/>`
+    : `<path d="M248,58 Q320,40 392,58 L400,52 Q320,30 240,52 Z" fill="url(#${id}-rib)"/>
+       <path d="M248,58 Q320,40 392,58 Q320,110 248,58 Z" fill="#DCCFBB"/>
+       <rect x="311" y="52" width="18" height="15" rx="1.5" fill="#fff" stroke="#cfc3b1" stroke-width=".6"/>
+       <text x="320" y="63.5" font-family="Montserrat" font-weight="700" font-size="9" text-anchor="middle" fill="#333">M</text>
+       <path d="M232,66 Q320,132 408,66 L392,58 Q320,110 248,58 Z" fill="url(#${id}-rib)"/>`;
+  const art = back
+    ? (() => {
+        // three logos side by side, vertically centred on y=205
+        const y = 212, g = 9, items = [['lphd',1279/1128,62], ['sampan',810/477,40], ['taf',1693/415,25]];
+        const total = items.reduce((s, [, r, h]) => s + r * h, 0) + g * 4;
+        let x = 320 - total / 2, out = '';
+        items.forEach(([n, r, h], i) => {
+          const w = r * h;
+          out += `<image href="logo/${n}.png" x="${x}" y="${y - h/2}" width="${w}" height="${h}"/>`;
+          x += w;
+          if (i < items.length - 1) { out += `<line x1="${x + g}" x2="${x + g}" y1="${y - 22}" y2="${y + 22}" stroke="#a89a88" stroke-width=".8"/>`; x += g * 2; }
+        });
+        return out;
+      })()
+    : `<image href="logo/pph.png" x="196" y="148" width="248" height="${248*874/1928}"/>
+       <line x1="296" x2="372" y1="276" y2="276" stroke="${C.terra}" stroke-width="2"/>
+       <text x="296" y="300" font-family="Montserrat" font-weight="600" font-size="17.5" letter-spacing="4.2" fill="${C.terra}">DESA PASIR</text>`;
+  return defs(id) + `<g filter="url(#${id}-drop)">
+    ${sleeve(id, false)}${sleeve(id, true)}
+    <path d="${BODY}" fill="${C.cream}"/>
+    <g clip-path="url(#${id}-body)">${motifG}<path d="${BODY}" fill="url(#${id}-shade)"/></g>
+    ${collar}
+  </g>${art}`;
+}
+
+document.getElementById('front').innerHTML = shirt('f', false);
+document.getElementById('back').innerHTML = shirt('b', true);
+document.getElementById('motif').innerHTML = `<rect x="0" y="0" width="640" height="720" fill="${C.cream}"/>` + motif();
+
+// detail crops reuse the front artwork via nested viewBoxes
+document.getElementById('d-collar').innerHTML = `<rect width="200" height="92" fill="#E9E2D6"/>
+  <svg x="0" y="0" width="200" height="92" viewBox="220 26 200 92">${shirt('dc', false)}</svg>`;
+document.getElementById('d-elbow').innerHTML = `<rect width="200" height="92" fill="#E9E2D6"/>
+  <svg x="0" y="0" width="200" height="92" viewBox="3 366 200 92">${shirt('de', false)}</svg>`;
+</script>
+</body>
+</html>
