@@ -20,7 +20,7 @@ Kode klasifikasi: **[CR]** Confirmed Requirement · **[RP]** Recommended Practic
 
 **Approved Tools [CR]** — PT001 V2.1 (SHAMBA, tanah pertanian/agroforestri), **PT002 V2.0 (Estimation of carbon benefits from REDD in community managed forest)**, PT003 V1.0 (penggunaan model tervalidasi), PT004 V1.0 (identifikasi lahan terdegradasi), PT005–PT006 (agroforestri Acorn).
 
-**Methodology pipeline — BELUM APPROVED, tidak boleh dipakai untuk PDD [CR, PM §3–4]:**
+**Methodology pipeline — BELUM APPROVED, tidak boleh dipakai untuk PDD [CR, PM §3–4]** (metodologi/modul mangrove di bawah ini **tidak relevan** bagi Pasir karena tidak ada mangrove — dicantumkan hanya untuk kelengkapan register):
 Coastal Blue Carbon Methodology (PM00X draft v0.7), **Mangrove Conservation Module** (PU00A draft v0.9), **Simplified Mangrove Restoration Module** (PU00B draft v0.9), Tool emisi akibat kanal di mangrove (PT00A draft), serta concept notes: tree diameter growth, rangelands, baseline/additionality significance testing tool, soil organic carbon, harvested wood products, **Logged to Protected Forest**.
 
 ### 12.2 Uji applicability PT002 (jalur utama untuk Protection) [CR]
@@ -39,8 +39,8 @@ Ketentuan prosedural: wajib **reference region** (mencakup ≥2× luas tiap tipe
 **Implikasi bagi Pasir [PSA + PRR]:**
 1. Hutan Desa berstatus "community managed" — memenuhi syarat dasar.
 2. Karena persetujuan PS sudah ada sejak 2019, Plan Vivo dan validator akan menguji apakah baseline sudah berisi "effective community management". Bila data tutupan lahan 2019–2026 menunjukkan **tidak ada** kehilangan hutan di areal Hutan Desa sementara di reference region ada, argumen bahwa pengelolaan saat ini tidak efektif akan lemah → **potensi tidak eligible untuk PT002**.
-3. Bila RTRW/rencana lain mendokumentasikan alokasi konversi (mis. tambak/pelabuhan/kawasan industri pesisir di Mempawah) di dalam areal — PT002 tidak dapat dipakai untuk bagian tersebut (dan juga menimbulkan isu legalitas).
-4. Cek apakah areal punya cukup luasan hutan serupa di sekitar (reference region 2×) — untuk Hutan Desa pesisir kecil, menemukan reference region yang setara bisa sulit.
+3. Bila RTRW/rencana lain mendokumentasikan alokasi konversi (mis. perkebunan, kawasan industri, infrastruktur di Mempawah) di dalam areal — PT002 tidak dapat dipakai untuk bagian tersebut (dan juga menimbulkan isu legalitas).
+4. Cek apakah areal punya cukup luasan hutan serupa di sekitar (reference region 2×) — untuk Hutan Desa berukuran kecil, menemukan reference region yang setara bisa sulit.
 
 ### 12.3 Methodology Applicability Matrix
 
@@ -49,8 +49,8 @@ Ketentuan prosedural: wajib **reference region** (mencakup ≥2× luas tiap tipe
 | Avoided deforestation (hutan mineral/rawa) | PM001 + PU002 + PT002 + PU004 + PU005 (+PU003) | **Approved** | Lihat §12.2 | Peta tutupan lahan multi-waktu, strata, plot biomassa, reference region, leakage area | **Paling menjanjikan bila** areal berupa hutan dengan ancaman nyata & pengelolaan saat ini belum efektif [PSA] | Pengecualian "effective community management"; volume kredit kecil bila areal kecil |
 | Avoided degradation | Sama (PT002 mencakup deforestasi **dan** degradasi) | Approved | Sama | + data degradasi (kerapatan tajuk, plot berulang) | Mungkin [PSA] | Degradasi sulit dideteksi citra resolusi menengah |
 | Konservasi hutan alam (tanpa ancaman) | Tidak ada jalur kredit | — | Tidak additional | — | **Tidak creditable** bila tidak ada ancaman | — |
-| **Mangrove conservation** | (a) PM001+PU002+PT002 — PM001 menyebut mangrove termasuk "forest"; (b) Mangrove Conservation Module PU00A | (a) **Approved**, kecocokan metodologis untuk mangrove **[OCR]**; (b) **Pipeline – belum approved** | (a) syarat PT002; (b) syarat PM00X + PU00A (tanpa alat berat, tanpa panen selektif, dst.) | Strata mangrove, biomassa (alometri mangrove), driver (konversi tambak, abrasi, penebangan) | **Tergantung konfirmasi Plan Vivo** apakah PT002 dapat dipakai untuk mangrove atau harus menunggu PU00A | Karbon tanah mangrove (pool terbesar) kemungkinan tidak terkuantifikasi memadai dengan PT002 → konservatif/kecil; risiko perubahan versi metodologi |
-| **Mangrove restoration** | (a) PM001+PU001; (b) Simplified Mangrove Restoration Module PU00B | (a) Approved [kecocokan **OCR**]; (b) **Pipeline** | PR: tidak ada konversi ekosistem alami 10 th terakhir; spesies asli; tidak ada perubahan hidrologi (PM001) | Peta lahan terbuka/terdegradasi, sejarah tanam (BPDAS dll.), survival plot | Mungkin untuk areal bekas abrasi/tambak terbengkalai **[PSA]** | **Additionality**: penanaman mangrove oleh program pemerintah/swasta sebelumnya (dilaporkan ±35 ha di pesisir Desa Pasir) **tidak boleh diklaim**; pemulihan hidrologi tambak = memengaruhi muka air → dilarang PM001 |
+| ~~Mangrove conservation~~ — **Not Applicable (tidak ada mangrove di Pasir)** | (a) PM001+PU002+PT002; (b) Mangrove Conservation Module PU00A | (a) **Approved**, kecocokan metodologis untuk mangrove **[OCR]**; (b) **Pipeline – belum approved** | (a) syarat PT002; (b) syarat PM00X + PU00A (tanpa alat berat, tanpa panen selektif, dst.) | Strata mangrove, biomassa (alometri mangrove), driver (konversi tambak, abrasi, penebangan) | **Tergantung konfirmasi Plan Vivo** apakah PT002 dapat dipakai untuk mangrove atau harus menunggu PU00A | Karbon tanah mangrove (pool terbesar) kemungkinan tidak terkuantifikasi memadai dengan PT002 → konservatif/kecil; risiko perubahan versi metodologi |
+| ~~Mangrove restoration~~ — **Not Applicable** | (a) PM001+PU001; (b) Simplified Mangrove Restoration Module PU00B | (a) Approved [kecocokan **OCR**]; (b) **Pipeline** | PR: tidak ada konversi ekosistem alami 10 th terakhir; spesies asli; tidak ada perubahan hidrologi (PM001) | Peta lahan terbuka/terdegradasi, sejarah tanam (BPDAS dll.), survival plot | Mungkin untuk areal bekas abrasi/tambak terbengkalai **[PSA]** | **Additionality**: penanaman mangrove oleh program pemerintah/swasta sebelumnya (dilaporkan ±35 ha di pesisir Desa Pasir) **tidak boleh diklaim**; pemulihan hidrologi tambak = memengaruhi muka air → dilarang PM001 |
 | Peatland protection (cegah drainase/kebakaran) | PM001+PU002+PT002 untuk biomassa **di atas** tanah | Approved (biomassa saja) | Tidak boleh ada aktivitas yang memengaruhi muka air tanah | Peta KHG & kedalaman gambut | Biomassa saja bisa; emisi gambut (oksidasi/kebakaran) — kuantifikasi **[OCR]** | Kredit jauh di bawah potensi riil; aktivitas sekat kanal **tidak** boleh dalam proyek PM001 |
 | **Peatland restoration / rewetting** | Tidak ada | **Tidak ada jalur approved** | PM001 melarang aktivitas yang memengaruhi muka air tanah | — | **Tidak creditable** saat ini di PV Climate | Butuh metodologi baru (concept note → MAP) |
 | Assisted natural regeneration (ANR) | PM001 + PU001 (+PU003/PU004/PU005), PT004 | Approved | Lahan terdegradasi; tidak ada pembukaan/konversi 10 (s.d. 15) th sebelum intervensi (PR §3.8 Guidance) | Peta degradasi, plot pertumbuhan, model | Mungkin [PSA] | Volume kecil; perlu bukti degradasi (PT004) |
@@ -61,16 +61,16 @@ Ketentuan prosedural: wajib **reference region** (mencakup ≥2× luas tiap tipe
 ### 12.4 Rekomendasi jalur metodologi (bersyarat)
 
 1. **Jalur utama (jika areal dominan hutan dengan ancaman nyata):** *Protection* dengan **PM001 + PU002 + PT002 + PU004 + PU005** (+PU003 bila ada sumber emisi), ditambah *Restoration* dengan **PM001 + PU001** untuk areal terdegradasi yang memenuhi syarat.
-2. **Jika areal dominan mangrove:** ajukan pertanyaan resmi ke Plan Vivo (Bab 29, Q3) apakah PT002 dapat diterapkan untuk konservasi mangrove sekarang, atau proyek harus menunggu PM00X/PU00A/PU00B. Pantau status konsultasi publik metodologi Coastal Blue Carbon. Karena PDD dapat diajukan hingga 3 tahun setelah PIN approval, menunggu metodologi pipeline **dapat** realistis, tetapi bukan jaminan.
+2. **Mangrove: tidak relevan** — tim proyek mengonfirmasi tidak ada mangrove di Desa Pasir, sehingga Pasir **tidak bergantung pada metodologi pipeline** mana pun. Ini menyederhanakan jalur: semua intervensi kandidat memakai elemen yang sudah approved (PM001, PU001–PU005, PT002, PT004).
 3. **Jika areal dominan gambut dengan ancaman drainase/kebakaran:** hanya biomassa yang bisa dikreditkan di PV Climate saat ini; pertimbangkan apakah nilai ekonominya memadai.
 4. **Metodologi baru** (concept note USD 350 + asesmen variabel + biaya panel MAP; indikatif 2+4+4+3 minggu review tanpa waktu respons; minimal 4 minggu konsultasi publik) **tidak direkomendasikan** sebagai jalur pertama bagi proyek tunggal skala kecil.
 
 ### 12.5 Investigasi wajib sebelum rekomendasi final [CR+RP]
-1. Peta areal Hutan Desa resmi (SK) dan klasifikasi tutupan & tanah (mangrove/gambut/mineral).
+1. Peta areal Hutan Desa resmi (SK) dan klasifikasi tutupan & tanah (gambut/mineral; kedalaman gambut bila ada).
 2. Analisis perubahan tutupan 2010–2026 di areal & reference region kandidat.
 3. Identifikasi driver dan agen deforestasi/degradasi (wawancara, timeline historis).
 4. Bukti efektivitas pengelolaan LPHD sejak 2019 (patroli, RKT, laporan).
-5. Sejarah program rehabilitasi di areal (BPDAS, CSR, Mempawah Mangrove Park).
+5. Sejarah program rehabilitasi/restorasi di areal (RHL BPDAS, restorasi gambut, CSR).
 6. Rencana tata ruang (RTRW Kab. Mempawah, RZWP3K Kalbar) di areal & sekitar.
 7. Estimasi orde besaran Carbon Benefit (untuk mengetahui micro- vs macroscale dan kelayakan finansial).
 
@@ -283,7 +283,7 @@ General Information (Project Interventions; Management Rights) → Stakeholder E
 | Carbon baseline & benefits | Kualitatif/orde besaran | Estimasi tahunan sepanjang Project Period, setelah leakage, uncertainty, buffer | Inventarisasi plot, faktor emisi | Spreadsheet (Annex 6) | Karbon |
 | Additionality | Barrier analysis awal | Barrier + **Regulatory Surplus** per intervensi | Kajian hukum PS | Analisis | Hukum/karbon |
 | Leakage | — | PU004 (estimasi langsung atau diskon) | Identifikasi leakage area | Peta | Karbon |
-| Permanence / reversal | — | Risiko ≥50 th; mitigasi; buffer 20% | Analisis risiko (kebakaran, abrasi, kebijakan) | Matriks risiko | Karbon/safeguard |
+| Permanence / reversal | — | Risiko ≥50 th; mitigasi; buffer 20% | Analisis risiko (kebakaran, banjir/kekeringan, kebijakan) | Matriks risiko | Karbon/safeguard |
 | Double counting | Identifikasi awal | Bukti tidak ada overlap; status pelaporan di program pemerintah | Cek registri | Surat/registri | Hukum |
 | Technical Specification | — | Per intervensi: aktivitas, input, Carbon Indicators | — | Annex 7 | Karbon |
 | Land Management Plans | — | Per partisipan/kelompok | Pemetaan partisipatif | Annex 11 | Sosial |
@@ -299,7 +299,7 @@ General Information (Project Interventions; Management Rights) → Stakeholder E
 2. Klarifikasi hukum hak karbon/otorisasi (menentukan siapa boleh menjual).
 3. Inventarisasi biomassa (musim, akses pasang-surut).
 4. FPIC berlapis & BSM iteratif (butuh beberapa siklus musyawarah).
-5. Klarifikasi metodologi mangrove dengan Plan Vivo.
+5. Klarifikasi perlakuan emisi tanah gambut dengan Plan Vivo (bila areal bergambut).
 
 ---
 

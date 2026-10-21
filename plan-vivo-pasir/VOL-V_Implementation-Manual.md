@@ -32,9 +32,9 @@ Durasi bertanda **(R)** = durasi resmi/indikatif Plan Vivo (PM §9) atau batas r
 
 | Milestone | Optimistis | Realistis | Konservatif |
 |---|---|---|---|
-| Submission PIN | Jan 2027 | Mar–Apr 2027 | Q3 2027 |
-| PIN approved / pipeline | Apr 2027 (1 putaran) | Jul–Sep 2027 (2 putaran) | Q1–Q2 2028 (3 putaran) |
-| Metodologi | PT002 applicable | PT002 dengan penyesuaian strata/areal | Menunggu metodologi mangrove (pipeline) disetujui |
+| Submission PIN | Feb 2027 | **31 Mar 2027 (target)** | Apr 2027 (batas target) – Q3 2027 |
+| PIN approved / pipeline | Mei–Jun 2027 (1 putaran) | **Jul–Sep 2027 (target)** | Q1–Q2 2028 (3 putaran) |
+| Metodologi | PT002 applicable | PT002 dengan penyesuaian strata/areal | PT002 perlu pengumpulan data tambahan/penyesuaian areal; isu gambut berlarut |
 | Submission PDD | Q4 2027 | Q3–Q4 2028 | 2029–Q2 2030 (≤3 th batas) |
 | Validasi & registrasi | Q2–Q3 2028 | Q2–Q3 2029 | 2030–2031 |
 | AR pertama & rPVC + persetujuan Menhut + SRUK | Q3 2029 | Q3 2030 | 2031–2032 |
@@ -43,7 +43,7 @@ Durasi bertanda **(R)** = durasi resmi/indikatif Plan Vivo (PM §9) atau batas r
 
 ### 24.3 Critical path & risiko keterlambatan
 **Critical path:** mandat & PC → fungsi kawasan/blok (Permenhut Ps. 9) → analisis tutupan & metodologi → FPIC i → PIN → (metodologi approved) → inventarisasi karbon & FPIC iii → PDD → validasi → registrasi → AR → persetujuan Menhut → issuance → penjualan.
-**Risiko keterlambatan utama:** metodologi mangrove belum approved; ketidakjelasan registrasi pendamping; revisi PIN berulang; pendanaan PDD; ketersediaan VVB/IE; musim hujan/pasang untuk survei; perubahan pengurus LPHD/desa; sistem nasional (SRUK) baru.
+**Risiko keterlambatan utama:** ketidakcocokan PT002 ("effective community management"); ketidakjelasan registrasi pendamping; revisi PIN berulang; pendanaan PDD; ketersediaan VVB/IE; musim hujan/pasang untuk survei; perubahan pengurus LPHD/desa; sistem nasional (SRUK) baru.
 
 ---
 
@@ -57,7 +57,7 @@ Tujuan: **siap untuk submission PIN yang patuh**, bukan memaksa submission dalam
 | 1 | Plan Vivo | Kirim email permintaan introductory call (Bab 29) | PM | Email terkirim | — | — |
 | 2 (27 Okt–2 Nov) | Legal-kelembagaan | Rapat LPHD: paparan rencana; minta salinan SK, Perdes LPHD, SK pengurus, RKPS/RKT; draf PKS | PM + Legal | Notulen | Daftar dokumen LPHD | Ketersediaan LPHD |
 | 2 | Legal | Telaah Permenhut 6/2026 Ps. 6, 9, 13; cari prosedur registrasi pendamping/mitra | Legal | Memo | Memo hukum v1 | — |
-| 3 (3–9 Nov) | Spasial | Permintaan data ke BPSKL/Dinas LHK/KPH: SHP areal kerja, fungsi & blok kawasan, KHG, mangrove | GIS | Surat | Data diterima (target) | Respons instansi |
+| 3 (3–9 Nov) | Spasial | Permintaan data ke BPSKL/Dinas LHK/KPH: SHP areal kerja, fungsi & blok kawasan, KHG & kedalaman gambut | GIS | Surat | Data diterima (target) | Respons instansi |
 | 3 | Sosial | Desain stakeholder analysis & rencana FPIC (bersama LPHD menentukan proses & wakil) | Sosial | Rencana | Rencana FPIC | — |
 | 4 (10–16 Nov) | Legal | Finalisasi & tanda tangan PKS LPHD–SAMPAN (melalui musyawarah LPHD; diketahui Kades) | Direktur + LPHD | BA, PKS | **PKS** | Musyawarah |
 | 4 | Plan Vivo | Intro call (bila dijadwalkan); catat jawaban | PM | Notulen call | Memo klarifikasi | Plan Vivo |
@@ -67,7 +67,7 @@ Tujuan: **siap untuk submission PIN yang patuh**, bukan memaksa submission dalam
 | 6 | Otoritas | Kirim surat pemberitahuan ke Dinas LHK, KPH, BPSKL, Ditjen PS, unit NEK, Pemkab | Direktur | Tanda terima | Annex 5 (bagian) | PKS |
 | 7 (1–7 Des) | **Decision gate G1a** | Rapat keputusan jalur metodologi & batas Project Area (incl. Ps. 9 Permenhut) | PM + konsultan | Notulen | Keputusan metodologi | Minggu 5–6 |
 | 7 | FPIC | Distribusi materi informasi (Bahasa Indonesia, ringkas, risiko & manfaat) ≥2 minggu sebelum musyawarah | Sosial | Bukti distribusi | Materi FPIC | Rencana FPIC |
-| 8 (8–14 Des) | FPIC | FGD terpisah: perempuan, pemuda, nelayan/pengguna sumber daya, rentan | Sosial | Notulen, daftar hadir | Catatan FGD | Materi |
+| 8 (8–14 Des) | FPIC | FGD terpisah: perempuan, pemuda, pengguna sumber daya hutan, rentan | Sosial | Notulen, daftar hadir | Catatan FGD | Materi |
 | 9 (15–21 Des) | FPIC | **Musyawarah keputusan FPIC tahap (i)** | LPHD (pemimpin), SAMPAN (fasilitator) | BA, daftar hadir terpilah | **BA FPIC i** | FGD |
 | 9 | E&S | Workshop pengisian Annex 3 & Annex 4 (Section A–C) | Safeguard | Draf | Annex 3–4 v1 | — |
 | 10 (22–28 Des) | Penulisan | Drafting PIN v0.5 (bagian 1–2) | PM | Draf | PIN v0.5 | — |
@@ -81,7 +81,7 @@ Tujuan: **siap untuk submission PIN yang patuh**, bukan memaksa submission dalam
 3. Mulai registrasi SAMPAN sebagai mitra/pendamping teregistrasi.
 4. Peroleh SK Hutan Desa lengkap + peta + RKPS/RKT.
 5. Analisis tutupan lahan ≥10 tahun & uji PT002 ("effective community management").
-6. Klasifikasi mangrove/gambut/mineral & cek riwayat rehabilitasi.
+6. Klasifikasi gambut/tanah mineral & cek riwayat rehabilitasi.
 7. Intro call & klarifikasi tertulis dengan Plan Vivo.
 8. FPIC tahap (i) terdokumentasi.
 9. Notifikasi otoritas (Annex 5).
@@ -90,7 +90,7 @@ Tujuan: **siap untuk submission PIN yang patuh**, bukan memaksa submission dalam
 ### 25.2 Top 10 missing data categories
 1. Batas & luas areal Hutan Desa (SHP) dan luas Project Area eligible.
 2. Fungsi kawasan (HL/HP) & blok pengelolaan.
-3. Tipe ekosistem & tanah (mangrove/gambut/mineral).
+3. Tipe ekosistem & tanah (gambut/mineral; kedalaman gambut).
 4. Tutupan lahan historis & driver deforestasi/degradasi.
 5. Stok karbon per strata.
 6. Data demografi & livelihood rumah tangga.
@@ -102,7 +102,7 @@ Tujuan: **siap untuk submission PIN yang patuh**, bukan memaksa submission dalam
 ### 25.3 Top 10 risks to PIN readiness
 1. Areal tidak eligible (blok perlindungan HL) untuk perdagangan karbon nasional.
 2. PT002 tidak applicable (pengelolaan sudah efektif / tidak ada ancaman).
-3. Areal dominan mangrove sementara metodologi mangrove belum approved.
+3. Areal bergambut: emisi tanah gambut belum jelas perlakuannya & risiko kebakaran.
 4. Mandat LPHD belum jelas / konflik internal.
 5. SAMPAN belum teregistrasi sebagai pendamping/mitra.
 6. FPIC tahap (i) ditunda/ditolak.
@@ -202,7 +202,7 @@ Skor: 0 belum mulai · 1 dimulai · 2 sebagian besar siap · 3 siap/terbukti. **
 ### 29.1 Pertanyaan prioritas untuk Plan Vivo (belum terjawab oleh dokumen resmi)
 1. **Struktur Project Coordinator:** Apakah dapat diterima bila SAMPAN Kalimantan (NGO berbadan hukum) menjadi Project Coordinator atas mandat LPHD Pasir, dengan LPHD sebagai wakil kolektif Project Participants dan satu Project Agreement kolektif (selain/atau alih-alih perjanjian per rumah tangga)?
 2. **PT002 & Hutan Desa berizin:** Bagaimana Plan Vivo menilai pengecualian "baseline includes effective community management" untuk Hutan Desa yang memperoleh persetujuan pada 2019? Bukti apa yang diharapkan pada tahap PIN?
-3. **Mangrove:** Apakah PM001 + PU002 + PT002 dapat diterapkan untuk konservasi mangrove sekarang, atau proyek mangrove diharapkan menunggu Coastal Blue Carbon Methodology/Mangrove Conservation Module? Adakah perkiraan jadwal persetujuan?
+3. **Hutan rawa gambut (bila relevan):** Bila areal mencakup hutan rawa gambut, apakah PT002 dapat diterapkan dengan hanya mengkreditkan biomassa, dan bagaimana emisi tanah gambut (oksidasi/kebakaran) harus diperlakukan — dikecualikan secara konservatif atau wajib dikuantifikasi?
 4. **Gambut:** Bagaimana emisi dari tanah gambut diperlakukan bila areal mencakup gambut tetapi proyek tidak melakukan perubahan hidrologi?
 5. **Interaksi dengan regulasi Indonesia pasca-MRA:** Bagaimana Plan Vivo mengoperasionalkan persetujuan Menteri Kehutanan untuk penerbitan (Permenhut 6/2026 Pasal 24), pencatatan SRUK, dan PNBP — apakah PVC dibatalkan di PV Climate Registry, dicerminkan (*mirrored*), atau tetap di kedua registri? Adakah panduan tertulis untuk proponen Indonesia?
 6. **Microscale & IE di Indonesia:** Apakah IE Plan Vivo yang diakui memenuhi persyaratan Permenhut 6/2026 Pasal 43 (ahli perorangan terdaftar pada lembaga akreditasi internasional)? Apakah Plan Vivo memiliki roster IE berbasis Indonesia?
@@ -235,7 +235,7 @@ Skor: 0 belum mulai · 1 dimulai · 2 sebagian besar siap · 3 siap/terbukti. **
 >
 > 1. Whether SAMPAN Kalimantan may act as Project Coordinator under a written mandate from LPHD Pasir, with LPHD Pasir representing Project Participants collectively;
 > 2. How the PT002 applicability condition on "effective community management" in the baseline is assessed for Village Forests that already hold a management approval;
-> 3. The applicability of PM001/PU002/PT002 to mangrove areas, and the expected timeline for the Coastal Blue Carbon Methodology and mangrove modules currently in the pipeline;
+> 3. If the Project Area includes peat swamp forest (the area contains no mangrove), whether PT002 may be applied crediting biomass only, and how peat soil emissions are expected to be treated;
 > 4. How Plan Vivo is operationalising, following its Mutual Recognition Agreement with Indonesia's Ministry of Environment, the national requirements for Ministerial approval of issuance and recording in the national Carbon Unit Registry System (SRUK);
 > 5. The level of detail expected in the PIN for carbon benefit estimates while technical baselines are still being developed.
 >

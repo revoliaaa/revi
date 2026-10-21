@@ -18,7 +18,7 @@
 | **Project Area** | Initial Project Area of [DATA REQUIRED] ha within the Village Forest (Hutan Desa) working area granted under Decree SK.10885/MENLHK-PSKL/PKPS/PSL.0/2019 (total Hutan Desa area: [TO BE CONFIRMED] ha). Expansion plans: [DATA REQUIRED / none at this stage]. |
 | **Project Participants** | The Village Forest Management Institution (LPHD) Pasir, representing [DATA REQUIRED] households ([DATA REQUIRED] people) of Pasir Village who use land and natural resources in the Project Region for subsistence or small-scale production. |
 | **Project Intervention(s)** | 1. Protection — [community-based protection of the Village Forest against deforestation and forest degradation — TECHNICAL ASSESSMENT REQUIRED]. 2. Restoration — [assisted natural regeneration / planting of native species on degraded areas — TECHNICAL ASSESSMENT REQUIRED]. |
-| **Expected Benefits** | Carbon: [reduced emissions from avoided deforestation/degradation and/or removals from restoration — magnitude TECHNICAL ASSESSMENT REQUIRED]. Livelihood: [DATA REQUIRED — from participatory design]. Ecosystem: [DATA REQUIRED — e.g. habitat conservation, coastal protection if mangrove — TO BE CONFIRMED]. |
+| **Expected Benefits** | Carbon: [reduced emissions from avoided deforestation/degradation and/or removals from restoration — magnitude TECHNICAL ASSESSMENT REQUIRED]. Livelihood: [DATA REQUIRED — from participatory design]. Ecosystem: [DATA REQUIRED — e.g. habitat conservation, hydrological and peat protection if peat is present — TO BE CONFIRMED]. |
 | **Methodology** | [TECHNICAL ASSESSMENT REQUIRED] Candidate: PV Climate PM001 *Agriculture & Forestry Carbon Benefit Assessment Methodology* V1.0, with Module PU002 and Tool PT002 (*Estimation of carbon benefits from REDD in community managed forest*) for protection, and Module PU001 V1.1 for restoration, subject to confirmation of applicability conditions. |
 | **PIN Version** | 0.1 (draft) |
 | **Date Approved** | (leave blank) |
@@ -47,7 +47,7 @@
 | Location | Indonesia; West Kalimantan Province; Mempawah Regency; [Sub-district TO BE CONFIRMED]; Pasir Village |
 | Project Region(s) | 1 Project Region: [administrative area of Pasir Village — TO BE CONFIRMED], [DATA REQUIRED] ha |
 | Project Area(s) | [DATA REQUIRED] Project Area(s) totalling [DATA REQUIRED] ha within the Village Forest working area |
-| Protected Areas | [DATA REQUIRED — check national conservation areas, protection forest (Hutan Lindung) status, peat protection zones, coastal greenbelt] |
+| Protected Areas | [DATA REQUIRED — check national conservation areas, protection forest (Hutan Lindung) status, peat ecosystem protection function (KHG)] |
 
 ### 1.3 Land and Carbon Rights
 
@@ -65,11 +65,11 @@ Under Indonesian law, carbon is governed by Presidential Regulation No. 110/2025
 | Stakeholder group | Local / Secondary | Relationship to the project |
 |---|---|---|
 | LPHD Pasir (members and board) | Local | Holder of village forest management responsibilities; proposed representative of Project Participants |
-| Households of Pasir Village using forest/coastal resources | Local | Potential Project Participants; affected by resource-use rules |
+| Households of Pasir Village using forest resources | Local | Potential Project Participants; affected by resource-use rules |
 | Women's groups | Local | [DATA REQUIRED] |
 | Youth | Local | [DATA REQUIRED] |
 | Vulnerable households (landless, low-income) | Local | [DATA REQUIRED] |
-| [Fishers / pond farmers / fuelwood collectors — TO BE CONFIRMED] | Local | [DATA REQUIRED] |
+| [Fuelwood/NTFP collectors, smallholder farmers — TO BE CONFIRMED] | Local | [DATA REQUIRED] |
 | Pasir Village Government & Village Consultative Body (BPD) | Secondary [TO BE CONFIRMED — may be Local] | Village governance; establishment of LPHD |
 | Forest Management Unit (KPH) [name TO BE CONFIRMED] | Secondary | Site-level forest administration |
 | Social Forestry & Environmental Partnership Center (BPSKL) Kalimantan | Secondary | Social forestry facilitation & oversight |
@@ -126,7 +126,7 @@ Indigenous Peoples / local communities with statutory or customary rights in the
 [Per local stakeholder group — DATA REQUIRED.]
 
 ### 3.3 Ecosystem Baseline
-[Ecosystem types (mangrove / peat swamp / mineral-soil forest — TO BE CONFIRMED), habitat condition, species of conservation concern — DATA REQUIRED.]
+[Ecosystem types (peat swamp forest / mineral-soil forest — TO BE CONFIRMED; the Project Area contains no mangrove), habitat condition, species of conservation concern — DATA REQUIRED.]
 
 ### 3.4 Project Logic (Table 3.4)
 
@@ -138,7 +138,7 @@ Indigenous Peoples / local communities with statutory or customary rights in the
 | Ecosystem Benefit | [DATA REQUIRED] | |
 | Output 1 | Updated village forest management plan and LPHD governance | [risk/mitigation] |
 | Output 2 | Community patrol and monitoring system operational | [risk/mitigation, incl. safety of patrollers] |
-| Output 3 | [DATA REQUIRED] ha under restoration | [mortality, abrasion, tidal flooding — TO BE CONFIRMED] |
+| Output 3 | [DATA REQUIRED] ha under restoration | [seedling mortality, fire, flooding — TO BE CONFIRMED] |
 | Output 4 | [Livelihood enterprises — DATA REQUIRED] | |
 | Output 5 | Grievance mechanism and benefit-sharing system established | |
 
@@ -156,7 +156,7 @@ Indigenous Peoples / local communities with statutory or customary rights in the
 See Annex 4.
 
 ### 3.8 Double Counting
-[Overlap check: other GHG projects (Verra, Gold Standard, Plan Vivo, national registry), government programmes (FOLU Net Sink 2030, results-based payment programmes, mangrove rehabilitation programmes) — DATA REQUIRED.]
+[Overlap check: other GHG projects (Verra, Gold Standard, Plan Vivo, national registry), government programmes (FOLU Net Sink 2030, results-based payment programmes, forest and land rehabilitation (RHL) and peat restoration programmes) — DATA REQUIRED.]
 
 *Table 3.8* — [Complete with current regulations; see Vol. I Ch. 5 for the legal analysis.]
 

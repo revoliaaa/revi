@@ -32,6 +32,8 @@ Kode: **[CR]** Confirmed Requirement · **[RP]** Recommended Practice · **[PSA]
 | VAT | 20% untuk organisasi UK; organisasi internasional "typically exempt" | — | — | — | — | OCR untuk SAMPAN | CF |
 | Akun Project Coordinator di PV Climate Registry (S&P Global) | Tidak tercantum di dokumen Plan Vivo | — | — | Setelah registrasi | PC | Not Yet Confirmed | PM §6.2 |
 
+**Total fee Plan Vivo sampai registrasi [CR]:** microscale USD 6,000 (Rp107.580.000) = PIN 1,000 + PDD 3,000 + koordinasi V&V 2,000; macroscale USD 3,500 (Rp62.755.000) = PIN 1,000 + PDD 1,500 + koordinasi V&V 1,000. Per verifikasi berikutnya: USD 2,000 (Rp35.860.000) micro / USD 1,000 (Rp17.930.000) macro. Lihat juga Vol. II §9.6.
+
 ### 19.2 Biaya pihak ketiga & nasional
 
 | Komponen | Estimasi | Klasifikasi | Catatan |
@@ -178,7 +180,7 @@ Alokasi indikatif di atas **bukan** persentase wajib; ditetapkan melalui proses 
 | Otorisasi/CA ditolak/dibatasi | Kebutuhan NDC (Ps. 26) | Sedang | Tinggi untuk pembeli CA | Jual sebagai non-authorised; jangan janjikan CA |
 | Pembatalan CA setelah penjualan | Pelaporan negara | Rendah–Sedang | Tinggi | Alihkan risiko kontraktual; asuransi; tunggu konfirmasi (PM §15.7.1) |
 | Gagal serah forward | Underperformance, reversal | Sedang | Tinggi | Volume forward ≤ porsi konservatif; tanpa denda berat bagi komunitas |
-| Reversal (kebakaran, abrasi, konversi) | Faktor alam/manusia | Sedang | Tinggi | Mitigasi di project logic; buffer 20% |
+| Reversal (kebakaran, banjir/kekeringan, konversi) | Faktor alam/manusia | Sedang | Tinggi | Mitigasi di project logic; buffer 20% |
 | Harga rendah | Pasar sukarela | Sedang | Tinggi | Pembeli berbasis co-benefit; diversifikasi pendanaan |
 | Biaya > pendapatan | Skala kecil | Tinggi [PSA] | Tinggi | Microscale route; proyek gabungan; hibah |
 | Reputasi (klaim berlebihan) | Komunikasi | Rendah | Tinggi | Pakai status resmi (pipeline ≠ certified) |

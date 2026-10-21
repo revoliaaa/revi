@@ -47,7 +47,7 @@ Informasi yang **sudah dikonfirmasi** dalam penugasan ini hanya: nama lokasi, na
 | Hak kelola areal (Hutan Desa) | Partially Ready | SK 2019 tersedia sebagai referensi; salinan SK, peta areal kerja, dan masa berlaku belum diperiksa |
 | Hak atas manfaat karbon / penjualan PVC | Information Required + **[PRR]** | Lihat Bab 5 (Vol. I): hak karbon & otorisasi perdagangan diatur negara |
 | Batas Project Region / Project Area | Information Required | Belum ada peta digital/shapefile terverifikasi |
-| Kelas ekosistem (mangrove / gambut / mineral) | Information Required | Data publik menunjukkan Desa Pasir (Kec. Mempawah Hilir) memiliki kawasan mangrove (Mempawah Mangrove Park) — **belum dipastikan** apakah identik/beririsan dengan areal Hutan Desa |
+| Kelas ekosistem (gambut / tanah mineral) | Information Required | **Dikonfirmasi tim proyek (21/10/2026): tidak ada mangrove di Desa Pasir/areal Hutan Desa.** Yang perlu dipastikan: hutan rawa gambut atau hutan tanah mineral. Catatan: sumber publik menyebut "Mempawah Mangrove Park" di sebuah Desa Pasir, Kec. Mempawah Hilir — pastikan nama kecamatan & kode desa ditulis tepat di PIN agar reviewer tidak tertukar lokasi |
 | Intervensi & metodologi | Information Required | Lihat Bab 12 (Vol. III) |
 | Stakeholder analysis | Information Required (sedang berjalan) | Disebut "preliminary stakeholder identification" — belum ada dokumen |
 | FPIC tahap 1 ("consider the proposed project") | Information Required | Belum ada notulen/keputusan kolektif yang terdokumentasi |
@@ -138,7 +138,7 @@ Format setiap bagian: **Tujuan · Isi wajib · Data & bukti · Tingkat detail ·
 #### OVERVIEW
 - **Tujuan:** Ringkasan satu halaman yang dipakai reviewer dan dipublikasikan bila PIN disetujui (PM §2.2).
 - **Isi wajib [CR]:** Judul; lokasi (negara, kabupaten/provinsi); nama & kontak Project Coordinator; luas total Project Area (ha) pada awal + rencana ekspansi; ringkasan Project Participants (jumlah individu/rumah tangga) + rencana ekspansi; daftar intervensi dengan kategori **Protection / Restoration / Improved Management**; manfaat karbon, ekosistem, mata pencaharian; metodologi Plan Vivo yang disetujui (atau rencana pengembangan metodologi); versi PIN; tanggal disetujui (diisi setelah approval).
-- **Pendekatan Pasir:** Gunakan judul kerja "Pasir Village Forest Community Carbon Project". Lokasi: "Pasir Village, Mempawah Hilir Sub-district [TO BE CONFIRMED], Mempawah Regency, West Kalimantan Province, Indonesia". Methodology: tulis "PM001 (Agriculture & Forestry Carbon Benefit Assessment Methodology) V1.0 with Module PU002 and Tool PT002 [subject to applicability confirmation]" — **hanya jika** hasil skrining Bab 12 mengonfirmasi. Jika areal dominan mangrove, lihat opsi di Bab 12.
+- **Pendekatan Pasir:** Gunakan judul kerja "Pasir Village Forest Community Carbon Project". Lokasi: "Pasir Village, [Sub-district — TO BE CONFIRMED], Mempawah Regency, West Kalimantan Province, Indonesia". Methodology: tulis "PM001 (Agriculture & Forestry Carbon Benefit Assessment Methodology) V1.0 with Module PU002 and Tool PT002 [subject to applicability confirmation]" — **hanya jika** hasil skrining Bab 12 mengonfirmasi. Karena tidak ada mangrove, metodologi mangrove (pipeline) tidak relevan; isu yang tersisa adalah perlakuan tanah gambut bila areal bergambut (Bab 12).
 - **Boleh preliminary:** luas Project Area (sebutkan "indicative"), jumlah partisipan (estimasi), manfaat karbon (kualitatif atau orde besaran dengan disclaimer).
 - **Harus final:** identitas Project Coordinator, kategori intervensi, metodologi yang dirujuk harus berstatus *approved* (bukan pipeline).
 - **Kesalahan umum:** menyebut angka tCO2e yang presisi tanpa dasar; menyebut metodologi pipeline (mis. "Coastal Blue Carbon Methodology") seolah sudah disetujui; luas Hutan Desa (SK) dicampur dengan luas Project Area yang layak.
@@ -148,15 +148,15 @@ Format setiap bagian: **Tujuan · Isi wajib · Data & bukti · Tingkat detail ·
 - **Isi wajib [CR]:** Satu baris per intervensi: Intervention Type · Project Intervention (deskripsi) · Expected Benefits (iklim, livelihood, ekosistem). PR §1.1.2: manfaat livelihood **tidak boleh hanya** dari penjualan PVC atau upah kerja proyek.
 - **Pendekatan Pasir:** Kandidat intervensi (status **[PSA]**, wajib divalidasi dengan data):
   1. *Protection* — perlindungan hutan Hutan Desa dari deforestasi/degradasi (patroli partisipatif, penguatan RKHD/RKT, pencegahan kebakaran bila relevan).
-  2. *Restoration* — rehabilitasi areal terdegradasi melalui *assisted natural regeneration* / penanaman spesies asli (mangrove atau spesies hutan rawa/mineral sesuai tipe lahan).
+  2. *Restoration* — rehabilitasi areal terdegradasi melalui *assisted natural regeneration* / penanaman spesies asli hutan rawa gambut atau hutan tanah mineral sesuai tipe lahan.
   3. *Improved Management* — hanya jika ada praktik pengelolaan yang terukur karbonnya dengan metodologi yang disetujui.
-  Untuk manfaat livelihood non-karbon, identifikasi usaha HHBK/jasa lingkungan (mis. ekowisata mangrove, perikanan pesisir, madu kelulut) **berdasarkan hasil konsultasi**, bukan asumsi.
+  Untuk manfaat livelihood non-karbon, identifikasi usaha HHBK/jasa lingkungan (mis. madu kelulut, HHBK, agroforestri di luar kawasan, ekowisata hutan) **berdasarkan hasil konsultasi**, bukan asumsi.
 - **Kesalahan umum:** intervensi "pembangunan ekowisata" ditulis sebagai intervensi karbon; tidak menyebut kategori resmi.
 
 #### 1.2 Project Boundaries (peta + Table 1.2)
 - **Isi wajib [CR]:** Peta Project Region, Project Area(s), dan kawasan lindung di dalam/berbatasan; Table 1.2: lokasi, jumlah & luas Project Region, jumlah & luas Project Area, kawasan lindung yang ditetapkan secara hukum. PR §1.2.2: semua batas harus dipetakan. File geospasial di Annex 1 bersifat *optional* pada PIN (wajib pada PDD — KML dipublikasikan setelah registrasi, PM §4.4).
-- **Data:** Peta areal kerja dari SK Hutan Desa (lampiran SK), shapefile dari BPSKL Wilayah Kalimantan / Dinas LHK Kalbar / KPH setempat, peta kawasan hutan (SK penunjukan/penetapan kawasan Kalbar), peta KHG (Kesatuan Hidrologis Gambut), peta mangrove nasional, batas desa.
-- **Pendekatan Pasir:** Definisikan **Project Region** = wilayah administrasi Desa Pasir (+ area ekspansi potensial, mis. desa tetangga bila ada rencana), dan **Project Area** = bagian areal kerja Hutan Desa yang memenuhi syarat intervensi. Cek irisan dengan: Mempawah Mangrove Park, kawasan konservasi, izin lain (PBPH, HGU, tambak), program rehabilitasi pemerintah.
+- **Data:** Peta areal kerja dari SK Hutan Desa (lampiran SK), shapefile dari BPSKL Wilayah Kalimantan / Dinas LHK Kalbar / KPH setempat, peta kawasan hutan (SK penunjukan/penetapan kawasan Kalbar), peta KHG (Kesatuan Hidrologis Gambut) & kedalaman gambut, batas desa.
+- **Pendekatan Pasir:** Definisikan **Project Region** = wilayah administrasi Desa Pasir (+ area ekspansi potensial, mis. desa tetangga bila ada rencana), dan **Project Area** = bagian areal kerja Hutan Desa yang memenuhi syarat intervensi. Cek irisan dengan: kawasan konservasi, fungsi lindung ekosistem gambut, izin lain (PBPH, HGU, perkebunan), program rehabilitasi/restorasi gambut pemerintah.
 - **Harus final:** batas Project Region (karena semua Project Area masa depan harus berada di dalamnya — PR §1.2 Guidance).
 - **Kesalahan umum:** Project Region terlalu sempit sehingga ekspansi kelak memerlukan PDD update + validasi ulang (PM §10.1).
 
@@ -170,7 +170,7 @@ Format setiap bagian: **Tujuan · Isi wajib · Data & bukti · Tingkat detail ·
 
 #### 2.1 Stakeholder Identification
 - **Isi wajib [CR]:** Kelompok stakeholder utama, hubungan dengan proyek, kategori **Local** vs **Secondary** (definisi PR §2.1 Guidance). Identifikasi masyarakat adat/lokal dengan hak statutory/customary atas lahan/sumber daya di Project Area.
-- **Pendekatan Pasir:** Local: anggota LPHD; rumah tangga Desa Pasir pengguna sumber daya (nelayan pesisir, pencari kayu bakar/HHBK, petani/petambak di sekitar areal); kelompok perempuan; pemuda; kelompok rentan (rumah tangga miskin, tanpa lahan). Periksa keberadaan klaim komunitas adat (mis. Dayak/Melayu setempat) — **[TO BE CONFIRMED]**. Secondary: Pemerintah Desa Pasir & BPD; Kecamatan; Pemkab Mempawah (Bappeda, DLH, Dinas Perikanan); Dinas LHK Provinsi Kalbar; KPH wilayah setempat; BPSKL Kalimantan; Ditjen PS dan Ditjen PPI/unit pengelola NEK di kementerian; BPDAS; Pokja PPS Kalbar; pengelola Mempawah Mangrove Park (bila berbeda); LSM/akademisi lain.
+- **Pendekatan Pasir:** Local: anggota LPHD; rumah tangga Desa Pasir pengguna sumber daya (pencari kayu bakar/HHBK, petani/pekebun di sekitar areal, pengguna sumber air); kelompok perempuan; pemuda; kelompok rentan (rumah tangga miskin, tanpa lahan). Periksa keberadaan klaim komunitas adat (mis. Dayak/Melayu setempat) — **[TO BE CONFIRMED]**. Secondary: Pemerintah Desa Pasir & BPD; Kecamatan; Pemkab Mempawah (Bappeda, DLH, Dinas Perikanan); Dinas LHK Provinsi Kalbar; KPH wilayah setempat; BPSKL Kalimantan; Ditjen PS dan Ditjen PPI/unit pengelola NEK di kementerian; BPDAS; Pokja PPS Kalbar; pengelola Mempawah Mangrove Park (bila berbeda); LSM/akademisi lain.
 - **Kesalahan umum:** hanya mendaftar LPHD; tidak memisahkan kelompok perempuan/rentan; tidak menyebut konflik.
 
 #### 2.2 Project Coordination and Management (Table 2.2)
@@ -189,7 +189,7 @@ Format setiap bagian: **Tujuan · Isi wajib · Data & bukti · Tingkat detail ·
 
 #### 2.4 Participatory Design
 - **Isi wajib [CR]:** Proses partisipatif untuk merancang intervensi & project logic bersama perwakilan calon partisipan dan local stakeholders, termasuk langkah inklusi kelompok yang biasa terpinggirkan (gender, usia, etnis, agama, status sosial).
-- **Pendekatan Pasir:** Rencanakan rangkaian: (1) sosialisasi umum; (2) FGD terpisah perempuan, pemuda, nelayan, kelompok rentan; (3) pemetaan partisipatif (Participatory Toolkit Tool 9 Resource Mapping, Tool 10 Social Mapping, Tool 7 Historical Timeline); (4) analisis masalah & visioning (Tool 2, Tool 3); (5) lokakarya validasi desain. Pada tahap PIN cukup **rencana + bukti kegiatan yang sudah terjadi**.
+- **Pendekatan Pasir:** Rencanakan rangkaian: (1) sosialisasi umum; (2) FGD terpisah perempuan, pemuda, pengguna sumber daya hutan, kelompok rentan; (3) pemetaan partisipatif (Participatory Toolkit Tool 9 Resource Mapping, Tool 10 Social Mapping, Tool 7 Historical Timeline); (4) analisis masalah & visioning (Tool 2, Tool 3); (5) lokakarya validasi desain. Pada tahap PIN cukup **rencana + bukti kegiatan yang sudah terjadi**.
 - **Kesalahan umum:** menulis "the community was consulted" tanpa tanggal, jumlah peserta terpilah gender, dan hasil.
 
 #### 2.5 FPIC Process
@@ -199,7 +199,7 @@ Format setiap bagian: **Tujuan · Isi wajib · Data & bukti · Tingkat detail ·
 
 #### 3.1 Baseline Scenario
 - **Isi wajib [CR]:** Perkiraan penggunaan & pengelolaan lahan masa depan **tanpa** intervensi.
-- **Pendekatan Pasir:** Gunakan analisis tutupan lahan historis (min. 10 tahun; Landsat/Sentinel; data KLHK/MapBiomas Indonesia/Global Forest Watch) + driver deforestasi/degradasi (abrasi, konversi ke tambak/kebun, penebangan kayu bakar/arang, kebakaran gambut bila relevan). **Isu kritis [CR]:** Tool PT002 (REDD in community managed forest) **tidak dapat dipakai** bila baseline mencakup "effective community management" atau deforestasi terencana yang terdokumentasi. Karena Hutan Desa Pasir sudah memiliki persetujuan sejak 2019, baseline harus menunjukkan secara kredibel apakah pengelolaan LPHD saat ini **efektif atau tidak** dalam mencegah kehilangan hutan — dengan data, bukan narasi.
+- **Pendekatan Pasir:** Gunakan analisis tutupan lahan historis (min. 10 tahun; Landsat/Sentinel; data KLHK/MapBiomas Indonesia/Global Forest Watch) + driver deforestasi/degradasi (konversi ke kebun/ladang, penebangan kayu/arang, kebakaran hutan & lahan — terutama bila bergambut, drainase/kanal di sekitar). **Isu kritis [CR]:** Tool PT002 (REDD in community managed forest) **tidak dapat dipakai** bila baseline mencakup "effective community management" atau deforestasi terencana yang terdokumentasi. Karena Hutan Desa Pasir sudah memiliki persetujuan sejak 2019, baseline harus menunjukkan secara kredibel apakah pengelolaan LPHD saat ini **efektif atau tidak** dalam mencegah kehilangan hutan — dengan data, bukan narasi.
 - **Boleh preliminary:** narasi kualitatif dengan data indikatif; **harus final di PDD** mengikuti metodologi.
 
 #### 3.2 Livelihood Baseline
@@ -208,7 +208,7 @@ Format setiap bagian: **Tujuan · Isi wajib · Data & bukti · Tingkat detail ·
 
 #### 3.3 Ecosystem Baseline
 - **Isi wajib [CR]:** Kondisi ekologi per Project Region & perubahan tanpa proyek; ekosistem & habitat utama; spesies yang menjadi perhatian konservasi (IUCN Red List, satwa dilindungi PermenLHK P.106/2018).
-- **Pendekatan Pasir:** Gunakan literatur yang ada (mis. kajian struktur komunitas mangrove Mempawah Mangrove Park di Desa Pasir — jurnal IPB 2019 melaporkan kerapatan kategori sedang) **hanya jika** lokasinya terbukti beririsan dengan areal Hutan Desa. Lengkapi dengan survei cepat vegetasi & satwa.
+- **Pendekatan Pasir:** Gunakan literatur ekologi hutan rawa gambut/hutan tanah mineral Kalimantan Barat dan data KPH/BKSDA bila ada; literatur tentang mangrove di "Desa Pasir" lain **tidak** relevan. Lengkapi dengan survei cepat vegetasi & satwa.
 
 #### 3.4 Project Logic (Table 3.4)
 - **Isi wajib [CR]:** Aim (masalah); Outcomes (Carbon, Livelihood, Ecosystem Benefit + asumsi); Outputs (deskripsi + risiko & mitigasi).
@@ -217,7 +217,7 @@ Format setiap bagian: **Tujuan · Isi wajib · Data & bukti · Tingkat detail ·
 #### 3.5 Additionality (Table 3.5 Initial Barrier Analysis)
 - **Isi wajib [CR]:** Per intervensi: hambatan utama (finansial/ekonomi, teknis, kelembagaan, sosial/budaya, lainnya) dan aktivitas untuk mengatasinya. Nama intervensi **harus sesuai** judul Technical Specification di PDD.
 - **Isu khusus Pasir [CR + PRR]:** PR §3.7.3 mewajibkan **Regulatory Surplus** di PDD: kewajiban hukum pemegang Persetujuan PS untuk melindungi hutan (kewajiban dalam SK/peraturan PS) dapat dianggap membuat perlindungan "sudah diwajibkan". Argumen harus menunjukkan intervensi melampaui kewajiban hukum **atau** kewajiban tersebut tidak efektif ditegakkan/didanai. Siapkan sejak PIN.
-- **Isu tambahan:** Bila areal pernah menerima program rehabilitasi pemerintah (mis. penanaman mangrove BPDAS), restorasi tersebut **tidak additional** dan tidak boleh diklaim.
+- **Isu tambahan:** Bila areal pernah menerima program rehabilitasi pemerintah (mis. RHL oleh BPDAS atau restorasi gambut), restorasi tersebut **tidak additional** dan tidak boleh diklaim.
 
 #### 3.6 Exclusion List (Annex 3)
 - **Isi wajib [CR]:** Nyatakan apakah proyek mungkin mencakup aktivitas pada Exclusion List; isi lengkap 27 butir Ya/Tidak di Annex 3. PR §3.9.2: proyek tidak boleh mencakup aktivitas yang dikecualikan.
@@ -225,7 +225,7 @@ Format setiap bagian: **Tujuan · Isi wajib · Data & bukti · Tingkat detail ·
 
 #### 3.7 Environmental and Social Screening (Annex 4)
 - **Isi wajib [CR]:** Jawaban Project Coordinator pada kuesioner Annex 4: Section A (informasi proyek), Section B (14 topik risiko: Vulnerable Groups; Gender equality; Human Rights; Community Health, Safety & Security; Labour; Resource efficiency/pollution; Access restrictions & livelihoods; Cultural heritage; Indigenous Peoples; Biodiversity; Land tenure conflicts; Climate change; Digital tool use; Other/cumulative), Section C (safeguard provisions: stakeholder engagement PR 2.1.1–2.1.3; consultation 2.5.1–2.5.2; FPIC 2.6.1–2.6.4; GRM).
-- **Pendekatan Pasir:** Isi dengan jujur, termasuk "still to be completed" bila memang belum. Risiko yang kemungkinan relevan **[PSA]**: pembatasan akses (pengambilan kayu bakar/bakau, tambak), konflik batas/tenurial, keamanan patroli, risiko iklim pesisir (abrasi, rob), data digital (drone/foto patroli).
+- **Pendekatan Pasir:** Isi dengan jujur, termasuk "still to be completed" bila memang belum. Risiko yang kemungkinan relevan **[PSA]**: pembatasan akses (pengambilan kayu/HHBK, pembukaan kebun), konflik batas/tenurial, keamanan patroli, kebakaran hutan/lahan (terutama bila bergambut), banjir/kekeringan, data digital (drone/foto patroli).
 
 #### 3.8 Double Counting (Table 3.8)
 - **Isi wajib [CR]:** Identifikasi proyek/program/inisiatif GRK yang tumpang tindih (termasuk program nasional/yurisdiksi & NDC) dan jelaskan mengapa tidak ada potensi kredit ganda; Table 3.8 (5 pertanyaan: registri nasional, definisi hak karbon, regulasi harga karbon, RBP bilateral/multilateral, regulasi lain).
@@ -255,9 +255,9 @@ Format setiap bagian: **Tujuan · Isi wajib · Data & bukti · Tingkat detail ·
 | Legal – kelembagaan | Perdes/SK Kades pembentukan LPHD; SK pengurus LPHD terbaru; AD/ART | Pemdes Pasir, LPHD | Permintaan resmi | LPHD – Ketua | PIN | Tinggi |
 | Legal – hak kelola | SK.10885/MENLHK-PSKL/PKPS/PSL.0/2019 + lampiran peta + luas | LPHD, BPSKL, go-kegiatan PS | Salinan resmi + cek SINAV/akses PS | SAMPAN Legal | PIN | Tinggi |
 | Legal – rencana kelola | RKHD/RKPS & RKT; laporan kinerja PS; hasil evaluasi | LPHD, KPH, Dinas LHK | Pengumpulan dokumen | LPHD + SAMPAN | PIN (bila ada) / PDD | Tinggi |
-| Spasial | Batas areal Hutan Desa (SHP), batas desa, kawasan hutan, KHG gambut, peta mangrove, izin lain | BPSKL, Dinas LHK, BIG, KLHK/Kemenhut geoportal | Permintaan data + unduhan | SAMPAN GIS | PIN (peta), PDD (final) | Tinggi |
+| Spasial | Batas areal Hutan Desa (SHP), batas desa, kawasan hutan, KHG & kedalaman gambut, izin lain | BPSKL, Dinas LHK, BIG, KLHK/Kemenhut geoportal | Permintaan data + unduhan | SAMPAN GIS | PIN (peta), PDD (final) | Tinggi |
 | Spasial – historis | Tutupan lahan ≥10 th (idealnya 10–15 th) | Landsat/Sentinel, peta PL KLHK, MapBiomas, GFW | Analisis citra | Konsultan GIS | PIN (indikatif), PDD (wajib, sesuai PT002/PM001) | Tinggi |
-| Ekologi | Tipe ekosistem, tanah (mineral/gambut/mangrove), kedalaman gambut | Peta KHG, survei lapangan, literatur | Desk + ground check | Konsultan ekologi | PIN (indikatif) | Tinggi |
+| Ekologi | Tipe ekosistem, tanah (mineral/gambut), kedalaman gambut | Peta KHG, survei lapangan, literatur | Desk + ground check | Konsultan ekologi | PIN (indikatif) | Tinggi |
 | Karbon | Stok karbon per strata (literatur/IPCC/FREL) | IPCC, FREL Indonesia, studi lokal | Desk review | Konsultan karbon | PIN (orde besaran) | Sedang |
 | Karbon | Inventarisasi plot | Lapangan | Plot sampling sesuai metodologi | Konsultan karbon + LPHD | PDD | Tinggi (PDD) |
 | Sosial | Jumlah KK/jiwa, mata pencaharian, kelompok rentan | Profil desa, BPS | Desk + survei cepat | SAMPAN Sosial | PIN | Tinggi |
@@ -381,10 +381,45 @@ flowchart TD
 
 **Bukti keberhasilan masuk pipeline** yang harus diarsipkan: (a) PIN review report final yang menyatakan approval; (b) email konfirmasi Plan Vivo; (c) tangkapan layar/arsip laman pipeline yang memuat proyek dan file "approved_pin". **Status pipeline bukan sertifikasi, bukan registrasi, dan tidak menghasilkan PVC.** Proyek pipeline tidak boleh mengklaim "Plan Vivo certified".
 
-### 9.6 Biaya pada tahap PIN [CR]
-- Fee PIN review: **USD 1,000** (≈ Rp17,93 juta pada kurs perencanaan Rp17.930/USD — lihat Vol. IV Bab 19 untuk dasar kurs).
-- VAT: 20% hanya disebut untuk organisasi UK; untuk SAMPAN **[OCR]**.
-- Biaya transfer bank internasional & selisih kurs: ditanggung pengirim **[PSA]**.
+### 9.6 Biaya Plan Vivo sesuai ketentuan resmi (USD & IDR) [CR]
+
+Sumber: *PV Climate – Costs & Fees* (PDF resmi Plan Vivo, diakses 20/10/2026) dan Procedures Manual V3.9 (§2.2, §4.1, §5.1, §7, §8). Kurs perencanaan **Rp17.930/USD** (JISDOR 13/10/2026, sumber sekunder; nilai JISDOR yang lebih baru tidak ditemukan per 21/10/2026). Konversi IDR **bukan** bagian ketentuan Plan Vivo; tagihan resmi dalam USD. Perbarui kurs pada hari pembayaran.
+
+**A. Fee per tahap (proyek penerbit PVC)**
+
+| Tahap | Komponen fee | Kapan dibayar | USD | IDR |
+|---|---|---|---|---|
+| PIN | PIN review (semua proyek) | Saat submission PIN | 1,000 | 17.930.000 |
+| PIN | PIN review tambahan (gagal setelah 3 putaran, tidak resubmit ≤6 bulan, atau pipeline kedaluwarsa 3 tahun) | Bila terjadi | 1,000 | 17.930.000 |
+| PDD | PDD review — macroscale (≥10.000 tCO2e/th) | Saat submission PDD | 1,500 | 26.895.000 |
+| PDD | PDD review — microscale (<10.000 tCO2e/th) | Saat submission PDD | 3,000 | 53.790.000 |
+| Validasi | Koordinasi Validation & Verification — macroscale | Saat submission PDD untuk validasi | 1,000 | 17.930.000 |
+| Validasi | Koordinasi Validation & Verification — microscale | Saat submission PDD untuk validasi | 2,000 | 35.860.000 |
+| PDD | Review Technical Specification tambahan | Bila menambah tech spec | 500 | 8.965.000 |
+| PDD | Update PDD/Tech Spec | Bila update | Variabel | — |
+| Verifikasi | Koordinasi verifikasi — macroscale / microscale | Setiap verifikasi (≤5 th) | 1,000 / 2,000 | 17.930.000 / 35.860.000 |
+| Pelaporan | Annual Report | Tahunan | 0 | 0 |
+| Pelaporan | Denda Annual Report terlambat >12 bulan | Bila terlambat | 100 | 1.793.000 |
+| Issuance | Per PVC, ≤50.000 PVC/proyek/tahun | Saat issuance | 0.40/PVC | 7.172/PVC |
+| Issuance | Per PVC, >50.000 PVC/proyek/tahun | Saat issuance | 0.35/PVC | 6.276/PVC (dibulatkan) |
+| Issuance | Konversi fPVC/rPVC → vPVC | — | 0 | 0 |
+| Metodologi (bila perlu) | Review concept note | Saat submit concept note | 350 | 6.275.500 |
+| Metodologi (bila perlu) | Asesmen metodologi (di luar biaya panel) | Saat submit metodologi | Variabel | — |
+| Auditor | Registrasi VVB / Independent Expert di Plan Vivo | Bila auditor belum terdaftar | 500 / 100 | 8.965.000 / 1.793.000 |
+| Reseller (opsional) | Akun reseller di PV Climate Registry | Sekali + tahunan | 800 + 800/th | 14.344.000 + 14.344.000/th |
+
+Catatan resmi: semua fee "subject to VAT (20% for UK organisations); international organisations are typically exempt" → status VAT untuk SAMPAN **[OCR]**. Biaya VVB/IE, perjalanan auditor, audit keuangan, PNBP karbon Indonesia, dan pajak **tidak** termasuk.
+
+**B. Total fee Plan Vivo sampai registrasi (tanpa biaya auditor)**
+
+| Jalur | Komponen | USD | IDR |
+|---|---|---|---|
+| Microscale (IE) | PIN 1,000 + PDD review 3,000 + koordinasi V&V 2,000 | **6,000** | **107.580.000** |
+| Macroscale (VVB) | PIN 1,000 + PDD review 1,500 + koordinasi V&V 1,000 | **3,500** | **62.755.000** |
+
+**C. Ilustrasi fee issuance** (bukan proyeksi Pasir): 5.000 PVC × USD 0.40 = USD 2,000 (Rp35.860.000); 10.000 PVC × USD 0.40 = USD 4,000 (Rp71.720.000).
+
+Catatan: microscale membayar fee Plan Vivo lebih tinggi karena Plan Vivo melakukan validasi/verifikasi bersama IE; biaya auditor pihak ketiga biasanya lebih rendah dibanding VVB — bandingkan total biaya setelah penawaran IE/VVB diperoleh **[PSA]**.
 
 ### 9.7 Risiko utama di tahap submission
 - Resubmission melewati 6 bulan → fee baru.
@@ -399,7 +434,7 @@ PIN **hanya** diajukan bila seluruh butir berikut terpenuhi:
 2. Mandat tertulis LPHD Pasir (dan bila perlu Pemerintah Desa) untuk pengembangan proyek oleh/bersama SAMPAN.
 3. Salinan SK Hutan Desa + peta areal kerja + konfirmasi masih berlaku.
 4. Peta Project Region & Project Area indikatif (SHP/KML) dengan cek tumpang tindih.
-5. Klasifikasi ekosistem indikatif (mangrove/gambut/mineral) & analisis tutupan lahan indikatif ≥10 tahun.
+5. Klasifikasi ekosistem indikatif (gambut/mineral) & analisis tutupan lahan indikatif ≥10 tahun.
 6. Jalur metodologi approved yang **lolos uji applicability awal** (Bab 12), atau keputusan sadar untuk menempuh pengembangan metodologi (dengan implikasi biaya/waktu).
 7. Stakeholder analysis tertulis + identifikasi kelompok adat/rentan + catatan konflik.
 8. Bukti keputusan FPIC tahap (i) "consider the proposed project".
@@ -410,6 +445,26 @@ PIN **hanya** diajukan bila seluruh butir berikut terpenuhi:
 13. QA internal lulus & BA persetujuan LPHD.
 
 ---
+
+### 9.9 Target PIN Hutan Desa Pasir (usulan target kerja — perlu disepakati SAMPAN & LPHD) [PSA]
+
+Durasi review berasal dari Procedures Manual V3.9 §9 (indikatif, belum termasuk waktu respons proyek). Tanggal adalah **target perencanaan**, bukan komitmen Plan Vivo.
+
+| No | Milestone | Target tanggal | Dasar / syarat |
+|---|---|---|---|
+| T1 | PKS LPHD–SAMPAN ditandatangani; Project Coordinator ditetapkan | 16 Nov 2026 | Rencana 90 hari minggu 4 |
+| T2 | Fungsi kawasan & blok, peta areal kerja, klasifikasi gambut/mineral terkonfirmasi | 7 Des 2026 | Gate G1a |
+| T3 | Keputusan FPIC tahap (i) terdokumentasi; Annex 3–5 terisi | 21 Des 2026 | Minggu 9 |
+| T4 | Draf PIN v0.9 + QA internal | 11 Jan 2027 | Minggu 12 |
+| T5 | Rapat go/no-go submission | 18 Jan 2027 | 13 kriteria §9.8 |
+| **T6** | **Submission PIN ke Plan Vivo + bayar USD 1,000 (Rp17.930.000)** | **Target 31 Mar 2027** (paling cepat Feb 2027; paling lambat 30 Apr 2027) | Semua kriteria §9.8 terpenuhi; persetujuan LPHD |
+| T7 | PIN review report pertama | ± pertengahan Mei 2027 | Review awal ±6 minggu |
+| T8 | Respons NIR/CAR putaran 1 | ≤ 4 minggu setelah T7 (batas resmi 6 bulan) | Target internal |
+| T9 | Review respons | ± pertengahan Juli 2027 | ±4 minggu per putaran |
+| **T10** | **PIN approved → masuk project pipeline** | **Target Juli–September 2027** (1–2 putaran) | Semua CAR ditutup; maks. 3 putaran |
+| T11 | Batas akhir submission PDD | 3 tahun setelah T10 (≈ Q3 2030) | PM §2.2 |
+
+Target fee tahap PIN: **USD 1,000 = Rp17.930.000** (ditambah biaya transfer bank). Cadangkan satu fee PIN review tambahan (USD 1,000 = Rp17.930.000) sebagai kontinjensi bila terjadi lebih dari 3 putaran atau keterlambatan resubmission.
 
 ## Bab 10 — Project Pipeline Entry and Status Verification
 

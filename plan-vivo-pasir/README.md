@@ -29,7 +29,9 @@ Placeholder: **[DATA REQUIRED]**, **[TO BE CONFIRMED]**, **[TECHNICAL ASSESSMENT
 
 ### Jawaban singkat empat keputusan
 
-1. **Siap submit PIN?** Belum. Siap mulai menyusun. Target realistis submission: Feb–Apr 2027.
+1. **Siap submit PIN?** Belum. Siap mulai menyusun. **Target submission 31 Maret 2027** (rentang Feb–Apr 2027); target PIN approved Juli–Sep 2027 (Vol. II §9.9).
+   **Fee Plan Vivo:** PIN USD 1,000 (Rp17.930.000); total sampai registrasi USD 6,000 (Rp107.580.000) microscale / USD 3,500 (Rp62.755.000) macroscale, di luar biaya auditor (Vol. II §9.6). Kurs Rp17.930/USD.
+   **Ekosistem:** Desa Pasir tidak memiliki mangrove (dikonfirmasi tim proyek); pertanyaan terbuka: gambut atau tanah mineral.
 2. **Yang harus diselesaikan:** 13 kriteria (Vol. II §9.8), terutama mandat & Project Coordinator, fungsi kawasan/blok (Permenhut 6/2026 Ps. 9), uji metodologi PT002, FPIC tahap (i), Annex 3–5.
 3. **Masuk pipeline:** PIN disetujui Plan Vivo = otomatis masuk project pipeline (PM V3.9 §2.2); tidak ada aplikasi terpisah; berlaku 3 tahun untuk PDD; bukan sertifikasi.
 4. **PIN → penjualan:** PDD → validasi → registrasi → registry → Annual Report/verifikasi → issuance, **plus** jalur nasional: DPP oleh pendamping teregistrasi → persetujuan Menhut → SRUK → PNBP → (Otorisasi & CA bila diperlukan).

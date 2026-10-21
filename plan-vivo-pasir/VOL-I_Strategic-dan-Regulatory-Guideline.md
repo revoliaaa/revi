@@ -13,19 +13,19 @@ Kode klasifikasi: **[CR]** Confirmed Requirement · **[RP]** Recommended Practic
 
 | Keputusan | Jawaban singkat |
 |---|---|
-| **1. Apakah kita siap menyusun dan mengajukan PIN?** | **Siap mulai menyusun; belum siap mengajukan.** Per 20/10/2026 belum ada bukti terverifikasi untuk: Project Coordinator & mandat tertulis LPHD, peta Project Area, klasifikasi ekosistem, fungsi kawasan (HL/HP) dan blok/zona areal, kecocokan metodologi, keputusan FPIC tahap (i), skrining E&S, dan notifikasi otoritas. Target realistis pengajuan PIN: **Februari–April 2027** (skenario realistis, Vol. V Bab 24). |
+| **1. Apakah kita siap menyusun dan mengajukan PIN?** | **Siap mulai menyusun; belum siap mengajukan.** Per 20/10/2026 belum ada bukti terverifikasi untuk: Project Coordinator & mandat tertulis LPHD, peta Project Area, klasifikasi ekosistem, fungsi kawasan (HL/HP) dan blok/zona areal, kecocokan metodologi, keputusan FPIC tahap (i), skrining E&S, dan notifikasi otoritas. **Target PIN:** submission **31 Maret 2027** (rentang Feb–Apr 2027), PIN approved/masuk pipeline **Juli–September 2027** (Vol. II §9.9). Fee PIN review **USD 1,000 = Rp17.930.000**. |
 | **2. Apa yang harus diselesaikan sebelum submit?** | 13 kriteria kesiapan (Vol. II §9.8). Lima yang paling kritis: (a) mandat LPHD–SAMPAN & penetapan Project Coordinator; (b) **fungsi kawasan dan blok/zona areal Hutan Desa** (penentu kelayakan perdagangan karbon menurut Permenhut 6/2026 Pasal 9); (c) analisis tutupan lahan ≥10 th untuk menguji jalur metodologi PT002; (d) FPIC tahap (i); (e) Annex 3–5 PIN. |
 | **3. Proses resmi masuk project pipeline?** | **PIN approved = masuk project pipeline** (Procedures Manual V3.9 §2.2). Tidak ada aplikasi pipeline terpisah. Jalur: email PIN (template V1.4) ke projects@planvivofoundation.org + fee USD 1,000 → PIN review report (≈6 minggu) → revisi ≤6 bulan, maks. 3 putaran → approval → PIN dipublikasikan di planvivo.org/pipeline. Pipeline berlaku 3 tahun untuk mengajukan PDD. Pipeline **bukan** registrasi/sertifikasi dan tidak menghasilkan PVC. |
 | **4. Langkah dari PIN sampai penjualan?** | PDD (template V5.7, metodologi **approved**) → screening → konsultasi publik 4 minggu → review → validasi (VVB; atau IE bila <10.000 tCO2e/th) → MoU & registrasi → akun PV Climate Registry (S&P Global) → Annual Report → rPVC/vPVC → verifikasi ≤5 th. **Paralel di Indonesia (Permenhut 6/2026):** pencatatan DPP oleh mitra/pendamping **teregistrasi** → validasi/verifikasi → **persetujuan Menteri Kehutanan** untuk penerbitan non-SPE GRK oleh standar internasional (berlaku 6 bulan) → pencatatan di **SRUK** → PNBP per transaksi → bila dijual untuk NDC negara lain/CORSIA/kewajiban internasional: rekomendasi Menhut + **Otorisasi & Corresponding Adjustment** Menteri LH. |
 
 ### 1.2 Temuan paling penting
 
-1. **[CR]** Fee resmi Plan Vivo (PDF *PV Climate – Costs & Fees*): PIN review USD 1,000; PDD review USD 1,500 (macroscale) / USD 3,000 (microscale); koordinasi Validasi & Verifikasi USD 1,000 (macro) / USD 2,000 (micro); issuance USD 0,40/PVC (≤50.000/th). Biaya VVB/IE di luar fee tersebut.
+1. **[CR]** Fee resmi Plan Vivo (PDF *PV Climate – Costs & Fees*; kurs Rp17.930/USD): PIN review USD 1,000 (Rp17.930.000); PDD review USD 1,500 (Rp26.895.000) macroscale / USD 3,000 (Rp53.790.000) microscale; koordinasi Validasi & Verifikasi USD 1,000 (Rp17.930.000) macro / USD 2,000 (Rp35.860.000) micro; issuance USD 0.40/PVC (Rp7.172) untuk ≤50.000 PVC/th. **Total fee Plan Vivo sampai registrasi: USD 6,000 (Rp107.580.000) microscale atau USD 3,500 (Rp62.755.000) macroscale**, belum termasuk biaya VVB/IE. Rincian: Vol. II §9.6.
 2. **[CR]** Protection (REDD) **hanya** dapat menghasilkan rPVC/vPVC; fPVC (ex-ante) hanya untuk intervensi removal (restorasi). Implikasi: arus kas karbon untuk komponen perlindungan baru muncul setelah registrasi dan monitoring.
 3. **[CR+PSA]** Jalur metodologi approved yang paling relevan: **PM001 + PU002 + PT002** (REDD di hutan yang dikelola masyarakat). PT002 **tidak dapat dipakai** bila baseline mencakup *effective community management* — isu serius bagi Hutan Desa yang sudah berizin sejak 2019.
-4. **[CR]** Metodologi mangrove (Coastal Blue Carbon PM00X, Mangrove Conservation PU00A, Simplified Mangrove Restoration PU00B) **masih pipeline** — belum boleh dipakai. Restorasi/rewetting gambut tidak punya jalur karena PM001 melarang aktivitas yang memengaruhi muka air tanah.
+4. **[CR]** Desa Pasir **tidak memiliki mangrove** (dikonfirmasi tim proyek 21/10/2026), sehingga proyek tidak bergantung pada metodologi mangrove yang masih pipeline. Pertanyaan ekosistem yang tersisa: **gambut atau tanah mineral**. Restorasi/rewetting gambut tidak punya jalur karena PM001 melarang aktivitas yang memengaruhi muka air tanah; perlindungan hutan rawa gambut dapat dikreditkan untuk biomassa, sedangkan perlakuan emisi tanah gambut perlu klarifikasi.
 5. **[CR — teks resmi]** **Perpres 110/2025** (10/10/2025) mencabut Perpres 98/2021; **Permenhut 6/2026** (diundangkan 13/04/2026) mencabut Permen LHK 7/2023 dan mengatur jalur unit non-SPE GRK dari standar internasional.
-6. **[PRR]** Permenhut 6/2026 Pasal 9 ayat (1) huruf a: karbon yang dapat diperdagangkan dari kawasan hutan negara dibatasi pada **hutan produksi** dan **blok pemanfaatan hutan lindung** yang telah dibebani persetujuan. Jika sebagian/seluruh Hutan Desa Pasir berada di blok perlindungan hutan lindung (umum pada sabuk hijau mangrove), kelayakan perdagangan untuk areal itu **harus diklarifikasi** ke Kementerian Kehutanan, meskipun Permen LHK 9/2021 Pasal 121 membolehkan kegiatan penyerapan/penyimpanan karbon di blok perlindungan.
+6. **[PRR]** Permenhut 6/2026 Pasal 9 ayat (1) huruf a: karbon yang dapat diperdagangkan dari kawasan hutan negara dibatasi pada **hutan produksi** dan **blok pemanfaatan hutan lindung** yang telah dibebani persetujuan. Jika sebagian/seluruh Hutan Desa Pasir berada di blok perlindungan hutan lindung (perlu dicek pada SK & RKPS), kelayakan perdagangan untuk areal itu **harus diklarifikasi** ke Kementerian Kehutanan, meskipun Permen LHK 9/2021 Pasal 121 membolehkan kegiatan penyerapan/penyimpanan karbon di blok perlindungan.
 7. **[CR — teks resmi]** Permenhut 6/2026 Pasal 6(2): pemegang Persetujuan Perhutanan Sosial **wajib didampingi mitra atau pendamping yang teregistrasi**; Pasal 13(1)(b): DRAM/DPP **disusun oleh mitra/pendamping teregistrasi**. Ini mengukuhkan peran SAMPAN — **dengan syarat SAMPAN teregistrasi**.
 8. **[CR — sumber resmi Plan Vivo & KLH]** Plan Vivo dan Kementerian LH menandatangani **Mutual Recognition Agreement** (diumumkan 17/09/2025) yang mengakui PV Climate. Proyek Plan Vivo **Bujang Raba** (Hutan Desa, Jambi, KKI Warsi) termasuk empat proyek pertama yang memperoleh persetujuan Menteri Kehutanan (6/07/2026) dan masuk SRUK (diluncurkan 9/07/2026). Ini preseden kuat bahwa jalur Hutan Desa–Plan Vivo dapat berfungsi.
 9. **[CR]** Dua PIN Hutan Desa Indonesia telah *approved* Plan Vivo: Lemo Nakai (KKI Warsi; PIN V3.0, 24/07/2024) dan Mane, Pidie (CFES & F&F; PIN V5.1, 28/05/2025) — menunjukkan beberapa putaran revisi wajar terjadi.
@@ -33,7 +33,7 @@ Kode klasifikasi: **[CR]** Confirmed Requirement · **[RP]** Recommended Practic
 ### 1.3 Rekomendasi inti (90 hari)
 1. Tandatangani PKS LPHD–SAMPAN dan tetapkan Project Coordinator (rekomendasi kerja: SAMPAN, atas mandat LPHD) — **sekaligus** proses registrasi SAMPAN sebagai mitra/pendamping teregistrasi.
 2. Peroleh salinan SK Hutan Desa + peta + **fungsi kawasan & blok/zona** (RKHD/RKPS).
-3. Lakukan analisis tutupan lahan & reference region (uji PT002) dan klasifikasi mangrove/gambut.
+3. Lakukan analisis tutupan lahan & reference region (uji PT002) dan klasifikasi gambut/tanah mineral.
 4. Kirim email permintaan *introductory call* ke Plan Vivo (draf di Vol. V Bab 29).
 5. Laksanakan FPIC tahap (i) dengan dokumentasi lengkap.
 6. Susun PIN paralel; ajukan hanya bila 13 kriteria terpenuhi.
@@ -111,7 +111,7 @@ flowchart LR
 
 **(4) PDD Template V5.7** — lihat Vol. III Bab 15 (17 annex).
 
-**(5) Methodology Requirements V1.2** — relevan hanya bila tidak ada metodologi approved yang cocok (mis. mangrove/gambut); concept note USD 350 dahulu.
+**(5) Methodology Requirements V1.2** — relevan hanya bila tidak ada metodologi approved yang cocok (mis. restorasi hidrologi gambut); concept note USD 350 dahulu.
 
 **(6) V&V Requirements V1.1 & Procedures Manual V1.4** — VVB/IE harus disetujui Plan Vivo; audit plan disetujui sebelum site visit; maks 3 FAR.
 
@@ -144,7 +144,7 @@ Status: **Confirmed Compliant / Partially Ready / Information Required / Potenti
 | Stakeholder Engagement Plan | PR 2.5.1 | — | Information Required | SEP | Draf | Sedang |
 | FPIC 3 tahap; tahap (i) | PR 2.6; PIN Annex 4 §C | Persiapan | Information Required | BA tahap (i) | Musyawarah | **Kritis** |
 | Baseline sesuai metodologi approved | PR 3.1–3.2 | — | Information Required | Analisis tutupan | GIS | Tinggi |
-| Metodologi approved applicable | PR 3.2 Guidance; PM §3 | PT002 kandidat | Information Required | Uji "effective community management", mangrove | Analisis + tanya Plan Vivo | **Kritis** |
+| Metodologi approved applicable | PR 3.2 Guidance; PM §3 | PT002 kandidat | Information Required | Uji "effective community management"; perlakuan tanah gambut | Analisis + tanya Plan Vivo | **Kritis** |
 | Additionality & Regulatory Surplus | PR 3.7 | — | Information Required / **[PRR]** | Kewajiban hukum pemegang PS | Kajian hukum | Tinggi |
 | Tidak ada konversi ekosistem alami 10 th (restorasi) | PR 3.8, 3.9.13 Guidance | — | Information Required | Citra historis | GIS | Tinggi |
 | Exclusion List | PR 3.9.2 | — | Information Required | Annex 3 | Isi | Sedang |
@@ -155,7 +155,7 @@ Status: **Confirmed Compliant / Partially Ready / Information Required / Potenti
 | Audit keuangan tahunan | PR 5.5.2 | — | Not Applicable s.d. ada pendapatan (siapkan) | Anggaran audit | Rencana | Rendah |
 | Rencana keuangan | PR 5.4; PIN 4.3 | — | Information Required | Anggaran | Susun | Sedang |
 
-**Isu kelayakan kritis yang perlu klarifikasi dini dengan Plan Vivo:** (1) penerimaan struktur PC (SAMPAN) + LPHD sebagai wakil partisipan; (2) penerapan PT002 pada Hutan Desa berizin sejak 2019 dan pada mangrove; (3) cara Plan Vivo memperlakukan persyaratan nasional (persetujuan Menhut, SRUK, PNBP, kemungkinan pembatalan/pemindahan unit ke registri nasional) dalam PIN/PDD; (4) implikasi MRA KLH–Plan Vivo terhadap proyek baru.
+**Isu kelayakan kritis yang perlu klarifikasi dini dengan Plan Vivo:** (1) penerimaan struktur PC (SAMPAN) + LPHD sebagai wakil partisipan; (2) penerapan PT002 pada Hutan Desa berizin sejak 2019 dan perlakuan emisi tanah gambut; (3) cara Plan Vivo memperlakukan persyaratan nasional (persetujuan Menhut, SRUK, PNBP, kemungkinan pembatalan/pemindahan unit ke registri nasional) dalam PIN/PDD; (4) implikasi MRA KLH–Plan Vivo terhadap proyek baru.
 
 ---
 
