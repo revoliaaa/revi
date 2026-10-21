@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<title>Ringkasan Hutan Desa Pasir</title>
+<style>
+@page { size: A4; margin: 0; }
+:root{
+  --ink:#1c2826; --mute:#5b6b67; --line:#d5dedb; --paper:#fbfaf6;
+  --forest:#1d5c4a; --forest2:#2f7a63; --leaf:#dcebe4; --sand:#efe6d2;
+  --clay:#b5532f; --clayl:#f6e2d8; --amber:#c88a12; --amberl:#f8edd2; --sea:#2b6c8f; --seal:#dcebf3;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--paper);color:var(--ink);font-family:Carlito,"Liberation Sans",sans-serif;font-size:9.4pt;line-height:1.38}
+.page{width:210mm;height:297mm;padding:13mm 13mm 11mm;position:relative;overflow:hidden;break-after:page;background:var(--paper)}
+.page:last-child{break-after:auto}
+h1,h2,h3{font-family:Caladea,"Liberation Serif",serif;margin:0;font-weight:700;letter-spacing:-.01em}
+.mono{font-family:"JetBrains Mono",monospace}
+.kicker{font-size:7.6pt;letter-spacing:.14em;text-transform:uppercase;color:var(--forest);font-weight:700}
+.foot{position:absolute;left:13mm;right:13mm;bottom:7mm;display:flex;justify-content:space-between;font-size:6.8pt;color:var(--mute);border-top:1px solid var(--line);padding-top:3px}
+.sec{font-family:Caladea,serif;font-size:12.5pt;color:var(--forest);margin:0 0 5px;display:flex;align-items:center;gap:6px}
+.sec .n{font-family:"JetBrains Mono",monospace;font-size:8pt;color:#fff;background:var(--forest);border-radius:3px;padding:1px 5px}
+.tag{display:inline-block;font-size:6.8pt;font-weight:700;padding:1px 5px;border-radius:3px;letter-spacing:.04em}
+.t-cr{background:var(--leaf);color:var(--forest)}
+.t-prr{background:var(--clayl);color:var(--clay)}
+.t-ocr{background:var(--amberl);color:#8a5d00}
+.t-psa{background:var(--seal);color:var(--sea)}
+
+/* PAGE 1 */
+.hero{display:grid;grid-template-columns:1.55fr 1fr;gap:10mm;align-items:end;border-bottom:2px solid var(--forest);padding-bottom:5mm}
+.hero h1{font-size:25pt;line-height:1.05;margin-top:3px}
+.hero .sub{color:var(--mute);margin-top:4px;font-size:9.6pt}
+.verdict{background:var(--forest);color:#fff;border-radius:6px;padding:9px 11px}
+.verdict .l{font-size:7pt;letter-spacing:.14em;text-transform:uppercase;opacity:.8}
+.verdict .v{font-family:Caladea,serif;font-size:15pt;line-height:1.1;margin:3px 0 4px}
+.verdict .d{font-size:8.3pt;opacity:.95}
+.meter{display:flex;gap:3px;margin-top:6px}
+.meter i{flex:1;height:6px;border-radius:2px;background:rgba(255,255,255,.25)}
+.meter i.on{background:#bfe3d3}
+.q4{display:grid;grid-template-columns:1fr 1fr;gap:4mm;margin-top:5mm}
+.q{border:1px solid var(--line);border-radius:6px;padding:7px 9px;background:#fff}
+.q .qn{font-family:"JetBrains Mono",monospace;font-size:7.5pt;color:var(--forest);font-weight:700}
+.q h3{font-size:10.6pt;margin:1px 0 3px}
+.q p{margin:0}
+.q .ans{font-weight:700;color:var(--forest)}
+.find{margin-top:5mm;display:grid;grid-template-columns:1fr 1fr;gap:3mm 5mm}
+.f{display:grid;grid-template-columns:20px 1fr;gap:6px;align-items:start}
+.f .ix{font-family:Caladea,serif;font-size:15pt;color:var(--clay);line-height:1}
+.f b{display:block;font-size:9.2pt}
+.f span{color:#33423f;font-size:8.4pt}
+.recs{margin-top:5mm;background:var(--sand);border-radius:6px;padding:8px 10px}
+.recs ol{margin:4px 0 0 16px;padding:0;columns:2;column-gap:8mm;font-size:8.6pt}
+.recs li{margin-bottom:2px;break-inside:avoid}
+
+/* PAGE 2 */
+.track{position:relative;margin-top:4mm}
+.lane{display:grid;grid-template-columns:28mm 1fr;gap:4mm;align-items:stretch;margin-bottom:3mm}
+.lane .lab{border-radius:6px;padding:7px;color:#fff;font-weight:700;font-size:8.6pt;display:flex;flex-direction:column;justify-content:center}
+.lane .lab small{font-weight:400;opacity:.85;font-size:7.2pt}
+.steps{display:flex;gap:2px}
+.st{flex:1;position:relative;padding:6px 6px 6px 10px;font-size:7.6pt;line-height:1.25;color:var(--ink);min-height:23mm;clip-path:polygon(0 0,calc(100% - 7px) 0,100% 50%,calc(100% - 7px) 100%,0 100%,7px 50%)}
+.st:first-child{clip-path:polygon(0 0,calc(100% - 7px) 0,100% 50%,calc(100% - 7px) 100%,0 100%);padding-left:7px}
+.st b{display:block;font-size:8.3pt;margin-bottom:2px}
+.st .du{font-family:"JetBrains Mono",monospace;font-size:6.8pt;color:var(--mute);display:block;margin-top:3px}
+.pv .lab{background:var(--forest)} .pv .st{background:var(--leaf)} .pv .st.gate{background:#b9d9cb}
+.id .lab{background:var(--clay)} .id .st{background:var(--clayl)}
+.cm .lab{background:var(--sea)} .cm .st{background:var(--seal)}
+.st.off{background:transparent!important;color:var(--mute)}
+.pipe{margin-top:5mm;display:grid;grid-template-columns:1.25fr 1fr;gap:6mm}
+.box{border:1px solid var(--line);border-radius:6px;background:#fff;padding:8px 10px}
+.flow{display:flex;flex-direction:column;gap:3px;margin-top:4px}
+.fl{display:grid;grid-template-columns:16mm 1fr;gap:6px;align-items:center}
+.fl .k{font-family:"JetBrains Mono",monospace;font-size:7pt;color:#fff;background:var(--forest2);border-radius:3px;padding:2px 4px;text-align:center}
+.fl.g .k{background:var(--clay)}
+.fl.win .k{background:var(--forest)}
+.fl div:last-child{font-size:8.2pt}
+.cmp{width:100%;border-collapse:collapse;font-size:7.8pt;margin-top:4px}
+.cmp td,.cmp th{border-bottom:1px solid var(--line);padding:3px 4px;text-align:left;vertical-align:top}
+.cmp th{font-size:7pt;letter-spacing:.06em;text-transform:uppercase;color:var(--mute)}
+.yes{color:var(--forest);font-weight:700}.no{color:var(--clay);font-weight:700}
+.gantt{margin-top:5mm}
+.gw{display:grid;grid-template-columns:24mm repeat(6,1fr);font-size:7.2pt}
+.gw .hd{font-family:"JetBrains Mono",monospace;color:var(--mute);border-left:1px solid var(--line);padding-left:3px}
+.grow{display:grid;grid-template-columns:24mm 1fr;align-items:center;margin-top:3px}
+.grow .nm{font-weight:700;font-size:8pt}
+.bar{position:relative;height:15px;background:repeating-linear-gradient(90deg,transparent 0,transparent calc(100%/6 - 1px),var(--line) calc(100%/6 - 1px),var(--line) calc(100%/6))}
+.seg{position:absolute;top:2px;height:11px;border-radius:2px;font-size:6.3pt;color:#fff;padding-left:3px;line-height:11px;white-space:nowrap;overflow:hidden}
+.s1{background:#8aa39b}.s2{background:var(--forest2)}.s3{background:var(--sea)}.s4{background:var(--forest)}.s5{background:var(--clay)}
+
+/* PAGE 3 */
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:3mm;margin-top:3mm}
+.kpi{border-top:3px solid var(--forest);background:#fff;padding:6px 7px;border-radius:0 0 5px 5px}
+.kpi .v{font-family:Caladea,serif;font-size:17pt;line-height:1;color:var(--forest)}
+.kpi .v small{font-size:9pt}
+.kpi .l{font-size:7.6pt;color:#33423f;margin-top:3px}
+.kpi.c{border-top-color:var(--clay)} .kpi.c .v{color:var(--clay)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:6mm;margin-top:4mm}
+.fee{display:grid;grid-template-columns:30mm 1fr 20mm;gap:4px;align-items:center;font-size:7.8pt;margin:3px 0}
+.fee .b{height:9px;background:var(--forest2);border-radius:2px}
+.fee .b.m{background:var(--sea)}
+.fee .x{font-family:"JetBrains Mono",monospace;font-size:7.2pt;text-align:right}
+.wf{display:flex;align-items:flex-end;gap:5px;height:34mm;margin-top:6px;border-bottom:1px solid var(--line)}
+.wf .c{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%}
+.wf .c .col{width:100%;border-radius:2px 2px 0 0;position:relative}
+.wf .c .num{font-family:"JetBrains Mono",monospace;font-size:7pt;margin-bottom:2px}
+.wfl{display:flex;gap:5px;font-size:6.8pt;color:var(--mute);margin-top:2px}
+.wfl div{flex:1;text-align:center;line-height:1.15}
+.ninety{margin-top:4mm}
+.wk{display:grid;grid-template-columns:repeat(13,1fr);gap:2px;margin-top:4px}
+.wk div{font-family:"JetBrains Mono",monospace;font-size:6.4pt;text-align:center;color:var(--mute)}
+.ms{display:grid;grid-template-columns:repeat(13,1fr);gap:2px;margin-top:2px}
+.ms div{height:17mm;border-radius:3px;padding:3px;font-size:6.6pt;line-height:1.15;background:var(--leaf)}
+.ms div.g{background:var(--forest);color:#fff;font-weight:700}
+.ms div.e{background:transparent}
+.risk{display:grid;grid-template-columns:1fr 1fr;gap:6mm;margin-top:5mm}
+.rk{display:grid;grid-template-columns:14px 1fr;gap:5px;margin:3px 0;font-size:8pt}
+.dot{width:10px;height:10px;border-radius:50%;margin-top:2px}
+.hi{background:var(--clay)}.md{background:var(--amber)}.lo{background:var(--forest2)}
+.meth{font-size:7.8pt;width:100%;border-collapse:collapse}
+.meth td{padding:3px 4px;border-bottom:1px solid var(--line);vertical-align:top}
+.pill{display:inline-block;font-size:6.6pt;font-weight:700;padding:1px 5px;border-radius:8px;white-space:nowrap}
+.ok{background:var(--leaf);color:var(--forest)}.wait{background:var(--amberl);color:#8a5d00}.none{background:var(--clayl);color:var(--clay)}
+.note{font-size:6.9pt;color:var(--mute);margin-top:3px}
+</style>
+</head>
+<body>
+
+<!-- ================= PAGE 1 ================= -->
+<section class="page">
+  <div class="hero">
+    <div>
+      <div class="kicker">Ringkasan eksekutif · Plan Vivo PV Climate</div>
+      <h1>Pasir Village Forest<br>Community Carbon Project</h1>
+      <div class="sub">Hutan Desa Pasir, Kab. Mempawah, Kalimantan Barat · LPHD Pasir (SK.10885/MENLHK-PSKL/PKPS/PSL.0/2019) · Fasilitator: SAMPAN Kalimantan · Acuan riset 20 Oktober 2026</div>
+    </div>
+    <div class="verdict">
+      <div class="l">Status kesiapan PIN</div>
+      <div class="v">Siap menyusun.<br>Belum siap mengajukan.</div>
+      <div class="d">Target realistis pengajuan PIN: <b>Feb–Apr 2027</b>, setelah 13 kriteria kesiapan terpenuhi.</div>
+      <div class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      <div class="d" style="font-size:7pt;opacity:.8;margin-top:2px">≈3 dari 13 kriteria sebagian berjalan; belum ada yang terbukti lengkap</div>
+    </div>
+  </div>
+
+  <div class="q4">
+    <div class="q"><div class="qn">KEPUTUSAN 1</div><h3>Siap mengajukan PIN?</h3>
+      <p><span class="ans">Belum.</span> Belum ada bukti terverifikasi untuk Project Coordinator & mandat LPHD, peta Project Area, fungsi kawasan & blok, kecocokan metodologi, FPIC tahap (i), skrining E&S, dan notifikasi otoritas.</p></div>
+    <div class="q"><div class="qn">KEPUTUSAN 2</div><h3>Apa yang harus selesai dulu?</h3>
+      <p>13 kriteria (Vol. II §9.8). Paling kritis: <b>mandat & PC</b> · <b>fungsi kawasan/blok</b> (Permenhut 6/2026 Ps. 9) · <b>uji metodologi PT002</b> · <b>FPIC tahap (i)</b> · <b>Annex 3–5</b>.</p></div>
+    <div class="q"><div class="qn">KEPUTUSAN 3</div><h3>Bagaimana masuk project pipeline?</h3>
+      <p><span class="ans">PIN disetujui = otomatis masuk pipeline.</span> Email ke projects@planvivofoundation.org + fee USD 1,000 → review ±6 minggu → revisi ≤6 bulan, maks 3 putaran. Berlaku 3 tahun untuk PDD. <b>Bukan</b> sertifikasi.</p></div>
+    <div class="q"><div class="qn">KEPUTUSAN 4</div><h3>Dari PIN sampai penjualan?</h3>
+      <p>PDD → validasi → registrasi → registry → laporan/verifikasi → issuance, <b>ditambah</b> jalur nasional: DPP oleh pendamping teregistrasi → persetujuan Menhut → SRUK → PNBP → Otorisasi & CA bila diperlukan.</p></div>
+  </div>
+
+  <div class="sec" style="margin-top:6mm"><span class="n">!</span>Temuan yang mengubah rencana</div>
+  <div class="find">
+    <div class="f"><div class="ix">1</div><div><b>Potensi show-stopper hukum <span class="tag t-prr">PRR</span></b><span>Permenhut 6/2026 Ps. 9(1)(a) hanya menyebut hutan produksi & <i>blok pemanfaatan</i> hutan lindung. Bila Hutan Desa Pasir di blok perlindungan HL (umum di sabuk mangrove), perlu klarifikasi Kemenhut.</span></div></div>
+    <div class="f"><div class="ix">2</div><div><b>Risiko metodologi <span class="tag t-cr">CR</span> <span class="tag t-psa">PSA</span></b><span>Jalur approved PM001 + PU002 + PT002 tidak boleh dipakai bila baseline sudah berisi "effective community management" — isu nyata bagi Hutan Desa berizin sejak 2019.</span></div></div>
+    <div class="f"><div class="ix">3</div><div><b>Mangrove & gambut belum punya jalur penuh <span class="tag t-cr">CR</span></b><span>Metodologi & modul mangrove masih <i>pipeline</i>. Rewetting gambut tidak ada jalur: PM001 melarang aktivitas yang mengubah muka air tanah.</span></div></div>
+    <div class="f"><div class="ix">4</div><div><b>Tidak ada kredit ex-ante untuk perlindungan <span class="tag t-cr">CR</span></b><span>Protection hanya menghasilkan rPVC/vPVC. fPVC (di muka) hanya untuk restorasi. Arus kas karbon muncul setelah registrasi & monitoring.</span></div></div>
+    <div class="f"><div class="ix">5</div><div><b>Peran SAMPAN dikukuhkan, bersyarat <span class="tag t-cr">CR</span></b><span>Pemegang PS wajib didampingi mitra/pendamping <i>teregistrasi</i> yang menyusun DPP (Permenhut 6/2026 Ps. 6(2), 13). Fasilitasi ≠ hak menjual kredit.</span></div></div>
+    <div class="f"><div class="ix">6</div><div><b>Preseden positif <span class="tag t-cr">CR</span></b><span>MRA KLH–Plan Vivo (Sept 2025). Proyek Hutan Desa Plan Vivo Bujang Raba disetujui Menhut & masuk SRUK (Juli 2026). PIN Hutan Desa Lemo Nakai & Mane telah approved.</span></div></div>
+  </div>
+
+  <div class="recs">
+    <div class="sec" style="margin:0"><span class="n">→</span>Rekomendasi segera</div>
+    <ol>
+      <li>Tandatangani PKS LPHD–SAMPAN; tetapkan Project Coordinator.</li>
+      <li>Pastikan fungsi kawasan & blok areal Hutan Desa.</li>
+      <li>Mulai registrasi SAMPAN sebagai pendamping/mitra teregistrasi.</li>
+      <li>Analisis tutupan lahan ≥10 th; uji applicability PT002.</li>
+      <li>Klasifikasi mangrove/gambut/mineral; cek riwayat rehabilitasi.</li>
+      <li>Minta introductory call dengan Plan Vivo (draf email tersedia).</li>
+      <li>Laksanakan & dokumentasikan FPIC tahap (i).</li>
+      <li>Kirim surat pemberitahuan ke otoritas (Annex 5).</li>
+      <li>Susun PIN paralel; QA internal sebelum submit.</li>
+      <li>Komunikasi akurat: "pipeline" ≠ "certified".</li>
+    </ol>
+  </div>
+
+  <div class="foot"><span>Ringkasan dari Master Guideline Plan Vivo PV Climate — Hutan Desa Pasir (Vol. I–V). Bukan opini hukum; disusun dengan bantuan AI, wajib diverifikasi.</span><span>1 / 3</span></div>
+</section>
+
+<!-- ================= PAGE 2 ================= -->
+<section class="page">
+  <div class="kicker">Infografis 1 · Jalur dua lintasan</div>
+  <h2 style="font-size:19pt;margin-top:2px">Dari persiapan ke penjualan: Plan Vivo <i>dan</i> negara harus sama-sama hijau</h2>
+  <div style="color:var(--mute);margin-top:3px">Sertifikasi Plan Vivo saja tidak cukup. Setiap unit yang dijual memerlukan langkah paralel menurut Perpres 110/2025 dan Permenhut 6/2026.</div>
+
+  <div class="track">
+    <div class="lane pv"><div class="lab">Plan Vivo<small>PV Climate</small></div>
+      <div class="steps">
+        <div class="st"><b>Pre-PIN</b>Mandat, data spasial, FPIC (i), Annex 3–5<span class="du">Okt 2026 →</span></div>
+        <div class="st gate"><b>PIN</b>Template V1.4, email + USD 1,000<span class="du">review ±6 mgg</span></div>
+        <div class="st gate"><b>Pipeline</b>PIN approved & publik<span class="du">≤3 th ke PDD</span></div>
+        <div class="st"><b>PDD</b>Template V5.7, metodologi approved<span class="du">screening 6 mgg</span></div>
+        <div class="st"><b>Konsultasi + review</b>Publik 4 mgg, review 8 mgg<span class="du">resmi</span></div>
+        <div class="st gate"><b>Validasi → Registrasi</b>VVB/IE, MoU, sertifikat<span class="du">≤3 th sejak PDD</span></div>
+        <div class="st"><b>Annual Report</b>rPVC; verifikasi ≤5 th → vPVC<span class="du">review 4+2 mgg</span></div>
+      </div></div>
+    <div class="lane id"><div class="lab">Indonesia<small>Perpres 110/2025 · Permenhut 6/2026</small></div>
+      <div class="steps">
+        <div class="st"><b>Kelayakan areal</b>Fungsi & blok (Ps. 9); registrasi pendamping (Ps. 6)<span class="du">segera</span></div>
+        <div class="st"><b>Notifikasi</b>Dinas, KPH, BPSKL, Ditjen PS, unit NEK</div>
+        <div class="st off"></div>
+        <div class="st"><b>Catat DPP</b>Disusun pendamping teregistrasi (Ps. 13, 20)<span class="du">cek 5 + 14 hari kerja</span></div>
+        <div class="st"><b>SRN PPI</b>Pencatatan aksi mitigasi (Perpres Ps. 87)</div>
+        <div class="st"><b>Lapor validasi</b>ke sistem kementerian (Ps. 22)</div>
+        <div class="st"><b>Persetujuan Menhut</b>penerbitan non-SPE GRK (Ps. 24)<span class="du">berlaku 6 bulan</span></div>
+      </div></div>
+    <div class="lane cm"><div class="lab">Pasar<small>registry & transaksi</small></div>
+      <div class="steps">
+        <div class="st"><b>LoI saja</b>tidak mengikat</div>
+        <div class="st off"></div>
+        <div class="st"><b>Pre-financing / ERPA bersyarat</b>persetujuan musyawarah</div>
+        <div class="st off"></div>
+        <div class="st off"></div>
+        <div class="st"><b>Akun registry</b>S&P Global (KYC)</div>
+        <div class="st"><b>Issuance + SRUK + PNBP</b>Otorisasi & CA hanya bila klaim NDC/CORSIA</div>
+      </div></div>
+  </div>
+
+  <div class="pipe">
+    <div class="box">
+      <div class="sec"><span class="n">SOP</span>Masuk project pipeline (Procedures Manual V3.9 §2.2)</div>
+      <div class="flow">
+        <div class="fl"><div class="k">opsional</div><div>Intro call via projects@planvivofoundation.org — tidak wajib, dianjurkan</div></div>
+        <div class="fl g"><div class="k">GATE G1</div><div>13 kriteria kesiapan terpenuhi</div></div>
+        <div class="fl"><div class="k">submit</div><div>PIN Bahasa Inggris + Annex 1–6, bayar <b>USD 1,000</b> (≈ Rp17,9 jt)</div></div>
+        <div class="fl"><div class="k">±6 mgg</div><div>PIN review report: kelayakan, NIR, CAR (oleh Plan Vivo; E&S reviewer isi Section D)</div></div>
+        <div class="fl"><div class="k">≤6 bln</div><div>Revisi; tiap respons direview ±4 mgg; <b>maks 3 putaran</b> — lewat: fee baru atau ditolak</div></div>
+        <div class="fl win"><div class="k">APPROVED</div><div><b>Masuk project pipeline</b> + PIN dipublikasikan di planvivo.org/pipeline. Tidak ada aplikasi pipeline terpisah.</div></div>
+        <div class="fl g"><div class="k">3 tahun</div><div>PDD wajib diajukan; bila tidak, keluar dari pipeline</div></div>
+      </div>
+    </div>
+    <div class="box">
+      <div class="sec"><span class="n">≠</span>Status yang sering tertukar</div>
+      <table class="cmp">
+        <tr><th>Status</th><th>Formal?</th><th>Hasilkan unit?</th></tr>
+        <tr><td>Inquiry / intro call</td><td class="no">Tidak</td><td class="no">Tidak</td></tr>
+        <tr><td>Pre-screening terpisah</td><td class="no">Tidak ada</td><td>—</td></tr>
+        <tr><td>PIN approved = pipeline</td><td class="yes">Ya</td><td class="no">Tidak</td></tr>
+        <tr><td>Methodology pipeline</td><td>Untuk metodologi</td><td class="no">Tidak boleh dipakai</td></tr>
+        <tr><td>Validated</td><td class="yes">Ya</td><td>fPVC (restorasi saja)</td></tr>
+        <tr><td>Registered / Certified</td><td class="yes">Ya (MoU)</td><td class="no">Belum otomatis</td></tr>
+        <tr><td>Akun registry</td><td>Bukan status sertifikasi</td><td>Wadah unit</td></tr>
+        <tr><td>Issued (rPVC / vPVC)</td><td class="yes">Ya</td><td class="yes">Ya</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="gantt box" style="margin-top:5mm">
+    <div class="sec"><span class="n">⏱</span>Tiga skenario waktu <span class="tag t-psa" style="margin-left:4px">asumsi perencanaan</span></div>
+    <div class="gw"><div></div><div class="hd">2027</div><div class="hd">2028</div><div class="hd">2029</div><div class="hd">2030</div><div class="hd">2031</div><div class="hd">2032</div></div>
+    <div class="grow"><div class="nm">Optimistis</div><div class="bar">
+      <span class="seg s1" style="left:0;width:4%">PIN</span><span class="seg s2" style="left:4%;width:12%">pipeline→PDD</span><span class="seg s3" style="left:16%;width:7%">validasi</span><span class="seg s4" style="left:23%;width:20%">monitoring → rPVC</span><span class="seg s5" style="left:43%;width:14%">penjualan</span></div></div>
+    <div class="grow"><div class="nm">Realistis</div><div class="bar">
+      <span class="seg s1" style="left:3%;width:9%">PIN</span><span class="seg s2" style="left:12%;width:16%">PDD</span><span class="seg s3" style="left:28%;width:10%">validasi</span><span class="seg s4" style="left:38%;width:21%">monitoring → rPVC</span><span class="seg s5" style="left:59%;width:14%">penjualan</span></div></div>
+    <div class="grow"><div class="nm">Konservatif</div><div class="bar">
+      <span class="seg s1" style="left:8%;width:14%">PIN</span><span class="seg s2" style="left:22%;width:30%">tunggu metodologi + PDD</span><span class="seg s3" style="left:52%;width:16%">validasi</span><span class="seg s4" style="left:68%;width:20%">monitoring</span><span class="seg s5" style="left:88%;width:12%">jual</span></div></div>
+    <div class="note">Durasi resmi Plan Vivo hanya mencakup waktu review; waktu respons proyek, ketersediaan auditor, dan proses nasional adalah asumsi. Critical path: mandat → fungsi kawasan → metodologi → FPIC → PIN → PDD → validasi → persetujuan Menhut.</div>
+  </div>
+
+  <div class="foot"><span>Sumber: PV Climate Procedures Manual V3.9; Project Requirements V5.7; Perpres 110/2025; Permenhut 6/2026.</span><span>2 / 3</span></div>
+</section>
+
+<!-- ================= PAGE 3 ================= -->
+<section class="page">
+  <div class="kicker">Infografis 2 · Angka, kredit, 90 hari, risiko</div>
+  <h2 style="font-size:19pt;margin-top:2px">Angka yang harus dipegang tim sebelum berjanji kepada warga</h2>
+
+  <div class="kpis">
+    <div class="kpi"><div class="v">≥60<small>%</small></div><div class="l">pendapatan PVC neto (setelah pungutan negara) langsung untuk partisipan & local stakeholders</div></div>
+    <div class="kpi"><div class="v">20<small>%</small></div><div class="l">setiap vPVC masuk Risk Buffer; +10% Achievement Reserve untuk rPVC/fPVC</div></div>
+    <div class="kpi"><div class="v">10.000</div><div class="l">tCO2e/th: batas microscale (Independent Expert) vs macroscale (wajib VVB)</div></div>
+    <div class="kpi c"><div class="v">6 <small>bln</small></div><div class="l">masa berlaku persetujuan Menhut untuk penerbitan unit (Permenhut 6/2026 Ps. 24)</div></div>
+    <div class="kpi"><div class="v">10–50 <small>th</small></div><div class="l">Crediting Period; risiko reversal dikelola ≥50 tahun</div></div>
+    <div class="kpi"><div class="v">≤5 <small>th</small></div><div class="l">siklus verifikasi; Annual Report tiap 12 bulan tanpa putus</div></div>
+    <div class="kpi"><div class="v">≤40<small>%</small></div><div class="l">pedoman biaya koordinasi, manajemen & MRV dari pendapatan PVC</div></div>
+    <div class="kpi c"><div class="v">5 <small>th</small></div><div class="l">batas maksimal start date sebelum validasi selesai</div></div>
+  </div>
+
+  <div class="two">
+    <div class="box">
+      <div class="sec"><span class="n">USD</span>Fee resmi Plan Vivo (penerbit PVC)</div>
+      <div class="fee"><div>PIN review</div><div class="b" style="width:33%"></div><div class="x">1,000</div></div>
+      <div class="fee"><div>PDD review — macro</div><div class="b" style="width:50%"></div><div class="x">1,500</div></div>
+      <div class="fee"><div>PDD review — micro</div><div class="b m" style="width:100%"></div><div class="x">3,000</div></div>
+      <div class="fee"><div>Koordinasi V&V — macro</div><div class="b" style="width:33%"></div><div class="x">1,000</div></div>
+      <div class="fee"><div>Koordinasi V&V — micro</div><div class="b m" style="width:67%"></div><div class="x">2,000</div></div>
+      <div class="fee"><div>Tech spec tambahan</div><div class="b" style="width:17%"></div><div class="x">500</div></div>
+      <div class="fee"><div>Concept note metodologi</div><div class="b" style="width:12%"></div><div class="x">350</div></div>
+      <div class="fee"><div>Issuance per PVC</div><div style="font-size:7.4pt;color:var(--mute)">≤50.000/th · &gt;50.000/th</div><div class="x">0.40 · 0.35</div></div>
+      <div class="note">Sumber: PV Climate – Costs & Fees. Biaya VVB/IE, audit KAP, PNBP & pajak di luar fee ini. Kurs perencanaan Rp17.930/USD (JISDOR 13/10/2026, sumber sekunder — verifikasi di BI). Hijau = macro, biru = micro.</div>
+    </div>
+    <div class="box">
+      <div class="sec"><span class="n">PVC</span>Dari 1.000 tCO2e ke unit yang bisa dijual <span class="tag t-cr" style="margin-left:4px">ilustrasi</span></div>
+      <div class="wf">
+        <div class="c"><div class="num">1.000</div><div class="col" style="height:100%;background:#8aa39b"></div></div>
+        <div class="c"><div class="num">−100</div><div class="col" style="height:10%;background:var(--amber)"></div></div>
+        <div class="c"><div class="num">−180</div><div class="col" style="height:18%;background:var(--clay)"></div></div>
+        <div class="c"><div class="num">720</div><div class="col" style="height:72%;background:var(--forest2)"></div></div>
+        <div class="c" style="margin-left:8px"><div class="num">1.000</div><div class="col" style="height:100%;background:#8aa39b"></div></div>
+        <div class="c"><div class="num">−200</div><div class="col" style="height:20%;background:var(--clay)"></div></div>
+        <div class="c"><div class="num">800</div><div class="col" style="height:80%;background:var(--forest)"></div></div>
+      </div>
+      <div class="wfl"><div>dilaporkan</div><div>Achievement Reserve 10%</div><div>Future Risk Buffer 20%</div><div><b>rPVC</b> akun proyek</div><div style="margin-left:8px">terverifikasi</div><div>Risk Buffer 20%</div><div><b>vPVC</b> akun proyek</div></div>
+      <table class="meth" style="margin-top:5px">
+        <tr><td><b>fPVC</b></td><td>ex-ante, <b>restorasi saja</b>; tak bisa di-retire</td></tr>
+        <tr><td><b>rPVC</b></td><td>dilaporkan, belum diverifikasi; tak bisa di-retire</td></tr>
+        <tr><td><b>vPVC</b></td><td>terverifikasi; satu-satunya yang bisa di-retire untuk klaim</td></tr>
+      </table>
+      <div class="note">Sebelum angka ini, metodologi juga memotong leakage & ketidakpastian; setelahnya ada fee issuance, PNBP, pajak. Bukan proyeksi Pasir.</div>
+    </div>
+  </div>
+
+  <div class="two" style="grid-template-columns:1.1fr .9fr">
+    <div class="box">
+      <div class="sec"><span class="n">M</span>Status metodologi per intervensi</div>
+      <table class="meth">
+        <tr><td>Avoided deforestation / degradation</td><td><span class="pill ok">Approved</span> PM001+PU002+PT002 — bersyarat</td></tr>
+        <tr><td>Restorasi / ANR (hutan)</td><td><span class="pill ok">Approved</span> PM001+PU001</td></tr>
+        <tr><td>Konservasi mangrove</td><td><span class="pill wait">Klarifikasi</span> PT002? · modul khusus <span class="pill wait">Pipeline</span></td></tr>
+        <tr><td>Restorasi mangrove</td><td><span class="pill wait">Klarifikasi</span> PU001? · modul khusus <span class="pill wait">Pipeline</span></td></tr>
+        <tr><td>Proteksi gambut (biomassa)</td><td><span class="pill ok">Approved</span> biomassa saja; emisi tanah <span class="pill wait">Klarifikasi</span></td></tr>
+        <tr><td>Rewetting / restorasi gambut</td><td><span class="pill none">Tidak ada jalur</span></td></tr>
+        <tr><td>Konservasi tanpa ancaman</td><td><span class="pill none">Tidak creditable</span></td></tr>
+      </table>
+    </div>
+    <div class="box">
+      <div class="sec"><span class="n">R</span>Risiko kesiapan PIN</div>
+      <div class="rk"><div class="dot hi"></div><div>Areal di blok perlindungan HL (Ps. 9)</div></div>
+      <div class="rk"><div class="dot hi"></div><div>PT002 tidak applicable (pengelolaan sudah efektif)</div></div>
+      <div class="rk"><div class="dot hi"></div><div>Areal dominan mangrove, metodologi belum approved</div></div>
+      <div class="rk"><div class="dot md"></div><div>Mandat LPHD belum jelas / konflik internal</div></div>
+      <div class="rk"><div class="dot md"></div><div>SAMPAN belum teregistrasi sebagai pendamping</div></div>
+      <div class="rk"><div class="dot md"></div><div>FPIC (i) tertunda atau ditolak</div></div>
+      <div class="rk"><div class="dot md"></div><div>Data spasial resmi lambat diperoleh</div></div>
+      <div class="rk"><div class="dot lo"></div><div>Kapasitas penulisan PIN berbahasa Inggris</div></div>
+    </div>
+  </div>
+
+  <div class="ninety box">
+    <div class="sec"><span class="n">90</span>Rencana 90 hari · 20 Okt 2026 – 18 Jan 2027</div>
+    <div class="wk"><div>M1</div><div>M2</div><div>M3</div><div>M4</div><div>M5</div><div>M6</div><div>M7</div><div>M8</div><div>M9</div><div>M10</div><div>M11</div><div>M12</div><div>M13</div></div>
+    <div class="ms">
+      <div>Tim inti; arsip dokumen; email Plan Vivo</div>
+      <div>Rapat LPHD; minta SK & RKPS; memo hukum</div>
+      <div>Minta SHP, fungsi & blok kawasan</div>
+      <div class="g">PKS LPHD–SAMPAN ditandatangani</div>
+      <div>Analisis tutupan; pemetaan partisipatif</div>
+      <div>Stakeholder analysis; surat ke otoritas</div>
+      <div class="g">Gate G1a: jalur metodologi</div>
+      <div>FGD perempuan, pemuda, rentan</div>
+      <div class="g">Musyawarah FPIC (i); Annex 3–4</div>
+      <div>Draf PIN bag. 1–2</div>
+      <div>Draf PIN bag. 3–4</div>
+      <div>QA internal; terjemahan</div>
+      <div class="g">Go / no-go submit PIN</div>
+    </div>
+  </div>
+
+  <div class="foot"><span>Sumber: PV Climate Project Requirements V5.7, Procedures Manual V3.9, Costs & Fees, daftar metodologi Plan Vivo (diakses 20/10/2026); Permenhut 6/2026.</span><span>3 / 3</span></div>
+</section>
+</body>
+</html>
