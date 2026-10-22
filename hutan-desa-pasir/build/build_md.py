@@ -63,7 +63,10 @@ def build():
 
     # ---------------- A
     w("## A. Integrated Project Lifecycle Visualization (Output 1)")
-    w("Visualisasi satu slide 16:9 ada di `Roadmap_HD_Pasir_PVClimate.pptx` slide 1. Strukturnya:\n")
+    w("Ringkasan dua tahap ada di `Roadmap_HD_Pasir_PVClimate.pptx` slide 1: STEP 1 (5 tahap: Institutional Readiness, "
+      "FPIC & Community, Carbon Feasibility, PIN Submission, PIN Review → PV Pipeline), Transition / Project Handover, lalu "
+      "STEP 2 (PDD, Validation, Registration, Implementation & Annual Report, Verification, Issuance, Carbon Sales & Benefit "
+      "Sharing). Roadmap detail satu slide 16:9 ada di slide 2. Strukturnya:\n")
     w("```")
     w("STEP 1 · SETAPAK 4 (teal)                                   ┆ GATE ┆  STEP 2 · POST-SETAPAK 4 (navy)")
     w("(M1)─(M2)─(M3)─(M4)─(M5)─(M6)─<M7>  ═══════════════════════ ┆ PIPE ┆ ═ (M8)─<M9>─(M10)─<M11>─(M12)")
@@ -213,11 +216,11 @@ def build():
     # ---------------- F
     w("## F. Final Presentation Outputs")
     w(table(["Output", "Lokasi"], [
-        ("1 — One-Page Integrated Roadmap", "`Roadmap_HD_Pasir_PVClimate.pptx` slide 1"),
+        ("1 — One-Page Integrated Roadmap", "`Roadmap_HD_Pasir_PVClimate.pptx` slide 1 (ringkasan) & slide 2 (detail)"),
         ("2 — Detailed SETAPAK 4 Milestone Table", "Bagian B di atas; Excel sheet `Master_Matrix` & `Gantt_Step1`"),
-        ("3 — Post-SETAPAK 4 Roadmap", "PPTX slide 3; Bagian D; Excel `Step2_Outlook`"),
-        ("4 — Timeline & Critical Path", "PPTX slide 2; Bagian C5–C6; Excel `Gantt_Step1`"),
-        ("5 — Transition Readiness Checklist", "PPTX slide 4; daftar di bawah; Excel `Transition_Checklist`"),
+        ("3 — Post-SETAPAK 4 Roadmap", "PPTX slide 4; Bagian D; Excel `Step2_Outlook`"),
+        ("4 — Timeline & Critical Path", "PPTX slide 3; Bagian C5–C6; Excel `Gantt_Step1`"),
+        ("5 — Transition Readiness Checklist", "PPTX slide 5; daftar di bawah; Excel `Transition_Checklist`"),
     ]))
     w("\n### Output 5 — Transition Readiness Checklist")
     for t in TRANSITION:

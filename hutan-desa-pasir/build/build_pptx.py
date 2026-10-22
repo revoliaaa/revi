@@ -89,6 +89,9 @@ def box(slide, x, y, w, h, fill=None, line=None, shape=MSO_SHAPE.RECTANGLE, lw=0
         if dash:
             sh.line.dash_style = dash
     sh.shadow.inherit = False
+    st = sh._element.find("{http://schemas.openxmlformats.org/presentationml/2006/main}style")
+    if st is not None:
+        sh._element.remove(st)
     return sh
 
 
@@ -137,12 +140,104 @@ def node(slide, cx, cy, m, step_color):
         shape_text(sh, m["code"], size=10.5)
 
 
+# ---------------------------------------------------------------- slide overview
+OVERVIEW_S1 = [
+    # (no, nama, kode milestone, output, eksternal?)
+    ("1", "Institutional\nReadiness", "M1–M2", "PKS SAMPAN–LPHD, legal\ncheck, stakeholder map", False),
+    ("2", "FPIC &\nCommunity", "M3–M4", "FPIC tahap i–ii, GRM,\nKUPS & WFD", False),
+    ("3", "Carbon\nFeasibility", "M5", "Metodologi, estimasi\nindikatif, Go/No-Go", False),
+    ("4", "PIN\nSubmission", "M6", "PIN Template V1.4\n+ PIN review fee", False),
+    ("5", "PIN Review →\nPV Pipeline", "M7", "PIN disetujui Plan Vivo\n(bukan otomatis)", True),
+]
+OVERVIEW_S2 = [
+    ("6", "PDD", "M8", "Screening, konsultasi\npublik, PDD review", False),
+    ("7", "Validation", "M9", "VVB / microscale\n(Plan Vivo + IE)", True),
+    ("8", "Registration", "M9", "MoU Plan Vivo +\nPV Climate Registry", True),
+    ("9", "Implementation\n& Annual Report", "M10", "Monitoring tiap 12 bln\n(rPVC bila diminta)", False),
+    ("10", "Verification", "M11", "≤5 th setelah\nvalidasi", True),
+    ("11", "Issuance\n(vPVC)", "M11", "Unit terverifikasi,\nnomor seri", True),
+    ("12", "Carbon Sales &\nBenefit Sharing", "M12", "≥60% pendapatan\nke komunitas", False),
+]
+
+
+def overview_row(s, items, x0, x1, y, color, tint):
+    n = len(items)
+    step = (x1 - x0) / n
+    xs = [x0 + step * (i + 0.5) for i in range(n)]
+    line(s, xs[0], y, xs[-1], y, color=color, w=2)
+    for (no, name, code, out, ext), cx in zip(items, xs):
+        if ext:
+            sh = box(s, cx - 0.27, y - 0.27, 0.54, 0.54, fill=WHITE, line=color, shape=MSO_SHAPE.DIAMOND, lw=2)
+            shape_text(sh, no, size=11, color=color)
+        else:
+            sh = box(s, cx - 0.24, y - 0.24, 0.48, 0.48, fill=color, shape=MSO_SHAPE.ROUNDED_RECTANGLE)
+            shape_text(sh, no, size=11)
+        text(s, cx - step / 2, y + 0.3, step, 0.4, name, size=9.5, bold=True, align=PP_ALIGN.CENTER)
+        text(s, cx - step / 2, y + 0.68, step, 0.2, code, size=8, bold=True, color=color, align=PP_ALIGN.CENTER)
+        text(s, cx - step / 2, y + 0.84, step, 0.4, out, size=7.5, color=MUTED, align=PP_ALIGN.CENTER)
+
+
+def pill(s, x, y, w, label, fg, bg):
+    p = box(s, x, y, w, 0.3, fill=bg, shape=MSO_SHAPE.ROUNDED_RECTANGLE)
+    shape_text(p, label, size=9, color=fg)
+
+
+def slide_overview(prs):
+    s = prs.slides.add_slide(prs.slide_layouts[6])
+    header(s, "HUTAN DESA PASIR · MEMPAWAH, KALIMANTAN BARAT · PLAN VIVO PV CLIMATE",
+           "Dua tahap yang saling terhubung: SETAPAK 4 mengantar proyek ke Plan Vivo\n"
+           "Pipeline, tahap lanjutan mengantar ke kredit karbon dan manfaat komunitas", 1)
+
+    # STEP 1 panel
+    box(s, 0.4, 1.35, 12.53, 2.65, fill=TEAL_TINT, line=TEAL_MID, shape=MSO_SHAPE.ROUNDED_RECTANGLE, lw=1)
+    s.shapes[-1].adjustments[0] = 0.06
+    text(s, 0.65, 1.5, 6, 0.35, "STEP 1 — SETAPAK 4", size=16, bold=True)
+    pill(s, 10.9, 1.52, 1.85, "Cakupan program", TEAL, RGBColor(0xC9, 0xE5, 0xDF))
+    rich(s, 0.63, 1.88, 12, 0.3, [[("Project Preparation → PIN → Plan Vivo Pipeline   ", False, MUTED),
+                                   ("Okt 2026 – ±Apr 2028 · Dukungan: TAF · Pelaksana: SAMPAN Kalimantan & LPHD Pasir",
+                                    False, TEAL)]], size=10)
+    overview_row(s, OVERVIEW_S1, 0.6, 12.73, 2.45, TEAL, TEAL_TINT)
+    rich(s, 0.63, 3.64, 12, 0.3, [[("Target akhir: ", True, INK),
+                                   ("PIN disetujui dan proyek tercantum dalam Project pipeline Plan Vivo "
+                                    "(pengajuan PIN ≠ penerimaan; pipeline ≠ registrasi).", False, INK)]], size=10.5)
+
+    # Transition
+    box(s, 6.52, 4.04, 0.3, 0.42, fill=AMBER, shape=MSO_SHAPE.DOWN_ARROW)
+    rich(s, 0.4, 4.05, 6.05, 0.4, [[("Transition / Project Handover", True, AMBER)]], size=10.5,
+         align=PP_ALIGN.RIGHT, anchor=MSO_ANCHOR.MIDDLE)
+    rich(s, 6.9, 4.05, 6.0, 0.4, [[("PIN approved · data room & FPIC · data gap PDD · pendanaan lanjutan · "
+                                    "PDD ≤3 th sejak PIN disetujui", False, INK)]], size=8.5, anchor=MSO_ANCHOR.MIDDLE)
+
+    # STEP 2 panel
+    box(s, 0.4, 4.5, 12.53, 2.45, fill=NAVY_TINT, line=NAVY_MID, shape=MSO_SHAPE.ROUNDED_RECTANGLE, lw=1)
+    s.shapes[-1].adjustments[0] = 0.06
+    text(s, 0.65, 4.6, 6, 0.35, "STEP 2 — POST-SETAPAK 4", size=16, bold=True)
+    pill(s, 10.6, 4.62, 2.15, "Pengembangan lanjutan", NAVY, RGBColor(0xD3, 0xD8, 0xE2))
+    rich(s, 0.63, 4.97, 12, 0.3, [[("PDD → Validation → Registration → Implementation & MRV → Verification → Issuance → "
+                                    "Carbon Sales   ", False, MUTED),
+                                   ("2028 → · Dukungan: pendanaan lanjutan", False, NAVY)]], size=10)
+    overview_row(s, OVERVIEW_S2, 0.6, 12.73, 5.55, NAVY, NAVY_TINT)
+
+    # catatan bawah
+    rich(s, 0.4, 7.02, 12.5, 0.3, [[("Target akhir STEP 2: ", True, NAVY),
+                                    ("kredit terverifikasi (vPVC) diterbitkan & dijual, manfaat terukur bagi komunitas.  ",
+                                     False, INK),
+                                    ("■ internal  ◆ persetujuan eksternal (Plan Vivo / VVB)", False, MUTED)]], size=8.5)
+    s.notes_slide.notes_text_frame.text = (
+        "Penyesuaian terhadap standar PV Climate (Procedures Manual V3.9): (1) tahap 5 adalah keputusan Plan Vivo atas PIN, "
+        "bukan otomatis; (2) metodologi harus sudah disetujui sebelum PDD; (3) PDD melalui screening, konsultasi publik 4 "
+        "minggu dan PDD review sebelum validasi; (4) registrasi = MoU + akun PV Climate Registry setelah validasi; "
+        "(5) rPVC dapat diterbitkan lewat Annual Report sebelum verifikasi, fPVC saat validasi hanya untuk intervensi "
+        "serapan; vPVC setelah verifikasi dan hanya vPVC yang dapat di-retire; (6) penjualan/offtake dapat dijajaki paralel "
+        "sejak tahap PDD.")
+
+
 # ---------------------------------------------------------------- slide 1
 def slide_roadmap(prs):
     s = prs.slides.add_slide(prs.slide_layouts[6])
     header(s, "HUTAN DESA PASIR · MEMPAWAH, KALIMANTAN BARAT · PLAN VIVO PV CLIMATE",
            "SETAPAK 4 membawa proyek sampai gerbang Plan Vivo Pipeline —\n"
-           "kredit karbon baru lahir di fase pengembangan berikutnya", 1)
+           "kredit karbon baru lahir di fase pengembangan berikutnya", 2)
 
     gate_x = 8.2
     s1_x0, s1_x1 = 0.4, 7.95
@@ -272,7 +367,7 @@ def slide_roadmap(prs):
 def slide_timeline(prs):
     s = prs.slides.add_slide(prs.slide_layouts[6])
     header(s, "OUTPUT 4 · TIMELINE & CRITICAL PATH",
-           "Jalur kritis melewati FPIC dan keputusan metodologi —\nPIN dikirim paling lambat bulan ke-14 (Nov 2027)", 2)
+           "Jalur kritis melewati FPIC dan keputusan metodologi —\nPIN dikirim paling lambat bulan ke-14 (Nov 2027)", 3)
 
     x_lab, x0, x1 = 0.4, 3.35, 12.93
     months = 19
@@ -327,7 +422,7 @@ def slide_timeline(prs):
 def slide_step2(prs):
     s = prs.slides.add_slide(prs.slide_layouts[6])
     header(s, "OUTPUT 3 · POST-SETAPAK 4 ROADMAP",
-           "Lima milestone lanjutan membutuhkan pendanaan baru —\nmetodologi mangrove yang disetujui adalah syarat pertama PDD", 3)
+           "Lima milestone lanjutan membutuhkan pendanaan baru —\nmetodologi mangrove yang disetujui adalah syarat pertama PDD", 4)
     cols = STEP2
     x0, w, gap = 0.4, 2.42, 0.11
     titles = {m["code"]: m["title"] for m in MILESTONES}
@@ -355,7 +450,7 @@ def slide_step2(prs):
 def slide_transition(prs):
     s = prs.slides.add_slide(prs.slide_layouts[6])
     header(s, "OUTPUT 5 · TRANSITION READINESS CHECKLIST",
-           "Enam belas syarat memindahkan proyek dari pipeline ke penyusunan PDD", 4)
+           "Enam belas syarat memindahkan proyek dari pipeline ke penyusunan PDD", 5)
     groups = []
     for t in TRANSITION:
         if not groups or groups[-1][0] != t[1]:
@@ -382,6 +477,7 @@ def main(out):
     prs = Presentation()
     prs.slide_width = Inches(13.333)
     prs.slide_height = Inches(7.5)
+    slide_overview(prs)
     slide_roadmap(prs)
     slide_timeline(prs)
     slide_step2(prs)

@@ -23,7 +23,7 @@ Setiap aktivitas di matriks diberi kode basis agar jelas mana yang wajib dan man
 | PM | Rekomendasi manajemen proyek | PKS SAMPAN–LPHD, pre-submission call, data room, Go/No-Go |
 
 ## A. Integrated Project Lifecycle Visualization (Output 1)
-Visualisasi satu slide 16:9 ada di `Roadmap_HD_Pasir_PVClimate.pptx` slide 1. Strukturnya:
+Ringkasan dua tahap ada di `Roadmap_HD_Pasir_PVClimate.pptx` slide 1: STEP 1 (5 tahap: Institutional Readiness, FPIC & Community, Carbon Feasibility, PIN Submission, PIN Review → PV Pipeline), Transition / Project Handover, lalu STEP 2 (PDD, Validation, Registration, Implementation & Annual Report, Verification, Issuance, Carbon Sales & Benefit Sharing). Roadmap detail satu slide 16:9 ada di slide 2. Strukturnya:
 
 ```
 STEP 1 · SETAPAK 4 (teal)                                   ┆ GATE ┆  STEP 2 · POST-SETAPAK 4 (navy)
@@ -274,11 +274,11 @@ Hasil SETAPAK 4 menjadi fondasi PDD sebagai berikut:
 ## F. Final Presentation Outputs
 | Output | Lokasi |
 |---|---|
-| 1 — One-Page Integrated Roadmap | `Roadmap_HD_Pasir_PVClimate.pptx` slide 1 |
+| 1 — One-Page Integrated Roadmap | `Roadmap_HD_Pasir_PVClimate.pptx` slide 1 (ringkasan) & slide 2 (detail) |
 | 2 — Detailed SETAPAK 4 Milestone Table | Bagian B di atas; Excel sheet `Master_Matrix` & `Gantt_Step1` |
-| 3 — Post-SETAPAK 4 Roadmap | PPTX slide 3; Bagian D; Excel `Step2_Outlook` |
-| 4 — Timeline & Critical Path | PPTX slide 2; Bagian C5–C6; Excel `Gantt_Step1` |
-| 5 — Transition Readiness Checklist | PPTX slide 4; daftar di bawah; Excel `Transition_Checklist` |
+| 3 — Post-SETAPAK 4 Roadmap | PPTX slide 4; Bagian D; Excel `Step2_Outlook` |
+| 4 — Timeline & Critical Path | PPTX slide 3; Bagian C5–C6; Excel `Gantt_Step1` |
+| 5 — Transition Readiness Checklist | PPTX slide 5; daftar di bawah; Excel `Transition_Checklist` |
 
 ### Output 5 — Transition Readiness Checklist
 - [ ] **T01** (Legal & hak) PIN approved dan proyek tercantum di Plan Vivo pipeline (bukti tertulis) — *bukti: M7.5*
