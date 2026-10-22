@@ -233,7 +233,7 @@ SETAPAK 4 dinyatakan tercapai bila:
 ## D. STEP 2 Development Outlook (Post-SETAPAK 4)
 STEP 2 **bukan kewajiban capaian SETAPAK 4**. Angka biaya adalah asumsi perencanaan, bukan tarif Plan Vivo, dan harus dikonfirmasi dengan dokumen *Costs & fees* Plan Vivo serta penawaran VVB/IE.
 
-### M8 Pipeline Listing & Investment Mobilisation (Sep 2027 – 2028)
+### M8 Pipeline Listing & Investment Mobilisation (2027–2028)
 - **Workstream:** Listing pipeline & publikasi PIN; investment teaser & model keuangan sederhana; identifikasi investor/offtaker & due diligence; struktur pre-financing atau kontrak offtake berjangka (presale) — penyerahan unit hanya setelah issuance; persetujuan LPHD atas skema & kaitannya dengan benefit-sharing; registrasi mitra/pendamping teregistrasi (Permenhut 6/2026 Ps. 6); persiapan pencatatan DPP ke Menteri
 - **Syarat mulai:** PIN approved (M7) — status pipeline menjadi dasar kredibilitas ke investor; persiapan materi investor dapat dimulai Jul 2027 di dalam TAF
 - **Dokumen utama:** PIN approved & tautan pipeline; feasibility & estimasi indikatif; teaser; LoI/term sheet; draft ERPA/offtake; legal opinion presale
@@ -241,7 +241,7 @@ STEP 2 **bukan kewajiban capaian SETAPAK 4**. Angka biaya adalah asumsi perencan
 - **Kebutuhan pendanaan (indikatif):** ± USD 10–25 rb (legal & penyusunan materi investor)
 - **Mitra teknis/pendanaan potensial:** Investor dampak, pembeli korporat, broker berintegritas, filantropi iklim, BPDLH; konsultan hukum
 - **Ketergantungan pada STEP 1:** Feasibility & Go/No-Go (M5), prinsip benefit-sharing (M4.5), FPIC i–ii (M3.5)
-- **Batas waktu standar:** Presale: Permenhut 6/2026 Ps. 10(1) mensyaratkan kepemilikan Unit Karbon untuk perdagangan → kontrak berjangka, bukan penjualan unit; konfirmasi hukum
+- **Batas waktu standar:** Presale = kontrak berjangka (Permenhut 6/2026 Ps. 10(1): dagang butuh Unit Karbon); konfirmasi hukum
 
 ### M9 Full Project Design & PDD Development (2027–2029)
 - **Workstream:** Detailed baseline; carbon accounting (metodologi disetujui); additionality, leakage, permanence & risk buffer; safeguards (E&S assessment penuh); monitoring plan; benefit-sharing mechanism; FPIC tahap iii (implementasi) & Project Agreements; PDD drafting → PDD screening → public consultation → PDD review

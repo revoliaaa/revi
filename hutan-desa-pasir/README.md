@@ -17,3 +17,9 @@ python3 build_xlsx.py ../Milestone_Matrix_HD_Pasir_PVClimate.xlsx
 python3 build_md.py   ../Roadmap_HD_Pasir_PVClimate.md
 python3 build_one_slide.py ../Roadmap_1Slide_HD_Pasir.pptx
 ```
+
+## Font
+
+Semua slide memakai **Open Sauce Sans** (SIL Open Font License 1.1). Pasang dua file di `fonts/` (Regular & Bold)
+di komputer presenter sebelum membuka PPTX. Tanpa font ini, PowerPoint akan mengganti dengan font lain dan tata letak
+bisa bergeser. Untuk membagikan file ke orang lain: PowerPoint → File → Options → Save → *Embed fonts in the file*.

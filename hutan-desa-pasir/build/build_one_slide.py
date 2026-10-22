@@ -21,11 +21,11 @@ GREY_TINT = RGBColor(0xEE, 0xEF, 0xEC)
 
 # Isi kartu per tahap (judul, periode & milestone diambil dari data.TAHAP).
 CARD = {
-    1: (["Safeguard: FPIC i–ii, GRM, E&S, GESI", "Kebutuhan & progres yang sudah berjalan",
-         "Baseline via PV tools → project scenario"], "Bahan PIN lengkap", False),
+    1: (["Safeguard: FPIC, GRM, E&S, GESI", "Kebutuhan & progres berjalan",
+         "Baseline (PV tools) → project scenario"], "Bahan PIN lengkap", False),
     2: (["PIN Template V1.4", "Submit ≤ Mei 2027", "Review CAR/NIR, maks. 3 putaran"], "PIN disetujui", True),
-    3: (["PIN dipublikasikan di pipeline Plan Vivo", "Profil proyek & penjajakan investor",
-         "Pendamping teregistrasi (Permenhut 6/2026)"], "Proyek di Pipeline PV", False),
+    3: (["PIN tayang di pipeline Plan Vivo", "Profil proyek & penjajakan investor",
+         "Pendamping teregistrasi"], "Proyek di Pipeline", False),
     4: (["Pre-financing investor / offtaker", "Metodologi disetujui Plan Vivo", "Stok karbon, baseline, PDD review"],
         "PDD lolos review", False),
     5: (["DPP tercatat di Kemenhut", "Audit VVB / microscale IE", "MoU & PV Climate Registry"],
@@ -40,7 +40,7 @@ CARD = {
 
 # Label ringkas agar muat di kartu (nama lengkap tetap di data.TAHAP).
 SHORT_TITLE = {3: "Masuk\nPipeline PV"}
-SHORT_PERIOD = {1: "Okt 26 – Apr 27", 2: "Mar – Sep 27", 3: "Sep 2027"}
+SHORT_PERIOD = {1: "Okt 26–Apr 27", 2: "Mar–Sep 27", 3: "Sep 2027", 7: "≤5 th pasca-validasi"}
 
 
 def zone_color(no):
@@ -61,7 +61,7 @@ def build(prs):
 
     # grid kolom
     lab_x, lab_w = 0.45, 0.85
-    x0, x1, gap = 1.38, 12.9, 0.07
+    x0, x1, gap = 1.3, 12.93, 0.06
     w = (x1 - x0 - 7 * gap) / 8
     cx = [x0 + i * (w + gap) for i in range(8)]
 
@@ -112,14 +112,14 @@ def build(prs):
         if key:
             badge = box(s, cx[i] + 0.12, cy - 0.13, w - 0.24, 0.24, fill=TEAL, shape=MSO_SHAPE.ROUNDED_RECTANGLE)
             shape_text(badge, "★ OUTPUT UTAMA", size=7.5)
-        text(s, cx[i] + 0.08, cy + 0.1, w - 0.16, 0.45, SHORT_TITLE.get(no, t["title"]), size=10, bold=True, color=INK)
-        text(s, cx[i] + 0.08, cy + 0.56, w - 0.16, 0.2, f'{SHORT_PERIOD.get(no, t["period"])} · {t["ms"]}', size=7,
+        text(s, cx[i] + 0.08, cy + 0.1, w - 0.16, 0.45, SHORT_TITLE.get(no, t["title"]), size=9.5, bold=True, color=INK)
+        text(s, cx[i] + 0.08, cy + 0.56, w - 0.16, 0.2, f'{SHORT_PERIOD.get(no, t["period"])} · {t["ms"]}', size=6.5,
              bold=True, color=col)
-        rich(s, cx[i] + 0.04, cy + 0.8, w - 0.1, 1.1, [[("▪ ", True, col), (b, False, INK)] for b in bullets],
-             size=8)
+        rich(s, cx[i] + 0.04, cy + 0.8, w - 0.1, 1.1, [[("• ", True, col), (b, False, INK)] for b in bullets],
+             size=7.5)
         ob = box(s, cx[i] + 0.08, cy + ch - 0.42, w - 0.16, 0.32, fill=TEAL if key else tint,
                  shape=MSO_SHAPE.ROUNDED_RECTANGLE)
-        shape_text(ob, "→ " + output, size=7.5, bold=True, color=WHITE if key else col)
+        shape_text(ob, "→ " + output, size=7, bold=True, color=WHITE if key else col)
 
     # lajur dukungan
     sy = 5.22
@@ -145,14 +145,14 @@ def build(prs):
     ky = 6.2
     line(s, 0.45, ky - 0.08, 12.9, ky - 0.08, color=HAIR, w=0.75)
     keys = [("Mei 2027", "PIN diajukan ke Plan Vivo", TEAL),
-            ("Sep 2027", "Masuk Pipeline PV — output utama SETAPAK 4", TEAL),
+            ("Sep 2027", "Masuk Pipeline PV · output utama", TEAL),
             ("≤ 3 tahun", "PDD wajib diajukan sejak PIN disetujui", NAVY),
             ("≥ 60%", "pendapatan PVC untuk komunitas", NAVY)]
     kw = 2.55
     for i, (big, cap, col) in enumerate(keys):
         kx = 0.45 + i * (kw + 0.12)
         text(s, kx, ky, kw, 0.42, big, size=20, bold=True, font=DISPLAY, color=col)
-        text(s, kx, ky + 0.45, kw, 0.3, cap, size=8.5, color=INK)
+        text(s, kx, ky + 0.45, kw, 0.3, cap, size=8, color=INK)
     # legenda
     lx = 11.2
     o = box(s, lx, ky + 0.05, 0.2, 0.2, fill=MUTED, shape=MSO_SHAPE.OVAL)

@@ -27,8 +27,8 @@ MUTED = RGBColor(0x5F, 0x6B, 0x65)
 HAIR = RGBColor(0xD5, 0xDB, 0xD6)
 WHITE = RGBColor(0xFF, 0xFF, 0xFF)
 
-BODY = "Calibri"
-DISPLAY = "Cambria"
+BODY = "Open Sauce Sans"
+DISPLAY = "Open Sauce Sans"
 
 
 # ---------------------------------------------------------------- helpers
@@ -134,11 +134,11 @@ def node(slide, cx, cy, m, step_color):
     if m["type"] == "EXT":
         d = 0.6
         sh = box(slide, cx - d / 2, cy - d / 2, d, d, fill=WHITE, line=step_color, shape=MSO_SHAPE.DIAMOND, lw=2.25)
-        shape_text(sh, m["code"], size=10.5, color=step_color)
+        shape_text(sh, m["code"], size=9, color=step_color)
     else:
         d = 0.46
         sh = box(slide, cx - d / 2, cy - d / 2, d, d, fill=step_color, shape=MSO_SHAPE.OVAL)
-        shape_text(sh, m["code"], size=10.5)
+        shape_text(sh, m["code"], size=9.5)
 
 
 # ---------------------------------------------------------------- slide overview
@@ -261,13 +261,13 @@ def slide_roadmap(prs):
     b = box(s, s1_x0, 1.42, s1_x1 - s1_x0, 0.42, fill=TEAL)
     rich(s, s1_x0 + 0.08, 1.42, s1_x1 - s1_x0 - 0.1, 0.42,
          [[("STEP 1 · SETAPAK 4 (didukung TAF)  ", True, WHITE),
-           ("Persiapan → PIN → Pipeline · SAMPAN Kalimantan & LPHD Pasir · Okt 2026 – Sep 2027", False, WHITE)]],
-         size=10, anchor=MSO_ANCHOR.MIDDLE)
+           ("Persiapan → PIN → Pipeline · Okt 2026 – Sep 2027", False, WHITE)]],
+         size=9, anchor=MSO_ANCHOR.MIDDLE)
     box(s, s2_x0, 1.42, s2_x1 - s2_x0, 0.42, fill=NAVY)
     rich(s, s2_x0 + 0.08, 1.42, s2_x1 - s2_x0 - 0.1, 0.42,
          [[("STEP 2 · POST-SETAPAK 4  ", True, WHITE),
-           ("PDD → kredit → penjualan · Q4 2027+ (indikatif)", False, WHITE)]],
-         size=10, anchor=MSO_ANCHOR.MIDDLE)
+           ("PDD → kredit → penjualan · 2027+", False, WHITE)]],
+         size=9, anchor=MSO_ANCHOR.MIDDLE)
 
     # Garis gerbang SETAPAK 4
     line(s, gate_x, 1.3, gate_x, 5.55, color=AMBER, w=2.25, dash=MSO_LINE.DASH)
@@ -287,10 +287,10 @@ def slide_roadmap(prs):
         text(s, cx - 0.55, 2.27, 1.1, 0.2, f"{month_label(m['start'])[:3]} {month_label(m['start'])[-2:]}"
              f"–{month_label(m['end'])[:3]} {month_label(m['end'])[-2:]}", size=7.5, color=MUTED, align=PP_ALIGN.CENTER)
         node(s, cx, track_y, m, TEAL)
-        text(s, cx - 0.55, 3.08, 1.1, 0.4, m["short"], size=9, bold=True, color=INK, align=PP_ALIGN.CENTER)
-        text(s, cx - 0.55, 3.47, 1.1, 0.4, m["output"], size=7.5, color=MUTED, align=PP_ALIGN.CENTER)
+        text(s, cx - 0.55, 3.08, 1.1, 0.4, m["short"], size=8, bold=True, color=INK, align=PP_ALIGN.CENTER)
+        text(s, cx - 0.55, 3.47, 1.1, 0.4, m["output"], size=7, color=MUTED, align=PP_ALIGN.CENTER)
     for m, cx in zip(s2, xs2):
-        text(s, cx - 0.42, 2.27, 0.84, 0.2, m["years"], size=6.5, color=MUTED, align=PP_ALIGN.CENTER)
+        text(s, cx - 0.42, 2.2, 0.84, 0.3, m["years"], size=6, color=MUTED, align=PP_ALIGN.CENTER)
         node(s, cx, track_y, m, NAVY)
         text(s, cx - 0.42, 3.08, 0.84, 0.4, m["short"], size=8, bold=True, color=INK, align=PP_ALIGN.CENTER)
         text(s, cx - 0.42, 3.47, 0.84, 0.4, m["output"], size=6.5, color=MUTED, align=PP_ALIGN.CENTER)
