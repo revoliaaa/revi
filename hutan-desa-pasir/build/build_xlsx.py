@@ -11,8 +11,8 @@ from openpyxl.styles import Alignment, Border, Font, PatternFill, Side
 from openpyxl.utils import get_column_letter
 from openpyxl.worksheet.datavalidation import DataValidation
 
-from data import (ACTIVITIES, BASIS, COMPLETION, DOC_CHECKLIST, MILESTONES, RISKS, ROLES, SOURCES,
-                  STEP2, TOOLS, TRANSITION, month_label)
+from data import (ACTIVITIES, BASIS, COMPLETION, DOC_CHECKLIST, MILESTONES, PLOT_MONTHS, RISKS, ROLES, SOURCES,
+                  STEP2, TAF_END, TOOLS, TRANSITION, month_label)
 
 TEAL, TEAL_T, TEAL_M = "0E7C6B", "E3F1EE", "7FBCB1"
 NAVY, NAVY_T = "1F2A44", "E6E9EF"
@@ -69,7 +69,7 @@ def sheet_readme(wb):
     ws = wb.active
     ws.title = "README"
     title(ws, "Integrated Community Carbon Development Roadmap – Hutan Desa Pasir",
-          "Plan Vivo PV Climate · STEP 1 = SETAPAK 4 (M1–M7) · STEP 2 = Post-SETAPAK 4 (M8–M12) · Bulan 1 = Oktober 2026")
+          "Plan Vivo PV Climate · STEP 1 = SETAPAK 4 (M1–M7, Okt 2026–Sep 2027) · STEP 2 = Post-SETAPAK 4 (M8–M12) · Bulan 1 = Oktober 2026")
     rows = [
         ("Batas SETAPAK 4", "Target program = PIN diajukan (M6) DAN PIN disetujui sehingga proyek tercantum di Plan Vivo Project pipeline (M7). "
                             "STEP 2 ditampilkan untuk perencanaan, bukan kewajiban capaian SETAPAK 4."),
@@ -135,12 +135,12 @@ def sheet_matrix(wb):
 
 def sheet_gantt(wb):
     ws = wb.create_sheet("Gantt_Step1")
-    title(ws, "C5/C6. Timeline STEP 1 & critical path", "Hijau tua = jalur kritis · hijau muda = ada float · oranye = bergantung review Plan Vivo (indikatif)")
-    months = 19
+    title(ws, "C5/C6. Timeline STEP 1 & critical path", "Hijau tua = jalur kritis · hijau muda = ada float · oranye = bergantung review Plan Vivo · header oranye = setelah TAF berakhir (Sep 2027), buffer review")
+    months = PLOT_MONTHS
     headers = ["Kode", "Aktivitas", "PIC"] + [month_label(m) for m in range(1, months + 1)]
     header_row(ws, 4, headers, TEAL)
     for m in range(1, months + 1):
-        if m > 14:
+        if m > TAF_END:
             ws.cell(row=4, column=3 + m).fill = fill(AMBER)
     r = 5
     for a in ACTIVITIES:

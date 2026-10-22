@@ -12,7 +12,8 @@ from pptx.enum.dml import MSO_LINE
 from pptx.enum.text import MSO_ANCHOR, PP_ALIGN
 from pptx.util import Inches, Pt
 
-from data import ACTIVITIES, COMPLETION, MILESTONES, STEP2, TRANSITION, month_label
+from data import (ACTIVITIES, COMPLETION, MILESTONES, PIN_SUBMIT, PLOT_MONTHS, STEP2, TAF_END, TRANSITION,
+                  month_label)
 
 TEAL = RGBColor(0x0E, 0x7C, 0x6B)
 TEAL_TINT = RGBColor(0xE3, 0xF1, 0xEE)
@@ -146,8 +147,8 @@ OVERVIEW_S1 = [
     ("1", "Institutional\nReadiness", "M1–M2", "PKS SAMPAN–LPHD, legal\ncheck, stakeholder map", False),
     ("2", "FPIC &\nCommunity", "M3–M4", "FPIC tahap i–ii, GRM,\nKUPS & WFD", False),
     ("3", "Carbon\nFeasibility", "M5", "Metodologi, estimasi\nindikatif, Go/No-Go", False),
-    ("4", "PIN\nSubmission", "M6", "PIN Template V1.4\n+ PIN review fee", False),
-    ("5", "PIN Review →\nPV Pipeline", "M7", "PIN disetujui Plan Vivo\n(bukan otomatis)", True),
+    ("4", "PIN\nSubmission", "M6", "Diajukan ≤ Mei 2027\n(PIN Template V1.4)", False),
+    ("5", "PIN Review →\nPV Pipeline", "M7", "Target Sep 2027 — keputusan\nPlan Vivo, bukan otomatis", True),
 ]
 OVERVIEW_S2 = [
     ("6", "PDD", "M8", "Screening, konsultasi\npublik, PDD review", False),
@@ -194,7 +195,7 @@ def slide_overview(prs):
     text(s, 0.65, 1.5, 6, 0.35, "STEP 1 — SETAPAK 4", size=16, bold=True)
     pill(s, 10.9, 1.52, 1.85, "Cakupan program", TEAL, RGBColor(0xC9, 0xE5, 0xDF))
     rich(s, 0.63, 1.88, 12, 0.3, [[("Project Preparation → PIN → Plan Vivo Pipeline   ", False, MUTED),
-                                   ("Okt 2026 – ±Apr 2028 · Dukungan: TAF · Pelaksana: SAMPAN Kalimantan & LPHD Pasir",
+                                   ("Okt 2026 – Sep 2027 · Dukungan: TAF · Pelaksana: SAMPAN Kalimantan & LPHD Pasir",
                                     False, TEAL)]], size=10)
     overview_row(s, OVERVIEW_S1, 0.6, 12.73, 2.45, TEAL, TEAL_TINT)
     rich(s, 0.63, 3.64, 12, 0.3, [[("Target akhir: ", True, INK),
@@ -215,7 +216,7 @@ def slide_overview(prs):
     pill(s, 10.6, 4.62, 2.15, "Pengembangan lanjutan", NAVY, RGBColor(0xD3, 0xD8, 0xE2))
     rich(s, 0.63, 4.97, 12, 0.3, [[("PDD → Validation → Registration → Implementation & MRV → Verification → Issuance → "
                                     "Carbon Sales   ", False, MUTED),
-                                   ("2028 → · Dukungan: pendanaan lanjutan", False, NAVY)]], size=10)
+                                   ("Q4 2027 → · Dukungan: pendanaan lanjutan", False, NAVY)]], size=10)
     overview_row(s, OVERVIEW_S2, 0.6, 12.73, 5.55, NAVY, NAVY_TINT)
 
     # catatan bawah
@@ -247,12 +248,12 @@ def slide_roadmap(prs):
     b = box(s, s1_x0, 1.42, s1_x1 - s1_x0, 0.42, fill=TEAL)
     rich(s, s1_x0 + 0.08, 1.42, s1_x1 - s1_x0 - 0.1, 0.42,
          [[("STEP 1 · SETAPAK 4 (didukung TAF)  ", True, WHITE),
-           ("Persiapan → PIN → Pipeline · SAMPAN Kalimantan & LPHD Pasir · Okt 2026 – ±Apr 2028", False, WHITE)]],
+           ("Persiapan → PIN → Pipeline · SAMPAN Kalimantan & LPHD Pasir · Okt 2026 – Sep 2027", False, WHITE)]],
          size=10, anchor=MSO_ANCHOR.MIDDLE)
     box(s, s2_x0, 1.42, s2_x1 - s2_x0, 0.42, fill=NAVY)
     rich(s, s2_x0 + 0.08, 1.42, s2_x1 - s2_x0 - 0.1, 0.42,
          [[("STEP 2 · POST-SETAPAK 4  ", True, WHITE),
-           ("PDD → kredit → penjualan · 2028+ (indikatif)", False, WHITE)]],
+           ("PDD → kredit → penjualan · Q4 2027+ (indikatif)", False, WHITE)]],
          size=10, anchor=MSO_ANCHOR.MIDDLE)
 
     # Garis gerbang SETAPAK 4
@@ -281,12 +282,12 @@ def slide_roadmap(prs):
         text(s, cx - 0.5, 3.08, 1.0, 0.4, m["short"], size=9, bold=True, color=INK, align=PP_ALIGN.CENTER)
         text(s, cx - 0.5, 3.47, 1.0, 0.4, m["output"], size=7.5, color=MUTED, align=PP_ALIGN.CENTER)
 
-    # ---- Lajur paralel STEP 1 (bulan 1–19)
+    # ---- Lajur paralel STEP 1 (bulan 1–PLOT_MONTHS)
     lane_y = 4.12
     mx0, mx1 = 0.85, 7.95
 
     def mx(m):
-        return mx0 + (m - 1) / 19.0 * (mx1 - mx0)
+        return mx0 + (m - 1) / float(PLOT_MONTHS) * (mx1 - mx0)
 
     text(s, 0.4, lane_y - 0.22, 4, 0.2, "Lajur kerja (bulan program)", size=7.5, bold=True, color=MUTED)
     for i, m in enumerate(s1):
@@ -294,33 +295,37 @@ def slide_roadmap(prs):
         text(s, 0.4, y - 0.04, 0.4, 0.17, m["code"], size=7, color=MUTED)
         fill = AMBER if m["type"] == "EXT" else (TEAL if m["code"] in ("M3", "M4", "M5") else TEAL_MID)
         box(s, mx(m["start"]), y, mx(m["end"] + 1) - mx(m["start"]), 0.11, fill=fill)
-    for mm in (1, 4, 7, 10, 13, 16, 19):
+    for mm in (1, 4, 7, 10, 13):
         lbl = month_label(mm)
         text(s, mx(mm) - 0.3, lane_y + 7 * 0.17 + 0.0, 0.6, 0.18, f"{lbl[:3]} {lbl[-2:]}", size=6.5,
              color=MUTED, align=PP_ALIGN.CENTER)
     # braket paralel
-    bx0, bx1 = mx(4), mx(13)
+    xt = mx(TAF_END + 1)
+    line(s, xt, lane_y - 0.05, xt, lane_y + 7 * 0.17, color=AMBER, w=1.25)
+    text(s, xt + 0.04, lane_y - 0.24, 1.6, 0.2, "Akhir TAF · Sep 27", size=7, bold=True, color=AMBER)
+    text(s, xt + 0.04, lane_y + 5 * 0.17 - 0.02, 1.0, 0.36, "buffer review\ndi luar TAF", size=6.5, color=AMBER, italic=True)
+    bx0, bx1 = mx(3), mx(11)
     box(s, bx0, lane_y + 2 * 0.17 - 0.035, bx1 - bx0, 3 * 0.17 + 0.0, line=TEAL, lw=1, dash=MSO_LINE.DASH)
-    text(s, mx(13) + 0.05, lane_y + 2 * 0.17 - 0.02, 1.9, 0.5,
-         "∥ M3 · M4 · M5 berjalan paralel\n(bulan 4–12)", size=7.5, bold=True, color=TEAL)
+    text(s, mx(3) + 0.05, lane_y + 7 * 0.17 + 0.17, 3.5, 0.2,
+         "∥ M3 · M4 · M5 berjalan paralel (bulan 3–10)", size=7.5, bold=True, color=TEAL)
 
-    # ---- Lajur STEP 2 (tahun 2028–2035)
-    yx0, yx1 = 8.45, 12.93
+    # ---- Lajur STEP 2 (tahun 2027.75–2035)
+    yx0, yx1 = 8.62, 12.93
 
     def yx(t):
-        return yx0 + (t - 2028.0) / 7.0 * (yx1 - yx0)
+        return yx0 + (t - 2027.75) / 7.25 * (yx1 - yx0)
 
     text(s, 8.45, lane_y - 0.22, 4.4, 0.2, "Lajur kerja (tahun, indikatif)", size=7.5, bold=True, color=MUTED)
-    bars = [("M8", 2028.3, 2029.8, NAVY_MID, None), ("M9", 2029.6, 2030.6, NAVY, None),
-            ("M10", 2030.5, 2035.0, NAVY_MID, None), ("M11", 2032.0, 2032.7, NAVY, None),
-            ("M12", 2028.6, 2035.0, NAVY_TINT, NAVY_MID)]
+    bars = [("M8", 2027.8, 2029.4, NAVY_MID, None), ("M9", 2029.2, 2030.2, NAVY, None),
+            ("M10", 2030.1, 2035.0, NAVY_MID, None), ("M11", 2031.7, 2032.4, NAVY, None),
+            ("M12", 2028.2, 2035.0, NAVY_TINT, NAVY_MID)]
     for i, (code, a, z, f, ln) in enumerate(bars):
         y = lane_y + i * 0.17
         text(s, 8.25, y - 0.04, 0.3, 0.17, code, size=7, color=MUTED, align=PP_ALIGN.RIGHT)
         box(s, yx(a), y, yx(z) - yx(a), 0.11, fill=f, line=ln, lw=0.5)
     # verifikasi berulang
     box(s, yx(2034.4), lane_y + 3 * 0.17, yx(2035.0) - yx(2034.4), 0.11, line=NAVY, lw=0.75, dash=MSO_LINE.DASH)
-    for yr in range(2028, 2036, 1):
+    for yr in range(2028, 2035, 1):
         text(s, yx(yr) - 0.25, lane_y + 5 * 0.17 + 0.02, 0.5, 0.18, str(yr) if yr < 2035 else "", size=6.5,
              color=MUTED, align=PP_ALIGN.CENTER)
     text(s, 8.45, lane_y + 6 * 0.17 + 0.04, 4.45, 0.3,
@@ -367,16 +372,16 @@ def slide_roadmap(prs):
 def slide_timeline(prs):
     s = prs.slides.add_slide(prs.slide_layouts[6])
     header(s, "OUTPUT 4 · TIMELINE & CRITICAL PATH",
-           "Jalur kritis melewati FPIC dan keputusan metodologi —\nPIN dikirim paling lambat bulan ke-14 (Nov 2027)", 3)
+           "PIN harus dikirim Mei 2027 agar keputusan Plan Vivo dapat\nkeluar sebelum TAF berakhir September 2027", 3)
 
     x_lab, x0, x1 = 0.4, 3.35, 12.93
-    months = 19
+    months = PLOT_MONTHS
     cw = (x1 - x0) / months
     y0 = 1.5
     # header bulan
     for m in range(1, months + 1):
         lbl = month_label(m)
-        fill = TEAL_TINT if m <= 14 else RGBColor(0xF6, 0xEB, 0xDD)
+        fill = TEAL_TINT if m <= TAF_END else RGBColor(0xF6, 0xEB, 0xDD)
         box(s, x0 + (m - 1) * cw, y0, cw - 0.01, 0.36, fill=fill)
         text(s, x0 + (m - 1) * cw, y0 + 0.01, cw, 0.36, f"{lbl[:3]}\n{lbl[-2:]}", size=6.5, color=MUTED,
              align=PP_ALIGN.CENTER)
@@ -396,13 +401,15 @@ def slide_timeline(prs):
         box(s, x0 + (st - 1) * cw + 0.01, y + rh * 0.2, (en - st + 1) * cw - 0.02, rh * 0.6, fill=fill)
         y += rh
     # garis submission & gate
-    xs = x0 + 14 * cw
+    xs = x0 + PIN_SUBMIT * cw
     line(s, xs, y0, xs, y, color=TEAL, w=1.25, dash=MSO_LINE.DASH)
     text(s, xs - 1.6, y0 - 0.25, 1.55, 0.22, "PIN submitted (M6.6)", size=7, bold=True, color=TEAL,
          align=PP_ALIGN.RIGHT)
-    xg = x0 + 19 * cw
-    text(s, xg - 2.5, y0 - 0.25, 2.5, 0.22, "Target indikatif pipeline (M7.5)", size=7, bold=True, color=AMBER,
+    xg = x0 + TAF_END * cw
+    line(s, xg, y0, xg, y, color=AMBER, w=1.5)
+    text(s, xg - 2.6, y0 - 0.25, 2.55, 0.22, "Akhir TAF · target pipeline (M7.5)", size=7, bold=True, color=AMBER,
          align=PP_ALIGN.RIGHT)
+    text(s, xg + 0.05, y0 - 0.25, 2.0, 0.22, "Buffer review di luar TAF", size=7, italic=True, color=AMBER)
 
     # legenda
     ly = 6.82
@@ -412,9 +419,9 @@ def slide_timeline(prs):
     text(s, 2.35, ly, 1.8, 0.2, "Ada float", size=7.5)
     box(s, 3.4, ly + 0.05, 0.3, 0.1, fill=AMBER)
     text(s, 3.75, ly, 4.0, 0.2, "Bergantung review Plan Vivo (tanggal tidak pasti)", size=7.5)
-    text(s, 7.2, ly, 5.7, 0.2, "STEP 2 jangka panjang: M8 2028–29 · M9 2029–30 · M10 2030→ · M11 ≤5 th pasca-validasi · M12 paralel",
+    text(s, 7.2, ly, 5.7, 0.2, "STEP 2 jangka panjang: M8 2027–29 · M9 2029–30 · M10 2030→ · M11 ≤5 th pasca-validasi · M12 paralel",
          size=7.5, color=NAVY, bold=True)
-    footer(s, "Bulan 1 = Oktober 2026. Review PIN: awal ±6 minggu; tanggapan CAR/NIR ±4 minggu; revisi wajib ≤6 bulan, maks. 3 putaran "
+    footer(s, "Bulan 1 = Oktober 2026; TAF berakhir bulan 12 (Sep 2027). Review PIN: awal ±6 minggu; tanggapan CAR/NIR ±4 minggu; revisi wajib ≤6 bulan, maks. 3 putaran "
               "(Procedures Manual V3.9 §2.2, §9).")
 
 

@@ -4,7 +4,12 @@ Kabupaten Mempawah, Kalimantan Barat · Implementing Organization: SAMPAN Kalima
 Versi kerja: Oktober 2026 · Bulan program 1 = Oktober 2026
 
 ## Ringkasan
-SETAPAK 4 selesai ketika **PIN Hutan Desa Pasir disetujui Plan Vivo dan proyek tercantum di Project pipeline** (M7), dengan target pengajuan PIN paling lambat **November 2027 (bulan 14)**. Keputusan penerimaan ada di tangan Plan Vivo; dengan review awal ±6 minggu dan satu–dua putaran CAR/NIR, perkiraannya **Januari–April 2028**, tetapi tanggal ini tidak dapat dijamin.
+SETAPAK 4 selesai ketika **PIN Hutan Desa Pasir disetujui Plan Vivo dan proyek tercantum di Project pipeline** (M7). Pendanaan TAF berakhir **September 2027 (bulan 12)**, sehingga PIN harus diajukan paling lambat **Mei 2027 (bulan 8)**. Review awal Plan Vivo ±6 minggu dan satu putaran CAR/NIR (±4 minggu review) membuat keputusan paling cepat **Agustus–September 2027**. Tanggal ini tidak dapat dijamin. Jika Plan Vivo meminta lebih dari satu putaran revisi, penerimaan pipeline akan jatuh **setelah TAF berakhir** (buffer Okt–Des 2027).
+
+Konsekuensi jadwal 12 bulan:
+- **FPIC tahap i–ii harus selesai Maret 2027 (bulan 6).** Ini ketat untuk proses yang timeline-nya ditentukan komunitas. Jika komunitas butuh waktu lebih, pengajuan PIN yang mundur, bukan FPIC yang dipercepat.
+- **M3, M4 dan M5 berjalan paralel sejak bulan 3.** Tenaga ahli karbon perlu dikontrak di bulan 2.
+- **Indikator kontrak TAF sebaiknya dua lapis:** *PIN submitted* (Mei 2027) sebagai indikator wajib, dan *pipeline acceptance* (Sep 2027) sebagai target. Siapkan opsi no-cost extension atau anggaran jembatan untuk menindaklanjuti review Plan Vivo pada Okt–Des 2027.
 
 Pipeline bukan registrasi dan belum menghasilkan kredit. Registrasi baru terjadi setelah PDD lolos review dan proyek divalidasi (M9). Kredit yang dapat di-retire (vPVC) baru terbit setelah verifikasi (M11). Semua itu ada di STEP 2 dan membutuhkan pendanaan baru.
 
@@ -28,7 +33,7 @@ Ringkasan dua tahap ada di `Roadmap_HD_Pasir_PVClimate.pptx` slide 1: STEP 1 (5 
 ```
 STEP 1 · SETAPAK 4 (teal)                                   ┆ GATE ┆  STEP 2 · POST-SETAPAK 4 (navy)
 (M1)─(M2)─(M3)─(M4)─(M5)─(M6)─<M7>  ═══════════════════════ ┆ PIPE ┆ ═ (M8)─<M9>─(M10)─<M11>─(M12)
-          └── M3 ∥ M4 ∥ M5 paralel (bln 4–12) ──┘           ┆ LINE ┆      M12 paralel sejak M8
+          └── M3 ∥ M4 ∥ M5 paralel (bln 3–10) ──┘           ┆ LINE ┆      M12 paralel sejak M8
 ( ) = milestone internal     < > = persetujuan eksternal (Plan Vivo / VVB)     ┆ = batas SETAPAK 4
 ```
 
@@ -118,18 +123,18 @@ Tercakup di Matriks B, dengan kolom bukti verifikasi tersendiri di Excel. Prinsi
 ### C5. Timeline (pelaksanaan sejak Oktober 2026)
 | Milestone | Mulai | Selesai | Durasi | Jenis | Catatan |
 |---|---|---|---|---|---|
-| M1 Project Initiation & Institutional Readiness | Okt 2026 | Des 2026 | 3 bln | Internal |  |
-| M2 Stakeholder Identification & Engagement | Nov 2026 | Jan 2027 | 3 bln | Internal |  |
-| M3 Community Participatory Assessment & FPIC | Jan 2027 | Jul 2027 | 7 bln | Internal | Timeline FPIC ditentukan pemegang hak; buffer 1–2 bulan |
-| M4 Community Institution & Livelihood Development | Mar 2027 | Sep 2027 | 7 bln | Internal | Paralel dengan M3/M5; ada float kecuali M4.4 |
-| M5 Preliminary Carbon Feasibility Assessment | Feb 2027 | Agu 2027 | 7 bln | Internal | Paralel; M5.4 = decision gate metodologi |
-| M6 PIN Development & Submission | Agu 2027 | Nov 2027 | 4 bln | Internal | Submission paling lambat Nov 2027 |
-| M7 Plan Vivo Pipeline Acceptance | Nov 2027 | Apr 2028 | 6 bln | Eksternal | Indikatif: review ±6 mgg + putaran CAR/NIR ±4 mgg |
+| M1 Project Initiation & Institutional Readiness | Okt 2026 | Nov 2026 | 2 bln | Internal |  |
+| M2 Stakeholder Identification & Engagement | Nov 2026 | Des 2026 | 2 bln | Internal |  |
+| M3 Community Participatory Assessment & FPIC | Des 2026 | Apr 2027 | 5 bln | Internal | Keputusan FPIC i–ii Mar 2027; tanpa buffer — risiko utama |
+| M4 Community Institution & Livelihood Development | Jan 2027 | Jul 2027 | 7 bln | Internal | Paralel dengan M3/M5; M4.4 selesai sebelum PIN; M4.5–M4.6 lanjut setelah PIN |
+| M5 Preliminary Carbon Feasibility Assessment | Des 2026 | Apr 2027 | 5 bln | Internal | Paralel; M5.4 = decision gate metodologi (Feb 2027) |
+| M6 PIN Development & Submission | Mar 2027 | Mei 2027 | 3 bln | Internal | Submission paling lambat Mei 2027 |
+| M7 Plan Vivo Pipeline Acceptance | Mei 2027 | Sep 2027 | 5 bln | Eksternal | Indikatif: review ±6 mgg + 1 putaran CAR/NIR; >1 putaran → lewat Sep 2027 |
 
 ### C6. Critical path
 `M1.3 → M1.4 → M2.1 → M2.5 → M3.1 → M3.3 → M3.5 → M4.4 → M5.1 → M5.2 → M5.3 → M5.4 → M5.5 → M5.6 → M6.2 → M6.3 → M6.5 → M6.6 → M7.1 → M7.2 → M7.3 → M7.5`
 
-Rantai yang paling menentukan: **legalitas (M1.4) → stakeholder & SEP (M2.1/M2.5) → pra-FPIC (M3.1) → pemetaan partisipatif (M3.3) → keputusan FPIC i–ii (M3.5) → tutupan lahan & driver (M5.2/M5.3) → metodologi (M5.4) → estimasi & Go/No-Go (M5.5/M5.6) → draft, review LPHD, final dan submit PIN (M6.2–M6.6) → review Plan Vivo (M7.1–M7.5)**. Setiap keterlambatan satu bulan di rantai ini menggeser pengajuan PIN satu bulan. Total float terhadap akhir program hanya sebesar selisih antara bulan 19 dan tanggal akhir kontrak SETAPAK 4, yang perlu dikonfirmasi dengan TAF.
+Rantai yang paling menentukan: **legalitas (M1.4) → stakeholder & SEP (M2.1/M2.5) → pra-FPIC (M3.1) → pemetaan partisipatif (M3.3) → keputusan FPIC i–ii (M3.5) → tutupan lahan & driver (M5.2/M5.3) → metodologi (M5.4) → estimasi & Go/No-Go (M5.5/M5.6) → draft, review LPHD, final dan submit PIN (M6.2–M6.6) → review Plan Vivo (M7.1–M7.5)**. Jalur ini **tidak punya float** terhadap akhir TAF (bulan 12). Setiap keterlambatan satu bulan sebelum Mei 2027 langsung mengurangi waktu review Plan Vivo sebelum September 2027.
 
 ### C7. Integrasi 17 Plan Vivo Participatory Tools
 | Tool | Nama | Dipakai di | Status tahap PIN | Status tahap PDD |
@@ -188,26 +193,26 @@ Isi minimum PIN (Procedures Manual §2.1): intervensi yang diusulkan; Project Re
 |---|---|---|---|---|---|
 | R1 | Metodologi mangrove conservation belum disetujui Plan Vivo | M5.4, M8 | Tinggi | Tinggi | Putuskan di M5.4: mulai komponen restorasi (PM001) dan/atau tunggu modul; pantau Methodology Pipeline; jangan janjikan volume |
 | R2 | Hak kelola/hak karbon Hutan Desa belum jelas atau batas tumpang tindih | M1.4, M5.1 | Sedang | Tinggi | Memo legal dini; konsultasi BPSKL/Dinas LHK; rujuk Permenhut 6/2026 |
-| R3 | Proses FPIC lebih lama dari rencana (timeline ditentukan komunitas) | M3.5 | Sedang | Tinggi | Mulai pra-FPIC di bulan 4; buffer 1–2 bulan; PIN dapat disusun paralel tapi tidak dikirim sebelum BA FPIC i–ii |
+| R3 | Proses FPIC lebih lama dari rencana (timeline ditentukan komunitas) | M3.5 | Tinggi | Tinggi | Mulai pra-FPIC di bulan 3; jadwal FPIC 4 bulan sangat ketat — jangan dipaksa; PIN disusun paralel tapi tidak dikirim sebelum BA FPIC i–ii |
 | R4 | Ekspektasi pendapatan karbon terlalu tinggi di komunitas | M2.3–M4.5 | Tinggi | Sedang | Pesan konsisten: pipeline ≠ kredit; rentang estimasi; dokumentasikan di materi FPIC |
 | R5 | Additionality/double counting dengan program rehabilitasi mangrove pemerintah/donor | M5.6 | Sedang | Tinggi | Inventaris program di lokasi; pisahkan areal & kegiatan; nyatakan di PIN |
 | R6 | Permanence: abrasi, kenaikan muka laut, konversi tambak, infrastruktur pesisir | M5.3, M5.6 | Sedang | Sedang | Analisis risiko; zona buffer; kontribusi risk buffer di PDD |
 | R7 | Review PIN butuh beberapa putaran CAR/NIR | M7 | Sedang | Sedang | Pre-submission call; QA internal; tanggapi ≤4 minggu; maks 3 putaran |
-| R8 | Kapasitas teknis karbon & GIS terbatas | M5, M6 | Sedang | Sedang | Kontrak tenaga ahli sejak bulan 5; transfer pengetahuan ke tim SAMPAN |
-| R9 | Program SETAPAK 4 berakhir sebelum Plan Vivo memberi keputusan | M7 | Sedang | Sedang | Kirim PIN ≤bulan 14; anggarkan tindak lanjut review; handover ke pendanaan lanjutan |
+| R8 | Kapasitas teknis karbon & GIS terbatas | M5, M6 | Sedang | Sedang | Kontrak tenaga ahli sejak bulan 2; transfer pengetahuan ke tim SAMPAN |
+| R9 | TAF berakhir Sep 2027 sebelum Plan Vivo memberi keputusan PIN | M7 | Tinggi | Tinggi | Kirim PIN ≤Mei 2027 (bulan 8); tanggapi CAR/NIR ≤2 minggu; sepakati dengan TAF indikator 'PIN submitted' + acceptance sebagai target; siapkan anggaran/no-cost extension untuk tindak lanjut review Okt–Des 2027 |
 | R10 | Perubahan regulasi karbon nasional (Perpres 110/2025, aturan turunan, MRA) | M5.6, M9, M11 | Sedang | Sedang | Pemantauan regulasi; konsultasi Kemenhut/KLH; sesuaikan desain otorisasi |
 
 ### C10. Program completion criteria (SETAPAK 4)
 SETAPAK 4 dinyatakan tercapai bila:
-1. **Target wajib program:** PIN final diajukan ke Plan Vivo dengan bukti fee (M6), dan Plan Vivo menyatakan PIN disetujui sehingga proyek tercantum di Project pipeline (M7).
+1. **Target wajib program:** PIN final diajukan ke Plan Vivo dengan bukti fee paling lambat Mei 2027 (M6), dan Plan Vivo menyatakan PIN disetujui sehingga proyek tercantum di Project pipeline (M7).
 2. **Prasyarat kualitas:** BA FPIC tahap i–ii, GRM aktif, peta partisipatif dan KML, feasibility report dengan keputusan Go/No-Go, serta prinsip benefit-sharing tersedia di data room.
 3. **Handover:** paket serah terima (Bagian E) ditandatangani SAMPAN dan LPHD.
-4. **Jika keputusan Plan Vivo belum keluar** sebelum kontrak berakhir: laporkan status *PIN submitted, under review* lengkap dengan log komunikasi. Jangan melaporkannya sebagai *accepted*. Sisa tindak lanjut review masuk anggaran transisi.
+4. **Jika keputusan Plan Vivo belum keluar** sebelum TAF berakhir (September 2027): laporkan status *PIN submitted, under review* lengkap dengan log komunikasi. Jangan melaporkannya sebagai *accepted*. Sisa tindak lanjut review masuk anggaran transisi.
 
 ## D. STEP 2 Development Outlook (Post-SETAPAK 4)
 STEP 2 **bukan kewajiban capaian SETAPAK 4**. Angka biaya adalah asumsi perencanaan, bukan tarif Plan Vivo, dan harus dikonfirmasi dengan dokumen *Costs & fees* Plan Vivo serta penawaran VVB/IE.
 
-### M8 Full Project Design & PDD Development (2028–2029)
+### M8 Full Project Design & PDD Development (2027–2029)
 - **Workstream:** Detailed baseline; carbon accounting (metodologi disetujui); additionality, leakage, permanence & risk buffer; safeguards (E&S assessment penuh); monitoring plan; benefit-sharing mechanism; FPIC tahap iii (implementasi) & Project Agreements; PDD drafting → PDD screening → public consultation → PDD review
 - **Syarat mulai:** PIN approved (M7); metodologi yang berlaku SUDAH disetujui Plan Vivo; pendanaan PDD tersedia
 - **Dokumen utama:** PDD Template V5.7; Project Requirements V5.7; Methodology & modules; KML; Project Agreement; benefit-sharing mechanism; GRM
@@ -267,7 +272,7 @@ Hasil SETAPAK 4 menjadi fondasi PDD sebagai berikut:
 | Data gap menuju PDD | Plot stok karbon (biomassa & karbon tanah mangrove); baseline sosial-ekonomi rumah tangga; baseline biodiversitas; parameter leakage & risk buffer; monitoring plan | M8 carbon accounting & safeguards |
 | Status legal | SK Hutan Desa/LPHD terverifikasi; memo hak karbon & jalur otorisasi (Permenhut 6/2026, SRN/SRUK, MRA) | Bab hak lahan & karbon PDD; pencatatan nasional |
 | Persetujuan masyarakat | FPIC tahap i–ii; GRM aktif | FPIC tahap iii + Project Agreements sebelum validasi |
-| Pendanaan lanjutan | Proposal PDD + validasi dikirim (target bulan 15–19) | M8–M9 ±USD 85–180 rb (indikatif) |
+| Pendanaan lanjutan | Proposal PDD + validasi dikirim sebelum TAF berakhir (target Jul–Sep 2027) | M8–M9 ±USD 85–180 rb (indikatif) |
 | Kesiapan tim & kelembagaan | SAMPAN sebagai Project Coordinator; LPHD, KUPS, WFD aktif | Implementasi & monitoring |
 | Risiko transisi | Kekosongan pendanaan; turnover fasilitator; ekspektasi komunitas; jam 3 tahun PDD | Bridge funding; komunikasi berkala; jadwal PDD |
 
@@ -299,7 +304,7 @@ Hasil SETAPAK 4 menjadi fondasi PDD sebagai berikut:
 - [ ] **T16** (Waktu) Jadwal PDD mematuhi batas 3 tahun sejak PIN approved — *bukti: M7.5*
 
 ## Asumsi yang perlu dikonfirmasi
-- Tanggal akhir kontrak SETAPAK 4 dan apakah target M7 (penerimaan pipeline) atau hanya M6 (pengajuan) yang menjadi indikator kontraktual TAF.
+- Apakah indikator kontraktual TAF (berakhir September 2027) adalah M6 (PIN diajukan) atau M7 (pipeline acceptance), dan kemungkinan no-cost extension untuk tindak lanjut review.
 - Luas, SK, dan fungsi kawasan Hutan Desa Pasir, serta proporsi mangrove dan non-mangrove. Dokumen ini mengasumsikan dominan mangrove pesisir.
 - Status terbaru Methodology Pipeline Plan Vivo untuk mangrove/blue carbon saat M5.4 (bulan 8–9).
 - Besaran fee Plan Vivo (PIN review, PDD/validasi, issuance) dari dokumen *Costs & fees* terbaru.

@@ -32,9 +32,17 @@ def build():
 
     w("## Ringkasan")
     w("SETAPAK 4 selesai ketika **PIN Hutan Desa Pasir disetujui Plan Vivo dan proyek tercantum di Project pipeline** "
-      "(M7), dengan target pengajuan PIN paling lambat **November 2027 (bulan 14)**. Keputusan penerimaan ada di tangan "
-      "Plan Vivo; dengan review awal ±6 minggu dan satu–dua putaran CAR/NIR, perkiraannya **Januari–April 2028**, "
-      "tetapi tanggal ini tidak dapat dijamin.\n")
+      "(M7). Pendanaan TAF berakhir **September 2027 (bulan 12)**, sehingga PIN harus diajukan paling lambat **Mei 2027 "
+      "(bulan 8)**. Review awal Plan Vivo ±6 minggu dan satu putaran CAR/NIR (±4 minggu review) membuat keputusan "
+      "paling cepat **Agustus–September 2027**. Tanggal ini tidak dapat dijamin. Jika Plan Vivo meminta lebih dari "
+      "satu putaran revisi, penerimaan pipeline akan jatuh **setelah TAF berakhir** (buffer Okt–Des 2027).\n")
+    w("Konsekuensi jadwal 12 bulan:")
+    w("- **FPIC tahap i–ii harus selesai Maret 2027 (bulan 6).** Ini ketat untuk proses yang timeline-nya ditentukan "
+      "komunitas. Jika komunitas butuh waktu lebih, pengajuan PIN yang mundur, bukan FPIC yang dipercepat.")
+    w("- **M3, M4 dan M5 berjalan paralel sejak bulan 3.** Tenaga ahli karbon perlu dikontrak di bulan 2.")
+    w("- **Indikator kontrak TAF sebaiknya dua lapis:** *PIN submitted* (Mei 2027) sebagai indikator wajib, dan "
+      "*pipeline acceptance* (Sep 2027) sebagai target. Siapkan opsi no-cost extension atau anggaran jembatan untuk "
+      "menindaklanjuti review Plan Vivo pada Okt–Des 2027.\n")
     w("Pipeline bukan registrasi dan belum menghasilkan kredit. Registrasi baru terjadi setelah PDD lolos review dan "
       "proyek divalidasi (M9). Kredit yang dapat di-retire (vPVC) baru terbit setelah verifikasi (M11). Semua itu ada di "
       "STEP 2 dan membutuhkan pendanaan baru.\n")
@@ -70,7 +78,7 @@ def build():
     w("```")
     w("STEP 1 · SETAPAK 4 (teal)                                   ┆ GATE ┆  STEP 2 · POST-SETAPAK 4 (navy)")
     w("(M1)─(M2)─(M3)─(M4)─(M5)─(M6)─<M7>  ═══════════════════════ ┆ PIPE ┆ ═ (M8)─<M9>─(M10)─<M11>─(M12)")
-    w("          └── M3 ∥ M4 ∥ M5 paralel (bln 4–12) ──┘           ┆ LINE ┆      M12 paralel sejak M8")
+    w("          └── M3 ∥ M4 ∥ M5 paralel (bln 3–10) ──┘           ┆ LINE ┆      M12 paralel sejak M8")
     w("( ) = milestone internal     < > = persetujuan eksternal (Plan Vivo / VVB)     ┆ = batas SETAPAK 4")
     w("```\n")
     w("Aturan visual yang dipakai: satu alur tersambung; teal untuk STEP 1 dan navy untuk STEP 2; garis putus-putus "
@@ -132,11 +140,11 @@ def build():
     w(table(["Milestone", "Mulai", "Selesai", "Durasi", "Jenis", "Catatan"],
             [(f"{m['code']} {m['title']}", month_label(m["start"]), month_label(m["end"]),
               f"{m['end'] - m['start'] + 1} bln", "Eksternal" if m["type"] == "EXT" else "Internal",
-              {"M3": "Timeline FPIC ditentukan pemegang hak; buffer 1–2 bulan",
-               "M4": "Paralel dengan M3/M5; ada float kecuali M4.4",
-               "M5": "Paralel; M5.4 = decision gate metodologi",
-               "M6": "Submission paling lambat Nov 2027",
-               "M7": "Indikatif: review ±6 mgg + putaran CAR/NIR ±4 mgg"}.get(m["code"], ""))
+              {"M3": "Keputusan FPIC i–ii Mar 2027; tanpa buffer — risiko utama",
+               "M4": "Paralel dengan M3/M5; M4.4 selesai sebelum PIN; M4.5–M4.6 lanjut setelah PIN",
+               "M5": "Paralel; M5.4 = decision gate metodologi (Feb 2027)",
+               "M6": "Submission paling lambat Mei 2027",
+               "M7": "Indikatif: review ±6 mgg + 1 putaran CAR/NIR; >1 putaran → lewat Sep 2027"}.get(m["code"], ""))
              for m in MILESTONES if m["step"] == 1]))
     w("")
     w("### C6. Critical path")
@@ -145,9 +153,8 @@ def build():
     w("Rantai yang paling menentukan: **legalitas (M1.4) → stakeholder & SEP (M2.1/M2.5) → pra-FPIC (M3.1) → pemetaan "
       "partisipatif (M3.3) → keputusan FPIC i–ii (M3.5) → tutupan lahan & driver (M5.2/M5.3) → metodologi (M5.4) → "
       "estimasi & Go/No-Go (M5.5/M5.6) → draft, review LPHD, final dan submit PIN (M6.2–M6.6) → review Plan Vivo "
-      "(M7.1–M7.5)**. Setiap keterlambatan satu bulan di rantai ini menggeser pengajuan PIN satu bulan. Total float "
-      "terhadap akhir program hanya sebesar selisih antara bulan 19 dan tanggal akhir kontrak SETAPAK 4, yang perlu "
-      "dikonfirmasi dengan TAF.\n")
+      "(M7.1–M7.5)**. Jalur ini **tidak punya float** terhadap akhir TAF (bulan 12). Setiap keterlambatan satu bulan "
+      "sebelum Mei 2027 langsung mengurangi waktu review Plan Vivo sebelum September 2027.\n")
 
     w("### C7. Integrasi 17 Plan Vivo Participatory Tools")
     w(table(["Tool", "Nama", "Dipakai di", "Status tahap PIN", "Status tahap PDD"], TOOLS))
@@ -167,12 +174,12 @@ def build():
     w("")
     w("### C10. Program completion criteria (SETAPAK 4)")
     w("SETAPAK 4 dinyatakan tercapai bila:")
-    w("1. **Target wajib program:** PIN final diajukan ke Plan Vivo dengan bukti fee (M6), dan Plan Vivo menyatakan "
+    w("1. **Target wajib program:** PIN final diajukan ke Plan Vivo dengan bukti fee paling lambat Mei 2027 (M6), dan Plan Vivo menyatakan "
       "PIN disetujui sehingga proyek tercantum di Project pipeline (M7).")
     w("2. **Prasyarat kualitas:** BA FPIC tahap i–ii, GRM aktif, peta partisipatif dan KML, feasibility report dengan "
       "keputusan Go/No-Go, serta prinsip benefit-sharing tersedia di data room.")
     w("3. **Handover:** paket serah terima (Bagian E) ditandatangani SAMPAN dan LPHD.")
-    w("4. **Jika keputusan Plan Vivo belum keluar** sebelum kontrak berakhir: laporkan status *PIN submitted, under "
+    w("4. **Jika keputusan Plan Vivo belum keluar** sebelum TAF berakhir (September 2027): laporkan status *PIN submitted, under "
       "review* lengkap dengan log komunikasi. Jangan melaporkannya sebagai *accepted*. Sisa tindak lanjut review "
       "masuk anggaran transisi.\n")
 
@@ -205,7 +212,7 @@ def build():
         ("Status legal", "SK Hutan Desa/LPHD terverifikasi; memo hak karbon & jalur otorisasi (Permenhut 6/2026, "
                          "SRN/SRUK, MRA)", "Bab hak lahan & karbon PDD; pencatatan nasional"),
         ("Persetujuan masyarakat", "FPIC tahap i–ii; GRM aktif", "FPIC tahap iii + Project Agreements sebelum validasi"),
-        ("Pendanaan lanjutan", "Proposal PDD + validasi dikirim (target bulan 15–19)", "M8–M9 ±USD 85–180 rb (indikatif)"),
+        ("Pendanaan lanjutan", "Proposal PDD + validasi dikirim sebelum TAF berakhir (target Jul–Sep 2027)", "M8–M9 ±USD 85–180 rb (indikatif)"),
         ("Kesiapan tim & kelembagaan", "SAMPAN sebagai Project Coordinator; LPHD, KUPS, WFD aktif",
          "Implementasi & monitoring"),
         ("Risiko transisi", "Kekosongan pendanaan; turnover fasilitator; ekspektasi komunitas; jam 3 tahun PDD",
@@ -228,8 +235,8 @@ def build():
     w("")
 
     w("## Asumsi yang perlu dikonfirmasi")
-    w("- Tanggal akhir kontrak SETAPAK 4 dan apakah target M7 (penerimaan pipeline) atau hanya M6 (pengajuan) yang "
-      "menjadi indikator kontraktual TAF.")
+    w("- Apakah indikator kontraktual TAF (berakhir September 2027) adalah M6 (PIN diajukan) atau M7 (pipeline "
+      "acceptance), dan kemungkinan no-cost extension untuk tindak lanjut review.")
     w("- Luas, SK, dan fungsi kawasan Hutan Desa Pasir, serta proporsi mangrove dan non-mangrove. Dokumen ini "
       "mengasumsikan dominan mangrove pesisir.")
     w("- Status terbaru Methodology Pipeline Plan Vivo untuk mangrove/blue carbon saat M5.4 (bulan 8–9).")
