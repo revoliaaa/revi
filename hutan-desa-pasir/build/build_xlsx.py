@@ -11,8 +11,8 @@ from openpyxl.styles import Alignment, Border, Font, PatternFill, Side
 from openpyxl.utils import get_column_letter
 from openpyxl.worksheet.datavalidation import DataValidation
 
-from data import (ACTIVITIES, BASIS, COMPLETION, DOC_CHECKLIST, MILESTONES, PLOT_MONTHS, RISKS, ROLES, SOURCES,
-                  STEP2, TAF_END, TOOLS, TRANSITION, month_label)
+from data import (ACTIVITIES, BASIS, COMPLETION, DOC_CHECKLIST, MILESTONES, MS_TAHAP, PLOT_MONTHS, RISKS, ROLES,
+                  SOURCES, STEP2, TAF_END, TAHAP, TOOLS, TRANSITION, month_label)
 
 TEAL, TEAL_T, TEAL_M = "0E7C6B", "E3F1EE", "7FBCB1"
 NAVY, NAVY_T = "1F2A44", "E6E9EF"
@@ -61,6 +61,11 @@ def status_validation(ws, col, first, last):
                                   CellIsRule(operator="equal", formula=['"Tertunda"'], fill=fill(AMBER_T)))
 
 
+def tahap_label(ms):
+    t = TAHAP[MS_TAHAP[ms] - 1]
+    return f"Tahap {t['no']} — {t['title']}"
+
+
 def role(k):
     return ROLES.get(k, k)
 
@@ -69,7 +74,7 @@ def sheet_readme(wb):
     ws = wb.active
     ws.title = "README"
     title(ws, "Integrated Community Carbon Development Roadmap – Hutan Desa Pasir",
-          "Plan Vivo PV Climate · STEP 1 = SETAPAK 4 (M1–M7, Okt 2026–Sep 2027) · STEP 2 = Post-SETAPAK 4 (M8–M12) · Bulan 1 = Oktober 2026")
+          "Plan Vivo PV Climate · STEP 1 = SETAPAK 4 (M1–M7, Okt 2026–Sep 2027) · STEP 2 = Post-SETAPAK 4 (M9–M13) · Bulan 1 = Oktober 2026")
     rows = [
         ("Batas SETAPAK 4", "Target program = PIN diajukan (M6) DAN PIN disetujui sehingga proyek tercantum di Plan Vivo Project pipeline (M7). "
                             "STEP 2 ditampilkan untuk perencanaan, bukan kewajiban capaian SETAPAK 4."),
@@ -87,7 +92,7 @@ def sheet_readme(wb):
 def sheet_matrix(wb):
     ws = wb.create_sheet("Master_Matrix")
     title(ws, "B. Master Milestone Matrix", "STEP 1 rinci sampai sub-aktivitas; STEP 2 pada tingkat milestone & workstream")
-    headers = ["Step", "Programme", "Milestone", "Kode", "Activities", "Sub-activities", "Key Deliverables",
+    headers = ["Step", "Programme", "Tahap", "Milestone", "Kode", "Activities", "Sub-activities", "Key Deliverables",
                "Bukti verifikasi", "PIC (Responsible)", "Accountable", "Dependencies", "Completion Criteria",
                "Mulai", "Selesai", "Durasi (bln)", "Jenis", "Basis", "Participatory tools", "Jalur kritis",
                "Status", "% progres", "Catatan"]
@@ -95,7 +100,7 @@ def sheet_matrix(wb):
     r = 5
     titles = {m["code"]: m for m in MILESTONES}
     for m in [m for m in MILESTONES if m["step"] == 1]:
-        vals = ["STEP 1", "SETAPAK 4 (TAF)", f"{m['code']} {m['title']}", m["code"], "", "", m["output"].replace("\n", " "),
+        vals = ["STEP 1", "SETAPAK 4 (TAF)", tahap_label(m["code"]), f"{m['code']} {m['title']}", m["code"], "", "", m["output"].replace("\n", " "),
                 "", "", "", "", COMPLETION[m["code"]], month_label(m["start"]), month_label(m["end"]),
                 m["end"] - m["start"] + 1, m["type"], "", "", "", "Belum mulai", 0, ""]
         for i, v in enumerate(vals, 1):
@@ -107,7 +112,7 @@ def sheet_matrix(wb):
         r += 1
         for a in [a for a in ACTIVITIES if a[1] == m["code"]]:
             code, ms, name, sub, deliv, evid, pic, acc, dep, st, en, basis, tools, crit = a
-            vals = ["STEP 1", "SETAPAK 4 (TAF)", ms, code, name, sub, deliv, evid, role(pic), role(acc), dep,
+            vals = ["STEP 1", "SETAPAK 4 (TAF)", tahap_label(ms), ms, code, name, sub, deliv, evid, role(pic), role(acc), dep,
                     "", month_label(st), month_label(en), en - st + 1, "EXT" if ms == "M7" and code == "M7.5" else "INT",
                     basis, tools, "Ya" if crit else "", "Belum mulai", 0, ""]
             for i, v in enumerate(vals, 1):
@@ -117,7 +122,7 @@ def sheet_matrix(wb):
             r += 1
     for s2 in STEP2:
         m = titles[s2["code"]]
-        vals = ["STEP 2", "Post-SETAPAK 4 (pendanaan lanjutan)", f"{m['code']} {m['title']}", m["code"],
+        vals = ["STEP 2", "Post-SETAPAK 4 (pendanaan lanjutan)", tahap_label(m["code"]), f"{m['code']} {m['title']}", m["code"],
                 s2["workstreams"], "", m["output"].replace("\n", " "), "", role("PM") + " / Project Coordinator",
                 role("DIR"), s2["prereq"], COMPLETION[m["code"]], m["years"], "", "", m["type"], "PV/ID",
                 "", "", "Belum mulai", 0, s2["deadline"]]
@@ -126,11 +131,11 @@ def sheet_matrix(wb):
             c.alignment = WRAP
             c.border = BORDER
             c.fill = fill(NAVY_T)
-        ws.cell(row=r, column=3).font = Font(bold=True, color=NAVY)
+        ws.cell(row=r, column=4).font = Font(bold=True, color=NAVY)
         r += 1
-    status_validation(ws, "T", 5, r - 1)
-    widths(ws, [8, 16, 26, 7, 30, 48, 28, 26, 22, 22, 22, 40, 10, 10, 8, 7, 8, 16, 8, 13, 9, 30])
-    ws.auto_filter.ref = f"A4:V{r - 1}"
+    status_validation(ws, "U", 5, r - 1)
+    widths(ws, [8, 16, 22, 26, 7, 30, 48, 28, 26, 22, 22, 22, 40, 10, 10, 8, 7, 8, 16, 8, 13, 9, 30])
+    ws.auto_filter.ref = f"A4:W{r - 1}"
 
 
 def sheet_gantt(wb):
@@ -178,6 +183,12 @@ def main(out):
     sheet_readme(wb)
     sheet_matrix(wb)
     sheet_gantt(wb)
+    simple_sheet(wb, "Tahapan", "Kerangka 8 tahap (Tahap → Milestone)",
+                 "Tahap 1–2 = SETAPAK 4 · Tahap 3 = gerbang pipeline & investasi · Tahap 4–8 = pengembangan lanjutan",
+                 ["Tahap", "Nama", "Milestone", "Periode (indikatif)", "Cakupan", "Isi utama"],
+                 [(t["no"], t["title"], t["ms"], t["period"],
+                   {1: "SETAPAK 4", 0: "Transisi", 2: "Post-SETAPAK 4"}[t["step"]], "; ".join(t["points"]))
+                  for t in TAHAP], [7, 40, 10, 20, 16, 90])
     simple_sheet(wb, "Participatory_Tools", "C7. Integrasi 17 Plan Vivo Participatory Tools",
                  "Status PIN/PDD mengikuti tabel 'Tools in the Plan Vivo process' (Participatory Toolkit V1.0)",
                  ["Tool", "Nama", "Dipakai di aktivitas", "Status tahap PIN", "Status tahap PDD"],

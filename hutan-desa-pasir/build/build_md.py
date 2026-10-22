@@ -5,7 +5,7 @@
 """
 import sys
 
-from data import (ACTIVITIES, BASIS, COMPLETION, DOC_CHECKLIST, MILESTONES, RISKS, ROLES, SOURCES, STEP2,
+from data import (ACTIVITIES, BASIS, COMPLETION, DOC_CHECKLIST, MILESTONES, MS_TAHAP, RISKS, ROLES, SOURCES, STEP2, TAHAP,
                   TOOLS, TRANSITION, month_label)
 
 
@@ -44,7 +44,7 @@ def build():
       "*pipeline acceptance* (Sep 2027) sebagai target. Siapkan opsi no-cost extension atau anggaran jembatan untuk "
       "menindaklanjuti review Plan Vivo pada Okt–Des 2027.\n")
     w("Pipeline bukan registrasi dan belum menghasilkan kredit. Registrasi baru terjadi setelah PDD lolos review dan "
-      "proyek divalidasi (M9). Kredit yang dapat di-retire (vPVC) baru terbit setelah verifikasi (M11). Semua itu ada di "
+      "proyek divalidasi (M10). Kredit yang dapat di-retire (vPVC) baru terbit setelah verifikasi (M12). Semua itu ada di "
       "STEP 2 dan membutuhkan pendanaan baru.\n")
     w("Tiga temuan dari pemeriksaan dokumen resmi mengubah rencana:")
     w("1. **Metodologi adalah risiko terbesar.** Desa Pasir berada di pesisir dan dikenal dengan ekosistem mangrovenya "
@@ -57,7 +57,30 @@ def build():
       "diselesaikan di SETAPAK 4 (M3.5). Tahap iii masuk STEP 2 sebelum validasi.")
     w("3. **Ada batas waktu setelah pipeline.** PDD wajib diajukan ≤3 tahun setelah PIN disetujui, dan validasi wajib "
       "selesai ≤3 tahun setelah PDD diajukan (Procedures Manual V3.9 §2.2, §4.4). Pendanaan STEP 2 perlu dicari sejak "
-      "bulan 12, bukan setelah SETAPAK 4 berakhir.\n")
+      "bulan 10, bukan setelah SETAPAK 4 berakhir.\n")
+    w("4. **Presale perlu disusun hati-hati.** Teks Permenhut 6/2026 yang tersedia tidak memuat pasal yang secara "
+      "eksplisit mengatur presale. Pasal 10 ayat (1) mensyaratkan Pelaku Usaha *memiliki Unit Karbon* untuk "
+      "Perdagangan Karbon. Tahap 3 karena itu memakai pre-financing atau kontrak offtake berjangka, dengan penyerahan "
+      "unit setelah issuance. Plan Vivo sendiri mengizinkan fPVC/rPVC dialokasikan ke pembeli, tetapi hanya vPVC yang "
+      "dapat di-retire. Rujukan pasal yang membolehkan presale perlu dikonfirmasi ke konsultan hukum atau Kemenhut.")
+    w("5. **Ada jalur nasional yang berjalan sejajar** (Permenhut 6/2026): Hutan Desa wajib didampingi mitra/pendamping "
+      "teregistrasi (Ps. 6); DPP dicatatkan ke Menteri sebelum validasi (Ps. 20, 34); persetujuan Menteri untuk "
+      "penerbitan unit non-SPE GRK sebelum issuance, berlaku 6 bulan (Ps. 20–24); otorisasi & corresponding adjustment "
+      "untuk transaksi luar negeri (Ps. 25–27); PNBP atas transaksi offset (Ps. 46).\n")
+
+    w("### Kerangka 8 tahap")
+    w("Kerangka tahapan tim, diselaraskan dengan PV Climate dan Permenhut 6/2026. Setiap tahap memetakan milestone "
+      "M1–M13 yang dipakai di seluruh matriks:\n")
+    w(table(["Tahap", "Nama", "Milestone", "Periode (indikatif)", "Cakupan", "Isi utama"],
+            [(t["no"], t["title"], t["ms"], t["period"],
+              {1: "SETAPAK 4", 0: "Transisi", 2: "Post-SETAPAK 4"}[t["step"]],
+              "; ".join(t["points"]) or {4: "PDD Template V5.7, metodologi disetujui, screening, konsultasi publik, PDD review",
+                                         5: "Pencatatan DPP, validasi VVB/IE, MoU Plan Vivo, PV Climate Registry",
+                                         6: "Intervensi lapangan, Annual Report tiap 12 bulan (rPVC bila diminta)",
+                                         7: "Verifikasi ≤5 th, persetujuan Menteri, vPVC terbit",
+                                         8: "Realisasi offtake, penjualan, PNBP, ≥60% pendapatan ke komunitas"}[t["no"]])
+             for t in TAHAP]))
+    w("")
 
     w("### Tiga lapis kewajiban")
     w("Setiap aktivitas di matriks diberi kode basis agar jelas mana yang wajib dan mana yang disarankan:\n")
@@ -71,19 +94,18 @@ def build():
 
     # ---------------- A
     w("## A. Integrated Project Lifecycle Visualization (Output 1)")
-    w("Ringkasan dua tahap ada di `Roadmap_HD_Pasir_PVClimate.pptx` slide 1: STEP 1 (5 tahap: Institutional Readiness, "
-      "FPIC & Community, Carbon Feasibility, PIN Submission, PIN Review → PV Pipeline), Transition / Project Handover, lalu "
-      "STEP 2 (PDD, Validation, Registration, Implementation & Annual Report, Verification, Issuance, Carbon Sales & Benefit "
-      "Sharing). Roadmap detail satu slide 16:9 ada di slide 2. Strukturnya:\n")
+    w("Kerangka 8 tahap ada di `Roadmap_HD_Pasir_PVClimate.pptx` slide 1: STEP 1 berisi Tahap 1–2, Tahap 3 menjadi "
+      "jembatan (pipeline & investasi), dan STEP 2 berisi Tahap 4–8 sampai penjualan. Roadmap detail M1–M13 dalam satu "
+      "slide 16:9 ada di slide 2. Strukturnya:\n")
     w("```")
     w("STEP 1 · SETAPAK 4 (teal)                                   ┆ GATE ┆  STEP 2 · POST-SETAPAK 4 (navy)")
-    w("(M1)─(M2)─(M3)─(M4)─(M5)─(M6)─<M7>  ═══════════════════════ ┆ PIPE ┆ ═ (M8)─<M9>─(M10)─<M11>─(M12)")
-    w("          └── M3 ∥ M4 ∥ M5 paralel (bln 3–10) ──┘           ┆ LINE ┆      M12 paralel sejak M8")
+    w("(M1)─(M2)─(M3)─(M4)─(M5)─(M6)─<M7>  ═══════════════════════ ┆ PIPE ┆ ═ (M8)─(M9)─<M10>─(M11)─<M12>─(M13)")
+    w("          └── M3 ∥ M4 ∥ M5 paralel (bln 3–10) ──┘           ┆ LINE ┆  M8 investasi ∥ awal M9")
     w("( ) = milestone internal     < > = persetujuan eksternal (Plan Vivo / VVB)     ┆ = batas SETAPAK 4")
     w("```\n")
     w("Aturan visual yang dipakai: satu alur tersambung; teal untuk STEP 1 dan navy untuk STEP 2; garis putus-putus "
       "oranye di Pipeline Acceptance; lingkaran untuk milestone internal dan belah ketupat untuk persetujuan "
-      "eksternal (M7, M9, M11); kotak putus-putus untuk aktivitas paralel. Panel bawah menegaskan bahwa pipeline ≠ "
+      "eksternal (M7, M10, M12); kotak putus-putus untuk aktivitas paralel. Panel bawah menegaskan bahwa pipeline ≠ "
       "registrasi ≠ issuance dan menjelaskan tiga jenis unit (fPVC, rPVC, vPVC).\n")
     w("**Urutan resmi siklus PV Climate** (Procedures Manual V3.9, Figure 1): Project Screening (PIN Review) → "
       "PDD submission & assessment → Validation & Registration → Annual Reporting (issuance PVC) → Periodic Verification.\n")
@@ -99,8 +121,8 @@ def build():
     w("- *Start date retroaktif.* Start date Project Area boleh hingga 5 tahun sebelum validasi selesai. Kegiatan "
       "perlindungan atau restorasi yang terdokumentasi sejak STEP 1 berpotensi masuk Project Period, jika additionality "
       "dapat dipertahankan.")
-    w("- *Komersialisasi (M12)* dapat dimulai paralel sejak M8 dalam bentuk offtake atau pre-finance, tetapi "
-      "penyerahan unit mengikuti issuance.\n")
+    w("- *Mobilisasi investasi (M8)* berjalan paralel dengan awal PDD (M9) dalam bentuk pre-financing atau offtake "
+      "berjangka. Penjualan dan penyerahan unit (M13) mengikuti issuance.\n")
 
     # ---------------- B
     w("## B. Master Milestone Matrix")
@@ -109,7 +131,7 @@ def build():
     w("### STEP 1 — SETAPAK 4 (tingkat aktivitas)")
     rows = []
     for m in [m for m in MILESTONES if m["step"] == 1]:
-        rows.append((f"**STEP 1**", "SETAPAK 4", f"**{m['code']} {m['title']}**", "", m["output"].replace("\n", " "), "", "",
+        rows.append((f"**STEP 1**", "SETAPAK 4", f"**{m['code']} {m['title']}** (Tahap {MS_TAHAP[m['code']]})", "", m["output"].replace("\n", " "), "", "",
                      f"**{COMPLETION[m['code']]}**"))
         for a in [a for a in ACTIVITIES if a[1] == m["code"]]:
             code, _, name, sub, deliv, evid, pic, acc, dep, *_ = a
@@ -120,7 +142,7 @@ def build():
     w("### STEP 2 — Post-SETAPAK 4 (tingkat milestone & workstream)")
     w(table(["Step", "Programme", "Milestone", "Activities / workstreams", "Key Deliverables", "PIC", "Dependencies",
              "Completion Criteria"],
-            [("STEP 2", "Post-SETAPAK 4", f"{s['code']} {ms[s['code']]['title']}", s["workstreams"],
+            [("STEP 2", "Post-SETAPAK 4", f"{s['code']} {ms[s['code']]['title']} (Tahap {MS_TAHAP[s['code']]})", s["workstreams"],
               ms[s["code"]]["output"], "Project Coordinator (SAMPAN) + LPHD", s["prereq"], COMPLETION[s["code"]])
              for s in STEP2]))
     w("\nKode PIC: " + "; ".join(f"**{k}** = {v}" for k, v in ROLES.items()) + ". A = accountable.\n")
@@ -208,11 +230,11 @@ def build():
                           "baseline, output participatory tools, estimasi indikatif", "Project Region/Area, baseline, ToC"),
         ("Data gap menuju PDD", "Plot stok karbon (biomassa & karbon tanah mangrove); baseline sosial-ekonomi "
                                 "rumah tangga; baseline biodiversitas; parameter leakage & risk buffer; monitoring plan",
-         "M8 carbon accounting & safeguards"),
+         "M9 carbon accounting & safeguards"),
         ("Status legal", "SK Hutan Desa/LPHD terverifikasi; memo hak karbon & jalur otorisasi (Permenhut 6/2026, "
                          "SRN/SRUK, MRA)", "Bab hak lahan & karbon PDD; pencatatan nasional"),
         ("Persetujuan masyarakat", "FPIC tahap i–ii; GRM aktif", "FPIC tahap iii + Project Agreements sebelum validasi"),
-        ("Pendanaan lanjutan", "Proposal PDD + validasi dikirim sebelum TAF berakhir (target Jul–Sep 2027)", "M8–M9 ±USD 85–180 rb (indikatif)"),
+        ("Pendanaan lanjutan", "Proposal PDD + validasi dikirim sebelum TAF berakhir (target Jul–Sep 2027)", "M9–M10 ±USD 85–180 rb (indikatif)"),
         ("Kesiapan tim & kelembagaan", "SAMPAN sebagai Project Coordinator; LPHD, KUPS, WFD aktif",
          "Implementasi & monitoring"),
         ("Risiko transisi", "Kekosongan pendanaan; turnover fasilitator; ekspektasi komunitas; jam 3 tahun PDD",
