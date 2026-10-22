@@ -23,7 +23,7 @@ GREY_TINT = RGBColor(0xEE, 0xEF, 0xEC)
 CARD = {
     1: (["Safeguard: FPIC, GRM, E&S, GESI", "Kebutuhan & progres berjalan",
          "Baseline (PV tools) → project scenario"], "Bahan PIN lengkap", False),
-    2: (["PIN Template V1.4", "Submit ≤ Mei 2027", "Review CAR/NIR, maks. 3 putaran"], "PIN disetujui", True),
+    2: (["PIN Template V1.4", "Submit + PIN review fee", "Review CAR/NIR, maks. 3 putaran"], "PIN disetujui", True),
     3: (["PIN tayang di pipeline Plan Vivo", "Profil proyek & penjajakan investor",
          "Pendamping teregistrasi"], "Proyek di Pipeline", False),
     4: (["Pre-financing investor / offtaker", "Metodologi disetujui Plan Vivo", "Stok karbon, baseline, PDD review"],
@@ -40,7 +40,6 @@ CARD = {
 
 # Label ringkas agar muat di kartu (nama lengkap tetap di data.TAHAP).
 SHORT_TITLE = {3: "Masuk\nPipeline PV"}
-SHORT_PERIOD = {1: "Okt 26–Apr 27", 2: "Mar–Sep 27", 3: "Sep 2027", 7: "≤5 th pasca-validasi"}
 
 
 def zone_color(no):
@@ -67,8 +66,8 @@ def build(prs):
 
     # pita zona
     zy = 1.62
-    zones = [(0, 2, TEAL, "STEP 1 · PROGRAM SETAPAK 4 (TAF) · Okt 2026 – Sep 2027"),
-             (3, 7, NAVY, "STEP 2 · PENGEMBANGAN LANJUTAN (PASCA-SETAPAK 4) · Okt 2027 →")]
+    zones = [(0, 2, TEAL, "STEP 1 · PROGRAM SETAPAK 4 (TAF)"),
+             (3, 7, NAVY, "STEP 2 · PENGEMBANGAN LANJUTAN (PASCA-SETAPAK 4) →")]
     for a, z, col, lbl in zones:
         zb = box(s, cx[a], zy, cx[z] + w - cx[a], 0.32, fill=col)
         shape_text(zb, lbl, size=8.5)
@@ -113,7 +112,7 @@ def build(prs):
             badge = box(s, cx[i] + 0.12, cy - 0.13, w - 0.24, 0.24, fill=TEAL, shape=MSO_SHAPE.ROUNDED_RECTANGLE)
             shape_text(badge, "★ OUTPUT UTAMA", size=7.5)
         text(s, cx[i] + 0.08, cy + 0.1, w - 0.16, 0.45, SHORT_TITLE.get(no, t["title"]), size=9.5, bold=True, color=INK)
-        text(s, cx[i] + 0.08, cy + 0.56, w - 0.16, 0.2, f'{SHORT_PERIOD.get(no, t["period"])} · {t["ms"]}', size=6.5,
+        text(s, cx[i] + 0.08, cy + 0.56, w - 0.16, 0.2, t["ms"], size=6.5,
              bold=True, color=col)
         rich(s, cx[i] + 0.04, cy + 0.8, w - 0.1, 1.1, [[("• ", True, col), (b, False, INK)] for b in bullets],
              size=7.5)
@@ -144,9 +143,9 @@ def build(prs):
     # tanggal kunci
     ky = 6.2
     line(s, 0.45, ky - 0.08, 12.9, ky - 0.08, color=HAIR, w=0.75)
-    keys = [("Mei 2027", "PIN diajukan ke Plan Vivo", TEAL),
-            ("Sep 2027", "Masuk Pipeline PV · output utama", TEAL),
+    keys = [("Pipeline PV", "Output utama SETAPAK 4", TEAL),
             ("≤ 3 tahun", "PDD wajib diajukan sejak PIN disetujui", NAVY),
+            ("≤ 5 tahun", "Verifikasi pertama setelah validasi", NAVY),
             ("≥ 60%", "pendapatan PVC untuk komunitas", NAVY)]
     kw = 2.55
     for i, (big, cap, col) in enumerate(keys):
@@ -164,11 +163,11 @@ def build(prs):
 
     text(s, 0.45, 7.17, 12.4, 0.22,
          "Sumber: Plan Vivo PV Climate Procedures Manual V3.9 & Project Requirements V5.7; Permenhut 6/2026. "
-         "Tanggal keputusan Plan Vivo, VVB dan Menteri bersifat indikatif. Presale = kontrak berjangka; unit diserahkan setelah terbit.",
+         "Keputusan Plan Vivo, VVB dan Menteri berada di luar kendali proyek. Presale = kontrak berjangka; unit diserahkan setelah terbit.",
          size=7, color=MUTED)
 
     s.notes_slide.notes_text_frame.text = (
-        "Alur: Tahap 1–3 adalah cakupan program SETAPAK 4 yang didanai TAF sampai September 2027. Output utamanya "
+        "Alur: Tahap 1–3 adalah cakupan program SETAPAK 4 yang didanai TAF. Output utamanya "
         "Tahap 3: PIN disetujui dan proyek masuk pipeline Plan Vivo. Pipeline belum berarti registrasi atau kredit. "
         "Garis gerbang setelah Tahap 3 menandai akhir SETAPAK 4. Dengan status pipeline, proyek mencari investor atau "
         "pembeli untuk pre-financing/offtake berjangka yang membiayai PDD dan validasi (Tahap 4 dst.). Kredit baru muncul setelah registrasi (fPVC untuk restorasi, rPVC dari Annual Report) dan yang "
