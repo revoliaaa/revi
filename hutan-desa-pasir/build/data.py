@@ -30,7 +30,7 @@ PIN_SUBMIT = 8        # target pengajuan PIN: Mei 2027
 PLOT_MONTHS = 15      # grafik STEP 1 diperpanjang 3 bulan (Okt–Des 2027) sebagai buffer review di luar TAF
 
 # Kerangka 8 tahap (dipakai di slide ringkasan & kolom "Tahap" di matriks).
-# Tahap 1–2 = cakupan SETAPAK 4; Tahap 3 = gerbang & transisi; Tahap 4–8 = pengembangan lanjutan.
+# Tahap 1–3 = cakupan SETAPAK 4 (Tahap 3 = output utama: masuk pipeline); Tahap 4–8 = pengembangan lanjutan.
 TAHAP = [
     dict(no=1, step=1, ms="M1–M5", period="Okt 2026 – Apr 2027",
          title="Persiapan Pendaftaran PIN",
@@ -46,12 +46,12 @@ TAHAP = [
                  "Submit ≤ Mei 2027 + PIN review fee",
                  "PIN review report: CAR/NIR, maks. 3 putaran",
                  "Approval = keputusan Plan Vivo (target Sep 2027)"]),
-    dict(no=3, step=0, ms="M8", period="Sep 2027 – 2028",
-         title="Masuk Pipeline PV & Mobilisasi Investasi",
-         short="Pipeline PV &\ninvestasi",
-         points=["PIN dipublikasikan di pipeline Plan Vivo",
-                 "Investor/offtaker: pre-financing & kontrak offtake berjangka (presale)",
-                 "Pendamping teregistrasi & pencatatan DPP (Permenhut 6/2026)"]),
+    dict(no=3, step=1, ms="M7.5 · M8", period="Sep 2027",
+         title="Masuk Pipeline PV (Output Utama SETAPAK 4)",
+         short="Masuk\\nPipeline PV",
+         points=["Output utama SETAPAK 4: PIN disetujui, proyek tercantum & dipublikasikan di pipeline Plan Vivo",
+                 "Profil proyek & penjajakan investor/offtaker dimulai; pre-financing/presale berjangka berlanjut di STEP 2",
+                 "Status pendamping teregistrasi & rencana pencatatan DPP (Permenhut 6/2026)"]),
     dict(no=4, step=2, ms="M9", period="2027 – 2029", title="Penyusunan PDD", short="Penyusunan\nPDD", points=[]),
     dict(no=5, step=2, ms="M10", period="2029 – 2030", title="Validasi & Registrasi", short="Validasi &\nRegistrasi", points=[]),
     dict(no=6, step=2, ms="M11", period="2030 →", title="Implementasi & Monitoring", short="Implementasi\n& Monitoring", points=[]),

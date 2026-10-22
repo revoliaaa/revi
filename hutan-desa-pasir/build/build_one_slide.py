@@ -24,9 +24,9 @@ CARD = {
     1: (["Safeguard: FPIC i–ii, GRM, E&S, GESI", "Kebutuhan & progres yang sudah berjalan",
          "Baseline via PV tools → project scenario"], "Bahan PIN lengkap", False),
     2: (["PIN Template V1.4", "Submit ≤ Mei 2027", "Review CAR/NIR, maks. 3 putaran"], "PIN disetujui", True),
-    3: (["Listing di pipeline Plan Vivo", "Pre-financing / offtake berjangka",
-         "Pendamping teregistrasi, DPP"], "LoI / term sheet investor", False),
-    4: (["Metodologi disetujui Plan Vivo", "Stok karbon & baseline penuh", "Konsultasi publik + PDD review"],
+    3: (["PIN dipublikasikan di pipeline Plan Vivo", "Profil proyek & penjajakan investor",
+         "Pendamping teregistrasi (Permenhut 6/2026)"], "Proyek di Pipeline PV", False),
+    4: (["Pre-financing investor / offtaker", "Metodologi disetujui Plan Vivo", "Stok karbon, baseline, PDD review"],
         "PDD lolos review", False),
     5: (["DPP tercatat di Kemenhut", "Audit VVB / microscale IE", "MoU & PV Climate Registry"],
         "Proyek terdaftar", True),
@@ -39,12 +39,12 @@ CARD = {
 
 
 # Label ringkas agar muat di kartu (nama lengkap tetap di data.TAHAP).
-SHORT_TITLE = {3: "Pipeline PV &\nInvestasi"}
-SHORT_PERIOD = {1: "Okt 26 – Apr 27", 2: "Mar – Sep 27", 3: "Sep 27 – 2028"}
+SHORT_TITLE = {3: "Masuk\nPipeline PV"}
+SHORT_PERIOD = {1: "Okt 26 – Apr 27", 2: "Mar – Sep 27", 3: "Sep 2027"}
 
 
 def zone_color(no):
-    return TEAL if no <= 2 else (AMBER if no == 3 else NAVY)
+    return TEAL if no <= 3 else NAVY
 
 
 def build(prs):
@@ -55,8 +55,8 @@ def build(prs):
     text(s, 0.45, 0.3, 11, 0.25, "COMMUNITY CARBON HUTAN DESA PASIR · MEMPAWAH, KALIMANTAN BARAT · PLAN VIVO PV CLIMATE",
          size=9, bold=True, color=TEAL)
     text(s, 0.45, 0.55, 12.4, 0.85,
-         "Delapan tahap menuju kredit karbon komunitas — SETAPAK 4 menuntaskan\n"
-         "persiapan dan persetujuan PIN; investasi membuka jalan ke PDD hingga penjualan",
+         "SETAPAK 4 berakhir dengan proyek masuk Pipeline Plan Vivo — status ini\n"
+         "membuka investasi untuk PDD, validasi, hingga penjualan kredit karbon",
          size=21, font=DISPLAY, color=INK)
 
     # grid kolom
@@ -67,22 +67,23 @@ def build(prs):
 
     # pita zona
     zy = 1.62
-    zones = [(0, 1, TEAL, "STEP 1 · SETAPAK 4 (TAF) · Okt 2026 – Sep 2027"),
-             (2, 2, AMBER, "GERBANG · PIPELINE"),
-             (3, 7, NAVY, "STEP 2 · PENGEMBANGAN LANJUTAN · 2027 →")]
+    zones = [(0, 2, TEAL, "STEP 1 · PROGRAM SETAPAK 4 (TAF) · Okt 2026 – Sep 2027"),
+             (3, 7, NAVY, "STEP 2 · PENGEMBANGAN LANJUTAN (PASCA-SETAPAK 4) · Okt 2027 →")]
     for a, z, col, lbl in zones:
         zb = box(s, cx[a], zy, cx[z] + w - cx[a], 0.32, fill=col)
         shape_text(zb, lbl, size=8.5)
 
     # garis alur & penanda
     ny = 2.3
-    line(s, cx[0] + w / 2, ny, cx[2] + w / 2, ny, color=TEAL, w=2.5)
-    line(s, cx[2] + w / 2, ny, cx[7] + w / 2, ny, color=NAVY, w=2.5)
+    line(s, cx[0] + w / 2, ny, cx[3] - gap / 2, ny, color=TEAL, w=2.5)
+    line(s, cx[3] - gap / 2, ny, cx[7] + w / 2, ny, color=NAVY, w=2.5)
     text(s, lab_x, ny - 0.12, lab_w, 0.25, "TAHAP", size=8, bold=True, color=MUTED)
 
-    # batas SETAPAK 4
-    gx = cx[2] - gap / 2
-    line(s, gx, zy - 0.05, gx, 6.0, color=AMBER, w=1.75, dash=MSO_LINE.DASH)
+    # batas SETAPAK 4: setelah Tahap 3 (masuk pipeline)
+    gx = cx[3] - gap / 2
+    line(s, gx, zy - 0.06, gx, 6.0, color=AMBER, w=1.75, dash=MSO_LINE.DASH)
+    text(s, gx - 1.6, zy - 0.27, 3.2, 0.22, "▼ GERBANG PIPELINE · AKHIR SETAPAK 4", size=7.5, bold=True, color=AMBER,
+         align=PP_ALIGN.CENTER)
 
     T = {t["no"]: t for t in TAHAP}
     cy, ch = 2.68, 2.4
@@ -92,31 +93,40 @@ def build(prs):
         col = zone_color(no)
         bullets, output, ext = CARD[no]
         mx = cx[i] + w / 2
-        if ext:
+        if no == 3:
+            box(s, mx - 0.34, ny - 0.34, 0.68, 0.68, fill=WHITE, line=TEAL, shape=MSO_SHAPE.OVAL, lw=2)
+            d = box(s, mx - 0.26, ny - 0.26, 0.52, 0.52, fill=TEAL, shape=MSO_SHAPE.OVAL)
+            shape_text(d, "3", size=14)
+        elif ext:
             d = box(s, mx - 0.27, ny - 0.27, 0.54, 0.54, fill=WHITE, line=col, shape=MSO_SHAPE.DIAMOND, lw=2.25)
             shape_text(d, str(no), size=13, color=col)
         else:
             d = box(s, mx - 0.24, ny - 0.24, 0.48, 0.48, fill=col, shape=MSO_SHAPE.OVAL)
             shape_text(d, str(no), size=13)
 
-        tint = TEAL_TINT if no <= 2 else (AMBER_TINT if no == 3 else NAVY_TINT)
-        card = box(s, cx[i], cy, w, ch, fill=WHITE, line=HAIR, lw=0.75)
+        tint = TEAL_TINT if no <= 3 else NAVY_TINT
+        key = no == 3
+        card = box(s, cx[i], cy, w, ch, fill=TEAL_TINT if key else WHITE, line=TEAL if key else HAIR,
+                   lw=1.75 if key else 0.75)
         box(s, cx[i], cy, w, 0.05, fill=col)
+        if key:
+            badge = box(s, cx[i] + 0.12, cy - 0.13, w - 0.24, 0.24, fill=TEAL, shape=MSO_SHAPE.ROUNDED_RECTANGLE)
+            shape_text(badge, "★ OUTPUT UTAMA", size=7.5)
         text(s, cx[i] + 0.08, cy + 0.1, w - 0.16, 0.45, SHORT_TITLE.get(no, t["title"]), size=10, bold=True, color=INK)
         text(s, cx[i] + 0.08, cy + 0.56, w - 0.16, 0.2, f'{SHORT_PERIOD.get(no, t["period"])} · {t["ms"]}', size=7,
              bold=True, color=col)
         rich(s, cx[i] + 0.04, cy + 0.8, w - 0.1, 1.1, [[("▪ ", True, col), (b, False, INK)] for b in bullets],
              size=8)
-        ob = box(s, cx[i] + 0.08, cy + ch - 0.42, w - 0.16, 0.32, fill=tint, shape=MSO_SHAPE.ROUNDED_RECTANGLE)
-        shape_text(ob, "→ " + output, size=7.5, bold=True, color=col)
+        ob = box(s, cx[i] + 0.08, cy + ch - 0.42, w - 0.16, 0.32, fill=TEAL if key else tint,
+                 shape=MSO_SHAPE.ROUNDED_RECTANGLE)
+        shape_text(ob, "→ " + output, size=7.5, bold=True, color=WHITE if key else col)
 
     # lajur dukungan
     sy = 5.22
     text(s, lab_x, sy + 0.04, lab_w, 0.3, "DUKUNGAN", size=8, bold=True, color=MUTED)
     for a, z, fill, fg, lbl in [
-        (0, 1, TEAL_TINT, TEAL, "TAF · SETAPAK 4 — SAMPAN & LPHD Pasir"),
-        (2, 2, AMBER_TINT, AMBER, "Investor / offtaker"),
-        (3, 7, NAVY_TINT, NAVY, "Pre-financing + pendanaan lanjutan  →  pendapatan karbon membiayai operasi"),
+        (0, 2, TEAL_TINT, TEAL, "TAF · SETAPAK 4 — SAMPAN Kalimantan & LPHD Pasir"),
+        (3, 7, NAVY_TINT, NAVY, "Investor / offtaker (pre-financing, presale berjangka) + pendanaan lanjutan  →  pendapatan karbon"),
     ]:
         b = box(s, cx[a], sy, cx[z] + w - cx[a], 0.32, fill=fill)
         shape_text(b, lbl, size=8, bold=True, color=fg)
@@ -135,7 +145,7 @@ def build(prs):
     ky = 6.2
     line(s, 0.45, ky - 0.08, 12.9, ky - 0.08, color=HAIR, w=0.75)
     keys = [("Mei 2027", "PIN diajukan ke Plan Vivo", TEAL),
-            ("Sep 2027", "Target masuk pipeline · akhir TAF", AMBER),
+            ("Sep 2027", "Masuk Pipeline PV — output utama SETAPAK 4", TEAL),
             ("≤ 3 tahun", "PDD wajib diajukan sejak PIN disetujui", NAVY),
             ("≥ 60%", "pendapatan PVC untuk komunitas", NAVY)]
     kw = 2.55
@@ -158,10 +168,10 @@ def build(prs):
          size=7, color=MUTED)
 
     s.notes_slide.notes_text_frame.text = (
-        "Alur: Tahap 1–2 adalah cakupan SETAPAK 4 yang didanai TAF sampai September 2027. Targetnya PIN disetujui dan "
-        "proyek masuk pipeline Plan Vivo. Pipeline belum berarti registrasi atau kredit. Tahap 3 adalah gerbang: dengan "
-        "status pipeline, proyek mencari investor atau pembeli untuk pre-financing/offtake berjangka yang membiayai PDD "
-        "dan validasi. Kredit baru muncul setelah registrasi (fPVC untuk restorasi, rPVC dari Annual Report) dan yang "
+        "Alur: Tahap 1–3 adalah cakupan program SETAPAK 4 yang didanai TAF sampai September 2027. Output utamanya "
+        "Tahap 3: PIN disetujui dan proyek masuk pipeline Plan Vivo. Pipeline belum berarti registrasi atau kredit. "
+        "Garis gerbang setelah Tahap 3 menandai akhir SETAPAK 4. Dengan status pipeline, proyek mencari investor atau "
+        "pembeli untuk pre-financing/offtake berjangka yang membiayai PDD dan validasi (Tahap 4 dst.). Kredit baru muncul setelah registrasi (fPVC untuk restorasi, rPVC dari Annual Report) dan yang "
         "dapat di-retire hanya vPVC setelah verifikasi. Minimal 60% pendapatan dari penjualan untuk peserta dan pihak lokal.")
     return s
 

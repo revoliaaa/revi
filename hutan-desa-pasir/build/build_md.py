@@ -94,8 +94,8 @@ def build():
 
     # ---------------- A
     w("## A. Integrated Project Lifecycle Visualization (Output 1)")
-    w("Kerangka 8 tahap ada di `Roadmap_HD_Pasir_PVClimate.pptx` slide 1: STEP 1 berisi Tahap 1–2, Tahap 3 menjadi "
-      "jembatan (pipeline & investasi), dan STEP 2 berisi Tahap 4–8 sampai penjualan. Roadmap detail M1–M13 dalam satu "
+    w("Kerangka 8 tahap ada di `Roadmap_HD_Pasir_PVClimate.pptx` slide 1: STEP 1 berisi Tahap 1–3, dengan Tahap 3 "
+      "(masuk Pipeline PV) sebagai output utama SETAPAK 4, dan STEP 2 berisi Tahap 4–8 sampai penjualan. Roadmap detail M1–M13 dalam satu "
       "slide 16:9 ada di slide 2. Strukturnya:\n")
     w("```")
     w("STEP 1 · SETAPAK 4 (teal)                                   ┆ GATE ┆  STEP 2 · POST-SETAPAK 4 (navy)")

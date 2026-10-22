@@ -193,11 +193,11 @@ def slide_overview(prs):
     s = prs.slides.add_slide(prs.slide_layouts[6])
     header(s, "HUTAN DESA PASIR · MEMPAWAH, KALIMANTAN BARAT · PLAN VIVO PV CLIMATE",
            "Delapan tahap dari persiapan PIN sampai penjualan kredit: SETAPAK 4\n"
-           "menuntaskan Tahap 1–2, Tahap 3 menjadi jembatan ke investasi dan PDD", 1)
+           "menuntaskan Tahap 1–3 dengan output utama proyek masuk Pipeline PV", 1)
     T = {t["no"]: t for t in TAHAP}
 
     # STEP 1 panel
-    box(s, 0.4, 1.35, 12.53, 2.42, fill=TEAL_TINT, line=TEAL_MID, shape=MSO_SHAPE.ROUNDED_RECTANGLE, lw=1)
+    box(s, 0.4, 1.35, 12.53, 3.43, fill=TEAL_TINT, line=TEAL_MID, shape=MSO_SHAPE.ROUNDED_RECTANGLE, lw=1)
     s.shapes[-1].adjustments[0] = 0.05
     rich(s, 0.6, 1.4, 9.5, 0.32, [[("STEP 1 — SETAPAK 4   ", True, INK),
                                    ("Okt 2026 – Sep 2027 · Dukungan: TAF · Pelaksana: SAMPAN Kalimantan & LPHD Pasir",
@@ -210,17 +210,16 @@ def slide_overview(prs):
                                     ("PIN disetujui Plan Vivo → proyek masuk pipeline (submit ≠ approval; "
                                      "pipeline ≠ registrasi ≠ kredit).", False, INK)]], size=9.5)
 
-    # Tahap 3 jembatan
-    box(s, 0.4, 3.9, 12.53, 0.82, fill=RGBColor(0xFB, 0xF3, 0xE8), line=AMBER, shape=MSO_SHAPE.ROUNDED_RECTANGLE,
-        lw=1.25, dash=MSO_LINE.DASH)
+    # Tahap 3: output utama SETAPAK 4 (masih di dalam panel STEP 1)
+    box(s, 0.6, 3.82, 12.13, 0.86, fill=WHITE, line=TEAL, shape=MSO_SHAPE.ROUNDED_RECTANGLE, lw=1.75)
     s.shapes[-1].adjustments[0] = 0.12
-    b = box(s, 0.55, 4.08, 0.42, 0.42, fill=AMBER, shape=MSO_SHAPE.ROUNDED_RECTANGLE)
+    b = box(s, 0.72, 4.02, 0.42, 0.42, fill=TEAL, shape=MSO_SHAPE.ROUNDED_RECTANGLE)
     shape_text(b, "3", size=11)
-    rich(s, 1.07, 3.95, 4.3, 0.3, [[("Tahap 3 — " + T[3]["title"], True, INK)]], size=11)
-    text(s, 1.09, 4.24, 4.3, 0.2, T[3]["period"] + " · " + T[3]["ms"] + " · Transisi / Project Handover",
-         size=8, bold=True, color=AMBER)
-    rich(s, 1.07, 4.44, 4.3, 0.25, [[("Gerbang: pipeline Plan Vivo = batas SETAPAK 4", False, MUTED)]], size=8)
-    rich(s, 5.45, 3.97, 7.4, 0.72, [[("▪ ", True, AMBER), (pt, False, INK)] for pt in T[3]["points"]], size=8.5,
+    rich(s, 1.22, 3.88, 4.3, 0.3, [[("Tahap 3 — Masuk Pipeline PV", True, INK)]], size=11)
+    text(s, 1.24, 4.17, 4.3, 0.2, "★ OUTPUT UTAMA SETAPAK 4 · " + T[3]["period"] + " · " + T[3]["ms"],
+         size=8, bold=True, color=TEAL)
+    rich(s, 1.22, 4.37, 4.3, 0.25, [[("Setelah tahap ini: gerbang ke STEP 2", False, AMBER)]], size=8)
+    rich(s, 5.45, 3.86, 7.2, 0.78, [[("▪ ", True, TEAL), (pt, False, INK)] for pt in T[3]["points"]], size=8.5,
          anchor=MSO_ANCHOR.MIDDLE)
 
     # STEP 2 panel

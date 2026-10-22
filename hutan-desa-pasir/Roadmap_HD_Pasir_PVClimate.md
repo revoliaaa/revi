@@ -28,7 +28,7 @@ Kerangka tahapan tim, diselaraskan dengan PV Climate dan Permenhut 6/2026. Setia
 |---|---|---|---|---|---|
 | 1 | Persiapan Pendaftaran PIN | M1–M5 | Okt 2026 – Apr 2027 | SETAPAK 4 | Safeguard: FPIC tahap i–ii, GRM, E&S risk screening, GESI; Kebutuhan: masalah & kebutuhan komunitas, livelihood, kapasitas, pendanaan; Progres yang sudah dilakukan: status HD, rehabilitasi, patroli, KUPS; Data baseline dengan PV Participatory Tools → baseline & project scenario |
 | 2 | Submit PIN hingga Approval | M6–M7 | Mar – Sep 2027 | SETAPAK 4 | PIN Template V1.4 + review LPHD; Submit ≤ Mei 2027 + PIN review fee; PIN review report: CAR/NIR, maks. 3 putaran; Approval = keputusan Plan Vivo (target Sep 2027) |
-| 3 | Masuk Pipeline PV & Mobilisasi Investasi | M8 | Sep 2027 – 2028 | Transisi | PIN dipublikasikan di pipeline Plan Vivo; Investor/offtaker: pre-financing & kontrak offtake berjangka (presale); Pendamping teregistrasi & pencatatan DPP (Permenhut 6/2026) |
+| 3 | Masuk Pipeline PV (Output Utama SETAPAK 4) | M7.5 · M8 | Sep 2027 | SETAPAK 4 | Output utama SETAPAK 4: PIN disetujui, proyek tercantum & dipublikasikan di pipeline Plan Vivo; Profil proyek & penjajakan investor/offtaker dimulai; pre-financing/presale berjangka berlanjut di STEP 2; Status pendamping teregistrasi & rencana pencatatan DPP (Permenhut 6/2026) |
 | 4 | Penyusunan PDD | M9 | 2027 – 2029 | Post-SETAPAK 4 | PDD Template V5.7, metodologi disetujui, screening, konsultasi publik, PDD review |
 | 5 | Validasi & Registrasi | M10 | 2029 – 2030 | Post-SETAPAK 4 | Pencatatan DPP, validasi VVB/IE, MoU Plan Vivo, PV Climate Registry |
 | 6 | Implementasi & Monitoring | M11 | 2030 → | Post-SETAPAK 4 | Intervensi lapangan, Annual Report tiap 12 bulan (rPVC bila diminta) |
@@ -45,7 +45,7 @@ Setiap aktivitas di matriks diberi kode basis agar jelas mana yang wajib dan man
 | PM | Rekomendasi manajemen proyek | PKS SAMPAN–LPHD, pre-submission call, data room, Go/No-Go |
 
 ## A. Integrated Project Lifecycle Visualization (Output 1)
-Kerangka 8 tahap ada di `Roadmap_HD_Pasir_PVClimate.pptx` slide 1: STEP 1 berisi Tahap 1–2, Tahap 3 menjadi jembatan (pipeline & investasi), dan STEP 2 berisi Tahap 4–8 sampai penjualan. Roadmap detail M1–M13 dalam satu slide 16:9 ada di slide 2. Strukturnya:
+Kerangka 8 tahap ada di `Roadmap_HD_Pasir_PVClimate.pptx` slide 1: STEP 1 berisi Tahap 1–3, dengan Tahap 3 (masuk Pipeline PV) sebagai output utama SETAPAK 4, dan STEP 2 berisi Tahap 4–8 sampai penjualan. Roadmap detail M1–M13 dalam satu slide 16:9 ada di slide 2. Strukturnya:
 
 ```
 STEP 1 · SETAPAK 4 (teal)                                   ┆ GATE ┆  STEP 2 · POST-SETAPAK 4 (navy)

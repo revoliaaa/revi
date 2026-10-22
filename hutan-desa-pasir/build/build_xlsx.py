@@ -184,7 +184,7 @@ def main(out):
     sheet_matrix(wb)
     sheet_gantt(wb)
     simple_sheet(wb, "Tahapan", "Kerangka 8 tahap (Tahap → Milestone)",
-                 "Tahap 1–2 = SETAPAK 4 · Tahap 3 = gerbang pipeline & investasi · Tahap 4–8 = pengembangan lanjutan",
+                 "Tahap 1–3 = SETAPAK 4 (Tahap 3 = output utama: masuk Pipeline PV) · Tahap 4–8 = pengembangan lanjutan",
                  ["Tahap", "Nama", "Milestone", "Periode (indikatif)", "Cakupan", "Isi utama"],
                  [(t["no"], t["title"], t["ms"], t["period"],
                    {1: "SETAPAK 4", 0: "Transisi", 2: "Post-SETAPAK 4"}[t["step"]], "; ".join(t["points"]))
