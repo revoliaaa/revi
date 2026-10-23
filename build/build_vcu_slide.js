@@ -52,7 +52,7 @@ function hline(s, x, y, w, color, width = 0.75) {
 const nf = (n, d = 0) => n.toLocaleString("id-ID", { minimumFractionDigits: d, maximumFractionDigits: d });
 
 // ---- model (same defaults as the infographic) ----
-const A = { bio: 100, def: 8.29, peat: 16, eff: 1, arr: 8, arrHa: 591.26, buf: 0.35, dur: 20, lphd: 0.6, fx: 16000 };
+const A = { bio: 100, def: 8.29, peat: 16, eff: 1, arr: 8, arrHa: 591.26, buf: 0.35, dur: 35, lphd: 0.6, fx: 16000 };
 const bio = A.def * A.eff * A.bio * 44 / 12;
 const peat = A.def * A.eff * A.peat * (A.dur + 1) / 2;
 const arr = A.arrHa * A.arr;
@@ -63,7 +63,7 @@ const rp = (n) => n >= 1e9 ? "Rp " + nf(n / 1e9, 2) + " M" : "Rp " + nf(n / 1e6,
 pres.addSection({ title: "VCU dan nilai karbon" });
 const s = pres.addSlide({ masterName: "CONTENT", sectionTitle: "VCU dan nilai karbon" });
 s.addText("POTENSI KREDIT KARBON  ·  PLAN VIVO  ·  KHG SUNGAI MEMPAWAH", { placeholder: "kicker" });
-s.addText(`±${nf(net)} unit per tahun, senilai ${rp(val(10)).replace(" jt", " juta")} pada US$10`, { placeholder: "title" });
+s.addText(`±${nf(net)} unit per tahun, senilai ${rp(val(10)).replace(" jt", " juta").replace(" M", " miliar")} pada US$10`, { placeholder: "title" });
 s.addNotes(
   `Estimasi awal dengan rumus terkoreksi. REDD+ biomassa = ${nf(A.def, 2)} ha/tahun × ${A.bio} tC/ha × 44/12 = ${nf(bio)} tCO2e/tahun. ` +
   `REDD+ gambut = ${nf(A.def, 2)} × ${A.peat} tCO2e/ha/tahun × rata-rata ${(A.dur + 1) / 2} tahun berjalan = ${nf(peat)}. ` +
@@ -80,7 +80,7 @@ const labW = 2.35, bx = lx + labW + 0.15, vW = 0.85, bw = lw - labW - 0.15 - vW 
 const sc = bw / gross;
 const rows = [
   { lab: "REDD+ biomassa", sub: "8,29 ha/th × 100 tC/ha × 44/12", v: bio, start: 0, col: COL.lindung },
-  { lab: "REDD+ gambut", sub: "Terhindar, rata-rata 20 th", v: peat, start: bio, col: COL.leaf },
+  { lab: "REDD+ gambut", sub: `Terhindar, rata-rata ${A.dur} th`, v: peat, start: bio, col: COL.leaf },
   { lab: "ARR serapan", sub: "591,26 ha × 8 tCO₂e/ha", v: arr, start: bio + peat, col: COL.amber },
   { lab: "Potongan buffer 35%", sub: "Risiko dan ketidakpastian", v: -cut, start: gross - cut, col: COL.copper },
 ];
@@ -102,7 +102,7 @@ const rx = lx + lw + 0.55, rw = W - MX - rx;
 T(s, "SKENARIO HARGA · KURS Rp 16.000", { x: rx, y: y0, w: rw, h: 0.3, fontSize: 12, bold: true, color: COL.lindung, charSpacing: 2 });
 const BR = { border: [{ type: "none" }, { type: "none" }, { pt: 0.5, color: HEX.hair }, { type: "none" }] };
 const H = (t, al = "right") => ({ text: t, options: { bold: true, color: HEX.muted, align: al, fontSize: 11, border: [{ type: "none" }, { type: "none" }, { pt: 1, color: HEX.ink }, { type: "none" }] } });
-const trows = [[H("Harga/unit", "left"), H("Per tahun"), H("LPHD 60%/th"), H("Total 20 th")]];
+const trows = [[H("Harga/unit", "left"), H("Per tahun"), H("LPHD 60%/th"), H(`Total ${A.dur} th`)]];
 [3, 5, 10, 15].forEach((p) => {
   const sel = p === 10;
   const o = (al) => Object.assign({ align: al, bold: sel, color: HEX.ink, fill: sel ? { color: HEX.tint } : undefined }, BR);
