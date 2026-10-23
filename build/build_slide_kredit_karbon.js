@@ -62,7 +62,10 @@ function splitBar(s, x, y, w, h, segs) {
 // Data (lembar perhitungan stok karbon LPHD)
 const NET_VCU = 9807.43, VCU_LPHD = 5884;
 const STOK_CO2E = 5202879, BUFFER = 2601440;
-const POOL = { tuplah: 4824448, soil: 338752, lain: 38415 + 111 + 1152 }; // AGB + BGB + serasah
+const POOLS = [ // [pool, ton C, ton CO2e]
+  ["AGB", 10477, 38415], ["BGB", 30, 111], ["Litter", 314, 1152], ["Soil", 92387, 338752], ["Tuplah", 1315759, 4824448],
+];
+const STOK_C = 1418967;
 const HA_ARR = 1443.1, HA_REDD = 1025.4;
 const RP = { // [harga USD, porsi LPHD Rp, keseluruhan Rp]
   rows: [[5, 529601059, 882668431], [10, 1059202117, 1765336862], [15, 1588803176, 2648005293], [20, 2118404234, 3530673724]],
@@ -74,7 +77,7 @@ const M = (rp) => Math.round(rp / 1e7); // Rp miliar ×100, shown with COMMA2
 
 const s = pres.addSlide({ masterName: "CONTENT" });
 s.addText("POTENSI KREDIT KARBON  ·  LPHD", { placeholder: "kicker" });
-s.addText("Porsi LPHD 5.884 VCU bernilai Rp 0,53–2,12 miliar, tergantung harga karbon 5–20 USD", { placeholder: "title" });
+s.addText("Porsi LPHD 5.884 VCU bernilai Rp 0,53–2,12 miliar pada harga karbon 5–20 USD per VCU", { placeholder: "title" });
 s.addNotes(
   "Net VCU seluruh areal 9.807,43 (setelah buffer 2.601.440 tCO2e dari stok 5.202.879 tCO2e). Porsi LPHD 60% = 5.884 VCU.\n" +
   "Nilai porsi LPHD: 20 USD Rp 2.118.404.234; 15 USD Rp 1.588.803.176; 10 USD Rp 1.059.202.117; 5 USD Rp 529.601.059.\n" +
@@ -82,61 +85,58 @@ s.addNotes(
   "Kurs tersirat sekitar Rp18.000/USD. Stok per pool (tCO2e): AGB 38.415; BGB 111; serasah 1.152; tanah 338.752; tuplah 4.824.448.\n" +
   "Luas: hutan 1.443,1 ha (ARR), terdegradasi 1.025,4 ha (REDD).");
 
-// ---- left column: key figures ----
-const lx = MX, lw = 4.3;
-T(s, [{ text: fmt(VCU_LPHD), options: { fontFace: DISPLAY, fontSize: 54, bold: true, color: COL.lindung, breakLine: true } },
-      { text: "VCU porsi LPHD (60%)", options: { fontSize: 15, bold: true } }], { x: lx, y: 2.1, w: lw, h: 1.35 });
-T(s, [{ text: "dari ", options: { fontSize: 14, color: COL.muted } },
-      { text: NET_VCU.toLocaleString("id-ID", { minimumFractionDigits: 2 }), options: { fontSize: 14, bold: true } },
-      { text: " net VCU seluruh areal, setelah buffer " + fmt(BUFFER) + " tCO₂e", options: { fontSize: 14, color: COL.muted } }],
-  { x: lx, y: 3.5, w: lw, h: 0.55 });
+// ---- left: carbon stock -> credits table ----
+const lx = MX, lw = 5.5;
+const tblBase = { fontFace: "Calibri", fontSize: 12, color: HEX.ink, margin: [0.02, 0.08, 0.02, 0.08], valign: "middle" };
+const th = (t, align = "right") => ({ text: t, options: { bold: true, color: HEX.muted, align, border: [{ type: "none" }, { type: "none" }, { pt: 1, color: HEX.hair }, { type: "none" }] } });
+const rule = { pt: 0.75, color: HEX.hair };
+const td = (t, o = {}) => ({ text: t, options: Object.assign({ align: "right", border: [{ type: "none" }, { type: "none" }, rule, { type: "none" }] }, o) });
+const tl = (t, o = {}) => td(t, Object.assign({ align: "left" }, o));
+const strong = { bold: true, color: HEX.lindung };
+const stokRows = [[th("Pool", "left"), th("Ton karbon"), th("Ton CO₂e")]];
+POOLS.forEach((p) => stokRows.push([tl(p[0]), td(fmt(p[1])), td(fmt(p[2]))]));
+stokRows.push([tl("Total stok karbon", { bold: true }), td(fmt(STOK_C), { bold: true }), td(fmt(STOK_CO2E), { bold: true })]);
+stokRows.push([tl("Buffer"), td(""), td(fmt(BUFFER))]);
+stokRows.push([tl("Net VCU (100%)", strong), td(""), td(NET_VCU.toLocaleString("id-ID", { minimumFractionDigits: 2 }), strong)]);
+stokRows.push([tl("Porsi LPHD (60%)", strong), td(""), td(fmt(VCU_LPHD), strong)]);
+T(s, "Stok karbon dan kredit", { x: lx, y: 2.05, w: lw, h: 0.3, fontSize: 13, bold: true, color: COL.muted });
+s.addTable(stokRows, Object.assign({ x: lx, y: 2.4, w: lw, colW: [2.1, 1.6, 1.8], rowH: 0.32, objectName: "tabel-stok" }, tblBase));
 
-hline(s, lx, 4.25, lw);
-T(s, [{ text: "Stok karbon  ", options: { fontSize: 13, color: COL.muted } },
-      { text: fmt(STOK_CO2E) + " tCO₂e", options: { fontSize: 13, bold: true } }], { x: lx, y: 4.4, w: lw, h: 0.3 });
-splitBar(s, lx, 4.78, lw, 0.24, [
-  { v: POOL.tuplah, color: COL.lindung, name: "pool-tuplah" },
-  { v: POOL.soil, color: COL.akasia, name: "pool-tanah" },
-  { v: POOL.lain, color: COL.hair, name: "pool-lain" },
-]);
-const totPool = POOL.tuplah + POOL.soil + POOL.lain;
-T(s, "Tuplah " + pct(POOL.tuplah / totPool) + "  ·  tanah " + pct(POOL.soil / totPool) + "  ·  AGB, BGB, serasah " + pct(POOL.lain / totPool),
-  { x: lx, y: 5.1, w: lw, h: 0.28, fontSize: 11, color: COL.muted });
-
-hline(s, lx, 5.55, lw);
-T(s, [{ text: "Luas areal  ", options: { fontSize: 13, color: COL.muted } },
-      { text: fmt1(HA_ARR + HA_REDD) + " ha", options: { fontSize: 13, bold: true } }], { x: lx, y: 5.7, w: lw, h: 0.3 });
+const ay = 6.15;
+T(s, [{ text: "Luas areal  ", options: { fontSize: 12, color: COL.muted } },
+      { text: fmt1(HA_ARR + HA_REDD) + " ha", options: { fontSize: 12, bold: true } }], { x: lx, y: ay, w: lw, h: 0.26 });
 const wArr = (lw - 0.03) * HA_ARR / (HA_ARR + HA_REDD);
-splitBar(s, lx, 6.08, lw, 0.24, [
+splitBar(s, lx, ay + 0.32, lw, 0.18, [
   { v: HA_ARR, color: COL.forest, name: "luas-arr" },
   { v: HA_REDD, color: COL.leaf, name: "luas-redd" },
 ]);
-T(s, [{ text: "Hutan · ARR", options: { fontSize: 11, color: COL.muted, breakLine: true } },
-      { text: fmt1(HA_ARR) + " ha", options: { fontSize: 12, bold: true } }], { x: lx, y: 6.4, w: wArr, h: 0.45 });
-T(s, [{ text: "Terdegradasi · REDD", options: { fontSize: 11, color: COL.muted, breakLine: true } },
-      { text: fmt1(HA_REDD) + " ha", options: { fontSize: 12, bold: true } }], { x: lx + wArr + 0.03, y: 6.4, w: lw - wArr - 0.03, h: 0.45 });
+T(s, "Hutan · ARR  " + fmt1(HA_ARR) + " ha", { x: lx, y: ay + 0.58, w: wArr, h: 0.24, fontSize: 11, color: COL.muted });
+T(s, "Terdegradasi · REDD  " + fmt1(HA_REDD) + " ha", { x: lx + wArr + 0.03, y: ay + 0.58, w: lw - wArr - 0.03, h: 0.24, fontSize: 11, color: COL.muted });
 
-// ---- right: revenue by price scenario ----
-const rx = 5.5, rw = W - MX - rx;
+// ---- right: credit value per price scenario ----
+const rx = 6.6, rw = W - MX - rx;
 const COMMA2 = '0\\,00';
 s.addChart(pres.charts.BAR, [
   { name: "Porsi LPHD (60%)", labels: RP.rows.map((r) => r[0] + " USD/VCU"), values: RP.rows.map((r) => M(r[1])) },
   { name: "Keseluruhan (100%)", labels: RP.rows.map((r) => r[0] + " USD/VCU"), values: RP.rows.map((r) => M(r[2])) },
 ], {
-  x: rx, y: 2.0, w: rw, h: 4.55, barDir: "col", barGrouping: "clustered", barGapWidthPct: 55,
+  x: rx, y: 1.95, w: rw, h: 3.05, barDir: "col", barGrouping: "clustered", barGapWidthPct: 55,
   chartColors: [HEX.lindung, HEX.hair],
   showValue: true, dataLabelPosition: "outEnd", dataLabelFormatCode: COMMA2,
-  dataLabelFontFace: "+mn-lt", dataLabelColor: HEX.ink, dataLabelFontSize: 13,
-  catAxisLabelColor: HEX.muted, catAxisLabelFontFace: "+mn-lt", catAxisLabelFontSize: 13,
-  valAxisHidden: true, valAxisMinVal: 0, valAxisMaxVal: 400,
+  dataLabelFontFace: "+mn-lt", dataLabelColor: HEX.ink, dataLabelFontSize: 12,
+  catAxisLabelColor: HEX.muted, catAxisLabelFontFace: "+mn-lt", catAxisLabelFontSize: 12,
+  valAxisHidden: true, valAxisMinVal: 0, valAxisMaxVal: 420,
   valGridLine: { style: "none" }, catGridLine: { style: "none" },
-  showTitle: true, title: "Nilai kredit per skenario harga, Rp miliar",
+  showTitle: true, title: "Potensi kredit karbon per skenario harga, Rp miliar",
   titleFontFace: "+mn-lt", titleColor: HEX.muted, titleFontSize: 12,
-  showLegend: true, legendPos: "t", legendFontSize: 12, legendColor: HEX.muted, legendFontFace: "+mn-lt",
+  showLegend: true, legendPos: "t", legendFontSize: 11, legendColor: HEX.muted, legendFontFace: "+mn-lt",
 });
+const rpRows = [[th("Harga", "left"), th("Porsi LPHD 60% (Rp)"), th("Keseluruhan 100% (Rp)")]];
+RP.rows.slice().reverse().forEach((r) => rpRows.push([tl(r[0] + " USD/VCU"), td(fmt(r[1]), { bold: true, color: HEX.lindung }), td(fmt(r[2]))]));
+s.addTable(rpRows, Object.assign({ x: rx, y: 5.15, w: rw, colW: [1.6, 2.2, rw - 3.8], rowH: 0.3, objectName: "tabel-skenario" }, tblBase));
 
-T(s, "Kurs tersirat ±Rp18.000/USD. Sumber: perhitungan stok karbon LPHD (AGB, BGB, serasah, tanah, tuplah).",
-  { x: rx, y: 6.72, w: rw, h: 0.28, fontSize: 10, color: COL.muted, italic: true });
+T(s, "Kurs tersirat ±Rp18.000/USD. Sumber: perhitungan stok karbon LPHD.",
+  { x: rx, y: 6.8, w: rw, h: 0.24, fontSize: 10, color: COL.muted, italic: true });
 
 (async () => {
   await pres.writeFile({ fileName: OUT });
