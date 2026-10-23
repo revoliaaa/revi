@@ -2,6 +2,8 @@
 
 | File | Isi |
 |---|---|
+| `Workplan_HD_Pasir_2026-2027.xlsx` | Workplan: STEP 1 mingguan (26 Okt – 31 Des 2026, PIN terkirim 4 Des) dan STEP 2 penyusunan PDD bulanan (2027, PDD diajukan Okt 2027) |
+| `Workplan_1Slide_HD_Pasir.pptx` | Satu slide Gantt workplan STEP 1 + STEP 2 |
 | `Roadmap_1Slide_HD_Pasir.pptx` | Satu slide presentasi: 8 tahap, dukungan, status unit karbon, tanggal kunci |
 | `Roadmap_HD_Pasir_PVClimate.pptx` | Slide 1: kerangka 8 tahap (Tahap 1–3 SETAPAK 4, output utama masuk Pipeline PV → Tahap 4–8 sampai penjualan) · Slide 2: one-page integrated roadmap detail (Output 1) · Slide 3: timeline & critical path (Output 4) · Slide 4: Post-SETAPAK 4 roadmap (Output 3) · Slide 5: transition readiness checklist (Output 5) |
 | `Milestone_Matrix_HD_Pasir_PVClimate.xlsx` | Project Monitoring Excel: Master_Matrix, Gantt_Step1, Tahapan, Participatory_Tools, Doc_Checklist, Risk_Register, Step2_Outlook, Transition_Checklist, Sources |
@@ -16,6 +18,7 @@ python3 build_pptx.py ../Roadmap_HD_Pasir_PVClimate.pptx
 python3 build_xlsx.py ../Milestone_Matrix_HD_Pasir_PVClimate.xlsx
 python3 build_md.py   ../Roadmap_HD_Pasir_PVClimate.md
 python3 build_one_slide.py ../Roadmap_1Slide_HD_Pasir.pptx
+python3 build_workplan.py ../Workplan_HD_Pasir_2026-2027.xlsx ../Workplan_1Slide_HD_Pasir.pptx
 ```
 
 ## Font
