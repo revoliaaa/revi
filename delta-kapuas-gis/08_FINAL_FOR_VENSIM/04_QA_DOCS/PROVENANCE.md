@@ -48,3 +48,16 @@ Values transcribed from these reports live in `inputs/HCV_LANDCOVER_TABLES_FROM_
 - `BOUNDARY_AND_PULAU_MAYA_VERIFICATION.xlsx`: not present in the session; the boundary audit was redone from the shapefile.
 - HD SK boundary geometry, Vensim `.mdl`, PDD: not supplied.
 - GFW peatland extent: HTTP 403 without API key. KLHK land cover: geoportal unreachable. Dynamic World: no Earth Engine credentials.
+
+## SK boundary input (supplied 31-10-2026)
+
+```
+841211ec8fd66d6c2ee37c212d3bce377d23e7bda1fdd4e1bac2ce93a601f34c  SHP_Gabungan_Hutan_Desa_Delta_Kapuas.dbf
+af362dfc5d1b69c1caff40c742195e0bfefdf3530bd3c7696552d9a5758a91dd  SHP_Gabungan_Hutan_Desa_Delta_Kapuas.prj
+2950f900d3d6f60a03023fdbe92f9585129c8a0fca162bb6f58d82a9d698765f  SHP_Gabungan_Hutan_Desa_Delta_Kapuas.sbn
+459dbbc60f513ec250ba9440cf315ac5d8820a1f25c0520a2596265f3722a34b  SHP_Gabungan_Hutan_Desa_Delta_Kapuas.sbx
+88090f0f3cc0c12c478affaebb72c734cbfd80c4ce4ad41b794a09fc2df120c8  SHP_Gabungan_Hutan_Desa_Delta_Kapuas.shp
+1433d777881413b22626352c9b3b115b775f4a5506d81eb61d94f8a420ae6b13  SHP_Gabungan_Hutan_Desa_Delta_Kapuas.shp.xml
+97d391479867f7aef2c341eee4c39a6b23b41c47c6565cb39a19c394a747d32a  SHP_Gabungan_Hutan_Desa_Delta_Kapuas.shx
+b2475c8ff3e90fb27d9eae5f6ecc3479c802818299c2f49fc6a78a85e2cb5231  Laporan_Gambut_dan_Mangrove_Delta_Kapuas.md
+```

@@ -27,7 +27,7 @@ BLUE = ["#cde2fb", "#9ec5f4", "#6da7ec", "#3987e5", "#256abf", "#184f95", "#0d36
 
 
 def quicklook():
-    m = gpd.read_file(P / "01_MASTER_SPATIAL" / "DKP_25HD_MASTER_SPATIAL.gpkg")
+    m = gpd.read_file(P / "01_MASTER_SPATIAL" / "DKP_25HD_MASTER_SPATIAL.gpkg", layer="DKP_25HD_MASTER_SPATIAL")
     fig, axs = plt.subplots(1, 4, figsize=(17, 6.2))
     with rasterio.open(T / "DKP_TREECOVER_STATUS_2024_PA.tif") as r:
         st = r.read(1); tr = r.transform
@@ -81,6 +81,7 @@ def copy_support():
     shutil.copy2(ROOT / "02_REMOTE_SENSING_DATA" / "HANSEN_GFC_v1.13_AOI_metadata.json", src)
     q = P / "04_QA_DOCS"
     for f in [ROOT / "01_BOUNDARY_QA" / "PROJECT_AREA_25HD_BOUNDARY_AUDIT.xlsx",
+              ROOT / "01_BOUNDARY_QA" / "SK_25HD_BOUNDARY_AUDIT.xlsx",
               ROOT / "01_BOUNDARY_QA" / "SPATIAL_DOMAIN_RECONCILIATION.md",
               ROOT / "04_VALIDATION" / "PULAU_MAYA_ANOMALY_INVESTIGATION.md",
               ROOT / "04_VALIDATION" / "SPATIAL_ACCURACY_AND_UNCERTAINTY.md",
@@ -100,7 +101,7 @@ def manifest():
         ("REF: Hansen GFC-2025-v1.13 tiles 00N_100E, 10N_100E", "https://storage.googleapis.com/earthenginepartners-hansen/GFC-2025-v1.13/ (SHA-256 in PROVENANCE.md)"),
         ("REF: GMW v3.0 gtiff 1996-2020", "https://zenodo.org/records/6894273"),
         ("REF: PeatDepth_Interpolated_10m_cm_49S_ABS.tif (Laporan Gambut 2025)", "TIDAK TERSEDIA - minta dari penyusun laporan"),
-        ("REF: Poligon SK 25 HD", "TIDAK TERSEDIA"),
+        ("REF: SHP Gabungan Hutan Desa Delta Kapuas (sumber SK)", "Diserahkan peneliti 31-10-2026; versi terolah: 01_MASTER_SPATIAL/DKP_25HD_SK_BOUNDARY.shp + layer SK_25HD_BOUNDARY di GPKG"),
     ]
     for p, n in refs:
         rows.append({"PATH": p, "BYTES": None, "SHA256": None, "INCLUDED": "NO", "NOTE": n})

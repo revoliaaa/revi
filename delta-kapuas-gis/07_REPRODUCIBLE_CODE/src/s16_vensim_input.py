@@ -41,10 +41,14 @@ def row(**k):
 
 
 def main():
-    m = gpd.read_file(ROOT / "08_FINAL_FOR_VENSIM" / "01_MASTER_SPATIAL" / "DKP_25HD_MASTER_SPATIAL.gpkg")
-    hs = pd.read_csv(ROOT / "04_VALIDATION" / "HCV_HARMONISED_SERIES.csv")
-    rm = pd.read_csv(ROOT / "04_VALIDATION" / "HCV_HARMONISED_RMSE.csv").set_index("GROUP")
-    rel = pd.read_csv(ROOT / "04_VALIDATION" / "HCV_EPOCH_RELIABILITY.csv")
+    m = gpd.read_file(ROOT / "08_FINAL_FOR_VENSIM" / "01_MASTER_SPATIAL" / "DKP_25HD_MASTER_SPATIAL.gpkg", layer="DKP_25HD_MASTER_SPATIAL")
+    hs = pd.read_csv(ROOT / "04_VALIDATION" / "SK_HARMONISED_SERIES.csv")
+    rm = pd.read_csv(ROOT / "04_VALIDATION" / "SK_HARMONISED_RMSE.csv").set_index("GROUP")
+    rel = pd.read_csv(ROOT / "04_VALIDATION" / "SK_EPOCH_RELIABILITY.csv")
+    shares = pd.read_csv(ROOT / "04_VALIDATION" / "SK_SHARES_BY_PERIOD.csv")
+    conv = pd.read_csv(ROOT / "04_VALIDATION" / "SK_DEFINITION_CONVERSION_2000.csv").set_index("GROUP")
+    skz = pd.read_csv(ROOT / "03_LAND_COVER_CHANGE" / "ZONAL_SK_HD.csv")
+    SKG = skz.groupby("LANDSCAPE").sum(numeric_only=True); SKG.loc["ALL_25"] = SKG.sum()
     bm = pd.read_csv(ROOT / "03_LAND_COVER_CHANGE" / "TRENDS_PROJECT_AREA_BENCHMARKS.csv")
     g = m.drop(columns="geometry").groupby("LANDSCAPE").sum(numeric_only=True)
     g.loc["ALL_25"] = g.sum()
@@ -117,7 +121,7 @@ def main():
         add(KATEGORI="3_PARAMETER_KANDIDAT", TARGET_VENSIM_VARIABLE=PROP, KONSEP_TARGET="Pangsa LUAS Project Area terhadap luas SK",
             CAKUPAN=c, UNIT="dimensionless", NILAI=x.AREA_HA / HCV_AREA_HA["TOTAL" if c == "ALL_25" else c],
             TAHUN_PERIODE="statis", DOMAIN_SPASIAL="PA / SK", SUMBER="Shapefile PA + " + HCV, METODE="AREA_HA (geodesik) / luas SK",
-            KETIDAKPASTIAN="Pangsa luas != pangsa aktivitas deforestasi; konteks desa: PA hanya memuat 10,4 % loss",
+            KETIDAKPASTIAN="Pangsa luas != pangsa aktivitas: dengan geometri SK, R2 (aktivitas) = 0,682 dan R1 (tutupan pohon) = 0,903",
             STATUS_DATA="KANDIDAT", KELAS_PENGGUNAAN="SENSITIVITAS_SAJA",
             REKOMENDASI=f"Pertahankan {VENSIM_PROP_KREDIT_REDD} sebagai nilai dasar; jalankan nilai ini sebagai skenario sensitivitas",
             DAMPAK_STRUKTUR_MODEL="Skala linier kredit REDD (S4) dan sebagian biaya proyek")
@@ -125,29 +129,51 @@ def main():
         UNIT="dimensionless", NILAI=VENSIM_PROP_KREDIT_REDD, TAHUN_PERIODE="statis", DOMAIN_SPASIAL="PA / HCV",
         SUMBER="Model V5.4.2R (brief peneliti)", METODE="Tidak terdokumentasi; tidak direproduksi oleh rasio spasial mana pun",
         KETIDAKPASTIAN="Tidak diketahui", STATUS_DATA="ASUMSI", KELAS_PENGGUNAAN="LANGSUNG",
-        REKOMENDASI="Tetap gunakan (nilai dasar) sampai geometri SK tersedia untuk pangsa aktivitas R2", DAMPAK_STRUKTUR_MODEL="Tidak ada perubahan")
-    add(KATEGORI="4_ASUMSI_SENSITIVITAS", TARGET_VENSIM_VARIABLE=PROP, KONSEP_TARGET="Pangsa aktivitas deforestasi PA terhadap SK (R2)",
-        UNIT="dimensionless", NILAI=np.nan, TAHUN_PERIODE="2001-2024", DOMAIN_SPASIAL="PA / SK", SUMBER="-",
-        METODE="loss PA / loss SK (butuh geometri SK)", KETIDAKPASTIAN="-", STATUS_DATA="TIDAK TERSEDIA",
-        KELAS_PENGGUNAAN="TIDAK_DAPAT_DIGUNAKAN", REKOMENDASI="Minta poligon SK 25 HD; jalankan s07 dengan file zonal SK",
-        DAMPAK_STRUKTUR_MODEL="Pengganti terukur untuk 0,8535 bila tersedia")
+        REKOMENDASI="Tetap sebagai nilai dasar; 0,8535 berada di antara R2 (0,682) dan R1 (0,903) - pastikan definisinya di persamaan model", DAMPAK_STRUKTUR_MODEL="Tidak ada perubahan")
+    for r in shares.itertuples():
+        add(KATEGORI="3_PARAMETER_KANDIDAT", TARGET_VENSIM_VARIABLE=PROP,
+            KONSEP_TARGET="Pangsa AKTIVITAS gross loss PA terhadap SK (R2)", CAKUPAN=r.GROUP, UNIT="dimensionless",
+            NILAI=r.R2_ACTIVITY_SHARE, TAHUN_PERIODE=r.PERIOD, DOMAIN_SPASIAL="PA / SK (geometri)", SUMBER=H + " x SK shp",
+            METODE=f"loss PA {r.LOSS_PA_HA:,.0f} ha / loss SK {r.LOSS_SK_HA:,.0f} ha (kanopi >30 %; ambang 10/50 % memberi 0,680-0,686 untuk 2001-2024)",
+            KETIDAKPASTIAN="Bergantung periode (0,54 / 0,78 / 0,60); gross loss sebagai proksi deforestasi; tanpa sampel akurasi",
+            STATUS_DATA="KANDIDAT TERUKUR", KELAS_PENGGUNAAN="PERLU_KONVERSI_ATAU_KALIBRASI",
+            REKOMENDASI=("Kandidat pengganti 0,8535 JIKA persamaan model mendefinisikannya sebagai pangsa aktivitas deforestasi; "
+                         "jalankan S4 dengan 0,8535 (dasar), R1 0,903 dan R2 0,682 (rentang 0,54-0,78)") if r.GROUP == "ALL_25" and r.PERIOD == "2001-2024"
+                        else "Sensitivitas periode/lanskap",
+            DAMPAK_STRUKTUR_MODEL="Skala linier kredit REDD S4; R2 < 0,8535 menurunkan kredit ~20 %")
+        if r.PERIOD == "2001-2024":
+            add(KATEGORI="3_PARAMETER_KANDIDAT", TARGET_VENSIM_VARIABLE=PROP,
+                KONSEP_TARGET="Pangsa TUTUPAN POHON 2000 PA terhadap SK (R1)", CAKUPAN=r.GROUP, UNIT="dimensionless",
+                NILAI=r.R1_TREECOVER_SHARE, TAHUN_PERIODE="2000", DOMAIN_SPASIAL="PA / SK (geometri)", SUMBER=H + " x SK shp",
+                METODE="TC2000 PA / TC2000 SK (kanopi >30 %; 10/50 %: 0,900-0,906)", KETIDAKPASTIAN="Stok, bukan aktivitas",
+                STATUS_DATA="KANDIDAT TERUKUR", KELAS_PENGGUNAAN="SENSITIVITAS_SAJA",
+                REKOMENDASI="Batas atas pangsa kredit bila kredit sebanding stok hutan", DAMPAK_STRUKTUR_MODEL="Skala linier kredit REDD S4")
+    for c in ["ALL_25"] + LANDS:
+        add(KATEGORI="3_PARAMETER_KANDIDAT", KONSEP_TARGET="Faktor konversi definisi: hutan alam HCV / tutupan pohon Hansen (epoch 2000)",
+            CAKUPAN=c, UNIT="dimensionless", NILAI=conv.loc[c, "FOREST_TO_TREECOVER_RATIO_2000_GT30"], TAHUN_PERIODE="2000",
+            DOMAIN_SPASIAL="SK HD (geometri)", SUMBER=HCV + " + " + H, METODE="HCV hutan alam 2000 / TC2000 (>30 %) dalam SK",
+            KETIDAKPASTIAN="Hanya satu epoch jangkar; kelas HCV lain epoch tidak konsisten", STATUS_DATA="KANDIDAT",
+            KELAS_PENGGUNAAN="PERLU_KONVERSI_ATAU_KALIBRASI",
+            REKOMENDASI="Gunakan untuk mengonversi stok tutupan pohon -> stok hutan bila model memakai luas hutan HCV",
+            DAMPAK_STRUKTUR_MODEL="Nilai awal stok hutan; tidak mengubah struktur")
+        add(KATEGORI="1_OBSERVASI_EMPIRIS", KONSEP_TARGET="Gross tree-cover loss 2001-2024 di seluruh SK HD", CAKUPAN=c, UNIT="ha",
+            NILAI=sum(SKG.loc[c, f"LOSS_{y}_GT30"] for y in range(2001, 2025)), TAHUN_PERIODE="2001-2024",
+            DOMAIN_SPASIAL="SK HD (geometri 125.469,6 ha)", SUMBER=H + " x SK shp", METODE="Piksel lossyear dalam TC2000 >30 %",
+            KETIDAKPASTIAN="Berbasis peta", STATUS_DATA="OBSERVASI PETA", KELAS_PENGGUNAAN="SENSITIVITAS_SAJA",
+            REKOMENDASI="Benchmark aliran deforestasi pada domain model (SK)", DAMPAK_STRUKTUR_MODEL="Pembanding laju aliran")
     RANK = {"LANGSUNG": 0, "SENSITIVITAS_SAJA": 1, "TIDAK_DAPAT_DIGUNAKAN": 2}
 
     def use_class(c, y):
-        """Usage class of an HCV natural-forest epoch total (landscape) or worst component (ALL_25)."""
+        """Usage class of an HCV natural-forest epoch (SK-domain reliability, s19)."""
         if y == 2000:
             return "LANGSUNG", "anchor 2000"
-        if c == "ALL_25":
-            parts = [use_class(l, y) for l in LANDS]
-            worst = max(parts, key=lambda p: RANK[p[0]])[0]
-            return worst, "terburuk dari komponen: " + "; ".join(f"{l} {p[1]}" for l, p in zip(LANDS, parts))
         v = rel[(rel.LANDSCAPE == c) & (rel.EPOCH == y)].iloc[0]
-        if v.ABS_D2_PCT_OF_HCV_FOREST > 10:
-            return "TIDAK_DAPAT_DIGUNAKAN", f"deviasi {v.ABS_D2_PCT_OF_HCV_FOREST:.0f}% dari seri harmonisasi"
-        if v.ABS_D2_PCT_OF_HCV_FOREST > 5 or v.MANGROVE_BOUND_EXCEEDED:
-            return "SENSITIVITAS_SAJA", (f"deviasi {v.ABS_D2_PCT_OF_HCV_FOREST:.0f}%" +
-                                         ("; kelas mangrove > batas GMW" if v.MANGROVE_BOUND_EXCEEDED else ""))
-        return "LANGSUNG", f"deviasi {v.ABS_D2_PCT_OF_HCV_FOREST:.0f}%"
+        why = f"deviasi {v.ABS_D_PCT:.1f}% dari seri harmonisasi domain SK"
+        if c != "ALL_25" and bool(v.MANGROVE_OUTSIDE_15PCT):
+            why += f"; mangrove HCV/GMW = {v.HCV_OVER_GMW_MANGROVE:.2f}"
+        if c == "ALL_25":
+            why += "; kelas = terburuk dari komponen lanskap"
+        return v.USE_CLASS, why
 
     for c in ["ALL_25"] + LANDS:
         d = hs[hs.GROUP == c].set_index("YEAR")
@@ -163,15 +189,15 @@ def main():
                              "TIDAK_DAPAT_DIGUNAKAN": "Keluarkan dari kalibrasi/validasi atau ganti dengan seri harmonisasi"}[uc],
                 DAMPAK_STRUKTUR_MODEL="Target kalibrasi; tidak mengubah struktur")
             add(KATEGORI="2_ESTIMASI_SPASIAL", KONSEP_TARGET="Seri hutan alam harmonisasi satelit (monoton)", CAKUPAN=c, UNIT="ha",
-                NILAI=d.loc[y, "S2_HCV2000_MINUS_AREA_SCALED_LOSS_HA"], TAHUN_PERIODE=str(y), DOMAIN_SPASIAL="HCV/SK (diskalakan dari PA)",
-                SUMBER=HCV + " + " + H, METODE="HCV hutan 2000 - (A_SK/A_PA) x loss kumulatif Hansen di PA",
-                KETIDAKPASTIAN="Asumsi: tanpa regrowth; intensitas loss di luar PA = di dalam PA", STATUS_DATA="ESTIMASI",
+                NILAI=d.loc[y, "S_SK_HARMONISED_HA"], TAHUN_PERIODE=str(y), DOMAIN_SPASIAL="SK HD (geometri)",
+                SUMBER=HCV + " + " + H, METODE="HCV hutan alam 2000 - loss kumulatif Hansen di dalam geometri SK (tanpa penskalaan)",
+                KETIDAKPASTIAN="Asumsi: tanpa regrowth; gross loss tutupan pohon dipakai sebagai proksi hilangnya hutan alam", STATUS_DATA="ESTIMASI",
                 KELAS_PENGGUNAAN="SENSITIVITAS_SAJA", REKOMENDASI="Target kalibrasi alternatif (uji sensitivitas)",
                 DAMPAK_STRUKTUR_MODEL="Tidak mengubah struktur; mengubah target kalibrasi")
     add(KATEGORI="2_ESTIMASI_SPASIAL", KONSEP_TARGET="Lantai derau validasi HCV (hold-out 2019, 2024)", UNIT="ha",
-        NILAI=rm.loc["ALL_25", "RMSE_D2_HOLDOUT_2019_2024_HA"], TAHUN_PERIODE="2019, 2024", DOMAIN_SPASIAL="HCV/SK",
-        SUMBER="s14", METODE="RMSE(HCV - seri harmonisasi)", KETIDAKPASTIAN="Seri acuan juga model", STATUS_DATA="ESTIMASI",
-        KELAS_PENGGUNAAN="LANGSUNG", REKOMENDASI="Laporkan: selisih galat model < ~4.200 ha tidak dapat dibedakan (SD 5.445 vs linear 4.991 ha)",
+        NILAI=rm.loc["ALL_25", "RMSE_HOLDOUT_2019_2024_HA"], TAHUN_PERIODE="2019, 2024", DOMAIN_SPASIAL="SK HD (geometri)",
+        SUMBER="s19", METODE="RMSE(HCV - seri harmonisasi domain SK)", KETIDAKPASTIAN="Seri acuan juga model; 2003-2024 = %.0f ha" % rm.loc["ALL_25", "RMSE_2003_2024_HA"], STATUS_DATA="ESTIMASI",
+        KELAS_PENGGUNAAN="LANGSUNG", REKOMENDASI="Laporkan: galat hold-out model (SD 5.445; linear 4.991 ha) berada di bawah derau data HCV ~6.300 ha; model tidak dapat dibedakan",
         DAMPAK_STRUKTUR_MODEL="Interpretasi validasi; bukan parameter")
     for b in bm[(bm.GROUP == "ALL_25") & (bm.THRESHOLD_PCT == 30)].itertuples():
         add(KATEGORI="2_ESTIMASI_SPASIAL", KONSEP_TARGET=f"Kinerja benchmark {b.BENCHMARK} pada hold-out 2015-2024 (gross loss PA)",
@@ -216,7 +242,9 @@ def main():
     per_hd = m.drop(columns="geometry")
     cw = pd.DataFrame([
         ("AREA_HA / AREA_UTM49S_HA", "Luas Project Area", "Pangsa kredit/biaya proyek", "LANGSUNG", "Tidak ada"),
-        ("PA_TO_SK_RATIO (agregat 0,8895)", PROP, "Proporsi kredit REDD", "SENSITIVITAS_SAJA", "Skala linier kredit S4"),
+        ("PA_TO_SK_RATIO (agregat 0,8895)", PROP, "Proporsi kredit REDD (pangsa luas)", "SENSITIVITAS_SAJA", "Skala linier kredit S4"),
+        ("R2_ACTIVITY_SHARE (agregat 0,682)", PROP, "Proporsi kredit REDD (pangsa aktivitas)", "PERLU_KONVERSI_ATAU_KALIBRASI", "Skala linier kredit S4"),
+        ("R1_TREECOVER_SHARE (agregat 0,903)", PROP, "Proporsi kredit REDD (pangsa stok)", "SENSITIVITAS_SAJA", "Skala linier kredit S4"),
         ("TREE_2000_HA", NOVAR, "Stok hutan awal (setelah konversi definisi)", "PERLU_KONVERSI_ATAU_KALIBRASI", "Nilai awal stok"),
         ("TREE_2024_HA", NOVAR, "Stok hutan awal 2024 (proksi)", "SENSITIVITAS_SAJA", "Nilai awal stok 2024"),
         ("LOSS_* / LOSS_RATE_*", NOVAR, "Laju aliran deforestasi historis", "SENSITIVITAS_SAJA", "Laju aliran keluar"),

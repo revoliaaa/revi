@@ -1,12 +1,12 @@
 # Spatial domain reconciliation: 25 HD, Delta Kapuas
 
-**Status:** GATE 1 PASS for the Project Area geometry. The SK (legal HD) geometry is still not available.
+**Status:** GATE 1 PASS for the Project Area geometry **and** for the SK geometry. The SK file is *SHP Gabungan Hutan Desa Delta Kapuas* (supplied 31-10-2026; see `SK_25HD_BOUNDARY_AUDIT.xlsx`): HD assignment agrees with the SK numbers in the .dbf for 37/37 pieces, and 99.94 % of the PA lies inside the SK.
 
 ## 1. Domains used in this study
 
 | Domain | Area (ha) | Source | Geometry | Role |
 |---|---|---|---|---|
-| **HCV / SK study area** | 124,941 (Kubu 32,468; Padang Tikar 76,370; Pulau Maya 16,103) | Tabel 1 of the three HCV reports (sum of 25 SK areas = 124,941 exactly) | **Not available** (table only) | Vensim land-system domain; HCV land-cover tables |
+| **HCV / SK study area** | 124,941 by table (Kubu 32,468; Padang Tikar 76,370; Pulau Maya 16,103); 125,456 UTM / 125,470 geodesic by geometry | Tabel 1 of the HCV reports; geometry from *SHP Gabungan Hutan Desa Delta Kapuas* | **Available** (`SK_25HD_BOUNDARY.gpkg`) | Vensim land-system domain; HCV land-cover tables |
 | **Carbon Project Area (PA)** | 111,123.16 (UTM 49S planar) / **111,134.95 (geodesic WGS84)** | `Delta_Kapuas_Project_Boundary_(Update).shp`, processing date 21-05-2026 | Available: 25 polygons, 1 per LPHD | All per-HD satellite statistics |
 | **Admin-desa context** | 441,002 (geodesic) | BPS desa polygons (HDX COD-AB IDN v01, 2020-04-01) whose names match the 25 HD | Available | Landscape context only. **Not** HD and **not** PA |
 
@@ -58,4 +58,9 @@ Overall, 6,709 ha (6.0 %) of the PA lies outside the 25 desa. Hutan Desa are des
 - The ratio that matters for crediting is the PA's share of *baseline activity* (deforestation) within the HD. That requires the SK geometry, which was not available, so it is **NOT AVAILABLE**.
 - Context evidence warns against assuming activity share = area share. In the desa context domain, the PA holds 26 % of the 2000 tree cover but only **10.4 %** of the 2001–2024 gross loss. Loss is concentrated outside the PA.
 
-**Recommendation:** keep 0.8535 as the bounding assumption. Add 0.8895 (area share) as a sensitivity case. Request the SK polygons (KLHK PIAPS / Go-KUPS, or the HD decree maps) to compute R1/R2 with `s07_project_area_constraint.py <pa> <desa> <sk_zonal.csv>`.
+**Update with SK geometry (s18/s19):**
+- R1 (2000 tree-cover share PA/SK) = **0.903**.
+- R2 (2001–2024 gross-loss activity share PA/SK) = **0.682**. It is threshold-robust (0.680–0.686) but period-dependent: 0.541 for 2001–2014, 0.782 for 2015–2024 and 0.604 for 2017–2024. By landscape: Kubu 0.543, Padang Tikar 0.673, Pulau Maya 0.893.
+- 0.8535 lies between R2 and R1. The areas excluded from the PA hold about 10 % of the SK tree cover but 32 % of its 2001–2024 gross loss.
+
+**Recommendation:** keep 0.8535 as the baseline. Run 0.682 (R2) and 0.903 (R1) as S4 sensitivity cases. Adopt R2 only if the model equation defines the parameter as a share of deforestation activity.

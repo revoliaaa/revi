@@ -23,6 +23,11 @@ python s08_hcv_comparison.py ../inputs/HCV_LANDCOVER_TABLES_FROM_REPORTS.csv $R/
 python s14_hcv_vs_satellite.py
 python s11_build_deliverables.py
 python s10_figures.py "$D/gmw" $R/02_REMOTE_SENSING_DATA/landsat_pulau_maya
+# SK (legal HD) geometry: needs DK_SK_SHP = SHP_Gabungan_Hutan_Desa_Delta_Kapuas.shp (+ .dbf/.prj)
+python s18_sk_boundary.py "${DK_SK_SHP:?set DK_SK_SHP}"
+python s03_zonal_stats.py $R/01_BOUNDARY_QA/SK_25HD_BOUNDARY.gpkg SK_HD "$D/gmw" $R/03_LAND_COVER_CHANGE/ZONAL_SK_HD.csv
+python s07_project_area_constraint.py $R/03_LAND_COVER_CHANGE/ZONAL_PROJECT_AREA.csv $R/03_LAND_COVER_CHANGE/ZONAL_ADMIN_DESA_CONTEXT.csv $R/03_LAND_COVER_CHANGE/ZONAL_SK_HD.csv
+python s19_sk_domain_tests.py
 # Final package for Vensim REV3 integration
 python s15_master_spatial.py "$D/gmw"
 python s16_vensim_input.py

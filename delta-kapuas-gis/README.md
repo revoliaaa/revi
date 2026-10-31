@@ -16,13 +16,13 @@
 | Problematic HCV epochs | Kubu 2009, Kubu 2014, Pulau Maya 2014/2019/2024 (`04_VALIDATION/HCV_EPOCH_RELIABILITY.csv`) |
 | Pulau Maya 2019→2024 (+3,773 ha mangrove, +581 ha dryland forest) | Not ecological change. Only 3–11 ha became newly vegetated in the PA. GMW mangrove has been stable at 6,309–6,335 ha since 1996. Forested hills existed throughout. Most consistent with re-classification (H2 + H4). |
 | HCV noise vs model error | HCV departs from a monotone satellite-harmonised series by RMSE 4,200 ha in 2019/2024, about the size of the SD (5,445) and linear (4,991) hold-out RMSEs. The hold-out cannot discriminate the models. |
-| 0.8535 parameter | Area share PA/SK = **0.8895** (0.909 / 0.868 / 0.950; per HD 0.26–1.00). The activity share needs SK geometry. Keep 0.8535 and add 0.8895 as a sensitivity case. |
+| 0.8535 parameter | With SK geometry: area share 0.8895, tree-cover share R1 = **0.903**, gross-loss activity share R2 = **0.682** (0.54–0.78 by period). Keep 0.8535 as baseline; run R2/R1 as S4 sensitivity. |
 
 ## Gate report
 
 | Gate | Status | Evidence / limitation |
 |---|---|---|
-| 1 Input audit & boundary | **PASS** (PA) / BLOCKED (SK) | Shapefile supplied mid-session; 25 valid, non-overlapping polygons; UTM sum within 0.04 ha of PDD. `BOUNDARY_AND_PULAU_MAYA_VERIFICATION.xlsx` was not in the environment, so the audit was redone. SK geometry not available. |
+| 1 Input audit & boundary | **PASS** (PA and SK) | PA: 25 valid, non-overlapping polygons; UTM sum within 0.04 ha of PDD. SK: 38 pieces → 25 HD, assignment verified by SK number 37/37, 99.94 % of PA inside SK; SK geometry +0.41 % vs SK table (Ambawang +10.6 %). |
 | 2 Public data acquisition | **PASS** | Hansen v1.13 (both tiles), GMW v3 (7 years), Landsat C2 L2 (68 scenes), Copernicus DEM, BPS boundaries. Not obtained: GFW peat (API key), KLHK land cover (unreachable), Dynamic World (no GEE credentials). |
 | 3 Historical forest change | **PASS** (gross loss) / CONDITIONAL (forest-type maps) | Annual 2001–2025 loss per HD × 3 thresholds; six epochs. No multi-class maps: no reference data. |
 | 4 Harmonisation & anomaly | **PASS** | HCV tables transcribed (columns close ±0.02 ha); T1/T1b/T2/T3 tests; Pulau Maya H1–H4 evaluated |

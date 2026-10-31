@@ -67,6 +67,13 @@ DICT = [
     ("MANGROVE_1996_HA", "MANGR96", "ha", "Ekstensi mangrove GMW v3.0 tahun 1996 (stabilitas)", "GMW v3.0", "OBSERVASI_EMPIRIS"),
     ("PEAT_DEPTH_SURVEY_M", "PT_DEPTH", "m", "Rata-rata kedalaman gambut plot survei per label desa (Laporan Gambut 2025, Tabel 11). Rata-rata TITIK, bukan rata-rata spasial HD", "Laporan Gambut & Mangrove 2025", "OBSERVASI_TITIK"),
     ("MANGROVE_SED_DEPTH_SURVEY_M", "MG_DEPTH", "m", "Rata-rata kedalaman sedimen mangrove plot survei per label desa (Tabel 11)", "Laporan Gambut & Mangrove 2025", "OBSERVASI_TITIK"),
+    ("SK_GEOM_HA", "SK_GEO_HA", "ha", "Luas geometri SK HD (SHP Gabungan Hutan Desa Delta Kapuas), geodesik", "SHP Gabungan HD (.dbf/.prj 31-10-2026)", "OBSERVASI_GEOMETRI"),
+    ("PA_INSIDE_SK_PCT", "PA_IN_SK", "%", "Persentase poligon PA yang berada di dalam poligon SK (uji asumsi A1)", "Overlay PA x SK", "ESTIMASI_SPASIAL"),
+    ("TREE_2000_SK_HA", "TREE00_SK", "ha", "Tutupan pohon 2000 (>30 %) di seluruh SK HD", "Hansen GFC v1.13 x SK", "OBSERVASI_EMPIRIS"),
+    ("LOSS_2001_2024_SK_HA", "LOSS_SK", "ha", "Gross loss 2001-2024 di seluruh SK HD (kanopi >30 %)", "Hansen GFC v1.13 x SK", "OBSERVASI_EMPIRIS"),
+    ("MANGROVE_SK_HA", "MANGR_SK", "ha", "Mangrove GMW 2020 di seluruh SK HD", "GMW v3.0 x SK", "OBSERVASI_EMPIRIS"),
+    ("R1_TREECOVER_SHARE", "R1_TREE", "fraksi", "TREE_2000_HA (PA) / TREE_2000_SK_HA: pangsa tutupan pohon PA dalam SK", "Turunan", "ESTIMASI_SPASIAL"),
+    ("R2_ACTIVITY_SHARE", "R2_LOSS", "fraksi", "LOSS_2001_2024_HA (PA) / LOSS_2001_2024_SK_HA: pangsa aktivitas gross loss PA dalam SK (kosong bila loss SK < 1 ha)", "Turunan", "ESTIMASI_SPASIAL"),
     ("BPS_NAME_LOCATION_FLAG", "LOC_FLAG", "-", "Poligon PA tidak terutama berada di desa BPS bernama sama (informasi; tidak memengaruhi atribut PA)", "Overlay BPS 2020", "FLAG"),
     ("SOURCE", "SOURCE", "-", "Ringkasan sumber data atribut", "-", "META"),
     ("QA_STATUS", "QA_STATUS", "-", "PASS / PASS_WITH_NOTES", "QA s06/s15", "META"),
@@ -107,9 +114,18 @@ def build_master():
     d["MANGROVE_1996_HA"] = zz.MANGROVE_GMW_1996_HA.values
     d["PEAT_DEPTH_SURVEY_M"] = d.HD_NAME.map(PEAT_DEPTH_M)
     d["MANGROVE_SED_DEPTH_SURVEY_M"] = d.HD_NAME.map(MANG_DEPTH_M)
+    shr = pd.read_csv(ROOT / "04_VALIDATION" / "SK_PER_HD_SHARES.csv").set_index("HD_ID")
+    skb = gpd.read_file(ROOT / "01_BOUNDARY_QA" / "SK_25HD_BOUNDARY.gpkg").set_index("HD_ID")
+    d["SK_GEOM_HA"] = d.HD_ID.map(skb.SK_GEOM_GEODESIC_HA)
+    d["PA_INSIDE_SK_PCT"] = d.HD_ID.map(skb.PA_INSIDE_SK_PCT)
+    d["TREE_2000_SK_HA"] = d.HD_ID.map(shr.TC2000_SK_HA)
+    d["LOSS_2001_2024_SK_HA"] = d.HD_ID.map(shr.LOSS0124_SK_HA)
+    d["MANGROVE_SK_HA"] = d.HD_ID.map(shr.MANGROVE2020_SK_HA)
+    d["R1_TREECOVER_SHARE"] = d.HD_ID.map(shr.R1_TREECOVER_SHARE)
+    d["R2_ACTIVITY_SHARE"] = d.HD_ID.map(shr.R2_ACTIVITY_SHARE)
     lf = loc.set_index("HD_NAME").FLAG
     d["BPS_NAME_LOCATION_FLAG"] = d.HD_NAME.map(lf).fillna("OK")
-    d["SOURCE"] = "PA shp 21-05-2026; Hansen GFC-2025-v1.13; GMW v3.0; HCV Tabel 1; Laporan Gambut 2025 Tabel 11"
+    d["SOURCE"] = "PA shp 21-05-2026; SK shp Gabungan HD; Hansen GFC-2025-v1.13; GMW v3.0; HCV Tabel 1; Laporan Gambut 2025 Tabel 11"
     notes = []
     for r in d.itertuples():
         n = []
@@ -117,6 +133,10 @@ def build_master():
             n.append("poligon kecil (<100 ha): presisi piksel rendah")
         if r.PA_TO_SK_RATIO < 0.75:
             n.append(f"PA hanya {r.PA_TO_SK_RATIO:.2f} dari luas SK")
+        if abs(r.SK_GEOM_HA - r.SK_AREA_HA) / r.SK_AREA_HA > 0.02:
+            n.append(f"geometri SK {r.SK_GEOM_HA:.0f} ha vs tabel SK {r.SK_AREA_HA:.0f} ha")
+        if pd.notna(r.R2_ACTIVITY_SHARE) and r.R2_ACTIVITY_SHARE < 0.5:
+            n.append(f"R2={r.R2_ACTIVITY_SHARE:.2f}: sebagian besar loss SK di luar PA")
         if r.HD_NAME == "Kemboja":
             n.append("SK baru 10-06-2024")
         if r.HD_NAME == "Padang Tikar 1":
@@ -139,6 +159,13 @@ def build_master():
 
     M.mkdir(parents=True, exist_ok=True)
     d.to_file(M / "DKP_25HD_MASTER_SPATIAL.gpkg", layer="DKP_25HD_MASTER_SPATIAL", driver="GPKG")
+    # secondary layer: legal SK boundaries (dissolved per HD, assignment verified 37/37 by SK number)
+    skl = skb.reset_index()[["HD_ID", "HD_NAME", "LANDSCAPE", "SK_NUMBER", "SK_AREA_HA", "SK_GEOM_GEODESIC_HA",
+                             "SK_GEOM_UTM_HA", "N_PIECES", "PA_INSIDE_SK_PCT", "FLAG", "geometry"]]
+    skl.to_file(M / "DKP_25HD_MASTER_SPATIAL.gpkg", layer="SK_25HD_BOUNDARY", driver="GPKG")
+    skl.rename(columns={"SK_NUMBER": "SK_NO", "SK_AREA_HA": "SK_TAB_HA", "SK_GEOM_GEODESIC_HA": "SK_GEO_HA",
+                        "SK_GEOM_UTM_HA": "SK_UTM_HA", "N_PIECES": "N_PIECES", "PA_INSIDE_SK_PCT": "PA_IN_SK"}
+               ).to_file(M / "DKP_25HD_SK_BOUNDARY.shp", driver="ESRI Shapefile", encoding="UTF-8")
     ren = {c[0]: c[1] for c in DICT}
     s = d.rename(columns=ren)
     s["SK_DATE"] = s.SK_DATE.astype(str)

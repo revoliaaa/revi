@@ -15,7 +15,11 @@ Tanggal: 31-10-2026. Semua angka berasal dari skrip `07_REPRODUCIBLE_CODE/src` (
 | 7 | Aritmetika atribut | LOSS0114 + LOSS1516 + LOSS1724 = LOSS0124 untuk 25 HD; TREE24 ≥ 0; loss ≤ TREE00 | PASS |
 | 8 | Sensitivitas definisi (ambang kanopi) | Loss 2001–2024 PA: 11.730 / 11.724 / 11.695 ha (10/30/50 %), rentang 0,3 % | PASS |
 | 9 | Nama atribut SHP | Semua ≤ 10 karakter; nama lengkap di GPKG dan kamus data | PASS |
-| 10 | Kualitas data historis HCV | Kubu 2009 dan Pulau Maya 2014/2019/2024 menyimpang > 10 % dari seri harmonisasi. Pulau Maya 2003/2009 dan Kubu 2014: kelas mangrove melebihi batas GMW. Seri agregat ALL_25 tidak dapat dipakai untuk 2009–2024. | DICATAT (lihat `HCV_EPOCH_RELIABILITY`) |
+| 10 | Kualitas data historis HCV (domain SK, tanpa penskalaan) | Kubu 2009 (−20 %) dan Pulau Maya 2014/2019/2024 (−13/−11/+24 %) menyimpang > 10 % dari seri harmonisasi. Mangrove HCV/GMW di luar ±15 %: Kubu 2014 (1,36), Kubu 2019 (0,76), Pulau Maya 2000–2009 (1,24), Pulau Maya 2024 (1,66). Seri agregat ALL_25 tidak dapat dipakai untuk 2009–2024. | DICATAT (`SK_EPOCH_RELIABILITY.csv`) |
+| 11 | Geometri SK (SHP Gabungan Hutan Desa) | 38 bagian, CRS EPSG:32749 (.prj); 1 bagian degenerasi (0 ha) dibuang; 1 bagian invalid (Mengkalang) diperbaiki dengan `make_valid`; 0 tumpang tindih antar-SK. Penugasan HD secara spasial = penugasan menurut nomor SK (.dbf) untuk 37/37 bagian. | PASS |
+| 12 | Luas SK geometri vs tabel SK | Total 125.456,3 ha UTM (+515 ha; +0,41 %). Selisih > 2 %: Ambawang +347,6 ha (+10,6 %), Kubu +140,8 ha (+3,0 %), Satai Lestari +23,5 ha (+2,4 %). | DICATAT |
+| 13 | Asumsi A1 (PA berada di dalam SK) | 99,94 % luas PA berada di dalam SK; 65,8 ha serpihan tepi (maks. 23 ha per HD, Kemboja) | PASS (toleransi) |
+| 14 | Atribut `NAMA_LPHD` pada .dbf SK | Untuk bagian-bagian Pulau Maya, `NAMA_LPHD` ditimpa dengan nama desa administratif (`NAMOBJ`). Contoh: bagian 1.143 ha berlabel "Tanjungsatai" memiliki SK.5735 (Dusun Besar). Kunci yang dipakai adalah nomor SK. | DICATAT |
 
 ## 2. Definisi yang dipisahkan secara tegas
 
@@ -54,7 +58,7 @@ Kedalaman rata-rata per desa (Tabel 11) dimasukkan ke master hanya sebagai **rat
 
 1. Semua luas berbasis peta (pixel counting) tanpa sampel referensi probabilistik, sehingga tidak ada akurasi atau selang kepercayaan desain (Olofsson et al. 2014 direkomendasikan).
 2. Hansen: tahun 2001–2010 belum diproses ulang (patahan metode 2011). Pulsa kebakaran 2015–2016 menyumbang 51 % loss PA.
-3. Geometri SK 25 HD tidak tersedia, sehingga pangsa aktivitas deforestasi PA/SK (pengganti terukur 0,8535) belum dapat dihitung.
+3. Geometri SK kini tersedia: R2 (pangsa aktivitas gross loss PA/SK) = 0,682, dan R1 (pangsa tutupan pohon) = 0,903. R2 memakai gross loss sebagai proksi deforestasi dan bergantung periode (0,54–0,78). Penggunaannya sebagai pengganti 0,8535 bergantung pada definisi persamaan model.
 4. GMW berakhir 2020; tidak ada peta mangrove independen 2024.
 5. Raster gambut dan peta gambut publik (GFW, perlu API key) tidak tersedia.
 6. Nilai HCV ditranskripsi dari ekstraksi teks PDF. Sel rekonstruksi diberi flag (`QUALITY`) dan perlu dicek ke PDF asli.
