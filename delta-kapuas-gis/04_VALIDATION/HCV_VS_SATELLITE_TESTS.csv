@@ -1,0 +1,55 @@
+TEST,LANDSCAPE,HCV_YEAR,HCV_MANGROVE_HA,GMW_YEAR_USED,GMW_MANGROVE_DESA_PLUS_1KM_HA,HCV_MINUS_BOUND_HA,RESULT,TEMPORAL_GAP_YR,HCV_VERIFIED,GMW_MANGROVE_IN_PA_HA,HCV_AREA_OUTSIDE_PA_HA,BOUND_HA,HCV_MANGROVE_CHANGE_HA,HCV_MANGROVE_CHANGE_PCT_PER_YR,GMW_YEARS_USED,GMW_CHANGE_DESA_HA,HANSEN_LOSS_IN_GMW2010_GT30_HA
+T1 mangrove upper bound,Kubu,2000,9270.07,1996.0,24781.8,-15511.8,CONSISTENT,4.0,NO - check against PDF,,,,,,,,
+T1 mangrove upper bound,Kubu,2003,9154.41,2007.0,24636.9,-15482.5,CONSISTENT,-4.0,NO - check against PDF,,,,,,,,
+T1 mangrove upper bound,Kubu,2009,9143.960000000001,2010.0,24494.9,-15351.0,CONSISTENT,-1.0,NO - check against PDF,,,,,,,,
+T1 mangrove upper bound,Kubu,2014,12771.02,2015.0,24476.2,-11705.2,CONSISTENT,-1.0,NO - check against PDF,,,,,,,,
+T1 mangrove upper bound,Kubu,2019,7121.58,2019.0,24473.2,-17351.6,CONSISTENT,0.0,NO - check against PDF,,,,,,,,
+T1 mangrove upper bound,Kubu,2024,10317.27,2020.0,24385.4,-14068.1,CONSISTENT,4.0,NO - check against PDF,,,,,,,,
+T1 mangrove upper bound,Padang Tikar,2000,32467.94,1996.0,50580.0,-18112.1,CONSISTENT,4.0,NO - check against PDF,,,,,,,,
+T1 mangrove upper bound,Padang Tikar,2003,32467.94,2007.0,50359.3,-17891.4,CONSISTENT,-4.0,NO - check against PDF,,,,,,,,
+T1 mangrove upper bound,Padang Tikar,2009,32424.73,2010.0,50357.0,-17932.3,CONSISTENT,-1.0,NO - check against PDF,,,,,,,,
+T1 mangrove upper bound,Padang Tikar,2014,32009.84,2015.0,50310.1,-18300.2,CONSISTENT,-1.0,NO - check against PDF,,,,,,,,
+T1 mangrove upper bound,Padang Tikar,2019,29844.88,2019.0,50333.0,-20488.1,CONSISTENT,0.0,NO - check against PDF,,,,,,,,
+T1 mangrove upper bound,Padang Tikar,2024,31463.83,2020.0,50181.1,-18717.2,CONSISTENT,4.0,NO - check against PDF,,,,,,,,
+T1 mangrove upper bound,Pulau Maya,2000,7941.11,1996.0,9731.0,-1789.9,CONSISTENT,4.0,NO - check against PDF,,,,,,,,
+T1 mangrove upper bound,Pulau Maya,2003,7941.11,2007.0,9704.0,-1762.9,CONSISTENT,-4.0,NO - check against PDF,,,,,,,,
+T1 mangrove upper bound,Pulau Maya,2009,7941.11,2010.0,9717.4,-1776.3,CONSISTENT,-1.0,NO - check against PDF,,,,,,,,
+T1 mangrove upper bound,Pulau Maya,2014,6978.25,2015.0,9733.8,-2755.6,CONSISTENT,-1.0,NO - check against PDF,,,,,,,,
+T1 mangrove upper bound,Pulau Maya,2019,6843.77,2019.0,9741.8,-2898.0,CONSISTENT,0.0,NO - check against PDF,,,,,,,,
+T1 mangrove upper bound,Pulau Maya,2024,10617.08,2020.0,9728.1,889.0,EXCEEDS_INDEPENDENT_BOUND,4.0,NO - check against PDF,,,,,,,,
+T1b mangrove bound via Project Area (assumption A1),Kubu,2000,9270.07,1996.0,,-2784.5,CONSISTENT,4.0,NO - check against PDF,9092.1,2962.4,12054.5,,,,,
+T1b mangrove bound via Project Area (assumption A1),Kubu,2003,9154.41,2007.0,,-2895.9,CONSISTENT,-4.0,NO - check against PDF,9087.9,2962.4,12050.3,,,,,
+T1b mangrove bound via Project Area (assumption A1),Kubu,2009,9143.960000000001,2010.0,,-2908.8,CONSISTENT,-1.0,NO - check against PDF,9090.3,2962.4,12052.8,,,,,
+T1b mangrove bound via Project Area (assumption A1),Kubu,2014,12771.02,2015.0,,712.5,EXCEEDS_INDEPENDENT_BOUND,-1.0,NO - check against PDF,9096.1,2962.4,12058.5,,,,,
+T1b mangrove bound via Project Area (assumption A1),Kubu,2019,7121.58,2019.0,,-4915.5,CONSISTENT,0.0,NO - check against PDF,9074.6,2962.4,12037.1,,,,,
+T1b mangrove bound via Project Area (assumption A1),Kubu,2024,10317.27,2020.0,,-1666.6,CONSISTENT,4.0,NO - check against PDF,9021.5,2962.4,11983.9,,,,,
+T1b mangrove bound via Project Area (assumption A1),Padang Tikar,2000,32467.94,1996.0,,-7316.5,CONSISTENT,4.0,NO - check against PDF,29735.5,10048.9,39784.4,,,,,
+T1b mangrove bound via Project Area (assumption A1),Padang Tikar,2003,32467.94,2007.0,,-7288.0,CONSISTENT,-4.0,NO - check against PDF,29707.1,10048.9,39756.0,,,,,
+T1b mangrove bound via Project Area (assumption A1),Padang Tikar,2009,32424.73,2010.0,,-7380.4,CONSISTENT,-1.0,NO - check against PDF,29756.3,10048.9,39805.1,,,,,
+T1b mangrove bound via Project Area (assumption A1),Padang Tikar,2014,32009.84,2015.0,,-7822.7,CONSISTENT,-1.0,NO - check against PDF,29783.7,10048.9,39832.5,,,,,
+T1b mangrove bound via Project Area (assumption A1),Padang Tikar,2019,29844.88,2019.0,,-9959.6,CONSISTENT,0.0,NO - check against PDF,29755.6,10048.9,39804.5,,,,,
+T1b mangrove bound via Project Area (assumption A1),Padang Tikar,2024,31463.83,2020.0,,-8292.3,CONSISTENT,4.0,NO - check against PDF,29707.2,10048.9,39756.1,,,,,
+T1b mangrove bound via Project Area (assumption A1),Pulau Maya,2000,7941.11,1996.0,,823.2,EXCEEDS_INDEPENDENT_BOUND,4.0,NO - check against PDF,6323.2,794.7,7117.9,,,,,
+T1b mangrove bound via Project Area (assumption A1),Pulau Maya,2003,7941.11,2007.0,,837.3,EXCEEDS_INDEPENDENT_BOUND,-4.0,NO - check against PDF,6309.1,794.7,7103.8,,,,,
+T1b mangrove bound via Project Area (assumption A1),Pulau Maya,2009,7941.11,2010.0,,832.5,EXCEEDS_INDEPENDENT_BOUND,-1.0,NO - check against PDF,6313.9,794.7,7108.6,,,,,
+T1b mangrove bound via Project Area (assumption A1),Pulau Maya,2014,6978.25,2015.0,,-143.8,CONSISTENT,-1.0,NO - check against PDF,6327.3,794.7,7122.1,,,,,
+T1b mangrove bound via Project Area (assumption A1),Pulau Maya,2019,6843.77,2019.0,,-286.3,CONSISTENT,0.0,NO - check against PDF,6335.4,794.7,7130.1,,,,,
+T1b mangrove bound via Project Area (assumption A1),Pulau Maya,2024,10617.08,2020.0,,3500.5,EXCEEDS_INDEPENDENT_BOUND,4.0,NO - check against PDF,6321.8,794.7,7116.5,,,,,
+T2 mangrove change plausibility,Kubu,2000-2003,,,,,SEE NOTES,,NO - check against PDF,,,,-115.65999999999985,-0.4158904229777476,1996-2007,-135.1,78.5
+T2 mangrove change plausibility,Kubu,2003-2009,,,,,SEE NOTES,,NO - check against PDF,,,,-10.449999999998909,-0.019025438741180314,2007-2010,-110.0,100.9
+T2 mangrove change plausibility,Kubu,2009-2014,,,,,HCV GAIN NOT CORROBORATED BY GMW (GMW ends 2020; see Landsat test),,NO - check against PDF,,,,3627.0599999999995,7.9332368033105976,2010-2015,4.6,407.6
+T2 mangrove change plausibility,Kubu,2014-2019,,,,,SEE NOTES,,NO - check against PDF,,,,-5649.4400000000005,-8.84728079667873,2015-2019,-4.9,650.0
+T2 mangrove change plausibility,Kubu,2019-2024,,,,,HCV GAIN NOT CORROBORATED BY GMW (GMW ends 2020; see Landsat test),,NO - check against PDF,,,,3195.6900000000005,8.974665734289303,2019-2020,-71.2,356.3
+T2 mangrove change plausibility,Padang Tikar,2000-2003,,,,,SEE NOTES,,NO - check against PDF,,,,0.0,0.0,1996-2007,-87.8,36.2
+T2 mangrove change plausibility,Padang Tikar,2003-2009,,,,,SEE NOTES,,NO - check against PDF,,,,-43.20999999999913,-0.022180854919241943,2007-2010,107.5,120.8
+T2 mangrove change plausibility,Padang Tikar,2009-2014,,,,,SEE NOTES,,NO - check against PDF,,,,-414.8899999999994,-0.25590960973306454,2010-2015,45.3,690.8
+T2 mangrove change plausibility,Padang Tikar,2014-2019,,,,,SEE NOTES,,NO - check against PDF,,,,-2164.959999999999,-1.3526840496547305,2015-2019,-11.0,1014.1
+T2 mangrove change plausibility,Padang Tikar,2019-2024,,,,,SEE NOTES,,NO - check against PDF,,,,1618.9500000000007,1.0849097064555129,2019-2020,-129.5,588.2
+T2 mangrove change plausibility,Pulau Maya,2000-2003,,,,,SEE NOTES,,NO - check against PDF,,,,0.0,0.0,1996-2007,-14.4,47.8
+T2 mangrove change plausibility,Pulau Maya,2003-2009,,,,,SEE NOTES,,NO - check against PDF,,,,0.0,0.0,2007-2010,6.9,11.5
+T2 mangrove change plausibility,Pulau Maya,2009-2014,,,,,SEE NOTES,,NO - check against PDF,,,,-962.8599999999997,-2.4250010388975842,2010-2015,17.3,18.2
+T2 mangrove change plausibility,Pulau Maya,2014-2019,,,,,SEE NOTES,,NO - check against PDF,,,,-134.47999999999956,-0.3854261455235899,2015-2019,-1.2,92.2
+T2 mangrove change plausibility,Pulau Maya,2019-2024,,,,,HCV GAIN NOT CORROBORATED BY GMW (GMW ends 2020; see Landsat test),,NO - check against PDF,,,,3773.3099999999995,11.026992432533529,2019-2020,-19.0,27.8
+T3 HCV forest trend vs Hansen gross loss,Kubu,,,,,,DONE in s14_hcv_vs_satellite.py -> HCV_T3_INTERVALS.csv / HCV_HARMONISED_SERIES.csv,,,,,,,,,,
+T3 HCV forest trend vs Hansen gross loss,Padang Tikar,,,,,,DONE in s14_hcv_vs_satellite.py -> HCV_T3_INTERVALS.csv / HCV_HARMONISED_SERIES.csv,,,,,,,,,,
+T3 HCV forest trend vs Hansen gross loss,Pulau Maya,,,,,,DONE in s14_hcv_vs_satellite.py -> HCV_T3_INTERVALS.csv / HCV_HARMONISED_SERIES.csv,,,,,,,,,,
