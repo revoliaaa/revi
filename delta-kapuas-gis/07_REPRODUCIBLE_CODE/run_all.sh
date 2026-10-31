@@ -23,3 +23,7 @@ python s08_hcv_comparison.py ../inputs/HCV_LANDCOVER_TABLES_FROM_REPORTS.csv $R/
 python s14_hcv_vs_satellite.py
 python s11_build_deliverables.py
 python s10_figures.py "$D/gmw" $R/02_REMOTE_SENSING_DATA/landsat_pulau_maya
+# Final package for Vensim REV3 integration
+python s15_master_spatial.py "$D/gmw"
+python s16_vensim_input.py
+python s17_package.py

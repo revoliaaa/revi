@@ -31,6 +31,14 @@
 | 7 SD parameter recommendations | **CONDITIONAL** | Candidates and decisions in `05_SYSTEM_DYNAMICS_INPUT/`. `.mdl` not supplied, so current rate values are unknown. Model not modified. |
 | 8 Publication package | **CONDITIONAL** | 7 figures, methods, limitations, captions. Needs the accuracy assessment and PDF verification of flagged HCV cells before submission. |
 
+## Final deliverable for System Dynamics integration
+
+**`DELTA_KAPUAS_25HD_GIS_FINAL_FOR_VENSIM.zip`** (also unpacked in `08_FINAL_FOR_VENSIM/`) contains:
+- **Master spatial database:** `DKP_25HD_MASTER_SPATIAL` (GPKG primary + SHP) with the 25 original Project Area polygons and 33 attributes.
+- Thematic layers: tree-cover status, loss year, GMW mangrove. Peat is **not** mapped; the reason is documented.
+- **Vensim input table:** `DKP_VENSIM_SPATIAL_INPUT.csv/.xlsx`, 121 rows classified as observation / estimate / candidate / assumption and as direct / conversion / sensitivity / unusable.
+- QA report and the REV3 integration README (Indonesian).
+
 ## Folder map
 
 - `01_BOUNDARY_QA/`: PA audit, clean PA GeoPackage, desa context domain, `SPATIAL_DOMAIN_RECONCILIATION.md`
@@ -39,6 +47,7 @@
 - `04_VALIDATION/`: HCV vs satellite tests, Pulau Maya investigation, uncertainty report
 - `05_SYSTEM_DYNAMICS_INPUT/`: parameter candidates, calibration benchmarks, PA crediting constraint, recommendations
 - `06_PUBLICATION/`: figures, methods / limitations / captions
+- `08_FINAL_FOR_VENSIM/`: final master database, thematic layers, Vensim input, QA, REV3 README
 - `07_REPRODUCIBLE_CODE/`: scripts, GEE replica (not executed), inputs, provenance, run instructions
 
 Not produced, deliberately: `LAND_COVER_TRANSITION_MATRIX.xlsx` and any confusion matrix. Neither is supportable without reference data (see `04_VALIDATION/SPATIAL_ACCURACY_AND_UNCERTAINTY.md`).

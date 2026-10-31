@@ -1,0 +1,34 @@
+FIELD_GPKG,FIELD_SHP,UNIT,DEFINITION,SOURCE,DATA_CLASS,SHP_NAME_LEN_OK
+HD_ID,HD_ID,-,Kode HD (HD01-HD25) sesuai desain studi,Studi,KEY,True
+HD_NAME,HD_NAME,-,Nama Hutan Desa / LPHD,Shapefile PA (NAMA_DESA) + alias terdokumentasi,KEY,True
+LANDSCAPE,LANDSCAPE,-,Lanskap: Kubu / Padang Tikar / Pulau Maya,Desain studi,KEY,True
+REGENCY,REGENCY,-,Kabupaten,Desain studi,KEY,True
+SK_NUMBER,SK_NO,-,Nomor SK penetapan HD,Laporan HCV Tabel 1,TABULAR,True
+SK_DATE,SK_DATE,date,Tanggal SK penetapan HD,Laporan HCV Tabel 1,TABULAR,True
+SK_AREA_HA,SK_HA,ha,"Luas SK (tabel, bukan geometri)",Laporan HCV Tabel 1,TABULAR,True
+AREA_HA,AREA_HA,ha,"Luas poligon Project Area, geodesik elipsoid WGS84 (dipakai semua statistik zonal)",Shapefile PA 21-05-2026,OBSERVASI_GEOMETRI,True
+AREA_UTM49S_HA,AREA_UTM,ha,"Luas planar WGS84/UTM 49S (konvensi PDD; total 111.123,16 ha)",Shapefile PA,OBSERVASI_GEOMETRI,True
+PA_TO_SK_RATIO,PA_SK,fraksi,"AREA_UTM49S_HA / SK_AREA_HA (pangsa luas, BUKAN pangsa kredit)",Turunan,ESTIMASI_SPASIAL,True
+TREE_2000_HA,TREE00_HA,ha,Tutupan pohon 2000: kanopi >30 % vegetasi >5 m (Hansen). BUKAN hutan legal,Hansen GFC v1.13,OBSERVASI_EMPIRIS,True
+TREE_2024_HA,TREE24_HA,ha,Tutupan pohon 2000 (>30 %) TANPA loss terdeteksi 2001-2024 = tutupan pohon persisten. Batas bawah tutupan pohon 2024 (regrowth tidak dihitung),Hansen GFC v1.13,ESTIMASI_SPASIAL,True
+LOSS_2001_2024_HA,LOSS0124,ha,"Gross tree-cover loss 2001-2024 di dalam TREE_2000 (bukan net forest loss, bukan deforestasi regulasi)",Hansen GFC v1.13,OBSERVASI_EMPIRIS,True
+LOSS_2001_2014_HA,LOSS0114,ha,Gross loss 2001-2014 (jendela kalibrasi; 2001-2010 belum diproses ulang UMD),Hansen GFC v1.13,OBSERVASI_EMPIRIS,True
+LOSS_2015_2016_HA,LOSS1516,ha,Gross loss 2015-2016 (tahun El Nino/kebakaran),Hansen GFC v1.13,OBSERVASI_EMPIRIS,True
+LOSS_2017_2024_HA,LOSS1724,ha,Gross loss 2017-2024 (setelah mayoritas SK HD),Hansen GFC v1.13,OBSERVASI_EMPIRIS,True
+LOSS_RATE_HA_YEAR,LOSS_RATE,ha/tahun,Rata-rata gross loss 2001-2024 (24 tahun),Turunan Hansen,ESTIMASI_SPASIAL,True
+LOSS_RATE_PCT_YEAR,LOSS_PCT,%/tahun,LOSS_RATE_HA_YEAR / TREE_2000_HA x 100,Turunan Hansen,ESTIMASI_SPASIAL,True
+LOSS_2001_2024_T10_HA,LOSS_T10,ha,Sensitivitas: gross loss dengan definisi kanopi >10 %,Hansen GFC v1.13,SENSITIVITAS,True
+LOSS_2001_2024_T50_HA,LOSS_T50,ha,Sensitivitas: gross loss dengan definisi kanopi >50 %,Hansen GFC v1.13,SENSITIVITAS,True
+LOSS_IN_MANGROVE_2001_2024_HA,LOSS_MG,ha,Gross loss (kanopi >30 %) di dalam ekstensi GMW 2010,Hansen x GMW v3,ESTIMASI_SPASIAL,True
+FOREST_2024_HA,FOREST24,ha,Luas HUTAN 2024 menurut definisi kelas hutan tervalidasi,-,NOT_AVAILABLE,True
+FOREST_2024_FLAG,FOR24_FLG,-,Alasan FOREST_2024_HA kosong,-,FLAG,True
+PEAT_HA,PEAT_HA,ha,Luas gambut berdasarkan geometri,-,NOT_AVAILABLE,True
+PEAT_FLAG,PEAT_FLG,-,Alasan PEAT_HA kosong,-,FLAG,True
+MANGROVE_HA,MANGR_HA,ha,Ekstensi mangrove GMW v3.0 tahun 2020 (definisi GMW; BUKAN kelas mangrove HCV),GMW v3.0,OBSERVASI_EMPIRIS,True
+MANGROVE_1996_HA,MANGR96,ha,Ekstensi mangrove GMW v3.0 tahun 1996 (stabilitas),GMW v3.0,OBSERVASI_EMPIRIS,True
+PEAT_DEPTH_SURVEY_M,PT_DEPTH,m,"Rata-rata kedalaman gambut plot survei per label desa (Laporan Gambut 2025, Tabel 11). Rata-rata TITIK, bukan rata-rata spasial HD",Laporan Gambut & Mangrove 2025,OBSERVASI_TITIK,True
+MANGROVE_SED_DEPTH_SURVEY_M,MG_DEPTH,m,Rata-rata kedalaman sedimen mangrove plot survei per label desa (Tabel 11),Laporan Gambut & Mangrove 2025,OBSERVASI_TITIK,True
+BPS_NAME_LOCATION_FLAG,LOC_FLAG,-,Poligon PA tidak terutama berada di desa BPS bernama sama (informasi; tidak memengaruhi atribut PA),Overlay BPS 2020,FLAG,True
+SOURCE,SOURCE,-,Ringkasan sumber data atribut,-,META,True
+QA_STATUS,QA_STATUS,-,PASS / PASS_WITH_NOTES,QA s06/s15,META,True
+QA_NOTE,QA_NOTE,-,Catatan QA per HD,QA s06/s15,META,True
