@@ -16,6 +16,7 @@
 | Problematic HCV epochs | Kubu 2009, Kubu 2014, Pulau Maya 2014/2019/2024 (`04_VALIDATION/HCV_EPOCH_RELIABILITY.csv`) |
 | Pulau Maya 2019→2024 (+3,773 ha mangrove, +581 ha dryland forest) | Not ecological change. Only 3–11 ha became newly vegetated in the PA. GMW mangrove has been stable at 6,309–6,335 ha since 1996. Forested hills existed throughout. Most consistent with re-classification (H2 + H4). |
 | HCV noise vs model error | HCV departs from a monotone satellite-harmonised series by RMSE 4,200 ha in 2019/2024, about the size of the SD (5,445) and linear (4,991) hold-out RMSEs. The hold-out cannot discriminate the models. |
+| Peat (report depth classes, 2025) | PA: **41,436 ha** peat ≥ 50 cm (27,075 ha ≥ 3 m), 52,252 ha mangrove sediment; class areas reproduce report Tabel 14 to ±0.01 ha (Bab III confirmed, Simpulan not reproducible). Mangrove-sediment mask exceeds GMW (Pulau Maya 1.62×), so Pulau Maya peat is likely underestimated. |
 | 0.8535 parameter | With SK geometry: area share 0.8895, tree-cover share R1 = **0.903**, gross-loss activity share R2 = **0.682** (0.54–0.78 by period). Keep 0.8535 as baseline; run R2/R1 as S4 sensitivity. |
 
 ## Gate report

@@ -28,6 +28,8 @@ python s18_sk_boundary.py "${DK_SK_SHP:?set DK_SK_SHP}"
 python s03_zonal_stats.py $R/01_BOUNDARY_QA/SK_25HD_BOUNDARY.gpkg SK_HD "$D/gmw" $R/03_LAND_COVER_CHANGE/ZONAL_SK_HD.csv
 python s07_project_area_constraint.py $R/03_LAND_COVER_CHANGE/ZONAL_PROJECT_AREA.csv $R/03_LAND_COVER_CHANGE/ZONAL_ADMIN_DESA_CONTEXT.csv $R/03_LAND_COVER_CHANGE/ZONAL_SK_HD.csv
 python s19_sk_domain_tests.py
+# Peat / mangrove-sediment depth classes (report data): DK_SOIL_DIR = folder with Soil_Depth_rev120425.shp
+python s20_peat_overlay.py "${DK_SOIL_DIR:?set DK_SOIL_DIR}"
 # Final package for Vensim REV3 integration
 python s15_master_spatial.py "$D/gmw"
 python s16_vensim_input.py

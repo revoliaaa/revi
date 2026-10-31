@@ -35,21 +35,22 @@ Tanggal: 31-10-2026. Semua angka berasal dari skrip `07_REPRODUCIBLE_CODE/src` (
 
 | # | Temuan | Bukti | Konsekuensi |
 |---|---|---|---|
-| G1 | Angka stok tidak konsisten antar-bab | Tabel 15: 154.675.959 tC (gambut 144.114.915; mangrove 10.561.044; 3.054,53 dan 200,39 tC/ha). Simpulan (hal. 74): 145.825.054 tC (gambut 133.521.424; mangrove 12.303.630; 4.446,12 dan 1.299,63 tC/ha). Angka Simpulan menyiratkan basis luas lain (≈ 30.031 ha gambut, ≈ 9.467 ha mangrove). | Tidak ada angka stok yang boleh dipakai sebelum diklarifikasi |
+| G1 | Angka stok tidak konsisten antar-bab (**terjawab sebagian 31-10-2026**: data spasial `Soil_Depth_rev120425` mereproduksi Tabel 14 ±0,01 ha dan stok Tabel 15, sehingga **angka Bab III yang konsisten**; angka Simpulan tidak dapat direproduksi) | Tabel 15: 154.675.959 tC (gambut 144.114.915; mangrove 10.561.044; 3.054,53 dan 200,39 tC/ha). Simpulan (hal. 74): 145.825.054 tC (gambut 133.521.424; mangrove 12.303.630; 4.446,12 dan 1.299,63 tC/ha). Angka Simpulan menyiratkan basis luas lain (≈ 30.031 ha gambut, ≈ 9.467 ha mangrove). | Tidak ada angka stok yang boleh dipakai sebelum diklarifikasi |
 | G2 | Label kelas "≥ 50 cm" untuk sedimen mangrove keliru | 52.703,14 ha mencakup kelas < 50 cm (41.696,7 ha); kelas ≥ 50 cm hanya 11.006,4 ha | Luas sedimen mangrove harus dibaca beserta kelasnya |
 | G3 | Evaluasi interpolasi tidak independen | 409 titik evaluasi (survei, Padang Tikar 2017, Murdiyarso 2015) juga merupakan input kriging. Kriging nyaris mereproduksi titik inputnya sendiri, sehingga R² = 0,99 dan RMSE 13 cm tidak mengukur akurasi prediksi. | Akurasi peta kedalaman belum diketahui; perlu validasi silang (leave-one-out) atau titik independen |
 | G4 | Mayoritas titik interpolasi adalah data bangkitan | 5.778 titik termasuk titik `rnorm()` dari kelas kedalaman BBSDLP (1:250.000) dan Kubu Peatland Project; survei baru hanya 186 plot (17 dari 25 desa) | Peta kedalaman sangat dipengaruhi peta nasional skala kasar |
 | G5 | Ketidakpastian stok terlalu kecil | U = 1,1 % (gambut) dan 5,9 % (mangrove) hanya dari Monte Carlo atas rata-rata BD, C-org dan kedalaman; galat interpolasi spasial tidak dimasukkan | Ketidakpastian riil jauh lebih besar |
 | G6 | Domain laporan ≠ Project Area | Jumlah kelas Tabel 14 = 125.461 ha (≈ luas SK 124.941 ha; PA = 111.135 ha). Permukiman, tambak dan tubuh air dikecualikan. | Stok laporan tidak dapat dipetakan ke PA tanpa raster |
 | G7 | Cakupan survei | Tidak ada plot di Kubu, Dabong, Sungai Bemban, Seruat Dua, Padang Tikar 1, Dusun Besar, Dusun Kecil, Kemboja | Atribut kedalaman survei kosong untuk HD tersebut |
-| G8 | Raster tidak diserahkan | `PeatDepth_Interpolated_10m_cm_49S_ABS.tif` tidak tersedia di sesi ini | PEAT_HA tidak dapat dihitung per HD |
+| G8 | ~~Raster tidak diserahkan~~ **Terselesaikan**: poligon kelas kedalaman (`Soil_Depth_rev120425`, `Gambut_Data_WAS`, `Mangrove_Data_WAS`; EPSG:32749) diserahkan. Cakupan = geometri SK (16 ha di luar SK; 14 ha SK tidak tercakup); 7+6 geometri invalid diperbaiki `make_valid`. | `SOIL_DEPTH_LAYER_QA.csv` | PEAT_HA per HD kini terisi (PA 41.436 ha; SK 47.185 ha) |
+| G9 | Pemisahan gambut vs sedimen mangrove mengikuti masker tutupan mangrove yang lebih luas dari GMW | Sedimen mangrove di PA 52.252 ha vs mangrove GMW 2020 45.050 ha. Selisih terbesar: Dusun Besar 2.087 vs 96 ha, Tanjung Satai 1.164 vs 0 ha, Tanjung Beringin 1.963 vs 579 ha; Pulau Maya total 10.243 vs 6.322 ha (1,62×), sejalan dengan kelas mangrove HCV 2024 yang menggelembung | Luas gambut Pulau Maya (dan sebagian Kubu) kemungkinan underestimate; uji sensitivitas sebelum dipakai |
 
 Kedalaman rata-rata per desa (Tabel 11) dimasukkan ke master hanya sebagai **rata-rata titik survei** (PT_DEPTH, MG_DEPTH). Nilai ini tidak dipakai untuk membuat poligon atau luas gambut.
 
 ## 4. Klaim yang sengaja TIDAK dibuat
 
 - Tidak ada klaim regenerasi hutan dari perubahan kelas HCV. Contohnya mangrove Pulau Maya +3.773 ha (2019→2024): Landsat 8/9 hanya menemukan 3–11 ha area yang baru bervegetasi di PA, dan GMW stabil sejak 1996.
-- Tidak ada poligon gambut dari titik survei.
+- Tidak ada poligon gambut dari titik survei. Layer gambut berasal langsung dari poligon kelas kedalaman penyusun laporan, tanpa interpolasi ulang.
 - Tidak ada angka luas hutan 2024 atau luas gambut per HD yang diisi asumsi.
 - Tidak ada konversi tutupan pohon, loss atau stok tanah menjadi kredit karbon.
 - Tidak ada nama variabel Vensim yang dikarang. Hanya `Proporsi Kredit REDD dalam Project Area` yang dipakai, karena diberikan oleh peneliti.
@@ -60,5 +61,5 @@ Kedalaman rata-rata per desa (Tabel 11) dimasukkan ke master hanya sebagai **rat
 2. Hansen: tahun 2001–2010 belum diproses ulang (patahan metode 2011). Pulsa kebakaran 2015–2016 menyumbang 51 % loss PA.
 3. Geometri SK kini tersedia: R2 (pangsa aktivitas gross loss PA/SK) = 0,682, dan R1 (pangsa tutupan pohon) = 0,903. R2 memakai gross loss sebagai proksi deforestasi dan bergantung periode (0,54–0,78). Penggunaannya sebagai pengganti 0,8535 bergantung pada definisi persamaan model.
 4. GMW berakhir 2020; tidak ada peta mangrove independen 2024.
-5. Raster gambut dan peta gambut publik (GFW, perlu API key) tidak tersedia.
+5. Layer gambut adalah produk interpolasi pihak ketiga. Akurasinya belum divalidasi secara independen (G3–G5), dan pemisahan gambut/mangrove dipengaruhi definisi masker mangrove (G9). Stok karbon tanah per HD dihitung hanya sebagai konteks (luas kelas × rata-rata Tabel 15).
 6. Nilai HCV ditranskripsi dari ekstraksi teks PDF. Sel rekonstruksi diberi flag (`QUALITY`) dan perlu dicek ke PDF asli.

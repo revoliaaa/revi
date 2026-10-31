@@ -50,11 +50,20 @@ def quicklook():
     mext = [mtr.c, mtr.c + mtr.a * mg.shape[1], mtr.f + mtr.e * mg.shape[0], mtr.f]
     axs[2].imshow(np.where(mg == 1, 1, np.nan), extent=mext, interpolation="nearest", cmap=ListedColormap(["#1baf7a"]))
     axs[2].set_title("Mangrove GMW v3.0 (2020)\ndalam Project Area", loc="left", fontsize=9)
-    axs[3].text(0.5, 0.5, "PERSEBARAN GAMBUT\nTIDAK DIPETAKAN\n\nraster kedalaman gambut\n(Laporan 2025) tidak diserahkan;\n"
-                "poligon tidak dibuat dari\ntitik survei", ha="center", va="center", fontsize=9, color=INK,
-                transform=axs[3].transAxes, zorder=10,
-                bbox=dict(boxstyle="round,pad=0.6", fc="white", ec=MUTED, lw=0.8))
-    axs[3].set_title("Gambut", loc="left", fontsize=9)
+    sd = gpd.read_file(T / "DKP_SOIL_DEPTH_CLASS_PA.gpkg")
+    cls = {"Peat": "#6b3d1f", "Mangrove": "#1baf7a", "Mineral": "#e3e2dc"}
+    for k, c in cls.items():
+        sub = sd[sd.SOIL == k]
+        if k == "Peat":
+            sub = sub.assign(DEEP=[d != "-" and float(d.split("-")[0]) >= 300 for d in sub.DEPTH_CLASS_CM])
+            sub[~sub.DEEP].plot(ax=axs[3], color="#b07a4f", lw=0)
+            sub[sub.DEEP].plot(ax=axs[3], color=c, lw=0)
+        else:
+            sub.plot(ax=axs[3], color=c, lw=0)
+    axs[3].set_title("Tanah gambut & sedimen mangrove dalam PA\n(Laporan Gambut 2025; belum divalidasi independen)", loc="left", fontsize=9)
+    axs[3].legend(handles=[Patch(color="#b07a4f", label="gambut 50–300 cm"), Patch(color="#6b3d1f", label="gambut ≥ 300 cm"),
+                           Patch(color="#1baf7a", label="sedimen mangrove"), Patch(color="#e3e2dc", label="mineral / gambut < 50 cm")],
+                  loc="upper center", bbox_to_anchor=(0.5, -0.06), fontsize=7, frameon=False, ncol=2)
     for ax in axs:
         m.boundary.plot(ax=ax, color=INK, lw=0.35)
         ax.set_xlim(m.total_bounds[0] - 0.02, m.total_bounds[2] + 0.02)
@@ -64,7 +73,6 @@ def quicklook():
         ax.set_xlabel(""); ax.set_ylabel("")
         for s in ("top", "right"):
             ax.spines[s].set_visible(False)
-    axs[3].set_xticks([]); axs[3].set_yticks([])
     axs[0].set_ylabel("Lintang (°)", fontsize=8)
     fig.suptitle("Delta Kapuas 25 HD: layer tematik Project Area (garis hitam = 25 poligon PA)", x=0.01, ha="left", fontsize=11)
     out = P / "05_QUICKLOOK"

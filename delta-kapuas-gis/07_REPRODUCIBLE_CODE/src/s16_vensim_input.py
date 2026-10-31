@@ -210,7 +210,7 @@ def main():
           ("Luas sedimen mangrove semua kelas (termasuk <50 cm = 41.696,7 ha)", "ha", 52703.14, "Tabel 14; teks menyebut '>=50 cm' - keliru"),
           ("Stok karbon tanah gambut (versi Bab III)", "tC", 144114915.20, "Tabel 15"),
           ("Stok karbon sedimen mangrove (versi Bab III)", "tC", 10561043.94, "Tabel 15"),
-          ("Stok karbon tanah gambut (versi Simpulan)", "tC", 133521424.08, "Bab IV - TIDAK KONSISTEN dengan Tabel 15"),
+          ("Stok karbon tanah gambut (versi Simpulan)", "tC", 133521424.08, "Bab IV - TIDAK KONSISTEN dengan Tabel 15 dan dengan data spasial (Bab III terkonfirmasi)"),
           ("Stok karbon sedimen mangrove (versi Simpulan)", "tC", 12303629.97, "Bab IV - TIDAK KONSISTEN dengan Tabel 15"),
           ("Rata-rata stok karbon gambut (Bab III)", "tC/ha", 3054.53, "Tabel 15; U = 1,1 % (Tabel 16)"),
           ("Rata-rata stok karbon sedimen mangrove (Bab III)", "tC/ha", 200.39, "Tabel 15; U = 5,9 %"),
@@ -227,10 +227,31 @@ def main():
             REKOMENDASI=("Jangan dipakai sebagai input kredit/emisi; minta raster & klarifikasi versi angka sebelum dipakai"
                          if u == "tC" else "Hanya untuk konteks/sensitivitas; tidak per HD; domain bukan PA"),
             DAMPAK_STRUKTUR_MODEL="Stok karbon tanah tidak mengubah aliran emisi tanpa model emisi drainase/oksidasi (di luar cakupan)")
-    add(KATEGORI="4_ASUMSI_SENSITIVITAS", KONSEP_TARGET="Luas gambut per HD (geometri)", UNIT="ha", NILAI=np.nan, TAHUN_PERIODE="-",
-        SUMBER="-", METODE="Butuh raster PeatDepth_Interpolated_10m (laporan) atau peta gambut berlisensi",
-        KETIDAKPASTIAN="-", STATUS_DATA="TIDAK TERSEDIA", KELAS_PENGGUNAAN="TIDAK_DAPAT_DIGUNAKAN",
-        REKOMENDASI="Minta raster GeoTIFF dari penyusun laporan; jangan interpolasi ulang dari titik", DAMPAK_STRUKTUR_MODEL="-")
+    sd = pd.read_csv(ROOT / "03_LAND_COVER_CHANGE" / "SOIL_DEPTH_BY_HD_WIDE.csv")
+    SD = sd.groupby(["DOMAIN", "LANDSCAPE"]).sum(numeric_only=True)
+    for dom in ["PROJECT_AREA", "SK_HD"]:
+        X = SD.loc[dom].copy(); X.loc["ALL_25"] = X.sum()
+        for c in ["ALL_25"] + LANDS:
+            x = X.loc[c]
+            common = dict(CAKUPAN=c, TAHUN_PERIODE="survei 2024 / peta 2025",
+                          DOMAIN_SPASIAL="PROJECT_AREA" if dom == "PROJECT_AREA" else "SK HD (geometri)",
+                          SUMBER=LAP + " - data spasial Soil_Depth_rev120425 (kelas = Tabel 14 +/-0,01 ha)",
+                          METODE="Overlay poligon kelas kedalaman (ordinary kriging 10 m, divektorkan oleh penyusun) dengan poligon " + ("PA" if dom == "PROJECT_AREA" else "SK"),
+                          KETIDAKPASTIAN="Akurasi interpolasi belum divalidasi independen (QA G3-G5)" + ("; Pulau Maya: pemisahan gambut/mangrove mengikuti masker mangrove ~HCV 2024 (QA G9)" if c in ("ALL_25", "Pulau Maya") else ""))
+            add(KATEGORI="2_ESTIMASI_SPASIAL", KONSEP_TARGET="Luas tanah gambut >=50 cm (stratum WRC-gambut)", UNIT="ha", NILAI=x.PEAT_GE50_HA,
+                STATUS_DATA="ESTIMASI PIHAK KETIGA", KELAS_PENGGUNAAN="PERLU_KONVERSI_ATAU_KALIBRASI",
+                REKOMENDASI="Dapat dipakai sebagai luas stratum gambut setelah validasi; untuk Pulau Maya uji sensitivitas G9",
+                DAMPAK_STRUKTUR_MODEL="Nilai awal stratum gambut; tidak menambah struktur emisi", **common)
+            add(KATEGORI="2_ESTIMASI_SPASIAL", KONSEP_TARGET="Luas gambut >=3 m (fungsi lindung gambut)", UNIT="ha", NILAI=x.PEAT_GE300_HA,
+                STATUS_DATA="ESTIMASI PIHAK KETIGA", KELAS_PENGGUNAAN="SENSITIVITAS_SAJA",
+                REKOMENDASI="Konteks kebijakan (gambut >=3 m); bukan parameter aliran", DAMPAK_STRUKTUR_MODEL="-", **common)
+            add(KATEGORI="2_ESTIMASI_SPASIAL", KONSEP_TARGET="Luas sedimen mangrove (semua kelas)", UNIT="ha", NILAI=x.MANGROVE_SED_HA,
+                STATUS_DATA="ESTIMASI PIHAK KETIGA", KELAS_PENGGUNAAN="SENSITIVITAS_SAJA",
+                REKOMENDASI="Bandingkan dengan mangrove GMW; selisih menandakan definisi masker berbeda (G9)", DAMPAK_STRUKTUR_MODEL="-", **common)
+            add(KATEGORI="4_ASUMSI_SENSITIVITAS", KONSEP_TARGET="STOK karbon tanah gambut (luas kelas x Tabel 15) - BUKAN EMISI, BUKAN KREDIT",
+                UNIT="tC", NILAI=x.PEAT_C_TC_CONTEXT, STATUS_DATA="KONTEKS", KELAS_PENGGUNAAN="TIDAK_DAPAT_DIGUNAKAN",
+                REKOMENDASI="Jangan dipakai sebagai input kredit/emisi; emisi WRC bergantung drainase/subsidensi",
+                DAMPAK_STRUKTUR_MODEL="Tidak ada (tidak menambah struktur karbon tanah)", **common)
     add(KATEGORI="4_ASUMSI_SENSITIVITAS", KONSEP_TARGET="Luas HUTAN 2024 per HD (kelas hutan tervalidasi)", UNIT="ha", NILAI=np.nan,
         TAHUN_PERIODE="2024", SUMBER="-", METODE="Butuh klasifikasi hutan 2024 tervalidasi (sampel referensi)",
         KETIDAKPASTIAN="-", STATUS_DATA="TIDAK TERSEDIA", KELAS_PENGGUNAAN="TIDAK_DAPAT_DIGUNAKAN",

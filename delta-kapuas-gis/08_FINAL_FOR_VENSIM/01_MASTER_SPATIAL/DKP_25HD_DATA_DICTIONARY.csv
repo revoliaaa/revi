@@ -22,8 +22,16 @@ LOSS_2001_2024_T50_HA,LOSS_T50,ha,Sensitivitas: gross loss dengan definisi kanop
 LOSS_IN_MANGROVE_2001_2024_HA,LOSS_MG,ha,Gross loss (kanopi >30 %) di dalam ekstensi GMW 2010,Hansen x GMW v3,ESTIMASI_SPASIAL,True
 FOREST_2024_HA,FOREST24,ha,Luas HUTAN 2024 menurut definisi kelas hutan tervalidasi,-,NOT_AVAILABLE,True
 FOREST_2024_FLAG,FOR24_FLG,-,Alasan FOREST_2024_HA kosong,-,FLAG,True
-PEAT_HA,PEAT_HA,ha,Luas gambut berdasarkan geometri,-,NOT_AVAILABLE,True
-PEAT_FLAG,PEAT_FLG,-,Alasan PEAT_HA kosong,-,FLAG,True
+PEAT_HA,PEAT_HA,ha,"Luas tanah gambut >=50 cm di dalam PA (kelas kedalaman kriging laporan 2025, vektor Soil_Depth_rev120425)",Laporan Gambut & Mangrove 2025 (data spasial),ESTIMASI_SPASIAL,True
+PEAT_FLAG,PEAT_FLG,-,Catatan kualitas PEAT_HA,-,FLAG,True
+PEAT_GE300_HA,PEAT_3M_HA,ha,Luas gambut kedalaman >=300 cm di dalam PA (relevan untuk fungsi lindung gambut >=3 m),Laporan Gambut 2025 (data spasial),ESTIMASI_SPASIAL,True
+PEAT_MEAN_DEPTH_M,PEAT_DEP_M,m,Rata-rata kedalaman gambut berbobot luas (titik tengah kelas) di dalam PA,Turunan dari kelas kedalaman,ESTIMASI_SPASIAL,True
+MANGROVE_SED_HA,MSED_HA,ha,"Luas sedimen mangrove (semua kelas, termasuk <50 cm) di dalam PA; masker mengikuti tutupan mangrove laporan (lihat QA G9)",Laporan Gambut 2025 (data spasial),ESTIMASI_SPASIAL,True
+MANGROVE_SED_GE50_HA,MSED50_HA,ha,Luas sedimen mangrove >=50 cm di dalam PA,Laporan Gambut 2025 (data spasial),ESTIMASI_SPASIAL,True
+MINERAL_OR_PEAT_LT50_HA,MIN_LT50,ha,Tanah mineral atau gambut <50 cm (diperlakukan mineral oleh laporan) di dalam PA,Laporan Gambut 2025 (data spasial),ESTIMASI_SPASIAL,True
+PEAT_SK_HA,PEAT_SK_HA,ha,Luas gambut >=50 cm di seluruh SK HD,Laporan Gambut 2025 (data spasial) x SK,ESTIMASI_SPASIAL,True
+PEAT_SOIL_C_STOCK_TC,PEAT_C_TC,tC,STOK karbon tanah gambut di PA = luas kelas x rata-rata Tabel 15. KONTEKS - BUKAN emisi dan BUKAN kredit,Laporan Gambut 2025 Tabel 15,SENSITIVITAS,True
+MANGROVE_SED_C_STOCK_TC,MSED_C_TC,tC,STOK karbon sedimen mangrove di PA (Tabel 15). KONTEKS - BUKAN emisi dan BUKAN kredit,Laporan Gambut 2025 Tabel 15,SENSITIVITAS,True
 MANGROVE_HA,MANGR_HA,ha,Ekstensi mangrove GMW v3.0 tahun 2020 (definisi GMW; BUKAN kelas mangrove HCV),GMW v3.0,OBSERVASI_EMPIRIS,True
 MANGROVE_1996_HA,MANGR96,ha,Ekstensi mangrove GMW v3.0 tahun 1996 (stabilitas),GMW v3.0,OBSERVASI_EMPIRIS,True
 PEAT_DEPTH_SURVEY_M,PT_DEPTH,m,"Rata-rata kedalaman gambut plot survei per label desa (Laporan Gambut 2025, Tabel 11). Rata-rata TITIK, bukan rata-rata spasial HD",Laporan Gambut & Mangrove 2025,OBSERVASI_TITIK,True

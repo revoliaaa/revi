@@ -61,8 +61,16 @@ DICT = [
     ("LOSS_IN_MANGROVE_2001_2024_HA", "LOSS_MG", "ha", "Gross loss (kanopi >30 %) di dalam ekstensi GMW 2010", "Hansen x GMW v3", "ESTIMASI_SPASIAL"),
     ("FOREST_2024_HA", "FOREST24", "ha", "Luas HUTAN 2024 menurut definisi kelas hutan tervalidasi", "-", "NOT_AVAILABLE"),
     ("FOREST_2024_FLAG", "FOR24_FLG", "-", "Alasan FOREST_2024_HA kosong", "-", "FLAG"),
-    ("PEAT_HA", "PEAT_HA", "ha", "Luas gambut berdasarkan geometri", "-", "NOT_AVAILABLE"),
-    ("PEAT_FLAG", "PEAT_FLG", "-", "Alasan PEAT_HA kosong", "-", "FLAG"),
+    ("PEAT_HA", "PEAT_HA", "ha", "Luas tanah gambut >=50 cm di dalam PA (kelas kedalaman kriging laporan 2025, vektor Soil_Depth_rev120425)", "Laporan Gambut & Mangrove 2025 (data spasial)", "ESTIMASI_SPASIAL"),
+    ("PEAT_FLAG", "PEAT_FLG", "-", "Catatan kualitas PEAT_HA", "-", "FLAG"),
+    ("PEAT_GE300_HA", "PEAT_3M_HA", "ha", "Luas gambut kedalaman >=300 cm di dalam PA (relevan untuk fungsi lindung gambut >=3 m)", "Laporan Gambut 2025 (data spasial)", "ESTIMASI_SPASIAL"),
+    ("PEAT_MEAN_DEPTH_M", "PEAT_DEP_M", "m", "Rata-rata kedalaman gambut berbobot luas (titik tengah kelas) di dalam PA", "Turunan dari kelas kedalaman", "ESTIMASI_SPASIAL"),
+    ("MANGROVE_SED_HA", "MSED_HA", "ha", "Luas sedimen mangrove (semua kelas, termasuk <50 cm) di dalam PA; masker mengikuti tutupan mangrove laporan (lihat QA G9)", "Laporan Gambut 2025 (data spasial)", "ESTIMASI_SPASIAL"),
+    ("MANGROVE_SED_GE50_HA", "MSED50_HA", "ha", "Luas sedimen mangrove >=50 cm di dalam PA", "Laporan Gambut 2025 (data spasial)", "ESTIMASI_SPASIAL"),
+    ("MINERAL_OR_PEAT_LT50_HA", "MIN_LT50", "ha", "Tanah mineral atau gambut <50 cm (diperlakukan mineral oleh laporan) di dalam PA", "Laporan Gambut 2025 (data spasial)", "ESTIMASI_SPASIAL"),
+    ("PEAT_SK_HA", "PEAT_SK_HA", "ha", "Luas gambut >=50 cm di seluruh SK HD", "Laporan Gambut 2025 (data spasial) x SK", "ESTIMASI_SPASIAL"),
+    ("PEAT_SOIL_C_STOCK_TC", "PEAT_C_TC", "tC", "STOK karbon tanah gambut di PA = luas kelas x rata-rata Tabel 15. KONTEKS - BUKAN emisi dan BUKAN kredit", "Laporan Gambut 2025 Tabel 15", "SENSITIVITAS"),
+    ("MANGROVE_SED_C_STOCK_TC", "MSED_C_TC", "tC", "STOK karbon sedimen mangrove di PA (Tabel 15). KONTEKS - BUKAN emisi dan BUKAN kredit", "Laporan Gambut 2025 Tabel 15", "SENSITIVITAS"),
     ("MANGROVE_HA", "MANGR_HA", "ha", "Ekstensi mangrove GMW v3.0 tahun 2020 (definisi GMW; BUKAN kelas mangrove HCV)", "GMW v3.0", "OBSERVASI_EMPIRIS"),
     ("MANGROVE_1996_HA", "MANGR96", "ha", "Ekstensi mangrove GMW v3.0 tahun 1996 (stabilitas)", "GMW v3.0", "OBSERVASI_EMPIRIS"),
     ("PEAT_DEPTH_SURVEY_M", "PT_DEPTH", "m", "Rata-rata kedalaman gambut plot survei per label desa (Laporan Gambut 2025, Tabel 11). Rata-rata TITIK, bukan rata-rata spasial HD", "Laporan Gambut & Mangrove 2025", "OBSERVASI_TITIK"),
@@ -108,8 +116,21 @@ def build_master():
     d["LOSS_IN_MANGROVE_2001_2024_HA"] = z.loc[idx, [f"LOSS_{y}_GT30_IN_GMW2010" for y in range(2001, 2025)]].sum(axis=1).values
     d["FOREST_2024_HA"] = np.nan
     d["FOREST_2024_FLAG"] = "NA: tidak ada klasifikasi hutan 2024 tervalidasi; HCV 2024 inkonsisten antar-epoch (lihat QA). Gunakan TREE_2024_HA sebagai proksi tutupan pohon, bukan hutan."
-    d["PEAT_HA"] = np.nan
-    d["PEAT_FLAG"] = "NA: raster kedalaman gambut (Laporan 2025) tidak diserahkan; peta GFW butuh API key; poligon tidak dibuat dari titik survei."
+    sd = pd.read_csv(ROOT / "03_LAND_COVER_CHANGE" / "SOIL_DEPTH_BY_HD_WIDE.csv")
+    sp = sd[sd.DOMAIN == "PROJECT_AREA"].set_index("HD_ID")
+    ss = sd[sd.DOMAIN == "SK_HD"].set_index("HD_ID")
+    d["PEAT_HA"] = d.HD_ID.map(sp.PEAT_GE50_HA).fillna(0.0)
+    d["PEAT_GE300_HA"] = d.HD_ID.map(sp.PEAT_GE300_HA).fillna(0.0)
+    d["PEAT_MEAN_DEPTH_M"] = d.HD_ID.map(sp.PEAT_MEAN_DEPTH_M)
+    d["MANGROVE_SED_HA"] = d.HD_ID.map(sp.MANGROVE_SED_HA).fillna(0.0)
+    d["MANGROVE_SED_GE50_HA"] = d.HD_ID.map(sp.MANGROVE_SED_GE50_HA).fillna(0.0)
+    d["MINERAL_OR_PEAT_LT50_HA"] = d.HD_ID.map(sp.MINERAL_OR_PEAT_LT50_HA).fillna(0.0)
+    d["PEAT_SK_HA"] = d.HD_ID.map(ss.PEAT_GE50_HA).fillna(0.0)
+    d["PEAT_SOIL_C_STOCK_TC"] = d.HD_ID.map(sp.PEAT_C_TC_CONTEXT).fillna(0.0)
+    d["MANGROVE_SED_C_STOCK_TC"] = d.HD_ID.map(sp.MANGROVE_SED_C_TC_CONTEXT).fillna(0.0)
+    d["PEAT_FLAG"] = ["OK (kelas kriging laporan 2025, belum divalidasi independen - QA G3-G5)" +
+                      ("; pemisahan gambut/mangrove mengikuti masker mangrove ~HCV 2024 - gambut mungkin underestimate (QA G9)"
+                       if l == "Pulau Maya" else "") for l in d.LANDSCAPE]
     d["MANGROVE_HA"] = zz.MANGROVE_GMW_2020_HA.values
     d["MANGROVE_1996_HA"] = zz.MANGROVE_GMW_1996_HA.values
     d["PEAT_DEPTH_SURVEY_M"] = d.HD_NAME.map(PEAT_DEPTH_M)
@@ -125,7 +146,7 @@ def build_master():
     d["R2_ACTIVITY_SHARE"] = d.HD_ID.map(shr.R2_ACTIVITY_SHARE)
     lf = loc.set_index("HD_NAME").FLAG
     d["BPS_NAME_LOCATION_FLAG"] = d.HD_NAME.map(lf).fillna("OK")
-    d["SOURCE"] = "PA shp 21-05-2026; SK shp Gabungan HD; Hansen GFC-2025-v1.13; GMW v3.0; HCV Tabel 1; Laporan Gambut 2025 Tabel 11"
+    d["SOURCE"] = "PA shp 21-05-2026; SK shp Gabungan HD; Hansen GFC-2025-v1.13; GMW v3.0; HCV Tabel 1; Laporan Gambut 2025 (Soil_Depth_rev120425, Tabel 11, 15)"
     notes = []
     for r in d.itertuples():
         n = []
@@ -142,7 +163,7 @@ def build_master():
         if r.HD_NAME == "Padang Tikar 1":
             n.append("nama di shp 'Padang Tikar' (alias)")
         if pd.isna(r.PEAT_DEPTH_SURVEY_M) and pd.isna(r.MANGROVE_SED_DEPTH_SURVEY_M):
-            n.append("tidak ada plot survei gambut/mangrove 2024 berlabel desa ini")
+            n.append("tidak ada plot survei 2024 berlabel desa ini (kelas kedalaman = hasil interpolasi)")
         notes.append("; ".join(n))
     d["QA_NOTE"] = notes
     d["QA_STATUS"] = np.where(d.QA_NOTE == "", "PASS", "PASS_WITH_NOTES")
@@ -156,6 +177,8 @@ def build_master():
     assert np.allclose(geo, d.AREA_HA, atol=0.01)
     assert (d.TREE_2024_HA >= 0).all() and (d.LOSS_2001_2024_HA <= d.TREE_2000_HA).all()
     assert np.allclose(d.LOSS_2001_2014_HA + d.LOSS_2015_2016_HA + d.LOSS_2017_2024_HA, d.LOSS_2001_2024_HA)
+    soil_sum = d.PEAT_HA + d.MANGROVE_SED_HA + d.MINERAL_OR_PEAT_LT50_HA
+    assert (soil_sum <= d.AREA_HA + 0.5).all() and abs(soil_sum.sum() - d.AREA_HA.sum()) < 100  # PA slivers outside SK/soil layer
 
     M.mkdir(parents=True, exist_ok=True)
     d.to_file(M / "DKP_25HD_MASTER_SPATIAL.gpkg", layer="DKP_25HD_MASTER_SPATIAL", driver="GPKG")
