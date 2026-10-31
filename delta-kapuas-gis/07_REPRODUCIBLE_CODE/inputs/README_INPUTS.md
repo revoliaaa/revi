@@ -1,13 +1,12 @@
-# Inputs that must be supplied by the researcher
+# Inputs
 
-| File | Status in this session | Used by |
+| File / input | Status | Used by |
 |---|---|---|
-| Original 25-polygon Project Area shapefile (.shp/.shx/.dbf/.prj) | **NOT FOUND** in the container, repository (all 15 branches) or upload folders | `s06_project_area_qa.py` → `s03_zonal_stats.py` → `s07_project_area_constraint.py` |
-| `BOUNDARY_AND_PULAU_MAYA_VERIFICATION.xlsx` | **NOT FOUND** | reference only (cannot replace geometry) |
-| HD SK boundary geometry (25 HD) | not supplied; may not exist | `s07` ratios R1/R2 |
-| HCV historical land-cover tables (all classes × 2000/2003/2009/2014/2019/2024 × 3 landscapes) | only the values quoted in the brief are pre-filled in `HCV_HISTORICAL_TABLE_TEMPLATE.csv` (VERIFIED = NO) | `s08_hcv_comparison.py` |
-| Vensim model V5.4.2R (.mdl) + calibration series | not supplied | parameter mapping in `05_SYSTEM_DYNAMICS_INPUT` |
+| `HCV_LANDCOVER_TABLES_FROM_REPORTS.csv` | Transcribed from HCV Kubu Tabel 14, Padang Tikar Tabel 15 (+16), Pulau Maya Tabel 15. Per-cell `QUALITY` flag; `VERIFIED = NO` until checked against the PDFs. | s08, s11, s14 |
+| `HCV_SK_AREAS.csv` | SK number, date and area of all 25 HD (Tabel 1 of each report; sum 124,941 ha) | s14 |
+| Project Area shapefile `Delta_Kapuas_Project_Boundary_(Update)` | Supplied by the researcher (not redistributed); cleaned copy in `01_BOUNDARY_QA/` | s06 → s03 |
+| `BOUNDARY_AND_PULAU_MAYA_VERIFICATION.xlsx` | **Not present** in this session; the audit was redone from the shapefile | – |
+| HD SK boundary geometry | **Not supplied** (needed for R1/R2 activity shares) | s07 (optional 3rd argument) |
+| Vensim V5.4.2R `.mdl` | **Not supplied**; parameter mapping left to the researcher | – |
 
-Fill the template with one row per landscape × year × HCV class, mark `IS_FOREST` (1/0) and
-`FOREST_TYPE` (MANGROVE / PEAT_SWAMP / DRYLAND / OTHER_FOREST / NONFOREST), cite the table/page,
-and set `VERIFIED=YES` only after checking against the report.
+Cells flagged `RECONSTRUCTED_BY_COLUMN_TOTAL` (Pulau Maya: dryland forest, settlements, plantations, dryland agriculture, mixed dryland agriculture, swamp, rice field) and `ADDED_FROM_TABEL16...` (Padang Tikar 2024 settlements) are reconstructions. Verify them against the PDF tables before publication.

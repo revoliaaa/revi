@@ -13,9 +13,9 @@ fuzzy matches are FLAGGED, never auto-accepted), and totals vs PDD
 (111,123.20 ha) and the previous shapefile check (111,123.17 ha).
 
 Usage:
-  python -I s06_project_area_qa.py <project_area.shp|gpkg> <name_field> [out_dir]
+  python s06_project_area_qa.py <project_area.shp|gpkg> <name_field> [out_dir]
 Then:
-  python -I s03_zonal_stats.py <out_dir>/PROJECT_AREA_25HD_CLEAN.gpkg PROJECT_AREA <gmw_dir> <out_csv>
+  python s03_zonal_stats.py <out_dir>/PROJECT_AREA_25HD_CLEAN.gpkg PROJECT_AREA <gmw_dir> <out_csv>
 """
 import difflib
 import sys

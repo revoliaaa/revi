@@ -16,7 +16,7 @@ Tests
   D  Observation-count adequacy (pixels with < 3 valid observations flagged).
 Thresholds are sensitivity choices (0.5/0.6/0.7 tested), not calibrated class rules.
 
-Usage: python -I s09_pulau_maya_anomaly.py <landsat_dir> <desa_context.gpkg> <gmw_dir> <project_area_clean.gpkg>
+Usage: python s09_pulau_maya_anomaly.py <landsat_dir> <desa_context.gpkg> <gmw_dir> <project_area_clean.gpkg>
 """
 import sys
 from pathlib import Path

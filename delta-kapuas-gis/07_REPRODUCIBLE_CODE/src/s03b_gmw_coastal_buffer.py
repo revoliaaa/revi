@@ -1,7 +1,7 @@
 """GMW mangrove lying OUTSIDE all 25 desa polygons but within 1/2/5 km of a
 landscape's desa (captures intertidal mangrove clipped by admin coastlines).
 
-Usage: python -I s03b_gmw_coastal_buffer.py <desa_context.gpkg> <gmw_dir> <out.json>
+Usage: python s03b_gmw_coastal_buffer.py <desa_context.gpkg> <gmw_dir> <out.json>
 """
 import json
 import sys

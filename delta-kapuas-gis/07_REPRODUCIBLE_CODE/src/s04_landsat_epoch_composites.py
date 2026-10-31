@@ -17,7 +17,7 @@ pixel valid-observation count is written alongside. The grid is the native
 Hansen 0.00025-deg grid (nearest-neighbour warp), so composites overlay Hansen
 and GMW-derived masks without further resampling.
 
-Usage: python -I s04_landsat_epoch_composites.py <out_dir> [minx miny maxx maxy]
+Usage: python s04_landsat_epoch_composites.py <out_dir> [minx miny maxx maxy]
 """
 import json
 import sys

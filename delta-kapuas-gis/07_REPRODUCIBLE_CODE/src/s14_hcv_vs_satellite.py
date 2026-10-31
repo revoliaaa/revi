@@ -18,7 +18,7 @@ Analyses
   D  Mangrove: HCV mangrove classes vs GMW v3 in the PA, all landscapes.
 Assumption A1 (stated, unverified): the PA lies inside the HCV study area.
 
-Usage: python -I s14_hcv_vs_satellite.py
+Usage: python s14_hcv_vs_satellite.py
 """
 import numpy as np
 import pandas as pd

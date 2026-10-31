@@ -8,7 +8,7 @@ The domain is used only (i) as landscape context and (ii) to test that the
 zonal-statistics pipeline runs correctly before the Project Area shapefile is
 supplied.
 
-Usage: python -I s01_build_context_domain.py <path/to/idn_admin_boundaries.gdb>
+Usage: python s01_build_context_domain.py <path/to/idn_admin_boundaries.gdb>
 """
 import sys
 

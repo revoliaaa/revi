@@ -18,7 +18,7 @@ researcher can select the one that matches the model equation:
   R5  Gross loss 2001-2024 in PA / TC2000(>t) in PA               = cumulative PA loss fraction
 
 Usage:
-  python -I s07_project_area_constraint.py <pa_zonal.csv> <desa_zonal.csv> [sk_zonal.csv]
+  python s07_project_area_constraint.py <pa_zonal.csv> <desa_zonal.csv> [sk_zonal.csv]
 """
 import sys
 

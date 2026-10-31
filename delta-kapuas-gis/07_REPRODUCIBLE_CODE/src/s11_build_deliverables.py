@@ -4,7 +4,7 @@ Every number in these workbooks is read from files produced by s01-s09; nothing
 is typed in by hand except (a) researcher-supplied inputs (HCV totals, PDD area,
 Vensim 0.8535, previous SD/linear RMSE) and (b) dataset metadata in the inventory.
 
-Usage: python -I s11_build_deliverables.py
+Usage: python s11_build_deliverables.py
 """
 import json
 

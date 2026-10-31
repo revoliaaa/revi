@@ -16,7 +16,7 @@ Metrics on held-out years: RMSE, MAE, bias of annual loss, and error in the
 R_t is a DERIVED INDICATOR (2000 tree cover net of gross loss, regrowth ignored).
 It is NOT a forest-area map and must not be presented as forest area.
 
-Usage: python -I s05_trends_benchmarks.py <zonal_wide.csv> <out_prefix>
+Usage: python s05_trends_benchmarks.py <zonal_wide.csv> <out_prefix>
 """
 import sys
 

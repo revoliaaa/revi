@@ -17,7 +17,7 @@ logical-consistency tests instead:
        without HD SK geometry): HCV mangrove <= GMW mangrove inside the PA + (HCV area - PA area),
        i.e. even if every hectare of HCV area outside the PA were mangrove.
 
-Usage: python -I s08_hcv_comparison.py <hcv_table.csv> <desa_zonal.csv> <gmw_buffer_1km_ha.json> [pa_zonal.csv]
+Usage: python s08_hcv_comparison.py <hcv_table.csv> <desa_zonal.csv> <gmw_buffer_1km_ha.json> [pa_zonal.csv]
 """
 import json
 import sys

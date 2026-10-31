@@ -4,7 +4,7 @@ Inputs: the 8 GeoTIFFs for tiles 00N_100E and 10N_100E (download with
 `download_public_data.sh`). Output: compressed GeoTIFFs in 02_REMOTE_SENSING_DATA
 on the native 0.00025-deg Hansen grid, plus a metadata JSON.
 
-Usage: python -I s02_hansen_clip.py <hansen_dir>
+Usage: python s02_hansen_clip.py <hansen_dir>
 """
 import json
 import sys

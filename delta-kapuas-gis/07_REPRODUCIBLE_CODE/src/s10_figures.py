@@ -4,7 +4,7 @@ Palette: categorical slots 1-3 of the validated reference palette (blue, orange,
 aqua; all-pairs CVD dE >= 9.2). Aqua is < 3:1 on white -> every line is
 direct-labelled. Sequential maps use a single-hue blue ramp.
 
-Usage: python -I s10_figures.py <gmw_dir> [landsat_dir]
+Usage: python s10_figures.py <gmw_dir> [landsat_dir]
 """
 import sys
 from pathlib import Path

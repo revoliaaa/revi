@@ -6,7 +6,7 @@ For that terrain we report Hansen tree cover 2000 and gross loss 2001-2024: if t
 hills were tree-covered throughout, a 'dryland forest' class absent in 2019 and
 present in 2024 is more consistent with re-classification (H4) than with new forest (H1).
 
-Usage: python -I s12_pulau_maya_terrain.py <project_area_clean.gpkg>
+Usage: python s12_pulau_maya_terrain.py <project_area_clean.gpkg>
 """
 import json
 import sys

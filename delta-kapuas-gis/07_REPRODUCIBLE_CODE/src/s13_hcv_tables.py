@@ -13,7 +13,7 @@ Check them against the PDF table before publication.
 
 Outputs: 07_REPRODUCIBLE_CODE/inputs/HCV_LANDCOVER_TABLES_FROM_REPORTS.csv (long)
          04_VALIDATION/HCV_TABLE_INTEGRITY.csv
-Usage: python -I s13_hcv_tables.py
+Usage: python s13_hcv_tables.py
 """
 import numpy as np
 import pandas as pd

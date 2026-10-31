@@ -16,7 +16,7 @@ Indicators (all geodesic-area weighted, ha):
   * LOSS_{yyyy}_GT{t}_IN_GMW2010  loss inside GMW 2010 mangrove extent
 
 Usage:
-  python -I s03_zonal_stats.py <polygons.gpkg> <DOMAIN_LABEL> <gmw_dir> <out_csv>
+  python s03_zonal_stats.py <polygons.gpkg> <DOMAIN_LABEL> <gmw_dir> <out_csv>
 """
 import sys
 from pathlib import Path
