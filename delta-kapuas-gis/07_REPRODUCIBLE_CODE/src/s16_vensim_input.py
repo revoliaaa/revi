@@ -253,7 +253,7 @@ def main():
                 REKOMENDASI="Jangan dipakai sebagai input kredit/emisi; emisi WRC bergantung drainase/subsidensi",
                 DAMPAK_STRUKTUR_MODEL="Tidak ada (tidak menambah struktur karbon tanah)", **common)
     add(KATEGORI="4_ASUMSI_SENSITIVITAS", KONSEP_TARGET="Luas HUTAN 2024 per HD (kelas hutan tervalidasi)", UNIT="ha", NILAI=np.nan,
-        TAHUN_PERIODE="2024", SUMBER="-", METODE="Butuh klasifikasi hutan 2024 tervalidasi (sampel referensi)",
+        TAHUN_PERIODE="2024", SUMBER="Tidak ada: klasifikasi hutan 2024 tervalidasi belum tersedia (HCV 2024 inkonsisten)", METODE="Butuh klasifikasi hutan 2024 tervalidasi (sampel referensi)",
         KETIDAKPASTIAN="-", STATUS_DATA="TIDAK TERSEDIA", KELAS_PENGGUNAAN="TIDAK_DAPAT_DIGUNAKAN",
         REKOMENDASI="Gunakan TREE_2024_HA hanya sebagai proksi sensitivitas", DAMPAK_STRUKTUR_MODEL="-")
 

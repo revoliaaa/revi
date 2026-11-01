@@ -34,6 +34,8 @@
 
 ## Final deliverable for System Dynamics integration
 
+> **Frozen version: DKP-GIS-MASTER v1.0 (2026-11-01).** Final QA and handoff: `08_FINAL_FOR_VENSIM/FINAL_GIS_HANDOFF.md`. File checksums: `08_FINAL_FOR_VENSIM/VERSION_FREEZE.json`. GIS analysis is closed at this version; any change requires v1.1+ with a changelog.
+
 **`DELTA_KAPUAS_25HD_GIS_FINAL_FOR_VENSIM.zip`** (also unpacked in `08_FINAL_FOR_VENSIM/`) contains:
 - **Master spatial database:** `DKP_25HD_MASTER_SPATIAL` (GPKG primary + SHP) with the 25 original Project Area polygons and 33 attributes.
 - Thematic layers: tree-cover status, loss year, GMW mangrove. Peat is **not** mapped; the reason is documented.

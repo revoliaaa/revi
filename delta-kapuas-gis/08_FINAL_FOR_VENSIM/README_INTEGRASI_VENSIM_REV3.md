@@ -1,7 +1,9 @@
 # DELTA KAPUAS 25 HD: Paket GIS Final untuk Integrasi Vensim REV3
 
+> **Versi beku: DKP-GIS-MASTER v1.0 (2026-11-01).** Baca dulu `FINAL_GIS_HANDOFF.md`, yang berisi hasil 5 pemeriksaan QA final dan keputusan SIAP / SENSITIVITAS / BELUM_LAYAK. Checksum file ada di `VERSION_FREEZE.json`. Analisis GIS tidak diperluas lagi pada versi ini.
+
 **Inti paket:**
-- satu database spasial 25 HD: `DKP_25HD_MASTER_SPATIAL` (GPKG versi utama, SHP untuk kompatibilitas), berisi 25 poligon Project Area asli dengan 48 atribut (termasuk domain SK serta gambut/sedimen mangrove);
+- satu database spasial 25 HD: `DKP_25HD_MASTER_SPATIAL` (GPKG versi utama, SHP untuk kompatibilitas), berisi 25 poligon Project Area asli dengan 49 atribut (termasuk domain SK serta gambut/sedimen mangrove);
 - lapisan batas SK 25 HD terverifikasi;
 - satu tabel parameter numerik: `DKP_VENSIM_SPATIAL_INPUT.csv` / `.xlsx`, 179 baris.
 
@@ -11,7 +13,7 @@ Model `.mdl` **tidak diubah**. Daftar variabel `.mdl` tidak tersedia, sehingga c
 
 | Folder | File | Keterangan |
 |---|---|---|
-| `01_MASTER_SPATIAL/` | `DKP_25HD_MASTER_SPATIAL.gpkg` | **Versi utama.** Layer `DKP_25HD_MASTER_SPATIAL` = 25 poligon PA + 48 atribut. Layer `SK_25HD_BOUNDARY` = batas SK per HD. |
+| `01_MASTER_SPATIAL/` | `DKP_25HD_MASTER_SPATIAL.gpkg` | **Versi utama.** Layer `DKP_25HD_MASTER_SPATIAL` = 25 poligon PA + 49 atribut. Layer `SK_25HD_BOUNDARY` = batas SK per HD. |
 | | `DKP_25HD_MASTER_SPATIAL.shp/.shx/.dbf/.prj/.cpg` | Master versi Shapefile (nama atribut ≤ 10 karakter) |
 | | `DKP_25HD_SK_BOUNDARY.shp/...` | Batas SK 25 HD (dari *SHP Gabungan Hutan Desa Delta Kapuas*; 38 bagian → 25 HD; penugasan HD terverifikasi 37/37 lewat nomor SK) |
 | | `DKP_25HD_DATA_DICTIONARY.csv` | Nama SHP ↔ GPKG, unit, definisi, sumber, kelas data |

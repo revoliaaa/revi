@@ -33,4 +33,6 @@ python s20_peat_overlay.py "${DK_SOIL_DIR:?set DK_SOIL_DIR}"
 # Final package for Vensim REV3 integration
 python s15_master_spatial.py "$D/gmw"
 python s16_vensim_input.py
+python s21_final_qa.py "$DK_SOIL_DIR" "$DK_SK_SHP" "$D/gmw"
+python s22_finalize_freeze.py
 python s17_package.py

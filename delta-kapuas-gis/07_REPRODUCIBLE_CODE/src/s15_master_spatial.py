@@ -85,6 +85,7 @@ DICT = [
     ("BPS_NAME_LOCATION_FLAG", "LOC_FLAG", "-", "Poligon PA tidak terutama berada di desa BPS bernama sama (informasi; tidak memengaruhi atribut PA)", "Overlay BPS 2020", "FLAG"),
     ("SOURCE", "SOURCE", "-", "Ringkasan sumber data atribut", "-", "META"),
     ("QA_STATUS", "QA_STATUS", "-", "PASS / PASS_WITH_NOTES", "QA s06/s15", "META"),
+    ("MASTER_VERSION", "VERSION", "-", "Versi beku master untuk integrasi REV3", "s15/s22", "META"),
     ("QA_NOTE", "QA_NOTE", "-", "Catatan QA per HD", "QA s06/s15", "META"),
 ]
 
@@ -167,6 +168,8 @@ def build_master():
         notes.append("; ".join(n))
     d["QA_NOTE"] = notes
     d["QA_STATUS"] = np.where(d.QA_NOTE == "", "PASS", "PASS_WITH_NOTES")
+    from common import MASTER_VERSION
+    d["MASTER_VERSION"] = MASTER_VERSION
     order = [c[0] for c in DICT if c[0] in d.columns] + ["geometry"]
     d = gpd.GeoDataFrame(d[order], geometry="geometry", crs=pa.crs).sort_values("HD_ID").reset_index(drop=True)
 

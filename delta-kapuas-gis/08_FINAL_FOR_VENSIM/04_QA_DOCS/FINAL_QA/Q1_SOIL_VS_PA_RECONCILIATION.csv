@@ -1,0 +1,13 @@
+ITEM,HA
+"A  Luas PA, UTM 49S planar (konvensi PDD)",111123.16057553272
+"B  Luas PA, geodesik WGS84 (dipakai statistik zonal)",111134.95208516829
+"C  Jumlah kelas tanah dalam PA, geodesik (angka 111.061)",111061.21156899616
+"D  Jumlah kelas tanah dalam PA, UTM 49S",111049.43474630699
+E  Selisih yang ditanyakan: A - C (mencampur satuan),61.9490065365535
+F  Selisih satuan-sama UTM: A - D,73.72582922573201
+F1   PA di luar geometri SK (serpihan tepi; layer tanah hanya mencakup SK),65.31078940515054
+F2   PA di dalam SK tetapi tidak tercakup poligon kelas tanah (gap layer tanah),8.413006017378386
+"F3   Residu overlay (bagian non-poligon yang dibuang, pembulatan) = F - F1 - F2",0.0020338032030835507
+G  Selisih satuan-sama geodesik: B - C,73.74051617212535
+H  Komponen beda satuan (geodesik - UTM) pada kelas tanah: C - D,11.776822689178516
+"I  Luas PA yang tercakup layer tanah, UTM (cek: = D)",111049.43474601331

@@ -1,0 +1,39 @@
+DOMAIN,ITEM,HA
+SK_HD,Sedimen mangrove (laporan),52709.75411846409
+SK_HD,Mangrove GMW 2020,46127.510826130776
+SK_HD,Keduanya (irisan),43808.48754869534
+SK_HD,Hanya sedimen (tidak dipetakan GMW),8901.266569768746
+SK_HD,Hanya GMW (tidak dipetakan sebagai sedimen),2319.023277435437
+SK_HD,Kesesuaian (irisan / gabungan),0.7961014149654674
+SK_HD,"Hanya sedimen, jarak ke GMW <=30 m (registrasi/resolusi piksel)",1905.9874303472798
+SK_HD,"Hanya sedimen, jarak ke GMW 30-250 m (tepi/peralihan)",2091.0482494562457
+SK_HD,"Hanya sedimen, jarak ke GMW 250-1000 m",998.344980896378
+SK_HD,"Hanya sedimen, jarak ke GMW >1000 m (patch terpisah)",3905.885909068843
+SK_HD,"Hanya GMW, jarak ke sedimen <=30 m (registrasi/resolusi piksel)",1164.79560428647
+SK_HD,"Hanya GMW, jarak ke sedimen 30-250 m (tepi/peralihan)",1029.9920831997492
+SK_HD,"Hanya GMW, jarak ke sedimen 250-1000 m",111.35034034459947
+SK_HD,"Hanya GMW, jarak ke sedimen >1000 m (patch terpisah)",12.885249604618409
+SK_HD,"Hanya GMW, kelas tanah laporan = Peat",356.1138312016898
+SK_HD,"Hanya GMW, kelas tanah laporan = Mineral",1953.9754172285554
+SK_HD,"Hanya GMW, di luar layer tanah",8.934029005191569
+SK_HD,"Hanya sedimen, tutupan pohon 2000 >30 % (Hansen)",8836.478353161065
+PROJECT_AREA,Sedimen mangrove (laporan),52256.394773219625
+PROJECT_AREA,Mangrove GMW 2020,45050.48385235047
+PROJECT_AREA,Keduanya (irisan),43480.21154034363
+PROJECT_AREA,Hanya sedimen (tidak dipetakan GMW),8776.183232875992
+PROJECT_AREA,Hanya GMW (tidak dipetakan sebagai sedimen),1570.2723120068397
+PROJECT_AREA,Kesesuaian (irisan / gabungan),0.8077819767569713
+PROJECT_AREA,"Hanya sedimen, jarak ke GMW <=30 m (registrasi/resolusi piksel)",1869.6410751248623
+PROJECT_AREA,"Hanya sedimen, jarak ke GMW 30-250 m (tepi/peralihan)",2039.2642579539272
+PROJECT_AREA,"Hanya sedimen, jarak ke GMW 250-1000 m",985.0341553381892
+PROJECT_AREA,"Hanya sedimen, jarak ke GMW >1000 m (patch terpisah)",3882.2437444590137
+PROJECT_AREA,"Hanya GMW, jarak ke sedimen <=30 m (registrasi/resolusi piksel)",581.3052076387938
+PROJECT_AREA,"Hanya GMW, jarak ke sedimen 30-250 m (tepi/peralihan)",915.5432340760625
+PROJECT_AREA,"Hanya GMW, jarak ke sedimen 250-1000 m",73.42387029198335
+PROJECT_AREA,"Hanya GMW, jarak ke sedimen >1000 m (patch terpisah)",0.0
+PROJECT_AREA,"Hanya GMW, kelas tanah laporan = Peat",350.8260035555637
+PROJECT_AREA,"Hanya GMW, kelas tanah laporan = Mineral",1191.2452943147382
+PROJECT_AREA,"Hanya GMW, di luar layer tanah",28.20101413653765
+PROJECT_AREA,"Hanya sedimen, tutupan pohon 2000 >30 % (Hansen)",8721.909671601625
+HCV/SK,Kelas mangrove HCV 2024 (tabel),52398.18000000001
+HCV/SK,Kelas mangrove HCV 2019 (tabel),43810.229999999996

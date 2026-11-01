@@ -101,3 +101,6 @@ def ensure_dirs():
     for d in ["01_BOUNDARY_QA", "02_REMOTE_SENSING_DATA", "03_LAND_COVER_CHANGE", "04_VALIDATION",
               "05_SYSTEM_DYNAMICS_INPUT", "06_PUBLICATION/figures"]:
         (ROOT / d).mkdir(parents=True, exist_ok=True)
+
+# Frozen master version for Vensim REV3 integration (no further GIS expansion after this version)
+MASTER_VERSION = "DKP-GIS-MASTER v1.0 (2026-11-01)"
