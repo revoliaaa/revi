@@ -1,0 +1,15 @@
+alternatif,harga_usd,d_defor_dihindari_vs_B0_ha,d_pendapatan_rt_terdampak_vs_B0_rp,status,sumber
+B0,10,0,0,acuan (definisi),"Tabel 3 hlm. 6: B0 = alokasi asli, identik dengan S4"
+B0,20,0,0,acuan (definisi),Tabel 3 hlm. 6
+R1,10,0,33571,dilaporkan,"Teks hlm. 9 par. 2 (y); kotak Gambar 7 'pada sumbu nol, hutan sama dengan B0' (x)"
+R1,20,0,134322,dilaporkan,Teks hlm. 9 par. 2 (y); kotak Gambar 7 (x)
+B1,10,0,16600,"dilaporkan, dibulatkan ke Rp100","Kotak Gambar 7 hlm. 9: B1 +16,6 ribu"
+B1,20,0,66400,"dilaporkan, dibulatkan ke Rp100","Kotak Gambar 7 hlm. 9: B1 +66,4 ribu"
+B4,20,-2801,572157,dilaporkan (lihat sumber),Teks hlm. 9 par. 1: B3 dan B4 turun 2.801 ha pada USD20; pendapatan naik 'hingga' Rp572.157 = nilai tertinggi B3-B4; Gambar 7 menempatkan titik tertinggi pada B4
+B3,20,-2801,,y TIDAK TERSEDIA,Teks hlm. 9 par. 1 (x saja)
+R2,10,237,,y TIDAK TERSEDIA; arah negatif dilaporkan,Teks hlm. 9 par. 3: tambahan penghindaran 237-2.475 ha; pendapatan RT terdampak turun
+R2,20,2475,,y TIDAK TERSEDIA; arah negatif dilaporkan,Teks hlm. 9 par. 3
+B2,10,,,TIDAK TERSEDIA,Hanya sebagai titik grafik Gambar 7
+B2,20,,,TIDAK TERSEDIA,Hanya sebagai titik grafik Gambar 7
+B3,10,,,TIDAK TERSEDIA,Hanya sebagai titik grafik Gambar 7
+B4,10,,,TIDAK TERSEDIA,Hanya sebagai titik grafik Gambar 7

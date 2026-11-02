@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="1020.472441pt" height="737.007874pt" viewBox="0 0 1020.472441 737.007874" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-11-02T13:21:11.448998</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 737.007874 
+L 1020.472441 737.007874 
+L 1020.472441 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 132.661417 552.755906 
+L 989.858268 552.755906 
+L 989.858268 103.181102 
+L 132.661417 103.181102 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1"/>
+     <g id="text_1">
+      <text style="font-size: 18.5px; font-family: 'Liberation Sans', 'DejaVu Sans'; fill: #24343d" transform="translate(164.31316 577.611008)">Perhutanan sosial</text>
+      <text style="font-size: 18.5px; font-family: 'Liberation Sans', 'DejaVu Sans'; fill: #24343d" transform="translate(209.56734 597.746018)">reguler</text>
+      <text style="font-size: 18.5px; font-family: 'Liberation Sans', 'DejaVu Sans'; fill: #24343d" transform="translate(205.188043 617.881028)">S2 − S1</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_2"/>
+     <g id="text_2">
+      <text style="font-size: 18.5px; font-family: 'Liberation Sans', 'DejaVu Sans'; fill: #24343d" transform="translate(380.614477 577.611008)">Pembiayaan awal</text>
+      <text style="font-size: 18.5px; font-family: 'Liberation Sans', 'DejaVu Sans'; fill: #24343d" transform="translate(420.455962 597.746018)">S3 − S2</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_3"/>
+     <g id="text_3">
+      <text style="font-size: 18.5px; font-family: 'Liberation Sans', 'DejaVu Sans'; fill: #24343d" transform="translate(582.498802 577.611008)">Perdagangan karbon</text>
+      <text style="font-size: 18.5px; font-family: 'Liberation Sans', 'DejaVu Sans'; fill: #24343d" transform="translate(639.075559 597.746018)">USD20</text>
+      <text style="font-size: 18.5px; font-family: 'Liberation Sans', 'DejaVu Sans'; fill: #24343d" transform="translate(635.72388 617.881028)">S4 − S3</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_4"/>
+     <g id="text_4">
+      <text style="font-size: 18.5px; font-family: 'Liberation Sans', 'DejaVu Sans'; fill: #24343d" transform="translate(864.623985 577.611008)">Total</text>
+      <text style="font-size: 18.5px; font-family: 'Liberation Sans', 'DejaVu Sans'; fill: #24343d" transform="translate(850.991798 597.746018)">S4 − S1</text>
+     </g>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_5">
+      <path d="M 132.661417 552.755906 
+L 989.858268 552.755906 
+" clip-path="url(#p6ff6cdba13)" style="fill: none; stroke: #e3e8e8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_6"/>
+     <g id="text_5">
+      <text style="font-size: 19px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: end; fill: #24343d" x="129.161417" y="559.672165" transform="rotate(-0 129.161417 559.672165)">0</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_7">
+      <path d="M 132.661417 484.638511 
+L 989.858268 484.638511 
+" clip-path="url(#p6ff6cdba13)" style="fill: none; stroke: #e3e8e8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_8"/>
+     <g id="text_6">
+      <text style="font-size: 19px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: end; fill: #24343d" x="129.161417" y="491.554771" transform="rotate(-0 129.161417 491.554771)">1.000</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_9">
+      <path d="M 132.661417 416.521117 
+L 989.858268 416.521117 
+" clip-path="url(#p6ff6cdba13)" style="fill: none; stroke: #e3e8e8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_10"/>
+     <g id="text_7">
+      <text style="font-size: 19px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: end; fill: #24343d" x="129.161417" y="423.437376" transform="rotate(-0 129.161417 423.437376)">2.000</text>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_11">
+      <path d="M 132.661417 348.403722 
+L 989.858268 348.403722 
+" clip-path="url(#p6ff6cdba13)" style="fill: none; stroke: #e3e8e8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_12"/>
+     <g id="text_8">
+      <text style="font-size: 19px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: end; fill: #24343d" x="129.161417" y="355.319982" transform="rotate(-0 129.161417 355.319982)">3.000</text>
+     </g>
+    </g>
+    <g id="ytick_5">
+     <g id="line2d_13">
+      <path d="M 132.661417 280.286328 
+L 989.858268 280.286328 
+" clip-path="url(#p6ff6cdba13)" style="fill: none; stroke: #e3e8e8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_14"/>
+     <g id="text_9">
+      <text style="font-size: 19px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: end; fill: #24343d" x="129.161417" y="287.202588" transform="rotate(-0 129.161417 287.202588)">4.000</text>
+     </g>
+    </g>
+    <g id="ytick_6">
+     <g id="line2d_15">
+      <path d="M 132.661417 212.168933 
+L 989.858268 212.168933 
+" clip-path="url(#p6ff6cdba13)" style="fill: none; stroke: #e3e8e8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_16"/>
+     <g id="text_10">
+      <text style="font-size: 19px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: end; fill: #24343d" x="129.161417" y="219.085193" transform="rotate(-0 129.161417 219.085193)">5.000</text>
+     </g>
+    </g>
+    <g id="ytick_7">
+     <g id="line2d_17">
+      <path d="M 132.661417 144.051539 
+L 989.858268 144.051539 
+" clip-path="url(#p6ff6cdba13)" style="fill: none; stroke: #e3e8e8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_18"/>
+     <g id="text_11">
+      <text style="font-size: 19px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: end; fill: #24343d" x="129.161417" y="150.967799" transform="rotate(-0 129.161417 150.967799)">6.000</text>
+     </g>
+    </g>
+    <g id="text_12">
+     <text style="font-size: 21px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: middle; fill: #24343d" x="73.200421" y="327.968504" transform="rotate(-90 73.200421 327.968504)">Deforestasi dihindari (ha)</text>
+    </g>
+   </g>
+   <g id="line2d_19">
+    <path d="M 305.09102 435.565917 
+L 386.892829 435.565917 
+" clip-path="url(#p6ff6cdba13)" style="fill: none; stroke-dasharray: 5.6,4.2; stroke-dashoffset: 0; stroke: #8b949a; stroke-width: 1.4"/>
+   </g>
+   <g id="line2d_20">
+    <path d="M 520.358938 416.746006 
+L 602.160747 416.746006 
+" clip-path="url(#p6ff6cdba13)" style="fill: none; stroke-dasharray: 5.6,4.2; stroke-dashoffset: 0; stroke: #8b949a; stroke-width: 1.4"/>
+   </g>
+   <g id="line2d_21">
+    <path d="M 735.626856 172.324769 
+L 817.428665 172.324769 
+" clip-path="url(#p6ff6cdba13)" style="fill: none; stroke-dasharray: 5.6,4.2; stroke-dashoffset: 0; stroke: #8b949a; stroke-width: 1.4"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 132.661417 552.755906 
+L 989.858268 552.755906 
+" style="fill: none; stroke: #24343d; stroke-width: 1.2; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 171.624911 552.755906 
+L 305.09102 552.755906 
+L 305.09102 435.565917 
+L 171.624911 435.565917 
+z
+" clip-path="url(#p6ff6cdba13)" style="fill: #548a72"/>
+   </g>
+   <g id="text_13">
+    <text style="font-weight: 700; font-size: 23px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: middle; fill: #24343d" x="238.357965" y="423.232671" transform="rotate(-0 238.357965 423.232671)">+1.720</text>
+   </g>
+   <g id="patch_5">
+    <path d="M 386.892829 435.565917 
+L 520.358938 435.565917 
+L 520.358938 416.746006 
+L 386.892829 416.746006 
+z
+" clip-path="url(#p6ff6cdba13)" style="fill: #6385a6"/>
+   </g>
+   <g id="text_14">
+    <text style="font-weight: 700; font-size: 23px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: middle; fill: #24343d" x="453.625883" y="404.412761" transform="rotate(-0 453.625883 404.412761)">+276</text>
+   </g>
+   <g id="patch_6">
+    <path d="M 602.160747 416.746006 
+L 735.626856 416.746006 
+L 735.626856 172.324769 
+L 602.160747 172.324769 
+z
+" clip-path="url(#p6ff6cdba13)" style="fill: #204f75"/>
+   </g>
+   <g id="text_15">
+    <text style="font-weight: 700; font-size: 23px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: middle; fill: #24343d" x="668.893802" y="159.991523" transform="rotate(-0 668.893802 159.991523)">+3.588</text>
+   </g>
+   <g id="patch_7">
+    <path d="M 817.428665 552.755906 
+L 950.894775 552.755906 
+L 950.894775 172.324769 
+L 817.428665 172.324769 
+z
+" clip-path="url(#p6ff6cdba13)" style="fill: #287d63"/>
+   </g>
+   <g id="text_16">
+    <text style="font-weight: 700; font-size: 23px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: middle; fill: #24343d" x="884.16172" y="159.991523" transform="rotate(-0 884.16172 159.991523)">5.585</text>
+   </g>
+   <g id="patch_8">
+    <path d="M 581.9967 259.85111 
+Q 588.849705 259.85111 594.361069 259.85111 
+" style="fill: none; stroke: #24343d; stroke-width: 1.2; stroke-linecap: round"/>
+    <path d="M 587.961069 256.65111 
+L 594.361069 259.85111 
+L 587.961069 263.05111 
+z
+" style="fill: #24343d; stroke: #24343d; stroke-width: 1.2; stroke-linecap: round"/>
+   </g>
+   <g id="text_17">
+    <text style="font-size: 18.5px; font-family: 'Liberation Sans', 'DejaVu Sans'; fill: #24343d" transform="translate(173.77759 254.571202)">Pada USD20, perdagangan karbon menyumbang</text>
+    <text style="font-size: 18.5px; font-family: 'Liberation Sans', 'DejaVu Sans'; fill: #24343d" transform="translate(173.77759 274.706212)">64% deforestasi dihindari terhadap S1.</text>
+   </g>
+  </g>
+  <g id="text_18">
+   <text style="font-weight: 700; font-size: 26px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: start; fill: #24343d" x="12.245669" y="37.353908" transform="rotate(-0 12.245669 37.353908)">Kontribusi bertahap terhadap deforestasi yang dihindari</text>
+  </g>
+  <g id="text_19">
+   <text style="font-size: 18.5px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: start; fill: #24343d" x="12.245669" y="76.114175" transform="rotate(-0 12.245669 76.114175)">Hasil simulasi, kumulatif 2025–2086, 25 Hutan Desa (124.941 ha)</text>
+  </g>
+  <g id="text_20">
+   <text style="font-size: 14.5px; font-family: 'Liberation Sans', 'DejaVu Sans'; fill: #4a5a63" transform="translate(12.245669 685.986692)">Deforestasi dihindari = selisih deforestasi kumulatif antarskenario. S1 tanpa PS aktif; S2 PS swadaya; S3 S2 + pembiayaan awal 2024–2025;</text>
+   <text style="font-size: 14.5px; font-family: 'Liberation Sans', 'DejaVu Sans'; fill: #4a5a63" transform="translate(12.245669 704.357371)">S4 S3 + perdagangan karbon USD20/tCO₂e. Label dibulatkan; total dari nilai presisi (1.720,4 + 276,3 + 3.588,2 = 5.584,9 ha), sehingga</text>
+   <text style="font-size: 14.5px; font-family: 'Liberation Sans', 'DejaVu Sans'; fill: #4a5a63" transform="translate(12.245669 722.72805)">jumlah label (5.584) berbeda 1 ha. Hasil model, bukan dampak kausal terukur. Sumber: Tabel 4 makalah; FINAL_THESIS_RESULTS.xlsx lembar 2.</text>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p6ff6cdba13">
+   <rect x="132.661417" y="103.181102" width="857.19685" height="449.574803"/>
+  </clipPath>
+ </defs>
+</svg>

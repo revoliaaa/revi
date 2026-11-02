@@ -1,0 +1,655 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="1020.472441pt" height="1133.858268pt" viewBox="0 0 1020.472441 1133.858268" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-11-02T13:21:09.504413</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 1133.858268 
+L 1020.472441 1133.858268 
+L 1020.472441 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 306.141732 986.456693 
+L 938.834646 986.456693 
+L 938.834646 147.401575 
+L 306.141732 147.401575 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <path d="M 306.141732 986.456693 
+L 306.141732 147.401575 
+" clip-path="url(#p5bf7627fbb)" style="fill: none; stroke: #e3e8e8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_2">
+      <defs>
+       <path id="m1d97c3e327" d="M 0 0 
+L 0 6 
+" style="stroke: #24343d; stroke-width: 1.2"/>
+      </defs>
+      <g>
+       <use xlink:href="#m1d97c3e327" x="306.141732" y="986.456693" style="fill: #24343d; stroke: #24343d; stroke-width: 1.2"/>
+      </g>
+     </g>
+     <g id="text_1">
+      <text style="font-size: 19px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: middle; fill: #24343d" x="306.141732" y="1009.789212" transform="rotate(-0 306.141732 1009.789212)">0</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_3">
+      <path d="M 394.015748 986.456693 
+L 394.015748 147.401575 
+" clip-path="url(#p5bf7627fbb)" style="fill: none; stroke: #e3e8e8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_4">
+      <g>
+       <use xlink:href="#m1d97c3e327" x="394.015748" y="986.456693" style="fill: #24343d; stroke: #24343d; stroke-width: 1.2"/>
+      </g>
+     </g>
+     <g id="text_2">
+      <text style="font-size: 19px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: middle; fill: #24343d" x="394.015748" y="1009.789212" transform="rotate(-0 394.015748 1009.789212)">5.000</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_5">
+      <path d="M 481.889764 986.456693 
+L 481.889764 147.401575 
+" clip-path="url(#p5bf7627fbb)" style="fill: none; stroke: #e3e8e8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_6">
+      <g>
+       <use xlink:href="#m1d97c3e327" x="481.889764" y="986.456693" style="fill: #24343d; stroke: #24343d; stroke-width: 1.2"/>
+      </g>
+     </g>
+     <g id="text_3">
+      <text style="font-size: 19px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: middle; fill: #24343d" x="481.889764" y="1009.789212" transform="rotate(-0 481.889764 1009.789212)">10.000</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_7">
+      <path d="M 569.76378 986.456693 
+L 569.76378 147.401575 
+" clip-path="url(#p5bf7627fbb)" style="fill: none; stroke: #e3e8e8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_8">
+      <g>
+       <use xlink:href="#m1d97c3e327" x="569.76378" y="986.456693" style="fill: #24343d; stroke: #24343d; stroke-width: 1.2"/>
+      </g>
+     </g>
+     <g id="text_4">
+      <text style="font-size: 19px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: middle; fill: #24343d" x="569.76378" y="1009.789212" transform="rotate(-0 569.76378 1009.789212)">15.000</text>
+     </g>
+    </g>
+    <g id="xtick_5">
+     <g id="line2d_9">
+      <path d="M 657.637795 986.456693 
+L 657.637795 147.401575 
+" clip-path="url(#p5bf7627fbb)" style="fill: none; stroke: #e3e8e8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_10">
+      <g>
+       <use xlink:href="#m1d97c3e327" x="657.637795" y="986.456693" style="fill: #24343d; stroke: #24343d; stroke-width: 1.2"/>
+      </g>
+     </g>
+     <g id="text_5">
+      <text style="font-size: 19px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: middle; fill: #24343d" x="657.637795" y="1009.789212" transform="rotate(-0 657.637795 1009.789212)">20.000</text>
+     </g>
+    </g>
+    <g id="xtick_6">
+     <g id="line2d_11">
+      <path d="M 745.511811 986.456693 
+L 745.511811 147.401575 
+" clip-path="url(#p5bf7627fbb)" style="fill: none; stroke: #e3e8e8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_12">
+      <g>
+       <use xlink:href="#m1d97c3e327" x="745.511811" y="986.456693" style="fill: #24343d; stroke: #24343d; stroke-width: 1.2"/>
+      </g>
+     </g>
+     <g id="text_6">
+      <text style="font-size: 19px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: middle; fill: #24343d" x="745.511811" y="1009.789212" transform="rotate(-0 745.511811 1009.789212)">25.000</text>
+     </g>
+    </g>
+    <g id="xtick_7">
+     <g id="line2d_13">
+      <path d="M 833.385827 986.456693 
+L 833.385827 147.401575 
+" clip-path="url(#p5bf7627fbb)" style="fill: none; stroke: #e3e8e8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_14">
+      <g>
+       <use xlink:href="#m1d97c3e327" x="833.385827" y="986.456693" style="fill: #24343d; stroke: #24343d; stroke-width: 1.2"/>
+      </g>
+     </g>
+     <g id="text_7">
+      <text style="font-size: 19px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: middle; fill: #24343d" x="833.385827" y="1009.789212" transform="rotate(-0 833.385827 1009.789212)">30.000</text>
+     </g>
+    </g>
+    <g id="xtick_8">
+     <g id="line2d_15">
+      <path d="M 921.259843 986.456693 
+L 921.259843 147.401575 
+" clip-path="url(#p5bf7627fbb)" style="fill: none; stroke: #e3e8e8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_16">
+      <g>
+       <use xlink:href="#m1d97c3e327" x="921.259843" y="986.456693" style="fill: #24343d; stroke: #24343d; stroke-width: 1.2"/>
+      </g>
+     </g>
+     <g id="text_8">
+      <text style="font-size: 19px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: middle; fill: #24343d" x="921.259843" y="1009.789212" transform="rotate(-0 921.259843 1009.789212)">35.000</text>
+     </g>
+    </g>
+    <g id="text_9">
+     <text style="font-size: 21px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: middle; fill: #24343d" x="622.488189" y="1033.076322" transform="rotate(-0 622.488189 1033.076322)">Luas areal berdasarkan SK (ha)</text>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_17"/>
+     <g id="text_10">
+      <text style="font-size: 16.5px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: end; fill: #24343d" x="302.641732" y="201.242992" transform="rotate(-0 302.641732 201.242992)">Batu Ampar</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_18"/>
+     <g id="text_11">
+      <text style="font-size: 16.5px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: end; fill: #24343d" x="302.641732" y="228.177222" transform="rotate(-0 302.641732 228.177222)">Tanjung Harapan</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_19"/>
+     <g id="text_12">
+      <text style="font-size: 16.5px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: end; fill: #24343d" x="302.641732" y="255.111451" transform="rotate(-0 302.641732 255.111451)">Nipah Panjang</text>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_20"/>
+     <g id="text_13">
+      <text style="font-size: 16.5px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: end; fill: #24343d" x="302.641732" y="282.045681" transform="rotate(-0 302.641732 282.045681)">Ambarawa</text>
+     </g>
+    </g>
+    <g id="ytick_5">
+     <g id="line2d_21"/>
+     <g id="text_14">
+      <text style="font-size: 16.5px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: end; fill: #24343d" x="302.641732" y="308.97991" transform="rotate(-0 302.641732 308.97991)">Sungai Jawi</text>
+     </g>
+    </g>
+    <g id="ytick_6">
+     <g id="line2d_22"/>
+     <g id="text_15">
+      <text style="font-size: 16.5px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: end; fill: #24343d" x="302.641732" y="335.91414" transform="rotate(-0 302.641732 335.91414)">Teluk Nibung</text>
+     </g>
+    </g>
+    <g id="ytick_7">
+     <g id="line2d_23"/>
+     <g id="text_16">
+      <text style="font-size: 16.5px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: end; fill: #24343d" x="302.641732" y="362.848369" transform="rotate(-0 302.641732 362.848369)">Sungai Besar</text>
+     </g>
+    </g>
+    <g id="ytick_8">
+     <g id="line2d_24"/>
+     <g id="text_17">
+      <text style="font-size: 16.5px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: end; fill: #24343d" x="302.641732" y="389.782599" transform="rotate(-0 302.641732 389.782599)">Tasik Malaya</text>
+     </g>
+    </g>
+    <g id="ytick_9">
+     <g id="line2d_25"/>
+     <g id="text_18">
+      <text style="font-size: 16.5px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: end; fill: #24343d" x="302.641732" y="416.716828" transform="rotate(-0 302.641732 416.716828)">Medan Mas</text>
+     </g>
+    </g>
+    <g id="ytick_10">
+     <g id="line2d_26"/>
+     <g id="text_19">
+      <text style="font-size: 16.5px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: end; fill: #24343d" x="302.641732" y="443.651058" transform="rotate(-0 302.641732 443.651058)">Padang Tikar I</text>
+     </g>
+    </g>
+    <g id="ytick_11">
+     <g id="line2d_27"/>
+     <g id="text_20">
+      <text style="font-size: 16.5px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: end; fill: #24343d" x="302.641732" y="519.0669" transform="rotate(-0 302.641732 519.0669)">Tanjung Beringin</text>
+     </g>
+    </g>
+    <g id="ytick_12">
+     <g id="line2d_28"/>
+     <g id="text_21">
+      <text style="font-size: 16.5px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: end; fill: #24343d" x="302.641732" y="546.00113" transform="rotate(-0 302.641732 546.00113)">Teluk Bakung</text>
+     </g>
+    </g>
+    <g id="ytick_13">
+     <g id="line2d_29"/>
+     <g id="text_22">
+      <text style="font-size: 16.5px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: end; fill: #24343d" x="302.641732" y="572.935359" transform="rotate(-0 302.641732 572.935359)">Kubu</text>
+     </g>
+    </g>
+    <g id="ytick_14">
+     <g id="line2d_30"/>
+     <g id="text_23">
+      <text style="font-size: 16.5px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: end; fill: #24343d" x="302.641732" y="599.869589" transform="rotate(-0 302.641732 599.869589)">Ambawang</text>
+     </g>
+    </g>
+    <g id="ytick_15">
+     <g id="line2d_31"/>
+     <g id="text_24">
+      <text style="font-size: 16.5px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: end; fill: #24343d" x="302.641732" y="626.803818" transform="rotate(-0 302.641732 626.803818)">Dabong</text>
+     </g>
+    </g>
+    <g id="ytick_16">
+     <g id="line2d_32"/>
+     <g id="text_25">
+      <text style="font-size: 16.5px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: end; fill: #24343d" x="302.641732" y="653.738048" transform="rotate(-0 302.641732 653.738048)">Mengkalang</text>
+     </g>
+    </g>
+    <g id="ytick_17">
+     <g id="line2d_33"/>
+     <g id="text_26">
+      <text style="font-size: 16.5px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: end; fill: #24343d" x="302.641732" y="680.672278" transform="rotate(-0 302.641732 680.672278)">Sungai Bemban</text>
+     </g>
+    </g>
+    <g id="ytick_18">
+     <g id="line2d_34"/>
+     <g id="text_27">
+      <text style="font-size: 16.5px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: end; fill: #24343d" x="302.641732" y="707.606507" transform="rotate(-0 302.641732 707.606507)">Kampung Baru</text>
+     </g>
+    </g>
+    <g id="ytick_19">
+     <g id="line2d_35"/>
+     <g id="text_28">
+      <text style="font-size: 16.5px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: end; fill: #24343d" x="302.641732" y="734.540737" transform="rotate(-0 302.641732 734.540737)">Betuah</text>
+     </g>
+    </g>
+    <g id="ytick_20">
+     <g id="line2d_36"/>
+     <g id="text_29">
+      <text style="font-size: 16.5px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: end; fill: #24343d" x="302.641732" y="761.474966" transform="rotate(-0 302.641732 761.474966)">Seruat Dua</text>
+     </g>
+    </g>
+    <g id="ytick_21">
+     <g id="line2d_37"/>
+     <g id="text_30">
+      <text style="font-size: 16.5px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: end; fill: #24343d" x="302.641732" y="836.890809" transform="rotate(-0 302.641732 836.890809)">Kemboja</text>
+     </g>
+    </g>
+    <g id="ytick_22">
+     <g id="line2d_38"/>
+     <g id="text_31">
+      <text style="font-size: 16.5px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: end; fill: #24343d" x="302.641732" y="863.825038" transform="rotate(-0 302.641732 863.825038)">Dusun Kecil</text>
+     </g>
+    </g>
+    <g id="ytick_23">
+     <g id="line2d_39"/>
+     <g id="text_32">
+      <text style="font-size: 16.5px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: end; fill: #24343d" x="302.641732" y="890.759268" transform="rotate(-0 302.641732 890.759268)">Dusun Besar</text>
+     </g>
+    </g>
+    <g id="ytick_24">
+     <g id="line2d_40"/>
+     <g id="text_33">
+      <text style="font-size: 16.5px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: end; fill: #24343d" x="302.641732" y="917.693497" transform="rotate(-0 302.641732 917.693497)">Tanjung Satai</text>
+     </g>
+    </g>
+    <g id="ytick_25">
+     <g id="line2d_41"/>
+     <g id="text_34">
+      <text style="font-size: 16.5px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: end; fill: #24343d" x="302.641732" y="944.627727" transform="rotate(-0 302.641732 944.627727)">Satai Lestari</text>
+     </g>
+    </g>
+   </g>
+   <g id="patch_3">
+    <path d="M 306.141732 185.540444 
+L 888.570709 185.540444 
+L 888.570709 204.933089 
+L 306.141732 204.933089 
+z
+" clip-path="url(#p5bf7627fbb)" style="fill: #287d63"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 306.141732 212.474673 
+L 612.734173 212.474673 
+L 612.734173 231.867319 
+L 306.141732 231.867319 
+z
+" clip-path="url(#p5bf7627fbb)" style="fill: #287d63"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 306.141732 239.408903 
+L 428.110866 239.408903 
+L 428.110866 258.801548 
+L 306.141732 258.801548 
+z
+" clip-path="url(#p5bf7627fbb)" style="fill: #287d63"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 306.141732 266.343132 
+L 390.061417 266.343132 
+L 390.061417 285.735778 
+L 306.141732 285.735778 
+z
+" clip-path="url(#p5bf7627fbb)" style="fill: #287d63"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 306.141732 293.277362 
+L 365.632441 293.277362 
+L 365.632441 312.670007 
+L 306.141732 312.670007 
+z
+" clip-path="url(#p5bf7627fbb)" style="fill: #287d63"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 306.141732 320.211591 
+L 357.108661 320.211591 
+L 357.108661 339.604237 
+L 306.141732 339.604237 
+z
+" clip-path="url(#p5bf7627fbb)" style="fill: #287d63"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 306.141732 347.145821 
+L 357.108661 347.145821 
+L 357.108661 366.538466 
+L 306.141732 366.538466 
+z
+" clip-path="url(#p5bf7627fbb)" style="fill: #287d63"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 306.141732 374.08005 
+L 356.229921 374.08005 
+L 356.229921 393.472696 
+L 306.141732 393.472696 
+z
+" clip-path="url(#p5bf7627fbb)" style="fill: #287d63"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 306.141732 401.01428 
+L 338.567244 401.01428 
+L 338.567244 420.406925 
+L 306.141732 420.406925 
+z
+" clip-path="url(#p5bf7627fbb)" style="fill: #287d63"/>
+   </g>
+   <g id="patch_12">
+    <path d="M 306.141732 427.94851 
+L 309.480945 427.94851 
+L 309.480945 447.341155 
+L 306.141732 447.341155 
+z
+" clip-path="url(#p5bf7627fbb)" style="fill: #287d63"/>
+   </g>
+   <g id="patch_13">
+    <path d="M 306.141732 503.364352 
+L 490.72989 503.364352 
+L 490.72989 522.756997 
+L 306.141732 522.756997 
+z
+" clip-path="url(#p5bf7627fbb)" style="fill: #548a72"/>
+   </g>
+   <g id="patch_14">
+    <path d="M 306.141732 530.298582 
+L 403.945512 530.298582 
+L 403.945512 549.691227 
+L 306.141732 549.691227 
+z
+" clip-path="url(#p5bf7627fbb)" style="fill: #548a72"/>
+   </g>
+   <g id="patch_15">
+    <path d="M 306.141732 557.232811 
+L 388.93663 557.232811 
+L 388.93663 576.625456 
+L 306.141732 576.625456 
+z
+" clip-path="url(#p5bf7627fbb)" style="fill: #548a72"/>
+   </g>
+   <g id="patch_16">
+    <path d="M 306.141732 584.167041 
+L 363.839811 584.167041 
+L 363.839811 603.559686 
+L 306.141732 603.559686 
+z
+" clip-path="url(#p5bf7627fbb)" style="fill: #548a72"/>
+   </g>
+   <g id="patch_17">
+    <path d="M 306.141732 611.10127 
+L 356.563843 611.10127 
+L 356.563843 630.493916 
+L 306.141732 630.493916 
+z
+" clip-path="url(#p5bf7627fbb)" style="fill: #548a72"/>
+   </g>
+   <g id="patch_18">
+    <path d="M 306.141732 638.0355 
+L 341.010142 638.0355 
+L 341.010142 657.428145 
+L 306.141732 657.428145 
+z
+" clip-path="url(#p5bf7627fbb)" style="fill: #548a72"/>
+   </g>
+   <g id="patch_19">
+    <path d="M 306.141732 664.969729 
+L 328.971402 664.969729 
+L 328.971402 684.362375 
+L 306.141732 684.362375 
+z
+" clip-path="url(#p5bf7627fbb)" style="fill: #548a72"/>
+   </g>
+   <g id="patch_20">
+    <path d="M 306.141732 691.903959 
+L 320.676094 691.903959 
+L 320.676094 711.296604 
+L 306.141732 711.296604 
+z
+" clip-path="url(#p5bf7627fbb)" style="fill: #548a72"/>
+   </g>
+   <g id="patch_21">
+    <path d="M 306.141732 718.838188 
+L 320.447622 718.838188 
+L 320.447622 738.230834 
+L 306.141732 738.230834 
+z
+" clip-path="url(#p5bf7627fbb)" style="fill: #548a72"/>
+   </g>
+   <g id="patch_22">
+    <path d="M 306.141732 745.772418 
+L 316.915087 745.772418 
+L 316.915087 765.165063 
+L 306.141732 765.165063 
+z
+" clip-path="url(#p5bf7627fbb)" style="fill: #548a72"/>
+   </g>
+   <g id="patch_23">
+    <path d="M 306.141732 821.188261 
+L 394.015748 821.188261 
+L 394.015748 840.580906 
+L 306.141732 840.580906 
+z
+" clip-path="url(#p5bf7627fbb)" style="fill: #93b8a6"/>
+   </g>
+   <g id="patch_24">
+    <path d="M 306.141732 848.12249 
+L 386.581606 848.12249 
+L 386.581606 867.515135 
+L 306.141732 867.515135 
+z
+" clip-path="url(#p5bf7627fbb)" style="fill: #93b8a6"/>
+   </g>
+   <g id="patch_25">
+    <path d="M 306.141732 875.05672 
+L 367.49537 875.05672 
+L 367.49537 894.449365 
+L 306.141732 894.449365 
+z
+" clip-path="url(#p5bf7627fbb)" style="fill: #93b8a6"/>
+   </g>
+   <g id="patch_26">
+    <path d="M 306.141732 901.990949 
+L 342.170079 901.990949 
+L 342.170079 921.383594 
+L 306.141732 921.383594 
+z
+" clip-path="url(#p5bf7627fbb)" style="fill: #93b8a6"/>
+   </g>
+   <g id="patch_27">
+    <path d="M 306.141732 928.925179 
+L 323.452913 928.925179 
+L 323.452913 948.317824 
+L 306.141732 948.317824 
+z
+" clip-path="url(#p5bf7627fbb)" style="fill: #93b8a6"/>
+   </g>
+   <g id="line2d_42">
+    <path d="M 8.776063 176.382806 
+L 938.834646 176.382806 
+" style="fill: none; stroke: #e3e8e8; stroke-width: 1.2; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_43">
+    <path d="M 8.776063 494.206714 
+L 938.834646 494.206714 
+" style="fill: none; stroke: #e3e8e8; stroke-width: 1.2; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_44">
+    <path d="M 8.776063 812.030623 
+L 938.834646 812.030623 
+" style="fill: none; stroke: #e3e8e8; stroke-width: 1.2; stroke-linecap: square"/>
+   </g>
+   <g id="patch_28">
+    <path d="M 306.141732 986.456693 
+L 938.834646 986.456693 
+" style="fill: none; stroke: #24343d; stroke-width: 1.2; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_35">
+    <text style="font-size: 16.5px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: start; fill: #24343d" x="893.84315" y="199.506786" transform="rotate(-0 893.84315 199.506786)">33.140</text>
+   </g>
+   <g id="text_36">
+    <text style="font-size: 16.5px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: start; fill: #24343d" x="618.006614" y="226.441015" transform="rotate(-0 618.006614 226.441015)">17.445</text>
+   </g>
+   <g id="text_37">
+    <text style="font-size: 16.5px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: start; fill: #24343d" x="433.383307" y="253.375245" transform="rotate(-0 433.383307 253.375245)">6.940</text>
+   </g>
+   <g id="text_38">
+    <text style="font-size: 16.5px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: start; fill: #24343d" x="395.333858" y="280.309475" transform="rotate(-0 395.333858 280.309475)">4.775</text>
+   </g>
+   <g id="text_39">
+    <text style="font-size: 16.5px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: start; fill: #24343d" x="370.904882" y="307.243704" transform="rotate(-0 370.904882 307.243704)">3.385</text>
+   </g>
+   <g id="text_40">
+    <text style="font-size: 16.5px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: start; fill: #24343d" x="362.381102" y="334.177934" transform="rotate(-0 362.381102 334.177934)">2.900</text>
+   </g>
+   <g id="text_41">
+    <text style="font-size: 16.5px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: start; fill: #24343d" x="362.381102" y="361.112163" transform="rotate(-0 362.381102 361.112163)">2.900</text>
+   </g>
+   <g id="text_42">
+    <text style="font-size: 16.5px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: start; fill: #24343d" x="361.502362" y="388.046393" transform="rotate(-0 361.502362 388.046393)">2.850</text>
+   </g>
+   <g id="text_43">
+    <text style="font-size: 16.5px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: start; fill: #24343d" x="343.839685" y="414.980622" transform="rotate(-0 343.839685 414.980622)">1.845</text>
+   </g>
+   <g id="text_44">
+    <text style="font-size: 16.5px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: start; fill: #24343d" x="314.753386" y="441.914852" transform="rotate(-0 314.753386 441.914852)">190</text>
+   </g>
+   <g id="text_45">
+    <text style="font-size: 16.5px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: start; fill: #24343d" x="496.002331" y="517.330694" transform="rotate(-0 496.002331 517.330694)">10.503</text>
+   </g>
+   <g id="text_46">
+    <text style="font-size: 16.5px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: start; fill: #24343d" x="409.217953" y="544.264924" transform="rotate(-0 409.217953 544.264924)">5.565</text>
+   </g>
+   <g id="text_47">
+    <text style="font-size: 16.5px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: start; fill: #24343d" x="394.209071" y="571.199153" transform="rotate(-0 394.209071 571.199153)">4.711</text>
+   </g>
+   <g id="text_48">
+    <text style="font-size: 16.5px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: start; fill: #24343d" x="369.112252" y="598.133383" transform="rotate(-0 369.112252 598.133383)">3.283</text>
+   </g>
+   <g id="text_49">
+    <text style="font-size: 16.5px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: start; fill: #24343d" x="361.836283" y="625.067612" transform="rotate(-0 361.836283 625.067612)">2.869</text>
+   </g>
+   <g id="text_50">
+    <text style="font-size: 16.5px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: start; fill: #24343d" x="346.282583" y="652.001842" transform="rotate(-0 346.282583 652.001842)">1.984</text>
+   </g>
+   <g id="text_51">
+    <text style="font-size: 16.5px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: start; fill: #24343d" x="334.243843" y="678.936071" transform="rotate(-0 334.243843 678.936071)">1.299</text>
+   </g>
+   <g id="text_52">
+    <text style="font-size: 16.5px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: start; fill: #24343d" x="325.948535" y="705.870301" transform="rotate(-0 325.948535 705.870301)">827</text>
+   </g>
+   <g id="text_53">
+    <text style="font-size: 16.5px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: start; fill: #24343d" x="325.720063" y="732.804531" transform="rotate(-0 325.720063 732.804531)">814</text>
+   </g>
+   <g id="text_54">
+    <text style="font-size: 16.5px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: start; fill: #24343d" x="322.187528" y="759.73876" transform="rotate(-0 322.187528 759.73876)">613</text>
+   </g>
+   <g id="text_55">
+    <text style="font-size: 16.5px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: start; fill: #24343d" x="399.288189" y="835.154603" transform="rotate(-0 399.288189 835.154603)">5.000</text>
+   </g>
+   <g id="text_56">
+    <text style="font-size: 16.5px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: start; fill: #24343d" x="391.854047" y="862.088832" transform="rotate(-0 391.854047 862.088832)">4.577</text>
+   </g>
+   <g id="text_57">
+    <text style="font-size: 16.5px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: start; fill: #24343d" x="372.767811" y="889.023062" transform="rotate(-0 372.767811 889.023062)">3.491</text>
+   </g>
+   <g id="text_58">
+    <text style="font-size: 16.5px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: start; fill: #24343d" x="347.44252" y="915.957291" transform="rotate(-0 347.44252 915.957291)">2.050</text>
+   </g>
+   <g id="text_59">
+    <text style="font-size: 16.5px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: start; fill: #24343d" x="328.725354" y="942.891521" transform="rotate(-0 328.725354 942.891521)">985</text>
+   </g>
+   <g id="text_60">
+    <text style="font-weight: 700; font-size: 20px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: start; fill: #287d63" x="8.776063" y="166.730503" transform="rotate(-0 8.776063 166.730503)">Padang Tikar</text>
+   </g>
+   <g id="text_61">
+    <text style="font-size: 18px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: end; fill: #24343d" x="938.834646" y="166.227183" transform="rotate(-0 938.834646 166.227183)">10 HD · 76.370 ha</text>
+   </g>
+   <g id="text_62">
+    <text style="font-weight: 700; font-size: 20px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: start; fill: #548a72" x="8.776063" y="484.568669" transform="rotate(-0 8.776063 484.568669)">Kubu</text>
+   </g>
+   <g id="text_63">
+    <text style="font-size: 18px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: end; fill: #24343d" x="938.834646" y="484.051091" transform="rotate(-0 938.834646 484.051091)">10 HD · 32.468 ha</text>
+   </g>
+   <g id="text_64">
+    <text style="font-weight: 700; font-size: 20px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: start; fill: #5e8c78" x="8.776063" y="802.392578" transform="rotate(-0 8.776063 802.392578)">Pulau Maya</text>
+   </g>
+   <g id="text_65">
+    <text style="font-size: 18px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: end; fill: #24343d" x="938.834646" y="801.874999" transform="rotate(-0 938.834646 801.874999)">5 HD · 16.103 ha</text>
+   </g>
+  </g>
+  <g id="text_66">
+   <text style="font-weight: 700; font-size: 26px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: start; fill: #24343d" x="12.245669" y="47.275168" transform="rotate(-0 12.245669 47.275168)">Wilayah penelitian: 25 Hutan Desa, tiga lanskap</text>
+  </g>
+  <g id="text_67">
+   <text style="font-size: 18px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: start; fill: #24343d" x="12.245669" y="78.868272" transform="rotate(-0 12.245669 78.868272)">Total 124.941 ha (areal SK). Luas proyek karbon yang dipakai model: 111.123,17 ha.</text>
+  </g>
+  <g id="text_68">
+   <text style="font-weight: 700; font-size: 16px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: start; fill: #c47b56" x="12.245669" y="115.963398" transform="rotate(-0 12.245669 115.963398)">PETA: DATA TIDAK TERSEDIA — shapefile batas Hutan Desa belum diberikan. Grafik ini pengganti non-spasial.</text>
+  </g>
+  <g id="text_69">
+   <text style="font-size: 14.5px; font-family: 'Liberation Sans', 'DejaVu Sans'; fill: #4a5a63" transform="translate(12.245669 1096.44556)">Sumber: Tabel 1 makalah (Laporan Kajian Identifikasi NKT Hutan Desa Lanskap Kubu, Padang Tikar, dan Pulau Maya). Untuk peta: jalankan</text>
+   <text style="font-size: 14.5px; font-family: 'Liberation Sans', 'DejaVu Sans'; fill: #4a5a63" transform="translate(12.245669 1114.816239)">make_figures.py --hd-shapefile &lt;batas_HD.shp&gt; --landscape-col &lt;kolom lanskap&gt;.</text>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p5bf7627fbb">
+   <rect x="306.141732" y="147.401575" width="632.692913" height="839.055118"/>
+  </clipPath>
+ </defs>
+</svg>

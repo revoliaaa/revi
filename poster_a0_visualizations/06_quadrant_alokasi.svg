@@ -1,0 +1,545 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="1020.472441pt" height="850.393701pt" viewBox="0 0 1020.472441 850.393701" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-11-02T13:21:14.734602</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 850.393701 
+L 1020.472441 850.393701 
+L 1020.472441 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 142.866142 620.787402 
+L 775.559055 620.787402 
+L 775.559055 127.559055 
+L 142.866142 127.559055 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 142.866142 492.548031 
+L 474.276715 492.548031 
+L 474.276715 127.559055 
+L 142.866142 127.559055 
+z
+" clip-path="url(#p1bdb383056)" style="fill: #c47b56; opacity: 0.07"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 474.276715 492.548031 
+L 775.559055 492.548031 
+L 775.559055 127.559055 
+L 474.276715 127.559055 
+z
+" clip-path="url(#p1bdb383056)" style="fill: #3d887b; opacity: 0.07"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 474.276715 620.787402 
+L 775.559055 620.787402 
+L 775.559055 492.548031 
+L 474.276715 492.548031 
+z
+" clip-path="url(#p1bdb383056)" style="fill: #287d63; opacity: 0.04"/>
+   </g>
+   <g id="line2d_1">
+    <path d="M 142.866142 492.548031 
+L 775.559055 492.548031 
+" clip-path="url(#p1bdb383056)" style="fill: none; stroke: #24343d; stroke-width: 1.4; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_2">
+    <path d="M 474.276715 620.787402 
+L 474.276715 127.559055 
+" clip-path="url(#p1bdb383056)" style="fill: none; stroke: #24343d; stroke-width: 1.4; stroke-linecap: square"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_3">
+      <defs>
+       <path id="md0042e3f43" d="M 0 0 
+L 0 6 
+" style="stroke: #24343d; stroke-width: 1.2"/>
+      </defs>
+      <g>
+       <use xlink:href="#md0042e3f43" x="172.994376" y="620.787402" style="fill: #24343d; stroke: #24343d; stroke-width: 1.2"/>
+      </g>
+     </g>
+     <g id="text_1">
+      <text style="font-size: 19px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: middle; fill: #24343d" x="172.994376" y="644.119921" transform="rotate(-0 172.994376 644.119921)">−3.000</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_4">
+      <g>
+       <use xlink:href="#md0042e3f43" x="273.421822" y="620.787402" style="fill: #24343d; stroke: #24343d; stroke-width: 1.2"/>
+      </g>
+     </g>
+     <g id="text_2">
+      <text style="font-size: 19px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: middle; fill: #24343d" x="273.421822" y="644.119921" transform="rotate(-0 273.421822 644.119921)">−2.000</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_5">
+      <g>
+       <use xlink:href="#md0042e3f43" x="373.849269" y="620.787402" style="fill: #24343d; stroke: #24343d; stroke-width: 1.2"/>
+      </g>
+     </g>
+     <g id="text_3">
+      <text style="font-size: 19px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: middle; fill: #24343d" x="373.849269" y="644.119921" transform="rotate(-0 373.849269 644.119921)">−1.000</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_6">
+      <g>
+       <use xlink:href="#md0042e3f43" x="474.276715" y="620.787402" style="fill: #24343d; stroke: #24343d; stroke-width: 1.2"/>
+      </g>
+     </g>
+     <g id="text_4">
+      <text style="font-size: 19px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: middle; fill: #24343d" x="474.276715" y="644.119921" transform="rotate(-0 474.276715 644.119921)">0</text>
+     </g>
+    </g>
+    <g id="xtick_5">
+     <g id="line2d_7">
+      <g>
+       <use xlink:href="#md0042e3f43" x="574.704162" y="620.787402" style="fill: #24343d; stroke: #24343d; stroke-width: 1.2"/>
+      </g>
+     </g>
+     <g id="text_5">
+      <text style="font-size: 19px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: middle; fill: #24343d" x="574.704162" y="644.119921" transform="rotate(-0 574.704162 644.119921)">+1.000</text>
+     </g>
+    </g>
+    <g id="xtick_6">
+     <g id="line2d_8">
+      <g>
+       <use xlink:href="#md0042e3f43" x="675.131609" y="620.787402" style="fill: #24343d; stroke: #24343d; stroke-width: 1.2"/>
+      </g>
+     </g>
+     <g id="text_6">
+      <text style="font-size: 19px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: middle; fill: #24343d" x="675.131609" y="644.119921" transform="rotate(-0 675.131609 644.119921)">+2.000</text>
+     </g>
+    </g>
+    <g id="xtick_7">
+     <g id="line2d_9">
+      <g>
+       <use xlink:href="#md0042e3f43" x="775.559055" y="620.787402" style="fill: #24343d; stroke: #24343d; stroke-width: 1.2"/>
+      </g>
+     </g>
+     <g id="text_7">
+      <text style="font-size: 19px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: middle; fill: #24343d" x="775.559055" y="644.119921" transform="rotate(-0 775.559055 644.119921)">+3.000</text>
+     </g>
+    </g>
+    <g id="text_8">
+     <text style="font-size: 21px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: middle; fill: #24343d" x="459.212598" y="667.40703" transform="rotate(-0 459.212598 667.40703)">Δ deforestasi dihindari terhadap B0 (ha, kumulatif 2025–2086)</text>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_10">
+      <defs>
+       <path id="m167feb6bca" d="M 0 0 
+L -6 0 
+" style="stroke: #24343d; stroke-width: 1.2"/>
+      </defs>
+      <g>
+       <use xlink:href="#m167feb6bca" x="142.866142" y="591.193701" style="fill: #24343d; stroke: #24343d; stroke-width: 1.2"/>
+      </g>
+     </g>
+     <g id="text_9">
+      <text style="font-size: 19px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: end; fill: #24343d" x="133.366142" y="598.109961" transform="rotate(-0 133.366142 598.109961)">−200</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_11">
+      <g>
+       <use xlink:href="#m167feb6bca" x="142.866142" y="541.870866" style="fill: #24343d; stroke: #24343d; stroke-width: 1.2"/>
+      </g>
+     </g>
+     <g id="text_10">
+      <text style="font-size: 19px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: end; fill: #24343d" x="133.366142" y="548.787126" transform="rotate(-0 133.366142 548.787126)">−100</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_12">
+      <g>
+       <use xlink:href="#m167feb6bca" x="142.866142" y="492.548031" style="fill: #24343d; stroke: #24343d; stroke-width: 1.2"/>
+      </g>
+     </g>
+     <g id="text_11">
+      <text style="font-size: 19px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: end; fill: #24343d" x="133.366142" y="499.464291" transform="rotate(-0 133.366142 499.464291)">0</text>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_13">
+      <g>
+       <use xlink:href="#m167feb6bca" x="142.866142" y="443.225197" style="fill: #24343d; stroke: #24343d; stroke-width: 1.2"/>
+      </g>
+     </g>
+     <g id="text_12">
+      <text style="font-size: 19px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: end; fill: #24343d" x="133.366142" y="450.141457" transform="rotate(-0 133.366142 450.141457)">+100</text>
+     </g>
+    </g>
+    <g id="ytick_5">
+     <g id="line2d_14">
+      <g>
+       <use xlink:href="#m167feb6bca" x="142.866142" y="393.902362" style="fill: #24343d; stroke: #24343d; stroke-width: 1.2"/>
+      </g>
+     </g>
+     <g id="text_13">
+      <text style="font-size: 19px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: end; fill: #24343d" x="133.366142" y="400.818622" transform="rotate(-0 133.366142 400.818622)">+200</text>
+     </g>
+    </g>
+    <g id="ytick_6">
+     <g id="line2d_15">
+      <g>
+       <use xlink:href="#m167feb6bca" x="142.866142" y="344.579528" style="fill: #24343d; stroke: #24343d; stroke-width: 1.2"/>
+      </g>
+     </g>
+     <g id="text_14">
+      <text style="font-size: 19px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: end; fill: #24343d" x="133.366142" y="351.495787" transform="rotate(-0 133.366142 351.495787)">+300</text>
+     </g>
+    </g>
+    <g id="ytick_7">
+     <g id="line2d_16">
+      <g>
+       <use xlink:href="#m167feb6bca" x="142.866142" y="295.256693" style="fill: #24343d; stroke: #24343d; stroke-width: 1.2"/>
+      </g>
+     </g>
+     <g id="text_15">
+      <text style="font-size: 19px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: end; fill: #24343d" x="133.366142" y="302.172953" transform="rotate(-0 133.366142 302.172953)">+400</text>
+     </g>
+    </g>
+    <g id="ytick_8">
+     <g id="line2d_17">
+      <g>
+       <use xlink:href="#m167feb6bca" x="142.866142" y="245.933858" style="fill: #24343d; stroke: #24343d; stroke-width: 1.2"/>
+      </g>
+     </g>
+     <g id="text_16">
+      <text style="font-size: 19px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: end; fill: #24343d" x="133.366142" y="252.850118" transform="rotate(-0 133.366142 252.850118)">+500</text>
+     </g>
+    </g>
+    <g id="ytick_9">
+     <g id="line2d_18">
+      <g>
+       <use xlink:href="#m167feb6bca" x="142.866142" y="196.611024" style="fill: #24343d; stroke: #24343d; stroke-width: 1.2"/>
+      </g>
+     </g>
+     <g id="text_17">
+      <text style="font-size: 19px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: end; fill: #24343d" x="133.366142" y="203.527283" transform="rotate(-0 133.366142 203.527283)">+600</text>
+     </g>
+    </g>
+    <g id="ytick_10">
+     <g id="line2d_19">
+      <g>
+       <use xlink:href="#m167feb6bca" x="142.866142" y="147.288189" style="fill: #24343d; stroke: #24343d; stroke-width: 1.2"/>
+      </g>
+     </g>
+     <g id="text_18">
+      <text style="font-size: 19px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: end; fill: #24343d" x="133.366142" y="154.204449" transform="rotate(-0 133.366142 154.204449)">+700</text>
+     </g>
+    </g>
+    <g id="text_19">
+     <text style="font-size: 21px; font-family: 'Liberation Sans', 'DejaVu Sans'; fill: #24343d" transform="translate(57.722245 568.170572) rotate(-90)">Δ pendapatan RT terdampak terhadap B0</text>
+     <text style="font-size: 21px; font-family: 'Liberation Sans', 'DejaVu Sans'; fill: #24343d" transform="translate(80.578202 460.924556) rotate(-90)">(Rp ribu/RT/tahun)</text>
+    </g>
+   </g>
+   <g id="text_20">
+    <text style="font-size: 16px; font-family: 'Liberation Sans', 'DejaVu Sans'; fill: #9a5a3a" transform="translate(150.900337 152.73742)">pendapatan naik,</text>
+    <text style="font-size: 16px; font-family: 'Liberation Sans', 'DejaVu Sans'; fill: #9a5a3a" transform="translate(150.900337 170.151483)">perlindungan berkurang</text>
+   </g>
+   <g id="text_21">
+    <text style="font-size: 16px; font-family: 'Liberation Sans', 'DejaVu Sans'; fill: #2e6b60" transform="translate(482.310911 152.73742)">keduanya naik atau</text>
+    <text style="font-size: 16px; font-family: 'Liberation Sans', 'DejaVu Sans'; fill: #2e6b60" transform="translate(482.310911 170.151483)">tidak berkurang</text>
+   </g>
+   <g id="text_22">
+    <text style="font-size: 16px; font-family: 'Liberation Sans', 'DejaVu Sans'; fill: #1f6650" transform="translate(545.078833 571.830444)">perlindungan naik,</text>
+    <text style="font-size: 16px; font-family: 'Liberation Sans', 'DejaVu Sans'; fill: #1f6650" transform="translate(547.740083 589.244507)">pendapatan turun</text>
+   </g>
+   <g id="text_23">
+    <text style="font-size: 16px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: start; fill: #5f6b71" x="150.900337" y="607.555647" transform="rotate(-0 150.900337 607.555647)">keduanya turun</text>
+   </g>
+   <g id="text_24">
+    <text style="font-weight: 700; font-size: 19px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: end; fill: #24343d" x="467.246794" y="517.231575" transform="rotate(-0 467.246794 517.231575)">B0</text>
+   </g>
+   <g id="text_25">
+    <text style="font-weight: 700; font-size: 22px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: start; fill: #3d887b" x="485.323735" y="431.989973" transform="rotate(-0 485.323735 431.989973)">R1</text>
+   </g>
+   <g id="text_26">
+    <text style="font-weight: 700; font-size: 19px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: start; fill: #5f6b71" x="485.323735" y="464.714661" transform="rotate(-0 485.323735 464.714661)">B1</text>
+   </g>
+   <g id="patch_6">
+    <path d="M 589.923608 369.656209 
+Q 536.014564 395.570112 482.105519 421.484015 
+" style="fill: none; stroke: #3d887b; stroke-width: 1.2; stroke-linecap: round"/>
+   </g>
+   <g id="text_27">
+    <text style="font-size: 17px; font-family: 'Liberation Sans', 'DejaVu Sans'; fill: #3d887b" transform="translate(564.661417 306.428429)">R1: +Rp33.571 (USD10)</text>
+    <text style="font-size: 17px; font-family: 'Liberation Sans', 'DejaVu Sans'; fill: #3d887b" transform="translate(564.661417 324.930871)">     +Rp134.322 (USD20)</text>
+    <text style="font-size: 17px; font-family: 'Liberation Sans', 'DejaVu Sans'; fill: #3d887b" transform="translate(564.661417 343.433312)">tanpa penurunan deforestasi</text>
+    <text style="font-size: 17px; font-family: 'Liberation Sans', 'DejaVu Sans'; fill: #3d887b" transform="translate(564.661417 361.935753)">dihindari terhadap B0</text>
+   </g>
+   <g id="text_28">
+    <text style="font-weight: 700; font-size: 17px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: start; fill: #9a5a3a" x="203.022182" y="209.811111" transform="rotate(-0 203.022182 209.811111)">B4  (−2.801 ha; +Rp572.157)</text>
+   </g>
+   <g id="line2d_20">
+    <path d="M 192.979438 489.588661 
+L 192.979438 221.195004 
+" clip-path="url(#p1bdb383056)" style="fill: none; stroke-dasharray: 4.4,4.4; stroke-dashoffset: 0; stroke: #c47b56; stroke-width: 2.2"/>
+   </g>
+   <g id="text_29">
+    <text style="font-size: 15px; font-family: 'Liberation Sans', 'DejaVu Sans'; fill: #9a5a3a" transform="translate(203.022182 356.797097)">B3 (USD20): X sama,</text>
+    <text style="font-size: 15px; font-family: 'Liberation Sans', 'DejaVu Sans'; fill: #9a5a3a" transform="translate(203.022182 373.122781)">Y &gt; 0 dan ≤ B4;</text>
+    <text style="font-size: 15px; font-family: 'Liberation Sans', 'DejaVu Sans'; fill: #9a5a3a" transform="translate(203.022182 389.448464)">nilai tidak dilaporkan</text>
+   </g>
+   <g id="patch_7">
+    <path d="M 498.07802 497.51063 
+Q 498.07802 556.176458 498.07802 612.382611 
+" style="fill: none; stroke-dasharray: 4.4,4.4; stroke-dashoffset: 0; stroke: #287d63; stroke-width: 2.2; stroke-linecap: round"/>
+    <path d="M 501.67802 605.182611 
+L 498.07802 612.382611 
+L 494.47802 605.182611 
+z
+" style="fill: #287d63; stroke-dasharray: 4.4,4.4; stroke-dashoffset: 0; stroke: #287d63; stroke-width: 2.2; stroke-linecap: round"/>
+   </g>
+   <g id="text_30">
+    <text style="font-weight: 700; font-size: 15.5px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: start; fill: #287d63" x="505.107942" y="611.606699" transform="rotate(-0 505.107942 611.606699)">USD10</text>
+   </g>
+   <g id="patch_8">
+    <path d="M 722.834646 497.51063 
+Q 722.834646 556.176458 722.834646 612.382611 
+" style="fill: none; stroke-dasharray: 4.4,4.4; stroke-dashoffset: 0; stroke: #287d63; stroke-width: 2.2; stroke-linecap: round"/>
+    <path d="M 726.434646 605.182611 
+L 722.834646 612.382611 
+L 719.234646 605.182611 
+z
+" style="fill: #287d63; stroke-dasharray: 4.4,4.4; stroke-dashoffset: 0; stroke: #287d63; stroke-width: 2.2; stroke-linecap: round"/>
+   </g>
+   <g id="text_31">
+    <text style="font-weight: 700; font-size: 15.5px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: end; fill: #287d63" x="715.804724" y="611.606699" transform="rotate(-0 715.804724 611.606699)">USD20</text>
+   </g>
+   <g id="text_32">
+    <text style="font-size: 15px; font-family: 'Liberation Sans', 'DejaVu Sans'; fill: #287d63" transform="translate(539.986802 508.711428)">R2: +237 / +2.475 ha</text>
+    <text style="font-size: 15px; font-family: 'Liberation Sans', 'DejaVu Sans'; fill: #287d63" transform="translate(551.438364 525.037112)">Δ pendapatan &lt; 0</text>
+    <text style="font-size: 15px; font-family: 'Liberation Sans', 'DejaVu Sans'; fill: #287d63" transform="translate(523.74813 541.362795)">(besaran tidak dilaporkan)</text>
+   </g>
+   <g id="line2d_21">
+    <defs>
+     <path id="m2e65c0fce0" d="M 0 6.5 
+C 1.72382 6.5 3.377269 5.815119 4.596194 4.596194 
+C 5.815119 3.377269 6.5 1.72382 6.5 0 
+C 6.5 -1.72382 5.815119 -3.377269 4.596194 -4.596194 
+C 3.377269 -5.815119 1.72382 -6.5 0 -6.5 
+C -1.72382 -6.5 -3.377269 -5.815119 -4.596194 -4.596194 
+C -5.815119 -3.377269 -6.5 -1.72382 -6.5 0 
+C -6.5 1.72382 -5.815119 3.377269 -4.596194 4.596194 
+C -3.377269 5.815119 -1.72382 6.5 0 6.5 
+z
+" style="stroke: #8b949a; stroke-width: 2.6"/>
+    </defs>
+    <g clip-path="url(#p1bdb383056)">
+     <use xlink:href="#m2e65c0fce0" x="474.276715" y="484.360441" style="fill: #ffffff; stroke: #8b949a; stroke-width: 2.6"/>
+    </g>
+   </g>
+   <g id="line2d_22">
+    <defs>
+     <path id="m02dee16a43" d="M 0 6.5 
+C 1.72382 6.5 3.377269 5.815119 4.596194 4.596194 
+C 5.815119 3.377269 6.5 1.72382 6.5 0 
+C 6.5 -1.72382 5.815119 -3.377269 4.596194 -4.596194 
+C 3.377269 -5.815119 1.72382 -6.5 0 -6.5 
+C -1.72382 -6.5 -3.377269 -5.815119 -4.596194 -4.596194 
+C -5.815119 -3.377269 -6.5 -1.72382 -6.5 0 
+C -6.5 1.72382 -5.815119 3.377269 -4.596194 4.596194 
+C -3.377269 5.815119 -1.72382 6.5 0 6.5 
+z
+" style="stroke: #8b949a"/>
+    </defs>
+    <g clip-path="url(#p1bdb383056)">
+     <use xlink:href="#m02dee16a43" x="474.276715" y="459.797669" style="fill: #8b949a; stroke: #8b949a"/>
+    </g>
+   </g>
+   <g id="line2d_23">
+    <defs>
+     <path id="m625b3a9020" d="M 0 6.5 
+C 1.72382 6.5 3.377269 5.815119 4.596194 4.596194 
+C 5.815119 3.377269 6.5 1.72382 6.5 0 
+C 6.5 -1.72382 5.815119 -3.377269 4.596194 -4.596194 
+C 3.377269 -5.815119 1.72382 -6.5 0 -6.5 
+C -1.72382 -6.5 -3.377269 -5.815119 -4.596194 -4.596194 
+C -5.815119 -3.377269 -6.5 -1.72382 -6.5 0 
+C -6.5 1.72382 -5.815119 3.377269 -4.596194 4.596194 
+C -3.377269 5.815119 -1.72382 6.5 0 6.5 
+z
+" style="stroke: #c47b56"/>
+    </defs>
+    <g clip-path="url(#p1bdb383056)">
+     <use xlink:href="#m625b3a9020" x="192.979438" y="210.34398" style="fill: #c47b56; stroke: #c47b56"/>
+    </g>
+   </g>
+   <g id="line2d_24">
+    <defs>
+     <path id="mf98a51acf8" d="M 0 6.5 
+C 1.72382 6.5 3.377269 5.815119 4.596194 4.596194 
+C 5.815119 3.377269 6.5 1.72382 6.5 0 
+C 6.5 -1.72382 5.815119 -3.377269 4.596194 -4.596194 
+C 3.377269 -5.815119 1.72382 -6.5 0 -6.5 
+C -1.72382 -6.5 -3.377269 -5.815119 -4.596194 -4.596194 
+C -5.815119 -3.377269 -6.5 -1.72382 -6.5 0 
+C -6.5 1.72382 -5.815119 3.377269 -4.596194 4.596194 
+C -3.377269 5.815119 -1.72382 6.5 0 6.5 
+z
+" style="stroke: #3d887b; stroke-width: 2.6"/>
+    </defs>
+    <g clip-path="url(#p1bdb383056)">
+     <use xlink:href="#mf98a51acf8" x="474.276715" y="475.989863" style="fill: #ffffff; stroke: #3d887b; stroke-width: 2.6"/>
+    </g>
+   </g>
+   <g id="line2d_25">
+    <defs>
+     <path id="md548177400" d="M 0 6.5 
+C 1.72382 6.5 3.377269 5.815119 4.596194 4.596194 
+C 5.815119 3.377269 6.5 1.72382 6.5 0 
+C 6.5 -1.72382 5.815119 -3.377269 4.596194 -4.596194 
+C 3.377269 -5.815119 1.72382 -6.5 0 -6.5 
+C -1.72382 -6.5 -3.377269 -5.815119 -4.596194 -4.596194 
+C -5.815119 -3.377269 -6.5 -1.72382 -6.5 0 
+C -6.5 1.72382 -5.815119 3.377269 -4.596194 4.596194 
+C -3.377269 5.815119 -1.72382 6.5 0 6.5 
+z
+" style="stroke: #3d887b"/>
+    </defs>
+    <g clip-path="url(#p1bdb383056)">
+     <use xlink:href="#md548177400" x="474.276715" y="426.296614" style="fill: #3d887b; stroke: #3d887b"/>
+    </g>
+   </g>
+   <g id="line2d_26">
+    <defs>
+     <path id="m14a2c34ff3" d="M -6.5 6.5 
+L 6.5 6.5 
+L 6.5 -6.5 
+L -6.5 -6.5 
+z
+" style="stroke: #24343d; stroke-linejoin: miter"/>
+    </defs>
+    <g clip-path="url(#p1bdb383056)">
+     <use xlink:href="#m14a2c34ff3" x="474.276715" y="492.548031" style="fill: #24343d; stroke: #24343d; stroke-linejoin: miter"/>
+    </g>
+   </g>
+  </g>
+  <g id="line2d_27">
+   <path d="M 811.275591 170.07874 
+" style="fill: none; stroke: #1f77b4; stroke-width: 1.5; stroke-linecap: square"/>
+   <defs>
+    <path id="mdb6d4f4f4a" d="M 0 6.5 
+C 1.72382 6.5 3.377269 5.815119 4.596194 4.596194 
+C 5.815119 3.377269 6.5 1.72382 6.5 0 
+C 6.5 -1.72382 5.815119 -3.377269 4.596194 -4.596194 
+C 3.377269 -5.815119 1.72382 -6.5 0 -6.5 
+C -1.72382 -6.5 -3.377269 -5.815119 -4.596194 -4.596194 
+C -5.815119 -3.377269 -6.5 -1.72382 -6.5 0 
+C -6.5 1.72382 -5.815119 3.377269 -4.596194 4.596194 
+C -3.377269 5.815119 -1.72382 6.5 0 6.5 
+z
+" style="stroke: #24343d; stroke-width: 2.4"/>
+   </defs>
+   <g>
+    <use xlink:href="#mdb6d4f4f4a" x="811.275591" y="170.07874" style="fill: #ffffff; stroke: #24343d; stroke-width: 2.4"/>
+   </g>
+  </g>
+  <g id="line2d_28">
+   <path d="M 811.275591 208.346457 
+" style="fill: none; stroke: #24343d; stroke-width: 1.5; stroke-linecap: square"/>
+   <defs>
+    <path id="m05d2d00284" d="M 0 6.5 
+C 1.72382 6.5 3.377269 5.815119 4.596194 4.596194 
+C 5.815119 3.377269 6.5 1.72382 6.5 0 
+C 6.5 -1.72382 5.815119 -3.377269 4.596194 -4.596194 
+C 3.377269 -5.815119 1.72382 -6.5 0 -6.5 
+C -1.72382 -6.5 -3.377269 -5.815119 -4.596194 -4.596194 
+C -5.815119 -3.377269 -6.5 -1.72382 -6.5 0 
+C -6.5 1.72382 -5.815119 3.377269 -4.596194 4.596194 
+C -3.377269 5.815119 -1.72382 6.5 0 6.5 
+z
+" style="stroke: #24343d"/>
+   </defs>
+   <g>
+    <use xlink:href="#m05d2d00284" x="811.275591" y="208.346457" style="fill: #24343d; stroke: #24343d"/>
+   </g>
+  </g>
+  <g id="line2d_29">
+   <path d="M 811.275591 246.614173 
+" style="fill: none; stroke: #24343d; stroke-width: 1.5; stroke-linecap: square"/>
+   <defs>
+    <path id="m7c28aacc2d" d="M -6 6 
+L 6 6 
+L 6 -6 
+L -6 -6 
+z
+" style="stroke: #24343d; stroke-linejoin: miter"/>
+   </defs>
+   <g>
+    <use xlink:href="#m7c28aacc2d" x="811.275591" y="246.614173" style="fill: #24343d; stroke: #24343d; stroke-linejoin: miter"/>
+   </g>
+  </g>
+  <g id="text_33">
+   <text style="font-size: 18px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: start; fill: #24343d" x="836.787402" y="174.736943" transform="rotate(-0 836.787402 174.736943)">USD10</text>
+  </g>
+  <g id="text_34">
+   <text style="font-size: 18px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: start; fill: #24343d" x="836.787402" y="213.00466" transform="rotate(-0 836.787402 213.00466)">USD20</text>
+  </g>
+  <g id="text_35">
+   <text style="font-size: 18px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: start; fill: #24343d" x="836.787402" y="251.272376" transform="rotate(-0 836.787402 251.272376)">B0 acuan</text>
+  </g>
+  <g id="text_36">
+   <text style="font-size: 15px; font-family: 'Liberation Sans', 'DejaVu Sans'; fill: #c47b56" transform="translate(801.070866 320.451644)">DATA TIDAK</text>
+   <text style="font-size: 15px; font-family: 'Liberation Sans', 'DejaVu Sans'; fill: #c47b56" transform="translate(801.070866 338.755453)">TERSEDIA</text>
+   <text style="font-size: 15px; font-family: 'Liberation Sans', 'DejaVu Sans'; fill: #c47b56" transform="translate(801.070866 357.253793)">dalam makalah:</text>
+   <text style="font-size: 15px; font-family: 'Liberation Sans', 'DejaVu Sans'; fill: #c47b56" transform="translate(801.070866 374.07518)">• B2 (USD10, USD20)</text>
+   <text style="font-size: 15px; font-family: 'Liberation Sans', 'DejaVu Sans'; fill: #c47b56" transform="translate(801.070866 392.375473)">• B3, B4 (USD10)</text>
+   <text style="font-size: 15px; font-family: 'Liberation Sans', 'DejaVu Sans'; fill: #c47b56" transform="translate(801.070866 410.675765)">• Y untuk B3 (USD20)</text>
+   <text style="font-size: 15px; font-family: 'Liberation Sans', 'DejaVu Sans'; fill: #c47b56" transform="translate(801.070866 430.454965)">• Y untuk R2</text>
+   <text style="font-size: 15px; font-family: 'Liberation Sans', 'DejaVu Sans'; fill: #c47b56" transform="translate(801.070866 443.39393)"/>
+   <text style="font-size: 15px; font-family: 'Liberation Sans', 'DejaVu Sans'; fill: #c47b56" transform="translate(801.070866 467.055551)">Dibutuhkan: tabel</text>
+   <text style="font-size: 15px; font-family: 'Liberation Sans', 'DejaVu Sans'; fill: #c47b56" transform="translate(801.070866 483.873422)">keluaran eksperimen</text>
+   <text style="font-size: 15px; font-family: 'Liberation Sans', 'DejaVu Sans'; fill: #c47b56" transform="translate(801.070866 502.17723)">alokasi (ΔX, ΔY</text>
+   <text style="font-size: 15px; font-family: 'Liberation Sans', 'DejaVu Sans'; fill: #c47b56" transform="translate(801.070866 520.474008)">per alternatif</text>
+   <text style="font-size: 15px; font-family: 'Liberation Sans', 'DejaVu Sans'; fill: #c47b56" transform="translate(801.070866 538.774301)">dan harga).</text>
+  </g>
+  <g id="text_37">
+   <text style="font-weight: 700; font-size: 26px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: start; fill: #24343d" x="12.245669" y="40.188553" transform="rotate(-0 12.245669 40.188553)">Trade-off alokasi manfaat karbon: konservasi dan pendapatan</text>
+  </g>
+  <g id="text_38">
+   <text style="font-size: 18.5px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: start; fill: #24343d" x="12.245669" y="77.248033" transform="rotate(-0 12.245669 77.248033)">Hanya titik dengan nilai numerik di makalah yang digambar; tidak ada posisi yang dibaca dari gambar</text>
+  </g>
+  <g id="text_39">
+   <text style="font-size: 14.5px; font-family: 'Liberation Sans', 'DejaVu Sans'; fill: #4a5a63" transform="translate(12.245669 779.64121)">B0 = alokasi asli dana fleksibel LPHD (identik dengan S4). R1 = porsi patroli, rehabilitasi, dan kebakaran seperti B0; 20% dana fleksibel</text>
+   <text style="font-size: 14.5px; font-family: 'Liberation Sans', 'DejaVu Sans'; fill: #4a5a63" transform="translate(12.245669 798.011889)">dialihkan dari KUPS ke kompensasi RT terdampak. R2 = porsi patroli 50%. B3, B4 = porsi patroli 40% → 20%. Tujuh alternatif diuji; R1 bukan</text>
+   <text style="font-size: 14.5px; font-family: 'Liberation Sans', 'DejaVu Sans'; fill: #4a5a63" transform="translate(12.245669 816.382568)">solusi optimal untuk semua desa. B1 dibulatkan ke Rp100 (kotak Gambar 7). B4: nilai tertinggi B3–B4 dari teks (“hingga”), dikaitkan ke B4</text>
+   <text style="font-size: 14.5px; font-family: 'Liberation Sans', 'DejaVu Sans'; fill: #4a5a63" transform="translate(12.245669 834.753246)">sesuai Gambar 7. Kehilangan akses = asumsi model. Sumber: teks hlm. 9 dan Gambar 7 makalah; data/alokasi_manfaat_makalah.csv.</text>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p1bdb383056">
+   <rect x="142.866142" y="127.559055" width="632.692913" height="493.228346"/>
+  </clipPath>
+ </defs>
+</svg>

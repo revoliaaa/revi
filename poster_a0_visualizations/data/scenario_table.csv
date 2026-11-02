@@ -1,0 +1,87 @@
+indicator,label_in_workbook,scenario,value
+forest_2087_ha,Hutan 2087 (ha),S1,81889.74553902453
+forest_2087_ha,Hutan 2087 (ha),S2,83614.947576596
+forest_2087_ha,Hutan 2087 (ha),S3,83778.95468424965
+forest_2087_ha,Hutan 2087 (ha),S4 USD6,83873.06333976012
+forest_2087_ha,Hutan 2087 (ha),S4 USD10,84232.89178651024
+forest_2087_ha,Hutan 2087 (ha),S4 USD15,85107.17540566843
+forest_2087_ha,Hutan 2087 (ha),S4 USD20,87112.52341473465
+forest_2087_ha,Hutan 2087 (ha),S4 USD35,90698.03765140276
+defor_cum_ha,Deforestasi kumulatif 2025-2086 (ha),S1,29812.29523818253
+defor_cum_ha,Deforestasi kumulatif 2025-2086 (ha),S2,28091.88315255902
+defor_cum_ha,Deforestasi kumulatif 2025-2086 (ha),S3,27815.59673646777
+defor_cum_ha,Deforestasi kumulatif 2025-2086 (ha),S4 USD6,27695.60773277494
+defor_cum_ha,Deforestasi kumulatif 2025-2086 (ha),S4 USD10,27280.67372740364
+defor_cum_ha,Deforestasi kumulatif 2025-2086 (ha),S4 USD15,26321.81058122735
+defor_cum_ha,Deforestasi kumulatif 2025-2086 (ha),S4 USD20,24227.361464641
+defor_cum_ha,Deforestasi kumulatif 2025-2086 (ha),S4 USD35,21023.17622799111
+defor_avoided_vs_s1_ha,"Deforestasi dihindari vs S1 (ha, 2025-2086)",S2,1720.412085623509
+defor_avoided_vs_s1_ha,"Deforestasi dihindari vs S1 (ha, 2025-2086)",S3,1996.69850171476
+defor_avoided_vs_s1_ha,"Deforestasi dihindari vs S1 (ha, 2025-2086)",S4 USD6,2116.68750540759
+defor_avoided_vs_s1_ha,"Deforestasi dihindari vs S1 (ha, 2025-2086)",S4 USD10,2531.621510778892
+defor_avoided_vs_s1_ha,"Deforestasi dihindari vs S1 (ha, 2025-2086)",S4 USD15,3490.484656955181
+defor_avoided_vs_s1_ha,"Deforestasi dihindari vs S1 (ha, 2025-2086)",S4 USD20,5584.933773541532
+defor_avoided_vs_s1_ha,"Deforestasi dihindari vs S1 (ha, 2025-2086)",S4 USD35,8789.119010191422
+emis_avoided_vs_s1_tco2e,"Emisi dihindari / mitigasi fisik vs S1 (tCO2e, 2025-2086)",S2,597962.5011846572
+emis_avoided_vs_s1_tco2e,"Emisi dihindari / mitigasi fisik vs S1 (tCO2e, 2025-2086)",S3,675168.2614821494
+emis_avoided_vs_s1_tco2e,"Emisi dihindari / mitigasi fisik vs S1 (tCO2e, 2025-2086)",S4 USD6,716321.4580081552
+emis_avoided_vs_s1_tco2e,"Emisi dihindari / mitigasi fisik vs S1 (tCO2e, 2025-2086)",S4 USD10,861543.5372096151
+emis_avoided_vs_s1_tco2e,"Emisi dihindari / mitigasi fisik vs S1 (tCO2e, 2025-2086)",S4 USD15,1199681.405799448
+emis_avoided_vs_s1_tco2e,"Emisi dihindari / mitigasi fisik vs S1 (tCO2e, 2025-2086)",S4 USD20,1940558.138468236
+emis_avoided_vs_s1_tco2e,"Emisi dihindari / mitigasi fisik vs S1 (tCO2e, 2025-2086)",S4 USD35,3245012.191201165
+lphd_min_need_rp_bn_yr,Kebutuhan minimum LPHD 2030-55 (Rp miliar/th),S1,0.0
+lphd_min_need_rp_bn_yr,Kebutuhan minimum LPHD 2030-55 (Rp miliar/th),S2,5.41832684
+lphd_min_need_rp_bn_yr,Kebutuhan minimum LPHD 2030-55 (Rp miliar/th),S3,5.418326839999999
+lphd_min_need_rp_bn_yr,Kebutuhan minimum LPHD 2030-55 (Rp miliar/th),S4 USD6,5.41832684
+lphd_min_need_rp_bn_yr,Kebutuhan minimum LPHD 2030-55 (Rp miliar/th),S4 USD10,5.41832684
+lphd_min_need_rp_bn_yr,Kebutuhan minimum LPHD 2030-55 (Rp miliar/th),S4 USD15,5.41832684
+lphd_min_need_rp_bn_yr,Kebutuhan minimum LPHD 2030-55 (Rp miliar/th),S4 USD20,5.41832684
+lphd_min_need_rp_bn_yr,Kebutuhan minimum LPHD 2030-55 (Rp miliar/th),S4 USD35,5.41832684
+lphd_spend_rp_bn_yr,Belanja LPHD 2030-55 (Rp miliar/th),S1,0.0
+lphd_spend_rp_bn_yr,Belanja LPHD 2030-55 (Rp miliar/th),S2,0.0
+lphd_spend_rp_bn_yr,Belanja LPHD 2030-55 (Rp miliar/th),S3,0.0
+lphd_spend_rp_bn_yr,Belanja LPHD 2030-55 (Rp miliar/th),S4 USD6,0.1932106961240055
+lphd_spend_rp_bn_yr,Belanja LPHD 2030-55 (Rp miliar/th),S4 USD10,0.6414805456907776
+lphd_spend_rp_bn_yr,Belanja LPHD 2030-55 (Rp miliar/th),S4 USD15,1.452377219075542
+lphd_spend_rp_bn_yr,Belanja LPHD 2030-55 (Rp miliar/th),S4 USD20,2.692495925819834
+lphd_spend_rp_bn_yr,Belanja LPHD 2030-55 (Rp miliar/th),S4 USD35,7.232171111193055
+protection_intensity,Intensitas perlindungan 2030-55,S1,0.0
+protection_intensity,Intensitas perlindungan 2030-55,S2,0.2945402730088602
+protection_intensity,Intensitas perlindungan 2030-55,S3,0.2945402730088604
+protection_intensity,Intensitas perlindungan 2030-55,S4 USD6,0.3224203597353728
+protection_intensity,Intensitas perlindungan 2030-55,S4 USD10,0.3871051962041629
+protection_intensity,Intensitas perlindungan 2030-55,S4 USD15,0.5041166765918622
+protection_intensity,Intensitas perlindungan 2030-55,S4 USD20,0.6830644149355566
+protection_intensity,Intensitas perlindungan 2030-55,S4 USD35,0.9707151645407446
+hh_net_income_rp,Pendapatan bersih RT bergantung 2030-55 (Rp/RT/th),S1,41253742.31836852
+hh_net_income_rp,Pendapatan bersih RT bergantung 2030-55 (Rp/RT/th),S2,41198076.85975437
+hh_net_income_rp,Pendapatan bersih RT bergantung 2030-55 (Rp/RT/th),S3,41223678.78454003
+hh_net_income_rp,Pendapatan bersih RT bergantung 2030-55 (Rp/RT/th),S4 USD6,41212558.09520727
+hh_net_income_rp,Pendapatan bersih RT bergantung 2030-55 (Rp/RT/th),S4 USD10,41184117.90080972
+hh_net_income_rp,Pendapatan bersih RT bergantung 2030-55 (Rp/RT/th),S4 USD15,41130900.0810481
+hh_net_income_rp,Pendapatan bersih RT bergantung 2030-55 (Rp/RT/th),S4 USD20,41047389.55311678
+hh_net_income_rp,Pendapatan bersih RT bergantung 2030-55 (Rp/RT/th),S4 USD35,40933910.51912621
+hh_programme_income_rp,Pendapatan program per RT 2030-55 (Rp/RT/th),S1,-207.9019241746433
+hh_programme_income_rp,Pendapatan program per RT 2030-55 (Rp/RT/th),S2,3616.042212679875
+hh_programme_income_rp,Pendapatan program per RT 2030-55 (Rp/RT/th),S3,3616.042212679875
+hh_programme_income_rp,Pendapatan program per RT 2030-55 (Rp/RT/th),S4 USD6,4445.31654691462
+hh_programme_income_rp,Pendapatan program per RT 2030-55 (Rp/RT/th),S4 USD10,6315.25907525901
+hh_programme_income_rp,Pendapatan program per RT 2030-55 (Rp/RT/th),S4 USD15,10140.12495685205
+hh_programme_income_rp,Pendapatan program per RT 2030-55 (Rp/RT/th),S4 USD20,16330.87380875848
+hh_programme_income_rp,Pendapatan program per RT 2030-55 (Rp/RT/th),S4 USD35,37280.29256086605
+hh_access_loss_rp,"Kehilangan akses per RT 2030-55 (Rp/RT/th, asumsi)",S1,0.0
+hh_access_loss_rp,"Kehilangan akses per RT 2030-55 (Rp/RT/th, asumsi)",S2,141352.1629297369
+hh_access_loss_rp,"Kehilangan akses per RT 2030-55 (Rp/RT/th, asumsi)",S3,153113.6617428214
+hh_access_loss_rp,"Kehilangan akses per RT 2030-55 (Rp/RT/th, asumsi)",S4 USD6,176285.0864688351
+hh_access_loss_rp,"Kehilangan akses per RT 2030-55 (Rp/RT/th, asumsi)",S4 USD10,227076.7264775418
+hh_access_loss_rp,"Kehilangan akses per RT 2030-55 (Rp/RT/th, asumsi)",S4 USD15,316365.753692865
+hh_access_loss_rp,"Kehilangan akses per RT 2030-55 (Rp/RT/th, asumsi)",S4 USD20,448031.9022578638
+hh_access_loss_rp,"Kehilangan akses per RT 2030-55 (Rp/RT/th, asumsi)",S4 USD35,682095.9545256974
+npv_project_rp_bn,NPV proyek 10% (Rp miliar; cakupan biaya model),S1,0.0
+npv_project_rp_bn,NPV proyek 10% (Rp miliar; cakupan biaya model),S2,0.0
+npv_project_rp_bn,NPV proyek 10% (Rp miliar; cakupan biaya model),S3,-1.615396311233153
+npv_project_rp_bn,NPV proyek 10% (Rp miliar; cakupan biaya model),S4 USD6,-0.5002948790976187
+npv_project_rp_bn,NPV proyek 10% (Rp miliar; cakupan biaya model),S4 USD10,2.072058857034051
+npv_project_rp_bn,NPV proyek 10% (Rp miliar; cakupan biaya model),S4 USD15,6.091248673307607
+npv_project_rp_bn,NPV proyek 10% (Rp miliar; cakupan biaya model),S4 USD20,11.49756870744492
+npv_project_rp_bn,NPV proyek 10% (Rp miliar; cakupan biaya model),S4 USD35,30.78656281078907

@@ -1,0 +1,15 @@
+gambar,indikator,satuan,periode,sumber,berkas_data,definisi_dan_nilai_presisi,data_tidak_tersedia
+01,Luas areal SK per Hutan Desa,ha,—(status SK),Tabel 1 makalah hlm. 3,data/hutan_desa_tabel1.csv,"Luas areal berdasarkan SK pengelolaan; total 124.941 ha. Bukan luas proyek karbon (111.123,17 ha).","Peta: DATA TIDAK TERSEDIA (shapefile batas HD, batas administrasi, inset Kalbar/Indonesia)"
+02,Struktur umpan balik model,—,2024–2087 (simulasi),Gambar 3 makalah hlm. 5; teks hlm. 4–5,—,"Polaritas: + searah, − berlawanan arah. Kehilangan akses = asumsi model (pengali 0–3,24). Kompensasi hanya ada di alternatif R1.",—
+03,Deforestasi dihindari S2−S1,ha,kumulatif 2025–2086,Tabel 4 hlm. 7; FINAL_THESIS_RESULTS.xlsx lembar 2,data/stepwise_contrasts.csv,"Selisih deforestasi kumulatif S1 − S2 (nilai presisi 1.720,41)",—
+03,Deforestasi dihindari S3−S2,ha,kumulatif 2025–2086,teks hlm. 7; lembar 2,data/stepwise_contrasts.csv,"Nilai presisi 276,29",—
+03,Deforestasi dihindari S4−S3 (USD20),ha,kumulatif 2025–2086,"teks hlm. 7, 10; lembar 2",data/stepwise_contrasts.csv,"Nilai presisi 3.588,24",—
+03,Deforestasi dihindari S4−S1 (USD20),ha,kumulatif 2025–2086,Tabel 4; lembar 2,data/stepwise_contrasts.csv,"Nilai presisi 5.584,93 = jumlah tepat ketiga komponen; label dibulatkan 5.585",—
+04,NPV proyek per harga,Rp miliar,"2024–2086, diskonto 10%",FINAL_THESIS_RESULTS.xlsx lembar 4,data/price_grid.csv,"Cakupan biaya model, tanpa biaya pengembangan proyek; 40 run deterministik USD1–40",—
+04,Harga impas NPV proyek,USD/tCO2e,2024–2086,teks hlm. 7; lembar 3,data/break_even_prices.csv,"6,8289",—
+04,Cakupan kebutuhan minimum LPHD per harga,%,rerata 2030–2055,"lembar 4; teks hlm. 7 (11,8%; 49,7%)",data/price_grid.csv,"Belanja LPHD ÷ kebutuhan minimum (Rp5,418 miliar/th); rata-rata periode, bukan per tahun",—
+04,Harga menutup kebutuhan minimum LPHD,USD/tCO2e,rerata 2030–2055,teks hlm. 7; lembar 3,data/break_even_prices.csv,"28,0381",—
+05,Pendapatan program per RT (S4),Rp/RT/tahun,rerata 2030–2055,teks hlm. 8; lembar 1A,data/scenario_table.csv,"6.315,26 (USD10); 16.330,87 (USD20). Komponen, bukan perubahan total pendapatan",—
+05,Kehilangan akses per RT (S4),Rp/RT/tahun,rerata 2030–2055,teks hlm. 8; lembar 1A,data/scenario_table.csv,"227.076,73 (USD10); 448.031,90 (USD20). Asumsi model (kelas D), bukan kerugian terukur",—
+06,Δ deforestasi dihindari vs B0,ha,kumulatif 2025–2086,teks hlm. 9; kotak Gambar 7,data/alokasi_manfaat_makalah.csv,"Tersedia: B0, B1, R1 (x=0), B3/B4 USD20 (−2.801), R2 (+237; +2.475)","B2 (kedua harga); B3, B4 pada USD10"
+06,Δ pendapatan RT terdampak vs B0,Rp/RT/tahun,rerata 2030–2055,teks hlm. 9; kotak Gambar 7,data/alokasi_manfaat_makalah.csv,"Tersedia: R1 (33.571; 134.322), B1 (16.600; 66.400 dibulatkan), B4 USD20 (572.157)","B2; B3 (kedua harga); B4 USD10; R2 (arah negatif dilaporkan, besaran tidak)"

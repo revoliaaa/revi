@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="1020.472441pt" height="708.661417pt" viewBox="0 0 1020.472441 708.661417" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-11-02T13:21:13.559567</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 708.661417 
+L 1020.472441 708.661417 
+L 1020.472441 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 142.866142 488.976378 
+L 979.653543 488.976378 
+L 979.653543 120.472441 
+L 142.866142 120.472441 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <path d="M 187.694038 488.976378 
+L 187.694038 120.472441 
+" clip-path="url(#p1b5776a6f7)" style="fill: none; stroke: #e3e8e8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_2">
+      <defs>
+       <path id="m46002942e5" d="M 0 0 
+L 0 6 
+" style="stroke: #24343d; stroke-width: 1.2"/>
+      </defs>
+      <g>
+       <use xlink:href="#m46002942e5" x="187.694038" y="488.976378" style="fill: #24343d; stroke: #24343d; stroke-width: 1.2"/>
+      </g>
+     </g>
+     <g id="text_1">
+      <text style="font-size: 19px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: middle; fill: #24343d" x="187.694038" y="512.308897" transform="rotate(-0 187.694038 512.308897)">−500</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_3">
+      <path d="M 262.407199 488.976378 
+L 262.407199 120.472441 
+" clip-path="url(#p1b5776a6f7)" style="fill: none; stroke: #e3e8e8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_4">
+      <g>
+       <use xlink:href="#m46002942e5" x="262.407199" y="488.976378" style="fill: #24343d; stroke: #24343d; stroke-width: 1.2"/>
+      </g>
+     </g>
+     <g id="text_2">
+      <text style="font-size: 19px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: middle; fill: #24343d" x="262.407199" y="512.308897" transform="rotate(-0 262.407199 512.308897)">−400</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_5">
+      <path d="M 337.12036 488.976378 
+L 337.12036 120.472441 
+" clip-path="url(#p1b5776a6f7)" style="fill: none; stroke: #e3e8e8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_6">
+      <g>
+       <use xlink:href="#m46002942e5" x="337.12036" y="488.976378" style="fill: #24343d; stroke: #24343d; stroke-width: 1.2"/>
+      </g>
+     </g>
+     <g id="text_3">
+      <text style="font-size: 19px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: middle; fill: #24343d" x="337.12036" y="512.308897" transform="rotate(-0 337.12036 512.308897)">−300</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_7">
+      <path d="M 411.833521 488.976378 
+L 411.833521 120.472441 
+" clip-path="url(#p1b5776a6f7)" style="fill: none; stroke: #e3e8e8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_8">
+      <g>
+       <use xlink:href="#m46002942e5" x="411.833521" y="488.976378" style="fill: #24343d; stroke: #24343d; stroke-width: 1.2"/>
+      </g>
+     </g>
+     <g id="text_4">
+      <text style="font-size: 19px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: middle; fill: #24343d" x="411.833521" y="512.308897" transform="rotate(-0 411.833521 512.308897)">−200</text>
+     </g>
+    </g>
+    <g id="xtick_5">
+     <g id="line2d_9">
+      <path d="M 486.546682 488.976378 
+L 486.546682 120.472441 
+" clip-path="url(#p1b5776a6f7)" style="fill: none; stroke: #e3e8e8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_10">
+      <g>
+       <use xlink:href="#m46002942e5" x="486.546682" y="488.976378" style="fill: #24343d; stroke: #24343d; stroke-width: 1.2"/>
+      </g>
+     </g>
+     <g id="text_5">
+      <text style="font-size: 19px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: middle; fill: #24343d" x="486.546682" y="512.308897" transform="rotate(-0 486.546682 512.308897)">−100</text>
+     </g>
+    </g>
+    <g id="xtick_6">
+     <g id="line2d_11">
+      <path d="M 561.259843 488.976378 
+L 561.259843 120.472441 
+" clip-path="url(#p1b5776a6f7)" style="fill: none; stroke: #e3e8e8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_12">
+      <g>
+       <use xlink:href="#m46002942e5" x="561.259843" y="488.976378" style="fill: #24343d; stroke: #24343d; stroke-width: 1.2"/>
+      </g>
+     </g>
+     <g id="text_6">
+      <text style="font-size: 19px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: middle; fill: #24343d" x="561.259843" y="512.308897" transform="rotate(-0 561.259843 512.308897)">0</text>
+     </g>
+    </g>
+    <g id="xtick_7">
+     <g id="line2d_13">
+      <path d="M 635.973003 488.976378 
+L 635.973003 120.472441 
+" clip-path="url(#p1b5776a6f7)" style="fill: none; stroke: #e3e8e8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_14">
+      <g>
+       <use xlink:href="#m46002942e5" x="635.973003" y="488.976378" style="fill: #24343d; stroke: #24343d; stroke-width: 1.2"/>
+      </g>
+     </g>
+     <g id="text_7">
+      <text style="font-size: 19px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: middle; fill: #24343d" x="635.973003" y="512.308897" transform="rotate(-0 635.973003 512.308897)">+100</text>
+     </g>
+    </g>
+    <g id="xtick_8">
+     <g id="line2d_15">
+      <path d="M 710.686164 488.976378 
+L 710.686164 120.472441 
+" clip-path="url(#p1b5776a6f7)" style="fill: none; stroke: #e3e8e8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_16">
+      <g>
+       <use xlink:href="#m46002942e5" x="710.686164" y="488.976378" style="fill: #24343d; stroke: #24343d; stroke-width: 1.2"/>
+      </g>
+     </g>
+     <g id="text_8">
+      <text style="font-size: 19px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: middle; fill: #24343d" x="710.686164" y="512.308897" transform="rotate(-0 710.686164 512.308897)">+200</text>
+     </g>
+    </g>
+    <g id="xtick_9">
+     <g id="line2d_17">
+      <path d="M 785.399325 488.976378 
+L 785.399325 120.472441 
+" clip-path="url(#p1b5776a6f7)" style="fill: none; stroke: #e3e8e8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_18">
+      <g>
+       <use xlink:href="#m46002942e5" x="785.399325" y="488.976378" style="fill: #24343d; stroke: #24343d; stroke-width: 1.2"/>
+      </g>
+     </g>
+     <g id="text_9">
+      <text style="font-size: 19px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: middle; fill: #24343d" x="785.399325" y="512.308897" transform="rotate(-0 785.399325 512.308897)">+300</text>
+     </g>
+    </g>
+    <g id="xtick_10">
+     <g id="line2d_19">
+      <path d="M 860.112486 488.976378 
+L 860.112486 120.472441 
+" clip-path="url(#p1b5776a6f7)" style="fill: none; stroke: #e3e8e8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_20">
+      <g>
+       <use xlink:href="#m46002942e5" x="860.112486" y="488.976378" style="fill: #24343d; stroke: #24343d; stroke-width: 1.2"/>
+      </g>
+     </g>
+     <g id="text_10">
+      <text style="font-size: 19px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: middle; fill: #24343d" x="860.112486" y="512.308897" transform="rotate(-0 860.112486 512.308897)">+400</text>
+     </g>
+    </g>
+    <g id="xtick_11">
+     <g id="line2d_21">
+      <path d="M 934.825647 488.976378 
+L 934.825647 120.472441 
+" clip-path="url(#p1b5776a6f7)" style="fill: none; stroke: #e3e8e8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_22">
+      <g>
+       <use xlink:href="#m46002942e5" x="934.825647" y="488.976378" style="fill: #24343d; stroke: #24343d; stroke-width: 1.2"/>
+      </g>
+     </g>
+     <g id="text_11">
+      <text style="font-size: 19px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: middle; fill: #24343d" x="934.825647" y="512.308897" transform="rotate(-0 934.825647 512.308897)">+500</text>
+     </g>
+    </g>
+    <g id="text_12">
+     <text style="font-size: 21px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: middle; fill: #24343d" x="561.259843" y="535.596007" transform="rotate(-0 561.259843 535.596007)">Rp ribu per RT per tahun (rerata 2030–2055, skenario S4)</text>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_23"/>
+     <g id="text_13">
+      <text style="font-weight: 700; font-size: 21px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: end; fill: #24343d" x="130.866142" y="265.402509" transform="rotate(-0 130.866142 265.402509)">USD10</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_24"/>
+     <g id="text_14">
+      <text style="font-weight: 700; font-size: 21px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: end; fill: #24343d" x="130.866142" y="409.913856" transform="rotate(-0 130.866142 409.913856)">USD20</text>
+     </g>
+    </g>
+   </g>
+   <g id="patch_3">
+    <path d="M 142.866142 488.976378 
+L 979.653543 488.976378 
+" style="fill: none; stroke: #24343d; stroke-width: 1.2; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 561.259843 293.886058 
+L 391.603643 293.886058 
+L 391.603643 221.630384 
+L 561.259843 221.630384 
+z
+" clip-path="url(#p1b5776a6f7)" style="fill: #c47b56"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 561.259843 293.886058 
+L 565.978172 293.886058 
+L 565.978172 221.630384 
+L 561.259843 221.630384 
+z
+" clip-path="url(#p1b5776a6f7)" style="fill: #3d887b"/>
+   </g>
+   <g id="text_15">
+    <text style="font-weight: 700; font-size: 21px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: start; fill: #ffffff" x="399.074959" y="263.192792" transform="rotate(-0 399.074959 263.192792)">−Rp227.077</text>
+   </g>
+   <g id="text_16">
+    <text style="font-weight: 700; font-size: 21px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: start; fill: #24343d" x="571.955225" y="263.192792" transform="rotate(-0 571.955225 263.192792)">+Rp6.315</text>
+   </g>
+   <g id="patch_6">
+    <path d="M 561.259843 438.397406 
+L 226.521047 438.397406 
+L 226.521047 366.141732 
+L 561.259843 366.141732 
+z
+" clip-path="url(#p1b5776a6f7)" style="fill: #c47b56"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 561.259843 438.397406 
+L 573.461155 438.397406 
+L 573.461155 366.141732 
+L 561.259843 366.141732 
+z
+" clip-path="url(#p1b5776a6f7)" style="fill: #3d887b"/>
+   </g>
+   <g id="text_17">
+    <text style="font-weight: 700; font-size: 21px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: start; fill: #ffffff" x="233.992363" y="407.70414" transform="rotate(-0 233.992363 407.70414)">−Rp448.032</text>
+   </g>
+   <g id="text_18">
+    <text style="font-weight: 700; font-size: 21px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: start; fill: #24343d" x="579.438207" y="407.70414" transform="rotate(-0 579.438207 407.70414)">+Rp16.331</text>
+   </g>
+   <g id="text_19">
+    <text style="font-weight: 700; font-size: 17px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: end; fill: #c47b56" x="553.788526" y="172.548481" transform="rotate(-0 553.788526 172.548481)">← Kehilangan akses (asumsi model)</text>
+   </g>
+   <g id="text_20">
+    <text style="font-weight: 700; font-size: 17px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: start; fill: #3d887b" x="568.731159" y="172.548481" transform="rotate(-0 568.731159 172.548481)">Manfaat program per RT →</text>
+   </g>
+   <g id="text_21">
+    <text style="font-size: 18.5px; font-family: 'Liberation Sans', 'DejaVu Sans'; fill: #24343d" transform="translate(610.56751 312.227518)">Kehilangan akses ≈ 36× (USD10)</text>
+    <text style="font-size: 18.5px; font-family: 'Liberation Sans', 'DejaVu Sans'; fill: #24343d" transform="translate(675.803135 334.802216)">dan 27× (USD20)</text>
+    <text style="font-size: 18.5px; font-family: 'Liberation Sans', 'DejaVu Sans'; fill: #24343d" transform="translate(677.612667 357.358124)">manfaat program</text>
+   </g>
+   <g id="line2d_25">
+    <path d="M 561.259843 488.976378 
+L 561.259843 120.472441 
+" clip-path="url(#p1b5776a6f7)" style="fill: none; stroke: #24343d; stroke-width: 1.8; stroke-linecap: square"/>
+   </g>
+  </g>
+  <g id="text_22">
+   <text style="font-weight: 700; font-size: 26px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: start; fill: #24343d" x="12.245669" y="36.645246" transform="rotate(-0 12.245669 36.645246)">Manfaat program dan potensi kehilangan pendapatan RT</text>
+  </g>
+  <g id="text_23">
+   <text style="font-size: 18.5px; font-family: 'Liberation Sans', 'DejaVu Sans'; text-anchor: start; fill: #24343d" x="12.245669" y="73.704726" transform="rotate(-0 12.245669 73.704726)">Kedua komponen dihitung pada skala yang sama; besaran kehilangan bergantung pada asumsi pembatasan akses</text>
+  </g>
+  <g id="text_24">
+   <text style="font-size: 14.5px; font-family: 'Liberation Sans', 'DejaVu Sans'; fill: #4a5a63" transform="translate(12.245669 639.609714)">Manfaat program = pendapatan program per RT; kehilangan akses = rata-rata per RT, asumsi model (kelas D), bukan kerugian terukur. Keduanya</text>
+   <text style="font-size: 14.5px; font-family: 'Liberation Sans', 'DejaVu Sans'; fill: #4a5a63" transform="translate(12.245669 657.980393)">komponen, bukan perubahan total pendapatan terhadap baseline (rerata pendapatan bersih RT S1: Rp41,25 juta/RT/tahun). Sensitivitas:</text>
+   <text style="font-size: 14.5px; font-family: 'Liberation Sans', 'DejaVu Sans'; fill: #4a5a63" transform="translate(12.245669 676.351072)">pengali kehilangan akses diuji 0–3,24; PRCC terhadap pendapatan RT −0,79. Tanpa kehilangan akses, selisih pendapatan S4−S3 menjadi</text>
+   <text style="font-size: 14.5px; font-family: 'Liberation Sans', 'DejaVu Sans'; fill: #4a5a63" transform="translate(12.245669 694.72175)">+Rp34.402 (USD10) dan +Rp118.629 (USD20). Sumber: teks hlm. 8–9 makalah; FINAL_THESIS_RESULTS.xlsx lembar 1A.</text>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p1b5776a6f7">
+   <rect x="142.866142" y="120.472441" width="836.787402" height="368.503937"/>
+  </clipPath>
+ </defs>
+</svg>
