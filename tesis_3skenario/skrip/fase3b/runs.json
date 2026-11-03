@@ -1,0 +1,1547 @@
+{
+ "S1": {
+  "Skenario Kebijakan": 1
+ },
+ "A|6": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 6
+ },
+ "B|6": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 6,
+  "Switch Baseline Kredit Konservatif": 1
+ },
+ "C|6|J1|d3|h0|m0": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 6,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 782860000.0,
+  "Durasi Pembiayaan Jembatan": 3,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 0,
+  "Biaya Modal Pendanaan Awal": 0
+ },
+ "C|6|J1|d3|h0|m0.1": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 6,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 782860000.0,
+  "Durasi Pembiayaan Jembatan": 3,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 0,
+  "Biaya Modal Pendanaan Awal": 0.1
+ },
+ "C|6|J1|d3|h1|m0": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 6,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 782860000.0,
+  "Durasi Pembiayaan Jembatan": 3,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 1,
+  "Biaya Modal Pendanaan Awal": 0
+ },
+ "C|6|J1|d3|h1|m0.1": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 6,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 782860000.0,
+  "Durasi Pembiayaan Jembatan": 3,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 1,
+  "Biaya Modal Pendanaan Awal": 0.1
+ },
+ "C|6|J1|d5|h0|m0": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 6,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 782860000.0,
+  "Durasi Pembiayaan Jembatan": 5,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 0,
+  "Biaya Modal Pendanaan Awal": 0
+ },
+ "C|6|J1|d5|h0|m0.1": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 6,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 782860000.0,
+  "Durasi Pembiayaan Jembatan": 5,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 0,
+  "Biaya Modal Pendanaan Awal": 0.1
+ },
+ "C|6|J1|d5|h1|m0": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 6,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 782860000.0,
+  "Durasi Pembiayaan Jembatan": 5,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 1,
+  "Biaya Modal Pendanaan Awal": 0
+ },
+ "C|6|J1|d5|h1|m0.1": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 6,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 782860000.0,
+  "Durasi Pembiayaan Jembatan": 5,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 1,
+  "Biaya Modal Pendanaan Awal": 0.1
+ },
+ "C|6|J1|d8|h0|m0": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 6,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 782860000.0,
+  "Durasi Pembiayaan Jembatan": 8,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 0,
+  "Biaya Modal Pendanaan Awal": 0
+ },
+ "C|6|J1|d8|h0|m0.1": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 6,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 782860000.0,
+  "Durasi Pembiayaan Jembatan": 8,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 0,
+  "Biaya Modal Pendanaan Awal": 0.1
+ },
+ "C|6|J1|d8|h1|m0": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 6,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 782860000.0,
+  "Durasi Pembiayaan Jembatan": 8,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 1,
+  "Biaya Modal Pendanaan Awal": 0
+ },
+ "C|6|J1|d8|h1|m0.1": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 6,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 782860000.0,
+  "Durasi Pembiayaan Jembatan": 8,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 1,
+  "Biaya Modal Pendanaan Awal": 0.1
+ },
+ "C|6|JP|d3|h0|m0": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 6,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 1000000000000.0,
+  "Durasi Pembiayaan Jembatan": 3,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 0,
+  "Biaya Modal Pendanaan Awal": 0
+ },
+ "C|6|JP|d3|h0|m0.1": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 6,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 1000000000000.0,
+  "Durasi Pembiayaan Jembatan": 3,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 0,
+  "Biaya Modal Pendanaan Awal": 0.1
+ },
+ "C|6|JP|d3|h1|m0": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 6,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 1000000000000.0,
+  "Durasi Pembiayaan Jembatan": 3,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 1,
+  "Biaya Modal Pendanaan Awal": 0
+ },
+ "C|6|JP|d3|h1|m0.1": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 6,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 1000000000000.0,
+  "Durasi Pembiayaan Jembatan": 3,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 1,
+  "Biaya Modal Pendanaan Awal": 0.1
+ },
+ "C|6|JP|d5|h0|m0": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 6,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 1000000000000.0,
+  "Durasi Pembiayaan Jembatan": 5,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 0,
+  "Biaya Modal Pendanaan Awal": 0
+ },
+ "C|6|JP|d5|h0|m0.1": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 6,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 1000000000000.0,
+  "Durasi Pembiayaan Jembatan": 5,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 0,
+  "Biaya Modal Pendanaan Awal": 0.1
+ },
+ "C|6|JP|d5|h1|m0": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 6,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 1000000000000.0,
+  "Durasi Pembiayaan Jembatan": 5,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 1,
+  "Biaya Modal Pendanaan Awal": 0
+ },
+ "C|6|JP|d5|h1|m0.1": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 6,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 1000000000000.0,
+  "Durasi Pembiayaan Jembatan": 5,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 1,
+  "Biaya Modal Pendanaan Awal": 0.1
+ },
+ "C|6|JP|d8|h0|m0": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 6,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 1000000000000.0,
+  "Durasi Pembiayaan Jembatan": 8,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 0,
+  "Biaya Modal Pendanaan Awal": 0
+ },
+ "C|6|JP|d8|h0|m0.1": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 6,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 1000000000000.0,
+  "Durasi Pembiayaan Jembatan": 8,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 0,
+  "Biaya Modal Pendanaan Awal": 0.1
+ },
+ "C|6|JP|d8|h1|m0": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 6,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 1000000000000.0,
+  "Durasi Pembiayaan Jembatan": 8,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 1,
+  "Biaya Modal Pendanaan Awal": 0
+ },
+ "C|6|JP|d8|h1|m0.1": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 6,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 1000000000000.0,
+  "Durasi Pembiayaan Jembatan": 8,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 1,
+  "Biaya Modal Pendanaan Awal": 0.1
+ },
+ "Dg-B-tanpaMRV|6": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 6,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Biaya Monitoring per Ha per Tahun": 0,
+  "Biaya Verifikasi per Kejadian": 0
+ },
+ "Dg-C-1th|6": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 6,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 1000000000000.0,
+  "Durasi Pembiayaan Jembatan": 1
+ },
+ "Dg-C-1th-tanpaMRV|6": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 6,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 1000000000000.0,
+  "Durasi Pembiayaan Jembatan": 1,
+  "Biaya Monitoring per Ha per Tahun": 0,
+  "Biaya Verifikasi per Kejadian": 0
+ },
+ "Dg-C-penuh-sampai2087|6": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 6,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 1000000000000.0,
+  "Durasi Pembiayaan Jembatan": 62
+ },
+ "A|10": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 10
+ },
+ "B|10": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 10,
+  "Switch Baseline Kredit Konservatif": 1
+ },
+ "C|10|J1|d3|h0|m0": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 10,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 782860000.0,
+  "Durasi Pembiayaan Jembatan": 3,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 0,
+  "Biaya Modal Pendanaan Awal": 0
+ },
+ "C|10|J1|d3|h0|m0.1": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 10,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 782860000.0,
+  "Durasi Pembiayaan Jembatan": 3,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 0,
+  "Biaya Modal Pendanaan Awal": 0.1
+ },
+ "C|10|J1|d3|h1|m0": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 10,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 782860000.0,
+  "Durasi Pembiayaan Jembatan": 3,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 1,
+  "Biaya Modal Pendanaan Awal": 0
+ },
+ "C|10|J1|d3|h1|m0.1": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 10,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 782860000.0,
+  "Durasi Pembiayaan Jembatan": 3,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 1,
+  "Biaya Modal Pendanaan Awal": 0.1
+ },
+ "C|10|J1|d5|h0|m0": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 10,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 782860000.0,
+  "Durasi Pembiayaan Jembatan": 5,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 0,
+  "Biaya Modal Pendanaan Awal": 0
+ },
+ "C|10|J1|d5|h0|m0.1": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 10,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 782860000.0,
+  "Durasi Pembiayaan Jembatan": 5,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 0,
+  "Biaya Modal Pendanaan Awal": 0.1
+ },
+ "C|10|J1|d5|h1|m0": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 10,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 782860000.0,
+  "Durasi Pembiayaan Jembatan": 5,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 1,
+  "Biaya Modal Pendanaan Awal": 0
+ },
+ "C|10|J1|d5|h1|m0.1": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 10,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 782860000.0,
+  "Durasi Pembiayaan Jembatan": 5,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 1,
+  "Biaya Modal Pendanaan Awal": 0.1
+ },
+ "C|10|J1|d8|h0|m0": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 10,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 782860000.0,
+  "Durasi Pembiayaan Jembatan": 8,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 0,
+  "Biaya Modal Pendanaan Awal": 0
+ },
+ "C|10|J1|d8|h0|m0.1": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 10,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 782860000.0,
+  "Durasi Pembiayaan Jembatan": 8,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 0,
+  "Biaya Modal Pendanaan Awal": 0.1
+ },
+ "C|10|J1|d8|h1|m0": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 10,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 782860000.0,
+  "Durasi Pembiayaan Jembatan": 8,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 1,
+  "Biaya Modal Pendanaan Awal": 0
+ },
+ "C|10|J1|d8|h1|m0.1": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 10,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 782860000.0,
+  "Durasi Pembiayaan Jembatan": 8,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 1,
+  "Biaya Modal Pendanaan Awal": 0.1
+ },
+ "C|10|JP|d3|h0|m0": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 10,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 1000000000000.0,
+  "Durasi Pembiayaan Jembatan": 3,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 0,
+  "Biaya Modal Pendanaan Awal": 0
+ },
+ "C|10|JP|d3|h0|m0.1": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 10,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 1000000000000.0,
+  "Durasi Pembiayaan Jembatan": 3,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 0,
+  "Biaya Modal Pendanaan Awal": 0.1
+ },
+ "C|10|JP|d3|h1|m0": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 10,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 1000000000000.0,
+  "Durasi Pembiayaan Jembatan": 3,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 1,
+  "Biaya Modal Pendanaan Awal": 0
+ },
+ "C|10|JP|d3|h1|m0.1": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 10,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 1000000000000.0,
+  "Durasi Pembiayaan Jembatan": 3,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 1,
+  "Biaya Modal Pendanaan Awal": 0.1
+ },
+ "C|10|JP|d5|h0|m0": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 10,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 1000000000000.0,
+  "Durasi Pembiayaan Jembatan": 5,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 0,
+  "Biaya Modal Pendanaan Awal": 0
+ },
+ "C|10|JP|d5|h0|m0.1": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 10,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 1000000000000.0,
+  "Durasi Pembiayaan Jembatan": 5,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 0,
+  "Biaya Modal Pendanaan Awal": 0.1
+ },
+ "C|10|JP|d5|h1|m0": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 10,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 1000000000000.0,
+  "Durasi Pembiayaan Jembatan": 5,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 1,
+  "Biaya Modal Pendanaan Awal": 0
+ },
+ "C|10|JP|d5|h1|m0.1": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 10,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 1000000000000.0,
+  "Durasi Pembiayaan Jembatan": 5,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 1,
+  "Biaya Modal Pendanaan Awal": 0.1
+ },
+ "C|10|JP|d8|h0|m0": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 10,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 1000000000000.0,
+  "Durasi Pembiayaan Jembatan": 8,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 0,
+  "Biaya Modal Pendanaan Awal": 0
+ },
+ "C|10|JP|d8|h0|m0.1": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 10,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 1000000000000.0,
+  "Durasi Pembiayaan Jembatan": 8,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 0,
+  "Biaya Modal Pendanaan Awal": 0.1
+ },
+ "C|10|JP|d8|h1|m0": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 10,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 1000000000000.0,
+  "Durasi Pembiayaan Jembatan": 8,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 1,
+  "Biaya Modal Pendanaan Awal": 0
+ },
+ "C|10|JP|d8|h1|m0.1": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 10,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 1000000000000.0,
+  "Durasi Pembiayaan Jembatan": 8,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 1,
+  "Biaya Modal Pendanaan Awal": 0.1
+ },
+ "Dg-B-tanpaMRV|10": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 10,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Biaya Monitoring per Ha per Tahun": 0,
+  "Biaya Verifikasi per Kejadian": 0
+ },
+ "Dg-C-1th|10": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 10,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 1000000000000.0,
+  "Durasi Pembiayaan Jembatan": 1
+ },
+ "Dg-C-1th-tanpaMRV|10": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 10,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 1000000000000.0,
+  "Durasi Pembiayaan Jembatan": 1,
+  "Biaya Monitoring per Ha per Tahun": 0,
+  "Biaya Verifikasi per Kejadian": 0
+ },
+ "Dg-C-penuh-sampai2087|10": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 10,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 1000000000000.0,
+  "Durasi Pembiayaan Jembatan": 62
+ },
+ "A|15": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 15
+ },
+ "B|15": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 15,
+  "Switch Baseline Kredit Konservatif": 1
+ },
+ "C|15|J1|d3|h0|m0": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 15,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 782860000.0,
+  "Durasi Pembiayaan Jembatan": 3,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 0,
+  "Biaya Modal Pendanaan Awal": 0
+ },
+ "C|15|J1|d3|h0|m0.1": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 15,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 782860000.0,
+  "Durasi Pembiayaan Jembatan": 3,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 0,
+  "Biaya Modal Pendanaan Awal": 0.1
+ },
+ "C|15|J1|d3|h1|m0": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 15,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 782860000.0,
+  "Durasi Pembiayaan Jembatan": 3,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 1,
+  "Biaya Modal Pendanaan Awal": 0
+ },
+ "C|15|J1|d3|h1|m0.1": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 15,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 782860000.0,
+  "Durasi Pembiayaan Jembatan": 3,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 1,
+  "Biaya Modal Pendanaan Awal": 0.1
+ },
+ "C|15|J1|d5|h0|m0": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 15,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 782860000.0,
+  "Durasi Pembiayaan Jembatan": 5,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 0,
+  "Biaya Modal Pendanaan Awal": 0
+ },
+ "C|15|J1|d5|h0|m0.1": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 15,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 782860000.0,
+  "Durasi Pembiayaan Jembatan": 5,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 0,
+  "Biaya Modal Pendanaan Awal": 0.1
+ },
+ "C|15|J1|d5|h1|m0": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 15,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 782860000.0,
+  "Durasi Pembiayaan Jembatan": 5,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 1,
+  "Biaya Modal Pendanaan Awal": 0
+ },
+ "C|15|J1|d5|h1|m0.1": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 15,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 782860000.0,
+  "Durasi Pembiayaan Jembatan": 5,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 1,
+  "Biaya Modal Pendanaan Awal": 0.1
+ },
+ "C|15|J1|d8|h0|m0": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 15,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 782860000.0,
+  "Durasi Pembiayaan Jembatan": 8,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 0,
+  "Biaya Modal Pendanaan Awal": 0
+ },
+ "C|15|J1|d8|h0|m0.1": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 15,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 782860000.0,
+  "Durasi Pembiayaan Jembatan": 8,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 0,
+  "Biaya Modal Pendanaan Awal": 0.1
+ },
+ "C|15|J1|d8|h1|m0": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 15,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 782860000.0,
+  "Durasi Pembiayaan Jembatan": 8,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 1,
+  "Biaya Modal Pendanaan Awal": 0
+ },
+ "C|15|J1|d8|h1|m0.1": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 15,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 782860000.0,
+  "Durasi Pembiayaan Jembatan": 8,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 1,
+  "Biaya Modal Pendanaan Awal": 0.1
+ },
+ "C|15|JP|d3|h0|m0": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 15,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 1000000000000.0,
+  "Durasi Pembiayaan Jembatan": 3,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 0,
+  "Biaya Modal Pendanaan Awal": 0
+ },
+ "C|15|JP|d3|h0|m0.1": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 15,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 1000000000000.0,
+  "Durasi Pembiayaan Jembatan": 3,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 0,
+  "Biaya Modal Pendanaan Awal": 0.1
+ },
+ "C|15|JP|d3|h1|m0": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 15,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 1000000000000.0,
+  "Durasi Pembiayaan Jembatan": 3,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 1,
+  "Biaya Modal Pendanaan Awal": 0
+ },
+ "C|15|JP|d3|h1|m0.1": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 15,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 1000000000000.0,
+  "Durasi Pembiayaan Jembatan": 3,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 1,
+  "Biaya Modal Pendanaan Awal": 0.1
+ },
+ "C|15|JP|d5|h0|m0": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 15,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 1000000000000.0,
+  "Durasi Pembiayaan Jembatan": 5,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 0,
+  "Biaya Modal Pendanaan Awal": 0
+ },
+ "C|15|JP|d5|h0|m0.1": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 15,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 1000000000000.0,
+  "Durasi Pembiayaan Jembatan": 5,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 0,
+  "Biaya Modal Pendanaan Awal": 0.1
+ },
+ "C|15|JP|d5|h1|m0": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 15,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 1000000000000.0,
+  "Durasi Pembiayaan Jembatan": 5,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 1,
+  "Biaya Modal Pendanaan Awal": 0
+ },
+ "C|15|JP|d5|h1|m0.1": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 15,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 1000000000000.0,
+  "Durasi Pembiayaan Jembatan": 5,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 1,
+  "Biaya Modal Pendanaan Awal": 0.1
+ },
+ "C|15|JP|d8|h0|m0": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 15,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 1000000000000.0,
+  "Durasi Pembiayaan Jembatan": 8,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 0,
+  "Biaya Modal Pendanaan Awal": 0
+ },
+ "C|15|JP|d8|h0|m0.1": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 15,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 1000000000000.0,
+  "Durasi Pembiayaan Jembatan": 8,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 0,
+  "Biaya Modal Pendanaan Awal": 0.1
+ },
+ "C|15|JP|d8|h1|m0": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 15,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 1000000000000.0,
+  "Durasi Pembiayaan Jembatan": 8,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 1,
+  "Biaya Modal Pendanaan Awal": 0
+ },
+ "C|15|JP|d8|h1|m0.1": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 15,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 1000000000000.0,
+  "Durasi Pembiayaan Jembatan": 8,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 1,
+  "Biaya Modal Pendanaan Awal": 0.1
+ },
+ "Dg-B-tanpaMRV|15": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 15,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Biaya Monitoring per Ha per Tahun": 0,
+  "Biaya Verifikasi per Kejadian": 0
+ },
+ "Dg-C-1th|15": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 15,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 1000000000000.0,
+  "Durasi Pembiayaan Jembatan": 1
+ },
+ "Dg-C-1th-tanpaMRV|15": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 15,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 1000000000000.0,
+  "Durasi Pembiayaan Jembatan": 1,
+  "Biaya Monitoring per Ha per Tahun": 0,
+  "Biaya Verifikasi per Kejadian": 0
+ },
+ "Dg-C-penuh-sampai2087|15": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 15,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 1000000000000.0,
+  "Durasi Pembiayaan Jembatan": 62
+ },
+ "A|20": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 20
+ },
+ "B|20": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 20,
+  "Switch Baseline Kredit Konservatif": 1
+ },
+ "C|20|J1|d3|h0|m0": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 20,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 782860000.0,
+  "Durasi Pembiayaan Jembatan": 3,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 0,
+  "Biaya Modal Pendanaan Awal": 0
+ },
+ "C|20|J1|d3|h0|m0.1": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 20,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 782860000.0,
+  "Durasi Pembiayaan Jembatan": 3,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 0,
+  "Biaya Modal Pendanaan Awal": 0.1
+ },
+ "C|20|J1|d3|h1|m0": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 20,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 782860000.0,
+  "Durasi Pembiayaan Jembatan": 3,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 1,
+  "Biaya Modal Pendanaan Awal": 0
+ },
+ "C|20|J1|d3|h1|m0.1": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 20,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 782860000.0,
+  "Durasi Pembiayaan Jembatan": 3,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 1,
+  "Biaya Modal Pendanaan Awal": 0.1
+ },
+ "C|20|J1|d5|h0|m0": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 20,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 782860000.0,
+  "Durasi Pembiayaan Jembatan": 5,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 0,
+  "Biaya Modal Pendanaan Awal": 0
+ },
+ "C|20|J1|d5|h0|m0.1": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 20,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 782860000.0,
+  "Durasi Pembiayaan Jembatan": 5,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 0,
+  "Biaya Modal Pendanaan Awal": 0.1
+ },
+ "C|20|J1|d5|h1|m0": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 20,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 782860000.0,
+  "Durasi Pembiayaan Jembatan": 5,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 1,
+  "Biaya Modal Pendanaan Awal": 0
+ },
+ "C|20|J1|d5|h1|m0.1": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 20,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 782860000.0,
+  "Durasi Pembiayaan Jembatan": 5,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 1,
+  "Biaya Modal Pendanaan Awal": 0.1
+ },
+ "C|20|J1|d8|h0|m0": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 20,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 782860000.0,
+  "Durasi Pembiayaan Jembatan": 8,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 0,
+  "Biaya Modal Pendanaan Awal": 0
+ },
+ "C|20|J1|d8|h0|m0.1": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 20,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 782860000.0,
+  "Durasi Pembiayaan Jembatan": 8,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 0,
+  "Biaya Modal Pendanaan Awal": 0.1
+ },
+ "C|20|J1|d8|h1|m0": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 20,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 782860000.0,
+  "Durasi Pembiayaan Jembatan": 8,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 1,
+  "Biaya Modal Pendanaan Awal": 0
+ },
+ "C|20|J1|d8|h1|m0.1": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 20,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 782860000.0,
+  "Durasi Pembiayaan Jembatan": 8,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 1,
+  "Biaya Modal Pendanaan Awal": 0.1
+ },
+ "C|20|JP|d3|h0|m0": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 20,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 1000000000000.0,
+  "Durasi Pembiayaan Jembatan": 3,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 0,
+  "Biaya Modal Pendanaan Awal": 0
+ },
+ "C|20|JP|d3|h0|m0.1": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 20,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 1000000000000.0,
+  "Durasi Pembiayaan Jembatan": 3,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 0,
+  "Biaya Modal Pendanaan Awal": 0.1
+ },
+ "C|20|JP|d3|h1|m0": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 20,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 1000000000000.0,
+  "Durasi Pembiayaan Jembatan": 3,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 1,
+  "Biaya Modal Pendanaan Awal": 0
+ },
+ "C|20|JP|d3|h1|m0.1": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 20,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 1000000000000.0,
+  "Durasi Pembiayaan Jembatan": 3,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 1,
+  "Biaya Modal Pendanaan Awal": 0.1
+ },
+ "C|20|JP|d5|h0|m0": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 20,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 1000000000000.0,
+  "Durasi Pembiayaan Jembatan": 5,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 0,
+  "Biaya Modal Pendanaan Awal": 0
+ },
+ "C|20|JP|d5|h0|m0.1": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 20,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 1000000000000.0,
+  "Durasi Pembiayaan Jembatan": 5,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 0,
+  "Biaya Modal Pendanaan Awal": 0.1
+ },
+ "C|20|JP|d5|h1|m0": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 20,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 1000000000000.0,
+  "Durasi Pembiayaan Jembatan": 5,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 1,
+  "Biaya Modal Pendanaan Awal": 0
+ },
+ "C|20|JP|d5|h1|m0.1": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 20,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 1000000000000.0,
+  "Durasi Pembiayaan Jembatan": 5,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 1,
+  "Biaya Modal Pendanaan Awal": 0.1
+ },
+ "C|20|JP|d8|h0|m0": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 20,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 1000000000000.0,
+  "Durasi Pembiayaan Jembatan": 8,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 0,
+  "Biaya Modal Pendanaan Awal": 0
+ },
+ "C|20|JP|d8|h0|m0.1": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 20,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 1000000000000.0,
+  "Durasi Pembiayaan Jembatan": 8,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 0,
+  "Biaya Modal Pendanaan Awal": 0.1
+ },
+ "C|20|JP|d8|h1|m0": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 20,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 1000000000000.0,
+  "Durasi Pembiayaan Jembatan": 8,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 1,
+  "Biaya Modal Pendanaan Awal": 0
+ },
+ "C|20|JP|d8|h1|m0.1": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 20,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 1000000000000.0,
+  "Durasi Pembiayaan Jembatan": 8,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 1,
+  "Biaya Modal Pendanaan Awal": 0.1
+ },
+ "Dg-B-tanpaMRV|20": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 20,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Biaya Monitoring per Ha per Tahun": 0,
+  "Biaya Verifikasi per Kejadian": 0
+ },
+ "Dg-C-1th|20": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 20,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 1000000000000.0,
+  "Durasi Pembiayaan Jembatan": 1
+ },
+ "Dg-C-1th-tanpaMRV|20": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 20,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 1000000000000.0,
+  "Durasi Pembiayaan Jembatan": 1,
+  "Biaya Monitoring per Ha per Tahun": 0,
+  "Biaya Verifikasi per Kejadian": 0
+ },
+ "Dg-C-penuh-sampai2087|20": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 20,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 1000000000000.0,
+  "Durasi Pembiayaan Jembatan": 62
+ },
+ "A|35": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 35
+ },
+ "B|35": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 35,
+  "Switch Baseline Kredit Konservatif": 1
+ },
+ "C|35|J1|d3|h0|m0": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 35,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 782860000.0,
+  "Durasi Pembiayaan Jembatan": 3,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 0,
+  "Biaya Modal Pendanaan Awal": 0
+ },
+ "C|35|J1|d3|h0|m0.1": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 35,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 782860000.0,
+  "Durasi Pembiayaan Jembatan": 3,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 0,
+  "Biaya Modal Pendanaan Awal": 0.1
+ },
+ "C|35|J1|d3|h1|m0": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 35,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 782860000.0,
+  "Durasi Pembiayaan Jembatan": 3,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 1,
+  "Biaya Modal Pendanaan Awal": 0
+ },
+ "C|35|J1|d3|h1|m0.1": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 35,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 782860000.0,
+  "Durasi Pembiayaan Jembatan": 3,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 1,
+  "Biaya Modal Pendanaan Awal": 0.1
+ },
+ "C|35|J1|d5|h0|m0": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 35,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 782860000.0,
+  "Durasi Pembiayaan Jembatan": 5,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 0,
+  "Biaya Modal Pendanaan Awal": 0
+ },
+ "C|35|J1|d5|h0|m0.1": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 35,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 782860000.0,
+  "Durasi Pembiayaan Jembatan": 5,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 0,
+  "Biaya Modal Pendanaan Awal": 0.1
+ },
+ "C|35|J1|d5|h1|m0": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 35,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 782860000.0,
+  "Durasi Pembiayaan Jembatan": 5,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 1,
+  "Biaya Modal Pendanaan Awal": 0
+ },
+ "C|35|J1|d5|h1|m0.1": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 35,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 782860000.0,
+  "Durasi Pembiayaan Jembatan": 5,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 1,
+  "Biaya Modal Pendanaan Awal": 0.1
+ },
+ "C|35|J1|d8|h0|m0": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 35,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 782860000.0,
+  "Durasi Pembiayaan Jembatan": 8,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 0,
+  "Biaya Modal Pendanaan Awal": 0
+ },
+ "C|35|J1|d8|h0|m0.1": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 35,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 782860000.0,
+  "Durasi Pembiayaan Jembatan": 8,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 0,
+  "Biaya Modal Pendanaan Awal": 0.1
+ },
+ "C|35|J1|d8|h1|m0": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 35,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 782860000.0,
+  "Durasi Pembiayaan Jembatan": 8,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 1,
+  "Biaya Modal Pendanaan Awal": 0
+ },
+ "C|35|J1|d8|h1|m0.1": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 35,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 782860000.0,
+  "Durasi Pembiayaan Jembatan": 8,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 1,
+  "Biaya Modal Pendanaan Awal": 0.1
+ },
+ "C|35|JP|d3|h0|m0": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 35,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 1000000000000.0,
+  "Durasi Pembiayaan Jembatan": 3,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 0,
+  "Biaya Modal Pendanaan Awal": 0
+ },
+ "C|35|JP|d3|h0|m0.1": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 35,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 1000000000000.0,
+  "Durasi Pembiayaan Jembatan": 3,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 0,
+  "Biaya Modal Pendanaan Awal": 0.1
+ },
+ "C|35|JP|d3|h1|m0": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 35,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 1000000000000.0,
+  "Durasi Pembiayaan Jembatan": 3,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 1,
+  "Biaya Modal Pendanaan Awal": 0
+ },
+ "C|35|JP|d3|h1|m0.1": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 35,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 1000000000000.0,
+  "Durasi Pembiayaan Jembatan": 3,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 1,
+  "Biaya Modal Pendanaan Awal": 0.1
+ },
+ "C|35|JP|d5|h0|m0": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 35,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 1000000000000.0,
+  "Durasi Pembiayaan Jembatan": 5,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 0,
+  "Biaya Modal Pendanaan Awal": 0
+ },
+ "C|35|JP|d5|h0|m0.1": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 35,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 1000000000000.0,
+  "Durasi Pembiayaan Jembatan": 5,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 0,
+  "Biaya Modal Pendanaan Awal": 0.1
+ },
+ "C|35|JP|d5|h1|m0": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 35,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 1000000000000.0,
+  "Durasi Pembiayaan Jembatan": 5,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 1,
+  "Biaya Modal Pendanaan Awal": 0
+ },
+ "C|35|JP|d5|h1|m0.1": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 35,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 1000000000000.0,
+  "Durasi Pembiayaan Jembatan": 5,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 1,
+  "Biaya Modal Pendanaan Awal": 0.1
+ },
+ "C|35|JP|d8|h0|m0": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 35,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 1000000000000.0,
+  "Durasi Pembiayaan Jembatan": 8,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 0,
+  "Biaya Modal Pendanaan Awal": 0
+ },
+ "C|35|JP|d8|h0|m0.1": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 35,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 1000000000000.0,
+  "Durasi Pembiayaan Jembatan": 8,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 0,
+  "Biaya Modal Pendanaan Awal": 0.1
+ },
+ "C|35|JP|d8|h1|m0": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 35,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 1000000000000.0,
+  "Durasi Pembiayaan Jembatan": 8,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 1,
+  "Biaya Modal Pendanaan Awal": 0
+ },
+ "C|35|JP|d8|h1|m0.1": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 35,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 1000000000000.0,
+  "Durasi Pembiayaan Jembatan": 8,
+  "Switch Henti Jembatan saat Kas Karbon Pertama": 1,
+  "Biaya Modal Pendanaan Awal": 0.1
+ },
+ "Dg-B-tanpaMRV|35": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 35,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Biaya Monitoring per Ha per Tahun": 0,
+  "Biaya Verifikasi per Kejadian": 0
+ },
+ "Dg-C-1th|35": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 35,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 1000000000000.0,
+  "Durasi Pembiayaan Jembatan": 1
+ },
+ "Dg-C-1th-tanpaMRV|35": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 35,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 1000000000000.0,
+  "Durasi Pembiayaan Jembatan": 1,
+  "Biaya Monitoring per Ha per Tahun": 0,
+  "Biaya Verifikasi per Kejadian": 0
+ },
+ "Dg-C-penuh-sampai2087|35": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 35,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 1000000000000.0,
+  "Durasi Pembiayaan Jembatan": 62
+ },
+ "Dg-S1-tanpa-patroli-mitra-2024-25": {
+  "Skenario Kebijakan": 1,
+  "Switch Pendanaan Awal": 0
+ },
+ "Dg-A20-tanpa-patroli-mitra-2024-25": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 20,
+  "Switch Pendanaan Awal": 0
+ },
+ "Dg-S1-k0": {
+  "Skenario Kebijakan": 1,
+  "Tingkat Keberlanjutan Patroli Reguler": 0
+ },
+ "Dg-A20-k0": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 20,
+  "Tingkat Keberlanjutan Patroli Reguler": 0
+ },
+ "Dg-S1-k0-tanpa-mitra": {
+  "Skenario Kebijakan": 1,
+  "Tingkat Keberlanjutan Patroli Reguler": 0,
+  "Switch Pendanaan Awal": 0
+ },
+ "Dg-S1-tanpa-PS": {
+  "Skenario Kebijakan": 1,
+  "Switch PS": 0
+ },
+ "Dg-B20-PendanaanAwalPatroli": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 20,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Pendanaan Awal untuk Patroli": 1000000000.0,
+  "Status Pembiayaan Awal": 1
+ },
+ "Dg-B20-PendanaanAwalProyek": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 20,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Besaran Pendanaan Awal Proyek Karbon": 1000000000.0
+ },
+ "Dg-B20-kasNonKarbon": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 20,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Dana Non Karbon": 1,
+  "Dana Operasional Non Karbon Tunai": 3000000000.0
+ },
+ "Dg-S1-kasNonKarbon": {
+  "Skenario Kebijakan": 1,
+  "Switch Dana Non Karbon": 1,
+  "Dana Operasional Non Karbon Tunai": 3000000000.0
+ },
+ "Th-C-JP-d5|22.5": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 22.5,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 1000000000000.0,
+  "Durasi Pembiayaan Jembatan": 5
+ },
+ "Th-C-J1-d5|22.5": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 22.5,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 782860000.0,
+  "Durasi Pembiayaan Jembatan": 5
+ },
+ "Th-C-JP-d5|25": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 25,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 1000000000000.0,
+  "Durasi Pembiayaan Jembatan": 5
+ },
+ "Th-C-J1-d5|25": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 25,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 782860000.0,
+  "Durasi Pembiayaan Jembatan": 5
+ },
+ "Th-C-JP-d5|27.5": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 27.5,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 1000000000000.0,
+  "Durasi Pembiayaan Jembatan": 5
+ },
+ "Th-C-J1-d5|27.5": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 27.5,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 782860000.0,
+  "Durasi Pembiayaan Jembatan": 5
+ },
+ "Th-C-JP-d5|30": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 30,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 1000000000000.0,
+  "Durasi Pembiayaan Jembatan": 5
+ },
+ "Th-C-J1-d5|30": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 30,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 782860000.0,
+  "Durasi Pembiayaan Jembatan": 5
+ },
+ "Th-C-JP-d5|32.5": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 32.5,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 1000000000000.0,
+  "Durasi Pembiayaan Jembatan": 5
+ },
+ "Th-C-J1-d5|32.5": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 32.5,
+  "Switch Baseline Kredit Konservatif": 1,
+  "Switch Pembiayaan Jembatan Karbon": 1,
+  "Besaran Pembiayaan Jembatan per Tahun": 782860000.0,
+  "Durasi Pembiayaan Jembatan": 5
+ }
+}
