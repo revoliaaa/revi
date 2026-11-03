@@ -3,13 +3,13 @@
   "Kode": "V0a",
   "Uji": "Parsing PySD",
   "Status": "LULUS",
-  "Bukti": "read_vensim berhasil; 926 variabel"
+  "Bukti": "read_vensim berhasil; 937 variabel; 16 View"
  },
  {
   "Kode": "V0b",
   "Uji": "Referensi dan loop aljabar",
   "Status": "LULUS",
-  "Bukti": "referensi tak dikenal 0; loop aljabar 0; pemakai Switch Karbon 12 (9 lama + jembatan + 2 pelaporan PWD-K)"
+  "Bukti": "referensi tak dikenal 0; loop aljabar 0; pemakai Switch Karbon 14 (9 lama + jembatan + 4 rantai kredit/pelaporan PWD-K)"
  },
  {
   "Kode": "V0c",
@@ -21,7 +21,7 @@
   "Kode": "V18",
   "Uji": "Konsistensi dimensional (pemeriksa statis)",
   "Status": "LULUS",
-  "Bukti": "922 persamaan konsisten, 0 bermasalah"
+  "Bukti": "933 persamaan konsisten, 0 bermasalah"
  },
  {
   "Kode": "R1",
