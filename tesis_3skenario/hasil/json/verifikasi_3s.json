@@ -1,0 +1,97 @@
+[
+ {
+  "uji": "Neraca luas & karbon S1",
+  "status": "PASS",
+  "rincian": "|Check Total Kawasan| maks 1.60e-10 ha; |Check Konservasi Karbon| maks 3.59e-08; Total Kawasan 124941.00 ha konstan"
+ },
+ {
+  "uji": "Neraca luas & karbon S2",
+  "status": "PASS",
+  "rincian": "|Check Total Kawasan| maks 1.89e-10 ha; |Check Konservasi Karbon| maks 7.64e-08; Total Kawasan 124941.00 ha konstan"
+ },
+ {
+  "uji": "Neraca luas & karbon S3-10",
+  "status": "PASS",
+  "rincian": "|Check Total Kawasan| maks 1.75e-10 ha; |Check Konservasi Karbon| maks 5.87e-08; Total Kawasan 124941.00 ha konstan"
+ },
+ {
+  "uji": "Neraca luas & karbon S3-35",
+  "status": "PASS",
+  "rincian": "|Check Total Kawasan| maks 1.16e-10 ha; |Check Konservasi Karbon| maks 3.59e-08; Total Kawasan 124941.00 ha konstan"
+ },
+ {
+  "uji": "Patroli 2024-2025 hanya dari pembiayaan awal (S2)",
+  "status": "PASS",
+  "rincian": "HOK 2024 2533.0; 2025 3011.0; swadaya maks 0.0; belanja karbon patroli 2024-25 0 Rp; patroli pembiayaan awal sesudah 2025 0.0"
+ },
+ {
+  "uji": "Nilai pembiayaan awal = HOK x biaya (S2)",
+  "status": "PASS",
+  "rincian": "1,441,440,000 Rp = (2.533 + 3.011) x Rp 260.000"
+ },
+ {
+  "uji": "Patroli 2024-2025 hanya dari pembiayaan awal (S3-10)",
+  "status": "PASS",
+  "rincian": "HOK 2024 2533.0; 2025 3011.0; swadaya maks 0.0; belanja karbon patroli 2024-25 0 Rp; patroli pembiayaan awal sesudah 2025 0.0"
+ },
+ {
+  "uji": "Nilai pembiayaan awal = HOK x biaya (S3-10)",
+  "status": "PASS",
+  "rincian": "1,441,440,000 Rp = (2.533 + 3.011) x Rp 260.000"
+ },
+ {
+  "uji": "Patroli 2024-2025 hanya dari pembiayaan awal (S3-35)",
+  "status": "PASS",
+  "rincian": "HOK 2024 2533.0; 2025 3011.0; swadaya maks 0.0; belanja karbon patroli 2024-25 0 Rp; patroli pembiayaan awal sesudah 2025 0.0"
+ },
+ {
+  "uji": "Nilai pembiayaan awal = HOK x biaya (S3-35)",
+  "status": "PASS",
+  "rincian": "1,441,440,000 Rp = (2.533 + 3.011) x Rp 260.000"
+ },
+ {
+  "uji": "S1 tanpa patroli & tanpa pembiayaan awal",
+  "status": "PASS",
+  "rincian": "semua 0"
+ },
+ {
+  "uji": "S2 tanpa penerimaan karbon",
+  "status": "PASS",
+  "rincian": "penerimaan kredit & dana LPHD = 0"
+ },
+ {
+  "uji": "Ekstrem: patroli 2024-2025 = 0 -> efek patroli S2 hilang",
+  "status": "PASS",
+  "rincian": "deforestasi S2 tanpa patroli 29870.4 ha vs S1 29812.3 ha (sisa selisih -58.1 ha = efek penghidupan/KUPS PS)"
+ },
+ {
+  "uji": "Ekstrem: efektivitas = 0 -> patroli tidak mengubah deforestasi",
+  "status": "PASS",
+  "rincian": "S2 efektivitas 0: 29870.367 ha; S2 tanpa patroli: 29870.367 ha"
+ },
+ {
+  "uji": "Ekstrem: harga karbon 0 -> S3 = S2 (hutan)",
+  "status": "PASS",
+  "rincian": "S3 USD0 29686.725 ha vs S2 29686.725 ha; dana LPHD 0"
+ },
+ {
+  "uji": "Ekstrem: harga USD500 -> intensitas <= 1, stok >= 0",
+  "status": "PASS",
+  "rincian": "intensitas maks 1.000; hutan min 90408 ha"
+ },
+ {
+  "uji": "Ekstrem: patroli 10x -> intensitas dibatasi 1",
+  "status": "PASS",
+  "rincian": "intensitas maks 1.000"
+ },
+ {
+  "uji": "Monoton: deforestasi tidak naik saat harga naik",
+  "status": "PASS",
+  "rincian": "grid USD1-60"
+ },
+ {
+  "uji": "Uji langkah waktu DT 0,0625 vs 0,03125",
+  "status": "PASS",
+  "rincian": "selisih relatif maks 0.635 % (5 indikator x 3 skenario)"
+ }
+]

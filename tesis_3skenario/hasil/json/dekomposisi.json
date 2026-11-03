@@ -1,0 +1,21 @@
+{
+ "Lama: S3(lama)-S1 [PS swadaya + pembiayaan awal lama]": 1996.6985017147563,
+ "Lama: S2(lama)-S1 [PS swadaya saja]": 1720.4120856235022,
+ "Diagnostik: patroli final 2024-25 + swadaya lama 2.355 HOK sesudah 2025": 1799.616534703393,
+ "Baru: S2-S1 [patroli final 2024-25, tanpa swadaya]": 125.57042451111192,
+ "Lama: S4-S3 USD10": 534.9230090641286,
+ "Diagnostik USD10 (dengan swadaya)": 462.262664572856,
+ "Baru: S3-S2 USD10": 20.88411522152819,
+ "Lama: S4-S3 USD20": 3588.2352718267684,
+ "Diagnostik USD20 (dengan swadaya)": 2906.440043828883,
+ "Baru: S3-S2 USD20": 139.4089569551179,
+ "Lama NPV USD10 (Rp)": 2072058857.0340512,
+ "Diagnostik NPV USD10": 578697611.658672,
+ "Baru NPV USD10": -2079471364.118462,
+ "Lama kebutuhan minimum LPHD (Rp/th)": 5418326840.0,
+ "Baru kebutuhan minimum LPHD (Rp/th)": 6030681440.0,
+ "Lama pembiayaan awal (Rp)": 1768974480.0,
+ "Baru pembiayaan awal (Rp)": 1441440000.0,
+ "Lama HOK patroli 2024 S3": 5757.083999999999,
+ "Lama HOK patroli 2025 S3": 5757.083999999999
+}
