@@ -1,0 +1,203 @@
+{
+ "S1": {
+  "Skenario Kebijakan": 1
+ },
+ "rep_S1": {
+  "Skenario Kebijakan": 1,
+  "Upah Harian Patroli Berbayar": 130000,
+  "Biaya Operasional Patroli Sukarela per Anggota per Tahun": 1192050
+ },
+ "rep_A20": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 20,
+  "Upah Harian Patroli Berbayar": 130000,
+  "Biaya Operasional Patroli Sukarela per Anggota per Tahun": 1192050,
+  "Switch Baseline Kredit Konservatif": 0,
+  "Switch Pembiayaan Jembatan Karbon": 0
+ },
+ "rep_C20": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 20,
+  "Upah Harian Patroli Berbayar": 130000,
+  "Biaya Operasional Patroli Sukarela per Anggota per Tahun": 1192050,
+  "Switch Baseline Kredit Konservatif": 1
+ },
+ "C6": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 6
+ },
+ "C10": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 10
+ },
+ "C15": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 15
+ },
+ "C20": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 20
+ },
+ "C35": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 35
+ },
+ "A6": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 6,
+  "Switch Baseline Kredit Konservatif": 0,
+  "Switch Pembiayaan Jembatan Karbon": 0
+ },
+ "A10": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 10,
+  "Switch Baseline Kredit Konservatif": 0,
+  "Switch Pembiayaan Jembatan Karbon": 0
+ },
+ "A15": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 15,
+  "Switch Baseline Kredit Konservatif": 0,
+  "Switch Pembiayaan Jembatan Karbon": 0
+ },
+ "A20": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 20,
+  "Switch Baseline Kredit Konservatif": 0,
+  "Switch Pembiayaan Jembatan Karbon": 0
+ },
+ "A35": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 35,
+  "Switch Baseline Kredit Konservatif": 0,
+  "Switch Pembiayaan Jembatan Karbon": 0
+ },
+ "B20": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 20,
+  "Switch Pembiayaan Jembatan Karbon": 0
+ },
+ "B35": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 35,
+  "Switch Pembiayaan Jembatan Karbon": 0
+ },
+ "E_C0": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 0
+ },
+ "E_C0_tanpajembatan": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 0,
+  "Switch Pembiayaan Jembatan Karbon": 0
+ },
+ "E_S1_k0": {
+  "Skenario Kebijakan": 1,
+  "Tingkat Keberlanjutan Patroli Reguler": 0
+ },
+ "E_C20_k0": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 20,
+  "Tingkat Keberlanjutan Patroli Reguler": 0
+ },
+ "E_S1_k1": {
+  "Skenario Kebijakan": 1,
+  "Tingkat Keberlanjutan Patroli Reguler": 1
+ },
+ "E_C20_k1": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 20,
+  "Tingkat Keberlanjutan Patroli Reguler": 1
+ },
+ "E_C20_eff0": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 20,
+  "Efektivitas Perlindungan Penuh terhadap Deforestasi": 0
+ },
+ "E_S1_eff0": {
+  "Skenario Kebijakan": 1,
+  "Efektivitas Perlindungan Penuh terhadap Deforestasi": 0
+ },
+ "E_C500": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 500
+ },
+ "E_S1_kasbesar": {
+  "Skenario Kebijakan": 1,
+  "Switch Dana Non Karbon": 1,
+  "Dana Operasional Non Karbon Tunai": 1000000000000.0
+ },
+ "E_C20_kasNK": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 20,
+  "Switch Dana Non Karbon": 1,
+  "Dana Operasional Non Karbon Tunai": 3000000000.0
+ },
+ "E_S1_kasNK": {
+  "Skenario Kebijakan": 1,
+  "Switch Dana Non Karbon": 1,
+  "Dana Operasional Non Karbon Tunai": 3000000000.0
+ },
+ "E_S1_nontunai_x10": {
+  "Skenario Kebijakan": 1,
+  "Hari Logistik Swadaya per Anggota": 91.7,
+  "Upah Harian Patroli Berbayar": 150000
+ },
+ "M_B20_henti": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 20,
+  "Switch Pembiayaan Jembatan Karbon": 0,
+  "Switch Aturan Penghentian MRV": 1
+ },
+ "M_C20_henti": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 20,
+  "Switch Aturan Penghentian MRV": 1
+ },
+ "M_C35_henti": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 35,
+  "Switch Aturan Penghentian MRV": 1
+ },
+ "M_C20_tunda": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 20,
+  "Tahun Mulai Monitoring MRV": 2026
+ },
+ "T_C6_bm10": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 6,
+  "Biaya Modal Pendanaan Awal": 0.1
+ },
+ "T_C6_bm10_hapus": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 6,
+  "Biaya Modal Pendanaan Awal": 0.1,
+  "Switch Penghapusan Talangan": 1
+ },
+ "T_C10_sesudah_bm10": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 10,
+  "Biaya Modal Pendanaan Awal": 0.1,
+  "Switch Pemulihan Talangan Sebelum Bagi Hasil": 0
+ },
+ "T_C20_sesudah": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 20,
+  "Switch Pemulihan Talangan Sebelum Bagi Hasil": 0
+ },
+ "DT_S1": {
+  "Skenario Kebijakan": 1,
+  "TIME STEP": 0.03125
+ },
+ "DT_C20": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 20,
+  "TIME STEP": 0.03125
+ },
+ "P_C35_putus": {
+  "Skenario Kebijakan": 2,
+  "Harga Karbon": 35,
+  "Proporsi Alokasi Perlindungan": 0
+ }
+}
