@@ -1,7 +1,7 @@
 """Pemeriksaan dimensional statis: satuan setiap persamaan diturunkan dari satuan yang dideklarasikan pada variabel masukannya."""
 import re, sys, json, sympy as sp
 sys.path.insert(0, "fase1b"); import os, importlib; P = importlib.import_module(os.environ.get("USULAN", "usulan")).P
-txt = open("out/DKP_25HD_FINAL_3SKENARIO.mdl", encoding="utf-8").read().split("\\\\\\---///")[0]
+txt = open(__import__("os").environ.get("MDL", "out/DKP_25HD_FINAL_3SKENARIO.mdl"), encoding="utf-8").read().split("\\\\\\---///")[0]
 E, U, LK = {}, {}, set()
 for blk in txt.split("|\n"):
     m = re.match(r"\s*(.+?)(\(\s*\n|=)\s*\n?\t?(.*?)\n\t~\t(.*?)\n", blk, re.S)

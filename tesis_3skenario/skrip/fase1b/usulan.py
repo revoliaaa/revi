@@ -209,3 +209,11 @@ a("Nilai Kontribusi Tenaga Non Tunai", "HOK Patroli Reguler PS*Upah Setara Non T
 a("HOK Penanaman Berupah", "HOK Penanaman Didanai Kas+HOK Penanaman Non Karbon*Porsi Tenaga Penanaman Non Karbon Dibayar", "HOK/Year", "G7", "")
 a("Upah Kegiatan PS", "Upah Patroli Berbayar+Upah Penanaman Program Non Karbon+Upah Penanaman Didanai Karbon+Upah Pengendalian Kebakaran", "Rupiah/Year", "G7", "")
 a("Check Identitas HOK Penanaman", "HOK Penanaman-(HOK Penanaman Didanai Kas+HOK Penanaman Non Karbon)", "HOK/Year", "G7", "harus 0")
+
+# ===== Penanda Fase 2 (komentar saja; persamaan tidak berubah) =====
+_D1 = "PERINGATAN D1: patroli reguler pasca-2025 dan logistiknya adalah ASUMSI EKSPLORATIF (k); nilai non-tunai yang dicatat TIDAK membuktikan tenaga/logistik benar-benar tersedia sampai 2087"
+for _n in ["HOK Patroli Reguler PS", "Nilai Logistik Non Tunai Patroli", "Nilai Kontribusi Tenaga Non Tunai", "Nilai Kontribusi Swadaya", "Tingkat Keberlanjutan Patroli Reguler"]:
+    _e, _u, _k, _s = P[_n]; P[_n] = (_e, _u, _k, (_s + "; " if _s else "") + _D1)
+_D3 = "PERINGATAN D3: NPV SEMENTARA, belum memuat biaya pengembangan proyek aktual (default 0) dan biaya material non-karbon (kosong); diskonto 10 % tak bersumber. Harga impas dari NPV ini BUKAN hasil tesis final"
+for _n in ["NPV Proyek Keseluruhan", "NPV Inkremental Perdagangan Karbon", "NPV Mitra", "Biaya Pengembangan Proyek"]:
+    _e, _u, _k, _s = P[_n]; P[_n] = (_e, _u, _k, (_s + "; " if _s else "") + _D3)

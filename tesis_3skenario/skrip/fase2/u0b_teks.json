@@ -1,0 +1,19 @@
+{
+ "rancangan": 168,
+ "identik": 168,
+ "tidak_identik": [],
+ "dihapus": [
+  "Dana Program Eksogen",
+  "Hari Patroli Swadaya per Anggota",
+  "Porsi Pembiayaan Awal sebagai Talangan",
+  "Proporsi Penggantian Anggota Patroli Swadaya",
+  "Proporsi Penggantian KUPS Tanpa Dana Karbon",
+  "Switch Dana Program Eksogen",
+  "Switch Patroli Swadaya Reguler",
+  "Tahun Akhir Dana Eksogen",
+  "Tahun Mulai Dana Eksogen"
+ ],
+ "ditambah": 103,
+ "tak_diubah_tapi_berbeda": [],
+ "tak_diubah_identik": 649
+}

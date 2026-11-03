@@ -1,0 +1,228 @@
+{
+ "struktural": [
+  {
+   "Kode": "U1",
+   "Uji": "Konfigurasi skenario",
+   "Status": "LULUS",
+   "Bukti": "S1 Switch Karbon maks 0; S2 min 1; switch PS/rehab/pendanaan = 1 di kedua skenario"
+  },
+  {
+   "Kode": "U2",
+   "Uji": "Kegiatan PS S1 berlanjut sesudah 2025 (k=0,5)",
+   "Status": "LULUS",
+   "Bukti": "HOK reguler S1 2026–2087: min 1505.5, maks 1505.5 HOK/th"
+  },
+  {
+   "Kode": "U3",
+   "Uji": "Patroli historis tidak ganda (aktivitas, biaya, upah, kebutuhan, upah karbon)",
+   "Status": "LULUS",
+   "Bukti": "S1: total HOK 2024 2533.000, 2025 3011.000; reguler/kas 2024–25 maks 0.00e+00; |check| 0.0e+00; biaya kumulatif Rp 1,441,440,000; upah 2024 Rp 329,290,000; kebutuhan & upah karbon 2024–25 = 0.0e+00 || S2 USD20: total HOK 2024 2533.000, 2025 3011.000; reguler/kas 2024–25 maks 0.00e+00; |check| 0.0e+00; biaya kumulatif Rp 1,441,440,000; upah 2024 Rp 329,290,000; kebutuhan & upah karbon 2024–25 = 0.0e+00 || varian kas non-karbon Rp 5 miliar sejak 2024: total 2024 2533.000, 2025 3011.000"
+  },
+  {
+   "Kode": "U4",
+   "Uji": "S1 = S2 sebelum kas karbon pertama",
+   "Status": "LULUS",
+   "Bukti": "kas karbon pertama S2 USD10 pada t = 2031.8750; 32 variabel berbeda sebelum itu, semuanya keuangan/kredit; di luar daftar diizinkan: []"
+  },
+  {
+   "Kode": "U5",
+   "Uji": "Tidak ada pengurangan ganda patroli (run dasar)",
+   "Status": "LULUS",
+   "Bukti": "anggota S1 2026–2087: 254.0000–254.0000; HOK reguler 1505.50–1505.50 (k×3.011 = 1.505,5)"
+  },
+  {
+   "Kode": "U6",
+   "Uji": "Langkah waktu DT 0,0625 vs 0,03125",
+   "Status": "LULUS",
+   "Bukti": "selisih relatif maks 0.087 % (deforestasi, hutan 2087, kas karbon, belanja LPHD × 3 run); syarat DT ≤ Waktu Pembelanjaan (1 th) terpenuhi"
+  },
+  {
+   "Kode": "U7",
+   "Uji": "Neraca LPHD dan belanja ≤ kas",
+   "Status": "LULUS",
+   "Bukti": "S1: saldo min 0.00e+00; saldo karbon−saldo maks 0.00e+00; |check neraca| maks 0.00e+00 Rp; Σ proporsi maks 1.0000; guna−tersedia maks 0.00e+00 || S2-10: saldo min 0.00e+00; saldo karbon−saldo maks 0.00e+00; |check neraca| maks 6.39e-06 Rp; Σ proporsi maks 1.0000; guna−tersedia maks 0.00e+00 || S2-35: saldo min 0.00e+00; saldo karbon−saldo maks 0.00e+00; |check neraca| maks 2.08e-04 Rp; Σ proporsi maks 1.0000; guna−tersedia maks 0.00e+00 || S1+kas non-karbon: saldo min 0.00e+00; saldo karbon−saldo maks 0.00e+00; |check neraca| maks 3.07e-04 Rp; Σ proporsi maks 1.0000; guna−tersedia maks 0.00e+00 || belanja pertama S2-10 t=2031.9375, kas karbon pertama t=2031.8750"
+  },
+  {
+   "Kode": "U8",
+   "Uji": "Tidak ada kas fiktif di S1",
+   "Status": "LULUS",
+   "Bukti": "S1: Dana Desa Diterima maks 0.0, belanja maks 0.0"
+  },
+  {
+   "Kode": "U9",
+   "Uji": "Kapasitas LPHD tidak naik tanpa sumber",
+   "Status": "LULUS",
+   "Bukti": "S1 dasar: kapasitas 0.500–0.500; dengan pendampingan Rp 1,25 miliar/th: kapasitas 2087 1.000, target maks 1.000"
+  },
+  {
+   "Kode": "U10",
+   "Uji": "Modal dan identitas KUPS",
+   "Status": "LULUS",
+   "Bukti": "S1: modal min 0.00; penggunaan <2026 maks 0.0e+00; |identitas surplus| 1.5e-08, penjualan 0.0e+00; stok akhir Rp 369,467 vs Σ aliran Rp 369,467; KUPS 2026/2050/2087 = 33.42/16.80/5.74 || S2-35: modal min 0.00; penggunaan <2026 maks 0.0e+00; |identitas surplus| 6.0e-08, penjualan 0.0e+00; stok akhir Rp 1,501,517,431 vs Σ aliran Rp 1,501,517,431; KUPS 2026/2050/2087 = 33.42/38.64/75.00"
+  },
+  {
+   "Kode": "U11",
+   "Uji": "Rehabilitasi berdasarkan luas aktual dan sumber pembiayaan",
+   "Status": "LULUS",
+   "Bukti": "S1: tanam−batas maks -1.6e+03; |check HOK| 0.0e+00; efektif−realisasi maks 0.0e+00; luas tanam kas stok 0.000 vs Σ aktual 0.000; sisa dana tanam tertahan Σ Rp 0 || S2-35: tanam−batas maks -1.6e+03; |check HOK| 0.0e+00; efektif−realisasi maks 2.4e-07; luas tanam kas stok 2659.517 vs Σ aktual 2659.517; sisa dana tanam tertahan Σ Rp -0 || dukungan 0: tanam & upah non-karbon S1 = 0; dukungan Rp 100,5 juta: tanam 2030 20.133 ha, upah 0; + porsi dibayar 1: upah 181,395,086 Rp/th"
+  },
+  {
+   "Kode": "U12",
+   "Uji": "Kerja berupah/sukarela; nilai non-tunai tidak masuk pendapatan RT",
+   "Status": "LULUS",
+   "Bukti": "|berupah+sukarela−total| 0.0e+00; mengubah nilai non-tunai ×7,7/×83 → Δ pendapatan program RT maks 0.0e+00; upah karbon S1 maks 0.0"
+  },
+  {
+   "Kode": "U13",
+   "Uji": "Inisialisasi 2024 identik dengan model 3 skenario",
+   "Status": "LULUS",
+   "Bukti": "selisih maks 2024 (10 variabel) 0.0e+00; Respons Perlindungan Awal = 0.1759 (0,651 × 2.160/7.996); efek 2025 S1 = 0.0715, 2026 = 0.0705"
+  },
+  {
+   "Kode": "U14",
+   "Uji": "Jeda kas karbon (kriteria relasional, revisi)",
+   "Status": "LULUS",
+   "Bukti": "delay 3: pengajuan pertama 2025.0000 → terbit 2028.0000 → kas 2028.0625; delay 4: pengajuan pertama 2025.0000 → terbit 2029.0000 → kas 2029.0625; delay 5: pengajuan pertama 2025.0000 → terbit 2030.0000 → kas 2030.0625; jeda bayar 1 th: penjualan pertama 2028.0625, kas pertama 2029.0625. Kredit pertama diajukan 2025 (efek perlindungan aktif sejak 2025), sehingga kas pertama ±2028/2029/2030"
+  },
+  {
+   "Kode": "U15",
+   "Uji": "Keuangan, NPV, hibah/talangan",
+   "Status": "LULUS",
+   "Bukti": "hibah/sebelum bagi hasil/biaya modal 0: |identitas arus| 2.4e-07; pokok 0; biaya modal 0; pemulihan 0; sisa 0; NPV mitra 1.769 M; NPV proyek 6.722 M || hibah/sesudah bagi hasil/biaya modal 0: |identitas arus| 2.4e-07; pokok 0; biaya modal 0; pemulihan 0; sisa 0; NPV mitra 1.769 M; NPV proyek 6.722 M || talangan/sebelum bagi hasil/biaya modal 0: |identitas arus| 1.2e-07; pokok 1,441,440,000; biaya modal 0; pemulihan 1,441,440,000; sisa 0; NPV mitra 2.039 M; NPV proyek 6.223 M || talangan/sebelum bagi hasil/biaya modal 0.2: |identitas arus| 1.2e-07; pokok 1,441,440,000; biaya modal 4,420,927,843; pemulihan 5,862,367,843; sisa 0; NPV mitra 2.710 M; NPV proyek 5.027 M || talangan/sesudah bagi hasil/biaya modal 0: |identitas arus| 2.4e-07; pokok 1,441,440,000; biaya modal 0; pemulihan 1,441,440,000; sisa 0; NPV mitra 1.769 M; NPV proyek 6.722 M || talangan/sesudah bagi hasil/biaya modal 0.2: |identitas arus| 2.4e-07; pokok 1,441,440,000; biaya modal 105,227,629,385,412; pemulihan 32,102,497,569; sisa 105,196,968,327,844; NPV mitra 1.769 M; NPV proyek 6.722 M || NPV inkremental S1 = 0.00e+00; NPV keseluruhan S1 + PV pembiayaan awal = 0.00e+00; [NPV(S2)−NPV(S1)] − NPV inkremental = -1.91e-06; sebelum kas pertama: kekurangan ditanggung mitra − biaya MRV = 0.0e+00"
+  },
+  {
+   "Kode": "U16",
+   "Uji": "Akuntansi karbon dan baseline",
+   "Status": "LULUS",
+   "Bukti": "|check kawasan & karbon| maks 6.1e-08; USD20: REDD BAU 395,455 / konservatif-pelaporan 182,112 / (emisi deforestasi dihindari S2−S1 361,026 × faktor eligible = 195,006); ARR BAU 0 / konservatif 0 || USD35: REDD BAU 1,310,134 / konservatif-pelaporan 1,071,171 / (emisi deforestasi dihindari S2−S1 2,036,410 × faktor eligible = 1,099,955); ARR BAU 33,286 / konservatif 33,286 || varian switch konservatif (USD20): kredit REDD 0 → loop tidak dapat dimulai tanpa pendanaan tambahan (temuan F3)"
+  },
+  {
+   "Kode": "U17",
+   "Uji": "Konsistensi historis 2023–2025 dengan kondisi awal 2024",
+   "Status": "LULUS",
+   "Bukti": "(a) anggota awal 2026 = 254.0000 (183+61+10 = 254); (b) HOK/anggota 2024 = 2.533/211.6 = 11.97, 2025 = 3.011/248.7 = 12.11 vs 11,85 (roster 254); (c) 392×5,51 = 2159.9 vs 2.160 (0,0 %); dipakai hanya oleh Indeks Intensitas Patroli 2023 → Respons Perlindungan Awal (jejak statis); (d) tidak ada arus kas sebelum 2024 (t0 = 2024); (e) tahun pembiayaan awal 2024–2025; (f) intensitas 2023 = 0,270, 2024 = 0.317, Indeks Intensitas Swadaya 2023 (tidak aktif) = 0,2251"
+  },
+  {
+   "Kode": "U0a",
+   "Uji": "Parsing PySD (+16 View)",
+   "Status": "LULUS",
+   "Bukti": "read_vensim berhasil; split_views: 16 modul View"
+  },
+  {
+   "Kode": "U0b",
+   "Uji": "Implementasi = rancangan; analisis statis",
+   "Status": "LULUS",
+   "Bukti": "168/168 persamaan identik teks dengan rancangan; 649 persamaan tak diubah identik dengan model 3 skenario; dihapus 9 (usang); referensi tak dikenal 0; loop aljabar 0; pemakai Switch Karbon 9 (7 rantai kredit/MRV + 2 pelaporan F3; daftar eksplisit)"
+  },
+  {
+   "Kode": "U0c",
+   "Uji": "Units Check Vensim native",
+   "Status": "BELUM DAPAT DIUJI",
+   "Bukti": "Vensim tidak tersedia di lingkungan ini; harus dijalankan peneliti"
+  },
+  {
+   "Kode": "U18",
+   "Uji": "Konsistensi dimensional seluruh model",
+   "Status": "LULUS",
+   "Bukti": "813 persamaan konsisten, 0 bermasalah; uji negatif pemeriksa: 4/4 kesalahan sengaja tertangkap"
+  },
+  {
+   "Kode": "U0d",
+   "Uji": "Reproduksi struktur model 3 skenario (S2 lama) dengan parameter peniru",
+   "Status": "LULUS",
+   "Bukti": "deforestasi kumulatif peniru 29,686.7 vs S2 lama 29,686.7 ha; hutan 2087 82,331.0 vs 82,331.0; FTE 2030 5.70 vs 5.70"
+  },
+  {
+   "Kode": "E1",
+   "Uji": "Harga karbon 0 → S2 = S1 (fisik dan sosial)",
+   "Status": "LULUS",
+   "Bukti": "selisih maks 0.00e+00 pada 8 variabel"
+  },
+  {
+   "Kode": "E2",
+   "Uji": "k = 0 → patroli S1 nol sesudah 2025",
+   "Status": "LULUS",
+   "Bukti": "HOK reguler dan intensitas S1 2026–2087 = 0"
+  },
+  {
+   "Kode": "E3",
+   "Uji": "k = 1 → patroli reguler = 3.011 ≤ kapasitas",
+   "Status": "LULUS",
+   "Bukti": "HOK reguler maks 3011.00; kapasitas 8784"
+  },
+  {
+   "Kode": "E4",
+   "Uji": "Kas non-karbon Rp 1 triliun/th",
+   "Status": "LULUS",
+   "Bukti": "patroli−kapasitas maks -4.88e+03; intensitas maks 1.000; belanja−kebutuhan maks 0.00e+00; saldo akhir Rp 6.037e+13 (menumpuk, tidak dibelanjakan fiktif)"
+  },
+  {
+   "Kode": "E5",
+   "Uji": "Harga USD 500",
+   "Status": "LULUS",
+   "Bukti": "hutan min 89,901 ha; intensitas maks 1.000; saldo min 0.0e+00"
+  },
+  {
+   "Kode": "E6",
+   "Uji": "Efektivitas 0 → patroli tidak memengaruhi deforestasi",
+   "Status": "LULUS",
+   "Bukti": "efek pengelolaan PS maks 0.0; deforestasi kumulatif S2-35 efektivitas 0: 29,812.3 ha vs S1 k=0 efektivitas 0: 29,812.3 ha (selisih dari rehabilitasi kas karbon)"
+  },
+  {
+   "Kode": "E7",
+   "Uji": "Talangan + biaya modal 20 %/th (kriteria revisi: identitas & batas pemulihan)",
+   "Status": "LULUS",
+   "Bukti": "sebelum bagi hasil: sisa talangan 2087 Rp 0; sesudah bagi hasil: sisa Rp 1.052e+14 (bunga majemuk melampaui kapasitas bayar bagian mitra; tanpa batas penghapusan). NPV proyek berubah karena umpan balik dana LPHD → patroli → kredit, bukan kesalahan akuntansi"
+  }
+ ],
+ "perilaku": [
+  {
+   "Kode": "P1-USD20",
+   "Uji": "Kas karbon → patroli → intensitas → deforestasi → hutan & kerja (urutan kausal)",
+   "Status": "LULUS",
+   "Bukti": "tahun pertama patroli tambahan 2029; deforestasi S2<S1 pertama 2029; Δ intensitas min 0.0000, maks 0.1561; Δ hutan 2087 1,018.4 ha; Δ FTE berupah 2030–2055 6.77"
+  },
+  {
+   "Kode": "P1-USD35",
+   "Uji": "Kas karbon → patroli → intensitas → deforestasi → hutan & kerja (urutan kausal)",
+   "Status": "LULUS",
+   "Bukti": "tahun pertama patroli tambahan 2029; deforestasi S2<S1 pertama 2029; Δ intensitas min 0.0000, maks 0.8117; Δ hutan 2087 6,267.9 ha; Δ FTE berupah 2030–2055 27.63"
+  },
+  {
+   "Kode": "P2",
+   "Uji": "Putus loop dana→patroli (USD35): tambahan hutan hilang/turun tajam",
+   "Status": "LULUS",
+   "Bukti": "Δ hutan 2087 utuh 6,267.9 ha; tanpa alokasi perlindungan 166.7 ha (sisa dari rehabilitasi kas karbon)"
+  },
+  {
+   "Kode": "P3",
+   "Uji": "Monotonik: k naik → deforestasi S1 turun",
+   "Status": "LULUS",
+   "Bukti": "deforestasi kumulatif S1 untuk k=0/0,25/0,5/0,75/1: 29,702 / 29,173 / 28,640 / 28,102 / 27,561"
+  },
+  {
+   "Kode": "P4",
+   "Uji": "Kas non-karbon S1 (Rp 3 miliar/th) → belanja, patroli, KUPS, kapasitas, hutan",
+   "Status": "LULUS",
+   "Bukti": "patroli didanai 2030 3,500 HOK; Δ hutan 2087 2,471.7 ha; KUPS 2087 23.6 vs 5.7; kapasitas 2087 0.680"
+  },
+  {
+   "Kode": "P5",
+   "Uji": "Biaya reaktivasi KUPS lebih rendah → KUPS bertahan → penerimaan anggota naik",
+   "Status": "LULUS",
+   "Bukti": "KUPS 2087: 33.4 vs 5.7; penerimaan anggota 2050: Rp 24.5 juta vs 12.3 juta"
+  },
+  {
+   "Kode": "P6",
+   "Uji": "Monotonik harga: hutan 2087 tidak turun saat harga naik",
+   "Status": "LULUS",
+   "Bukti": "hutan 2087 USD6/10/15/20/35: 82,799 / 82,866 / 83,181 / 83,818 / 89,067"
+  },
+  {
+   "Kode": "P7",
+   "Uji": "Dukungan material rehabilitasi S1 → luas tanam → hutan & serapan",
+   "Status": "LULUS",
+   "Bukti": "Δ hutan 2087 334.8 ha; serapan rehabilitasi 2050 3,273 vs 0 tCO₂e/th"
+  }
+ ]
+}

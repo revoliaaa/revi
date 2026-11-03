@@ -1,7 +1,7 @@
 """Analisis statis (tanpa simulasi): referensi tak dikenal, loop aljabar, dan pemakai Switch Karbon pada persamaan usulan."""
 import re, sys, json
-sys.path.insert(0, "fase1b"); from usulan import P
-txt = open("out/DKP_25HD_FINAL_3SKENARIO.mdl", encoding="utf-8").read().split("\\\\\\---///")[0]
+sys.path.insert(0, "fase1b"); import os, importlib; P = importlib.import_module(os.environ.get("USULAN", "usulan")).P
+txt = open(__import__("os").environ.get("MDL", "out/DKP_25HD_FINAL_3SKENARIO.mdl"), encoding="utf-8").read().split("\\\\\\---///")[0]
 base = {}
 for blk in txt.split("|\n"):
     m = re.match(r"\s*(.+?)(\(\s*\n|=)\s*\n?\t?(.*?)\n\t~\t(.*?)\n", blk, re.S)
