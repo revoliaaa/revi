@@ -5,7 +5,7 @@ txt = open("out/DKP_25HD_FINAL_3SKENARIO.mdl", encoding="utf-8").read().split("\
 base = {}
 for blk in txt.split("|\n"):
     m = re.match(r"\s*(.+?)(\(\s*\n|=)\s*\n?\t?(.*?)\n\t~\t(.*?)\n", blk, re.S)
-    if m and "********" not in m.group(1): base[m.group(1).strip()] = (m.group(3).strip(), m.group(4).strip(), "lookup" if m.group(2).startswith("(") else "")
+    if m and "********" not in m.group(1): base[m.group(1).replace("{UTF-8}", "").strip()] = (m.group(3).strip(), m.group(4).strip(), "lookup" if m.group(2).startswith("(") else "")
 # variabel model alokasi
 alloc_extra = {"Alokasi Dana Kompensasi RT Terdampak", "Dana Fleksibel LPHD"}
 E = {k: v[0] for k, v in base.items()}

@@ -1,5 +1,7 @@
 # Fase 1B: Matriks Persamaan Final (usulan, belum diterapkan)
 
+**Revisi final gate:** bila satu variabel muncul pada kelompok K/C dan G, **persamaan pada kelompok G yang berlaku** (G ditulis terakhir dan menimpa). Kolom 'Persamaan lama' selalu merujuk model 3 skenario yang berlaku.
+
 Dihasilkan dari `fase1b/usulan.py`, dan dibandingkan dengan persamaan yang berlaku di `DKP_25HD_FINAL_3SKENARIO.mdl`.
 **Belum ada berkas `.mdl` yang diubah dan belum ada simulasi.**
 
@@ -7,7 +9,7 @@ Dihasilkan dari `fase1b/usulan.py`, dan dibandingkan dengan persamaan yang berla
 
 - Referensi ke variabel yang tidak ada: **tidak ada**.
 - Loop aljabar: **tidak ada**. Semua umpan balik melewati stok (INTEG) atau fungsi berstatus (SMOOTHI, DELAY FIXED, INITIAL).
-- Pemakai `Switch Karbon` setelah usulan: `Kredit REDD Diajukan`, `Kredit ARR Diajukan`, `Kredit Gambut Diajukan`, `Biaya Verifikasi Tahunan`, `Biaya Monitoring MRV`, `Pendanaan Awal Proyek Karbon`. `Pendanaan Awal Proyek Karbon` tetap 0 karena besarannya 0.
+- Pemakai `Switch Karbon` setelah usulan: `Kredit REDD Diajukan`, `Kredit ARR Diajukan`, `Kredit Gambut Diajukan`, `Biaya Verifikasi Tahunan`, `Biaya Monitoring MRV`, `Pendanaan Awal Proyek Karbon`, `Biaya Pengembangan Proyek Efektif`. `Pendanaan Awal Proyek Karbon` tetap 0 karena besarannya 0.
 
 Status per kelompok: **SETUJU** = konsisten secara struktur dan dapat disetujui; **PERLU DATA** = struktur siap, nilai menunggu data; **SENSITIVITAS** = hanya dapat dibenarkan sebagai rentang uji.
 
@@ -114,10 +116,8 @@ Status per kelompok: **SETUJU** = konsisten secara struktur dan dapat disetujui;
 
 | Variabel | Persamaan lama | Persamaan usulan final | Satuan | Sumber / kelas |
 |---|---|---|---|---|
-| `Hari Patroli Didanai Kas LPHD` | `— (variabel baru)` | `(Pendanaan Awal untuk Patroli+Realisasi Belanja Perlindungan)/Biaya per Hari Patroli` | HOK/Year | – |
 | `Hari Patroli Didanai` | `(Pendanaan Awal untuk Patroli+Realisasi Belanja Perlindungan)/Biaya per Hari Patroli +Hari Patroli Pembiayaan Awal` | `Hari Patroli Pembiayaan Awal+Hari Patroli Didanai Kas LPHD` | HOK/Year | – |
 | `Hari Patroli Didanai Kas Non Karbon` | `— (variabel baru)` | `Hari Patroli Didanai Kas LPHD*(1-Porsi Kas Karbon dalam Saldo)` | HOK/Year | Pendekatan proporsional (B) |
-| `Hari Patroli Tambahan Dibutuhkan` | `Switch PS*MAX(0, MIN(Hari Patroli Target, Kapasitas Hari Patroli Anggota)-Hari Patroli Swadaya )` | `Switch PS*MAX(0, MIN(Hari Patroli Target, Kapasitas Hari Patroli Anggota)-HOK Patroli Reguler PS-Hari Patroli Pembiayaan Awal)` | HOK/Year | – |
 | `Indeks Intensitas Perlindungan` | `IF THEN ELSE(Kebutuhan Hari Patroli>0, MIN(1, (Hari Patroli Swadaya+Hari Patroli Didanai )/Kebutuhan Hari Patroli), 1)` | `IF THEN ELSE(Kebutuhan Hari Patroli>0, MIN(1, (HOK Patroli Reguler PS+Hari Patroli Didanai)/Kebutuhan Hari Patroli), 1)` | Dmnl | – |
 | `Indeks Intensitas Perlindungan Tanpa Karbon` | `IF THEN ELSE(Kebutuhan Hari Patroli>0, MIN(1, Hari Patroli Swadaya/Kebutuhan Hari Patroli ), 1)` | `IF THEN ELSE(Kebutuhan Hari Patroli>0, MIN(1, (HOK Patroli Reguler PS+Hari Patroli Pembiayaan Awal+Hari Patroli Didanai Kas Non Karbon)/Kebutuhan Hari Patroli), 1)` | Dmnl | – |
 | `Kesenjangan Pembiayaan Minimum` | `MAX(0, Kebutuhan Dana Minimum-Penggunaan Dana Pengelolaan-Realisasi Pembiayaan Awal)` | `MAX(0, Kebutuhan Dana Minimum-Penggunaan Dana Pengelolaan)` | Rupiah/Year | Hapus -Realisasi Pembiayaan Awal (sudah dikeluarkan dari kebutuhan dalam HOK) |
@@ -190,7 +190,6 @@ Status per kelompok: **SETUJU** = konsisten secara struktur dan dapat disetujui;
 | `Biaya Reaktivasi KUPS` | `— (variabel baru)` | `Biaya Pembentukan KUPS` | Rupiah/Unit | D; sensitivitas 0,25-1 x pembentukan |
 | `Modal Usaha KUPS` | `— (variabel baru)` | `INTEG(Akumulasi Modal KUPS-Penggunaan Modal KUPS, 0)` | Rupiah | – |
 | `Akumulasi Modal KUPS` | `— (variabel baru)` | `MAX(0, Laba KUPS Ditahan)*Porsi Laba Ditahan untuk Reinvestasi` | Rupiah/Year | – |
-| `Penggantian KUPS Berbasis Modal` | `— (variabel baru)` | `MIN(KUPS Menjadi Tidak Aktif, Modal Usaha KUPS/TIME STEP/Biaya Reaktivasi KUPS)` | Unit/Year | – |
 | `Penggunaan Modal KUPS` | `— (variabel baru)` | `Penggantian KUPS Berbasis Modal*Biaya Reaktivasi KUPS` | Rupiah/Year | – |
 | `Penambahan KUPS` | `IF THEN ELSE(Time < Tahun Akhir Data KUPS, Switch PS*Penambahan KUPS Historis, Switch PS *MIN(KUPS Menjadi Tidak Aktif*Proporsi Penggantian KUPS Tanpa Dana Karbon+Pembentukan KUPS Dana Non Karbon +Pembentukan KUPS Didanai Karbon, MAX(Target Total KUPS-Jumlah KUPS Aktif,0)/TIME STEP +KUPS Menjadi Tidak Aktif))` | `IF THEN ELSE(Time < Tahun Akhir Data KUPS, Switch PS*Penambahan KUPS Historis, Switch PS*MIN(Penggantian KUPS Berbasis Modal+Pembentukan KUPS Dana Non Karbon+Pembentukan KUPS Didanai Karbon, MAX(Target Total KUPS-Jumlah KUPS Aktif,0)/TIME STEP+KUPS Menjadi Tidak Aktif))` | Unit/Year | – |
 
@@ -223,14 +222,8 @@ Status per kelompok: **SETUJU** = konsisten secara struktur dan dapat disetujui;
 | `Biaya Bibit dan Material per Ha` | `— (variabel baru)` | `MAX(0, Biaya Penanaman per Ha-Biaya Tenaga Penanaman per Ha)` | Rupiah/Ha | Turunan residual (B) |
 | `Dukungan Material Rehabilitasi Non Karbon` | `— (variabel baru)` | `0` | Rupiah/Year | D, PERLU DATA (program pemerintah/mitra) |
 | `Penanaman Non Karbon` | `— (variabel baru)` | `Switch Rehabilitasi*(1-Periode Historis)*MIN(Proporsi Realisasi Penanaman BAU*Target Penanaman, ZIDZ(Dukungan Material Rehabilitasi Non Karbon, Biaya Bibit dan Material per Ha))` | Ha/Year | – |
-| `Proporsi Realisasi Penanaman` | `MIN(1, Proporsi Realisasi Penanaman BAU+Penanaman Didanai Karbon/Target Penanaman)` | `MIN(1, ZIDZ(Penanaman Non Karbon+Penanaman Didanai Karbon, Target Penanaman))` | Dmnl | – |
-| `Penambahan Luas Penanaman` | `Switch Rehabilitasi*(1-Periode Historis)*MIN(Proporsi Realisasi Penanaman*Target Penanaman , MIN(MAX(Target Total Penanaman RKPS -Luas Penanaman Program,0)/TIME STEP, NonHutan *Fraksi Maksimum NonHutan Ditanami per Tahun ))` | `Switch Rehabilitasi*(1-Periode Historis)*MIN(Proporsi Realisasi Penanaman*Target Penanaman, MIN(MAX(Target Total Penanaman RKPS-Luas Penanaman Program,0)/TIME STEP, NonHutan*Fraksi Maksimum NonHutan Ditanami per Tahun))` | Ha/Year | persamaan A1 tetap |
 | `Porsi Tenaga Penanaman Non Karbon Dibayar` | `— (variabel baru)` | `0` | Dmnl | D; 0/1 sesuai program |
-| `HOK Penanaman Didanai Kas` | `— (variabel baru)` | `Penanaman Didanai Karbon*HOK Penanaman per Ha` | HOK/Year | – |
-| `HOK Penanaman Non Karbon` | `— (variabel baru)` | `MAX(0, HOK Penanaman-HOK Penanaman Didanai Kas)` | HOK/Year | – |
-| `HOK Penanaman Berupah` | `— (variabel baru)` | `HOK Penanaman Didanai Kas+HOK Penanaman Non Karbon*Porsi Tenaga Penanaman Non Karbon Dibayar` | HOK/Year | – |
 | `HOK Penanaman Sukarela` | `— (variabel baru)` | `HOK Penanaman Non Karbon*(1-Porsi Tenaga Penanaman Non Karbon Dibayar)` | HOK/Year | – |
-| `Manfaat Ekonomi Penanaman` | `HOK Penanaman*Upah Penanaman per HOK` | `HOK Penanaman Non Karbon*Porsi Tenaga Penanaman Non Karbon Dibayar*Upah Penanaman per HOK` | Rupiah/Year | upah dibayar program non-karbon |
 
 ## K10. Biaya kegiatan non-karbon sebagai indikator
 
@@ -242,7 +235,6 @@ Status per kelompok: **SETUJU** = konsisten secara struktur dan dapat disetujui;
 
 | Variabel | Persamaan lama | Persamaan usulan final | Satuan | Sumber / kelas |
 |---|---|---|---|---|
-| `Biaya Pengelolaan PS Non Karbon` | `Switch PS*Anggota Patroli Aktif*Biaya Operasional Patroli Sukarela per Anggota per Tahun+Switch Rehabilitasi *(Proporsi Realisasi Penanaman BAU*Target Penanaman*(1-Periode Historis)*Biaya Penanaman per Ha )+Switch PS*Jumlah KUPS Aktif*Biaya Pendampingan per KUPS per Tahun` | `Anggota Patroli Berpartisipasi Reguler*Biaya Operasional Patroli Sukarela per Anggota per Tahun+Penanaman Non Karbon*Biaya Bibit dan Material per Ha+HOK Penanaman Non Karbon*Porsi Tenaga Penanaman Non Karbon Dibayar*Upah Penanaman per HOK+MAX(0, Jumlah KUPS Aktif-KUPS Didukung Karbon)*Biaya Pendampingan per KUPS per Tahun` | Rupiah/Year | indikator, bukan kas |
 | `Dana PS Eksisting` | `Switch PS*Biaya Pengelolaan PS Non Karbon` | `Biaya Pengelolaan PS Non Karbon` | Rupiah/Year | indikator |
 
 ## K11. Kontribusi non-tunai
@@ -258,7 +250,6 @@ Status per kelompok: **SETUJU** = konsisten secara struktur dan dapat disetujui;
 | `Upah Setara Non Tunai Patroli` | `— (variabel baru)` | `Upah Harian Patroli Berbayar` | Rupiah/HOK | C |
 | `Anggota Patroli Berpartisipasi Reguler` | `— (variabel baru)` | `ZIDZ(HOK Patroli Reguler PS, HOK Patroli per Anggota 2025)` | People | – |
 | `HOK Sukarela PS` | `— (variabel baru)` | `HOK Patroli Reguler PS+HOK Penanaman Sukarela` | HOK/Year | – |
-| `Nilai Kontribusi Tenaga Non Tunai` | `— (variabel baru)` | `HOK Patroli Reguler PS*Upah Setara Non Tunai Patroli+HOK Penanaman Sukarela*Upah Penanaman per HOK` | Rupiah/Year | – |
 | `Nilai Logistik Non Tunai Patroli` | `— (variabel baru)` | `Anggota Patroli Berpartisipasi Reguler*Biaya Operasional Patroli Sukarela per Anggota per Tahun` | Rupiah/Year | File A (C) |
 | `Nilai Kontribusi Swadaya` | `Hari Patroli Swadaya*Biaya per Hari Patroli` | `Nilai Kontribusi Tenaga Non Tunai+Nilai Logistik Non Tunai Patroli` | Rupiah/Year | nama lama |
 | `HOK Patroli` | `Hari Patroli Swadaya` | `0` | HOK/Year | patroli sukarela dipindah ke HOK Sukarela PS |
@@ -277,7 +268,6 @@ Status per kelompok: **SETUJU** = konsisten secara struktur dan dapat disetujui;
 | `Kesempatan Kerja PS` | `Total HOK PS+HOK Patroli Berbayar+HOK Pengendalian Kebakaran` | `HOK Berupah PS+HOK Sukarela PS` | HOK/Year | – |
 | `Kesempatan Kerja Berupah Setara Penuh` | `— (variabel baru)` | `HOK Berupah PS/HOK Tersedia per Anggota Kerja per Tahun` | People | – |
 | `Kesempatan Kerja Sukarela Setara Penuh` | `— (variabel baru)` | `HOK Sukarela PS/HOK Tersedia per Anggota Kerja per Tahun` | People | – |
-| `Upah Kegiatan PS` | `Upah Patroli Berbayar+Manfaat Ekonomi Penanaman+Manfaat Ekonomi Patroli+Upah Pengendalian Kebakaran` | `Upah Patroli Berbayar+Manfaat Ekonomi Penanaman+Upah Penanaman Didanai Karbon+Upah Pengendalian Kebakaran` | Rupiah/Year | A1 memuat Manfaat Ekonomi Patroli (=0); upah tanam didanai kas ditambahkan |
 
 ## K13. Partisipasi aktif
 
@@ -332,7 +322,6 @@ Status per kelompok: **SETUJU** = konsisten secara struktur dan dapat disetujui;
 | Variabel | Persamaan lama | Persamaan usulan final | Satuan | Sumber / kelas |
 |---|---|---|---|---|
 | `Upah Patroli dari Kas LPHD` | `— (variabel baru)` | `Hari Patroli Didanai Kas LPHD*Upah Harian Patroli Berbayar` | Rupiah/Year | – |
-| `Upah Kegiatan Didanai Karbon` | `Upah Patroli Berbayar+Upah Pengendalian Kebakaran+Upah Penanaman Didanai Karbon` | `(Upah Patroli dari Kas LPHD+Upah Pengendalian Kebakaran+Upah Penanaman Didanai Karbon)*Porsi Kas Karbon dalam Saldo` | Rupiah/Year | – |
 
 ## K17. Agregat manfaat dan FTE
 
@@ -377,7 +366,6 @@ Status per kelompok: **SETUJU** = konsisten secara struktur dan dapat disetujui;
 | Variabel | Persamaan lama | Persamaan usulan final | Satuan | Sumber / kelas |
 |---|---|---|---|---|
 | `Status Pembiayaan Awal` | `— (variabel baru)` | `0` | Dmnl | D: 0 hibah, 1 talangan |
-| `Pendanaan Awal Belum Terpulihkan` | `INTEG(Pendanaan Awal untuk Patroli+Realisasi Pembiayaan Awal*Porsi Pembiayaan Awal sebagai Talangan +Biaya Modal Pendanaan Awal Rp-Pemulihan Pendanaan Awal, 0)` | `INTEG(Pendanaan Awal untuk Patroli+Realisasi Pembiayaan Awal*Status Pembiayaan Awal+Biaya Modal Pendanaan Awal Rp-Pemulihan Pendanaan Awal, 0)` | Rupiah | – |
 | `Pemulihan Pendanaan Awal` | `MIN(Dana Mitra dari Karbon, Pendanaan Awal Belum Terpulihkan/TIME STEP)` | `MIN(MAX(0, Surplus Sebelum Pemulihan-Pemulihan Defisit Biaya Bersama), Pendanaan Awal Belum Terpulihkan/TIME STEP)` | Rupiah/Year | dipulihkan sebelum bagi hasil |
 | `Pendapatan Karbon Bersih yang Dapat Didistribusikan` | `Surplus Sebelum Pemulihan-Pemulihan Defisit Biaya Bersama` | `Surplus Sebelum Pemulihan-Pemulihan Defisit Biaya Bersama-Pemulihan Pendanaan Awal` | Rupiah/Year | – |
 
@@ -392,7 +380,6 @@ Status per kelompok: **SETUJU** = konsisten secara struktur dan dapat disetujui;
 | Variabel | Persamaan lama | Persamaan usulan final | Satuan | Sumber / kelas |
 |---|---|---|---|---|
 | `Switch Baseline Kredit Konservatif` | `0` | `0` | Dmnl | 0 = BAU (dasar); 1 = konservatif |
-| `Porsi ARR Adisional` | `— (variabel baru)` | `ZIDZ(Penanaman Didanai Karbon*Porsi Kas Karbon dalam Saldo, Penambahan Luas Penanaman)` | Dmnl | pendekatan aliran (B) |
 | `Kredit ARR Diajukan` | `Pengurangan Emisi Eligible ARR*Switch Karbon*Switch Periode Kredit` | `Pengurangan Emisi Eligible ARR*Switch Karbon*Switch Periode Kredit*(1-Switch Baseline Kredit Konservatif*(1-Porsi ARR Adisional))` | tCO2e/Year | – |
 | `Faktor Rekonsiliasi Reversal Kredit A2` | `1.000000` | `1` | Dmnl | ditetapkan 1 |
 
@@ -409,9 +396,7 @@ Status per kelompok: **SETUJU** = konsisten secara struktur dan dapat disetujui;
 | `Tingkat Diskonto` | `— (variabel baru)` | `0.1` | 1/Year | D, tidak bersumber; sensitivitas 0,06-0,14 |
 | `Faktor Diskonto` | `— (variabel baru)` | `1/((1+Tingkat Diskonto*Satu Tahun)^((Time-INITIAL TIME)/Satu Tahun))` | Dmnl | – |
 | `Biaya Pengembangan Proyek` | `— (variabel baru)` | `0` | Rupiah/Year | D, PERLU DATA |
-| `Arus Kas Proyek Karbon` | `— (variabel baru)` | `Kas Penjualan Kredit-Biaya Transaksi dan MRV-Biaya Pengembangan Proyek` | Rupiah/Year | – |
 | `Arus Kas Proyek Keseluruhan` | `— (variabel baru)` | `Arus Kas Proyek Karbon-Realisasi Pembiayaan Awal` | Rupiah/Year | – |
-| `Arus Kas Mitra` | `— (variabel baru)` | `Dana Mitra dari Karbon+Pemulihan Defisit Biaya Bersama+Pemulihan Pendanaan Awal-Kekurangan Biaya Bersama Ditanggung Mitra-Realisasi Pembiayaan Awal-Biaya Pengembangan Proyek` | Rupiah/Year | – |
 | `NPV Proyek Keseluruhan` | `— (variabel baru)` | `INTEG(Arus Kas Proyek Keseluruhan*Faktor Diskonto, 0)` | Rupiah | – |
 | `NPV Inkremental Perdagangan Karbon` | `— (variabel baru)` | `INTEG(Arus Kas Proyek Karbon*Faktor Diskonto, 0)` | Rupiah | S1: 0 |
 | `NPV Mitra` | `— (variabel baru)` | `INTEG(Arus Kas Mitra*Faktor Diskonto, 0)` | Rupiah | – |
@@ -431,6 +416,139 @@ Status per kelompok: **SETUJU** = konsisten secara struktur dan dapat disetujui;
 |---|---|---|---|---|
 | `Emisi Deforestasi Dihindari terhadap Baseline` | `— (variabel baru)` | `Emisi Deforestasi Biomassa Baseline-Emisi Deforestasi Biomassa` | tCO2e/Year | selisih S2-S1 dihitung antar-run |
 | `Serapan Rehabilitasi` | `— (variabel baru)` | `Komitmen Serapan Rehabilitasi` | tCO2e/Year | – |
+
+## G1. FINAL GATE: patroli historis dikunci pada data; jalur pendanaan awal generik diputus
+
+**Status:** SETUJU  
+**Pengaruh S1/S2:** S1 dan S2: total patroli 2024–2025 = data; kas LPHD hanya membiayai patroli ≥ 2026  
+**Circular dependency:** Tidak  
+**Risiko double counting:** Lihat FINAL_GATE A1 (jejak 2.533/3.011 HOK)  
+**Uji:** U3, U17 (lihat RENCANA_UJI_FASE2.md)
+
+| Variabel | Persamaan lama | Persamaan usulan final | Satuan | Sumber / kelas |
+|---|---|---|---|---|
+| `Hari Patroli Didanai Kas LPHD` | `— (variabel baru)` | `Realisasi Belanja Perlindungan/Biaya per Hari Patroli` | HOK/Year | – |
+| `Hari Patroli Tambahan Dibutuhkan` | `Switch PS*MAX(0, MIN(Hari Patroli Target, Kapasitas Hari Patroli Anggota)-Hari Patroli Swadaya )` | `Switch PS*Periode Pasca Pembiayaan Awal*MAX(0, MIN(Hari Patroli Target, Kapasitas Hari Patroli Anggota)-HOK Patroli Reguler PS)` | HOK/Year | 2024–2025: kebutuhan tambahan = 0, total patroli = data |
+| `Upah Kegiatan Didanai Karbon` | `Upah Patroli Berbayar+Upah Pengendalian Kebakaran+Upah Penanaman Didanai Karbon` | `Upah Dibayar dari Kas LPHD*Porsi Kas Karbon dalam Saldo` | Rupiah/Year | – |
+| `Pendanaan Awal untuk Patroli` | `MIN(Pendanaan Awal Proyek Karbon, Hari Patroli Tambahan Dibutuhkan*Biaya per Hari Patroli )` | `0` | Rupiah/Year | Jalur generik dinonaktifkan secara struktural (sebelumnya MIN(Pendanaan Awal Proyek Karbon, …), besaran 0). Pembiayaan awal hanya lewat HOK aktual |
+| `Kebutuhan Dana Perlindungan` | `MAX(0, Hari Patroli Tambahan Dibutuhkan*Biaya per Hari Patroli-Pendanaan Awal untuk Patroli )` | `Hari Patroli Tambahan Dibutuhkan*Biaya per Hari Patroli` | Rupiah/Year | – |
+| `Upah Dibayar dari Kas LPHD` | `— (variabel baru)` | `Upah Patroli dari Kas LPHD+Upah Pengendalian Kebakaran+Upah Penanaman Didanai Karbon` | Rupiah/Year | – |
+| `Manfaat Kolektif Non Tunai` | `MAX(0, Penggunaan Dana Pengelolaan+Pendanaan Awal untuk Patroli-Upah Kegiatan Didanai Karbon )` | `MAX(0, Penggunaan Dana Pengelolaan-Upah Dibayar dari Kas LPHD)` | Rupiah/Year | semua upah dari kas LPHD dikurangkan, apa pun sumbernya |
+| `Penggunaan Dana Perlindungan Total` | `Realisasi Belanja Perlindungan+Pendanaan Awal untuk Patroli+Realisasi Pembiayaan Awal` | `Realisasi Belanja Perlindungan+Realisasi Pembiayaan Awal` | Rupiah/Year | pelaporan: kas LPHD + pembiayaan mitra |
+
+## G2. FINAL GATE: pokok talangan × status
+
+**Status:** SETUJU  
+**Pengaruh S1/S2:** Hibah: pokok 0, pemulihan 0  
+**Circular dependency:** Tidak  
+**Risiko double counting:** Identitas pemulihan ≤ pokok + biaya modal  
+**Uji:** U15 (lihat RENCANA_UJI_FASE2.md)
+
+| Variabel | Persamaan lama | Persamaan usulan final | Satuan | Sumber / kelas |
+|---|---|---|---|---|
+| `Pendanaan Awal Belum Terpulihkan` | `INTEG(Pendanaan Awal untuk Patroli+Realisasi Pembiayaan Awal*Porsi Pembiayaan Awal sebagai Talangan +Biaya Modal Pendanaan Awal Rp-Pemulihan Pendanaan Awal, 0)` | `INTEG((Pendanaan Awal untuk Patroli+Realisasi Pembiayaan Awal)*Status Pembiayaan Awal+Biaya Modal Pendanaan Awal Rp-Pemulihan Pendanaan Awal, 0)` | Rupiah | – |
+| `Pokok Talangan Kumulatif` | `— (variabel baru)` | `INTEG((Pendanaan Awal untuk Patroli+Realisasi Pembiayaan Awal)*Status Pembiayaan Awal, 0)` | Rupiah | pelacak |
+| `Biaya Modal Kumulatif` | `— (variabel baru)` | `INTEG(Biaya Modal Pendanaan Awal Rp, 0)` | Rupiah | pelacak |
+| `Pemulihan Kumulatif` | `— (variabel baru)` | `INTEG(Pemulihan Pendanaan Awal, 0)` | Rupiah | pelacak |
+
+## G3. FINAL GATE: pemeriksa agregat alokasi dan neraca LPHD
+
+**Status:** SETUJU  
+**Pengaruh S1/S2:** Pelaporan/uji  
+**Circular dependency:** Tidak  
+**Risiko double counting:** Neraca saldo  
+**Uji:** U7 (lihat RENCANA_UJI_FASE2.md)
+
+| Variabel | Persamaan lama | Persamaan usulan final | Satuan | Sumber / kelas |
+|---|---|---|---|---|
+| `Jumlah Proporsi Alokasi Efektif` | `— (variabel baru)` | `Proporsi Alokasi Efektif Operasional LPHD+Proporsi Alokasi Efektif Perlindungan+Proporsi Alokasi Efektif Rehabilitasi+Proporsi Alokasi Efektif Penguatan Kelembagaan+Proporsi Alokasi Efektif Pengembangan KUPS+Proporsi Alokasi Efektif Pengendalian Kebakaran` | Dmnl | harus ≤ 1 |
+| `Check Neraca Dana LPHD` | `— (variabel baru)` | `Saldo Dana LPHD-(Kumulatif Dana Desa Diterima-Kumulatif Penggunaan Dana Desa)` | Rupiah | harus 0 |
+| `Kumulatif Penggunaan Dana Desa` | `— (variabel baru)` | `INTEG(Penggunaan Dana Desa, 0)` | Rupiah | pelacak |
+
+## G4. FINAL GATE: reaktivasi KUPS setelah periode data; identitas surplus
+
+**Status:** SETUJU  
+**Pengaruh S1/S2:** Modal tidak terpakai 2024–2025  
+**Circular dependency:** Tidak  
+**Risiko double counting:** Identitas surplus KUPS  
+**Uji:** U10 (lihat RENCANA_UJI_FASE2.md)
+
+| Variabel | Persamaan lama | Persamaan usulan final | Satuan | Sumber / kelas |
+|---|---|---|---|---|
+| `Penggantian KUPS Berbasis Modal` | `— (variabel baru)` | `IF THEN ELSE(Time < Tahun Akhir Data KUPS, 0, MIN(KUPS Menjadi Tidak Aktif, Modal Usaha KUPS/TIME STEP/Biaya Reaktivasi KUPS))` | Unit/Year | modal tidak terpakai selama 2024–2025 |
+| `Laba Ditahan Tidak Direinvestasi` | `— (variabel baru)` | `Laba KUPS Ditahan-Akumulasi Modal KUPS` | Rupiah/Year | pelaporan |
+| `Check Identitas Surplus KUPS` | `— (variabel baru)` | `Manfaat Ekonomi KUPS-(Pendapatan KUPS Total+Akumulasi Modal KUPS+Laba Ditahan Tidak Direinvestasi)` | Rupiah/Year | harus 0 |
+| `Check Identitas Penjualan KUPS` | `— (variabel baru)` | `Penjualan KUPS-(Biaya Operasional KUPS Implisit+Manfaat Ekonomi KUPS)` | Rupiah/Year | harus 0 |
+
+## G5. FINAL GATE: penanaman aktual dan kas sesuai luas aktual
+
+**Status:** SETUJU  
+**Pengaruh S1/S2:** Kas tanam ≤ luas yang dapat ditanam; sisa dana tetap di saldo  
+**Circular dependency:** Tidak (diverifikasi analisis SCC)  
+**Risiko double counting:** Identitas HOK dan biaya penanaman  
+**Uji:** U11 (lihat RENCANA_UJI_FASE2.md)
+
+| Variabel | Persamaan lama | Persamaan usulan final | Satuan | Sumber / kelas |
+|---|---|---|---|---|
+| `Proporsi Realisasi Penanaman` | `MIN(1, Proporsi Realisasi Penanaman BAU+Penanaman Didanai Karbon/Target Penanaman)` | `ZIDZ(Penambahan Luas Penanaman, Target Penanaman)` | Dmnl | pelaporan |
+| `Penambahan Luas Penanaman` | `Switch Rehabilitasi*(1-Periode Historis)*MIN(Proporsi Realisasi Penanaman*Target Penanaman , MIN(MAX(Target Total Penanaman RKPS -Luas Penanaman Program,0)/TIME STEP, NonHutan *Fraksi Maksimum NonHutan Ditanami per Tahun ))` | `Switch Rehabilitasi*(1-Periode Historis)*MIN(Penanaman Rencana Total, Batas Luas Penanaman)` | Ha/Year | – |
+| `HOK Penanaman Didanai Kas` | `— (variabel baru)` | `Penanaman Didanai Kas Aktual*HOK Penanaman per Ha` | HOK/Year | – |
+| `HOK Penanaman Non Karbon` | `— (variabel baru)` | `Penanaman Non Karbon Aktual*HOK Penanaman per Ha` | HOK/Year | – |
+| `Manfaat Ekonomi Penanaman` | `HOK Penanaman*Upah Penanaman per HOK` | `Upah Penanaman Program Non Karbon` | Rupiah/Year | – |
+| `Biaya Pengelolaan PS Non Karbon` | `Switch PS*Anggota Patroli Aktif*Biaya Operasional Patroli Sukarela per Anggota per Tahun+Switch Rehabilitasi *(Proporsi Realisasi Penanaman BAU*Target Penanaman*(1-Periode Historis)*Biaya Penanaman per Ha )+Switch PS*Jumlah KUPS Aktif*Biaya Pendampingan per KUPS per Tahun` | `Anggota Patroli Berpartisipasi Reguler*Biaya Operasional Patroli Sukarela per Anggota per Tahun+Nilai Dukungan Material Non Karbon Terpakai+Upah Penanaman Program Non Karbon+MAX(0, Jumlah KUPS Aktif-KUPS Didukung Karbon)*Biaya Pendampingan per KUPS per Tahun` | Rupiah/Year | indikator |
+| `Porsi ARR Adisional` | `— (variabel baru)` | `ZIDZ(Penanaman Didanai Kas Aktual*Porsi Kas Karbon dalam Saldo, Penambahan Luas Penanaman)` | Dmnl | – |
+| `Batas Luas Penanaman` | `— (variabel baru)` | `MIN(Target Penanaman, MIN(MAX(Target Total Penanaman RKPS-Luas Penanaman Program,0)/TIME STEP, NonHutan*Fraksi Maksimum NonHutan Ditanami per Tahun))` | Ha/Year | – |
+| `Kebutuhan Dana Rehabilitasi` | `Switch PS*(MIN(Target Penanaman, MAX(0, Luas Restorasi Selektif Eligible-Luas Tanam Didanai Karbon )/TIME STEP)*Biaya Penanaman per Ha+Areal Rehabilitasi Belum Berhutan*Biaya Pemeliharaan Tanaman per Ha per Tahun )` | `Switch PS*(MAX(0, MIN(Batas Luas Penanaman-Penanaman Non Karbon, MAX(0, Luas Restorasi Selektif Eligible-Luas Tanam Didanai Karbon)/TIME STEP))*Biaya Penanaman per Ha+Areal Rehabilitasi Belum Berhutan*Biaya Pemeliharaan Tanaman per Ha per Tahun)` | Rupiah/Year | kas tanam dibatasi luas yang masih dapat ditanam |
+| `Penanaman Rencana Total` | `— (variabel baru)` | `Penanaman Non Karbon+Penanaman Didanai Karbon` | Ha/Year | – |
+| `Fraksi Penanaman Terealisasi` | `— (variabel baru)` | `MIN(1, ZIDZ(Penambahan Luas Penanaman, Penanaman Rencana Total))` | Dmnl | – |
+| `Penanaman Non Karbon Aktual` | `— (variabel baru)` | `Penanaman Non Karbon*Fraksi Penanaman Terealisasi` | Ha/Year | – |
+| `Penanaman Didanai Kas Aktual` | `— (variabel baru)` | `Penanaman Didanai Karbon*Fraksi Penanaman Terealisasi` | Ha/Year | – |
+| `Pengeluaran Kas Penanaman Aktual` | `— (variabel baru)` | `Penanaman Didanai Kas Aktual*Biaya Penanaman per Ha` | Rupiah/Year | – |
+| `Realisasi Belanja Rehabilitasi Efektif` | `— (variabel baru)` | `Dana Pemeliharaan Rehabilitasi+Pengeluaran Kas Penanaman Aktual` | Rupiah/Year | kas yang benar-benar keluar |
+| `Penggunaan Dana Pengelolaan` | `Realisasi Belanja Operasional LPHD+Realisasi Belanja Perlindungan+Realisasi Belanja Pengendalian Kebakaran +Realisasi Belanja Rehabilitasi+Realisasi Belanja Penguatan Kelembagaan+Realisasi Belanja Pengembangan KUPS` | `Realisasi Belanja Operasional LPHD+Realisasi Belanja Perlindungan+Realisasi Belanja Pengendalian Kebakaran+Realisasi Belanja Rehabilitasi Efektif+Realisasi Belanja Penguatan Kelembagaan+Realisasi Belanja Pengembangan KUPS` | Rupiah/Year | sisa dana tanam tetap di saldo |
+| `Luas Tanam Didanai Karbon` | `INTEG(Penanaman Didanai Karbon, 0)` | `INTEG(Penanaman Didanai Kas Aktual, 0)` | Ha | – |
+| `Luas Tanaman Karbon dalam Pemeliharaan` | `INTEG(Penanaman Didanai Karbon-Selesai Pemeliharaan Tanaman Karbon, 0)` | `INTEG(Penanaman Didanai Kas Aktual-Selesai Pemeliharaan Tanaman Karbon, 0)` | Ha | – |
+| `Upah Penanaman Didanai Karbon` | `Penanaman Didanai Karbon*HOK Penanaman per Ha*Upah Penanaman per HOK` | `Penanaman Didanai Kas Aktual*HOK Penanaman per Ha*Upah Penanaman per HOK` | Rupiah/Year | – |
+| `Nilai Dukungan Material Non Karbon Terpakai` | `— (variabel baru)` | `Penanaman Non Karbon Aktual*Biaya Bibit dan Material per Ha` | Rupiah/Year | bukan kas LPHD |
+| `Upah Penanaman Program Non Karbon` | `— (variabel baru)` | `HOK Penanaman Non Karbon*Porsi Tenaga Penanaman Non Karbon Dibayar*Upah Penanaman per HOK` | Rupiah/Year | dibayar program non-karbon, bukan kas LPHD |
+
+## G6. FINAL GATE: NPV per komponen dan identitas arus kas
+
+**Status:** SETUJU  
+**Pengaruh S1/S2:** Biaya pengembangan hanya S2  
+**Circular dependency:** Tidak  
+**Risiko double counting:** Identitas arus kas proyek = mitra + LPHD  
+**Uji:** U15 (lihat RENCANA_UJI_FASE2.md)
+
+| Variabel | Persamaan lama | Persamaan usulan final | Satuan | Sumber / kelas |
+|---|---|---|---|---|
+| `Arus Kas Proyek Karbon` | `— (variabel baru)` | `Kas Penjualan Kredit-Biaya Transaksi dan MRV-Biaya Pengembangan Proyek Efektif` | Rupiah/Year | – |
+| `Arus Kas Mitra` | `— (variabel baru)` | `Dana Mitra dari Karbon+Pemulihan Defisit Biaya Bersama+Pemulihan Pendanaan Awal-Kekurangan Biaya Bersama Ditanggung Mitra-Realisasi Pembiayaan Awal-Biaya Pengembangan Proyek Efektif` | Rupiah/Year | – |
+| `Biaya Pengembangan Proyek Efektif` | `— (variabel baru)` | `Biaya Pengembangan Proyek*Switch Karbon` | Rupiah/Year | – |
+| `Check Identitas Arus Kas` | `— (variabel baru)` | `Arus Kas Proyek Keseluruhan-(Arus Kas Mitra+Kas Masuk LPHD Karbon)` | Rupiah/Year | harus 0 |
+| `PV Biaya MRV dan Transaksi` | `— (variabel baru)` | `INTEG(Biaya Transaksi dan MRV*Faktor Diskonto, 0)` | Rupiah | – |
+| `PV Pembiayaan Awal` | `— (variabel baru)` | `INTEG(Realisasi Pembiayaan Awal*Faktor Diskonto, 0)` | Rupiah | – |
+| `PV Kas Penjualan Kredit` | `— (variabel baru)` | `INTEG(Kas Penjualan Kredit*Faktor Diskonto, 0)` | Rupiah | – |
+| `PV Penggunaan Dana LPHD` | `— (variabel baru)` | `INTEG(Penggunaan Dana Desa*Faktor Diskonto, 0)` | Rupiah | pelaporan, bukan biaya proyek |
+| `PV Kontribusi Non Tunai` | `— (variabel baru)` | `INTEG((Nilai Kontribusi Swadaya+Nilai Dukungan Material Non Karbon Terpakai)*Faktor Diskonto, 0)` | Rupiah | pelaporan |
+| `PV Upah Program Non Karbon` | `— (variabel baru)` | `INTEG(Upah Penanaman Program Non Karbon*Faktor Diskonto, 0)` | Rupiah | pelaporan |
+
+## G7. FINAL GATE: identitas HOK patroli dan penanaman; upah
+
+**Status:** SETUJU  
+**Pengaruh S1/S2:** Pelaporan/uji  
+**Circular dependency:** Tidak  
+**Risiko double counting:** Identitas HOK  
+**Uji:** U3, U12 (lihat RENCANA_UJI_FASE2.md)
+
+| Variabel | Persamaan lama | Persamaan usulan final | Satuan | Sumber / kelas |
+|---|---|---|---|---|
+| `HOK Penanaman Berupah` | `— (variabel baru)` | `HOK Penanaman Didanai Kas+HOK Penanaman Non Karbon*Porsi Tenaga Penanaman Non Karbon Dibayar` | HOK/Year | – |
+| `Nilai Kontribusi Tenaga Non Tunai` | `— (variabel baru)` | `HOK Patroli Reguler PS*Upah Setara Non Tunai Patroli+HOK Penanaman Non Karbon*(1-Porsi Tenaga Penanaman Non Karbon Dibayar)*Upah Penanaman per HOK` | Rupiah/Year | – |
+| `Upah Kegiatan PS` | `Upah Patroli Berbayar+Manfaat Ekonomi Penanaman+Manfaat Ekonomi Patroli+Upah Pengendalian Kebakaran` | `Upah Patroli Berbayar+Upah Penanaman Program Non Karbon+Upah Penanaman Didanai Karbon+Upah Pengendalian Kebakaran` | Rupiah/Year | – |
+| `Total HOK Patroli` | `— (variabel baru)` | `Hari Patroli Pembiayaan Awal+HOK Patroli Reguler PS+Hari Patroli Didanai Kas LPHD` | HOK/Year | – |
+| `Check Identitas Patroli` | `— (variabel baru)` | `Total HOK Patroli-(HOK Patroli Reguler PS+Hari Patroli Didanai)` | HOK/Year | harus 0 |
+| `Check Identitas HOK Penanaman` | `— (variabel baru)` | `HOK Penanaman-(HOK Penanaman Didanai Kas+HOK Penanaman Non Karbon)` | HOK/Year | harus 0 |
 
 ## Catatan sintaks Vensim dan PySD
 

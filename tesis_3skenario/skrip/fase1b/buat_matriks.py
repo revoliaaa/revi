@@ -4,7 +4,7 @@ txt = open("out/DKP_25HD_FINAL_3SKENARIO.mdl", encoding="utf-8").read().split("\
 base = {}
 for blk in txt.split("|\n"):
     m = re.match(r"\s*(.+?)(\(\s*\n|=)\s*\n?\t?(.*?)\n\t~\t(.*?)\n", blk, re.S)
-    if m: base[m.group(1).strip()] = (re.sub(r"\s+", " ", m.group(3).strip()), m.group(4).strip())
+    if m: base[m.group(1).replace("{UTF-8}", "").strip()] = (re.sub(r"\s+", " ", m.group(3).strip()), m.group(4).strip())
 ST = json.load(open("fase1b/cek_statis.json"))
 G = {  # kode: (judul, status, pengaruh S1/S2, circular, double counting, uji)
  "S-1": ("Kode skenario", "SETUJU", "Menentukan S1/S2", "Tidak ada", "Tidak ada", "U1"),
@@ -34,8 +34,15 @@ G = {  # kode: (judul, status, pengaruh S1/S2, circular, double counting, uji)
  "C3": ("Baseline konservatif REDD dan ARR", "SETUJU SEBAGAI SENSITIVITAS", "S2 saja", "Tidak: memakai status SMOOTHI dan stok", "Lihat AUDIT_AKUNTANSI_KARBON_NPV.md bagian 2", "U16"),
  "C4": ("NPV di dalam model", "SETUJU; DISKONTO DAN BIAYA PENGEMBANGAN PERLU DATA", "S1: NPV proyek = −PV pembiayaan awal; NPV inkremental = 0", "Tidak: INTEG", "Identitas: arus proyek = arus mitra + kas LPHD karbon", "U15"),
  "C5": ("Indikator karbon terpisah", "SETUJU", "Pelaporan", "Tidak", "Tidak ada", "U16"),
+ "G1": ("FINAL GATE: patroli historis dikunci pada data; jalur pendanaan awal generik diputus", "SETUJU", "S1 dan S2: total patroli 2024–2025 = data; kas LPHD hanya membiayai patroli ≥ 2026", "Tidak", "Lihat FINAL_GATE A1 (jejak 2.533/3.011 HOK)", "U3, U17"),
+ "G2": ("FINAL GATE: pokok talangan × status", "SETUJU", "Hibah: pokok 0, pemulihan 0", "Tidak", "Identitas pemulihan ≤ pokok + biaya modal", "U15"),
+ "G3": ("FINAL GATE: pemeriksa agregat alokasi dan neraca LPHD", "SETUJU", "Pelaporan/uji", "Tidak", "Neraca saldo", "U7"),
+ "G4": ("FINAL GATE: reaktivasi KUPS setelah periode data; identitas surplus", "SETUJU", "Modal tidak terpakai 2024–2025", "Tidak", "Identitas surplus KUPS", "U10"),
+ "G5": ("FINAL GATE: penanaman aktual dan kas sesuai luas aktual", "SETUJU", "Kas tanam ≤ luas yang dapat ditanam; sisa dana tetap di saldo", "Tidak (diverifikasi analisis SCC)", "Identitas HOK dan biaya penanaman", "U11"),
+ "G6": ("FINAL GATE: NPV per komponen dan identitas arus kas", "SETUJU", "Biaya pengembangan hanya S2", "Tidak", "Identitas arus kas proyek = mitra + LPHD", "U15"),
+ "G7": ("FINAL GATE: identitas HOK patroli dan penanaman; upah", "SETUJU", "Pelaporan/uji", "Tidak", "Identitas HOK", "U3, U12"),
 }
-L = ["# Fase 1B: Matriks Persamaan Final (usulan, belum diterapkan)", "",
+L = ["# Fase 1B: Matriks Persamaan Final (usulan, belum diterapkan)", "", "**Revisi final gate:** bila satu variabel muncul pada kelompok K/C dan G, **persamaan pada kelompok G yang berlaku** (G ditulis terakhir dan menimpa). Kolom 'Persamaan lama' selalu merujuk model 3 skenario yang berlaku.", "",
  "Dihasilkan dari `fase1b/usulan.py`, dan dibandingkan dengan persamaan yang berlaku di `DKP_25HD_FINAL_3SKENARIO.mdl`.",
  "**Belum ada berkas `.mdl` yang diubah dan belum ada simulasi.**", "",
  "**Pemeriksaan statis atas 723 persamaan model + persamaan usulan** (penelusuran teks persamaan, bukan simulasi):", "",
@@ -43,13 +50,14 @@ L = ["# Fase 1B: Matriks Persamaan Final (usulan, belum diterapkan)", "",
  f"- Loop aljabar: **{'tidak ada' if not ST['scc'] else ST['scc']}**. Semua umpan balik melewati stok (INTEG) atau fungsi berstatus (SMOOTHI, DELAY FIXED, INITIAL).",
  f"- Pemakai `Switch Karbon` setelah usulan: {', '.join('`'+x+'`' for x in ST['switch_karbon'])}. `Pendanaan Awal Proyek Karbon` tetap 0 karena besarannya 0.", "",
  "Status per kelompok: **SETUJU** = konsisten secara struktur dan dapat disetujui; **PERLU DATA** = struktur siap, nilai menunggu data; **SENSITIVITAS** = hanya dapat dibenarkan sebagai rentang uji.", ""]
-order = ["S-1","S-2","S-3","S-4","S-5","K1","K2","K3","K4","K5","K6","K7","K8","K9","K10","K11","K12","K13","K14","K15","K16","K17","C1","C2","C3","C4","C5"]
+order = ["S-1","S-2","S-3","S-4","S-5","K1","K2","K3","K4","K5","K6","K7","K8","K9","K10","K11","K12","K13","K14","K15","K16","K17","C1","C2","C3","C4","C5","G1","G2","G3","G4","G5","G6","G7"]
 for k in order:
     t, st, eff, cyc, dbl, uji = G[k]
     L += [f"## {k}. {t}", "", f"**Status:** {st}  ", f"**Pengaruh S1/S2:** {eff}  ", f"**Circular dependency:** {cyc}  ", f"**Risiko double counting:** {dbl}  ", f"**Uji:** {uji} (lihat RENCANA_UJI_FASE2.md)", "",
           "| Variabel | Persamaan lama | Persamaan usulan final | Satuan | Sumber / kelas |", "|---|---|---|---|---|"]
     for n, (eq, u, kk, s) in P.items():
-        if kk != k: continue
+        if kk != k and not (k.startswith("G") and False): 
+            if kk != k: continue
         old = base.get(n, ("— (variabel baru)", ""))[0]
         L.append(f"| `{n}` | `{old}` | `{eq}` | {u} | {s or '–'} |".replace("\n", " "))
     L.append("")
