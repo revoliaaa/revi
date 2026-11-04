@@ -76,8 +76,8 @@ Kompensasi tidak ada pada B0. Arah dampak berbalik bila pengali < 0,30 (USD 20).
 |---|---|
 | D1 (hibah jembatan) | Biaya mitra Rp3,91 M; tanpa beban MRV |
 | D2 USD 10 | MRV dan transaksi Rp25,7 M; penerimaan Rp9,9 M; defisit Rp19,0 M ditanggung mitra |
-| D2 USD 20 | Mitra nominal −Rp10,1 M (NPV −Rp0,27 M [SEMENTARA]) |
-| D2 USD 35 | Mitra +Rp141,4 M; LPHD Rp214 M |
+| D2 USD 20 | Mitra nominal −Rp10,1 M (D2 − D0; NPV −Rp0,27 M [SEMENTARA]) |
+| D2 USD 35 | Mitra nominal +Rp142,9 M (D2 − D0; NPV +Rp6,66 M [SEMENTARA]); LPHD Rp214 M. *Koreksi 2026-11-04: versi sebelumnya menulis +Rp141,4 M (nilai absolut D2, termasuk −Rp1,44 M historis), tidak sebasis dengan baris USD 20* |
 | D3 (tanpa jembatan) | Kerugian MRV Rp22,8 M (Rp2,9 M dengan aturan henti) |
 
 Kredit model tidak dihitung sebagai pendapatan sebelum terjual dan kasnya diterima.
