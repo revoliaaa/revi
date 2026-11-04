@@ -54,7 +54,7 @@ Makalah empat skenario **belum direvisi**. Angkanya tidak dipakai sebagai hasil 
 
 - **Kas LPHD pertama** datang 2032–2036, sesudah defisit MRV dan talangan mitra dipulihkan. Kas karbon tidak sampai ke LPHD pada C-J1 USD 6–10.
 - **Kas LPHD 2075–2086** masih mengalir pada 0,5 / 22,2 / 74,0 % ensembel. Cakupan kebutuhan minimum ≥ 50 % pada 0,2 / 10,8 / 57,2 %.
-- **NPV [SEMENTARA]** positif: proyek 13,0 / 65,8 / 95,8 %; mitra 4,2 / 46,8 / 88,8 % ensembel. Pada USD ≤ 20 mitra menanggung defisit MRV Rp11–19 miliar.
+- **NPV [SEMENTARA]** positif: proyek 13,0 / 65,8 / 95,8 %; mitra 4,2 / 46,8 / 88,8 % ensembel. Pada USD ≤ 20 mitra menanggung defisit MRV Rp11–19 miliar. Pada C-J1 USD 20, arus kas mitra nominal S2 − S1 = −Rp10,08 miliar, walaupun NPV-nya hanya −Rp0,27 miliar (defisit terjadi sesudah 2051 dan terdiskonto); lihat `AUDIT_AKADEMIK_FINAL_PWD.md` §1.
 - **Kapasitas LPHD** naik hanya bila kas berkelanjutan (USD 35: 0,50 → 0,87). LPHD sepenuhnya bergantung pada kas karbon.
 
 ## 3. Kesempatan kerja, KUPS, dan ekonomi rumah tangga (RQ3)
@@ -64,7 +64,7 @@ Makalah empat skenario **belum direvisi**. Angkanya tidak dipakai sebagai hasil 
 - **Pendapatan rumah tangga:** tambahan upah tunai dan penerimaan KUPS lebih kecil daripada tambahan kehilangan akses.
   - Contoh C-J1 USD 20: Rp4,7 miliar + Rp0,05 miliar vs Rp16,3 miliar.
   - Pendapatan RT terdampak naik hanya pada 25,2 / 19,0 / 14,5 % ensembel.
-  - Penentu utamanya pengali kehilangan akses (asumsi kelas D).
+  - Penentu utamanya pengali kehilangan akses (asumsi kelas D). Arah dampak berbalik bila pengali di bawah 0,75 (RT bergantung, USD 20) atau 0,30 (RT terdampak, USD 20), sehingga arah dampak kesejahteraan **belum dapat diklaim final**.
 
 ## 4. Keadilan distribusi manfaat dan kompensasi (RQ4)
 
@@ -72,7 +72,7 @@ Makalah empat skenario **belum direvisi**. Angkanya tidak dipakai sebagai hasil 
 |---|---|
 | **Penerima manfaat** | Mitra (40 % surplus, pemulihan talangan dan biaya MRV lebih dulu); LPHD sebagai pengelola dana kolektif (60 %); pekerja berupah; anggota KUPS (porsi surplus kecil) |
 | **Penanggung biaya** | RT pemegang garapan yang terdampak pembatasan akses (±3.000 RT): kehilangan +Rp96 ribu hingga +Rp1,37 juta/RT/th di atas S1, tanpa kompensasi pada B0. Mitra juga menanggung risiko defisit MRV dan talangan pada harga rendah. Tenaga sukarela patroli (Rp225,8 juta/th setara non-tunai) sama di S1 dan S2 |
-| **Alokasi** | R1 meningkatkan pendapatan RT terdampak tanpa memperburuk perlindungan dibanding B0 (lulus 12/13 konfigurasi; tidak berlaku pada USD 10 karena tidak ada kas), tetapi mengurangi dana KUPS. R2 memperkuat perlindungan tetapi memperbesar kehilangan akses. B4 memperbesar kompensasi tetapi melemahkan perlindungan. Kompensasi tertinggi menutup ≤ 18,9 % kehilangan total |
+| **Alokasi** | R1 meningkatkan pendapatan RT terdampak tanpa memperburuk perlindungan dibanding B0 (lulus 12/13 konfigurasi; tidak berlaku pada USD 10 karena tidak ada kas), tetapi mengurangi dana KUPS (USD 35: KUPS aktif 2087 −73 %). Kesamaan perlindungan R1 = B0 adalah konsekuensi konstruksi alokasi (porsi efektif patroli, rehabilitasi, dan kebakaran R1 sama dengan B0), bukan temuan perilaku; R1 tidak optimal secara umum. R2 memperkuat perlindungan tetapi memperbesar kehilangan akses. B4 memperbesar kompensasi tetapi melemahkan perlindungan. Kompensasi tertinggi menutup ≤ 18,9 % kehilangan total |
 
 ## 5. Kapan manfaat perdagangan karbon tidak berkelanjutan
 

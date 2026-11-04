@@ -48,10 +48,14 @@ Kontribusi tenaga sukarela (Rp150.000/HOK) dan logistik bukan pendapatan.
 | Defisit MRV yang tetap ditanggung mitra 2087 | 15,20 | 0,00 | 11,06 | 0,00 |
 
 **Bacaan:**
-- Pada C-J1 USD 20, dari Rp29,1 miliar kas penjualan:
-  - Rp27,6 miliar habis untuk MRV, transaksi, pajak, dan kredit pengganti;
-  - LPHD menerima Rp7,7 miliar;
-  - mitra memperoleh Rp5,1 miliar ditambah pemulihan talangan, tetapi tetap menanggung defisit MRV Rp15,2 miliar.
+- Pada C-J1 USD 20, kas penjualan Rp29,07 miliar dipakai untuk:
+  - biaya bersama yang dibayar dari penjualan Rp10,69 miliar;
+  - pemulihan defisit MRV Rp1,65 miliar;
+  - pemulihan talangan jembatan Rp3,91 miliar;
+  - bagian LPHD Rp7,69 miliar dan bagian mitra Rp5,12 miliar.
+
+  Biaya bersama bruto Rp27,55 miliar (baris tabel di atas) mencakup Rp16,85 miliar yang ditalangi mitra; hanya Rp1,65 miliar yang dipulihkan, sehingga sisa defisit Rp15,20 miliar. Arus kas mitra nominal S2 − S1 = −Rp10,08 miliar (NPV −Rp0,27 miliar [SEMENTARA], karena defisit jatuh sesudah 2051). Rekonsiliasi lengkap: `AUDIT_AKADEMIK_FINAL_PWD.md` §1.
+  - *Koreksi 2026-11-04:* versi sebelumnya menjumlahkan biaya bruto dengan bagian LPHD dan mitra sehingga totalnya melebihi kas penjualan.
 - Tambahan uang tunai bagi rumah tangga Rp4,7 miliar upah dan Rp0,05 miliar penerimaan KUPS. Nilai ini **lebih kecil** daripada tambahan kehilangan pendapatan akibat pembatasan akses (Rp16,3 miliar).
 - Pada USD 35 polanya sama dalam skala lebih besar: upah Rp67,0 miliar dan KUPS Rp1,5 miliar, berbanding kehilangan akses Rp254,0 miliar.
 
