@@ -1,0 +1,34 @@
+berkas,jenis,skenario,md5,ukuran_byte,mtime_zip,catatan
+DKP_25HD_A1_S1_TANPA_INTERVENSI_PS_rapi.mdl,.mdl,S1,9c7115adc2aeb625fad1190491ecba46,450781,2026-11-01 23:37,Skenario Kebijakan=1; konstanta dibulatkan 6 angka penting
+DKP_25HD_A1_S2_PS_REGULER_rapi.mdl,.mdl,S2,036bfb911437c9a59741531c99ea2342,450887,2026-11-02 00:18,Skenario Kebijakan=2; konstanta dibulatkan
+DKP_25HD_A1_S3_PEMBIAYAAN_AWAL_rapi.mdl,.mdl,S3,bc1ccafa9f31113d40aa1317ea256af5,450885,2026-11-02 00:20,Skenario Kebijakan=3; konstanta dibulatkan
+DKP_25HD_A1_S4_USD3_rapi.mdl,.mdl,S4 USD3 (arsip),a6021743c4a2ea23ed65f40176f6afe5,450893,2026-11-01 15:12,Harga Karbon=3; konstanta tidak dibulatkan
+DKP_25HD_A1_S4_USD6_rapi.mdl,.mdl,S4 USD6,2b9a89c6e8f26c32fa7ada71302ef102,450893,2026-11-01 15:12,Harga Karbon=6; konstanta tidak dibulatkan
+DKP_25HD_A1_S4_USD10_rapi.mdl,.mdl,S4 USD10,d40855b29595836e56c6bfc11fe43e11,450894,2026-11-01 15:12,Harga Karbon=10; konstanta tidak dibulatkan (acuan diff)
+DKP_25HD_A1_S4_USD15_rapi.mdl,.mdl,S4 USD15,495c5db97cbb953ba790d066edc0c6d2,450894,2026-11-01 15:12,Harga Karbon=15; konstanta tidak dibulatkan
+DKP_25HD_A1_S4_USD20_rapi.mdl,.mdl,S4 USD20,38eb8378d6bb3d2d883c07e4d4359206,450894,2026-11-01 15:12,Harga Karbon=20; konstanta tidak dibulatkan
+DKP_25HD_A1_S4_USD35_rapi.mdl,.mdl,S4 USD35,68d2cc17e64a0dfdb4efeedf7ef2b688,450898,2026-11-02 00:29,Harga Karbon=35; konstanta dibulatkan
+DKP_25HD_A1_S4_USD35_rapi.2mdl,.2mdl,S4 USD35 (duplikat),68d2cc17e64a0dfdb4efeedf7ef2b688,450898,2026-11-02 00:29,md5 identik dengan ..._USD35_rapi.mdl
+DKP 25HD_A1_BENEFIT_ALLOCATION_EXPERIMENT_rapi.mdl,.mdl,Eksperimen alokasi (di luar cakupan),6312c361e0dcf0c45ff3da038647ad4f,461634,2026-11-02 00:33,740 variabel; Switch Alokasi Dana Fleksibel=0
+Ext Data/Skenario1.txt,.txt,S1,d8e95178c8269e41f47ed9d736d8ddb2,391053,2026-11-02 00:14,"Ekspor Vensim, run SKENARIO1, 686 variabel"
+Ext Data/Skenario2.txt,.txt,S2,6802057416d3379b1d1a141ad9228647,430918,2026-11-02 00:18,"Ekspor Vensim, run Run/Skenario2"
+Ext Data/Skenario3.txt,.txt,S3,a2684ac4b64ef335a30b7f61bb87e7ea,431419,2026-11-02 00:20,"Ekspor Vensim, label run ""Run/Untitled"" (bukan ""Skenario3"")"
+Ext Data/Skenario4USD6.txt,.txt,S4 USD6,231297ccaf2776888e545948446ddddb,492158,2026-11-02 00:22,Ekspor Vensim
+Ext Data/Skenario4USD10.txt,.txt,S4 USD10,e4cc6dfc051a08cd93e10f7af3e306fa,500369,2026-11-02 00:23,Ekspor Vensim
+Ext Data/Skenario4USD15.txt,.txt,S4 USD15,48c1bfe85b473011645a281591661be2,501885,2026-11-02 00:25,Ekspor Vensim
+Ext Data/Untitled.txt,.txt,S4 USD35,9bdb9e89a1cf02f55e83413746766ec5,497354,2026-11-02 00:29,"Nama berkas ""Untitled"" tetapi label run ""Run/Skenario4USD35"""
+Ext Data/benefit allocation.txt,.txt,Eksperimen alokasi,253518f4b24fb004cc247e1bde02f7f9,500898,2026-11-02 00:33,di luar cakupan
+Run/SKENARIO1.vdfx,.vdfx,S1,a29df2adb5341c28f3b0e952f029501e,230069,2026-11-01 23:30,biner Vensim; tidak dapat dibaca tanpa Vensim
+Run/Skenario2.vdfx,.vdfx,S2,50a38c930353d1c80f3fa06561050210,253061,2026-11-02 00:16,biner
+Run/Untitled.vdfx,.vdfx,S3 (diduga),5d780c003cb3defd8eefb297f13cefe7,253221,2026-11-02 00:18,biner; label run S3 di ekspor
+Run/Skenario4USD6.vdfx,.vdfx,S4 USD6,330da3826b0d77f62f040d82b9a514f5,305953,2026-11-02 00:20,biner
+Run/Skenario4USD10.vdfx,.vdfx,S4 USD10,757e2a9c56f5ea4e667031b17bd38203,308385,2026-11-02 00:22,biner
+Run/Skenario4USD15.vdfx,.vdfx,S4 USD15,effb0602c3e56f4f5c6a05587daec984,310481,2026-11-02 00:24,biner
+Run/Skenario4USD20.vdfx,.vdfx,S4 USD20,812231548677565204cf310f3cff373c,311737,2026-11-02 00:25,biner; SATU-SATUNYA keluaran Vensim USD20 dan tidak ada ekspor .txt
+Run/Skenario4USD35.vdfx,.vdfx,S4 USD35,60c3507ca2e75d437bd6a1cd4f5c2a74,306297,2026-11-02 00:28,biner
+Run/Benefit alloc.vdfx,.vdfx,Eksperimen alokasi,e072c8a19cb5f0e906c4778cb127b2cf,310053,2026-11-02 00:31,biner
+HASIL SIMULASI VENSIM.xlsx,.xlsx,S1–S4 + alokasi,23478564db74938744d5729017c215eb,3453882,2026-11-02 00:32,RUSAK: pemisah desimal hilang saat impor (mis. 20.1326 -> 201326); 20–35 % nilai tidak cocok dengan .txt
+REGISTER_DATA_SEMUA_SKENARIO_A1.xlsx,.xlsx,Semua,e8951f142ff838785419715821750b4b,1285333,2026-11-02 02:04,"Register PySD; README: ""Vensim native belum dijalankan""; sumber hasil resmi a1/out/FINAL_THESIS_RESULTS.xlsx TIDAK disertakan"
+.DS_Store,-,-,2b3f3c265382cb073149041d324df5cd,6148,2026-11-02 01:49,metadata macOS
+MAKALAH_SEMHAS_REVOLIA_AZ-ZAHRA.pdf,.pdf,Naskah,e74fdbdba6b1726a97dec0a7ffe000ed,,,12 halaman; dua unggahan identik
+DELTA_KAPUAS_25HD_SD_FINAL_A1.mdl (md5 f1bfaa88d84d61d6d9f990cda990253a),.mdl,(disebut pengguna),TIDAK ADA DI ZIP,,,Berkas induk yang disebut tidak tersedia; keterlacakan ke berkas ini BELUM TERVERIFIKASI

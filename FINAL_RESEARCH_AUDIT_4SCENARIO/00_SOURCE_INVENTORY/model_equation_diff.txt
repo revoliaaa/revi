@@ -1,0 +1,169 @@
+##### DKP_25HD_A1_S1_TANPA_INTERVENSI_PS_rapi.mdl vs DKP_25HD_A1_S4_USD10_rapi.mdl
+DIFF faktor rekonsiliasi reversal kredit a2
+  A: Faktor Rekonsiliasi Reversal Kredit A2= 1.000000
+  B: Faktor Rekonsiliasi Reversal Kredit A2= 1
+DIFF harga karbon
+  A: Harga Karbon= 10
+  B: Harga Karbon= 6
+DIFF hutan mangrove sekunder
+  A: Hutan Mangrove Sekunder= INTEG(NonHutan menjadi HMS+Rehabilitasi ke HMS-HMS menjadi NonHutan, 52398.18-Switch S1 *Koreksi Kontrafaktual Hutan S1*Porsi Koreksi HMS)
+  B: Hutan Mangrove Sekunder= INTEG(NonHutan menjadi HMS+Rehabilitasi ke HMS-HMS menjadi NonHutan, 52398.2-Switch S1 *Koreksi Kontrafaktual Hutan S1*Porsi Koreksi HMS)
+DIFF hutan mangrove sekunder baseline
+  A: Hutan Mangrove Sekunder Baseline= INTEG(NonHutan menjadi HMS Baseline+Rehabilitasi ke HMS Baseline-HMS menjadi NonHutan Baseline , 52398.18-Switch S1*Koreksi Kontrafaktual Hutan S1*Porsi Koreksi HMS)
+  B: Hutan Mangrove Sekunder Baseline= INTEG(NonHutan menjadi HMS Baseline+Rehabilitasi ke HMS Baseline-HMS menjadi NonHutan Baseline , 52398.2-Switch S1*Koreksi Kontrafaktual Hutan S1*Porsi Koreksi HMS)
+DIFF hutan rawa sekunder
+  A: Hutan Rawa Sekunder= INTEG(NonHutan menjadi HRS+Rehabilitasi ke HRS-HRS menjadi NonHutan-HRS menjadi Pr, 36931.85-Switch S1*Koreksi Kontrafaktual Hutan S1*Porsi Koreksi HRS)
+  B: Hutan Rawa Sekunder= INTEG(NonHutan menjadi HRS+Rehabilitasi ke HRS-HRS menjadi NonHutan-HRS menjadi Pr, 36931.9-Switch S1*Koreksi Kontrafaktual Hutan S1*Porsi Koreksi HRS)
+DIFF hutan rawa sekunder baseline
+  A: Hutan Rawa Sekunder Baseline= INTEG(NonHutan menjadi HRS Baseline+Rehabilitasi ke HRS Baseline-HRS menjadi NonHutan Baseline -HRS menjadi Pr Baseline, 36931.85-Switch S1*Koreksi Kontrafaktual Hutan S1*Porsi Koreksi HRS )
+  B: Hutan Rawa Sekunder Baseline= INTEG(NonHutan menjadi HRS Baseline+Rehabilitasi ke HRS Baseline-HRS menjadi NonHutan Baseline -HRS menjadi Pr Baseline, 36931.9-Switch S1*Koreksi Kontrafaktual Hutan S1*Porsi Koreksi HRS )
+DIFF laju nonhutan menjadi pr
+  A: Laju NonHutan menjadi Pr= 0.009345924
+  B: Laju NonHutan menjadi Pr= 0.00934592
+DIFF luas area proyek karbon
+  A: Luas Area Proyek Karbon= 111123.17
+  B: Luas Area Proyek Karbon= 111123
+DIFF luas total gambut budidaya
+  A: Luas Total Gambut Budidaya= 15639.33
+  B: Luas Total Gambut Budidaya= 15639.3
+DIFF luas total gambut lindung
+  A: Luas Total Gambut Lindung= 84693.67
+  B: Luas Total Gambut Lindung= 84693.7
+DIFF proporsi karhutla di lahan gambut
+  A: Proporsi Karhutla di Lahan Gambut= 0.8030
+  B: Proporsi Karhutla di Lahan Gambut= 0.803
+DIFF skenario kebijakan
+  A: Skenario Kebijakan= 4
+  B: Skenario Kebijakan= 1
+nA 724 nB 724
+##### DKP_25HD_A1_S2_PS_REGULER_rapi.mdl vs DKP_25HD_A1_S4_USD10_rapi.mdl
+DIFF faktor rekonsiliasi reversal kredit a2
+  A: Faktor Rekonsiliasi Reversal Kredit A2= 1.000000
+  B: Faktor Rekonsiliasi Reversal Kredit A2= 1
+DIFF harga karbon
+  A: Harga Karbon= 10
+  B: Harga Karbon= 6
+DIFF hutan mangrove sekunder
+  A: Hutan Mangrove Sekunder= INTEG(NonHutan menjadi HMS+Rehabilitasi ke HMS-HMS menjadi NonHutan, 52398.18-Switch S1 *Koreksi Kontrafaktual Hutan S1*Porsi Koreksi HMS)
+  B: Hutan Mangrove Sekunder= INTEG(NonHutan menjadi HMS+Rehabilitasi ke HMS-HMS menjadi NonHutan, 52398.2-Switch S1 *Koreksi Kontrafaktual Hutan S1*Porsi Koreksi HMS)
+DIFF hutan mangrove sekunder baseline
+  A: Hutan Mangrove Sekunder Baseline= INTEG(NonHutan menjadi HMS Baseline+Rehabilitasi ke HMS Baseline-HMS menjadi NonHutan Baseline , 52398.18-Switch S1*Koreksi Kontrafaktual Hutan S1*Porsi Koreksi HMS)
+  B: Hutan Mangrove Sekunder Baseline= INTEG(NonHutan menjadi HMS Baseline+Rehabilitasi ke HMS Baseline-HMS menjadi NonHutan Baseline , 52398.2-Switch S1*Koreksi Kontrafaktual Hutan S1*Porsi Koreksi HMS)
+DIFF hutan rawa sekunder
+  A: Hutan Rawa Sekunder= INTEG(NonHutan menjadi HRS+Rehabilitasi ke HRS-HRS menjadi NonHutan-HRS menjadi Pr, 36931.85-Switch S1*Koreksi Kontrafaktual Hutan S1*Porsi Koreksi HRS)
+  B: Hutan Rawa Sekunder= INTEG(NonHutan menjadi HRS+Rehabilitasi ke HRS-HRS menjadi NonHutan-HRS menjadi Pr, 36931.9-Switch S1*Koreksi Kontrafaktual Hutan S1*Porsi Koreksi HRS)
+DIFF hutan rawa sekunder baseline
+  A: Hutan Rawa Sekunder Baseline= INTEG(NonHutan menjadi HRS Baseline+Rehabilitasi ke HRS Baseline-HRS menjadi NonHutan Baseline -HRS menjadi Pr Baseline, 36931.85-Switch S1*Koreksi Kontrafaktual Hutan S1*Porsi Koreksi HRS )
+  B: Hutan Rawa Sekunder Baseline= INTEG(NonHutan menjadi HRS Baseline+Rehabilitasi ke HRS Baseline-HRS menjadi NonHutan Baseline -HRS menjadi Pr Baseline, 36931.9-Switch S1*Koreksi Kontrafaktual Hutan S1*Porsi Koreksi HRS )
+DIFF laju nonhutan menjadi pr
+  A: Laju NonHutan menjadi Pr= 0.009345924
+  B: Laju NonHutan menjadi Pr= 0.00934592
+DIFF luas area proyek karbon
+  A: Luas Area Proyek Karbon= 111123.17
+  B: Luas Area Proyek Karbon= 111123
+DIFF luas total gambut budidaya
+  A: Luas Total Gambut Budidaya= 15639.33
+  B: Luas Total Gambut Budidaya= 15639.3
+DIFF luas total gambut lindung
+  A: Luas Total Gambut Lindung= 84693.67
+  B: Luas Total Gambut Lindung= 84693.7
+DIFF proporsi karhutla di lahan gambut
+  A: Proporsi Karhutla di Lahan Gambut= 0.8030
+  B: Proporsi Karhutla di Lahan Gambut= 0.803
+DIFF skenario kebijakan
+  A: Skenario Kebijakan= 4
+  B: Skenario Kebijakan= 2
+nA 724 nB 724
+##### DKP_25HD_A1_S3_PEMBIAYAAN_AWAL_rapi.mdl vs DKP_25HD_A1_S4_USD10_rapi.mdl
+DIFF faktor rekonsiliasi reversal kredit a2
+  A: Faktor Rekonsiliasi Reversal Kredit A2= 1.000000
+  B: Faktor Rekonsiliasi Reversal Kredit A2= 1
+DIFF harga karbon
+  A: Harga Karbon= 10
+  B: Harga Karbon= 6
+DIFF hutan mangrove sekunder
+  A: Hutan Mangrove Sekunder= INTEG(NonHutan menjadi HMS+Rehabilitasi ke HMS-HMS menjadi NonHutan, 52398.18-Switch S1 *Koreksi Kontrafaktual Hutan S1*Porsi Koreksi HMS)
+  B: Hutan Mangrove Sekunder= INTEG(NonHutan menjadi HMS+Rehabilitasi ke HMS-HMS menjadi NonHutan, 52398.2-Switch S1 *Koreksi Kontrafaktual Hutan S1*Porsi Koreksi HMS)
+DIFF hutan mangrove sekunder baseline
+  A: Hutan Mangrove Sekunder Baseline= INTEG(NonHutan menjadi HMS Baseline+Rehabilitasi ke HMS Baseline-HMS menjadi NonHutan Baseline , 52398.18-Switch S1*Koreksi Kontrafaktual Hutan S1*Porsi Koreksi HMS)
+  B: Hutan Mangrove Sekunder Baseline= INTEG(NonHutan menjadi HMS Baseline+Rehabilitasi ke HMS Baseline-HMS menjadi NonHutan Baseline , 52398.2-Switch S1*Koreksi Kontrafaktual Hutan S1*Porsi Koreksi HMS)
+DIFF hutan rawa sekunder
+  A: Hutan Rawa Sekunder= INTEG(NonHutan menjadi HRS+Rehabilitasi ke HRS-HRS menjadi NonHutan-HRS menjadi Pr, 36931.85-Switch S1*Koreksi Kontrafaktual Hutan S1*Porsi Koreksi HRS)
+  B: Hutan Rawa Sekunder= INTEG(NonHutan menjadi HRS+Rehabilitasi ke HRS-HRS menjadi NonHutan-HRS menjadi Pr, 36931.9-Switch S1*Koreksi Kontrafaktual Hutan S1*Porsi Koreksi HRS)
+DIFF hutan rawa sekunder baseline
+  A: Hutan Rawa Sekunder Baseline= INTEG(NonHutan menjadi HRS Baseline+Rehabilitasi ke HRS Baseline-HRS menjadi NonHutan Baseline -HRS menjadi Pr Baseline, 36931.85-Switch S1*Koreksi Kontrafaktual Hutan S1*Porsi Koreksi HRS )
+  B: Hutan Rawa Sekunder Baseline= INTEG(NonHutan menjadi HRS Baseline+Rehabilitasi ke HRS Baseline-HRS menjadi NonHutan Baseline -HRS menjadi Pr Baseline, 36931.9-Switch S1*Koreksi Kontrafaktual Hutan S1*Porsi Koreksi HRS )
+DIFF laju nonhutan menjadi pr
+  A: Laju NonHutan menjadi Pr= 0.009345924
+  B: Laju NonHutan menjadi Pr= 0.00934592
+DIFF luas area proyek karbon
+  A: Luas Area Proyek Karbon= 111123.17
+  B: Luas Area Proyek Karbon= 111123
+DIFF luas total gambut budidaya
+  A: Luas Total Gambut Budidaya= 15639.33
+  B: Luas Total Gambut Budidaya= 15639.3
+DIFF luas total gambut lindung
+  A: Luas Total Gambut Lindung= 84693.67
+  B: Luas Total Gambut Lindung= 84693.7
+DIFF proporsi karhutla di lahan gambut
+  A: Proporsi Karhutla di Lahan Gambut= 0.8030
+  B: Proporsi Karhutla di Lahan Gambut= 0.803
+DIFF skenario kebijakan
+  A: Skenario Kebijakan= 4
+  B: Skenario Kebijakan= 3
+nA 724 nB 724
+##### DKP_25HD_A1_S4_USD6_rapi.mdl vs DKP_25HD_A1_S4_USD10_rapi.mdl
+DIFF harga karbon
+  A: Harga Karbon= 10
+  B: Harga Karbon= 6
+nA 724 nB 724
+##### DKP_25HD_A1_S4_USD15_rapi.mdl vs DKP_25HD_A1_S4_USD10_rapi.mdl
+DIFF harga karbon
+  A: Harga Karbon= 10
+  B: Harga Karbon= 15
+nA 724 nB 724
+##### DKP_25HD_A1_S4_USD20_rapi.mdl vs DKP_25HD_A1_S4_USD10_rapi.mdl
+DIFF harga karbon
+  A: Harga Karbon= 10
+  B: Harga Karbon= 20
+nA 724 nB 724
+##### DKP_25HD_A1_S4_USD35_rapi.mdl vs DKP_25HD_A1_S4_USD10_rapi.mdl
+DIFF faktor rekonsiliasi reversal kredit a2
+  A: Faktor Rekonsiliasi Reversal Kredit A2= 1.000000
+  B: Faktor Rekonsiliasi Reversal Kredit A2= 1
+DIFF harga karbon
+  A: Harga Karbon= 10
+  B: Harga Karbon= 35
+DIFF hutan mangrove sekunder
+  A: Hutan Mangrove Sekunder= INTEG(NonHutan menjadi HMS+Rehabilitasi ke HMS-HMS menjadi NonHutan, 52398.18-Switch S1 *Koreksi Kontrafaktual Hutan S1*Porsi Koreksi HMS)
+  B: Hutan Mangrove Sekunder= INTEG(NonHutan menjadi HMS+Rehabilitasi ke HMS-HMS menjadi NonHutan, 52398.2-Switch S1 *Koreksi Kontrafaktual Hutan S1*Porsi Koreksi HMS)
+DIFF hutan mangrove sekunder baseline
+  A: Hutan Mangrove Sekunder Baseline= INTEG(NonHutan menjadi HMS Baseline+Rehabilitasi ke HMS Baseline-HMS menjadi NonHutan Baseline , 52398.18-Switch S1*Koreksi Kontrafaktual Hutan S1*Porsi Koreksi HMS)
+  B: Hutan Mangrove Sekunder Baseline= INTEG(NonHutan menjadi HMS Baseline+Rehabilitasi ke HMS Baseline-HMS menjadi NonHutan Baseline , 52398.2-Switch S1*Koreksi Kontrafaktual Hutan S1*Porsi Koreksi HMS)
+DIFF hutan rawa sekunder
+  A: Hutan Rawa Sekunder= INTEG(NonHutan menjadi HRS+Rehabilitasi ke HRS-HRS menjadi NonHutan-HRS menjadi Pr, 36931.85-Switch S1*Koreksi Kontrafaktual Hutan S1*Porsi Koreksi HRS)
+  B: Hutan Rawa Sekunder= INTEG(NonHutan menjadi HRS+Rehabilitasi ke HRS-HRS menjadi NonHutan-HRS menjadi Pr, 36931.9-Switch S1*Koreksi Kontrafaktual Hutan S1*Porsi Koreksi HRS)
+DIFF hutan rawa sekunder baseline
+  A: Hutan Rawa Sekunder Baseline= INTEG(NonHutan menjadi HRS Baseline+Rehabilitasi ke HRS Baseline-HRS menjadi NonHutan Baseline -HRS menjadi Pr Baseline, 36931.85-Switch S1*Koreksi Kontrafaktual Hutan S1*Porsi Koreksi HRS )
+  B: Hutan Rawa Sekunder Baseline= INTEG(NonHutan menjadi HRS Baseline+Rehabilitasi ke HRS Baseline-HRS menjadi NonHutan Baseline -HRS menjadi Pr Baseline, 36931.9-Switch S1*Koreksi Kontrafaktual Hutan S1*Porsi Koreksi HRS )
+DIFF laju nonhutan menjadi pr
+  A: Laju NonHutan menjadi Pr= 0.009345924
+  B: Laju NonHutan menjadi Pr= 0.00934592
+DIFF luas area proyek karbon
+  A: Luas Area Proyek Karbon= 111123.17
+  B: Luas Area Proyek Karbon= 111123
+DIFF luas total gambut budidaya
+  A: Luas Total Gambut Budidaya= 15639.33
+  B: Luas Total Gambut Budidaya= 15639.3
+DIFF luas total gambut lindung
+  A: Luas Total Gambut Lindung= 84693.67
+  B: Luas Total Gambut Lindung= 84693.7
+DIFF proporsi karhutla di lahan gambut
+  A: Proporsi Karhutla di Lahan Gambut= 0.8030
+  B: Proporsi Karhutla di Lahan Gambut= 0.803
+nA 724 nB 724
+##### DKP_25HD_A1_S4_USD3_rapi.mdl vs DKP_25HD_A1_S4_USD10_rapi.mdl
+DIFF harga karbon
+  A: Harga Karbon= 10
+  B: Harga Karbon= 3
+nA 724 nB 724

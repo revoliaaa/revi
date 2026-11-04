@@ -1,0 +1,9 @@
+run,file,vars_export,vars_matched,missing,values,identical_6sig,pct,n_vars_with_diff,worst
+S1,Skenario1.txt,686,686,0,43904,43841,99.85650510204081,1,Check Konservasi Karbon(9.25e+00)
+S2,Skenario2.txt,724,723,1,46272,46106,99.64125172890733,22,Check Konservasi Karbon(1.01e+00);Check Total Kawasan(1.00e+00);Pengurangan Emisi ARR Bruto(5.82e-02);Pengurangan Emisi Eligible ARR(4.61e-02)
+S3,Skenario3.txt,724,723,1,46272,46075,99.57425656984786,19,Check Konservasi Karbon(1.00e+00);Check Total Kawasan(1.00e+00);Pengurangan Emisi ARR Bruto(2.03e-04);Pengurangan Emisi Eligible ARR(2.01e-04)
+S4USD6,Skenario4USD6.txt,724,723,1,46272,46085,99.59586791147994,24,Pendapatan Kotor ARR(3.08e+02);Check Konservasi Karbon(1.00e+00);Check Total Kawasan(1.00e+00);Pengurangan Emisi ARR Bruto(5.82e-02)
+S4USD10,Skenario4USD10.txt,724,723,1,46272,46132,99.69744121715075,9,Pendapatan Kotor ARR(3.08e+02);Check Konservasi Karbon(1.00e+00);Check Total Kawasan(1.00e+00);Pengurangan Emisi ARR Bruto(5.82e-02)
+S4USD15,Skenario4USD15.txt,724,723,1,46272,46124,99.68015214384509,13,Pendapatan Kotor ARR(3.08e+02);Check Konservasi Karbon(1.00e+00);Check Total Kawasan(1.00e+00);Stok Kredit ARR Belum Terjual(1.33e-03)
+S4USD35,Untitled.txt,724,723,1,46272,45832,99.0491009681881,86,Check Konservasi Karbon(1.00e+00);Check Total Kawasan(1.00e+00);Alokasi Prioritas Rehabilitasi(2.31e-03);Pembentukan KUPS Didanai Karbon(1.35e-04)
+BENEFIT,benefit allocation.txt,740,739,1,47296,45046,95.24272665764546,93,Check Konservasi Karbon(1.00e+00);Check Total Kawasan(1.00e+00);Defisit Biaya Bersama Belum Dipulihkan(1.56e-03);Kekurangan Biaya Bersama Ditanggung Mitra(4.07e-04)
