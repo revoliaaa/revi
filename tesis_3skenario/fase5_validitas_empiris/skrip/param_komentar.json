@@ -1,0 +1,186 @@
+{
+ "Upah Harian Patroli Berbayar": [
+  "150000",
+  "Rupiah/HOK"
+ ],
+ "Biaya per Hari Patroli": [
+  "260000",
+  "Rupiah/HOK"
+ ],
+ "HOK Patroli Pembiayaan Awal Aktual 2024": [
+  "2533",
+  "HOK/Year"
+ ],
+ "HOK Patroli Pembiayaan Awal Aktual 2025": [
+  "3011",
+  "HOK/Year"
+ ],
+ "Keikutsertaan Patroli 2023": [
+  "2160",
+  "HOK/Year"
+ ],
+ "Status Pembiayaan Awal": [
+  "0",
+  "Dmnl"
+ ],
+ "Besaran Pembiayaan Jembatan per Tahun": [
+  "7.8286e+08",
+  "Rupiah/Year"
+ ],
+ "Durasi Pembiayaan Jembatan": [
+  "5",
+  "Year"
+ ],
+ "Biaya Monitoring per Ha per Tahun": [
+  "1980",
+  "Rupiah/(Ha*Year)"
+ ],
+ "Biaya Verifikasi per Kejadian": [
+  "7.425e+08",
+  "Rupiah"
+ ],
+ "Biaya Penerbitan per Kredit": [
+  "0.25",
+  "USD/tCO2e"
+ ],
+ "Proporsi Pajak dan Pungutan Karbon": [
+  "0.05",
+  "Dmnl"
+ ],
+ "Proporsi Biaya Transaksi Penjualan": [
+  "0.0022",
+  "Dmnl"
+ ],
+ "Biaya Pengembangan Proyek": [
+  "0",
+  "Rupiah/Year"
+ ],
+ "Masyarakat Bergantung pada Hutan Awal": [
+  "5328",
+  "People"
+ ],
+ "RT Pemegang Garapan dalam HD": [
+  "2144",
+  "Household"
+ ],
+ "Faktor Keunikan Catatan Garapan": [
+  "1",
+  "Dmnl"
+ ],
+ "Pengali Kehilangan Akses": [
+  "1",
+  "Dmnl"
+ ],
+ "Proporsi Pendapatan Hutan dari Aktivitas Pemicu Deforestasi": [
+  "0.25",
+  "Dmnl"
+ ],
+ "Pendapatan Dasar RT Bergantung": [
+  "4.176e+07",
+  "Rupiah/(Household*Year)"
+ ],
+ "Proporsi Pendapatan dari Hutan": [
+  "0.201",
+  "Dmnl"
+ ],
+ "Biaya Reaktivasi KUPS": [
+  "Biaya Pembentukan KUPS",
+  "Rupiah/Unit"
+ ],
+ "Biaya Pembentukan KUPS": [
+  "5e+07",
+  "Rupiah/Unit"
+ ],
+ "Porsi Laba Ditahan untuk Reinvestasi": [
+  "0.5",
+  "Dmnl"
+ ],
+ "Surplus Operasional per KUPS Produktif": [
+  "6.6473e+06",
+  "Rupiah/(Unit*Year)"
+ ],
+ "Porsi Surplus KUPS Dibagikan ke Anggota": [
+  "0.263",
+  "Dmnl"
+ ],
+ "Tingkat Keberlanjutan Patroli Reguler": [
+  "0.5",
+  "Dmnl"
+ ],
+ "Efektivitas Perlindungan Penuh terhadap Deforestasi": [
+  "0.37",
+  "Dmnl"
+ ],
+ "Laju HRS menjadi NonHutan BAU": [
+  "0.00955847",
+  "1/Year"
+ ],
+ "Proporsi Kredit REDD dalam Project Area": [
+  "0.682",
+  "Dmnl [0,1]"
+ ],
+ "Proporsi Leakage Karbon": [
+  "0.1",
+  "Dmnl"
+ ],
+ "Proporsi Buffer Risiko Karbon": [
+  "0.12",
+  "Dmnl"
+ ],
+ "Harga Karbon": [
+  "6",
+  "USD/tCO2e"
+ ],
+ "Nilai Tukar USD ke Rupiah": [
+  "16500",
+  "Rupiah/USD"
+ ],
+ "Laju Pertumbuhan Penduduk": [
+  "0.0166",
+  "1/Year"
+ ],
+ "Porsi Upah sebagai Tambahan Bersih": [
+  "0.5",
+  "Dmnl"
+ ],
+ "Proporsi Manfaat Masyarakat": [
+  "0.6",
+  "Dmnl"
+ ],
+ "Upah Harian Pengendalian Kebakaran": [
+  "130000",
+  "Rupiah/HOK"
+ ],
+ "Delay Verifikasi dan Penerbitan Kredit": [
+  "3",
+  "Year"
+ ],
+ "Tingkat Diskonto": [
+  "0.1",
+  "1/Year"
+ ],
+ "Anggota Patroli Roster 2025": [
+  "254",
+  "People"
+ ],
+ "HOK Patroli per Anggota 2025": [
+  "HOK Patroli Pembiayaan Awal Aktual 2025/Anggota Patroli Roster 2025",
+  "HOK/(People*Year)"
+ ],
+ "Indeks Kapasitas LPHD Awal": [
+  "0.5",
+  "Dmnl"
+ ],
+ "Hari Logistik Swadaya per Anggota": [
+  "9.17",
+  "HOK/(People*Year)"
+ ],
+ "Upah Penanaman per HOK": [
+  "106000",
+  "Rupiah/HOK"
+ ],
+ "Biaya Penanaman per Ha": [
+  "1.4e+07",
+  "Rupiah/Ha"
+ ]
+}
