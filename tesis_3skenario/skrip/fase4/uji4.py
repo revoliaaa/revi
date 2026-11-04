@@ -1,8 +1,9 @@
 import sys, json, numpy as np, pandas as pd
 sys.path.insert(0, "fase4"); import c4
 DT = 0.0625; FE = (1 - .1) * (1 - .12) * 0.682
-L = lambda k: pd.read_pickle(f"fase4/runs/{k}.pkl"); L3 = lambda k: pd.read_pickle(f"fase3b/runs/{k}.pkl")
+L = lambda k: pd.read_pickle(f"fase4/runs_v2/{k}.pkl"); L3 = lambda k: pd.read_pickle(f"fase3b/runs/{k}.pkl")
 I = lambda d, v: float(d[v].iloc[:-1].sum() * DT)           # integral 2024–2087
+LP = lambda d: d["Kredit Pengganti Reversal Kumulatif"].diff().shift(-1).fillna(0) / DT
 def Iy(d, v, a, b): s = d[v]; return float(s[(s.index >= a) & (s.index < b)].sum() * DT)
 R = []
 def T(kode, nama, ok, bukti, status=None): R.append({"Kode": kode, "Uji": nama, "Status": status or ("LULUS" if ok else "GAGAL"), "Bukti": bukti}); print(kode, R[-1]["Status"], "|", bukti[:200])
@@ -10,7 +11,7 @@ f = lambda x, d=0: f"{x:,.{d}f}".replace(",", "X").replace(".", ",").replace("X"
 S1, C20, C35, A20, B20 = L("S1"), L("C20"), L("C35"), L("A20"), L("B20")
 # ---------- statis
 sta = json.load(open("fase4/statis.json"))
-T("V0a", "Parsing PySD", True, "read_vensim berhasil; 937 variabel; 16 View")
+T("V0a", "Parsing PySD", True, "read_vensim berhasil; 946 variabel (v2); 16 View")
 T("V0b", "Referensi dan loop aljabar", sta["unknown"] == 0 and sta["scc"] == 0, f"referensi tak dikenal {sta['unknown']}; loop aljabar {sta['scc']}; pemakai Switch Karbon {sta['sk']} (9 lama + jembatan + 4 rantai kredit/pelaporan PWD-K)")
 T("V0c", "Units Check dan run native Vensim", False, "Vensim tidak tersedia di lingkungan ini; harus dijalankan peneliti", status="BELUM DILAKUKAN")
 T("V18", "Konsistensi dimensional (pemeriksa statis)", sta["satuan_bermasalah"] == 0, f"{sta['satuan_ok']} persamaan konsisten, {sta['satuan_bermasalah']} bermasalah")
@@ -54,11 +55,12 @@ rows = []; ok = True
 for h in [6, 10, 15, 20, 35]:
     d = L(f"C{h}"); er = float((d["Emisi Deforestasi Biomassa Referensi S1"] - S1["Emisi Deforestasi Biomassa"]).abs().max())
     kr = I(d, "Kredit REDD Diajukan"); mit = I(d, "Mitigasi REDD Eligible Bersih Proyek"); sal = float(d["Saldo Mitigasi REDD Belum Dikreditkan"].iloc[-1])
-    pair = (I(S1, "Emisi Deforestasi Biomassa") - I(d, "Emisi Deforestasi Biomassa")) * FE; rev = float(d["Reversal Belum Terkompensasi"].iloc[-1]); buf = float(d["Kumulatif Buffer REDD"].iloc[-1])
-    rep = float(d["Kredit Pengganti Reversal Kumulatif"].iloc[-1]); out = rev - min(rev, buf) - rep
-    idn = abs(kr - (mit - sal)); ok &= er < 1e-6 and idn < 1e-3 * max(1, kr) and mit <= pair + 1 and out <= 5e-3 * max(1, rev) + 1 and (kr - min(rev, buf) - rep) <= mit * 1.001 + 1
-    rows.append(f"USD{h}: kredit REDD {f(kr)}; mitigasi eligible bersih (bertanda) {f(mit)}; mitigasi deforestasi berpasangan eligible {f(pair)}; reversal {f(rev)}: ditutup buffer {f(min(rev,buf))} + kredit pengganti {f(rep)}; kredit bersih sesudah penyelesaian {f(kr-min(rev,buf)-rep)} ≤ mitigasi {f(mit)}; |emisi ref − S1| {er:.1e}")
-T("K3", "Kredit C endogen: Σ kredit = Σ mitigasi bersih − saldo; mitigasi ≤ berpasangan; reversal diselesaikan buffer + pembelian pengganti (sisa ≤ 0,5 % karena jeda satu DT di akhir horizon)", ok, "; ".join(rows))
+    bu = I(d, "Penggunaan Buffer Reversal"); ca = I(d, "Pembatalan Stok Kredit Reversal"); rp = float(d["Kredit Pengganti Reversal Kumulatif"].iloc[-1])
+    pair = (I(S1, "Emisi Deforestasi Biomassa") - I(d, "Emisi Deforestasi Biomassa")) * FE; debt = max(0.0, -sal)
+    idn = abs(kr - (mit + bu + ca + rp - sal)); net = kr - ca - rp - bu
+    ok &= er < 1e-6 and idn < 1e-3 * max(1, kr) and mit <= pair + 1 and net - debt <= pair + 1
+    rows.append(f"USD{h}: kredit diajukan {f(kr)}; dibatalkan dari stok sendiri {f(ca)}; pengganti dibeli {f(rp)}; buffer dipakai {f(bu)}; kredit bersih {f(net)}; debit belum diselesaikan 2087 {f(debt)}; mitigasi eligible (Ref S1) {f(mit)}; mitigasi deforestasi berpasangan eligible {f(pair)}; |emisi ref − S1| {er:.1e}")
+T("K3", "Kredit C endogen (v2): Σ kredit = Σ mitigasi + Σ penyelesaian − saldo; mitigasi ≤ berpasangan; kredit bersih − debit belum diselesaikan ≤ mitigasi berpasangan", ok, "; ".join(rows))
 ok = True
 for k in ["C20", "C35", "C10", "C6"]:
     d = L(k); s_ = d["Pengurangan Emisi REDD Bruto Referensi S1"] + d["Pengurangan Emisi ARR Bruto Referensi S1"]; n = d["Pengurangan Emisi Biomassa Referensi S1"]
@@ -68,7 +70,7 @@ ok = True; bb = []
 for k in ["C20", "C35", "A20"]:
     d = L(k)
     for j in ["REDD", "ARR"]:
-        st = float(d[f"Stok Kredit {j} Belum Terjual"].iloc[-1]); fl = I(d, f"Kredit {j} Terbit") - I(d, f"Kredit {j} Terjual") - I(d, f"Kredit {j} Kedaluwarsa")
+        st = float(d[f"Stok Kredit {j} Belum Terjual"].iloc[-1]); fl = I(d, f"Kredit {j} Terbit") - I(d, f"Kredit {j} Terjual") - I(d, f"Kredit {j} Kedaluwarsa") - (I(d, "Pembatalan Stok Kredit Reversal") if j == "REDD" else 0)
         ok &= abs(st - fl) < 1e-3 * max(1, st)
     pipe = I(d, "Kredit Karbon Diajukan") - I(d, "Kredit Karbon Terbit"); ok &= pipe >= -1e-6; bb.append(f"{k}: diajukan − terbit = {f(pipe)} (antrean 3 th terakhir)")
 T("K5", "Konservasi kredit (diajukan → terbit → terjual/stok/kedaluwarsa)", ok, "stok akhir = Σ terbit − Σ terjual − Σ kedaluwarsa (REDD, ARR); " + "; ".join(bb))
@@ -114,6 +116,36 @@ T("T1", "Biaya modal dibatasi (perbaikan T-a)", ok, "; ".join(bb) + " (Fase 3: s
 d = L("T_C6_bm10_hapus"); ss = float(d["Pendanaan Awal Belum Terpulihkan"][d.index >= 2045.0625].abs().max()); kg = float(d["Kerugian Mitra dari Penghapusan Talangan"].iloc[-1])
 idn = float(d["Pokok Talangan Kumulatif"].iloc[-1] + d["Biaya Modal Kumulatif"].iloc[-1] - I(d, "Pemulihan Pendanaan Awal") - kg - d["Pendanaan Awal Belum Terpulihkan"].iloc[-1])
 T("T2", "Penghapusan talangan dengan pengakuan kerugian", ss < 1 and abs(idn) < 1e3, f"sisa sesudah 2045 = {ss:.1e}; kerugian mitra diakui Rp{f(kg)}; identitas pokok + biaya modal − pemulihan − penghapusan − sisa = {idn:.1e} Rp; NPV mitra sama dengan tanpa penghapusan ({f(float(d['NPV Mitra'].iloc[-1]))} vs {f(float(L('T_C6_bm10')['NPV Mitra'].iloc[-1]))})")
+# ---------- reversal (v2)
+ok = True; bb = []
+for k in ["C6", "C15", "C20"]:
+    d = L(k); fl = d["Penggunaan Buffer Reversal"] + d["Pembatalan Stok Kredit Reversal"] + LP(d)
+    nz = fl > 1e-9; ok &= bool((d["Pulsa Verifikasi Reversal"][nz] > 0.5).all())
+    dd = S1["Deforestasi Total"] - d["Deforestasi Total"]; tneg = float(dd.index[(dd < -1e-9).values][0]) if (dd < -1e-9).any() else None
+    td = float(d.index[(d["Reversal Belum Terkompensasi"] > 1e-6).values][0]) if (d["Reversal Belum Terkompensasi"] > 1e-6).any() else None
+    lp_ = LP(d); tb = float(d.index[(lp_ > 1e-9).values][0]) if (lp_ > 1e-9).any() else None
+    bb.append(f"{k}: deforestasi S2>S1 pertama {tneg}; debit pertama {td}; pembelian pertama {tb}; penyelesaian hanya pada pulsa verifikasi")
+T("RV1", "Penyelesaian reversal hanya pada peristiwa verifikasi, tidak pada setiap tahun S2 > S1", ok, "; ".join(bb))
+ok = True; bb = []
+for k in ["C6", "C15", "C20"]:
+    d = L(k); pz = d.index[(d["Pulsa Verifikasi Reversal"] > 0.5).values]
+    for t in pz:
+        i = d.index.get_loc(t)
+        if i + 1 < len(d) and float(d["Penggunaan Buffer Reversal"].iloc[i] + d["Pembatalan Stok Kredit Reversal"].iloc[i] + LP(d).iloc[i]) > 1e-9:
+            after = float(d["Saldo Mitigasi REDD Belum Dikreditkan"].iloc[i + 1]); before = float(d["Saldo Mitigasi REDD Belum Dikreditkan"].iloc[i])
+            ok &= after >= min(0.0, float(d["Mitigasi REDD Eligible Bersih Proyek"].iloc[i]) * DT) - 1e-6
+    bb.append(f"{k}: {len(pz)} pulsa verifikasi")
+T("RV2", "Tanpa penalti ganda: saldo dipulihkan sesudah penyelesaian (aturan 2)", ok, "; ".join(bb) + "; sesudah setiap penyelesaian saldo kembali ke ≥ −(mitigasi negatif satu DT)")
+ok = True
+for k in ["C6", "C20", "RV_C20_aturan1"]:
+    d = L(k); ok &= abs(float(d["Buffer REDD Tersedia"].iloc[-1]) - (float(d["Kumulatif Buffer REDD"].iloc[-1]) - float(d["Kumulatif Penggunaan Buffer Reversal"].iloc[-1]))) < 1e-3 and float(d["Buffer REDD Tersedia"].min()) >= -1e-6 and float(d["Stok Kredit REDD Belum Terjual"].min()) >= -1e-6
+T("RV3", "Konservasi buffer dan stok kredit sesudah pembatalan", ok, "buffer tersedia = kontribusi − pemakaian; buffer dan stok ≥ 0 (C6, C20, aturan 1)")
+a0, a1, a2 = L("RV_C20_aturan0"), L("RV_C20_aturan1"), C20
+ok = float(a0["Kredit Pengganti Reversal Kumulatif"].iloc[-1]) + I(a0, "Penggunaan Buffer Reversal") + I(a0, "Pembatalan Stok Kredit Reversal") < 1e-9 and float(a1["Kredit Pengganti Reversal Kumulatif"].iloc[-1]) < 1e-9
+T("RV4", "Aturan 0/1/2 berperilaku sesuai definisi", ok, f"debit 2087: aturan 0 {f(float(a0['Reversal Belum Terkompensasi'].iloc[-1]))}, aturan 1 {f(float(a1['Reversal Belum Terkompensasi'].iloc[-1]))}, aturan 2 {f(float(a2['Reversal Belum Terkompensasi'].iloc[-1]))} tCO2e; biaya pengganti aturan 2 Rp{f(I(a2,'Biaya Penggantian Reversal'))}; NPV mitra aturan 0/1/2 = {f(float(a0['NPV Mitra'].iloc[-1]))}/{f(float(a1['NPV Mitra'].iloc[-1]))}/{f(float(a2['NPV Mitra'].iloc[-1]))}")
+# ---------- K7 berpasangan (dari matriks gerbang)
+G = pd.read_pickle("fase4g/gate_tabel.pkl"); g = G[(G["mode"] == "berpasangan")]
+T("K7b", "Referensi S1 berpasangan = S1 mandiri pada semua konfigurasi gerbang (termasuk kas non-karbon)", bool((g["status"] == "SETARA").all()), f"{int((g['status']=='SETARA').sum())}/{len(g)} konfigurasi setara (galat relatif ≤ 1e-9)")
 # ---------- ekstrem
 e0 = L("E_C0_tanpajembatan"); dm = max(float((e0[v] - S1[v]).abs().max()) for v in fis)
 T("E1", "Harga 0 tanpa jembatan → S2 = S1", dm < 1e-6, f"selisih maks {dm:.1e}")
@@ -128,12 +160,12 @@ T("E6", "Efektivitas 0: patroli tidak mengubah deforestasi; kredit REDD 0", abs(
 # ---------- DT
 bb = []; ok = True
 for a, b in [("S1", "DT_S1"), ("C20", "DT_C20")]:
-    x, y = L(a), L(b)
-    for v in ["Total Hutan", "NPV Mitra", "Kredit Karbon Diajukan"]:
-        if v == "Kredit Karbon Diajukan": xv, yv = I(x, v), float(y[v].iloc[:-1].sum() * DT)
+    x, y = L(a), L(b); dty = float(y.index[1] - y.index[0])
+    for v in ["Total Hutan", "NPV Mitra", "Kredit Karbon Diajukan", "Deforestasi Total"]:
+        if v in ("Kredit Karbon Diajukan", "Deforestasi Total"): xv, yv = I(x, v), float(y[v].iloc[:-1].sum() * dty)
         else: xv, yv = float(x[v].iloc[-1]), float(y[v].iloc[-1])
-        r = abs(xv - yv) / max(abs(xv), 1); ok &= r < 0.02; bb.append(f"{a} {v} {100*r:.3f} %")
-T("U6", "Langkah waktu 0,0625 vs 0,03125", ok, "; ".join(bb))
+        r = abs(xv - yv) / max(abs(xv), 1); ok &= r < 0.02 and len(y) > 2 * len(x) - 5; bb.append(f"{a} {v} {100*r:.3f} %")
+T("U6", "Langkah waktu 0,0625 vs 0,03125 (v2: DT lewat argumen time_step; v1 tidak sah)", ok, "; ".join(bb))
 # ---------- kausal
 def first(s, thr=1e-6): i = np.where(s.values > thr)[0]; return float(s.index[i[0]]) if len(i) else None
 dd = S1["Deforestasi Total"] - C20["Deforestasi Total"]
@@ -145,5 +177,5 @@ pc = L("P_C35_putus"); d1 = float(C35["Total Hutan"].iloc[-1] - S1["Total Hutan"
 T("P2", "Putus loop dana LPHD → patroli (C35)", d2 < d1 and float(pc["Hari Patroli Didanai Kas LPHD"].abs().max()) < 1e-6, f"Δ hutan 2087: {f(d1)} ha → {f(d2)} ha (sisa = efek jembatan + rehabilitasi)")
 hs = [float(L(f"C{h}")["Total Hutan"].iloc[-1]) for h in [6, 10, 15, 20, 35]]
 T("P3", "Harga naik → hutan 2087 tidak turun (C)", all(hs[i] <= hs[i + 1] + 1e-6 for i in range(4)), " / ".join(f(x) for x in hs) + " ha (USD 6–35)")
-json.dump(R, open("fase4/uji4_hasil.json", "w"), indent=1, ensure_ascii=False)
+json.dump(R, open("fase4/uji4_hasil_v2.json", "w"), indent=1, ensure_ascii=False)
 print(pd.Series([r["Status"] for r in R]).value_counts().to_dict())

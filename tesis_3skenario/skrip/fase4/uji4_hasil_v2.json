@@ -1,0 +1,254 @@
+[
+ {
+  "Kode": "V0a",
+  "Uji": "Parsing PySD",
+  "Status": "LULUS",
+  "Bukti": "read_vensim berhasil; 946 variabel (v2); 16 View"
+ },
+ {
+  "Kode": "V0b",
+  "Uji": "Referensi dan loop aljabar",
+  "Status": "LULUS",
+  "Bukti": "referensi tak dikenal 0; loop aljabar 0; pemakai Switch Karbon 14 (9 lama + jembatan + 4 rantai kredit/pelaporan PWD-K)"
+ },
+ {
+  "Kode": "V0c",
+  "Uji": "Units Check dan run native Vensim",
+  "Status": "BELUM DILAKUKAN",
+  "Bukti": "Vensim tidak tersedia di lingkungan ini; harus dijalankan peneliti"
+ },
+ {
+  "Kode": "V18",
+  "Uji": "Konsistensi dimensional (pemeriksa statis)",
+  "Status": "LULUS",
+  "Bukti": "933 persamaan konsisten, 0 bermasalah"
+ },
+ {
+  "Kode": "R1",
+  "Uji": "Reproduksi Fase 3 dengan upah lama dan mode kredit lama (kriteria direvisi: indikator kebutuhan dikecualikan)",
+  "Status": "LULUS",
+  "Bukti": "selisih relatif maks S1/A20/C20 = 0.0e+00/0.0e+00/0.0e+00 pada semua variabel fisik, keuangan, dan sosial; indikator kebutuhan LPHD C20 berbeda 16.1 % karena perubahan definisi terdaftar (kebutuhan bruto, tidak lagi dikurangi jembatan)"
+ },
+ {
+  "Kode": "W1",
+  "Uji": "Upah patroli historis Rp150.000/HOK; HOK dan biaya total tidak berubah",
+  "Status": "LULUS",
+  "Bukti": "S1: upah 2024 Rp379.950.000, 2025 Rp451.650.000, total Rp831.600.000; HOK 2.533/3.011; biaya total historis Rp1.441.440.000; C20: upah 2024 Rp379.950.000, 2025 Rp451.650.000, total Rp831.600.000; HOK 2.533/3.011; biaya total historis Rp1.441.440.000"
+ },
+ {
+  "Kode": "W2",
+  "Uji": "Upah adalah komponen biaya total (tidak ditambahkan)",
+  "Status": "LULUS",
+  "Bukti": "upah ≤ biaya patroli total di semua t; rasio upah/biaya = 0.576923 (= 150/260 = 0.576923) di S1, A20, C20, C35"
+ },
+ {
+  "Kode": "W3",
+  "Uji": "Nilai non-tunai Rp150.000/HOK dan logistik turunan; tidak masuk pendapatan RT",
+  "Status": "LULUS",
+  "Bukti": "logistik swadaya = 9,17 × Rp110.000 = Rp1.008.700/anggota/th (sebelumnya Rp1.192.050); nilai tenaga non-tunai 2030 = 1.505,5 HOK × Rp150.000 = Rp225.825.000; logistik ×10 → |Δ pendapatan RT| maks 0.0e+00"
+ },
+ {
+  "Kode": "W4",
+  "Uji": "Identitas HOK berupah + sukarela = total; identitas patroli",
+  "Status": "LULUS",
+  "Bukti": "Kesempatan Kerja PS = HOK berupah + sukarela; Check Identitas Patroli = 0 (S1, A20, C20, C35)"
+ },
+ {
+  "Kode": "W5",
+  "Uji": "Dampak koreksi upah (S1, terhadap upah lama)",
+  "Status": "DILAPORKAN",
+  "Bukti": "pendapatan program per RT 2024: Rp7.765 → Rp8.960; upah kegiatan PS 2025: Rp391.430.000 → Rp451.650.000; hutan 2087 tidak berubah (0,000000 ha)"
+ },
+ {
+  "Kode": "K1",
+  "Uji": "Rantai Referensi S1 = S1 aktual pada run S1",
+  "Status": "LULUS",
+  "Bukti": "|hutan ref − aktual| maks 0.0e+00 ha; |emisi bersih biomassa ref − aktual| maks 0.0e+00 tCO2e/th"
+ },
+ {
+  "Kode": "K2",
+  "Uji": "B (tanpa jembatan): Referensi S1 = aktual, kredit 0",
+  "Status": "LULUS",
+  "Bukti": "kredit maks B20 0.0e+00, B35 0.0e+00 tCO2e/th: tanpa modal awal tambahan siklus tidak dimulai (diagnostik dipertahankan)"
+ },
+ {
+  "Kode": "K3",
+  "Uji": "Kredit C endogen (v2): Σ kredit = Σ mitigasi + Σ penyelesaian − saldo; mitigasi ≤ berpasangan; kredit bersih − debit belum diselesaikan ≤ mitigasi berpasangan",
+  "Status": "LULUS",
+  "Bukti": "USD6: kredit diajukan 68.835; dibatalkan dari stok sendiri 0; pengganti dibeli 12.862; buffer dipakai 9.387; kredit bersih 46.586; debit belum diselesaikan 2087 2.475; mitigasi eligible (Ref S1) 44.111; mitigasi deforestasi berpasangan eligible 52.856; |emisi ref − S1| 5.8e-11; USD10: kredit diajukan 68.835; dibatalkan dari stok sendiri 0; pengganti dibeli 12.862; buffer dipakai 9.387; kredit bersih 46.586; debit belum diselesaikan 2087 2.475; mitigasi eligible (Ref S1) 44.111; mitigasi deforestasi berpasangan eligible 52.856; |emisi ref − S1| 5.8e-11; USD15: kredit diajukan 77.964; dibatalkan dari stok sendiri 0; pengganti dibeli 11.095; buffer dipakai 10.631; kredit bersih 56.238; debit belum diselesaikan 2087 2.908; mitigasi eligible (Ref S1) 53.330; mitigasi deforestasi berpasangan eligible 62.320; |emisi ref − S1| 5.8e-11; USD20: kredit diajukan 100.666; dibatalkan dari stok sendiri 0; pengganti dibeli 8.610; buffer dipakai 13.727; kredit bersih 78.328; debit belum diselesaikan 2087 3.878; mitigasi eligible (Ref S1) 74.450; mitigasi deforestasi berpasangan eligible 83.795; |emisi ref − S1| 5.8e-11; USD35: kredit diajukan 897.337; dibatalkan dari stok sendiri 0; pengganti dibeli 0; buffer dipakai 0; kredit bersih 897.337; debit belum diselesaikan 2087 0; mitigasi eligible (Ref S1) 897.337; mitigasi deforestasi berpasangan eligible 898.155; |emisi ref − S1| 5.8e-11"
+ },
+ {
+  "Kode": "K4",
+  "Uji": "Tanpa hitung ganda REDD dan ARR",
+  "Status": "LULUS",
+  "Bukti": "REDD (bertanda) + ARR (≥ 0) = pengurangan biomassa bersih terhadap Referensi S1 di semua t (C6, C10, C20, C35)"
+ },
+ {
+  "Kode": "K5",
+  "Uji": "Konservasi kredit (diajukan → terbit → terjual/stok/kedaluwarsa)",
+  "Status": "LULUS",
+  "Bukti": "stok akhir = Σ terbit − Σ terjual − Σ kedaluwarsa (REDD, ARR); C20: diajukan − terbit = 0 (antrean 3 th terakhir); C35: diajukan − terbit = 67.500 (antrean 3 th terakhir); A20: diajukan − terbit = 8.813 (antrean 3 th terakhir)"
+ },
+ {
+  "Kode": "K6",
+  "Uji": "Kredit konservatif ≤ potensi terhadap BAU",
+  "Status": "LULUS",
+  "Bukti": "C20: Σ kredit REDD 100.666 ≤ potensi BAU 271.969 tCO2e"
+ },
+ {
+  "Kode": "K7",
+  "Uji": "Kas non-karbon tidak dikreditkan (kriteria direvisi: galat acuan kumulatif konservatif dan kredit bersih)",
+  "Status": "GAGAL",
+  "Bukti": "kas non-karbon Rp3 M/th: galat emisi Referensi S1 − S1 berpasangan per tahun ∈ [-327; 93] tCO2e/th, kumulatif 163 tCO2e (negatif = acuan lebih protektif = konservatif); penyimpangan positif sesudah 2046 berjumlah 2,046 tCO2e (atribusi dana yang dapat dipertukarkan); kredit bruto 322.115, kredit bersih sesudah reversal 310.252 ≤ mitigasi berpasangan 314.668"
+ },
+ {
+  "Kode": "J1",
+  "Uji": "Pembiayaan jembatan sesuai kegiatan aktual",
+  "Status": "LULUS",
+  "Bukti": "HOK jembatan ≤ kebutuhan tambahan; total patroli ≤ kapasitas; Rp = HOK × 260.000; hanya 2026–2030; S1 = 0; C20: Σ jembatan Rp3.914.300.000, HOK 15.055; C6: Σ jembatan Rp3.914.300.000, HOK 15.055; C35: Σ jembatan Rp3.914.300.000, HOK 15.055"
+ },
+ {
+  "Kode": "N1",
+  "Uji": "Neraca kas LPHD dan mitra",
+  "Status": "LULUS",
+  "Bukti": "|Check Identitas Arus Kas| maks 9.5e-07 Rp/th di 11 run; saldo ≥ 0; saldo karbon ≤ saldo"
+ },
+ {
+  "Kode": "N2",
+  "Uji": "Konsistensi NPV",
+  "Status": "LULUS",
+  "Bukti": "NPV inkremental S1 = 0.0e+00; |NPV(C20) − NPV(S1) − NPV inkremental(C20)| = 9.54e-07 Rp; NPV keseluruhan S1 = −PV pembiayaan historis = Rp-1.310.893.298"
+ },
+ {
+  "Kode": "N3",
+  "Uji": "S1 = S2 (fisik dan sosial) sebelum kegiatan proyek pertama (2026)",
+  "Status": "LULUS",
+  "Bukti": "selisih maks 2024–2025 pada 7 variabel = 0.0e+00"
+ },
+ {
+  "Kode": "M1",
+  "Uji": "Penghentian MRV prospektif (B20)",
+  "Status": "LULUS",
+  "Bukti": "proyek dihentikan t = 2033.0625; biaya MRV sesudahnya 0; biaya MRV ditanggung mitra Rp2.894.247.632 (vs Rp22.771.504.226 tanpa aturan)"
+ },
+ {
+  "Kode": "M2",
+  "Uji": "Penghentian MRV pada C20 hanya sesudah penerimaan < biaya",
+  "Status": "LULUS",
+  "Bukti": "t henti = 2054.1875; NPV mitra Rp-1.354.264.687 (tanpa aturan Rp-1.578.730.679); defisit MRV 2087 Rp269.543.019 (tanpa aturan Rp15.203.196.868)"
+ },
+ {
+  "Kode": "M3",
+  "Uji": "Penundaan monitoring MRV",
+  "Status": "LULUS",
+  "Bukti": "biaya monitoring 2024–2025 = 0 bila ditunda ke 2026; Σ MRV Rp27.101.664.952 vs Rp27.545.525.942"
+ },
+ {
+  "Kode": "T1",
+  "Uji": "Biaya modal dibatasi (perbaikan T-a)",
+  "Status": "LULUS",
+  "Bukti": "T_C6_bm10: pokok Rp3.914.300.000, biaya modal Rp3.914.300.000, sisa 2087 Rp7.828.600.000; T_C10_sesudah_bm10: pokok Rp3.914.300.000, biaya modal Rp3.914.300.000, sisa 2087 Rp6.523.222.874 (Fase 3: sisa C6 bm10 = Rp1.344 M)"
+ },
+ {
+  "Kode": "T2",
+  "Uji": "Penghapusan talangan dengan pengakuan kerugian",
+  "Status": "LULUS",
+  "Bukti": "sisa sesudah 2045 = 0.0e+00; kerugian mitra diakui Rp7.828.600.000; identitas pokok + biaya modal − pemulihan − penghapusan − sisa = 5.7e-06 Rp; NPV mitra sama dengan tanpa penghapusan (-5.471.722.186 vs -5.471.722.186)"
+ },
+ {
+  "Kode": "RV1",
+  "Uji": "Penyelesaian reversal hanya pada peristiwa verifikasi, tidak pada setiap tahun S2 > S1",
+  "Status": "LULUS",
+  "Bukti": "C6: deforestasi S2>S1 pertama 2040.75; debit pertama 2039.875; pembelian pertama 2062.0; penyelesaian hanya pada pulsa verifikasi; C15: deforestasi S2>S1 pertama 2046.1875; debit pertama 2045.25; pembelian pertama 2067.0; penyelesaian hanya pada pulsa verifikasi; C20: deforestasi S2>S1 pertama 2052.75; debit pertama 2051.8125; pembelian pertama 2072.0; penyelesaian hanya pada pulsa verifikasi"
+ },
+ {
+  "Kode": "RV2",
+  "Uji": "Tanpa penalti ganda: saldo dipulihkan sesudah penyelesaian (aturan 2)",
+  "Status": "LULUS",
+  "Bukti": "C6: 11 pulsa verifikasi; C15: 11 pulsa verifikasi; C20: 11 pulsa verifikasi; sesudah setiap penyelesaian saldo kembali ke ≥ −(mitigasi negatif satu DT)"
+ },
+ {
+  "Kode": "RV3",
+  "Uji": "Konservasi buffer dan stok kredit sesudah pembatalan",
+  "Status": "LULUS",
+  "Bukti": "buffer tersedia = kontribusi − pemakaian; buffer dan stok ≥ 0 (C6, C20, aturan 1)"
+ },
+ {
+  "Kode": "RV4",
+  "Uji": "Aturan 0/1/2 berperilaku sesuai definisi",
+  "Status": "LULUS",
+  "Bukti": "debit 2087: aturan 0 26.216, aturan 1 12.489, aturan 2 3.878 tCO2e; biaya pengganti aturan 2 Rp2.841.464.079; NPV mitra aturan 0/1/2 = -1.563.007.354/-1.563.007.355/-1.578.730.679"
+ },
+ {
+  "Kode": "K7b",
+  "Uji": "Referensi S1 berpasangan = S1 mandiri pada semua konfigurasi gerbang (termasuk kas non-karbon)",
+  "Status": "LULUS",
+  "Bukti": "15/15 konfigurasi setara (galat relatif ≤ 1e-9)"
+ },
+ {
+  "Kode": "E1",
+  "Uji": "Harga 0 tanpa jembatan → S2 = S1",
+  "Status": "LULUS",
+  "Bukti": "selisih maks 0.0e+00"
+ },
+ {
+  "Kode": "E1b",
+  "Uji": "Harga 0 dengan jembatan: kas penjualan 0, mitra menanggung jembatan + MRV",
+  "Status": "LULUS",
+  "Bukti": "Δ hutan 2087 = 175,7 ha (efek jembatan saja); NPV mitra Rp-7.485.931.308"
+ },
+ {
+  "Kode": "E2",
+  "Uji": "k = 0: patroli reguler S1 = 0 sesudah 2025",
+  "Status": "LULUS",
+  "Bukti": "kredit C20 (k = 0) = 84.466 tCO2e"
+ },
+ {
+  "Kode": "E3",
+  "Uji": "k = 1: patroli reguler = 3.011 ≤ kapasitas",
+  "Status": "LULUS",
+  "Bukti": "HOK reguler 2030 = 3.011,0"
+ },
+ {
+  "Kode": "E4",
+  "Uji": "Kas non-karbon sangat besar",
+  "Status": "LULUS",
+  "Bukti": "belanja ≤ kebutuhan; intensitas maks 1.000; saldo 2087 Rp60.366.283.690.665"
+ },
+ {
+  "Kode": "E5",
+  "Uji": "Harga USD 500",
+  "Status": "LULUS",
+  "Bukti": "stok ≥ 0; intensitas maks 1.000; hutan 2087 89.944 ha"
+ },
+ {
+  "Kode": "E6",
+  "Uji": "Efektivitas 0: patroli tidak mengubah deforestasi; kredit REDD 0",
+  "Status": "LULUS",
+  "Bukti": "Δ deforestasi 0.0e+00 ha; kredit REDD 0.0e+00"
+ },
+ {
+  "Kode": "U6",
+  "Uji": "Langkah waktu 0,0625 vs 0,03125 (v2: DT lewat argumen time_step; v1 tidak sah)",
+  "Status": "LULUS",
+  "Bukti": "S1 Total Hutan 0.002 %; S1 NPV Mitra 0.149 %; S1 Kredit Karbon Diajukan 0.000 %; S1 Deforestasi Total 0.002 %; C20 Total Hutan 0.001 %; C20 NPV Mitra 0.369 %; C20 Kredit Karbon Diajukan 0.080 %; C20 Deforestasi Total 0.001 %"
+ },
+ {
+  "Kode": "P1",
+  "Uji": "Urutan kausal jembatan → patroli → deforestasi → kredit → kas → patroli LPHD (C20)",
+  "Status": "LULUS",
+  "Bukti": "patroli jembatan 2026.0; deforestasi C20 < S1 2026.0625; kredit diajukan 2026.0625; kredit terbit 2029.0625; kas penjualan 2029.125; kas LPHD karbon 2034.0625; patroli kas LPHD 2034.125"
+ },
+ {
+  "Kode": "P2",
+  "Uji": "Putus loop dana LPHD → patroli (C35)",
+  "Status": "LULUS",
+  "Bukti": "Δ hutan 2087: 4.842 ha → 220 ha (sisa = efek jembatan + rehabilitasi)"
+ },
+ {
+  "Kode": "P3",
+  "Uji": "Harga naik → hutan 2087 tidak turun (C)",
+  "Status": "LULUS",
+  "Bukti": "82.975 / 82.975 / 83.016 / 83.112 / 87.641 ha (USD 6–35)"
+ }
+]

@@ -1,0 +1,17 @@
+[
+ {
+  "Langkah": "Endogen (tanpa penggantian)",
+  "Galat kumulatif (tCO2e)": 162.96,
+  "Catatan": "Referensi S1 memakai atribusi dana non-karbon di dalam run S2"
+ },
+ {
+  "Langkah": "+ faktor tekanan deforestasi Ref S1 = deret S1 mandiri",
+  "Galat kumulatif (tCO2e)": 99.29,
+  "Catatan": "Saluran patroli (atribusi dana patroli) \u2248 64 tCO2e"
+ },
+ {
+  "Langkah": "+ aliran penanaman Ref S1 = deret S1 mandiri",
+  "Galat kumulatif (tCO2e)": 0.0,
+  "Catatan": "Saluran penanaman (atribusi dana rehabilitasi) \u2248 99 tCO2e; galat hilang seluruhnya"
+ }
+]

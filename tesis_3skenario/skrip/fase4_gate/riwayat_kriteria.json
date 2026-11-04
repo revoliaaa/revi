@@ -1,0 +1,58 @@
+[
+ {
+  "Kode": "R1",
+  "Kriteria awal (sebelum hasil)": "Semua kolom keluaran selisih relatif < 1e-9 terhadap Fase 3",
+  "Kriteria direvisi sesudah hasil": "Indikator kebutuhan LPHD (5 kolom) dikecualikan; selisihnya dilaporkan",
+  "Alasan revisi": "Kebutuhan LPHD sengaja diubah menjadi bruto (perbaikan atribusi K7, perubahan terdaftar)",
+  "Uji ulang": "Dievaluasi ulang pada run yang sama (v1), lalu dijalankan ulang dengan run baru pada v2; penguji sama (tidak independen)",
+  "Status v2": "LULUS"
+ },
+ {
+  "Kode": "K3",
+  "Kriteria awal (sebelum hasil)": "Σ kredit REDD ≤ mitigasi deforestasi berpasangan eligible",
+  "Kriteria direvisi sesudah hasil": "v1: identitas saldo + reversal ≤ buffer → lalu + toleransi 0,5 % reversal. v2: Σ kredit = Σ mitigasi + Σ penyelesaian − saldo (1e-3 rel); mitigasi ≤ berpasangan; kredit bersih − debit belum diselesaikan ≤ berpasangan",
+  "Alasan revisi": "Struktur akuntansi berubah (saldo bertanda, buffer, pembatalan, pengganti). Toleransi 0,5 % di v1 adalah pelonggaran dan DICABUT di v2",
+  "Uji ulang": "v2: run baru dari model yang dibangun ulang; penguji sama",
+  "Status v2": "LULUS"
+ },
+ {
+  "Kode": "K7",
+  "Kriteria awal (sebelum hasil)": "|emisi Ref S1 − S1 berpasangan| ≤ 1e-6 dan kredit ≤ mitigasi berpasangan (kas non-karbon Rp3 M/th)",
+  "Kriteria direvisi sesudah hasil": "v1: arah galat ≤ 0 dan kredit bersih; lalu galat kumulatif ≤ 0",
+  "Alasan revisi": "Upaya membedakan arah galat; tetap GAGAL. Tidak dipakai untuk meloloskan uji",
+  "Uji ulang": "v2: K7 (mode endogen) tetap GAGAL; diagnosis DT dan dekomposisi saluran; diganti protokol berpasangan (uji K7b dengan kriteria ketat 1e-9 ditetapkan sebelum hasil)",
+  "Status v2": "GAGAL (mode endogen); K7b LULUS"
+ },
+ {
+  "Kode": "E1b",
+  "Kriteria awal (sebelum hasil)": "Kas penjualan pada harga 0 < 1e-6 Rp",
+  "Kriteria direvisi sesudah hasil": "< 1 Rp",
+  "Alasan revisi": "Derau numerik 3e-6 Rp",
+  "Uji ulang": "Evaluasi ulang; v2 run baru",
+  "Status v2": "LULUS"
+ },
+ {
+  "Kode": "T1",
+  "Kriteria awal (sebelum hasil)": "Biaya modal kumulatif ≤ pokok; sisa ≤ 2 × pokok",
+  "Kriteria direvisi sesudah hasil": "Tidak direvisi; model diperbaiki (pembatas eksak)",
+  "Alasan revisi": "Kesalahan model numerik",
+  "Uji ulang": "Run baru",
+  "Status v2": "LULUS"
+ },
+ {
+  "Kode": "U6",
+  "Kriteria awal (sebelum hasil)": "Selisih DT 0,0625 vs 0,03125 < 2 %",
+  "Kriteria direvisi sesudah hasil": "Kriteria tetap; METODE diperbaiki",
+  "Alasan revisi": "Di v1, DT diberikan lewat params sehingga langkah integrasi tidak berubah: hasil 0,000 % TIDAK SAH. v2 memakai argumen time_step",
+  "Uji ulang": "Run baru",
+  "Status v2": "LULUS (maks 0,37 %)"
+ },
+ {
+  "Kode": "K7b, RV1–RV4, A3",
+  "Kriteria awal (sebelum hasil)": "Ditetapkan sebelum run v2 (toleransi kesetaraan disimpan di toleransi.json sebelum simulasi)",
+  "Kriteria direvisi sesudah hasil": "–",
+  "Alasan revisi": "–",
+  "Uji ulang": "–",
+  "Status v2": "LULUS"
+ }
+]

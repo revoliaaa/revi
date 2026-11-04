@@ -1,0 +1,30 @@
+[
+ {
+  "DT": 0.125,
+  "Galat emisi deforestasi Ref S1 \u2212 S1 kumulatif (tCO2e)": 164.4374353811363,
+  "Galat tahunan maks": 93.31137308530742,
+  "Galat tahunan min": -337.6778018826153,
+  "Kredit REDD diajukan (tCO2e)": 323033.44669939845
+ },
+ {
+  "DT": 0.0625,
+  "Galat emisi deforestasi Ref S1 \u2212 S1 kumulatif (tCO2e)": 162.96469185258502,
+  "Galat tahunan maks": 92.921443722822,
+  "Galat tahunan min": -327.0813395642617,
+  "Kredit REDD diajukan (tCO2e)": 322114.8097683236
+ },
+ {
+  "DT": 0.03125,
+  "Galat emisi deforestasi Ref S1 \u2212 S1 kumulatif (tCO2e)": 162.2080609704426,
+  "Galat tahunan maks": 92.73056952664047,
+  "Galat tahunan min": -322.0362611543096,
+  "Kredit REDD diajukan (tCO2e)": 321655.9802656841
+ },
+ {
+  "DT": 0.015625,
+  "Galat emisi deforestasi Ref S1 \u2212 S1 kumulatif (tCO2e)": 161.82529379873495,
+  "Galat tahunan maks": 92.63537587868632,
+  "Galat tahunan min": -319.56580367221613,
+  "Kredit REDD diajukan (tCO2e)": 321426.5008469651
+ }
+]

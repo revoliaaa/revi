@@ -1,0 +1,2837 @@
+[
+ [
+  "S-1",
+  "Skenario Kebijakan",
+  "diubah",
+  "3",
+  "1",
+  "Dmnl",
+  "Desain: 1 = S1 PS pembiayaan terbatas; 2 = S2 PS + karbon"
+ ],
+ [
+  "S-2",
+  "Switch PS",
+  "diubah",
+  "IF THEN ELSE(Skenario Kebijakan>=2,1,0)",
+  "1",
+  "Dmnl",
+  "Desain"
+ ],
+ [
+  "S-3",
+  "Switch Rehabilitasi",
+  "diubah",
+  "IF THEN ELSE(Skenario Kebijakan>=2,1,0)",
+  "1",
+  "Dmnl",
+  "Desain"
+ ],
+ [
+  "S-4",
+  "Switch Pendanaan Awal",
+  "diubah",
+  "IF THEN ELSE(Skenario Kebijakan>=2, 1, 0)",
+  "1",
+  "Dmnl",
+  "Desain"
+ ],
+ [
+  "S-5",
+  "Switch Karbon",
+  "diubah",
+  "IF THEN ELSE(Skenario Kebijakan=3, STEP(1,Tahun Mulai Karbon), 0)",
+  "IF THEN ELSE(Skenario Kebijakan=2, STEP(1, Tahun Mulai Karbon), 0)",
+  "Dmnl",
+  "Desain"
+ ],
+ [
+  "K1",
+  "Periode Pasca Pembiayaan Awal",
+  "baru",
+  "",
+  "STEP(1, Tahun Akhir Pembiayaan Awal+1)",
+  "Dmnl",
+  "Struktur"
+ ],
+ [
+  "K1",
+  "Anggota Patroli Roster 2025",
+  "baru",
+  "",
+  "254",
+  "People",
+  "MR1 roster 2025 (B)"
+ ],
+ [
+  "K1",
+  "HOK Patroli per Anggota 2025",
+  "baru",
+  "",
+  "HOK Patroli Pembiayaan Awal Aktual 2025/Anggota Patroli Roster 2025",
+  "HOK/(People*Year)",
+  "Turunan data final 2025 (B)"
+ ],
+ [
+  "K1",
+  "Tingkat Keberlanjutan Patroli Reguler",
+  "baru",
+  "",
+  "0.5",
+  "Dmnl",
+  "D, nilai tengah eksploratif; sensitivitas 0-1; PERINGATAN D1: patroli reguler pasca-2025 dan logistiknya adalah ASUMSI EKSPLORATIF (k); nilai non-tunai yang dicatat TIDAK membuktikan tenaga/logistik benar-benar tersedia sampai 2087"
+ ],
+ [
+  "K1",
+  "Laju Penurunan Partisipasi Sukarela",
+  "baru",
+  "",
+  "0",
+  "1/Year",
+  "D; sensitivitas 0-0,03"
+ ],
+ [
+  "K1",
+  "Indeks Keberlanjutan Partisipasi",
+  "baru",
+  "",
+  "EXP(-Laju Penurunan Partisipasi Sukarela*MAX(0, Time-(Tahun Akhir Pembiayaan Awal+1)))",
+  "Dmnl",
+  "Struktur"
+ ],
+ [
+  "K1",
+  "Anggota Patroli Basis Reguler",
+  "baru",
+  "",
+  "MIN(Anggota Patroli Aktif, Anggota Patroli Roster 2025)",
+  "People",
+  "Struktur"
+ ],
+ [
+  "K1",
+  "HOK Patroli Reguler PS",
+  "baru",
+  "",
+  "Switch PS*Periode Pasca Pembiayaan Awal*MIN(Kapasitas Hari Patroli Anggota, Anggota Patroli Basis Reguler*HOK Patroli per Anggota 2025*Tingkat Keberlanjutan Patroli Reguler*Indeks Keberlanjutan Partisipasi)",
+  "HOK/Year",
+  "Struktur; PERINGATAN D1: patroli reguler pasca-2025 dan logistiknya adalah ASUMSI EKSPLORATIF (k); nilai non-tunai yang dicatat TIDAK membuktikan tenaga/logistik benar-benar tersedia sampai 2087"
+ ],
+ [
+  "K1",
+  "Hari Patroli Swadaya",
+  "diubah",
+  "Switch PS*Switch Patroli Swadaya Reguler*(1-Periode Pembiayaan Awal)*MIN(Anggota Patroli Aktif, Anggota Patroli Awal)*Hari Patroli Swadaya per Anggota",
+  "HOK Patroli Reguler PS",
+  "HOK/Year",
+  "Alias kompatibilitas"
+ ],
+ [
+  "K2",
+  "Proporsi Penggantian Anggota Patroli",
+  "baru",
+  "",
+  "1",
+  "Dmnl",
+  "D (A1: 1); sensitivitas 0,625 (rasio kapasitas)"
+ ],
+ [
+  "K2",
+  "Penambahan Anggota Patroli",
+  "diubah",
+  "IF THEN ELSE(MAX(Periode Historis,Switch PS)=1, Pengurangan Anggota Patroli*Proporsi Penggantian Anggota Patroli Swadaya +Switch Karbon*IF THEN ELSE(Alokasi Dana Perlindungan>0, 1, 0)*MIN(Kapasitas Penambahan Anggota Patroli BAU *Indeks Kapasitas LPHD, MAX(0, Anggota Patroli Dibutuhkan untuk Target-Anggota Patroli Aktif )/TIME STEP), 0) +Switch Pendanaan Awal*(Penambahan Anggota Patroli Tim Baru 2024*(STEP(1, 2024)-STEP(1, 2025)) +Penambahan Anggota Patroli Tim Baru 2025*(STEP(1, 2025)-STEP(1, 2026)))",
+  "IF THEN ELSE(MAX(Periode Historis,Switch PS)=1, Pengurangan Anggota Patroli*Proporsi Penggantian Anggota Patroli+IF THEN ELSE(Alokasi Dana Perlindungan>0, 1, 0)*MIN(Kapasitas Penambahan Anggota Patroli BAU*Indeks Kapasitas LPHD, MAX(0, Anggota Patroli Dibutuhkan untuk Target-Anggota Patroli Aktif)/TIME STEP), 0)+Switch Pendanaan Awal*(Penambahan Anggota Patroli Tim Baru 2024*(STEP(1, 2024)-STEP(1, 2025))+Penambahan Anggota Patroli Tim Baru 2025*(STEP(1, 2025)-STEP(1, 2026)))",
+  "People/Year",
+  ""
+ ],
+ [
+  "G1",
+  "Hari Patroli Didanai Kas LPHD",
+  "baru",
+  "",
+  "Realisasi Belanja Perlindungan/Biaya per Hari Patroli",
+  "HOK/Year",
+  ""
+ ],
+ [
+  "M1",
+  "Hari Patroli Didanai",
+  "diubah",
+  "(Pendanaan Awal untuk Patroli+Realisasi Belanja Perlindungan)/Biaya per Hari Patroli +Hari Patroli Pembiayaan Awal",
+  "Hari Patroli Pembiayaan Awal+Hari Patroli Didanai Kas LPHD+Hari Patroli Didanai Jembatan",
+  "HOK/Year",
+  ""
+ ],
+ [
+  "PWD-K",
+  "Hari Patroli Didanai Kas Non Karbon",
+  "baru",
+  "",
+  "MAX(Hari Patroli Didanai Kas LPHD*(1-Porsi Kas Karbon dalam Saldo), Hari Patroli Dapat Didanai Kas Non Karbon)",
+  "HOK/Year",
+  "Konservatif terhadap dana yang dapat dipertukarkan: patroli LPHD dianggap non-karbon sejauh dapat dibiayai dana non-karbon (perbaikan K7)"
+ ],
+ [
+  "G1",
+  "Hari Patroli Tambahan Dibutuhkan",
+  "diubah",
+  "Switch PS*MAX(0, MIN(Hari Patroli Target, Kapasitas Hari Patroli Anggota)-Hari Patroli Swadaya )",
+  "Switch PS*Periode Pasca Pembiayaan Awal*MAX(0, MIN(Hari Patroli Target, Kapasitas Hari Patroli Anggota)-HOK Patroli Reguler PS)",
+  "HOK/Year",
+  "2024\u20132025: kebutuhan tambahan = 0, total patroli = data"
+ ],
+ [
+  "K3",
+  "Indeks Intensitas Perlindungan",
+  "diubah",
+  "IF THEN ELSE(Kebutuhan Hari Patroli>0, MIN(1, (Hari Patroli Swadaya+Hari Patroli Didanai )/Kebutuhan Hari Patroli), 1)",
+  "IF THEN ELSE(Kebutuhan Hari Patroli>0, MIN(1, (HOK Patroli Reguler PS+Hari Patroli Didanai)/Kebutuhan Hari Patroli), 1)",
+  "Dmnl",
+  ""
+ ],
+ [
+  "K3",
+  "Indeks Intensitas Perlindungan Tanpa Karbon",
+  "diubah",
+  "IF THEN ELSE(Kebutuhan Hari Patroli>0, MIN(1, Hari Patroli Swadaya/Kebutuhan Hari Patroli ), 1)",
+  "IF THEN ELSE(Kebutuhan Hari Patroli>0, MIN(1, (HOK Patroli Reguler PS+Hari Patroli Pembiayaan Awal+Hari Patroli Didanai Kas Non Karbon)/Kebutuhan Hari Patroli), 1)",
+  "Dmnl",
+  ""
+ ],
+ [
+  "K3",
+  "Kesenjangan Pembiayaan Minimum",
+  "diubah",
+  "MAX(0, Kebutuhan Dana Minimum-Penggunaan Dana Pengelolaan-Realisasi Pembiayaan Awal)",
+  "MAX(0, Kebutuhan Dana Minimum-Penggunaan Dana Pengelolaan)",
+  "Rupiah/Year",
+  "Hapus -Realisasi Pembiayaan Awal (sudah dikeluarkan dari kebutuhan dalam HOK)"
+ ],
+ [
+  "K3",
+  "Kesenjangan Pembiayaan Semua Sumber",
+  "diubah",
+  "MAX(0, Total Kebutuhan Dana Pengelolaan-Penggunaan Dana Pengelolaan-Realisasi Pembiayaan Awal )",
+  "MAX(0, Total Kebutuhan Dana Pengelolaan-Penggunaan Dana Pengelolaan)",
+  "Rupiah/Year",
+  ""
+ ],
+ [
+  "K4",
+  "Alokasi Dana Operasional LPHD",
+  "diubah",
+  "Switch Karbon*MIN(Dana Desa Tersedia*Proporsi Alokasi Efektif Operasional LPHD, Kebutuhan Dana Operasional LPHD )",
+  "MIN(Dana Desa Tersedia*Proporsi Alokasi Efektif Operasional LPHD, Kebutuhan Dana Operasional LPHD)",
+  "Rupiah/Year",
+  ""
+ ],
+ [
+  "K4",
+  "Alokasi Dana Perlindungan",
+  "diubah",
+  "Switch Karbon*MIN(Dana Desa Tersedia*Proporsi Alokasi Efektif Perlindungan, Kebutuhan Dana Perlindungan )",
+  "MIN(Dana Desa Tersedia*Proporsi Alokasi Efektif Perlindungan, Kebutuhan Dana Perlindungan)",
+  "Rupiah/Year",
+  ""
+ ],
+ [
+  "K4",
+  "Alokasi Dana Rehabilitasi",
+  "diubah",
+  "Switch Karbon*MIN(Dana Desa Tersedia*Proporsi Alokasi Efektif Rehabilitasi, Kebutuhan Dana Rehabilitasi )",
+  "MIN(Dana Desa Tersedia*Proporsi Alokasi Efektif Rehabilitasi, Kebutuhan Dana Rehabilitasi)",
+  "Rupiah/Year",
+  ""
+ ],
+ [
+  "K4",
+  "Alokasi Dana Penguatan Kelembagaan",
+  "diubah",
+  "Switch Karbon*MIN(Dana Desa Tersedia*Proporsi Alokasi Efektif Penguatan Kelembagaan, Kebutuhan Dana Penguatan Kelembagaan)",
+  "MIN(Dana Desa Tersedia*Proporsi Alokasi Efektif Penguatan Kelembagaan, Kebutuhan Dana Penguatan Kelembagaan)",
+  "Rupiah/Year",
+  ""
+ ],
+ [
+  "K4",
+  "Alokasi Dana Pengembangan KUPS",
+  "diubah",
+  "Switch Karbon*MIN(Dana Desa Tersedia*Proporsi Alokasi Efektif Pengembangan KUPS, Kebutuhan Dana Pengembangan KUPS )",
+  "MIN(Dana Desa Tersedia*Proporsi Alokasi Efektif Pengembangan KUPS, Kebutuhan Dana Pengembangan KUPS)",
+  "Rupiah/Year",
+  ""
+ ],
+ [
+  "K4",
+  "Alokasi Dana Pengendalian Kebakaran",
+  "diubah",
+  "Switch Karbon*MIN(Dana Desa Tersedia*Proporsi Alokasi Efektif Pengendalian Kebakaran , Kebutuhan Dana Pengendalian Kebakaran)",
+  "MIN(Dana Desa Tersedia*Proporsi Alokasi Efektif Pengendalian Kebakaran, Kebutuhan Dana Pengendalian Kebakaran)",
+  "Rupiah/Year",
+  ""
+ ],
+ [
+  "K5",
+  "Switch Dana Non Karbon",
+  "baru",
+  "",
+  "0",
+  "Dmnl",
+  "Desain; 1 bila ada data"
+ ],
+ [
+  "K5",
+  "Dana Operasional Non Karbon Tunai",
+  "baru",
+  "",
+  "0",
+  "Rupiah/Year",
+  "D, PERLU DATA"
+ ],
+ [
+  "K5",
+  "Tahun Mulai Dana Non Karbon",
+  "baru",
+  "",
+  "2026",
+  "Year",
+  "D"
+ ],
+ [
+  "K5",
+  "Tahun Akhir Dana Non Karbon",
+  "baru",
+  "",
+  "2087",
+  "Year",
+  "D"
+ ],
+ [
+  "K5",
+  "Kas Masuk LPHD Non Karbon",
+  "baru",
+  "",
+  "Switch PS*Switch Dana Non Karbon*Dana Operasional Non Karbon Tunai*(STEP(1, Tahun Mulai Dana Non Karbon)-STEP(1, Tahun Akhir Dana Non Karbon+1))",
+  "Rupiah/Year",
+  ""
+ ],
+ [
+  "K5",
+  "Kas Masuk LPHD Karbon",
+  "baru",
+  "",
+  "Dana Program PS dari Karbon",
+  "Rupiah/Year",
+  ""
+ ],
+ [
+  "K5",
+  "Dana Desa Diterima",
+  "diubah",
+  "IF THEN ELSE(Switch Dana Program Eksogen=1, Switch Karbon*Dana Program Eksogen*(STEP (1, Tahun Mulai Dana Eksogen)-STEP(1, Tahun Akhir Dana Eksogen+1)), Dana Program PS dari Karbon )",
+  "Kas Masuk LPHD Karbon+Kas Masuk LPHD Non Karbon",
+  "Rupiah/Year",
+  ""
+ ],
+ [
+  "K5",
+  "Saldo Dana LPHD dari Karbon",
+  "baru",
+  "",
+  "INTEG(Kas Masuk LPHD Karbon-Penggunaan Dana Desa*Porsi Kas Karbon dalam Saldo, 0)",
+  "Rupiah",
+  "Stok pelacak sumber"
+ ],
+ [
+  "K5",
+  "Porsi Kas Karbon dalam Saldo",
+  "baru",
+  "",
+  "ZIDZ(Saldo Dana LPHD dari Karbon, Saldo Dana LPHD)",
+  "Dmnl",
+  ""
+ ],
+ [
+  "K6",
+  "Nilai Pendampingan Kelembagaan Non Tunai",
+  "baru",
+  "",
+  "0",
+  "Rupiah/Year",
+  "D, PERLU DATA"
+ ],
+ [
+  "K6",
+  "Laju Pembelajaran Kelembagaan",
+  "baru",
+  "",
+  "0",
+  "Dmnl",
+  "D; sensitivitas 0-0,2"
+ ],
+ [
+  "K6",
+  "Efek Pembelajaran Kelembagaan",
+  "baru",
+  "",
+  "Laju Pembelajaran Kelembagaan*Indeks Intensitas Perlindungan",
+  "Dmnl",
+  ""
+ ],
+ [
+  "K6",
+  "Faktor Penguatan Kelembagaan dari Karbon",
+  "diubah",
+  "IF THEN ELSE(Kebutuhan Dana Penguatan Kelembagaan>0, Realisasi Belanja Penguatan Kelembagaan /Kebutuhan Dana Penguatan Kelembagaan, 0)",
+  "ZIDZ(Realisasi Belanja Penguatan Kelembagaan+Nilai Pendampingan Kelembagaan Non Tunai, Kebutuhan Dana Penguatan Kelembagaan)",
+  "Dmnl",
+  "Nama lama dipertahankan; isi = semua sumber"
+ ],
+ [
+  "K6",
+  "Target Kapasitas LPHD",
+  "diubah",
+  "Indeks Kapasitas LPHD Awal+(1-Indeks Kapasitas LPHD Awal)*Faktor Penguatan Kelembagaan dari Karbon",
+  "Indeks Kapasitas LPHD Awal+(1-Indeks Kapasitas LPHD Awal)*MIN(1, Faktor Penguatan Kelembagaan dari Karbon+Efek Pembelajaran Kelembagaan)",
+  "Dmnl",
+  ""
+ ],
+ [
+  "K7",
+  "Porsi Laba Ditahan untuk Reinvestasi",
+  "baru",
+  "",
+  "0.5",
+  "Dmnl",
+  "D; sensitivitas 0-1"
+ ],
+ [
+  "K7",
+  "Biaya Reaktivasi KUPS",
+  "baru",
+  "",
+  "Biaya Pembentukan KUPS",
+  "Rupiah/Unit",
+  "D; sensitivitas 0,25-1 x pembentukan"
+ ],
+ [
+  "K7",
+  "Modal Usaha KUPS",
+  "baru",
+  "",
+  "INTEG(Akumulasi Modal KUPS-Penggunaan Modal KUPS, 0)",
+  "Rupiah",
+  ""
+ ],
+ [
+  "K7",
+  "Akumulasi Modal KUPS",
+  "baru",
+  "",
+  "MAX(0, Laba KUPS Ditahan)*Porsi Laba Ditahan untuk Reinvestasi",
+  "Rupiah/Year",
+  ""
+ ],
+ [
+  "G4",
+  "Penggantian KUPS Berbasis Modal",
+  "baru",
+  "",
+  "IF THEN ELSE(Time < Tahun Akhir Data KUPS, 0, MIN(KUPS Menjadi Tidak Aktif, Modal Usaha KUPS/TIME STEP/Biaya Reaktivasi KUPS))",
+  "Unit/Year",
+  "modal tidak terpakai selama 2024\u20132025"
+ ],
+ [
+  "K7",
+  "Penggunaan Modal KUPS",
+  "baru",
+  "",
+  "Penggantian KUPS Berbasis Modal*Biaya Reaktivasi KUPS",
+  "Rupiah/Year",
+  ""
+ ],
+ [
+  "K7",
+  "Penambahan KUPS",
+  "diubah",
+  "IF THEN ELSE(Time < Tahun Akhir Data KUPS, Switch PS*Penambahan KUPS Historis, Switch PS *MIN(KUPS Menjadi Tidak Aktif*Proporsi Penggantian KUPS Tanpa Dana Karbon+Pembentukan KUPS Dana Non Karbon +Pembentukan KUPS Didanai Karbon, MAX(Target Total KUPS-Jumlah KUPS Aktif,0)/TIME STEP +KUPS Menjadi Tidak Aktif))",
+  "IF THEN ELSE(Time < Tahun Akhir Data KUPS, Switch PS*Penambahan KUPS Historis, Switch PS*MIN(Penggantian KUPS Berbasis Modal+Pembentukan KUPS Dana Non Karbon+Pembentukan KUPS Didanai Karbon, MAX(Target Total KUPS-Jumlah KUPS Aktif,0)/TIME STEP+KUPS Menjadi Tidak Aktif))",
+  "Unit/Year",
+  ""
+ ],
+ [
+  "K8",
+  "Pembentukan KUPS Didanai Karbon",
+  "diubah",
+  "Switch Karbon*MIN(Target Pembentukan KUPS*Pengali Kapasitas Mode Lama, MAX(0, Realisasi Belanja Pengembangan KUPS -Jumlah KUPS Aktif*Biaya Pendampingan per KUPS per Tahun)/Biaya Pembentukan KUPS)",
+  "MIN(Target Pembentukan KUPS*Pengali Kapasitas Mode Lama, MAX(0, Realisasi Belanja Pengembangan KUPS-Jumlah KUPS Aktif*Biaya Pendampingan per KUPS per Tahun)/Biaya Pembentukan KUPS)",
+  "Unit/Year",
+  "nama dipertahankan; = didanai kas LPHD"
+ ],
+ [
+  "K8",
+  "Pembentukan KUPS Direncanakan",
+  "diubah",
+  "Switch Karbon*MAX(0, Alokasi Dana Pengembangan KUPS-Jumlah KUPS Aktif*Biaya Pendampingan per KUPS per Tahun )/Biaya Pembentukan KUPS",
+  "MAX(0, Alokasi Dana Pengembangan KUPS-Jumlah KUPS Aktif*Biaya Pendampingan per KUPS per Tahun)/Biaya Pembentukan KUPS",
+  "Unit/Year",
+  ""
+ ],
+ [
+  "K8",
+  "Penanaman Didanai Karbon",
+  "diubah",
+  "Switch Karbon*MIN(MIN(Dana Penanaman Rehabilitasi/Biaya Penanaman per Ha, Target Penanaman *Pengali Kapasitas Mode Lama), MAX(0, Luas Restorasi Selektif Eligible-Luas Tanam Didanai Karbon )/TIME STEP)",
+  "MIN(MIN(Dana Penanaman Rehabilitasi/Biaya Penanaman per Ha, Target Penanaman*Pengali Kapasitas Mode Lama), MAX(0, Luas Restorasi Selektif Eligible-Luas Tanam Didanai Karbon)/TIME STEP)",
+  "Ha/Year",
+  ""
+ ],
+ [
+  "K8",
+  "Luas Penanaman Karbon Direncanakan",
+  "diubah",
+  "Switch Karbon*MAX(0, Alokasi Dana Rehabilitasi-Kebutuhan Dana Pemeliharaan Rehabilitasi )/Biaya Penanaman per Ha",
+  "MAX(0, Alokasi Dana Rehabilitasi-Kebutuhan Dana Pemeliharaan Rehabilitasi)/Biaya Penanaman per Ha",
+  "Ha/Year",
+  ""
+ ],
+ [
+  "K9",
+  "Biaya Tenaga Penanaman per Ha",
+  "baru",
+  "",
+  "HOK Penanaman per Ha*Upah Penanaman per HOK",
+  "Rupiah/Ha",
+  "Turunan (85 x 106.000)"
+ ],
+ [
+  "K9",
+  "Biaya Bibit dan Material per Ha",
+  "baru",
+  "",
+  "MAX(0, Biaya Penanaman per Ha-Biaya Tenaga Penanaman per Ha)",
+  "Rupiah/Ha",
+  "Turunan residual (B)"
+ ],
+ [
+  "K9",
+  "Dukungan Material Rehabilitasi Non Karbon",
+  "baru",
+  "",
+  "0",
+  "Rupiah/Year",
+  "D, PERLU DATA (program pemerintah/mitra)"
+ ],
+ [
+  "K9",
+  "Penanaman Non Karbon",
+  "baru",
+  "",
+  "Switch Rehabilitasi*(1-Periode Historis)*MIN(Proporsi Realisasi Penanaman BAU*Target Penanaman, ZIDZ(Dukungan Material Rehabilitasi Non Karbon, Biaya Bibit dan Material per Ha))",
+  "Ha/Year",
+  ""
+ ],
+ [
+  "G5",
+  "Proporsi Realisasi Penanaman",
+  "diubah",
+  "MIN(1, Proporsi Realisasi Penanaman BAU+Penanaman Didanai Karbon/Target Penanaman)",
+  "ZIDZ(Penambahan Luas Penanaman, Target Penanaman)",
+  "Dmnl",
+  "pelaporan"
+ ],
+ [
+  "G5",
+  "Penambahan Luas Penanaman",
+  "diubah",
+  "Switch Rehabilitasi*(1-Periode Historis)*MIN(Proporsi Realisasi Penanaman*Target Penanaman , MIN(MAX(Target Total Penanaman RKPS -Luas Penanaman Program,0)/TIME STEP, NonHutan *Fraksi Maksimum NonHutan Ditanami per Tahun ))",
+  "Switch Rehabilitasi*(1-Periode Historis)*MIN(Penanaman Rencana Total, Batas Luas Penanaman)",
+  "Ha/Year",
+  ""
+ ],
+ [
+  "K9",
+  "Porsi Tenaga Penanaman Non Karbon Dibayar",
+  "baru",
+  "",
+  "0",
+  "Dmnl",
+  "D; 0/1 sesuai program"
+ ],
+ [
+  "G5",
+  "HOK Penanaman Didanai Kas",
+  "baru",
+  "",
+  "Penanaman Didanai Kas Aktual*HOK Penanaman per Ha",
+  "HOK/Year",
+  ""
+ ],
+ [
+  "G5",
+  "HOK Penanaman Non Karbon",
+  "baru",
+  "",
+  "Penanaman Non Karbon Aktual*HOK Penanaman per Ha",
+  "HOK/Year",
+  ""
+ ],
+ [
+  "G7",
+  "HOK Penanaman Berupah",
+  "baru",
+  "",
+  "HOK Penanaman Didanai Kas+HOK Penanaman Non Karbon*Porsi Tenaga Penanaman Non Karbon Dibayar",
+  "HOK/Year",
+  ""
+ ],
+ [
+  "K9",
+  "HOK Penanaman Sukarela",
+  "baru",
+  "",
+  "HOK Penanaman Non Karbon*(1-Porsi Tenaga Penanaman Non Karbon Dibayar)",
+  "HOK/Year",
+  ""
+ ],
+ [
+  "G5",
+  "Manfaat Ekonomi Penanaman",
+  "diubah",
+  "HOK Penanaman*Upah Penanaman per HOK",
+  "Upah Penanaman Program Non Karbon",
+  "Rupiah/Year",
+  ""
+ ],
+ [
+  "G5",
+  "Biaya Pengelolaan PS Non Karbon",
+  "diubah",
+  "Switch PS*Anggota Patroli Aktif*Biaya Operasional Patroli Sukarela per Anggota per Tahun+Switch Rehabilitasi *(Proporsi Realisasi Penanaman BAU*Target Penanaman*(1-Periode Historis)*Biaya Penanaman per Ha )+Switch PS*Jumlah KUPS Aktif*Biaya Pendampingan per KUPS per Tahun",
+  "Anggota Patroli Berpartisipasi Reguler*Biaya Operasional Patroli Sukarela per Anggota per Tahun+Nilai Dukungan Material Non Karbon Terpakai+Upah Penanaman Program Non Karbon+MAX(0, Jumlah KUPS Aktif-KUPS Didukung Karbon)*Biaya Pendampingan per KUPS per Tahun",
+  "Rupiah/Year",
+  "indikator"
+ ],
+ [
+  "K10",
+  "Dana PS Eksisting",
+  "diubah",
+  "Switch PS*Biaya Pengelolaan PS Non Karbon",
+  "Biaya Pengelolaan PS Non Karbon",
+  "Rupiah/Year",
+  "indikator"
+ ],
+ [
+  "K11",
+  "Upah Setara Non Tunai Patroli",
+  "baru",
+  "",
+  "Upah Harian Patroli Berbayar",
+  "Rupiah/HOK",
+  "C"
+ ],
+ [
+  "K11",
+  "Anggota Patroli Berpartisipasi Reguler",
+  "baru",
+  "",
+  "ZIDZ(HOK Patroli Reguler PS, HOK Patroli per Anggota 2025)",
+  "People",
+  ""
+ ],
+ [
+  "K11",
+  "HOK Sukarela PS",
+  "baru",
+  "",
+  "HOK Patroli Reguler PS+HOK Penanaman Sukarela",
+  "HOK/Year",
+  ""
+ ],
+ [
+  "G7",
+  "Nilai Kontribusi Tenaga Non Tunai",
+  "baru",
+  "",
+  "HOK Patroli Reguler PS*Upah Setara Non Tunai Patroli+HOK Penanaman Non Karbon*(1-Porsi Tenaga Penanaman Non Karbon Dibayar)*Upah Penanaman per HOK",
+  "Rupiah/Year",
+  "PERINGATAN D1: patroli reguler pasca-2025 dan logistiknya adalah ASUMSI EKSPLORATIF (k); nilai non-tunai yang dicatat TIDAK membuktikan tenaga/logistik benar-benar tersedia sampai 2087"
+ ],
+ [
+  "K11",
+  "Nilai Logistik Non Tunai Patroli",
+  "baru",
+  "",
+  "Anggota Patroli Berpartisipasi Reguler*Biaya Operasional Patroli Sukarela per Anggota per Tahun",
+  "Rupiah/Year",
+  "File A (C); PERINGATAN D1: patroli reguler pasca-2025 dan logistiknya adalah ASUMSI EKSPLORATIF (k); nilai non-tunai yang dicatat TIDAK membuktikan tenaga/logistik benar-benar tersedia sampai 2087"
+ ],
+ [
+  "K11",
+  "Nilai Kontribusi Swadaya",
+  "diubah",
+  "Hari Patroli Swadaya*Biaya per Hari Patroli",
+  "Nilai Kontribusi Tenaga Non Tunai+Nilai Logistik Non Tunai Patroli",
+  "Rupiah/Year",
+  "nama lama; PERINGATAN D1: patroli reguler pasca-2025 dan logistiknya adalah ASUMSI EKSPLORATIF (k); nilai non-tunai yang dicatat TIDAK membuktikan tenaga/logistik benar-benar tersedia sampai 2087"
+ ],
+ [
+  "K11",
+  "HOK Patroli",
+  "diubah",
+  "Hari Patroli Swadaya",
+  "0",
+  "HOK/Year",
+  "patroli sukarela dipindah ke HOK Sukarela PS"
+ ],
+ [
+  "K12",
+  "HOK Berupah PS",
+  "baru",
+  "",
+  "Hari Patroli Didanai+HOK Penanaman Berupah+HOK Pengendalian Kebakaran",
+  "HOK/Year",
+  ""
+ ],
+ [
+  "K12",
+  "Kesempatan Kerja PS",
+  "diubah",
+  "Total HOK PS+HOK Patroli Berbayar+HOK Pengendalian Kebakaran",
+  "HOK Berupah PS+HOK Sukarela PS",
+  "HOK/Year",
+  ""
+ ],
+ [
+  "K12",
+  "Kesempatan Kerja Berupah Setara Penuh",
+  "baru",
+  "",
+  "HOK Berupah PS/HOK Tersedia per Anggota Kerja per Tahun",
+  "People",
+  ""
+ ],
+ [
+  "K12",
+  "Kesempatan Kerja Sukarela Setara Penuh",
+  "baru",
+  "",
+  "HOK Sukarela PS/HOK Tersedia per Anggota Kerja per Tahun",
+  "People",
+  ""
+ ],
+ [
+  "G7",
+  "Upah Kegiatan PS",
+  "diubah",
+  "Upah Patroli Berbayar+Manfaat Ekonomi Penanaman+Manfaat Ekonomi Patroli+Upah Pengendalian Kebakaran",
+  "Upah Patroli Berbayar+Upah Penanaman Program Non Karbon+Upah Penanaman Didanai Karbon+Upah Pengendalian Kebakaran",
+  "Rupiah/Year",
+  ""
+ ],
+ [
+  "K13",
+  "Anggota Patroli Berpartisipasi",
+  "baru",
+  "",
+  "MIN(Anggota Patroli Aktif, ZIDZ(HOK Patroli Reguler PS+Hari Patroli Didanai, HOK Patroli per Anggota 2025))",
+  "People",
+  ""
+ ],
+ [
+  "K13",
+  "Total Partisipasi Kegiatan PS",
+  "diubah",
+  "Anggota KUPS Aktif+Anggota Patroli Aktif+Penerima Manfaat Penanaman Aktif",
+  "Anggota KUPS Aktif+Anggota Patroli Berpartisipasi+Penerima Manfaat Penanaman Aktif",
+  "People",
+  ""
+ ],
+ [
+  "K14",
+  "Keikutsertaan Patroli 2023",
+  "baru",
+  "",
+  "2160",
+  "HOK/Year",
+  "392 kegiatan x 5,51 (estimasi peneliti, B)"
+ ],
+ [
+  "K14",
+  "Indeks Intensitas Patroli 2023",
+  "baru",
+  "",
+  "Keikutsertaan Patroli 2023/INITIAL(Kebutuhan Hari Patroli)",
+  "Dmnl",
+  ""
+ ],
+ [
+  "K14",
+  "Respons Perlindungan Awal",
+  "baru",
+  "",
+  "MAX(0, MIN(1, Rasio Risiko Penempatan Patroli Swadaya*Indeks Intensitas Patroli 2023)-Indeks Perlindungan Baseline)",
+  "Dmnl",
+  ""
+ ],
+ [
+  "K14",
+  "Efek Pengelolaan PS Aktif",
+  "diubah",
+  "Efek Pengelolaan PS Tanpa Karbon+(Switch PS*Switch Dampak Skenario Lahan*SMOOTHI(Respons Perlindungan , Waktu Penyesuaian Efek Pengelolaan PS, Respons Perlindungan)*Efektivitas Perlindungan Penuh terhadap Deforestasi -Efek Pengelolaan PS Tanpa Karbon)*Faktor Mutu Pelaksanaan",
+  "Efek Pengelolaan PS Tanpa Karbon+(Switch PS*Switch Dampak Skenario Lahan*SMOOTHI(Respons Perlindungan, Waktu Penyesuaian Efek Pengelolaan PS, Respons Perlindungan Awal)*Efektivitas Perlindungan Penuh terhadap Deforestasi-Efek Pengelolaan PS Tanpa Karbon)*Faktor Mutu Pelaksanaan",
+  "Dmnl",
+  ""
+ ],
+ [
+  "K14",
+  "Efek Pengelolaan PS Tanpa Karbon",
+  "diubah",
+  "Switch PS*Switch Dampak Skenario Lahan*SMOOTHI(Respons Perlindungan Tanpa Karbon, Waktu Penyesuaian Efek Pengelolaan PS , Respons Perlindungan Tanpa Karbon)*Efektivitas Perlindungan Penuh terhadap Deforestasi",
+  "Switch PS*Switch Dampak Skenario Lahan*SMOOTHI(Respons Perlindungan Tanpa Karbon, Waktu Penyesuaian Efek Pengelolaan PS, Respons Perlindungan Awal)*Efektivitas Perlindungan Penuh terhadap Deforestasi",
+  "Dmnl",
+  ""
+ ],
+ [
+  "K15",
+  "Tingkat Kecukupan Patroli Referensi",
+  "diubah",
+  "SAMPLE IF TRUE(Time <= Tahun Mulai Dampak Skenario Lahan, Tingkat Kecukupan Anggota Patroli , Tingkat Kecukupan Anggota Patroli)",
+  "INITIAL(Tingkat Kecukupan Anggota Patroli)",
+  "Dmnl",
+  ""
+ ],
+ [
+  "K15",
+  "Total Partisipasi Referensi",
+  "diubah",
+  "SAMPLE IF TRUE(Time <= Tahun Mulai Dampak Skenario Lahan, Total Partisipasi Kegiatan PS , Total Partisipasi Kegiatan PS)",
+  "INITIAL(Total Partisipasi Kegiatan PS)",
+  "People",
+  ""
+ ],
+ [
+  "C1",
+  "Delay Pembayaran Penjualan",
+  "baru",
+  "",
+  "0",
+  "Year",
+  "D; sensitivitas 0/0,5/1"
+ ],
+ [
+  "C1",
+  "Kas Penjualan Kredit",
+  "baru",
+  "",
+  "IF THEN ELSE(Delay Pembayaran Penjualan>0, DELAY FIXED(Pendapatan Kotor Penjualan Kredit, Delay Pembayaran Penjualan, 0), Pendapatan Kotor Penjualan Kredit)",
+  "Rupiah/Year",
+  ""
+ ],
+ [
+  "C1",
+  "Biaya Transaksi Penjualan",
+  "diubah",
+  "Pendapatan Kotor Penjualan Kredit*Proporsi Biaya Transaksi Penjualan",
+  "Kas Penjualan Kredit*Proporsi Biaya Transaksi Penjualan",
+  "Rupiah/Year",
+  ""
+ ],
+ [
+  "C1",
+  "Pajak dan Pungutan Karbon",
+  "diubah",
+  "Pendapatan Kotor Penjualan Kredit*Proporsi Pajak dan Pungutan Karbon",
+  "Kas Penjualan Kredit*Proporsi Pajak dan Pungutan Karbon",
+  "Rupiah/Year",
+  ""
+ ],
+ [
+  "C1",
+  "Surplus Sebelum Pemulihan",
+  "diubah",
+  "MAX(0, Pendapatan Kotor Penjualan Kredit-Biaya Transaksi dan MRV)",
+  "MAX(0, Kas Penjualan Kredit-Biaya Transaksi dan MRV)",
+  "Rupiah/Year",
+  ""
+ ],
+ [
+  "C1",
+  "Kekurangan Biaya Bersama Ditanggung Mitra",
+  "diubah",
+  "MAX(0, Biaya Transaksi dan MRV-Pendapatan Kotor Penjualan Kredit)",
+  "MAX(0, Biaya Transaksi dan MRV-Kas Penjualan Kredit)",
+  "Rupiah/Year",
+  ""
+ ],
+ [
+  "C2",
+  "Status Pembiayaan Awal",
+  "baru",
+  "",
+  "0",
+  "Dmnl",
+  "D: 0 hibah, 1 talangan"
+ ],
+ [
+  "PWD-T",
+  "Pendanaan Awal Belum Terpulihkan",
+  "diubah",
+  "INTEG(Pendanaan Awal untuk Patroli+Realisasi Pembiayaan Awal*Porsi Pembiayaan Awal sebagai Talangan +Biaya Modal Pendanaan Awal Rp-Pemulihan Pendanaan Awal, 0)",
+  "INTEG((Pendanaan Awal untuk Patroli+Realisasi Pembiayaan Awal)*Status Pembiayaan Awal+Realisasi Pembiayaan Jembatan+Biaya Modal Pendanaan Awal Rp-Pemulihan Pendanaan Awal-Penghapusan Talangan, 0)",
+  "Rupiah",
+  ""
+ ],
+ [
+  "D2",
+  "Pemulihan Pendanaan Awal",
+  "diubah",
+  "MIN(Dana Mitra dari Karbon, Pendanaan Awal Belum Terpulihkan/TIME STEP)",
+  "Pemulihan Talangan Sebelum Bagi Hasil+Pemulihan Talangan Sesudah Bagi Hasil",
+  "Rupiah/Year",
+  "perbaikan F1: dipecah agar tidak ada loop aljabar"
+ ],
+ [
+  "D2",
+  "Pendapatan Karbon Bersih yang Dapat Didistribusikan",
+  "diubah",
+  "Surplus Sebelum Pemulihan-Pemulihan Defisit Biaya Bersama",
+  "Surplus Sebelum Pemulihan-Pemulihan Defisit Biaya Bersama-Pemulihan Talangan Sebelum Bagi Hasil",
+  "Rupiah/Year",
+  ""
+ ],
+ [
+  "PWD-K",
+  "Switch Baseline Kredit Konservatif",
+  "diubah",
+  "0",
+  "2",
+  "Dmnl",
+  "0 = terhadap baseline BAU model (mekanisme A); 1 = pendekatan porsi lama (hanya untuk reproduksi Fase 3, TIDAK dipakai); 2 = terhadap rantai Referensi S1 endogen (mekanisme B/C, default)"
+ ],
+ [
+  "G5",
+  "Porsi ARR Adisional",
+  "baru",
+  "",
+  "ZIDZ(Penanaman Didanai Kas Aktual*Porsi Kas Karbon dalam Saldo, Penambahan Luas Penanaman)",
+  "Dmnl",
+  ""
+ ],
+ [
+  "PWD-K",
+  "Kredit ARR Diajukan",
+  "diubah",
+  "Pengurangan Emisi Eligible ARR*Switch Karbon*Switch Periode Kredit",
+  "Switch Karbon*Switch Periode Kredit*Status Proyek Karbon Aktif*IF THEN ELSE(Switch Baseline Kredit Konservatif=2, Pengurangan Emisi Eligible ARR Referensi S1, Pengurangan Emisi Eligible ARR*(1-Switch Baseline Kredit Konservatif*(1-Porsi ARR Adisional)))",
+  "tCO2e/Year",
+  ""
+ ],
+ [
+  "C3",
+  "Faktor Rekonsiliasi Reversal Kredit A2",
+  "diubah",
+  "1.000000",
+  "1",
+  "Dmnl",
+  "ditetapkan 1"
+ ],
+ [
+  "C4",
+  "Tingkat Diskonto",
+  "baru",
+  "",
+  "0.1",
+  "1/Year",
+  "D, tidak bersumber; sensitivitas 0,06-0,14"
+ ],
+ [
+  "C4",
+  "Faktor Diskonto",
+  "baru",
+  "",
+  "1/((1+Tingkat Diskonto*Satu Tahun)^((Time-INITIAL TIME)/Satu Tahun))",
+  "Dmnl",
+  ""
+ ],
+ [
+  "C4",
+  "Biaya Pengembangan Proyek",
+  "baru",
+  "",
+  "0",
+  "Rupiah/Year",
+  "D, PERLU DATA; PERINGATAN D3: NPV SEMENTARA, belum memuat biaya pengembangan proyek aktual (default 0) dan biaya material non-karbon (kosong); diskonto 10 % tak bersumber. Harga impas dari NPV ini BUKAN hasil tesis final"
+ ],
+ [
+  "M1",
+  "Arus Kas Proyek Karbon",
+  "baru",
+  "",
+  "Kas Penjualan Kredit-Biaya Transaksi dan MRV-Biaya Pengembangan Proyek Efektif-Realisasi Pembiayaan Jembatan",
+  "Rupiah/Year",
+  "Jembatan adalah biaya proyek karbon (hanya S2)"
+ ],
+ [
+  "C4",
+  "Arus Kas Proyek Keseluruhan",
+  "baru",
+  "",
+  "Arus Kas Proyek Karbon-Realisasi Pembiayaan Awal",
+  "Rupiah/Year",
+  ""
+ ],
+ [
+  "M1",
+  "Arus Kas Mitra",
+  "baru",
+  "",
+  "Dana Mitra dari Karbon+Pemulihan Defisit Biaya Bersama+Pemulihan Talangan Sebelum Bagi Hasil-Kekurangan Biaya Bersama Ditanggung Mitra-Realisasi Pembiayaan Awal-Biaya Pengembangan Proyek Efektif-Realisasi Pembiayaan Jembatan",
+  "Rupiah/Year",
+  ""
+ ],
+ [
+  "C4",
+  "NPV Proyek Keseluruhan",
+  "baru",
+  "",
+  "INTEG(Arus Kas Proyek Keseluruhan*Faktor Diskonto, 0)",
+  "Rupiah",
+  "PERINGATAN D3: NPV SEMENTARA, belum memuat biaya pengembangan proyek aktual (default 0) dan biaya material non-karbon (kosong); diskonto 10 % tak bersumber. Harga impas dari NPV ini BUKAN hasil tesis final"
+ ],
+ [
+  "C4",
+  "NPV Inkremental Perdagangan Karbon",
+  "baru",
+  "",
+  "INTEG(Arus Kas Proyek Karbon*Faktor Diskonto, 0)",
+  "Rupiah",
+  "S1: 0; PERINGATAN D3: NPV SEMENTARA, belum memuat biaya pengembangan proyek aktual (default 0) dan biaya material non-karbon (kosong); diskonto 10 % tak bersumber. Harga impas dari NPV ini BUKAN hasil tesis final"
+ ],
+ [
+  "C4",
+  "NPV Mitra",
+  "baru",
+  "",
+  "INTEG(Arus Kas Mitra*Faktor Diskonto, 0)",
+  "Rupiah",
+  "PERINGATAN D3: NPV SEMENTARA, belum memuat biaya pengembangan proyek aktual (default 0) dan biaya material non-karbon (kosong); diskonto 10 % tak bersumber. Harga impas dari NPV ini BUKAN hasil tesis final"
+ ],
+ [
+  "C4",
+  "PV Kas Masuk LPHD",
+  "baru",
+  "",
+  "INTEG(Dana Desa Diterima*Faktor Diskonto, 0)",
+  "Rupiah",
+  ""
+ ],
+ [
+  "C4",
+  "PV Kebutuhan Dana Minimum",
+  "baru",
+  "",
+  "INTEG(Kebutuhan Dana Minimum*Faktor Diskonto, 0)",
+  "Rupiah",
+  ""
+ ],
+ [
+  "C4",
+  "Rasio Cakupan Kebutuhan Minimum",
+  "baru",
+  "",
+  "ZIDZ(Penggunaan Dana Pengelolaan, Kebutuhan Dana Minimum)",
+  "Dmnl",
+  ""
+ ],
+ [
+  "C5",
+  "Emisi Deforestasi Dihindari terhadap Baseline",
+  "baru",
+  "",
+  "Emisi Deforestasi Biomassa Baseline-Emisi Deforestasi Biomassa",
+  "tCO2e/Year",
+  "selisih S2-S1 dihitung antar-run"
+ ],
+ [
+  "C5",
+  "Serapan Rehabilitasi",
+  "baru",
+  "",
+  "Komitmen Serapan Rehabilitasi",
+  "tCO2e/Year",
+  ""
+ ],
+ [
+  "K16",
+  "Upah Patroli dari Kas LPHD",
+  "baru",
+  "",
+  "Hari Patroli Didanai Kas LPHD*Upah Harian Patroli Berbayar",
+  "Rupiah/Year",
+  ""
+ ],
+ [
+  "G1",
+  "Upah Kegiatan Didanai Karbon",
+  "diubah",
+  "Upah Patroli Berbayar+Upah Pengendalian Kebakaran+Upah Penanaman Didanai Karbon",
+  "Upah Dibayar dari Kas LPHD*Porsi Kas Karbon dalam Saldo",
+  "Rupiah/Year",
+  ""
+ ],
+ [
+  "K17",
+  "Total Manfaat Ekonomi PS",
+  "diubah",
+  "Pendapatan KUPS Total+Manfaat Ekonomi Patroli+Manfaat Ekonomi Penanaman",
+  "Pendapatan KUPS Total+Upah Kegiatan PS",
+  "Rupiah/Year",
+  ""
+ ],
+ [
+  "K17",
+  "Total HOK PS",
+  "diubah",
+  "HOK Patroli+HOK Penanaman",
+  "Kesempatan Kerja PS",
+  "HOK/Year",
+  "alias pelaporan"
+ ],
+ [
+  "K17",
+  "Kesempatan Kerja Setara Penuh",
+  "diubah",
+  "Kesempatan Kerja PS/HOK Tersedia per Anggota Kerja per Tahun",
+  "Kesempatan Kerja Berupah Setara Penuh+Kesempatan Kerja Sukarela Setara Penuh",
+  "People",
+  ""
+ ],
+ [
+  "K17",
+  "Porsi Tenaga Kerja Program terhadap Penduduk Bekerja",
+  "diubah",
+  "ZIDZ(Kesempatan Kerja Setara Penuh, Penduduk Bekerja Tercatat)",
+  "ZIDZ(Kesempatan Kerja Berupah Setara Penuh, Penduduk Bekerja Tercatat)",
+  "Dmnl",
+  ""
+ ],
+ [
+  "G1",
+  "Pendanaan Awal untuk Patroli",
+  "diubah",
+  "MIN(Pendanaan Awal Proyek Karbon, Hari Patroli Tambahan Dibutuhkan*Biaya per Hari Patroli )",
+  "0",
+  "Rupiah/Year",
+  "Jalur generik dinonaktifkan secara struktural (sebelumnya MIN(Pendanaan Awal Proyek Karbon, \u2026), besaran 0). Pembiayaan awal hanya lewat HOK aktual"
+ ],
+ [
+  "PWD-C",
+  "Kebutuhan Dana Perlindungan",
+  "diubah",
+  "MAX(0, Hari Patroli Tambahan Dibutuhkan*Biaya per Hari Patroli-Pendanaan Awal untuk Patroli )",
+  "Hari Patroli Tambahan Dibutuhkan*Biaya per Hari Patroli",
+  "Rupiah/Year",
+  "Dikembalikan ke kebutuhan bruto: LPHD tetap menargetkan kebutuhan penuh; jembatan hanya mengisi sisa (perbaikan K7, mencegah jembatan menggeser belanja non-karbon)"
+ ],
+ [
+  "G1",
+  "Upah Dibayar dari Kas LPHD",
+  "baru",
+  "",
+  "Upah Patroli dari Kas LPHD+Upah Pengendalian Kebakaran+Upah Penanaman Didanai Karbon",
+  "Rupiah/Year",
+  ""
+ ],
+ [
+  "G1",
+  "Manfaat Kolektif Non Tunai",
+  "diubah",
+  "MAX(0, Penggunaan Dana Pengelolaan+Pendanaan Awal untuk Patroli-Upah Kegiatan Didanai Karbon )",
+  "MAX(0, Penggunaan Dana Pengelolaan-Upah Dibayar dari Kas LPHD)",
+  "Rupiah/Year",
+  "semua upah dari kas LPHD dikurangkan, apa pun sumbernya"
+ ],
+ [
+  "M1",
+  "Penggunaan Dana Perlindungan Total",
+  "diubah",
+  "Realisasi Belanja Perlindungan+Pendanaan Awal untuk Patroli+Realisasi Pembiayaan Awal",
+  "Realisasi Belanja Perlindungan+Realisasi Pembiayaan Awal+Realisasi Pembiayaan Jembatan",
+  "Rupiah/Year",
+  ""
+ ],
+ [
+  "M1",
+  "Pokok Talangan Kumulatif",
+  "baru",
+  "",
+  "INTEG((Pendanaan Awal untuk Patroli+Realisasi Pembiayaan Awal)*Status Pembiayaan Awal+Realisasi Pembiayaan Jembatan, 0)",
+  "Rupiah",
+  ""
+ ],
+ [
+  "PWD-T",
+  "Biaya Modal Kumulatif",
+  "baru",
+  "",
+  "INTEG(Biaya Modal Pendanaan Awal Rp, 0)",
+  "Rupiah",
+  ""
+ ],
+ [
+  "G2",
+  "Pemulihan Kumulatif",
+  "baru",
+  "",
+  "INTEG(Pemulihan Pendanaan Awal, 0)",
+  "Rupiah",
+  "pelacak"
+ ],
+ [
+  "G3",
+  "Jumlah Proporsi Alokasi Efektif",
+  "baru",
+  "",
+  "Proporsi Alokasi Efektif Operasional LPHD+Proporsi Alokasi Efektif Perlindungan+Proporsi Alokasi Efektif Rehabilitasi+Proporsi Alokasi Efektif Penguatan Kelembagaan+Proporsi Alokasi Efektif Pengembangan KUPS+Proporsi Alokasi Efektif Pengendalian Kebakaran",
+  "Dmnl",
+  "harus \u2264 1"
+ ],
+ [
+  "G3",
+  "Check Neraca Dana LPHD",
+  "baru",
+  "",
+  "Saldo Dana LPHD-(Kumulatif Dana Desa Diterima-Kumulatif Penggunaan Dana Desa)",
+  "Rupiah",
+  "harus 0"
+ ],
+ [
+  "G3",
+  "Kumulatif Penggunaan Dana Desa",
+  "baru",
+  "",
+  "INTEG(Penggunaan Dana Desa, 0)",
+  "Rupiah",
+  "pelacak"
+ ],
+ [
+  "G4",
+  "Laba Ditahan Tidak Direinvestasi",
+  "baru",
+  "",
+  "Laba KUPS Ditahan-Akumulasi Modal KUPS",
+  "Rupiah/Year",
+  "pelaporan"
+ ],
+ [
+  "G4",
+  "Check Identitas Surplus KUPS",
+  "baru",
+  "",
+  "Manfaat Ekonomi KUPS-(Pendapatan KUPS Total+Akumulasi Modal KUPS+Laba Ditahan Tidak Direinvestasi)",
+  "Rupiah/Year",
+  "harus 0"
+ ],
+ [
+  "G4",
+  "Check Identitas Penjualan KUPS",
+  "baru",
+  "",
+  "Penjualan KUPS-(Biaya Operasional KUPS Implisit+Manfaat Ekonomi KUPS)",
+  "Rupiah/Year",
+  "harus 0"
+ ],
+ [
+  "G5",
+  "Batas Luas Penanaman",
+  "baru",
+  "",
+  "MIN(Target Penanaman, MIN(MAX(Target Total Penanaman RKPS-Luas Penanaman Program,0)/TIME STEP, NonHutan*Fraksi Maksimum NonHutan Ditanami per Tahun))",
+  "Ha/Year",
+  ""
+ ],
+ [
+  "G5",
+  "Kebutuhan Dana Rehabilitasi",
+  "diubah",
+  "Switch PS*(MIN(Target Penanaman, MAX(0, Luas Restorasi Selektif Eligible-Luas Tanam Didanai Karbon )/TIME STEP)*Biaya Penanaman per Ha+Areal Rehabilitasi Belum Berhutan*Biaya Pemeliharaan Tanaman per Ha per Tahun )",
+  "Switch PS*(MAX(0, MIN(Batas Luas Penanaman-Penanaman Non Karbon, MAX(0, Luas Restorasi Selektif Eligible-Luas Tanam Didanai Karbon)/TIME STEP))*Biaya Penanaman per Ha+Areal Rehabilitasi Belum Berhutan*Biaya Pemeliharaan Tanaman per Ha per Tahun)",
+  "Rupiah/Year",
+  "kas tanam dibatasi luas yang masih dapat ditanam"
+ ],
+ [
+  "G5",
+  "Penanaman Rencana Total",
+  "baru",
+  "",
+  "Penanaman Non Karbon+Penanaman Didanai Karbon",
+  "Ha/Year",
+  ""
+ ],
+ [
+  "G5",
+  "Fraksi Penanaman Terealisasi",
+  "baru",
+  "",
+  "MIN(1, ZIDZ(Penambahan Luas Penanaman, Penanaman Rencana Total))",
+  "Dmnl",
+  ""
+ ],
+ [
+  "G5",
+  "Penanaman Non Karbon Aktual",
+  "baru",
+  "",
+  "Penanaman Non Karbon*Fraksi Penanaman Terealisasi",
+  "Ha/Year",
+  ""
+ ],
+ [
+  "G5",
+  "Penanaman Didanai Kas Aktual",
+  "baru",
+  "",
+  "Penanaman Didanai Karbon*Fraksi Penanaman Terealisasi",
+  "Ha/Year",
+  ""
+ ],
+ [
+  "G5",
+  "Pengeluaran Kas Penanaman Aktual",
+  "baru",
+  "",
+  "Penanaman Didanai Kas Aktual*Biaya Penanaman per Ha",
+  "Rupiah/Year",
+  ""
+ ],
+ [
+  "G5",
+  "Realisasi Belanja Rehabilitasi Efektif",
+  "baru",
+  "",
+  "Dana Pemeliharaan Rehabilitasi+Pengeluaran Kas Penanaman Aktual",
+  "Rupiah/Year",
+  "kas yang benar-benar keluar"
+ ],
+ [
+  "G5",
+  "Penggunaan Dana Pengelolaan",
+  "diubah",
+  "Realisasi Belanja Operasional LPHD+Realisasi Belanja Perlindungan+Realisasi Belanja Pengendalian Kebakaran +Realisasi Belanja Rehabilitasi+Realisasi Belanja Penguatan Kelembagaan+Realisasi Belanja Pengembangan KUPS",
+  "Realisasi Belanja Operasional LPHD+Realisasi Belanja Perlindungan+Realisasi Belanja Pengendalian Kebakaran+Realisasi Belanja Rehabilitasi Efektif+Realisasi Belanja Penguatan Kelembagaan+Realisasi Belanja Pengembangan KUPS",
+  "Rupiah/Year",
+  "sisa dana tanam tetap di saldo"
+ ],
+ [
+  "G5",
+  "Luas Tanam Didanai Karbon",
+  "diubah",
+  "INTEG(Penanaman Didanai Karbon, 0)",
+  "INTEG(Penanaman Didanai Kas Aktual, 0)",
+  "Ha",
+  ""
+ ],
+ [
+  "G5",
+  "Luas Tanaman Karbon dalam Pemeliharaan",
+  "diubah",
+  "INTEG(Penanaman Didanai Karbon-Selesai Pemeliharaan Tanaman Karbon, 0)",
+  "INTEG(Penanaman Didanai Kas Aktual-Selesai Pemeliharaan Tanaman Karbon, 0)",
+  "Ha",
+  ""
+ ],
+ [
+  "G5",
+  "Upah Penanaman Didanai Karbon",
+  "diubah",
+  "Penanaman Didanai Karbon*HOK Penanaman per Ha*Upah Penanaman per HOK",
+  "Penanaman Didanai Kas Aktual*HOK Penanaman per Ha*Upah Penanaman per HOK",
+  "Rupiah/Year",
+  ""
+ ],
+ [
+  "G5",
+  "Nilai Dukungan Material Non Karbon Terpakai",
+  "baru",
+  "",
+  "Penanaman Non Karbon Aktual*Biaya Bibit dan Material per Ha",
+  "Rupiah/Year",
+  "bukan kas LPHD"
+ ],
+ [
+  "G5",
+  "Upah Penanaman Program Non Karbon",
+  "baru",
+  "",
+  "HOK Penanaman Non Karbon*Porsi Tenaga Penanaman Non Karbon Dibayar*Upah Penanaman per HOK",
+  "Rupiah/Year",
+  "dibayar program non-karbon, bukan kas LPHD"
+ ],
+ [
+  "G6",
+  "Biaya Pengembangan Proyek Efektif",
+  "baru",
+  "",
+  "Biaya Pengembangan Proyek*Switch Karbon",
+  "Rupiah/Year",
+  ""
+ ],
+ [
+  "G6",
+  "Check Identitas Arus Kas",
+  "baru",
+  "",
+  "Arus Kas Proyek Keseluruhan-(Arus Kas Mitra+Kas Masuk LPHD Karbon)",
+  "Rupiah/Year",
+  "harus 0"
+ ],
+ [
+  "G6",
+  "PV Biaya MRV dan Transaksi",
+  "baru",
+  "",
+  "INTEG(Biaya Transaksi dan MRV*Faktor Diskonto, 0)",
+  "Rupiah",
+  ""
+ ],
+ [
+  "G6",
+  "PV Pembiayaan Awal",
+  "baru",
+  "",
+  "INTEG(Realisasi Pembiayaan Awal*Faktor Diskonto, 0)",
+  "Rupiah",
+  ""
+ ],
+ [
+  "G6",
+  "PV Kas Penjualan Kredit",
+  "baru",
+  "",
+  "INTEG(Kas Penjualan Kredit*Faktor Diskonto, 0)",
+  "Rupiah",
+  ""
+ ],
+ [
+  "G6",
+  "PV Penggunaan Dana LPHD",
+  "baru",
+  "",
+  "INTEG(Penggunaan Dana Desa*Faktor Diskonto, 0)",
+  "Rupiah",
+  "pelaporan, bukan biaya proyek"
+ ],
+ [
+  "G6",
+  "PV Kontribusi Non Tunai",
+  "baru",
+  "",
+  "INTEG((Nilai Kontribusi Swadaya+Nilai Dukungan Material Non Karbon Terpakai)*Faktor Diskonto, 0)",
+  "Rupiah",
+  "pelaporan"
+ ],
+ [
+  "G6",
+  "PV Upah Program Non Karbon",
+  "baru",
+  "",
+  "INTEG(Upah Penanaman Program Non Karbon*Faktor Diskonto, 0)",
+  "Rupiah",
+  "pelaporan"
+ ],
+ [
+  "M1",
+  "Total HOK Patroli",
+  "baru",
+  "",
+  "Hari Patroli Pembiayaan Awal+HOK Patroli Reguler PS+Hari Patroli Didanai Kas LPHD+Hari Patroli Didanai Jembatan",
+  "HOK/Year",
+  ""
+ ],
+ [
+  "G7",
+  "Check Identitas Patroli",
+  "baru",
+  "",
+  "Total HOK Patroli-(HOK Patroli Reguler PS+Hari Patroli Didanai)",
+  "HOK/Year",
+  "harus 0"
+ ],
+ [
+  "G7",
+  "Check Identitas HOK Penanaman",
+  "baru",
+  "",
+  "HOK Penanaman-(HOK Penanaman Didanai Kas+HOK Penanaman Non Karbon)",
+  "HOK/Year",
+  "harus 0"
+ ],
+ [
+  "D2",
+  "Switch Pemulihan Talangan Sebelum Bagi Hasil",
+  "baru",
+  "",
+  "1",
+  "Dmnl",
+  "Desain: 1 = pemulihan talangan dari surplus sebelum 60/40; 0 = dari bagian 40 % mitra (mekanisme A1). BUKAN aturan kontraktual yang disetujui"
+ ],
+ [
+  "D2",
+  "Pemulihan Talangan Sebelum Bagi Hasil",
+  "baru",
+  "",
+  "Switch Pemulihan Talangan Sebelum Bagi Hasil*MIN(MAX(0, Surplus Sebelum Pemulihan-Pemulihan Defisit Biaya Bersama), Pendanaan Awal Belum Terpulihkan/TIME STEP)",
+  "Rupiah/Year",
+  "dari surplus sebelum 60/40"
+ ],
+ [
+  "D2",
+  "Pemulihan Talangan Sesudah Bagi Hasil",
+  "baru",
+  "",
+  "(1-Switch Pemulihan Talangan Sebelum Bagi Hasil)*MIN(Dana Mitra dari Karbon, Pendanaan Awal Belum Terpulihkan/TIME STEP)",
+  "Rupiah/Year",
+  "dari bagian 40 % mitra (A1)"
+ ],
+ [
+  "F3",
+  "Potensi Kredit REDD Konservatif",
+  "baru",
+  "",
+  "Pengurangan Emisi Eligible REDD*Switch Karbon*Switch Periode Kredit*Porsi Mitigasi Adisional terhadap S2*Faktor Rekonsiliasi Reversal Kredit A2",
+  "tCO2e/Year",
+  "PELAPORAN: kredit REDD di atas perlindungan tingkat S1, dihitung dalam run BAU tanpa memengaruhi penerimaan (perbaikan F3: varian switch konservatif tidak dapat memulai loop)"
+ ],
+ [
+  "F3",
+  "Potensi Kredit ARR Konservatif",
+  "baru",
+  "",
+  "Pengurangan Emisi Eligible ARR*Switch Karbon*Switch Periode Kredit*Porsi ARR Adisional",
+  "tCO2e/Year",
+  "PELAPORAN"
+ ],
+ [
+  "PWD-C",
+  "Switch Pembiayaan Jembatan Karbon",
+  "baru",
+  "",
+  "1",
+  "Dmnl",
+  "Default mekanisme C. Hanya aktif pada S2 (dikalikan Switch Karbon). BUKAN komitmen aktual mitra"
+ ],
+ [
+  "PWD-C",
+  "Besaran Pembiayaan Jembatan per Tahun",
+  "baru",
+  "",
+  "7.8286e+08",
+  "Rupiah/Year",
+  "J1 = 3.011 HOK x Rp260.000 (tingkat pembiayaan mitra 2025). Asumsi eksperimen"
+ ],
+ [
+  "M1",
+  "Tahun Awal Pembiayaan Jembatan",
+  "baru",
+  "",
+  "2026",
+  "Year",
+  "Sesudah pembiayaan awal historis 2024-2025 berakhir"
+ ],
+ [
+  "M1",
+  "Durasi Pembiayaan Jembatan",
+  "baru",
+  "",
+  "5",
+  "Year",
+  "Durasi maksimum. Kelas D (uji 3/5/8)"
+ ],
+ [
+  "M1",
+  "Switch Henti Jembatan saat Kas Karbon Pertama",
+  "baru",
+  "",
+  "0",
+  "Dmnl",
+  "1 = jembatan berhenti ketika LPHD pertama kali menerima kas karbon (berbasis stok, tanpa loop aljabar)"
+ ],
+ [
+  "M1",
+  "Kumulatif Kas Masuk LPHD Karbon",
+  "baru",
+  "",
+  "INTEG(Kas Masuk LPHD Karbon, 0)",
+  "Rupiah",
+  "Stok penanda kas karbon pertama"
+ ],
+ [
+  "M1",
+  "Periode Pembiayaan Jembatan",
+  "baru",
+  "",
+  "(STEP(1, Tahun Awal Pembiayaan Jembatan)-STEP(1, Tahun Awal Pembiayaan Jembatan+Durasi Pembiayaan Jembatan))*IF THEN ELSE(Switch Henti Jembatan saat Kas Karbon Pertama=1 :AND: Kumulatif Kas Masuk LPHD Karbon>0, 0, 1)",
+  "Dmnl",
+  ""
+ ],
+ [
+  "PWD-C",
+  "Hari Patroli Didanai Jembatan",
+  "baru",
+  "",
+  "Switch Karbon*Switch Pembiayaan Jembatan Karbon*Periode Pembiayaan Jembatan*MIN(Besaran Pembiayaan Jembatan per Tahun/Biaya per Hari Patroli, MAX(0, Hari Patroli Tambahan Dibutuhkan-Hari Patroli Didanai Kas LPHD))",
+  "HOK/Year",
+  "Jembatan mengisi kekurangan sesudah patroli yang dibiayai kas LPHD (non-karbon maupun karbon); tidak ada pembiayaan ganda"
+ ],
+ [
+  "M1",
+  "Realisasi Pembiayaan Jembatan",
+  "baru",
+  "",
+  "Hari Patroli Didanai Jembatan*Biaya per Hari Patroli",
+  "Rupiah/Year",
+  "Arus keluar mitra; dicatat sebagai pokok talangan"
+ ],
+ [
+  "M1",
+  "Kumulatif Pembiayaan Jembatan",
+  "baru",
+  "",
+  "INTEG(Realisasi Pembiayaan Jembatan, 0)",
+  "Rupiah",
+  ""
+ ],
+ [
+  "M1",
+  "PV Pembiayaan Jembatan",
+  "baru",
+  "",
+  "INTEG(Realisasi Pembiayaan Jembatan*Faktor Diskonto, 0)",
+  "Rupiah",
+  "SEMENTARA (D3)"
+ ],
+ [
+  "PWD-U",
+  "Upah Harian Patroli Berbayar",
+  "diubah",
+  "130000",
+  "150000",
+  "Rupiah/HOK",
+  "Upah patroli aktual Rp150.000 per orang per hari (1 HOK), dikonfirmasi peneliti 2026-11-03. Menggantikan Rp130.000. Kualitas A (konfirmasi pelaksana). Merupakan KOMPONEN dari Biaya per Hari Patroli, bukan tambahan biaya"
+ ],
+ [
+  "PWD-U",
+  "Komponen Non Upah Biaya Patroli",
+  "baru",
+  "",
+  "MAX(0, Biaya per Hari Patroli-Upah Harian Patroli Berbayar)",
+  "Rupiah/HOK",
+  "Turunan asumsi: biaya total kerja Rp260.000/HOK dikurangi upah. Rp110.000/HOK BUKAN biaya logistik aktual terverifikasi"
+ ],
+ [
+  "PWD-U",
+  "Hari Logistik Swadaya per Anggota",
+  "baru",
+  "",
+  "9.17",
+  "HOK/(People*Year)",
+  "Log 2023: 9,17 hari-orang/anggota/tahun (sebelumnya tertanam dalam Biaya Operasional Patroli Sukarela). Kualitas C"
+ ],
+ [
+  "PWD-U",
+  "Biaya Operasional Patroli Sukarela per Anggota per Tahun",
+  "diubah",
+  "1.19205e+06",
+  "Hari Logistik Swadaya per Anggota*Komponen Non Upah Biaya Patroli",
+  "Rupiah/(People*Year)",
+  "Nilai NON-TUNAI logistik patroli reguler, kini konsisten dengan dekomposisi biaya Rp260.000 = upah + non-upah (sebelumnya 9,17 x Rp130.000 = 1.192.050). Tidak masuk kas, NPV, atau pendapatan RT (D1)"
+ ],
+ [
+  "PWD-K",
+  "Faktor Tekanan Deforestasi Referensi S1",
+  "baru",
+  "",
+  "Pengali Izin PS*(1-Efek Pengelolaan PS Tanpa Karbon)*(1-Efek Penghidupan terhadap Deforestasi )*(1-Efek Pengendalian Kebakaran terhadap Deforestasi)*Indeks Harga Komoditas^Elastisitas Deforestasi terhadap Harga Komoditas",
+  "Dmnl",
+  "Seperti Faktor Tekanan Deforestasi, tetapi efek PS hanya dari kegiatan yang juga ada di S1 (patroli reguler, pembiayaan historis 2024-2025, kas non-karbon). Kanal penghidupan dan kebakaran memakai nilai aktual (tidak dikreditkan); pada parameter dasar keduanya 0"
+ ],
+ [
+  "PWD-K",
+  "Aliran Penanaman ke Rehabilitasi Referensi S1",
+  "baru",
+  "",
+  "Penambahan Luas Penanaman*(1-Porsi ARR Adisional)",
+  "Ha/Year",
+  "Penanaman yang tidak dibiayai kas karbon (terjadi juga di S1)"
+ ],
+ [
+  "PWD-K",
+  "Faktor Ekspansi Kebun Referensi S1",
+  "baru",
+  "",
+  "Faktor Ekspansi Kebun",
+  "Dmnl",
+  "Sama dengan aktual (tidak dikreditkan)"
+ ],
+ [
+  "PWD-K",
+  "Faktor Gangguan Gambut Tersisa Referensi S1",
+  "baru",
+  "",
+  "Faktor Gangguan Gambut Tersisa",
+  "Dmnl",
+  "Sama dengan aktual; gambut tidak dikreditkan"
+ ],
+ [
+  "PWD-K",
+  "Emisi Kebakaran Gambut Referensi S1",
+  "baru",
+  "",
+  "Switch Emisi Kebakaran Gambut*Luas Karhutla Tahunan*Proporsi Karhutla di Lahan Gambut *Faktor Emisi Kebakaran Gambut",
+  "tCO2e/Year",
+  "Sama dengan aktual"
+ ],
+ [
+  "PWD-K",
+  "Rehabilitasi Menjadi Hutan Referensi S1",
+  "baru",
+  "",
+  "Areal Rehabilitasi Belum Berhutan Referensi S1*Tingkat Keberhasilan Rehabilitasi/Waktu Pembentukan Tutupan Hutan",
+  "Ha/Year",
+  ""
+ ],
+ [
+  "PWD-K",
+  "Kegagalan Rehabilitasi Referensi S1",
+  "baru",
+  "",
+  "Areal Rehabilitasi Belum Berhutan Referensi S1*(1-Tingkat Keberhasilan Rehabilitasi)/Waktu Pembentukan Tutupan Hutan",
+  "Ha/Year",
+  ""
+ ],
+ [
+  "PWD-K",
+  "Pengurangan Emisi Biomassa Referensi S1",
+  "baru",
+  "",
+  "Emisi Bersih Biomassa Referensi S1-Emisi Bersih Biomassa",
+  "tCO2e/Year",
+  "Mitigasi biomassa bersih tambahan terhadap Referensi S1 (tahun berjalan)"
+ ],
+ [
+  "PWD-K",
+  "Pengurangan Emisi REDD Bruto Referensi S1",
+  "baru",
+  "",
+  "MIN(Emisi Deforestasi Biomassa Referensi S1-Emisi Deforestasi Biomassa, Pengurangan Emisi Biomassa Referensi S1 )",
+  "tCO2e/Year",
+  "BERTANDA: deforestasi dihindari terhadap S1 (negatif = reversal, yaitu S2 mendeforestasi lebih banyak daripada S1); tidak melebihi pengurangan bersih"
+ ],
+ [
+  "PWD-K",
+  "Pengurangan Emisi ARR Bruto Referensi S1",
+  "baru",
+  "",
+  "Pengurangan Emisi Biomassa Referensi S1-Pengurangan Emisi REDD Bruto Referensi S1",
+  "tCO2e/Year",
+  "Sisa pengurangan bersih (>= 0 menurut konstruksi); REDD + ARR = pengurangan bersih (tanpa hitung ganda)"
+ ],
+ [
+  "PWD-K",
+  "Pengurangan Emisi Eligible REDD Referensi S1",
+  "baru",
+  "",
+  "Pengurangan Emisi REDD Bruto Referensi S1*(1-Proporsi Leakage Karbon)*(1-Proporsi Buffer Risiko Karbon )*Proporsi Kredit REDD dalam Project Area",
+  "tCO2e/Year",
+  "Leakage, buffer, Project Area sama dengan aturan REDD"
+ ],
+ [
+  "PWD-K",
+  "Pengurangan Emisi Eligible ARR Referensi S1",
+  "baru",
+  "",
+  "Pengurangan Emisi ARR Bruto Referensi S1*(1-Proporsi Leakage ARR)*(1-Proporsi Buffer Risiko Karbon )",
+  "tCO2e/Year",
+  "ARR tidak dibatasi Project Area (penanaman di dalam PA)"
+ ],
+ [
+  "PWD-K",
+  "Mitigasi REDD Eligible Bersih Proyek",
+  "baru",
+  "",
+  "Switch Karbon*Switch Periode Kredit*Status Proyek Karbon Aktif*Pengurangan Emisi Eligible REDD Referensi S1",
+  "tCO2e/Year",
+  "Bertanda; reversal masuk sebagai negatif"
+ ],
+ [
+  "PWD-K",
+  "Saldo Mitigasi REDD Belum Dikreditkan",
+  "baru",
+  "",
+  "INTEG(Mitigasi REDD Eligible Bersih Proyek-Kredit REDD Referensi S1 Bersih+Penggunaan Buffer Reversal+Pembatalan Stok Kredit Reversal+Laju Penggantian Reversal, 0)",
+  "tCO2e",
+  "Negatif = debit reversal. Penyelesaian (buffer, pembatalan stok, pengganti) memulihkan saldo sehingga tidak ada penalti ganda"
+ ],
+ [
+  "PWD-K",
+  "Kredit REDD Referensi S1 Bersih",
+  "baru",
+  "",
+  "MAX(0, Saldo Mitigasi REDD Belum Dikreditkan/TIME STEP+Mitigasi REDD Eligible Bersih Proyek)",
+  "tCO2e/Year",
+  "Kredit hanya bila mitigasi bersih kumulatif positif; hanya informasi tahun berjalan dan lampau"
+ ],
+ [
+  "PWD-K",
+  "Reversal Belum Terkompensasi",
+  "baru",
+  "",
+  "MAX(0, -Saldo Mitigasi REDD Belum Dikreditkan)",
+  "tCO2e",
+  "Bandingkan dengan Kumulatif Buffer REDD"
+ ],
+ [
+  "PWD-K",
+  "Kredit REDD Diajukan",
+  "diubah",
+  "Pengurangan Emisi Eligible REDD*Switch Karbon*Switch Periode Kredit*(1-Switch Baseline Kredit Konservatif *(1-Porsi Mitigasi Adisional terhadap S2)) *Faktor Rekonsiliasi Reversal Kredit A2",
+  "Switch Karbon*Switch Periode Kredit*Status Proyek Karbon Aktif*Faktor Rekonsiliasi Reversal Kredit A2*IF THEN ELSE(Switch Baseline Kredit Konservatif=2, Kredit REDD Referensi S1 Bersih, Pengurangan Emisi Eligible REDD*(1-Switch Baseline Kredit Konservatif*(1-Porsi Mitigasi Adisional terhadap S2)))",
+  "tCO2e/Year",
+  "Kredit endogen: membatasi penerbitan, penjualan, kas"
+ ],
+ [
+  "PWD-K",
+  "Kredit Gambut Diajukan",
+  "diubah",
+  "Pengurangan Emisi Eligible Gambut*Switch Karbon*Switch Periode Kredit",
+  "Pengurangan Emisi Eligible Gambut*Switch Karbon*Switch Periode Kredit*Status Proyek Karbon Aktif",
+  "tCO2e/Year",
+  "Switch Klaim Kredit Gambut = 0"
+ ],
+ [
+  "PWD-K",
+  "Potensi Kredit REDD terhadap BAU",
+  "baru",
+  "",
+  "Pengurangan Emisi Eligible REDD*Switch Karbon*Switch Periode Kredit*Faktor Rekonsiliasi Reversal Kredit A2",
+  "tCO2e/Year",
+  "PELAPORAN batas atas (mekanisme A) pada run mana pun; tidak memengaruhi kas"
+ ],
+ [
+  "PWD-K",
+  "Potensi Kredit REDD Referensi S1",
+  "baru",
+  "",
+  "MAX(0, Pengurangan Emisi Eligible REDD Referensi S1)*Switch Karbon*Switch Periode Kredit*Faktor Rekonsiliasi Reversal Kredit A2",
+  "tCO2e/Year",
+  "PELAPORAN pada run mana pun (termasuk A)"
+ ],
+ [
+  "PWD-K",
+  "Check Referensi S1 Hutan",
+  "baru",
+  "",
+  "Total Hutan Referensi S1-Total Hutan",
+  "Ha",
+  "Uji: = 0 pada S1 di semua t"
+ ],
+ [
+  "PWD-K",
+  "Hari Patroli Dapat Didanai Kas Non Karbon",
+  "baru",
+  "",
+  "MIN(Hari Patroli Didanai Kas LPHD, MAX(0, Saldo Dana LPHD-Saldo Dana LPHD dari Karbon)/Waktu Pembelanjaan Dana Desa*Proporsi Alokasi Efektif Perlindungan*Rasio Realisasi Belanja/Biaya per Hari Patroli)",
+  "HOK/Year",
+  "Patroli yang dapat dibiayai saldo non-karbon sendiri (atribusi non-karbon lebih dulu)"
+ ],
+ [
+  "PWD-K",
+  "Aturan Penyelesaian Reversal",
+  "baru",
+  "",
+  "2",
+  "Dmnl",
+  "ASUMSI MODEL (tidak berdasar kontrak). Debit reversal dibawa ke depan dan dapat dilunasi mitigasi berikutnya; pada setiap peristiwa verifikasi (5 th) debit yang tersisa diselesaikan: 0 = tidak diselesaikan (hanya dilaporkan sebagai kewajiban); 1 = buffer lalu pembatalan stok kredit sendiri yang belum terjual; 2 = 1 + pembelian kredit pengganti untuk sisanya"
+ ],
+ [
+  "PWD-K",
+  "Pulsa Verifikasi Reversal",
+  "baru",
+  "",
+  "PULSE TRAIN(Tahun Mulai Karbon+Delay Verifikasi dan Penerbitan Kredit+Periode Verifikasi, TIME STEP, Periode Verifikasi, FINAL TIME)",
+  "Dmnl",
+  "Peristiwa verifikasi 2032, 2037, ..., 2082"
+ ],
+ [
+  "PWD-K",
+  "Mode Kredit Referensi S1 Aktif",
+  "baru",
+  "",
+  "IF THEN ELSE(Switch Baseline Kredit Konservatif=2, 1, 0)",
+  "Dmnl",
+  ""
+ ],
+ [
+  "PWD-K",
+  "Kontribusi Buffer REDD",
+  "baru",
+  "",
+  "Switch Karbon*Switch Periode Kredit*Status Proyek Karbon Aktif*MAX(0, Pengurangan Emisi REDD Bruto Referensi S1)*(1-Proporsi Leakage Karbon)*Proporsi Kredit REDD dalam Project Area*Proporsi Buffer Risiko Karbon",
+  "tCO2e/Year",
+  "Kredit yang ditahan sebagai buffer risiko"
+ ],
+ [
+  "PWD-K",
+  "Kumulatif Buffer REDD",
+  "baru",
+  "",
+  "INTEG(Kontribusi Buffer REDD, 0)",
+  "tCO2e",
+  "Kontribusi kumulatif (pelaporan)"
+ ],
+ [
+  "PWD-K",
+  "Buffer REDD Tersedia",
+  "baru",
+  "",
+  "INTEG(Kontribusi Buffer REDD-Penggunaan Buffer Reversal, 0)",
+  "tCO2e",
+  "Buffer berkurang bila dipakai menutup reversal"
+ ],
+ [
+  "PWD-K",
+  "Penggunaan Buffer Reversal",
+  "baru",
+  "",
+  "Mode Kredit Referensi S1 Aktif*IF THEN ELSE(Aturan Penyelesaian Reversal>=1, 1, 0)*Pulsa Verifikasi Reversal*MIN(Reversal Belum Terkompensasi, Buffer REDD Tersedia)/TIME STEP",
+  "tCO2e/Year",
+  "Pembatalan kredit buffer pada peristiwa verifikasi"
+ ],
+ [
+  "PWD-K",
+  "Stok Kredit REDD Dapat Dibatalkan",
+  "baru",
+  "",
+  "MAX(0, Stok Kredit REDD Belum Terjual-(Kredit REDD Terjual+Kredit REDD Kedaluwarsa)*TIME STEP)",
+  "tCO2e",
+  ""
+ ],
+ [
+  "PWD-K",
+  "Pembatalan Stok Kredit Reversal",
+  "baru",
+  "",
+  "Mode Kredit Referensi S1 Aktif*IF THEN ELSE(Aturan Penyelesaian Reversal>=1, 1, 0)*Pulsa Verifikasi Reversal*MIN(MAX(0, Reversal Belum Terkompensasi-Buffer REDD Tersedia), Stok Kredit REDD Dapat Dibatalkan)/TIME STEP",
+  "tCO2e/Year",
+  "Kredit sendiri yang belum terjual dibatalkan (tanpa arus kas, mengurangi penerimaan masa depan)"
+ ],
+ [
+  "PWD-K",
+  "Laju Penggantian Reversal",
+  "baru",
+  "",
+  "Mode Kredit Referensi S1 Aktif*IF THEN ELSE(Aturan Penyelesaian Reversal>=2, 1, 0)*Pulsa Verifikasi Reversal*MAX(0, Reversal Belum Terkompensasi-Buffer REDD Tersedia-Stok Kredit REDD Dapat Dibatalkan)/TIME STEP",
+  "tCO2e/Year",
+  "Pembelian kredit pengganti untuk sisa debit sesudah buffer dan stok sendiri"
+ ],
+ [
+  "PWD-K",
+  "Kredit Pengganti Reversal Kumulatif",
+  "baru",
+  "",
+  "INTEG(Laju Penggantian Reversal, 0)",
+  "tCO2e",
+  ""
+ ],
+ [
+  "PWD-K",
+  "Kumulatif Penggunaan Buffer Reversal",
+  "baru",
+  "",
+  "INTEG(Penggunaan Buffer Reversal, 0)",
+  "tCO2e",
+  ""
+ ],
+ [
+  "PWD-K",
+  "Kumulatif Pembatalan Stok Kredit Reversal",
+  "baru",
+  "",
+  "INTEG(Pembatalan Stok Kredit Reversal, 0)",
+  "tCO2e",
+  ""
+ ],
+ [
+  "PWD-K",
+  "Stok Kredit REDD Belum Terjual",
+  "diubah",
+  "INTEG(Kredit REDD Terbit-Kredit REDD Terjual-Kredit REDD Kedaluwarsa, 0)",
+  "INTEG(Kredit REDD Terbit-Kredit REDD Terjual-Kredit REDD Kedaluwarsa-Pembatalan Stok Kredit Reversal, 0)",
+  "tCO2e",
+  ""
+ ],
+ [
+  "PWD-K",
+  "Kewajiban Reversal Belum Diselesaikan",
+  "baru",
+  "",
+  "Reversal Belum Terkompensasi*Harga Karbon*Nilai Tukar USD ke Rupiah",
+  "Rupiah",
+  "Nilai debit yang belum diselesaikan pada harga berjalan (pelaporan, bukan arus kas)"
+ ],
+ [
+  "PWD-K",
+  "Biaya Penggantian Reversal",
+  "baru",
+  "",
+  "Laju Penggantian Reversal*Harga Karbon*Nilai Tukar USD ke Rupiah",
+  "Rupiah/Year",
+  "Kewajiban non-permanen; ditanggung proyek sebelum bagi hasil, atau ditalangi mitra bila kas tidak cukup"
+ ],
+ [
+  "PWD-K",
+  "Biaya Transaksi dan MRV",
+  "diubah",
+  "Biaya Penerbitan dan Registri+Biaya Verifikasi Tahunan+Biaya Monitoring MRV+Biaya Transaksi Penjualan +Pajak dan Pungutan Karbon",
+  "Biaya Penerbitan dan Registri+Biaya Verifikasi Tahunan+Biaya Monitoring MRV+Biaya Transaksi Penjualan +Pajak dan Pungutan Karbon+Biaya Penggantian Reversal",
+  "Rupiah/Year",
+  "Ditambah biaya penggantian reversal"
+ ],
+ [
+  "PWD-M",
+  "Switch Aturan Penghentian MRV",
+  "baru",
+  "",
+  "0",
+  "Dmnl",
+  "1 = proyek (pengajuan kredit dan MRV) dihentikan permanen bila rerata kas penjualan < rasio ambang x rerata biaya MRV tetap sesudah tahun evaluasi. Aturan prospektif (hanya data lampau)"
+ ],
+ [
+  "PWD-M",
+  "Tahun Mulai Evaluasi MRV",
+  "baru",
+  "",
+  "2033",
+  "Year",
+  "Sesudah jembatan 2026-2030 dan jeda penerbitan 3 th. Asumsi"
+ ],
+ [
+  "PWD-M",
+  "Waktu Rerata Evaluasi MRV",
+  "baru",
+  "",
+  "3",
+  "Year",
+  ""
+ ],
+ [
+  "PWD-M",
+  "Rasio Ambang Kas terhadap Biaya MRV",
+  "baru",
+  "",
+  "1",
+  "Dmnl",
+  ""
+ ],
+ [
+  "PWD-M",
+  "Biaya MRV Tetap",
+  "baru",
+  "",
+  "Biaya Monitoring MRV+Biaya Verifikasi Tahunan",
+  "Rupiah/Year",
+  ""
+ ],
+ [
+  "PWD-M",
+  "Rerata Kas Penjualan Evaluasi",
+  "baru",
+  "",
+  "SMOOTH(Kas Penjualan Kredit, Waktu Rerata Evaluasi MRV)",
+  "Rupiah/Year",
+  ""
+ ],
+ [
+  "PWD-M",
+  "Rerata Biaya MRV Evaluasi",
+  "baru",
+  "",
+  "SMOOTH(Biaya MRV Tetap, Waktu Rerata Evaluasi MRV)",
+  "Rupiah/Year",
+  ""
+ ],
+ [
+  "PWD-M",
+  "Laju Penghentian Proyek Karbon",
+  "baru",
+  "",
+  "Switch Aturan Penghentian MRV*IF THEN ELSE(Time>=Tahun Mulai Evaluasi MRV :AND: Rerata Kas Penjualan Evaluasi<Rasio Ambang Kas terhadap Biaya MRV*Rerata Biaya MRV Evaluasi, (1-Indikator Proyek Karbon Dihentikan)/TIME STEP, 0)",
+  "1/Year",
+  ""
+ ],
+ [
+  "PWD-M",
+  "Indikator Proyek Karbon Dihentikan",
+  "baru",
+  "",
+  "INTEG(Laju Penghentian Proyek Karbon, 0)",
+  "Dmnl",
+  "Kunci permanen 0->1"
+ ],
+ [
+  "PWD-M",
+  "Status Proyek Karbon Aktif",
+  "baru",
+  "",
+  "1-Indikator Proyek Karbon Dihentikan",
+  "Dmnl",
+  ""
+ ],
+ [
+  "PWD-M",
+  "Tahun Mulai Monitoring MRV",
+  "baru",
+  "",
+  "2024",
+  "Year",
+  "Penundaan monitoring (uji: 2026)"
+ ],
+ [
+  "PWD-M",
+  "Biaya Monitoring MRV",
+  "diubah",
+  "Switch Karbon*Switch Periode Kredit*Luas Area Proyek Karbon*Biaya Monitoring per Ha per Tahun",
+  "Switch Karbon*Switch Periode Kredit*Status Proyek Karbon Aktif*STEP(1, Tahun Mulai Monitoring MRV)*Luas Area Proyek Karbon*Biaya Monitoring per Ha per Tahun",
+  "Rupiah/Year",
+  ""
+ ],
+ [
+  "PWD-M",
+  "Biaya Verifikasi Tahunan",
+  "diubah",
+  "Switch Karbon*(STEP(1, Tahun Mulai Karbon+Delay Verifikasi dan Penerbitan Kredit)-STEP (1, Tahun Mulai Karbon+Durasi Periode Kredit+Delay Verifikasi dan Penerbitan Kredit ))*Biaya Verifikasi per Kejadian/Periode Verifikasi",
+  "Switch Karbon*Status Proyek Karbon Aktif*(STEP(1, Tahun Mulai Karbon+Delay Verifikasi dan Penerbitan Kredit)-STEP (1, Tahun Mulai Karbon+Durasi Periode Kredit+Delay Verifikasi dan Penerbitan Kredit ))*Biaya Verifikasi per Kejadian/Periode Verifikasi",
+  "Rupiah/Year",
+  ""
+ ],
+ [
+  "PWD-T",
+  "Tahun Akhir Tenor Talangan",
+  "baru",
+  "",
+  "2045",
+  "Year",
+  "Asumsi uji: 15 th sesudah jembatan berakhir. Biaya modal berhenti dan (bila switch) sisa dihapus pada tahun ini"
+ ],
+ [
+  "PWD-T",
+  "Batas Rasio Biaya Modal terhadap Pokok",
+  "baru",
+  "",
+  "1",
+  "Dmnl",
+  "Akumulasi biaya modal maks. = 100 % pokok"
+ ],
+ [
+  "PWD-T",
+  "Biaya Modal Pendanaan Awal Rp",
+  "diubah",
+  "Pendanaan Awal Belum Terpulihkan*Biaya Modal Pendanaan Awal",
+  "IF THEN ELSE(Time<Tahun Akhir Tenor Talangan, MIN(Pendanaan Awal Belum Terpulihkan*Biaya Modal Pendanaan Awal, MAX(0, Batas Rasio Biaya Modal terhadap Pokok*Pokok Talangan Kumulatif-Biaya Modal Kumulatif)/TIME STEP), 0)",
+  "Rupiah/Year",
+  "Memperbaiki T-a: tidak tumbuh tanpa batas"
+ ],
+ [
+  "PWD-T",
+  "Switch Penghapusan Talangan",
+  "baru",
+  "",
+  "0",
+  "Dmnl",
+  "1 = sisa talangan dihapus pada akhir tenor dan dicatat sebagai kerugian mitra (bukan arus kas)"
+ ],
+ [
+  "PWD-T",
+  "Penghapusan Talangan",
+  "baru",
+  "",
+  "Switch Penghapusan Talangan*IF THEN ELSE(Time>=Tahun Akhir Tenor Talangan, MAX(0, Pendanaan Awal Belum Terpulihkan/TIME STEP-Pemulihan Pendanaan Awal), 0)",
+  "Rupiah/Year",
+  ""
+ ],
+ [
+  "PWD-T",
+  "Kerugian Mitra dari Penghapusan Talangan",
+  "baru",
+  "",
+  "INTEG(Penghapusan Talangan, 0)",
+  "Rupiah",
+  "Kerugian diakui; arus kas mitra tidak berubah karena pokok sudah tercatat sebagai arus keluar"
+ ],
+ [
+  "PWD-K",
+  "Fungsi Ekologis Gambut Budidaya Terdampak Referensi S1",
+  "baru",
+  "",
+  "Luas Total Gambut Budidaya-Fungsi Ekologis Gambut Budidaya Referensi S1",
+  "Ha",
+  "Rantai Referensi S1: salinan rantai Baseline dengan tekanan deforestasi S1"
+ ],
+ [
+  "PWD-K",
+  "Fungsi Ekologis Gambut Lindung Terdampak Referensi S1",
+  "baru",
+  "",
+  "Luas Total Gambut Lindung-Fungsi Ekologis Gambut Lindung Referensi S1",
+  "Ha",
+  "Rantai Referensi S1: salinan rantai Baseline dengan tekanan deforestasi S1"
+ ],
+ [
+  "PWD-K",
+  "Penambahan Defisit Karbon Regenerasi Referensi S1",
+  "baru",
+  "",
+  "(Serapan NonHutan menjadi HLKS Referensi S1+Serapan Nonhutan menjadi HMS Referensi S1+Serapan NonHutan menjadi HRs Referensi S1 +Komitmen Serapan Rehabilitasi Referensi S1)/Faktor CO2e",
+  "tC/Year",
+  "Rantai Referensi S1: salinan rantai Baseline dengan tekanan deforestasi S1"
+ ],
+ [
+  "PWD-K",
+  "Hilangnya Defisit karena Deforestasi Referensi S1",
+  "baru",
+  "",
+  "Defisit Karbon Hutan Regenerasi Referensi S1*Fraksi Hutan Terdeforestasi Referensi S1",
+  "tC/Year",
+  "Rantai Referensi S1: salinan rantai Baseline dengan tekanan deforestasi S1"
+ ],
+ [
+  "PWD-K",
+  "Serapan NonHutan menjadi Perkebunan Referensi S1",
+  "baru",
+  "",
+  "(Carbon Density Pr-Carbon Density Non Hutan)*NonHutan menjadi Pr Referensi S1*Faktor CO2e",
+  "tCO2e/Year",
+  "Rantai Referensi S1: salinan rantai Baseline dengan tekanan deforestasi S1"
+ ],
+ [
+  "PWD-K",
+  "Emisi Perkebunan menjadi NonHutan Referensi S1",
+  "baru",
+  "",
+  "(Carbon Density Pr-Carbon Density Non Hutan)*Perkebunan menjadi NonHutan Referensi S1*Faktor CO2e",
+  "tCO2e/Year",
+  "Rantai Referensi S1: salinan rantai Baseline dengan tekanan deforestasi S1"
+ ],
+ [
+  "PWD-K",
+  "Areal Rehabilitasi Belum Berhutan Referensi S1",
+  "baru",
+  "",
+  "INTEG(Aliran Penanaman ke Rehabilitasi Referensi S1-Rehabilitasi Menjadi Hutan Referensi S1- Kegagalan Rehabilitasi Referensi S1, 0)",
+  "Ha",
+  "Rantai Referensi S1: salinan rantai Baseline dengan tekanan deforestasi S1"
+ ],
+ [
+  "PWD-K",
+  "Tingkat Gangguan Gambut Budidaya Referensi S1",
+  "baru",
+  "",
+  "Tingkat Gangguan Gambut Budidaya BAU*Faktor Gangguan Gambut Tersisa Referensi S1",
+  "1/Year",
+  "Rantai Referensi S1: salinan rantai Baseline dengan tekanan deforestasi S1"
+ ],
+ [
+  "PWD-K",
+  "Fungsi Ekologis Gambut Budidaya Referensi S1",
+  "baru",
+  "",
+  "INTEG(-Perubahan Luas FEG Budidaya Referensi S1, Luas Total Gambut Budidaya-Luas Gambut Budidaya Terganggu Awal )",
+  "Ha",
+  "Rantai Referensi S1: salinan rantai Baseline dengan tekanan deforestasi S1"
+ ],
+ [
+  "PWD-K",
+  "Tingkat Gangguan Gambut Lindung Referensi S1",
+  "baru",
+  "",
+  "Tingkat Gangguan Gambut Lindung BAU*Faktor Gangguan Gambut Tersisa Referensi S1",
+  "1/Year",
+  "Rantai Referensi S1: salinan rantai Baseline dengan tekanan deforestasi S1"
+ ],
+ [
+  "PWD-K",
+  "Defisit Karbon Hutan Regenerasi Referensi S1",
+  "baru",
+  "",
+  "INTEG(Penambahan Defisit Karbon Regenerasi Referensi S1-Akumulasi Karbon Regenerasi Referensi S1 -Hilangnya Defisit karena Deforestasi Referensi S1, 0)",
+  "tC",
+  "Rantai Referensi S1: salinan rantai Baseline dengan tekanan deforestasi S1"
+ ],
+ [
+  "PWD-K",
+  "Fungsi Ekologis Gambut Lindung Referensi S1",
+  "baru",
+  "",
+  "INTEG(-Perubahan Luas FEG Lindung Referensi S1, Luas Total Gambut Lindung-Luas Gambut Lindung Terganggu Awal )",
+  "Ha",
+  "Rantai Referensi S1: salinan rantai Baseline dengan tekanan deforestasi S1"
+ ],
+ [
+  "PWD-K",
+  "Koreksi Emisi Hutan Regenerasi Referensi S1",
+  "baru",
+  "",
+  "Hilangnya Defisit karena Deforestasi Referensi S1*Faktor CO2e",
+  "tCO2e/Year",
+  "Rantai Referensi S1: salinan rantai Baseline dengan tekanan deforestasi S1"
+ ],
+ [
+  "PWD-K",
+  "Serapan NonHutan menjadi HLKS Referensi S1",
+  "baru",
+  "",
+  "(Carbon Density HLKS-Carbon Density Non Hutan)*NonHutan menjadi HLKS Referensi S1*Faktor CO2e",
+  "tCO2e/Year",
+  "Rantai Referensi S1: salinan rantai Baseline dengan tekanan deforestasi S1"
+ ],
+ [
+  "PWD-K",
+  "Komitmen Serapan Rehabilitasi Referensi S1",
+  "baru",
+  "",
+  "((Carbon Density HLKS-Carbon Density Non Hutan)*Rehabilitasi ke HLKS Referensi S1+(Carbon Density HMS -Carbon Density Non Hutan)*Rehabilitasi ke HMS Referensi S1+(Carbon Density HRS-Carbon Density Non Hutan )*Rehabilitasi ke HRS Referensi S1)*Faktor CO2e",
+  "tCO2e/Year",
+  "Rantai Referensi S1: salinan rantai Baseline dengan tekanan deforestasi S1"
+ ],
+ [
+  "PWD-K",
+  "Serapan NonHutan menjadi HRs Referensi S1",
+  "baru",
+  "",
+  "(Carbon Density HRS-Carbon Density Non Hutan)*NonHutan menjadi HRS Referensi S1*Faktor CO2e",
+  "tCO2e/Year",
+  "Rantai Referensi S1: salinan rantai Baseline dengan tekanan deforestasi S1"
+ ],
+ [
+  "PWD-K",
+  "Serapan Nonhutan menjadi HMS Referensi S1",
+  "baru",
+  "",
+  "(Carbon Density HMS-Carbon Density Non Hutan)*NonHutan menjadi HMS Referensi S1*Faktor CO2e",
+  "tCO2e/Year",
+  "Rantai Referensi S1: salinan rantai Baseline dengan tekanan deforestasi S1"
+ ],
+ [
+  "PWD-K",
+  "Perkebunan menjadi NonHutan Referensi S1",
+  "baru",
+  "",
+  "Perkebunan Referensi S1*Laju Perkebunan menjadi NonHutan",
+  "Ha/Year",
+  "Rantai Referensi S1: salinan rantai Baseline dengan tekanan deforestasi S1"
+ ],
+ [
+  "PWD-K",
+  "Emisi HLKS menjadi NonHutan Referensi S1",
+  "baru",
+  "",
+  "(Carbon Density HLKS-Carbon Density Non Hutan)*HLKS menjadi NonHutan Referensi S1*Faktor CO2e",
+  "tCO2e/Year",
+  "Rantai Referensi S1: salinan rantai Baseline dengan tekanan deforestasi S1"
+ ],
+ [
+  "PWD-K",
+  "Emisi HMS Menjadi Non Hutan Referensi S1",
+  "baru",
+  "",
+  "(Carbon Density HMS-Carbon Density Non Hutan)*HMS menjadi NonHutan Referensi S1*Faktor CO2e",
+  "tCO2e/Year",
+  "Rantai Referensi S1: salinan rantai Baseline dengan tekanan deforestasi S1"
+ ],
+ [
+  "PWD-K",
+  "Perubahan Luas FEG Budidaya Referensi S1",
+  "baru",
+  "",
+  "Fungsi Ekologis Gambut Budidaya Referensi S1*Tingkat Gangguan Gambut Budidaya Referensi S1",
+  "Ha/Year",
+  "Rantai Referensi S1: salinan rantai Baseline dengan tekanan deforestasi S1"
+ ],
+ [
+  "PWD-K",
+  "Hutan Lahan Kering Sekunder Referensi S1",
+  "baru",
+  "",
+  "INTEG(NonHutan menjadi HLKS Referensi S1+Rehabilitasi ke HLKS Referensi S1-HLKS menjadi NonHutan Referensi S1 -HLKS menjadi Pr Referensi S1, 4977.78-Switch S1*Koreksi Kontrafaktual Hutan S1*Porsi Koreksi HLKS )",
+  "Ha",
+  "Rantai Referensi S1: salinan rantai Baseline dengan tekanan deforestasi S1"
+ ],
+ [
+  "PWD-K",
+  "Akumulasi Karbon Regenerasi Referensi S1",
+  "baru",
+  "",
+  "Defisit Karbon Hutan Regenerasi Referensi S1/Waktu Akumulasi Karbon Hutan Sekunder",
+  "tC/Year",
+  "Rantai Referensi S1: salinan rantai Baseline dengan tekanan deforestasi S1"
+ ],
+ [
+  "PWD-K",
+  "Fraksi Hutan Terdeforestasi Referensi S1",
+  "baru",
+  "",
+  "IF THEN ELSE(Total Hutan Referensi S1>0, Deforestasi Total Referensi S1/Total Hutan Referensi S1 , 0)",
+  "1/Year",
+  "Rantai Referensi S1: salinan rantai Baseline dengan tekanan deforestasi S1"
+ ],
+ [
+  "PWD-K",
+  "Emisi Deforestasi Biomassa Referensi S1",
+  "baru",
+  "",
+  "Emisi HLKS Referensi S1+Emisi HMS Menjadi Non Hutan Referensi S1+Emisi HRS Referensi S1-Koreksi Emisi Hutan Regenerasi Referensi S1",
+  "tCO2e/Year",
+  "Rantai Referensi S1: salinan rantai Baseline dengan tekanan deforestasi S1"
+ ],
+ [
+  "PWD-K",
+  "Emisi Gambut dan Kebakaran Referensi S1",
+  "baru",
+  "",
+  "Emisi Gambut Referensi S1+Emisi Kebakaran Gambut Referensi S1",
+  "tCO2e/Year",
+  "Rantai Referensi S1: salinan rantai Baseline dengan tekanan deforestasi S1"
+ ],
+ [
+  "PWD-K",
+  "Emisi HRS menjadi NonHutan Referensi S1",
+  "baru",
+  "",
+  "(Carbon Density HRS-Carbon Density Non Hutan)*HRS menjadi NonHutan Referensi S1*Faktor CO2e",
+  "tCO2e/Year",
+  "Rantai Referensi S1: salinan rantai Baseline dengan tekanan deforestasi S1"
+ ],
+ [
+  "PWD-K",
+  "Perubahan Luas FEG Lindung Referensi S1",
+  "baru",
+  "",
+  "Fungsi Ekologis Gambut Lindung Referensi S1*Tingkat Gangguan Gambut Lindung Referensi S1",
+  "Ha/Year",
+  "Rantai Referensi S1: salinan rantai Baseline dengan tekanan deforestasi S1"
+ ],
+ [
+  "PWD-K",
+  "Laju HLKS menjadi NonHutan Referensi S1",
+  "baru",
+  "",
+  "Laju HLKS menjadi NonHutan BAU*Faktor Tekanan Deforestasi Referensi S1",
+  "1/Year",
+  "Rantai Referensi S1: salinan rantai Baseline dengan tekanan deforestasi S1"
+ ],
+ [
+  "PWD-K",
+  "Laju HMS menjadi NonHutan Referensi S1",
+  "baru",
+  "",
+  "Laju HMS menjadi NonHutan BAU*Faktor Tekanan Deforestasi Referensi S1",
+  "1/Year",
+  "Rantai Referensi S1: salinan rantai Baseline dengan tekanan deforestasi S1"
+ ],
+ [
+  "PWD-K",
+  "Laju HRS menjadi NonHutan Referensi S1",
+  "baru",
+  "",
+  "Laju HRS menjadi NonHutan BAU*Faktor Tekanan Deforestasi Referensi S1",
+  "1/Year",
+  "Rantai Referensi S1: salinan rantai Baseline dengan tekanan deforestasi S1"
+ ],
+ [
+  "PWD-K",
+  "Hutan Mangrove Sekunder Referensi S1",
+  "baru",
+  "",
+  "INTEG(NonHutan menjadi HMS Referensi S1+Rehabilitasi ke HMS Referensi S1-HMS menjadi NonHutan Referensi S1 , 52398.18-Switch S1*Koreksi Kontrafaktual Hutan S1*Porsi Koreksi HMS)",
+  "Ha",
+  "Rantai Referensi S1: salinan rantai Baseline dengan tekanan deforestasi S1"
+ ],
+ [
+  "PWD-K",
+  "Emisi Bersih Biomassa Referensi S1",
+  "baru",
+  "",
+  "Total Emisi Bersih Referensi S1-Emisi Gambut Referensi S1-Emisi Kebakaran Gambut Referensi S1",
+  "tCO2e/Year",
+  "Rantai Referensi S1: salinan rantai Baseline dengan tekanan deforestasi S1"
+ ],
+ [
+  "PWD-K",
+  "Emisi Gambut Budidaya Referensi S1",
+  "baru",
+  "",
+  "Faktor Emisi Gambut Budidaya*Fungsi Ekologis Gambut Budidaya Terdampak Referensi S1",
+  "tCO2e/Year",
+  "Rantai Referensi S1: salinan rantai Baseline dengan tekanan deforestasi S1"
+ ],
+ [
+  "PWD-K",
+  "Emisi HLKS menjadi Pr Referensi S1",
+  "baru",
+  "",
+  "(Carbon Density HLKS-Carbon Density Pr)*HLKS menjadi Pr Referensi S1*Faktor CO2e",
+  "tCO2e/Year",
+  "Rantai Referensi S1: salinan rantai Baseline dengan tekanan deforestasi S1"
+ ],
+ [
+  "PWD-K",
+  "NonHutan menjadi HLKS Referensi S1",
+  "baru",
+  "",
+  "NonHutan Referensi S1*Laju NonHutan menjadi HLKS",
+  "Ha/Year",
+  "Rantai Referensi S1: salinan rantai Baseline dengan tekanan deforestasi S1"
+ ],
+ [
+  "PWD-K",
+  "HLKS menjadi NonHutan Referensi S1",
+  "baru",
+  "",
+  "Hutan Lahan Kering Sekunder Referensi S1*Laju HLKS menjadi NonHutan Referensi S1",
+  "Ha/Year",
+  "Rantai Referensi S1: salinan rantai Baseline dengan tekanan deforestasi S1"
+ ],
+ [
+  "PWD-K",
+  "Emisi Gambut Lindung Referensi S1",
+  "baru",
+  "",
+  "Faktor Emisi Gambut Lindung*Fungsi Ekologis Gambut Lindung Terdampak Referensi S1",
+  "tCO2e/Year",
+  "Rantai Referensi S1: salinan rantai Baseline dengan tekanan deforestasi S1"
+ ],
+ [
+  "PWD-K",
+  "Emisi HRS menjadi Pr Referensi S1",
+  "baru",
+  "",
+  "(Carbon Density HRS-Carbon Density Pr)*HRS menjadi Pr Referensi S1*Faktor CO2e",
+  "tCO2e/Year",
+  "Rantai Referensi S1: salinan rantai Baseline dengan tekanan deforestasi S1"
+ ],
+ [
+  "PWD-K",
+  "NonHutan menjadi HMS Referensi S1",
+  "baru",
+  "",
+  "NonHutan Referensi S1*Laju NonHutan menjadi HMS",
+  "Ha/Year",
+  "Rantai Referensi S1: salinan rantai Baseline dengan tekanan deforestasi S1"
+ ],
+ [
+  "PWD-K",
+  "NonHutan menjadi HRS Referensi S1",
+  "baru",
+  "",
+  "NonHutan Referensi S1*Laju NonHutan menjadi HRS",
+  "Ha/Year",
+  "Rantai Referensi S1: salinan rantai Baseline dengan tekanan deforestasi S1"
+ ],
+ [
+  "PWD-K",
+  "HMS menjadi NonHutan Referensi S1",
+  "baru",
+  "",
+  "Hutan Mangrove Sekunder Referensi S1*Laju HMS menjadi NonHutan Referensi S1",
+  "Ha/Year",
+  "Rantai Referensi S1: salinan rantai Baseline dengan tekanan deforestasi S1"
+ ],
+ [
+  "PWD-K",
+  "HRS menjadi NonHutan Referensi S1",
+  "baru",
+  "",
+  "Hutan Rawa Sekunder Referensi S1*Laju HRS menjadi NonHutan Referensi S1",
+  "Ha/Year",
+  "Rantai Referensi S1: salinan rantai Baseline dengan tekanan deforestasi S1"
+ ],
+ [
+  "PWD-K",
+  "Laju HLKS menjadi Pr Referensi S1",
+  "baru",
+  "",
+  "Laju HLKS menjadi Pr BAU*Faktor Tekanan Deforestasi Referensi S1",
+  "1/Year",
+  "Rantai Referensi S1: salinan rantai Baseline dengan tekanan deforestasi S1"
+ ],
+ [
+  "PWD-K",
+  "Rehabilitasi ke HLKS Referensi S1",
+  "baru",
+  "",
+  "Rehabilitasi Menjadi Hutan Referensi S1*Proporsi Rehabilitasi ke HLKS",
+  "Ha/Year",
+  "Rantai Referensi S1: salinan rantai Baseline dengan tekanan deforestasi S1"
+ ],
+ [
+  "PWD-K",
+  "Hutan Rawa Sekunder Referensi S1",
+  "baru",
+  "",
+  "INTEG(NonHutan menjadi HRS Referensi S1+Rehabilitasi ke HRS Referensi S1-HRS menjadi NonHutan Referensi S1 -HRS menjadi Pr Referensi S1, 36931.85-Switch S1*Koreksi Kontrafaktual Hutan S1*Porsi Koreksi HRS )",
+  "Ha",
+  "Rantai Referensi S1: salinan rantai Baseline dengan tekanan deforestasi S1"
+ ],
+ [
+  "PWD-K",
+  "Laju HRS menjadi Pr Referensi S1",
+  "baru",
+  "",
+  "Laju HRS menjadi Pr BAU*Faktor Tekanan Deforestasi Referensi S1",
+  "1/Year",
+  "Rantai Referensi S1: salinan rantai Baseline dengan tekanan deforestasi S1"
+ ],
+ [
+  "PWD-K",
+  "NonHutan menjadi Pr Referensi S1",
+  "baru",
+  "",
+  "NonHutan Referensi S1*Laju NonHutan menjadi Pr*Faktor Ekspansi Kebun Referensi S1",
+  "Ha/Year",
+  "Rantai Referensi S1: salinan rantai Baseline dengan tekanan deforestasi S1"
+ ],
+ [
+  "PWD-K",
+  "Rehabilitasi ke HMS Referensi S1",
+  "baru",
+  "",
+  "Rehabilitasi Menjadi Hutan Referensi S1*Proporsi Rehabilitasi ke HMS",
+  "Ha/Year",
+  "Rantai Referensi S1: salinan rantai Baseline dengan tekanan deforestasi S1"
+ ],
+ [
+  "PWD-K",
+  "Rehabilitasi ke HRS Referensi S1",
+  "baru",
+  "",
+  "Rehabilitasi Menjadi Hutan Referensi S1*Proporsi Rehabilitasi ke HRS",
+  "Ha/Year",
+  "Rantai Referensi S1: salinan rantai Baseline dengan tekanan deforestasi S1"
+ ],
+ [
+  "PWD-K",
+  "Check Total Kawasan Referensi S1",
+  "baru",
+  "",
+  "Total Kawasan Referensi S1-Total Kawasan Awal Referensi S1",
+  "Ha",
+  "Rantai Referensi S1: salinan rantai Baseline dengan tekanan deforestasi S1"
+ ],
+ [
+  "PWD-K",
+  "Total Emisi Bersih Referensi S1",
+  "baru",
+  "",
+  "Total Emisi Referensi S1-Total Serapan Referensi S1",
+  "tCO2e/Year",
+  "Rantai Referensi S1: salinan rantai Baseline dengan tekanan deforestasi S1"
+ ],
+ [
+  "PWD-K",
+  "Total Kawasan Awal Referensi S1",
+  "baru",
+  "",
+  "INITIAL(Total Kawasan Referensi S1)",
+  "Ha",
+  "Rantai Referensi S1: salinan rantai Baseline dengan tekanan deforestasi S1"
+ ],
+ [
+  "PWD-K",
+  "Deforestasi Total Referensi S1",
+  "baru",
+  "",
+  "HLKS menjadi NonHutan Referensi S1+HLKS menjadi Pr Referensi S1+HMS menjadi NonHutan Referensi S1 +HRS menjadi NonHutan Referensi S1 +HRS menjadi Pr Referensi S1",
+  "Ha/Year",
+  "Rantai Referensi S1: salinan rantai Baseline dengan tekanan deforestasi S1"
+ ],
+ [
+  "PWD-K",
+  "HLKS menjadi Pr Referensi S1",
+  "baru",
+  "",
+  "Hutan Lahan Kering Sekunder Referensi S1*Laju HLKS menjadi Pr Referensi S1",
+  "Ha/Year",
+  "Rantai Referensi S1: salinan rantai Baseline dengan tekanan deforestasi S1"
+ ],
+ [
+  "PWD-K",
+  "HRS menjadi Pr Referensi S1",
+  "baru",
+  "",
+  "Hutan Rawa Sekunder Referensi S1*Laju HRS menjadi Pr Referensi S1",
+  "Ha/Year",
+  "Rantai Referensi S1: salinan rantai Baseline dengan tekanan deforestasi S1"
+ ],
+ [
+  "PWD-K",
+  "Total Kawasan Referensi S1",
+  "baru",
+  "",
+  "NonHutan Referensi S1+Perkebunan Referensi S1+Total Hutan Referensi S1+Areal Rehabilitasi Belum Berhutan Referensi S1",
+  "Ha",
+  "Rantai Referensi S1: salinan rantai Baseline dengan tekanan deforestasi S1"
+ ],
+ [
+  "PWD-K",
+  "Total Serapan Referensi S1",
+  "baru",
+  "",
+  "Akumulasi Karbon Regenerasi Referensi S1*Faktor CO2e+Serapan NonHutan menjadi Perkebunan Referensi S1",
+  "tCO2e/Year",
+  "Rantai Referensi S1: salinan rantai Baseline dengan tekanan deforestasi S1"
+ ],
+ [
+  "PWD-K",
+  "Emisi Gambut Referensi S1",
+  "baru",
+  "",
+  "Emisi Gambut Budidaya Referensi S1+Emisi Gambut Lindung Referensi S1",
+  "tCO2e/Year",
+  "Rantai Referensi S1: salinan rantai Baseline dengan tekanan deforestasi S1"
+ ],
+ [
+  "PWD-K",
+  "Total Hutan Referensi S1",
+  "baru",
+  "",
+  "Hutan Lahan Kering Sekunder Referensi S1+Hutan Mangrove Sekunder Referensi S1+Hutan Rawa Sekunder Referensi S1",
+  "Ha",
+  "Rantai Referensi S1: salinan rantai Baseline dengan tekanan deforestasi S1"
+ ],
+ [
+  "PWD-K",
+  "Total Emisi Referensi S1",
+  "baru",
+  "",
+  "Emisi Gambut Referensi S1+Emisi HLKS Referensi S1+Emisi HMS Menjadi Non Hutan Referensi S1+Emisi HRS Referensi S1 -Koreksi Emisi Hutan Regenerasi Referensi S1+Emisi Kebakaran Gambut Referensi S1+Emisi Perkebunan menjadi NonHutan Referensi S1",
+  "tCO2e/Year",
+  "Rantai Referensi S1: salinan rantai Baseline dengan tekanan deforestasi S1"
+ ],
+ [
+  "PWD-K",
+  "Emisi HLKS Referensi S1",
+  "baru",
+  "",
+  "Emisi HLKS menjadi NonHutan Referensi S1+Emisi HLKS menjadi Pr Referensi S1",
+  "tCO2e/Year",
+  "Rantai Referensi S1: salinan rantai Baseline dengan tekanan deforestasi S1"
+ ],
+ [
+  "PWD-K",
+  "Perkebunan Referensi S1",
+  "baru",
+  "",
+  "INTEG(-Perkebunan menjadi NonHutan Referensi S1+ NonHutan menjadi Pr Referensi S1+HRS menjadi Pr Referensi S1 +HLKS menjadi Pr Referensi S1 , 1546.09)",
+  "Ha",
+  "Rantai Referensi S1: salinan rantai Baseline dengan tekanan deforestasi S1"
+ ],
+ [
+  "PWD-K",
+  "Emisi HRS Referensi S1",
+  "baru",
+  "",
+  "Emisi HRS menjadi NonHutan Referensi S1+Emisi HRS menjadi Pr Referensi S1",
+  "tCO2e/Year",
+  "Rantai Referensi S1: salinan rantai Baseline dengan tekanan deforestasi S1"
+ ],
+ [
+  "PWD-K",
+  "NonHutan Referensi S1",
+  "baru",
+  "",
+  "INTEG(Perkebunan menjadi NonHutan Referensi S1+HMS menjadi NonHutan Referensi S1+HRS menjadi NonHutan Referensi S1 +HLKS menjadi NonHutan Referensi S1 +Kegagalan Rehabilitasi Referensi S1-NonHutan menjadi HMS Referensi S1 -NonHutan menjadi HRS Referensi S1 -NonHutan menjadi HLKS Referensi S1-NonHutan menjadi Pr Referensi S1 -Aliran Penanaman ke Rehabilitasi Referensi S1 , 29087.1+Switch S1*Koreksi Kontrafaktual Hutan S1 )",
+  "Ha",
+  "Rantai Referensi S1: salinan rantai Baseline dengan tekanan deforestasi S1"
+ ],
+ [
+  "hapus",
+  "Switch Patroli Swadaya Reguler",
+  "dihapus",
+  "0",
+  "",
+  "Dmnl [0,1]",
+  "K1 menggantikan gerbang REV-3S"
+ ],
+ [
+  "hapus",
+  "Proporsi Penggantian Anggota Patroli Swadaya",
+  "dihapus",
+  "1",
+  "",
+  "Dmnl",
+  "diganti Proporsi Penggantian Anggota Patroli (K2)"
+ ],
+ [
+  "hapus",
+  "Proporsi Penggantian KUPS Tanpa Dana Karbon",
+  "dihapus",
+  "1",
+  "",
+  "Dmnl",
+  "diganti mekanisme modal (K7)"
+ ],
+ [
+  "hapus",
+  "Dana Program Eksogen",
+  "dihapus",
+  "2e+09",
+  "",
+  "Rupiah/Year",
+  "diganti Dana Operasional Non Karbon Tunai (K5)"
+ ],
+ [
+  "hapus",
+  "Switch Dana Program Eksogen",
+  "dihapus",
+  "0",
+  "",
+  "Dmnl",
+  "diganti Switch Dana Non Karbon (K5)"
+ ],
+ [
+  "hapus",
+  "Tahun Mulai Dana Eksogen",
+  "dihapus",
+  "2026",
+  "",
+  "Year",
+  "diganti (K5)"
+ ],
+ [
+  "hapus",
+  "Tahun Akhir Dana Eksogen",
+  "dihapus",
+  "2055",
+  "",
+  "Year",
+  "diganti (K5)"
+ ],
+ [
+  "hapus",
+  "Porsi Pembiayaan Awal sebagai Talangan",
+  "dihapus",
+  "1",
+  "",
+  "Dmnl",
+  "diganti Status Pembiayaan Awal (C2)"
+ ],
+ [
+  "hapus",
+  "Hari Patroli Swadaya per Anggota",
+  "dihapus",
+  "12.87",
+  "",
+  "HOK/(People*Year)",
+  "angka 2.355 HOK tidak dipakai (K1)"
+ ]
+]
