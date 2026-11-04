@@ -30,6 +30,17 @@
 | `code` | Seluruh skrip audit (dapat dijalankan ulang) |
 | `FINAL_RESULTS_MATRIX.csv` | Output 2: matriks hasil lengkap dengan klasifikasi bukti |
 
+
+## Lanjutan audit (4 November 2026)
+
+| Berkas | Isi |
+|---|---|
+| `CRITICAL_FINDINGS_FINAL.md` | Temuan kritis final: A1/A2, kebutuhan minimum LPHD, label, bukti validasi |
+| `A1_A2_BASELINE_RECONCILIATION.csv` | A1, A2 register (direproduksi), dan A2 faktor 1 (diagnostik) per harga |
+| `LPHD_FINANCIAL_COVERAGE.csv` | Belanja total vs komponen minimum, kesenjangan, dan cakupan per harga (USD 3–100) |
+| `MANUSCRIPT_CORRECTION_TABLE.md` | Kalimat pengganti siap pakai |
+| `VALIDATION_EVIDENCE_GAPS.md` | Bukti yang diperlukan untuk MAPE, MC, PRCC, dan Vensim–PySD |
+
 ---
 
 ## OUTPUT 1 — Tinjauan Ilmiah Eksekutif
@@ -50,8 +61,9 @@
 ### Keterbatasan utama
 
 - **Basis kredit A1 = S1.** Deret "Baseline" internal identik dengan run S1. Kredit model karena itu mencakup efek PS dan pembiayaan awal (68 % + 11 % pada USD 10). Ini menghidupkan loop dana→patroli lebih kuat daripada kredit yang benar-benar aditional.
-  - Pada uji ulang dengan kredit hanya aditional terhadap S2 (A2), S4−S3 turun dari 535 ke 67 ha (USD 10) dan dari 3.588 ke 422 ha (USD 20).
-  - NPV USD 10 menjadi negatif (−1,35 miliar).
+  - Pada A2 resmi register (paket CLOSURE; switch = 1 dan faktor penutup reversal 0,72–0,76), S4−S3 turun dari 535 ke 31 ha (USD 10) dan dari 3.588 ke 192 ha (USD 20). NPV USD 10 menjadi −2,23 miliar.
+  - Pada varian diagnostik audit tanpa faktor penutup (faktor = 1), nilainya 67 ha dan 422 ha, dengan NPV USD 10 −1,35 miliar.
+  - **Ralat:** versi awal audit menyebut varian faktor = 1 sebagai "A2". Rinciannya ada di `A1_A2_BASELINE_RECONCILIATION.csv` dan `CRITICAL_FINDINGS_FINAL.md`.
 - **Efektivitas perlindungan 0,37 berasal dari studi Nepal (kelas C).** Dokumentasi model sendiri mencatat tidak ada studi yang menghubungkan intensitas patroli komunitas dengan laju kehilangan hutan.
 - **S1 bukan "tanpa PS sejak awal".** S1 berarti PS berhenti pada 2024 (Switch S1 = 0; Efek Izin PS = 0). Efek PS seluruhnya mengalir lewat patroli.
 - **Mekanisme yang tidak aktif.** Efek penghidupan dan efek pengendalian kebakaran terhadap deforestasi bernilai 0 di semua run, sehingga View Fire Management tidak memengaruhi deforestasi.
@@ -116,7 +128,7 @@ Koreksi K1–K3 hanya menyangkut penulisan dan label, bukan model, sehingga dapa
 
 1. **Tidak ada kesalahan komputasi atau akuntansi stok-aliran.** Semua angka utama tereproduksi dari model yang diserahkan, sehingga koreksi tidak mengubah tabel inti.
 2. **Satu klaim utama di abstrak dan simpulan tidak didukung definisinya** ("kebutuhan minimum tertutup pada USD 28", K1). Ini harus dikoreksi sebelum disajikan.
-3. **Klaim efek karbon harus diberi syarat basis kredit A1** (K2). Tanpa itu, penguji REDD+ akan mempertanyakan over-crediting, dan uji A2 menunjukkan besaran turun sekitar 85–90 % pada USD 10–20.
+3. **Klaim efek karbon harus diberi syarat basis kredit A1** (K2). Tanpa itu, penguji REDD+ akan mempertanyakan over-crediting, dan pada A2 besarannya turun 88–95 % pada USD 10–20 (A2 register 94–95 %; varian diagnostik tanpa faktor penutup 88 %).
 4. **Validasi historis dan Monte Carlo** belum dapat diperiksa. Cantumkan sebagai "dilaporkan oleh peneliti; berkas pendukung [PERLU DIISI]", bukan sebagai temuan yang sudah tervalidasi.
 5. **Desain S1–S4 tetap sah sebagai eksperimen kebijakan** dan tidak perlu diganti.
 

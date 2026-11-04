@@ -32,7 +32,7 @@ Tabel lengkap 35 butir ada di `manuscript_reconciliation.csv`. Setiap baris memu
 
 **T08 / T15 — besaran efek karbon dan kelayakan**
 - **Lokasi:** Abstrak, Hasil, Simpulan.
-- **Koreksi yang disarankan:** tambahkan, "Besaran ini dihitung pada basis kredit A1, yaitu terhadap baseline tanpa PS, sehingga kredit model turut mencakup efek PS dan pembiayaan awal (68 % dan 11 % pada USD 10). Bila kredit dibatasi pada pengurangan aditional terhadap S2, tambahan perlindungan menjadi 67 ha (USD 10) dan 422 ha (USD 20), dan NPV USD 10 negatif."
+- **Koreksi yang disarankan:** tambahkan, "Besaran ini dihitung pada basis kredit A1, yaitu terhadap baseline tanpa PS, sehingga kredit model turut mencakup efek PS dan pembiayaan awal (68 % dan 11 % pada USD 10). Bila kredit dibatasi pada pengurangan aditional terhadap S2, tambahan perlindungan menjadi 31 ha (USD 10) dan 192 ha (USD 20) pada basis A2 register, dan NPV USD 10 negatif."
 - **Catatan:** sensitivitas A2 dihitung pada audit ini; diskusikan dengan pembimbing apakah dimasukkan ke naskah.
 
 **T27 — "5.328 pekerja berbasis sumber daya alam"**

@@ -12,7 +12,7 @@ Rumusan berikut memakai bahasa terukur. Semua angka berasal dari model (basis kr
 
 ## 3. Perdagangan karbon dan keberlanjutan pembiayaan
 
-> Pada basis kredit A1, reinvestasi dana karbon ke patroli menambah perlindungan 535 ha (USD 10) dan 3.588 ha (USD 20) dibanding S3. Besaran ini bergantung pada aturan pengkreditan. Kredit model A1 turut mencakup efek PS dan pembiayaan awal (68 % dan 11 % pada USD 10). Bila kredit dibatasi pada pengurangan yang aditional terhadap PS reguler, tambahan perlindungan turun menjadi 67 ha dan 422 ha.
+> Pada basis kredit A1, reinvestasi dana karbon ke patroli menambah perlindungan 535 ha (USD 10) dan 3.588 ha (USD 20) dibanding S3. Besaran ini bergantung pada aturan pengkreditan. Kredit model A1 turut mencakup efek PS dan pembiayaan awal (68 % dan 11 % pada USD 10). Bila kredit dibatasi pada pengurangan yang aditional terhadap PS reguler, tambahan perlindungan turun menjadi 31 ha dan 192 ha (A2 register).
 >
 > Biaya MRV, verifikasi, dan registri bersifat tetap, sekitar Rp 22,8 miliar selama periode proyek. Pada USD 6 biaya ini menyerap 80 % penerimaan kotor. NPV proyek parsial (tanpa biaya pengembangan; diskonto 10 %) positif di atas USD 6,83/tCO₂e, tetapi menjadi negatif pada USD 10 bila biaya monitoring berada di batas atas literatur.
 >

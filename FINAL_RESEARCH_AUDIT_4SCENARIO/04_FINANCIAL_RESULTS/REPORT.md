@@ -85,5 +85,5 @@ Pada USD 3 (arsip): defisit biaya 9,72 miliar dan pembiayaan awal 1,74 miliar ti
 - **Sensitif terhadap asumsi:**
   - biaya monitoring di batas atas dokumentasi (Rp 5.775/ha/th): NPV USD 10 = −0,81 miliar;
   - efektivitas 0,20: NPV USD 10 = −0,68 miliar;
-  - basis A2: NPV USD 10 = −1,35 miliar.
+  - basis A2 register: NPV USD 10 = −2,23 miliar (varian tanpa faktor penutup: −1,35 miliar).
 - **Kesimpulan:** kelayakan pada USD 10 **rapuh**; pada USD 20 lebih robust. NPV USD 20 tetap positif pada semua uji kecuali efektivitas 0,075 (−1,33).

@@ -91,7 +91,7 @@ for k in ['S4USD6','S4USD10','S4USD15','S4USD20','S4USD35']:
     d=diag[f'A2|{k}']
     a2.append(dict(harga=k,A2_deforestasi_kum_ha=d['defor'],A2_S4_S3_ha=I('S3','Deforestasi Total',2025,2087)-d['defor'],A1_S4_S3_ha=I('S3','Deforestasi Total',2025,2087)-I(k,'Deforestasi Total',2025,2087),
         A2_kredit_tCO2e=d['kredit'],A1_kredit_tCO2e=I(k,'Kredit REDD Diajukan',2024,2087),A2_penerimaan_kotor_Rp=d['gross'],A2_biaya_MRV_trans_pajak_Rp=d['biaya'],A2_dana_LPHD_Rp=d['danaLPHD'],A2_NPV_proyek_Rp=d['npv'],A2_cakupan_belanja_per_kebutuhan=d['cov']))
-pd.DataFrame(a2).to_csv(O+'03_CARBON_ACCOUNTING/diagnostic_A2_additional_to_S2_rerun.csv',index=False)
+pd.DataFrame(a2).to_csv(O+'03_CARBON_ACCOUNTING/diagnostic_A2_faktor1_AUDIT_rerun.csv',index=False)
 # ---------- 04 financial
 fin=[]
 for k in ['S3']+P:

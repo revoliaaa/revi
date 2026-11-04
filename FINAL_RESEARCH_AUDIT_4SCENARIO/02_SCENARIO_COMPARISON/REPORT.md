@@ -46,7 +46,7 @@ Data: `decomposition_by_price.csv` dan `annual_avoided_deforestation.csv`.
 **S4 − S3 (mekanisme pembiayaan karbon).**
 - Efek baru muncul pada 2029 (0,3 ha), mencapai ±23 ha/th sekitar 2034–2036 pada USD 10, lalu menurun pelan.
 - **Ini selisih perlindungan, bukan jumlah kredit yang layak diterbitkan.**
-- Besarannya **CONDITIONAL pada basis kredit A1**. Pada uji A2 (kredit hanya aditional terhadap S2), S4−S3 menjadi 15 / 67 / 181 / 422 / 6.176 ha untuk USD 6 / 10 / 15 / 20 / 35 (lihat 03).
+- Besarannya **CONDITIONAL pada basis kredit A1**. Pada A2 resmi register (CLOSURE), S4−S3 menjadi 0 / 31 / 88 / 192 / 6.176 ha untuk USD 6 / 10 / 15 / 20 / 35. Pada varian diagnostik audit tanpa faktor penutup, nilainya 15 / 67 / 181 / 422 / 6.176 ha (lihat 03).
 
 ## Pemisahan dampak kebijakan dan kuantitas kredit
 

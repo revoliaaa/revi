@@ -27,7 +27,8 @@ Data: `robustness_oat.csv`.
 | Diskonto 6 % | – | – | – | – | 4,17 | 22,45 | – | – |
 | Diskonto 15 % | – | – | – | – | 0,71 | 5,87 | – | – |
 | Kapasitas realisasi penuh 1,0 | 1.720 | 276 | 534 | 3.505 | 2,17 | 11,64 | 47,8 % | −39.100 |
-| **Basis kredit A2 (aditional thd S2)** | 1.720 | 276 | **67** | **422** | **−1,35** | **2,79** | **12,4 %** | – |
+| **Basis kredit A2 register (CLOSURE)** | 1.720 | 276 | **31** | **192** | **−2,23** | **0,63** | lihat LPHD csv | – |
+| Basis A2 tanpa faktor penutup (diagnostik audit) | 1.720 | 276 | 67 | 422 | −1,35 | 2,79 | 12,4 % | – |
 | Pengali akses 0 / 1 / 3,24 | – | – | – | – | – | – | – | +34.403 / −39.560 / −205.238 |
 
 Nilai ΔRT pada pengali 3,24 dihitung dari `05/access_multiplier_sweep.csv`.

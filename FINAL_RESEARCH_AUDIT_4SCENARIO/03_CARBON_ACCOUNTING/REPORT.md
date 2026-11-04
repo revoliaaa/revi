@@ -2,7 +2,7 @@
 
 Data:
 - `carbon_accounting_A1.csv`: rantai kredit per harga.
-- `diagnostic_A2_additional_to_S2_rerun.csv`: rerun diagnostik.
+- `diagnostic_A2_faktor1_AUDIT_rerun.csv`: rerun diagnostik audit (A2 tanpa faktor penutup; bukan A2 register).
 
 **Semua kuantitas di sini adalah kredit model, bukan VCU atau kredit terverifikasi.**
 
@@ -55,7 +55,7 @@ Terjual                        = stok belum terjual × 0,7/th;  kedaluwarsa 0,1/
 
 Diagnostik ini statis: penerimaan masih dihitung dari A1, jadi tidak konsisten secara umpan balik.
 
-**(b) Dinamis: rerun dengan `Switch Baseline Kredit Konservatif = 1` (A2).** Ini parameter yang sudah ada di model, dan persamaannya tidak diubah. Label: **DIAGNOSTIK/SENSITIVITAS, bukan hasil utama dan bukan penerbitan yang disetujui.**
+**(b) Dinamis: rerun dengan `Switch Baseline Kredit Konservatif = 1` dan faktor penutup = 1. Ini DIAGNOSTIK AUDIT, BUKAN A2 resmi register.** A2 register juga memakai `Faktor Rekonsiliasi Reversal Kredit A2` = 0,718917 / 0,727781 / 0,740124 / 0,762355 / 1. Hasil A2 register (direproduksi) ada di `../A1_A2_BASELINE_RECONCILIATION.csv`, dengan S4−S3 = 0 / 31 / 88 / 192 / 6.176 ha. Ini parameter yang sudah ada di model, dan persamaannya tidak diubah. Label: **DIAGNOSTIK/SENSITIVITAS, bukan hasil utama dan bukan penerbitan yang disetujui.**
 
 | Harga | Kredit A2 (ribu) | Kredit A1 (ribu) | S4−S3 A2 (ha) | S4−S3 A1 (ha) | NPV proyek A2 (Rp miliar) | Belanja/kebutuhan A2 |
 |---|---|---|---|---|---|---|
@@ -68,7 +68,7 @@ Diagnostik ini statis: penerimaan masih dihitung dari A1, jadi tidak konsisten s
 ## Simpulan audit karbon
 
 - **Kredit A1 kemungkinan besar terlalu tinggi** bila dibaca sebagai kredit yang layak diterbitkan.
-- **Besaran S4−S3 dan kelayakan pada USD 10–20 sangat bergantung pada pengkreditan efek PS.** Pada A2, NPV proyek baru positif di antara USD 10 dan USD 15.
+- **Besaran S4−S3 dan kelayakan pada USD 10–20 sangat bergantung pada pengkreditan efek PS.** Pada A2 register, NPV proyek baru positif di antara USD 15 dan USD 20. Pada varian tanpa faktor penutup, NPV positif di antara USD 10 dan USD 15.
 - **Pada USD 35, efek karbon tetap besar di bawah A2.** Loop dana→patroli tetap bekerja meskipun basis kreditnya ketat.
 - **Rekomendasi:** pertahankan A1 sebagai hasil utama sesuai desain, tetapi:
   1. beri label "kredit model basis A1 (baseline = S1)";
