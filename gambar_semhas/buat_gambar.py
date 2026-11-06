@@ -56,7 +56,7 @@ s3p=np.array(sorted(f['S3'])); d=s3p[:,1]-s2f(s3p[:,0])
 z=np.polyfit(s3p[:,0]-2024,d,2); dd=np.clip(np.polyval(z,t-2024),0,None)
 dd=dd*np.clip((t-2024)/3,0,1); dd+= (0.164-dd[-1])*np.clip((t-2060)/27,0,1)
 s3=s2+dd
-fig,(ax,bx)=plt.subplots(1,2,figsize=(15*CM,6.2*CM),gridspec_kw={'width_ratios':[1.15,1],'wspace':0.38})
+fig,(ax,bx)=plt.subplots(1,2,figsize=(13*CM,5.15*CM),gridspec_kw={'width_ratios':[1.15,1],'wspace':0.38})
 st=[('S1 tanpa PS aktif',s1,dict(color='black',ls=(0,(5,2)),lw=0.9)),
     ('S2 PS reguler',s2,dict(color='black',lw=0.9)),
     ('S3 S2 + pembiayaan awal',s3,dict(color='black',ls=(0,(1,1.2)),lw=1.1)),
@@ -64,12 +64,12 @@ st=[('S1 tanpa PS aktif',s1,dict(color='black',ls=(0,(5,2)),lw=0.9)),
     ('S4 USD20',s4['S4_20'],dict(color='#5e5e5e',lw=1.3,ls=(0,(6,1.5,1.5,1.5)))),
     ('S4 USD35',s4['S4_35'],dict(color='#2b2b2b',lw=1.6))]
 for lab,y,kw in st: ax.plot(t,y,label=lab,**kw)
-ax.set_xlim(2024,2087); ax.set_ylim(80,95)
+ax.set_xlim(2024,2087); ax.set_ylim(76,95)
 ax.set_xticks([2030,2040,2050,2060,2070,2080])
 ax.yaxis.set_major_locator(MultipleLocator(2)); ax.yaxis.set_major_formatter(idn())
 ax.set_xlabel('Tahun'); ax.set_ylabel('Luas hutan (ribu ha)')
 ax.set_title('(a)')
-ax.legend(loc='lower left',handlelength=2.6,borderaxespad=0.2,labelspacing=0.25)
+ax.legend(loc='lower left',handlelength=2.4,borderaxespad=0.2,labelspacing=0.15,fontsize=6.6)
 # (b)
 prices=[6,10,15,20,35]; tot=np.array([2117,2532,3490,5585,8789]); ps=np.full(5,1720.); pa=np.full(5,277.); kb=tot-ps-pa
 xpos=np.arange(5); w=0.58
@@ -78,14 +78,14 @@ bx.bar(xpos,pa,w,bottom=ps,color='#b3b3b3',edgecolor='black',lw=0.5,label='Pembi
 bx.bar(xpos,kb,w,bottom=ps+pa,color='white',edgecolor='black',lw=0.5,hatch='////',label='Perdagangan karbon (S4−S3)')
 for i,v in enumerate(tot): bx.text(i,v+150,fmt(v),ha='center',va='bottom',fontsize=7)
 bx.set_xticks(xpos,[str(p) for p in prices]); bx.set_xlabel(f'Harga karbon (USD/{CO2})')
-bx.set_ylabel('Deforestasi dihindari terhadap S1 (ha)'); bx.set_ylim(0,10000)
+bx.set_ylabel('Deforestasi dihindari terhadap S1 (ha)'); bx.set_ylim(0,14000)
 bx.yaxis.set_major_locator(MultipleLocator(2000)); bx.yaxis.set_major_formatter(idn()); bx.set_xlim(-0.6,4.6)
-bx.legend(loc='upper left',handlelength=1.6,handleheight=1.0,borderaxespad=0.2,labelspacing=0.3)
+bx.legend(loc='upper left',handlelength=1.6,handleheight=1.0,borderaxespad=0.2,labelspacing=0.2,fontsize=6.6)
 bx.set_title('(b)')
 save(fig,'gambar4')
 
 # ================= Gambar 5
-fig=plt.figure(figsize=(15*CM,7.2*CM))
+fig=plt.figure(figsize=(13*CM,6.70*CM))
 gs=fig.add_gridspec(2,2,width_ratios=[1,1.1],wspace=0.42,hspace=0.12)
 a1=fig.add_subplot(gs[0,0]); a2=fig.add_subplot(gs[1,0],sharex=a1); b=fig.add_subplot(gs[:,1])
 pr=np.arange(1,40.01,0.25)
@@ -119,7 +119,7 @@ b.set_ylabel('Belanja LPHD (Rp miliar/tahun)'); b.set_xlabel('Tahun'); b.set_tit
 save(fig,'gambar5')
 
 # ================= Gambar 6
-fig,(ax,bx)=plt.subplots(1,2,figsize=(15*CM,5.8*CM),gridspec_kw={'width_ratios':[0.75,1.25],'wspace':0.62})
+fig,(ax,bx)=plt.subplots(1,2,figsize=(13*CM,5.39*CM),gridspec_kw={'width_ratios':[0.75,1.25],'wspace':0.62})
 lab=['S1','S2','S3','S4\n10','S4\n20','S4\n35']; val=[0,13.6,13.6,17.3,32.8,64.5]
 ax.bar(range(6),val,0.6,color='#7f7f7f',edgecolor='black',lw=0.5)
 for i,v in enumerate(val): ax.text(i,v+1.2,fmt(v,1),ha='center',va='bottom',fontsize=7)
@@ -140,7 +140,7 @@ bx.legend(loc='upper left',handlelength=1.4,borderaxespad=0.2); bx.set_title('(b
 save(fig,'gambar6')
 
 # ================= Gambar 7
-fig,ax=plt.subplots(figsize=(15*CM,7.6*CM))
+fig,ax=plt.subplots(figsize=(13*CM,6.2*CM))
 P={'B1':((0,16.6),(0,66.4)),'B2':((-187,79.1),(-1921,357.7)),'B3':((-330,110.1),(-2801,486.8)),
    'B4':((-331,137.7),(-2801,572.2)),'R1':((0,33.6),(0,134.3)),'R2':((237,-22.4),(2475,-115.8))}
 ax.axhline(0,color='black',lw=0.6); ax.axvline(0,color='black',lw=0.6)
