@@ -87,3 +87,28 @@
 2. **Spesifikasi MC** (butir 3.1–3.4) dan matriks keluarannya. Tanpa ini, seluruh angka MC di makalah perlu disertai catatan "[berkas pendukung PERLU DIISI]".
 3. **Klarifikasi label PRCC −0,79.**
 4. **Data dan skrip MAPE**, atau tulis MAPE sebagai hasil yang dilaporkan peneliti tanpa lampiran, dan sebut MAPE aliran 73,3 % sebagai keterbatasan.
+
+## 7. Periode data historis yang dipakai model (tambahan, 23 November 2026)
+
+Sumber: catatan persamaan di `DKP_25HD_A1_*_rapi.mdl` (tag FINAL 2026-11-01) dan berkas GIS di branch `claude/relaxed-bohr-qopx49` (`05_SYSTEM_DYNAMICS_INPUT/DEFORESTATION_CALIBRATION_COMPARISON.xlsx`, `03_LAND_COVER_CHANGE/HISTORICAL_LAND_COVER_COMPARISON.xlsx`).
+
+Run S1–S4 **tidak mensimulasikan periode historis**. Simulasi dimulai dari stok hutan observasi 2024 (HCV) dan berjalan maju sampai 2087, yaitu 63 tahun proyeksi. Data historis hanya dipakai untuk menetapkan parameter.
+
+| Unsur | Data historis | Panjang | Status |
+|---|---|---|---|
+| Laju deforestasi HMS/HRS (BAU) | Epoch HCV 2000–2003–2009–2014 ("kalibrasi 3 epoch") dan loss bruto Hansen dalam SK 2001–2014 × 0,835; laju Pulau Maya 2000–2014 digabung dengan laju 20 HD | 14 tahun | Dicatat di `.mdl`; berkas `FINAL_HISTORICAL_CALIBRATION_VALIDATION.xlsx` dan `d25/calib25.py` **tidak ada di paket** |
+| Pengali pulsa kebakaran/lonjakan (1,5296) | Hansen SK 2001–2024 per tahun, dibandingkan dengan seri tanpa 2015–2016 | 24 tahun | idem |
+| Validasi tertahan (*hold-out*) | Stok HCV 2019 dan 2024; Hansen 2017–2024 (rasio 0,98) | 2 titik stok; 8 tahun aliran | MAPE 3,92 % di naskah belum dapat diverifikasi |
+| Regenerasi | Kalibrasi D2 2000–2014; catatan model: regenerasi "tidak teridentifikasi oleh data HCV stok neto" | 14 tahun | Lemah secara identifikasi |
+| Perkebunan → NonHutan | Matriks transisi 2013–2022 | 9 tahun | Kelas B |
+| Gangguan gambut | Nilai skenario "Sedang" (0,003); proksi lama 2013–2022 | – | Kelas D |
+| Kebakaran | Luas terbakar 2024 (355,19 ha) dan 2025 (331,06 ha); 2023 (11.344,55 ha) dikeluarkan sebagai pencilan | 2 tahun | Sangat pendek |
+| Patroli, KUPS | Log patroli 2023, roster 2024; KUPS 2023 dan tambahan 2024 | 1–2 tahun | – |
+| Porsi areal proyek 0,682 | Loss Hansen 2001–2024 di dalam vs di luar Project Area | 24 tahun | Provisional; bergantung periode (0,541–0,782) |
+
+**Temuan yang perlu diklarifikasi:**
+
+1. **Ada pernyataan yang saling bertentangan dalam model dan naskah.** Catatan kalibrasi FINAL di `.mdl` sendiri menulis: "Kandidat W dipilih atas aturan RMSE kalibrasi; *tidak mengalahkan benchmark linear pada validasi*". Berkas GIS mencatat RMSE stok hold-out 2019/2024 untuk model versi V5.4.2R sebesar 5.445 ha, sedangkan benchmark linear 4.991 ha. Naskah (hlm. 6) menyatakan MAPE model 3,92 % lebih rendah daripada pembanding sederhana (8,88 % dan 8,43 %). Kedua klaim bisa sama-sama benar bila ukurannya (MAPE vs RMSE), versi model, atau pembandingnya berbeda, tetapi hal ini **harus dijelaskan**. Status: **INCONSISTENT sampai berkas kalibrasi FINAL tersedia**.
+2. **Hold-out 2019/2024 kurang tajam.** Berkas GIS (`HCV_NOISE_FLOOR`) menyatakan selisih HCV terhadap satelit pada tahun hold-out sama besar ordenya dengan selisih antarmodel. Artinya, hold-out stok 2019/2024 tidak dapat membedakan model SD dari benchmark linear.
+3. **Laju kalibrasi lebih rendah dari laju terkini.** Kalibrasi memakai 2001–2014, padahal loss bruto Hansen di Project Area 2015–2024 jauh lebih tinggi daripada proyeksi rerata 2001–2014 (mis. Padang Tikar 5.844 vs 1.391 ha; ambang 10 %). Sebagian selisih ini ditangani oleh pengali pulsa. Status: CONDITIONAL.
+4. **Rasio ekstrapolasi besar.** Sekitar 14 tahun data kalibrasi dipakai untuk memproyeksikan 63 tahun (±4,5 kali). Ini perlu disebut sebagai keterbatasan.
