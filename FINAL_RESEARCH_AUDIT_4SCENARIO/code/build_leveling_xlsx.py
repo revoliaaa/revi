@@ -38,7 +38,7 @@ lines = [
  ('', None),
  ('Tujuan', 'Memberi level pada setiap data/parameter menurut pengaruhnya terhadap kesimpulan makalah dan kelemahan buktinya, lalu menyusun prioritas pengumpulan data.'),
  ('Sumber', 'Nilai dasar, sumber, dan kelas bukti dikutip dari catatan persamaan DKP_25HD_A1_*_rapi.mdl. Besaran dampak dari uji audit (07_UNCERTAINTY/robustness_oat.csv; A1_A2_BASELINE_RECONCILIATION.csv; 05_SOCIOECONOMIC_RESULTS). Tidak ada model atau hasil S1–S4 yang diubah.'),
- ('Lembar', 'Matriks (25 butir) · Uji_Sensitivitas (hasil OAT audit + uji P otomatis) · Grid (P × W) · Ringkasan (per level, status, kategori + grafik) · Prioritas (urutan pengumpulan data).'),
+ ('Lembar', 'Matriks (25 butir) · Uji_Sensitivitas (hasil OAT audit + uji P otomatis) · Grid (P × W) · Ringkasan (per level, status, kategori + grafik) · Prioritas (urutan pengumpulan data) · Sumber_Data (sekunder vs perlu LPHD, daftar permintaan dokumen).'),
  ('', None),
  ('CARA PAKAI', None),
  ('Sel yang boleh diubah', 'Sel berhuruf BIRU berlatar KUNING: skor P dan W di lembar Matriks, dan skor Kemudahan di lembar Prioritas. Semua sel hitam berisi formula dan akan dihitung ulang otomatis.'),
@@ -240,6 +240,86 @@ for lv, col in LVL_FILL.items():
 p.freeze_panes = 'C2'; p.auto_filter.ref = f'A1:J{last}'
 p.cell(last + 2, 1, 'Kemudahan: 1 = data tidak ada / perlu survei baru; 2 = kemungkinan ada di arsip LPHD/proyek; 3 = ada di dokumen yang sudah dimiliki. Nilai awal = penilaian audit dari kolom ketersediaan data.').font = fnt
 p.cell(last + 3, 1, 'Skor prioritas tinggi = data berpengaruh besar, buktinya lemah, dan relatif mudah diperoleh. Urutkan kolom Peringkat (filter) untuk daftar kerja.').font = fnt
+
+
+# ---------------- Sumber_Data ----------------
+sd = wb.create_sheet('Sumber_Data')
+sd['A1'] = 'Peta sumber data: sekunder vs perlu LPHD'; sd['A1'].font = title
+sd['A2'] = 'Kategori sumber dan peran LPHD adalah penilaian audit; level ditautkan dari lembar Matriks (berubah bila skor diubah).'; sd['A2'].font = fnt
+SH = ['ID', 'Data', 'Level', 'Kategori sumber', 'Sumber utama', 'Perlu LPHD?', 'Peran LPHD', 'Sumber pendukung']
+header(sd, 4, SH, [6, 36, 12, 26, 44, 15, 40, 36])
+r0 = 5
+for i, r in enumerate(rows):
+    rr = r0 + i; mi = i + 2
+    sd.cell(rr, 1, f'=Matriks!A{mi}').font = green
+    sd.cell(rr, 2, f'=Matriks!C{mi}').font = green
+    sd.cell(rr, 3, f'=Matriks!P{mi}').font = green
+    for col, k in ((4, 'kategori_sumber'), (5, 'sumber_utama'), (6, 'perlu_LPHD'), (7, 'peran_LPHD'), (8, 'sumber_pendukung')):
+        sd.cell(rr, col, r[k]).font = blue
+    for col in range(1, 9):
+        c = sd.cell(rr, col); c.border = box; c.alignment = wrap if col in (2, 4, 5, 7, 8) else center
+rl = r0 + N - 1
+for lv, col in LVL_FILL.items():
+    sd.conditional_formatting.add(f'C{r0}:C{rl}', FormulaRule(formula=[f'$C{r0}="{lv}"'], fill=PatternFill('solid', fgColor=col)))
+sd.conditional_formatting.add(f'F{r0}:F{rl}', FormulaRule(formula=[f'LEFT($F{r0},2)="YA"'], fill=PatternFill('solid', fgColor='C6E0B4')))
+sd.auto_filter.ref = f'A4:H{rl}'; sd.freeze_panes = 'C5'
+# Ringkasan kategori x level
+t = rl + 3
+sd.cell(t - 1, 1, 'Ringkasan: kategori sumber × level').font = bold
+header(sd, t, ['', 'Kategori sumber'] + list(LVL_FILL) + ['Total'], None)
+KATS = ['A Sekunder publik/literatur', 'B Sekunder dokumen proyek', 'C Primer LPHD', 'D Primer survei RT (melalui LPHD/desa)', 'E Berkas peneliti']
+for i, k in enumerate(KATS, t + 1):
+    sd.cell(i, 2, k).font = fnt
+    for j, lv in enumerate(LVL_FILL, 3):
+        sd.cell(i, j, f'=COUNTIFS($D${r0}:$D${rl},$B{i},$C${r0}:$C${rl},"{lv}")').font = fnt
+    sd.cell(i, 7, f'=SUM(C{i}:F{i})').font = bold
+tt = t + 1 + len(KATS)
+sd.cell(tt, 2, 'Total').font = bold
+for j in range(3, 8):
+    L = sd.cell(1, j).column_letter; sd.cell(tt, j, f'=SUM({L}{t+1}:{L}{tt-1})').font = bold
+t2 = tt + 3
+sd.cell(t2 - 1, 1, 'Ringkasan: kebutuhan LPHD × level').font = bold
+header(sd, t2, ['', 'Perlu LPHD?'] + list(LVL_FILL) + ['Total'], None)
+for i, k in enumerate(['YA – UTAMA', 'YA – PENDUKUNG', 'TIDAK'], t2 + 1):
+    sd.cell(i, 2, k).font = fnt
+    for j, lv in enumerate(LVL_FILL, 3):
+        sd.cell(i, j, f'=COUNTIFS($F${r0}:$F${rl},$B{i},$C${r0}:$C${rl},"{lv}")').font = fnt
+    sd.cell(i, 7, f'=SUM(C{i}:F{i})').font = bold
+# Daftar permintaan
+def lvl_formula(ids):
+    parts = ','.join(f'VALUE(LEFT(INDEX(Matriks!$P$2:$P${last},MATCH("{x}",Matriks!$A$2:$A${last},0)),1))' for x in ids)
+    return f'=MIN({parts})'
+REQ = [
+ ('LPHD', 'Log/laporan patroli 2017–2025 per HD (tanggal, rute/lokasi, jumlah anggota, temuan)', ['D01', 'D03', 'D19']),
+ ('LPHD', 'Catatan sumber dana patroli 2024–2025 (swadaya vs pembiayaan proyek)', ['D19', 'D01']),
+ ('LPHD', 'Laporan keuangan dan RKT LPHD 2020–2025 (operasional, patroli, upah harian)', ['D09', 'D10']),
+ ('LPHD', 'Daftar RT pengguna kawasan dan pemegang garapan (kerangka sampel survei)', ['D02', 'D12', 'D20', 'D23']),
+ ('LPHD', 'Izin dan pendampingan survei rumah tangga pemegang garapan', ['D02', 'D20']),
+ ('LPHD', 'Catatan kejadian kebakaran dan kegiatan regu pengendalian; alokasi dana kebakaran', ['D08']),
+ ('LPHD', 'Salinan perjanjian bagi manfaat proyek–LPHD', ['D14']),
+ ('LPHD', 'Buku kas/omzet KUPS dan daftar anggota aktif', ['D21']),
+ ('Proyek', 'PDD lengkap dengan lampiran (baseline, kebocoran, buffer, Project Area, inventarisasi karbon)', ['D06', 'D13', 'D15', 'D22']),
+ ('Proyek', 'Laporan pemantauan MR1 dan jadwal verifikasi/penerbitan', ['D18', 'D19']),
+ ('Proyek', 'Anggaran/realisasi MRV dan kontrak VVB', ['D04', 'D16']),
+ ('Proyek', 'Kontrak dan realisasi pembiayaan awal 2024–2025', ['D19']),
+ ('Proyek', 'Rencana/kontrak penjualan kredit', ['D07']),
+ ('Publik', 'Hotspot dan luas terbakar ≥ 10 tahun (SiPongi KLHK, MODIS/VIIRS)', ['D08']),
+ ('Publik', 'Literatur efek izin PS di Indonesia; analisis Hansen sebelum/sesudah SK', ['D11']),
+ ('Publik', 'Laporan harga pasar karbon (Ecosystem Marketplace, IDXCarbon)', ['D07']),
+ ('Publik', 'Data KUPS resmi (sistem informasi PS KLHK); BPS dalam angka', ['D21', 'D24']),
+ ('Peneliti', 'Berkas kalibrasi FINAL, data dan skrip MAPE/Monte Carlo/PRCC', ['D05', 'D25']),
+]
+t3 = t2 + 6
+sd.cell(t3 - 1, 1, 'Daftar permintaan dokumen (diurutkan menurut pihak; level tertinggi = angka terkecil dari butir yang dicakup)').font = bold
+header(sd, t3, ['No', 'Dokumen/data', 'Diminta ke', 'Butir yang dicakup', 'Level tertinggi (1 = kritis)'], None)
+for i, (who, doc, ids) in enumerate(REQ, 1):
+    rr = t3 + i
+    sd.cell(rr, 1, i).font = fnt; sd.cell(rr, 2, doc).font = fnt; sd.cell(rr, 3, who).font = fnt; sd.cell(rr, 4, ', '.join(ids)).font = fnt
+    sd.cell(rr, 5, lvl_formula(ids)).font = fnt
+    for col in range(1, 6):
+        c = sd.cell(rr, col); c.border = box; c.alignment = wrap if col in (2, 4) else center
+sd.conditional_formatting.add(f'E{t3+1}:E{t3+len(REQ)}', FormulaRule(formula=[f'E{t3+1}=1'], fill=PatternFill('solid', fgColor='F8CBAD')))
+sd.conditional_formatting.add(f'E{t3+1}:E{t3+len(REQ)}', FormulaRule(formula=[f'E{t3+1}=2'], fill=PatternFill('solid', fgColor='FFE699')))
 
 for sh in wb.worksheets:
     for row in sh.iter_rows():

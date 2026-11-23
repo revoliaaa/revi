@@ -43,6 +43,7 @@
 | `PETA_GAP_MAKALAH_SEMHAS.md` | Peta gap argumen, metode, pembahasan, pustaka, dan format makalah seminar (versi bertanda tangan); draf subbagian keterbatasan |
 | `DATA_UNCERTAINTY_LEVELING.md` / `.csv` | Matriks leveling 25 butir data menurut pengaruh dan kelemahan bukti |
 | `ANALISIS_KETIDAKPASTIAN_DATA.xlsx` | Workbook analisis leveling (formula): Matriks, Uji_Sensitivitas, Grid, Ringkasan + grafik, Prioritas; dibuat oleh `code/build_leveling_xlsx.py` |
+| `SUMBER_DATA_LPHD.md` | Peta sumber data: sekunder (publik/proyek) vs perlu LPHD; daftar permintaan dokumen |
 
 ---
 

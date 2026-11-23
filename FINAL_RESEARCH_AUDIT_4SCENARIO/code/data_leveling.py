@@ -79,18 +79,53 @@ def tested_P():
     return out
 PT = tested_P()
 
+
+# Pemetaan sumber data (penilaian audit). Kategori:
+# A = Sekunder publik/literatur; B = Sekunder dokumen proyek (pengembang/mitra/pendamping); C = Primer LPHD (arsip & konfirmasi LPHD);
+# D = Primer survei rumah tangga (kerangka sampel melalui LPHD/desa); E = Berkas peneliti sendiri
+# (id: kategori_utama, sumber_utama, perlu_LPHD, peran_LPHD, sumber_pendukung)
+SRC = {
+ "D01": ("C", "Arsip LPHD: log/laporan patroli 2017–2023, notulen, daftar regu", "YA – UTAMA", "Satu-satunya sumber catatan patroli swadaya sebelum proyek", "Laporan pendamping SAMPAN (B); bagian baseline PDD (B)"),
+ "D02": ("D", "Survei pemegang garapan: sumber dan besar pendapatan dari kawasan, lokasi garapan, status legal", "YA – UTAMA", "Daftar pemegang garapan (kerangka sampel), izin dan pendampingan survei", "Angelsen dkk. 2014 sebagai pembanding (A)"),
+ "D03": ("C", "Log patroli per HD (tanggal, lokasi/rute, temuan) 2023–2025", "YA – UTAMA", "Data intensitas dan lokasi patroli per HD", "Hansen per HD sudah ada di branch GIS (A); literatur efektivitas (A)"),
+ "D04": ("B", "Anggaran dan realisasi biaya MRV proyek; kontrak VVB", "TIDAK", "–", "Literatur biaya MRV (A)"),
+ "D05": ("A", "Hansen GFC dan peta HCV multi-epoch; berkas kalibrasi FINAL", "TIDAK", "–", "Berkas kalibrasi peneliti (E)"),
+ "D06": ("B", "PDD: alokasi baseline dan shapefile Project Area", "TIDAK", "–", "Analisis GIS Hansen (A)"),
+ "D07": ("A", "Laporan pasar karbon (Ecosystem Marketplace, IDXCarbon)", "TIDAK", "–", "Kontrak/rencana penjualan kredit proyek (B)"),
+ "D08": ("A", "Data hotspot dan luas terbakar resmi (mis. SiPongi KLHK, MODIS/VIIRS) ≥ 10 tahun per HD", "YA – PENDUKUNG", "Catatan kejadian kebakaran dan kegiatan regu pengendalian; alokasi dana kebakaran aktual", "Laporan pendamping (B)"),
+ "D09": ("C", "Laporan keuangan dan RKT LPHD (biaya operasional lembaga)", "YA – UTAMA", "Data biaya operasional riil per LPHD", "Laporan pendamping (B)"),
+ "D10": ("C", "Anggaran dan realisasi patroli LPHD (upah harian, BBM, konsumsi, alat)", "YA – UTAMA", "Biaya riil per hari patroli", "Anggaran patroli proyek (B)"),
+ "D11": ("A", "Literatur efek izin PS di Indonesia; analisis Hansen sebelum/sesudah SK", "TIDAK", "–", "Tahun SK per HD (sudah ada, Tabel 1)"),
+ "D12": ("C", "Pendataan RT pengguna hutan per desa", "YA – UTAMA", "Data/daftar RT pengguna kawasan bersama pemerintah desa", "BPS/Podes (A)"),
+ "D13": ("B", "PDD: analisis kebocoran", "TIDAK", "–", "Literatur (A)"),
+ "D14": ("B", "Perjanjian bagi manfaat proyek–LPHD", "YA – PENDUKUNG", "LPHD sebagai pihak penanda tangan menyimpan salinan perjanjian", "–"),
+ "D15": ("B", "PDD: non-permanence risk rating; hasil validasi", "TIDAK", "–", "Registri Verra (A)"),
+ "D16": ("B", "Kontrak VVB dan biaya registri", "TIDAK", "–", "Verra fee schedule (A)"),
+ "D17": ("A", "Konvensi/literatur tingkat diskonto", "TIDAK", "–", "–"),
+ "D18": ("B", "Jadwal verifikasi dan penerbitan (MR1, registri)", "TIDAK", "–", "Registri Verra publik (A)"),
+ "D19": ("B", "Kontrak dan realisasi pembiayaan awal 2024–2025", "YA – UTAMA", "Konfirmasi apakah kenaikan patroli 2024 dibiayai proyek atau swadaya", "Laporan MR1 (B)"),
+ "D20": ("D", "Survei pendapatan RT lintas tiga lanskap", "YA – PENDUKUNG", "Kerangka sampel dan pendampingan survei", "Setiawan dkk. 2021 (A)"),
+ "D21": ("A", "Data KUPS resmi (sistem informasi PS KLHK)", "YA – PENDUKUNG", "Buku kas/omzet KUPS, jumlah anggota aktif", "Laporan pendamping (B)"),
+ "D22": ("B", "PDD/inventarisasi karbon proyek", "TIDAK", "–", "Literatur densitas mangrove/rawa (A)"),
+ "D23": ("C", "Data andil garapan (konfirmasi satuan individu vs RT)", "YA – PENDUKUNG", "Konfirmasi daftar dan satuan pemegang garapan", "File A peneliti (E)"),
+ "D24": ("A", "BPS (Kecamatan/Kabupaten dalam angka)", "TIDAK", "–", "–"),
+ "D25": ("E", "Data, skrip, seed, dan keluaran MAPE, Monte Carlo, PRCC", "TIDAK", "–", "–"),
+}
+KAT = {"A": "Sekunder publik/literatur", "B": "Sekunder dokumen proyek", "C": "Primer LPHD", "D": "Primer survei RT (melalui LPHD/desa)", "E": "Berkas peneliti"}
+
 def level(P, W):
     if P == 3 and W >= 2: return 1
     if (P == 3) or (P == 2 and W >= 2): return 2
     if P == 2 or (P == 1 and W >= 2): return 3
     return 4
 NAMA = {1:"1 KRITIS",2:"2 TINGGI",3:"3 SEDANG",4:"4 RENDAH"}
-hdr = ["id","kategori","data","variabel_model","nilai_dasar","sumber_dan_kelas_bukti_mdl","periode_data","hasil_terdampak","besaran_dampak","status_bukti_dampak","skor_pengaruh_P_penilaian","skor_kelemahan_bukti_W","skor_pengaruh_P_teruji","skor_P_final","skor_total_PxW","level","ketersediaan_data","cara_menutup"]
+hdr = ["id","kategori","data","variabel_model","nilai_dasar","sumber_dan_kelas_bukti_mdl","periode_data","hasil_terdampak","besaran_dampak","status_bukti_dampak","skor_pengaruh_P_penilaian","skor_kelemahan_bukti_W","skor_pengaruh_P_teruji","skor_P_final","skor_total_PxW","level","ketersediaan_data","cara_menutup","kategori_sumber","sumber_utama","perlu_LPHD","peran_LPHD","sumber_pendukung"]
 R = [tuple(list(r[:8]) + [UPDATE[r[0]], 'REPRODUKSI AUDIT'] + list(r[10:])) if r[0] in UPDATE else r for r in R]
 rows = []
 for r in R:
     P, W = r[10], r[11]; Pt = PT.get(r[0]); Pf = Pt if Pt else P
-    rows.append(list(r[:10]) + [P, W, Pt if Pt else '–', Pf, Pf*W, NAMA[level(Pf, W)]] + list(r[12:]))
+    k = SRC[r[0]]
+    rows.append(list(r[:10]) + [P, W, Pt if Pt else '–', Pf, Pf*W, NAMA[level(Pf, W)]] + list(r[12:]) + [k[0] + ' ' + KAT[k[0]], k[1], k[2], k[3], k[4]])
 rows.sort(key=lambda x: (x[15], -x[14], x[0]))
 with open(OUT, 'w', newline='', encoding='utf-8') as f:
     w = csv.writer(f); w.writerow(hdr); w.writerows(rows)
