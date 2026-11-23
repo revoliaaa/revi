@@ -101,7 +101,7 @@
 
 | No | Gap | Usulan | Status |
 |---|---|---|---|
-| 5.1 | Simpulan 1: "Arah pengurangan ini konsisten dalam uji ketidakpastian" bergantung pada berkas Monte Carlo yang tidak ada | "… arah pengurangan bertahan pada seluruh uji efektivitas perlindungan 0,075–0,59 (rentang 299–2.799 ha) [REPRODUKSI AUDIT]". Kalimat Monte Carlo dipertahankan hanya bila berkasnya dilampirkan | REVISI |
+| 5.1 | Simpulan 1: "Arah pengurangan ini konsisten dalam uji ketidakpastian" bergantung pada berkas Monte Carlo yang tidak ada | "… arah pengurangan bertahan pada seluruh uji efektivitas perlindungan 0,075–0,59 (rentang 299–2.799 ha), tetapi berbalik bila izin PS sendiri menaikkan kehilangan hutan (efek izin −0,15: −1.624 ha) [DIAGNOSTIK AUDIT]". Kalimat Monte Carlo dipertahankan hanya bila berkasnya dilampirkan | REVISI |
 | 5.2 | Simpulan 2: efek karbon tanpa syarat basis kredit; "tercakup secara rata-rata sekitar USD 28" | Tambah syarat A1 dan sebutkan sensitivitas A2 register (31 / 192 ha); ganti tafsir USD 28 sesuai D4 | REVISI |
 | 5.3 | Simpulan cenderung mengulang angka, bukan menjawab tujuan secara analitis | Awali tiap paragraf dengan jawaban tujuan (mis. "PS berkontribusi melalui kegiatan patroli, bukan izin semata …"), lalu satu angka pendukung | REVISI |
 | 5.4 | Saran tidak memuat arahan penelitian lanjutan, padahal ada beberapa asumsi kunci yang belum diukur | Tambah: (a) pengukuran efektivitas patroli di 25 HD; (b) survei pemanfaatan hutan oleh pemegang garapan; (c) uji kesesuaian basis kredit dengan metodologi standar dan PDD; (d) validasi aliran deforestasi | TAMBAH |
@@ -132,7 +132,7 @@
 >
 > Hasil penelitian ini merupakan simulasi bersyarat asumsi, bukan dampak kausal yang teramati.
 >
-> Pertama, parameter efektivitas perlindungan 0,37 diambil dari studi di Nepal dan belum diukur di 25 Hutan Desa. Dalam rentang 0,075–0,59, deforestasi yang dihindari oleh PS berkisar 299–2.799 ha.
+> Pertama, parameter efektivitas perlindungan 0,37 diambil dari studi di Nepal dan belum diukur di 25 Hutan Desa. Dalam rentang 0,075–0,59, deforestasi yang dihindari oleh PS berkisar 299–2.799 ha. Model juga menetapkan bahwa status izin PS tanpa kegiatan tidak memengaruhi deforestasi; bila izin justru menaikkan kehilangan hutan 15 % sebagaimana temuan agregat Kraus dkk. (2021), arah kontribusi PS dalam model berbalik. Selain itu, efek pembiayaan awal (276 ha) bergantung pada asumsi bahwa seluruh kenaikan patroli 2024 dibiayai proyek; bila kenaikan itu swadaya, efeknya nol.
 >
 > Kedua, kredit model dihitung terhadap baseline yang identik dengan skenario tanpa PS aktif. Kredit tersebut karena itu turut mencakup efek patroli swadaya dan pembiayaan awal. Bila kredit dibatasi pada pengurangan di atas PS reguler, tambahan perlindungan dari karbon turun dari 535 menjadi 31 ha pada USD 10, dan dari 3.588 menjadi 192 ha pada USD 20. Kesesuaian kedua basis dengan metodologi standar karbon belum diuji. Kredit model bukan kredit terverifikasi.
 >

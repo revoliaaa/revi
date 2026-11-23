@@ -4,7 +4,7 @@ Rumusan berikut memakai bahasa terukur. Semua angka berasal dari model (basis kr
 
 ## 1. Perhutanan Sosial dan konservasi hutan
 
-> Dalam model, pengelolaan PS melalui patroli swadaya (±2.355 HOK/th; intensitas perlindungan 0,29) menghasilkan deforestasi kumulatif 1.720 ha lebih rendah dan emisi bersih 598 ribu tCO₂e lebih rendah selama 2025–2086 dibanding skenario PS tidak aktif (S1). Arah ini bertahan pada seluruh uji efektivitas perlindungan (0,075–0,59). Besarannya sangat bergantung pada parameter efektivitas 0,37 yang diambil dari studi di Nepal dan belum diukur di 25 Hutan Desa: rentangnya 299–2.799 ha. S1 menggambarkan penghentian kegiatan PS sejak 2024, bukan kondisi tanpa PS sejak 2017.
+> Dalam model, pengelolaan PS melalui patroli swadaya (±2.355 HOK/th; intensitas perlindungan 0,29) menghasilkan deforestasi kumulatif 1.720 ha lebih rendah dan emisi bersih 598 ribu tCO₂e lebih rendah selama 2025–2086 dibanding skenario PS tidak aktif (S1). Arah ini bertahan pada seluruh uji efektivitas perlindungan (0,075–0,59), tetapi berbalik bila status izin sendiri menaikkan kehilangan hutan 15 % (efek izin −0,15, mengikuti Kraus dkk. 2021) [DIAGNOSTIK AUDIT]. Besarannya sangat bergantung pada parameter efektivitas 0,37 yang diambil dari studi di Nepal dan belum diukur di 25 Hutan Desa: rentangnya 299–2.799 ha. S1 menggambarkan penghentian kegiatan PS sejak 2024, bukan kondisi tanpa PS sejak 2017.
 
 ## 2. Pembiayaan awal dan perlindungan tambahan
 

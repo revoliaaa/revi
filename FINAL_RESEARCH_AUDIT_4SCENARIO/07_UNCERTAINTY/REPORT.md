@@ -37,7 +37,7 @@ Nilai ΔRT pada pengali 3,24 dihitung dari `05/access_multiplier_sweep.csv`.
 
 | Simpulan | Status |
 |---|---|
-| PS (patroli swadaya) menurunkan deforestasi dibanding S1 | **Robust arah**. Besarannya sangat bergantung efektivitas (299–2.799 ha) |
+| PS (patroli swadaya) menurunkan deforestasi dibanding S1 | **Robust arah terhadap efektivitas patroli** (299–2.799 ha), tetapi **TIDAK robust terhadap efek izin PS**: pada efek izin −0,15 (Kraus dkk. 2021) S2−S1 = −1.624 ha (lihat bagian uji tambahan) |
 | Biaya MRV/verifikasi yang tetap menjadi penghambat utama pada harga rendah | **Robust** |
 | Ada jeda dana 2024–2027/28 sebelum belanja LPHD | **Robust** (struktural; jeda 3 tahun) |
 | Kenaikan harga meningkatkan perlindungan secara nonlinear | **Robust arah** |
@@ -58,3 +58,34 @@ Nilai ΔRT pada pengali 3,24 dihitung dari `05/access_multiplier_sweep.csv`.
 - Yang dapat dinyatakan: Monte Carlo menggambarkan **frekuensi hasil pada distribusi yang diasumsikan**, bukan peluang nyata. Menambah jumlah replikasi tidak menambah validitas.
 - **Konsistensi arah:** hasil OAT di atas konsisten dengan klaim PRCC bahwa efektivitas perlindungan dominan dan biaya MRV berpengaruh negatif terhadap efek karbon. Ini konsistensi arah, bukan verifikasi angka PRCC.
 - **Klaim "nilai deterministik di atas median MC"** tidak dapat dinilai tanpa distribusi parameter yang dipakai, sehingga statusnya UNVERIFIED.
+
+## Uji OAT tambahan untuk matriks leveling (DIAGNOSTIK AUDIT, 23 November 2026)
+
+Data: `robustness_oat3.csv`, dibuat oleh `../code/robust3.py`. Model dan parameter dasar tidak diubah; parameter ditimpa saat run PySD. Nilai dasar direproduksi persis (S4−S3 USD 10 = 535 ha; NPV USD 10 = 2,07 Rp M; ΔRT = −39.560).
+
+| Butir | Varian | S2−S1 (ha) | S3−S2 (ha) | S4−S3 USD 10 (ha) | NPV USD 10 (Rp M) | Belanja/kebutuhan USD 20 | Catatan |
+|---|---|---|---|---|---|---|---|
+| – | **Dasar** | 1.720 | 276 | 535 | 2,07 | 49,7 % | |
+| D05 | Laju BAU ×0,654 (tanpa pengali pulsa; dok.) | 1.300 | 206 | 229 | 0,27 | 25,1 % | |
+| D05 | Laju BAU ×1,5 (uji audit) | 2.152 | 352 | 1.116 | 4,80 | 95,1 % | |
+| D07 | Harga turun 40 % dalam 10 th (uji audit) | 1.720 | 276 | 147 | **−0,06** | 19,3 % | NPV berbalik |
+| D07 | Harga naik 2× sampai 2050 (uji audit) | 1.720 | 276 | 2.450 | 6,03 | 120,7 % | |
+| D08 | Tahun kering ekstrem (dok., uji struktur) | 1.720 | 276 | 535 | 2,07 | 49,7 % | Emisi kum. S4 USD 10 79,9 → 159,4 juta tCO₂e; tidak ada efek lain |
+| D08 | Alokasi kebakaran 0,20 (uji audit) | 1.720 | 276 | 461 | 1,95 | 45,8 % | |
+| D09 | Operasional LPHD Rp 25 / 100 juta (dok.) | 1.720 | 276 | 535 | 2,07 | 56,2 / 40,4 % | Hanya cakupan LPHD |
+| D10 | Biaya patroli/hari −25 % / +25 % (uji audit) | 1.720 | 276 | 880 / 384 | 2,82 / 1,49 | 68,7 / 38,3 % | |
+| D11 | Efek izin PS −0,15 (dok.) | **−1.624** | 288 | 113 | **−0,43** | 21,7 % | **Arah PS berbalik** |
+| D11 | Efek izin PS 0,169 (dok.) | 6.185 | 260 | 1.342 | 5,70 | 86,3 % | |
+| D12 | RT bergantung 2.144 / 19.038 (dok.) | 1.720 | 276 | 535 | 2,07 | 49,7 % | Indikator per RT tidak berubah |
+| D14 | Bagi hasil 50 % / 70 % (uji audit) | 1.720 | 276 | 405 / 695 | 2,60 / 1,49 | 35,0 / 69,2 % | |
+| D19 | Atribusi patroli 2024 ke pembiayaan awal = 0 (dok.) | 1.720 | **0** | 437 | 1,15 | 27,7 % | **Efek pembiayaan awal hilang** |
+| D19 | Atribusi = 0,5 (uji audit) | 1.720 | 138 | 482 | 1,62 | 38,5 % | |
+| D22 | Densitas biomassa ×0,8 / ×1,2 (uji audit) | 1.720 | 276 | 289 / 855 | 0,70 / 3,60 | 29,9 / 77,3 % | |
+| D24 | Pertumbuhan penduduk 1,37 / 1,91 % (dok.) | 1.720 | 276 | 535 | 2,07 | 49,7 % | ΔRT berubah < 0,4 % |
+
+**Temuan baru:**
+1. **Arah kontribusi PS tidak robust terhadap efek izin** (D11). Model menetapkan efek izin = 0. Pada −0,15, yaitu batas bawah yang didokumentasikan dari Kraus dkk. (2021), S2−S1 menjadi −1.624 ha. Klaim bahwa arah efek PS konsisten hanya berlaku bila izin tidak menaikkan kehilangan hutan.
+2. **Efek pembiayaan awal sepenuhnya bergantung pada asumsi atribusi** (D19). Bila kenaikan patroli 2024 adalah swadaya (pilihan 0 yang didokumentasikan di `.mdl`), S3−S2 = 0 ha.
+3. **NPV pada USD 10 berbalik negatif bila harga turun 40 % dalam 10 tahun** (D07).
+4. **Kebakaran tidak terhubung ke deforestasi, kredit, atau kebutuhan dana** (D08). Tahun kering ekstrem menggandakan emisi bersih kumulatif tetapi tidak mengubah hasil lain, karena kebutuhan dana kebakaran dihitung dari jumlah regu yang tetap. Ini temuan struktural, bukan hasil kebijakan.
+5. **Jumlah RT bergantung tidak memengaruhi indikator per RT** (D12). Pengaruhnya hanya pada total agregat, yang tidak diuji di sini.

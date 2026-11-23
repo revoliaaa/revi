@@ -32,18 +32,66 @@ R = [
  ("D24","Sosial-ekonomi","Pertumbuhan penduduk","Laju Pertumbuhan Penduduk","1,66 %/th","File A (B); laju kabupaten diterapkan ke desa","–","Jumlah RT, tekanan","Belum diuji audit","BELUM DIUJI",1,1,"Ada (BPS)","–"),
  ("D25","Bukti validasi","Bukti validasi historis dan ketidakpastian (MAPE, Monte Carlo, PRCC)","–","MAPE 3,92 %; MC 3.000/1.500; PRCC","Berkas tidak ada di paket; catatan kalibrasi di .mdl bertentangan dengan klaim MAPE naskah","Hold-out 2 titik stok","Kredibilitas semua klaim 'konsisten/robust'","Tidak dapat dihitung ulang","NASKAH (BELUM DIVERIFIKASI)",2,3,"Ada pada peneliti (diduga)","Lampirkan data, skrip, seed, keluaran"),
 ]
+
+# Pembaruan setelah uji OAT tambahan (07_UNCERTAINTY/robustness_oat3.csv, DIAGNOSTIK AUDIT 23-11-2026).
+# P penilaian TIDAK diubah agar konsistensi penilaian vs uji tetap terlihat; P teruji dihitung di workbook.
+UPDATE = {
+ "D05": "BAU ×0,654: S2−S1 1.300 ha; S4−S3 USD 10 229 ha; NPV USD 10 0,27 Rp M. BAU ×1,5: S2−S1 2.152 ha; S4−S3 USD 10 1.116 ha",
+ "D07": "Harga turun 40 % dalam 10 th: S4−S3 USD 10 147 ha; NPV USD 10 −0,06 Rp M (berbalik). Naik 2× sampai 2050: 2.450 ha; NPV 6,03",
+ "D08": "Tahun kering ekstrem: emisi bersih kumulatif S4 USD 10 79,9 → 159,4 juta tCO2e, tetapi deforestasi, kredit, NPV, dan kebutuhan dana tidak berubah (kebakaran tidak terhubung ke stok hutan dan kebutuhan dana). Alokasi kebakaran 0,20: S4−S3 USD 10 461 ha",
+ "D09": "Rp 25–100 juta: hanya belanja/kebutuhan USD 20 56,2–40,4 % (dasar 49,7 %); deforestasi dan NPV tidak berubah",
+ "D10": "±25 %: S4−S3 USD 10 880 / 384 ha; NPV USD 10 2,82 / 1,49 Rp M",
+ "D11": "Efek izin −0,15: S2−S1 −1.624 ha (ARAH PS BERBALIK); S4−S3 USD 10 113 ha; NPV USD 10 −0,43. Efek izin 0,169: S2−S1 6.185 ha",
+ "D12": "2.144–19.038: indikator per RT dan semua indikator yang diuji tidak berubah; total agregat (mis. kehilangan akses agregat vs dana fleksibel) tidak diuji",
+ "D14": "50 % / 70 %: S4−S3 USD 10 405 / 695 ha; NPV USD 10 2,60 / 1,49 Rp M",
+ "D19": "Atribusi 0: S3−S2 = 0 ha (EFEK PEMBIAYAAN AWAL HILANG); NPV USD 10 1,15. Atribusi 0,5: S3−S2 138 ha",
+ "D22": "×0,8 / ×1,2: S4−S3 USD 10 289 / 855 ha; NPV USD 10 0,70 / 3,60 Rp M",
+ "D24": "1,37–1,91 %: ΔRT S4−S3 USD 10 −39.431 s.d. −39.666 Rp; indikator lain tidak berubah",
+}
+
+
+def tested_P():
+    """P teruji dari hasil uji audit, aturan sama dengan workbook (lembar Uji_Sensitivitas)."""
+    B = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
+    def rd(f): return list(csv.DictReader(open(os.path.join(B, f), encoding='utf-8')))
+    oat = rd('07_UNCERTAINTY/robustness_oat.csv'); oat3 = rd('07_UNCERTAINTY/robustness_oat3.csv')
+    MAP = {'Efektivitas': 'D03', 'MRV': 'D04', 'Verifikasi': 'D16', 'Delay': 'D18', 'Proporsi PA': 'D06', 'Buffer': 'D15', 'Leakage': 'D13', 'Diskonto': 'D17'}
+    K = ['S2-S1 ha', 'S3-S2 ha', 'S4-S3 USD10 ha', 'S4-S3 USD20 ha', 'NPV USD10 (Rp M)', 'NPV USD20 (Rp M)', 'Cakupan USD20 (%)', 'dRT S4-S3 USD10 (Rp)']
+    base = {k: float(oat[0][k]) for k in K}
+    vs = []
+    for r in oat[1:]:
+        vid = next((v for k, v in MAP.items() if r['variant'].startswith(k)), None)
+        if vid: vs.append((vid, {k: float(r[k]) for k in K}))
+    for r in oat3:
+        if r['id'] != 'DASAR': vs.append((r['id'], {k: float(r[k]) for k in K}))
+    a2 = {r['harga_USD']: r for r in rd('A1_A2_BASELINE_RECONCILIATION.csv') if r['basis'] == 'A2_register'}
+    vs.append(('D01', {'S2-S1 ha': base['S2-S1 ha'], 'S3-S2 ha': base['S3-S2 ha'], 'S4-S3 USD10 ha': float(a2['10']['S4_S3_ha']), 'S4-S3 USD20 ha': float(a2['20']['S4_S3_ha']),
+                       'NPV USD10 (Rp M)': float(a2['10']['NPV_proyek_10_Rp']) / 1e9, 'NPV USD20 (Rp M)': float(a2['20']['NPV_proyek_10_Rp']) / 1e9}))
+    vs += [('D02', {'dRT S4-S3 USD10 (Rp)': 34403.0}), ('D02', {'dRT S4-S3 USD10 (Rp)': -205238.0})]
+    sg = lambda x: (x > 0) - (x < 0)
+    out = {}
+    for vid, v in vs:
+        flip = any(k in v and sg(v[k]) != sg(base[k]) for k in ('NPV USD10 (Rp M)', 'dRT S4-S3 USD10 (Rp)'))
+        gone = any(k in v and (sg(v[k]) != sg(base[k]) or abs(v[k]) < 0.1 * abs(base[k])) for k in ('S2-S1 ha', 'S3-S2 ha', 'S4-S3 USD10 ha'))
+        mx = max([abs(v[k] / base[k] - 1) for k in K if k in v and base[k] != 0] + [0])
+        P = 3 if (flip or gone) else 2 if mx >= 0.15 else 1
+        out[vid] = max(out.get(vid, 0), P)
+    return out
+PT = tested_P()
+
 def level(P, W):
     if P == 3 and W >= 2: return 1
     if (P == 3) or (P == 2 and W >= 2): return 2
     if P == 2 or (P == 1 and W >= 2): return 3
     return 4
 NAMA = {1:"1 KRITIS",2:"2 TINGGI",3:"3 SEDANG",4:"4 RENDAH"}
-hdr = ["id","kategori","data","variabel_model","nilai_dasar","sumber_dan_kelas_bukti_mdl","periode_data","hasil_terdampak","besaran_dampak","status_bukti_dampak","skor_pengaruh_P","skor_kelemahan_bukti_W","skor_total_PxW","level","ketersediaan_data","cara_menutup"]
+hdr = ["id","kategori","data","variabel_model","nilai_dasar","sumber_dan_kelas_bukti_mdl","periode_data","hasil_terdampak","besaran_dampak","status_bukti_dampak","skor_pengaruh_P_penilaian","skor_kelemahan_bukti_W","skor_pengaruh_P_teruji","skor_P_final","skor_total_PxW","level","ketersediaan_data","cara_menutup"]
+R = [tuple(list(r[:8]) + [UPDATE[r[0]], 'REPRODUKSI AUDIT'] + list(r[10:])) if r[0] in UPDATE else r for r in R]
 rows = []
 for r in R:
-    P, W = r[10], r[11]
-    rows.append(list(r[:10]) + [P, W, P*W, NAMA[level(P, W)]] + list(r[12:]))
-rows.sort(key=lambda x: (x[13], -x[12], x[0]))
+    P, W = r[10], r[11]; Pt = PT.get(r[0]); Pf = Pt if Pt else P
+    rows.append(list(r[:10]) + [P, W, Pt if Pt else '–', Pf, Pf*W, NAMA[level(Pf, W)]] + list(r[12:]))
+rows.sort(key=lambda x: (x[15], -x[14], x[0]))
 with open(OUT, 'w', newline='', encoding='utf-8') as f:
     w = csv.writer(f); w.writerow(hdr); w.writerows(rows)
-for x in rows: print(x[13], x[0], x[10], x[11], x[2][:60])
+for x in rows: print(x[15], x[0], 'P', x[10], 'Pt', x[12], 'W', x[11], x[2][:55])

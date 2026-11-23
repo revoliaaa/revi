@@ -48,7 +48,7 @@ lines = [
  ('ATURAN SKOR', None),
  ('P (pengaruh)', '3 = dapat membalik arah/kesimpulan naskah (tanda, kelayakan, ada/tidaknya efek); 2 = menggeser besaran ≥ 15 % tanpa membalik; 1 = hanya indikator tertentu.'),
  ('W (kelemahan bukti)', '3 = asumsi eksploratif, kelas D, data ≤ 2 tahun, atau berkas tidak ada; 2 = proksi eksternal, kelas C, atau provisional; 1 = kelas B data lokal; 0 = kelas A observasi.'),
- ('P teruji', 'Dihitung otomatis di lembar Uji_Sensitivitas untuk butir yang sudah diuji: 3 bila NPV atau ΔRT berganti tanda, atau S4−S3 USD 10 turun di bawah 10 % nilai dasar; 2 bila perubahan terbesar ≥ 15 %; selain itu 1. Bila ada, P teruji menggantikan P penilaian (kolom P final).'),
+ ('P teruji', 'Dihitung otomatis di lembar Uji_Sensitivitas untuk butir yang sudah diuji: 3 bila tanda NPV USD 10 atau ΔRT berbalik, atau efek PS (S2−S1), pembiayaan awal (S3−S2), atau karbon (S4−S3 USD 10) berbalik tanda/turun di bawah 10 % nilai dasar; 2 bila perubahan terbesar ≥ 15 %; selain itu 1. Bila ada, P teruji menggantikan P penilaian (kolom P final).'),
  ('Level', '1 KRITIS: P final = 3 dan W ≥ 2 · 2 TINGGI: P final = 3 dan W ≤ 1, atau P final = 2 dan W ≥ 2 · 3 SEDANG: P final = 2 dan W ≤ 1, atau P final = 1 dan W ≥ 2 · 4 RENDAH: lainnya.'),
  ('Prioritas', 'Skor prioritas = P final × W × Kemudahan (1 = data tidak ada/harus survei baru; 2 = kemungkinan ada di arsip; 3 = ada di dokumen yang sudah dimiliki). Kemudahan adalah penilaian awal audit dari kolom ketersediaan data; silakan sesuaikan.'),
  ('', None),
@@ -72,9 +72,9 @@ N = len(rows); last = N + 1
 for i, r in enumerate(rows, 2):
     for j, k in enumerate(keys, 1):
         c = m.cell(i, j, r[k]); c.font = fnt; c.alignment = wrap; c.border = box
-    for col, k in ((11, 'skor_pengaruh_P'), (12, 'skor_kelemahan_bukti_W')):
+    for col, k in ((11, 'skor_pengaruh_P_penilaian'), (12, 'skor_kelemahan_bukti_W')):
         c = m.cell(i, col, int(r[k])); c.font = blue; c.fill = yfill; c.alignment = center; c.border = box
-    m.cell(i, 13, f'=IF(COUNTIF(Uji_Sensitivitas!$A:$A,A{i})=0,"–",_xlfn.MAXIFS(Uji_Sensitivitas!$S:$S,Uji_Sensitivitas!$A:$A,A{i}))')
+    m.cell(i, 13, f'=IF(COUNTIF(Uji_Sensitivitas!$A:$A,A{i})=0,"–",_xlfn.MAXIFS(Uji_Sensitivitas!$Y:$Y,Uji_Sensitivitas!$A:$A,A{i}))')
     m.cell(i, 14, f'=IF(M{i}="–",K{i},M{i})')
     m.cell(i, 15, f'=N{i}*L{i}')
     m.cell(i, 16, f'=IF(AND(N{i}=3,L{i}>=2),"1 KRITIS",IF(OR(N{i}=3,AND(N{i}=2,L{i}>=2)),"2 TINGGI",IF(OR(N{i}=2,AND(N{i}=1,L{i}>=2)),"3 SEDANG","4 RENDAH")))')
@@ -93,44 +93,60 @@ m['M1'].comment = Comment('Dari lembar Uji_Sensitivitas (maksimum skor varian de
 
 # ---------------- Uji_Sensitivitas ----------------
 u = wb.create_sheet('Uji_Sensitivitas')
-UH = ['ID data', 'Varian uji', 'Sumber', 'S2−S1 (ha)', 'S3−S2 (ha)', 'S4−S3 USD 10 (ha)', 'S4−S3 USD 20 (ha)', 'NPV USD 10 (Rp M)', 'NPV USD 20 (Rp M)', 'ΔRT S4−S3 USD 10 (Rp/RT/th)',
-      'Δ% S2−S1', 'Δ% S4−S3 USD 10', 'Δ% S4−S3 USD 20', 'Δ% NPV USD 10', 'Δ% NPV USD 20', 'Tanda NPV USD 10 berbalik?', 'Tanda ΔRT berbalik?', 'Perubahan terbesar (|Δ%|, termasuk ΔRT)', 'P teruji']
-header(u, 1, UH, [8, 34, 26, 11, 11, 12, 12, 12, 12, 15, 10, 11, 11, 11, 11, 12, 12, 13, 9])
-MAP = {'BASE': 'DASAR', 'Efektivitas=0.20': 'D03', 'Efektivitas=0.50': 'D03', 'Efektivitas=0.075 (batas bawah dokumentasi)': 'D03', 'Efektivitas=0.59 (batas atas dokumentasi)': 'D03',
-       'MRV/ha x2 (3960)': 'D04', 'MRV/ha batas atas (5775)': 'D04', 'Verifikasi x2 (1,485e9)': 'D16', 'Verifikasi batas atas (1,0725e9)': 'D16', 'Delay penerbitan=5': 'D18',
-       'Proporsi PA=0.5': 'D06', 'Proporsi PA=0.903 (pembanding atas)': 'D06', 'Proporsi PA=0.541 (pembanding bawah)': 'D06', 'Buffer=0.20': 'D15', 'Leakage=0.20': 'D13',
-       'Diskonto 6%': 'D17', 'Diskonto 15%': 'D17', 'Kapasitas realisasi penuh=1.0': 'LAIN'}
+UH = ['ID data', 'Varian uji', 'Sumber/rentang', 'S2−S1 (ha)', 'S3−S2 (ha)', 'S4−S3 USD 10 (ha)', 'S4−S3 USD 20 (ha)', 'NPV USD 10 (Rp M)', 'NPV USD 20 (Rp M)',
+      'Belanja/kebutuhan LPHD USD 20', 'ΔRT S4−S3 USD 10 (Rp/RT/th)', 'Emisi dihindari S4 USD 10 vs S1 (ribu tCO₂e) [info]',
+      'Δ% S2−S1', 'Δ% S3−S2', 'Δ% S4−S3 USD 10', 'Δ% S4−S3 USD 20', 'Δ% NPV USD 10', 'Δ% NPV USD 20', 'Δ% belanja/kebutuhan', 'Δ% ΔRT',
+      'Tanda NPV USD 10 berbalik?', 'Tanda ΔRT berbalik?', 'Efek PS/pembiayaan awal/karbon hilang atau berbalik?', 'Perubahan terbesar |Δ%|', 'P teruji', 'Catatan']
+header(u, 1, UH, [8, 34, 30, 10, 10, 11, 11, 11, 11, 12, 13, 13, 9, 9, 9, 9, 9, 9, 10, 9, 11, 11, 14, 11, 8, 46])
+MAP = {'Efektivitas': 'D03', 'MRV': 'D04', 'Verifikasi': 'D16', 'Delay': 'D18', 'Proporsi PA': 'D06', 'Buffer': 'D15', 'Leakage': 'D13', 'Diskonto': 'D17', 'Kapasitas': 'LAIN'}
+NOTE = {'Tahun kering ekstrem aktif': 'Emisi bersih kumulatif S4 USD 10 naik 79,9 → 159,4 juta tCO₂e, tetapi deforestasi, kredit, NPV, dan kebutuhan dana tidak berubah: kebakaran tidak terhubung ke stok hutan dan kebutuhan dana (temuan struktural).',
+        'Efek izin PS −0,15': 'Arah kontribusi PS berbalik (S2−S1 negatif): izin menaikkan kehilangan hutan lebih besar daripada efek patroli.',
+        'Atribusi patroli 2024 ke pembiayaan awal = 0': 'Efek pembiayaan awal (S3−S2) hilang seluruhnya: bergantung penuh pada asumsi atribusi.',
+        'RT bergantung 2.144': 'Indikator per RT tidak bergantung jumlah RT; total agregat tidak diuji.',
+        'RT bergantung 19.038': 'Indikator per RT tidak bergantung jumlah RT; total agregat tidak diuji.',
+        'Harga turun 40 % dalam 10 th lalu tetap': 'NPV USD 10 menjadi negatif.'}
 data = []
+fl = lambda r, k: float(r[k]) if r.get(k) not in (None, '') else None
 for r in oat:
-    f = lambda k: float(r[k])
-    data.append([MAP[r['variant']], r['variant'], 'OAT audit (07_UNCERTAINTY)', f('S2-S1 ha'), f('S3-S2 ha'), f('S4-S3 USD10 ha'), f('S4-S3 USD20 ha'), f('NPV USD10 (Rp M)'), f('NPV USD20 (Rp M)'), f('dRT S4-S3 USD10 (Rp)')])
+    vid = 'DASAR' if r['variant'] == 'BASE' else next(v for k, v in MAP.items() if r['variant'].startswith(k))
+    data.append([vid, r['variant'], 'OAT audit (robustness_oat.csv)', fl(r, 'S2-S1 ha'), fl(r, 'S3-S2 ha'), fl(r, 'S4-S3 USD10 ha'), fl(r, 'S4-S3 USD20 ha'),
+                 fl(r, 'NPV USD10 (Rp M)'), fl(r, 'NPV USD20 (Rp M)'), fl(r, 'Cakupan USD20 (%)') / 100, fl(r, 'dRT S4-S3 USD10 (Rp)'), None, ''])
 base = data[0]
 data.append(['D01', 'Basis kredit A2 register (CLOSURE)', 'A1_A2_BASELINE_RECONCILIATION.csv', base[3], base[4], float(a2['10']['S4_S3_ha']), float(a2['20']['S4_S3_ha']),
-             float(a2['10']['NPV_proyek_10_Rp']) / 1e9, float(a2['20']['NPV_proyek_10_Rp']) / 1e9, None])
+             float(a2['10']['NPV_proyek_10_Rp']) / 1e9, float(a2['20']['NPV_proyek_10_Rp']) / 1e9, None, None, None, 'Pembanding resmi register, direproduksi audit.'])
 for pg, v in (('0', 34403), ('3,24', -205238)):
-    data.append(['D02', f'Pengali kehilangan akses = {pg}', '05_SOCIOECONOMIC_RESULTS (rerata 2030–2055)', None, None, None, None, None, None, v])
+    data.append(['D02', f'Pengali kehilangan akses = {pg}', '05_SOCIOECONOMIC_RESULTS (rerata 2030–2055)', None, None, None, None, None, None, None, v, None, ''])
+oat3 = list(csv.DictReader(open(os.path.join(B, '07_UNCERTAINTY', 'robustness_oat3.csv'), encoding='utf-8')))
+for r in oat3:
+    if r['id'] == 'DASAR': continue
+    data.append([r['id'], r['variant'], r['sumber_rentang'] + ' (robustness_oat3.csv)', fl(r, 'S2-S1 ha'), fl(r, 'S3-S2 ha'), fl(r, 'S4-S3 USD10 ha'), fl(r, 'S4-S3 USD20 ha'),
+                 fl(r, 'NPV USD10 (Rp M)'), fl(r, 'NPV USD20 (Rp M)'), fl(r, 'Cakupan USD20 (%)') / 100, fl(r, 'dRT S4-S3 USD10 (Rp)'),
+                 fl(r, 'Emisi dihindari S4 USD10 vs S1 (ribu tCO2e)'), NOTE.get(r['variant'], '')])
+NUMF = {4: '#,##0;-#,##0', 5: '#,##0;-#,##0', 6: '#,##0;-#,##0', 7: '#,##0;-#,##0', 8: '#,##0.00;-#,##0.00', 9: '#,##0.00;-#,##0.00', 10: '0.0%', 11: '#,##0;-#,##0', 12: '#,##0.0;-#,##0.0'}
 for i, d in enumerate(data, 2):
-    for j, v in enumerate(d, 1):
+    for j, v in enumerate(d[:12], 1):
         c = u.cell(i, j, v); c.font = blue if j >= 4 else fnt; c.border = box
-        if j >= 4 and v is not None: c.number_format = '#,##0;-#,##0' if j in (4, 5, 6, 7, 10) else '#,##0.00;-#,##0.00'
-    pct = {11: 'D', 12: 'F', 13: 'G', 14: 'H', 15: 'I'}
-    for col, L in pct.items():
-        c = u.cell(i, col, f'=IF(OR({L}{i}="",{L}$2=0),"",{L}{i}/{L}$2-1)'); c.number_format = '0.0%;-0.0%;0.0%'; c.font = fnt; c.border = box
-    u.cell(i, 16, f'=IF(H{i}="","",IF(SIGN(H{i})<>SIGN(H$2),"YA","tidak"))')
-    u.cell(i, 17, f'=IF(J{i}="","",IF(SIGN(J{i})<>SIGN(J$2),"YA","tidak"))')
-    u.cell(i, 18, f'=MAX(IF(K{i}="",0,ABS(K{i})),IF(L{i}="",0,ABS(L{i})),IF(M{i}="",0,ABS(M{i})),IF(N{i}="",0,ABS(N{i})),IF(O{i}="",0,ABS(O{i})),IF(OR(J{i}="",J$2=0),0,ABS(J{i}/J$2-1)))')
-    u.cell(i, 18).number_format = '0.0%'
-    u.cell(i, 19, f'=IF(A{i}="DASAR","",IF(OR(P{i}="YA",Q{i}="YA",AND(F{i}<>"",F{i}<0.1*F$2)),3,IF(R{i}>=0.15,2,1)))')
-    for col in range(16, 20):
+        if j in NUMF: c.number_format = NUMF[j]
+    for col, L in zip(range(13, 21), 'DEFGHIJK'):
+        c = u.cell(i, col, f'=IF(OR({L}{i}="",{L}$2="",{L}$2=0),"",{L}{i}/{L}$2-1)'); c.number_format = '0.0%;-0.0%;0.0%'; c.font = fnt; c.border = box
+    u.cell(i, 21, f'=IF(H{i}="","",IF(SIGN(H{i})<>SIGN(H$2),"YA","tidak"))')
+    u.cell(i, 22, f'=IF(K{i}="","",IF(SIGN(K{i})<>SIGN(K$2),"YA","tidak"))')
+    gone = '+'.join(f'IF({L}{i}="",0,IF(OR(SIGN({L}{i})<>SIGN({L}$2),ABS({L}{i})<0.1*ABS({L}$2)),1,0))' for L in 'DEF')
+    u.cell(i, 23, f'=IF(A{i}="DASAR","",IF({gone}>0,"YA","tidak"))')
+    u.cell(i, 24, '=MAX(' + ','.join(f'IF({L}{i}="",0,ABS({L}{i}))' for L in ['M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T']) + ')'); u.cell(i, 24).number_format = '0.0%'
+    u.cell(i, 25, f'=IF(A{i}="DASAR","",IF(OR(U{i}="YA",V{i}="YA",W{i}="YA"),3,IF(X{i}>=0.15,2,1)))')
+    for col in range(21, 26):
         c = u.cell(i, col); c.font = fnt; c.alignment = center; c.border = box
+    c = u.cell(i, 26, d[12]); c.font = fnt; c.alignment = wrap; c.border = box
 ul = len(data) + 1
-u.freeze_panes = 'C2'
-u.conditional_formatting.add(f'P2:Q{ul}', FormulaRule(formula=['P2="YA"'], fill=PatternFill('solid', fgColor='F8CBAD')))
-u.conditional_formatting.add(f'S2:S{ul}', FormulaRule(formula=['S2=3'], fill=PatternFill('solid', fgColor='F8CBAD')))
+u.freeze_panes = 'C2'; u.auto_filter.ref = f'A1:Z{ul}'
+u.conditional_formatting.add(f'U2:W{ul}', FormulaRule(formula=['U2="YA"'], fill=PatternFill('solid', fgColor='F8CBAD')))
+u.conditional_formatting.add(f'Y2:Y{ul}', FormulaRule(formula=['Y2=3'], fill=PatternFill('solid', fgColor='F8CBAD')))
 n = ul + 2
-for t in ['Catatan:', 'Baris 2 (DASAR) adalah acuan semua Δ%. Kolom D–J berisi hasil run audit (huruf biru, tidak diubah).',
-          'Δ% kosong bila indikator tidak dihitung pada varian tersebut. ΔRT untuk pengali akses berasal dari 05_SOCIOECONOMIC_RESULTS (USD 10).',
-          'NPV adalah NPV proyek parsial (diskonto 10 %, kecuali varian diskonto), dihitung di luar model. "LAIN" = varian tanpa butir di Matriks.']:
+for t in ['Catatan:', 'Baris 2 (DASAR) adalah acuan semua Δ%. Kolom D–L berisi hasil run audit (huruf biru, tidak diubah). Semua varian adalah DIAGNOSTIK AUDIT, bukan hasil utama makalah.',
+          'Rentang: "Dok. .mdl" = rentang yang tercatat di catatan persamaan; "UJI AUDIT" = rentang dipilih audit karena dokumentasi tidak memberi rentang.',
+          'P teruji = 3 bila tanda NPV USD 10 atau ΔRT berbalik, atau S2−S1 / S3−S2 / S4−S3 USD 10 berbalik tanda atau turun di bawah 10 % nilai dasar; 2 bila perubahan terbesar ≥ 15 %; selain itu 1.',
+          'NPV = NPV proyek parsial (diskonto 10 % kecuali varian diskonto), dihitung di luar model. Lintasan harga diterapkan pada Harga Karbon (REDD) saja; harga ARR tetap. "LAIN" = varian tanpa butir di Matriks.']:
     u.cell(n, 1, t).font = bold if t == 'Catatan:' else fnt; n += 1
 
 # ---------------- Grid ----------------
