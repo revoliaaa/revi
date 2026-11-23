@@ -40,6 +40,7 @@
 | `LPHD_FINANCIAL_COVERAGE.csv` | Belanja total vs komponen minimum, kesenjangan, dan cakupan per harga (USD 3–100) |
 | `MANUSCRIPT_CORRECTION_TABLE.md` | Kalimat pengganti siap pakai |
 | `VALIDATION_EVIDENCE_GAPS.md` | Bukti yang diperlukan untuk MAPE, MC, PRCC, dan Vensim–PySD |
+| `PETA_GAP_MAKALAH_SEMHAS.md` | Peta gap argumen, metode, pembahasan, pustaka, dan format makalah seminar (versi bertanda tangan); draf subbagian keterbatasan |
 
 ---
 
