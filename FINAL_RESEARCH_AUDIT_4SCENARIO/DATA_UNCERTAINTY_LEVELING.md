@@ -34,7 +34,7 @@ Data lengkap ada di `DATA_UNCERTAINTY_LEVELING.csv` (25 butir), yang dibuat oleh
 | **P = 2** | D15 buffer · D16 verifikasi · D17 diskonto · D18 jeda penerbitan · D22 densitas biomassa | D05 laju BAU · D06 porsi PA · D07 lintasan harga · D10 biaya patroli/hari · D11 efek izin · D13 kebocoran · D14 bagi hasil 60/40 | D08 kebakaran · D09 operasional LPHD · D12 jumlah RT bergantung · D25 bukti validasi |
 | **P = 1** | D23 pemegang garapan · D24 pertumbuhan penduduk | D20 pendapatan dasar RT | D19 pembiayaan awal · D21 KUPS awal |
 
-Arsiran level: sel kanan-atas = Level 1; P2/W≥2 dan P3/W≤1 = Level 2; P2/W1 dan P1/W≥2 = Level 3; P1/W1 = Level 4.
+Pemetaan sel ke level: P3/W≥2 = Level 1; P2/W≥2 dan P3/W≤1 = Level 2; P2/W1 dan P1/W≥2 = Level 3; P1/W1 = Level 4.
 
 ## Ringkasan per level
 
