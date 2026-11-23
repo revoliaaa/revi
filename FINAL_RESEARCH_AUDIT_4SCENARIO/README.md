@@ -41,6 +41,7 @@
 | `MANUSCRIPT_CORRECTION_TABLE.md` | Kalimat pengganti siap pakai |
 | `VALIDATION_EVIDENCE_GAPS.md` | Bukti yang diperlukan untuk MAPE, MC, PRCC, dan Vensim–PySD |
 | `PETA_GAP_MAKALAH_SEMHAS.md` | Peta gap argumen, metode, pembahasan, pustaka, dan format makalah seminar (versi bertanda tangan); draf subbagian keterbatasan |
+| `DATA_UNCERTAINTY_LEVELING.md` / `.csv` | Matriks leveling 25 butir data menurut pengaruh dan kelemahan bukti |
 
 ---
 
